@@ -18,7 +18,7 @@
 	
 	<properties>
 		<model.directory>models</model.directory>
-		<vec.model.file>VEC.mdxml</vec.model.file>
+		<vec.model.file>vec.mdxml</vec.model.file>
 	</properties>
 	
 	<build>
