@@ -21,4 +21,16 @@ build-schema:
     expire_in: 1 days
     when: always
     paths:
-      - "*/target"
+      - "target"
+      
+deploy-snapshot:
+   stage: deploy
+   only: 
+     - develop
+   dependencies:
+     - build-schema
+   script:
+     - "cp target/xsd/*.* public/xsd/*.*"
+   artifacts:
+     paths:
+       - public
