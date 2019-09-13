@@ -14,9 +14,22 @@
      
      <xsl:param name="VEC_VERSION">1.1.3</xsl:param>
      <xsl:param name="strict">false</xsl:param>
+     <xsl:param name="revision">not-set</xsl:param>
+     <xsl:param name="timestamp">not-set</xsl:param>
      
     <!-- Header -->
     <xsl:template match="/">
+        <xsl:comment>
+   ------------------------------------------------------------------------------ 
+   Generated Schema from VEC model. Changelog can be found at https://track.prostep.com/browse/KBLFRM.
+   Attention: If this is a SNAPSHOT version, then this schema is produced by a nightly or preview build, 
+   is NO OFFICIAL RELEASE and can change at any time.
+
+   Version:   <xsl:value-of select="$VEC_VERSION"/>
+   Revision:  <xsl:value-of select="$revision"/>
+   Timestamp: <xsl:value-of select="$timestamp"/>
+   ------------------------------------------------------------------------------            
+        </xsl:comment>
         <xsl:element name="xs:schema">
             <xsl:attribute name="targetNamespace" select="$VEC_URL" />
             <xsl:attribute name="version" select="$VEC_VERSION"/>

@@ -11,16 +11,15 @@
         <xsl:apply-templates select="body/*" />
     </xsl:template>
         
-    <xsl:template match="*">
+    <xsl:template match="node()">
         <xsl:copy>
-            <xsl:apply-templates select="@*|*|text()"/>
+            <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="text()">
+    <xsl:template match="text()" priority="2">
         <xsl:value-of select="normalize-space(.)"/>
     </xsl:template>
-    
     
     <xsl:template match="@*">
         <xsl:copy/>

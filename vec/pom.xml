@@ -11,6 +11,11 @@
 		<maven>3.0.5</maven>		
 	</prerequisites>
 	
+	<scm>
+		<connection>scm:git:ssh://git@gitlab.com:ecad-if/vec.git</connection>
+		<developerConnection>scm:git:ssh://git@gitlab.com:ecad-if/vec.git</developerConnection>
+	</scm>
+	
 	<properties>
 		<model.directory>models</model.directory>
 		<vec.model.file>VEC.mdxml</vec.model.file>
@@ -66,6 +71,25 @@
 			</plugin>
 			-->
 			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<doCheck>false</doCheck>
+					<doUpdate>false</doUpdate>
+					<timestampFormat>{0,date,yyyy-MM-dd}</timestampFormat>
+					<revisionOnScmFailure>ci-build</revisionOnScmFailure>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>com.coderplus.maven.plugins</groupId>
 				<artifactId>copy-rename-maven-plugin</artifactId>
 				<version>1.0</version>
@@ -109,6 +133,14 @@
 											<name>VEC_VERSION</name>
 											<value>${project.version}</value>
 										</parameter>
+										<parameter>
+											<name>revision</name>
+											<value>${buildNumber}</value>												
+										</parameter>
+										<parameter>
+											<name>timestamp</name>
+											<value>${timestamp}</value>												
+										</parameter>										
 									</parameters>
 									<fileMappers>
 										<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
