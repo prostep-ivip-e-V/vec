@@ -112,7 +112,7 @@
 				<artifactId>xml-maven-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>xsd-intermediate-nostrict</id>
+						<id>xsd-generation-pipeline</id>
 						<goals>
 							<goal>transform</goal>
 						</goals>
@@ -175,14 +175,14 @@
 								<!-- Fix the HTML documentation --> 
 								<transformationSet>
 									<dir>target/xsd-intermediate</dir>
-									<outputDir>target</outputDir>
+									<outputDir>target/xsd</outputDir>
 									<stylesheet>scripts/fix-documentation-tags-in-schema.xsl</stylesheet>
 								</transformationSet>
 								<!-- remove documentation -->
 								<transformationSet>
-									<dir>target</dir>
+									<dir>target/xsd</dir>
 									<includes>*.xsd</includes>
-									<outputDir>target</outputDir>
+									<outputDir>target/xsd</outputDir>
 									<stylesheet>scripts/remove-documentation-from-schema.xsl</stylesheet>
 									<fileMappers>
 										<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
@@ -192,6 +192,20 @@
 									</fileMappers>
 								</transformationSet>								
 							</transformationSets>
+						</configuration>
+					</execution>
+					<execution>
+						<id>validate-created-schemas</id>
+						<goals>
+							<goal>validate</goal>
+						</goals>
+						<configuration>
+							<validationSets>
+								<validationSet>
+									<dir>target/xsd</dir>
+									<systemId>schemas/XMLSchema.xsd</systemId>									
+								</validationSet>
+							</validationSets>
 						</configuration>
 					</execution>
 				</executions>
