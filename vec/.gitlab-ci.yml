@@ -30,6 +30,7 @@ deploy-snapshot:
    dependencies:
      - build-schema
    script:
+     - "mkdir -p public/xsd"
      - "cp target/xsd/*.* public/xsd"
    artifacts:
      paths:
