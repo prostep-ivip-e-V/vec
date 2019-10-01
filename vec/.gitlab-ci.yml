@@ -23,7 +23,7 @@ build-schema:
     paths:
       - "target"
       
-deploy-snapshot:
+pages:
    stage: deploy
    only: 
      - develop
