@@ -40,7 +40,7 @@
             <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Class']" mode="create-type">
                 <xsl:sort select="@name"/>
             </xsl:apply-templates>
-            <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Enumeration']" mode="create-type">
+            <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Enumeration' or @xmi:type='uml:PrimitiveType']" mode="create-type">
                 <xsl:sort select="@name"/>                
             </xsl:apply-templates>
         </xsl:element>
@@ -251,6 +251,24 @@
 					<xsl:apply-templates
 						select="ownedLiteral[@xmi:type='uml:EnumerationLiteral']" />
 				</xsl:if>
+            </xs:restriction>
+        </xs:simpleType>
+    </xsl:template>
+    
+    
+    <!-- Create a simple type for every uml:PrimitiveType -->
+    <xsl:template match="packagedElement[@xmi:type='uml:PrimitiveType']" mode="create-type">
+        <xs:simpleType>
+            <xsl:apply-templates select="." mode="create-name"/>
+            <xsl:apply-templates select="ownedComment" mode="documentation"/>           
+            <xs:restriction base="xs:string">                
+                <!-- Only for pattern restrictions -->
+                <xsl:if test="($strict='true' and @xmi:id=//Stereotypes:OpenPatternRestriction/@base_PrimitiveType) 
+                    or @xmi:id=//Stereotypes:ClosedPatternRestriction/@base_Enumeration">
+                    <xs:pattern>
+                        <xsl:attribute name="value" select="ownedRule[@xmi:type='uml:Constraint']/specification/body"></xsl:attribute>
+                    </xs:pattern>
+                </xsl:if>
             </xs:restriction>
         </xs:simpleType>
     </xsl:template>
