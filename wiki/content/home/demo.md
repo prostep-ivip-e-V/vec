@@ -61,6 +61,6 @@ related technologies.
 
 The ECAD Wiki is an open wiki. [See]() how you can contribute. 
 
-[Test]({{<relref path="#about">}})
+[Test]({{< relref path="#about" >}})
 
 
