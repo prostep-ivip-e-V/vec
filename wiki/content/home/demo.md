@@ -36,7 +36,7 @@ subtitle = ""
   # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
   
   # Text color (true=light or false=dark).
-  text_color_light = true
+  # text_color_light = true
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
@@ -44,10 +44,10 @@ subtitle = ""
 
 [advanced]
  # Custom CSS. 
- css_style = ""
+ # css_style = ""
  
  # CSS class.
- css_class = ""
+ # css_class = ""
 +++
 Welcome to the **ECAD Wiki** on the wiring harness and electrical system activities 
 of [propstep ivip](http://www.prostep.org) and [VDA](http://www.vda.de). The ECAD Wiki 
