@@ -1,0 +1,4 @@
+{{ $relref := .Get "relref" }}
+<a xlink:href="{{ relref . $relref }}">
+    <rect {{ with .Get "x" }}x="{{.}}" {{end}} {{ with .Get "y" }}y="{{.}}" {{end}} {{ with .Get "width" }}width="{{.}}" {{end}} {{ with .Get "height" }}height="{{.}}" {{end}} fill="#fff" opacity="0"></rect>
+</a>
