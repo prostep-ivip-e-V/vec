@@ -1,0 +1,43 @@
+﻿---
+title: Location
+toc: false
+type: specs
+date: "2019-05-05T00:00:00+01:00"
+draft: false
+menu_name: vec120
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 
+---
+<html><body><p>A Location specifies a distinct position on a topology. Locations can be used for the placement of components or for the definition of Dimensions.  </p></body></html>
+## General Information
+
+| Attribute               | Value |
+|-------------------------|-------|
+| **Owner**               | placement |
+| **Applied Stereotype**  |   |
+| **Base Classifier**     | [DimensionAnchor]({{< relref "dimensionanchor.md" >}})<br/>  |
+| **Is Abstract**         | true |
+| **Derived Classifiers** | [NodeLocation]({{< relref "nodelocation.md" >}}), [SegmentLocation]({{< relref "segmentlocation.md" >}}) |
+
+
+## Attributes
+|  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
+|--------|--------|---------|---------------|--------------|
+|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the Location. The identification is guaranteed to be unique within the PlacementSpecification.      </p>    </body> </html>  | [Location]({{< relref "location.md" >}}) |
+|matchingId | [String]({{< relref "string.md" >}}) | 0..1 | <html><body><p>Specifies an identification for matching the location with a reference point of component (e.g. a cable channel).  </p></body></html> | [Location]({{< relref "location.md" >}}) |
+
+## Outgoing Relations
+|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
+|----------|----------|-----------|-----------|-----------------|
+| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placedPlacementPoints | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PlacementPointReference </i>that is placed by this location.      </p>    </body> </html>  |
+##  Incoming Relations
+|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
+|----------|----------|-----------|-----------|----------------|
+| [Dimension]({{< relref "dimension.md" >}}) | 1 | definedLocations | 0..2 |  |
+| [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | endLocation | 1 | References the Location where OnWayPlacement ends.   |
+| [ZoneCoverage]({{< relref "zonecoverage.md" >}}) | 0..1 | firstLocation | 1 |  |
+| [OnPointPlacement]({{< relref "onpointplacement.md" >}}) | 0..1 | location | 1..* | References the Locations where Placement places the reference points of the placed element.   |
+| [NodeMapping]({{< relref "nodemapping.md" >}}) |  | mappedPosition | 1 |  |
+| [ZoneCoverage]({{< relref "zonecoverage.md" >}}) | 0..1 | secondLocation | 1 |  |
+| [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | startLocation | 1 | References the Location where OnWayPlacement starts.   |

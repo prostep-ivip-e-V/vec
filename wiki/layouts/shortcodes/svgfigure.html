@@ -1,0 +1,24 @@
+{{/* Enable image to be loaded from local page dir or media library at `static/img/`. */}}
+{{ $image_src := .Get "src" }}
+{{ if .Get "library" }}
+  {{ $image_src = printf "img/%s" $image_src | relURL }}
+{{ end }}
+
+{{/* Get caption. Support legacy `title` option. */}}
+{{ $caption := .Get "title" | default (.Get "caption") | default "" }}
+{{ $width := .Get "width" | default "200"}}
+{{ $height := .Get "height" | default "200"}}
+
+<figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
+    <svg width="100%" height="100%" viewBox="0 0 {{$width}} {{$height}}">
+        <image  xlink:href="{{$image_src}}"></image>
+        {{.Inner}}
+    </svg>
+{{ if $caption }}
+  {{/* Localize the figure numbering (if enabled). */}}
+  {{ $figure := split (i18n "figure" | default "Figure %d:") "%d" }}
+  <figcaption{{ if eq (.Get "numbered") "true" }} data-pre="{{ index $figure 0 }}" data-post="{{ index $figure 1 }}" class="numbered"{{ end }}>
+    {{ $caption | markdownify | emojify }}
+  </figcaption>
+{{ end }}
+</figure>
