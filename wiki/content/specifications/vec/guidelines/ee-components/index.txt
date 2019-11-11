@@ -1,0 +1,170 @@
+---
+title: ECUs, EE-Components and Component Boxes
+toc: false
+type: specs
+date: "2019-05-05T00:00:00+01:00"
+draft: false
+menu:
+  vec120:
+    weight: 4000 
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 4000
+---
+
+{{< figure src="connector_structure.png" title="abc" caption="Blu Bla Bla" numbered="true" >}}
+djlfakldjö
+
+<!--
+E/E components, represented in the VEC by the [EEComponentSpecification]({{< relref "/models/vec_v1_1_3/classes/eecomponentspecification.md" >}}) and [EEComponentRole]({{< relref "/models/vec_v1_1_3/classes/eecomponentspecification.md" >}}), summarize all kinds of components with a more or less complex electrical  function. In the VEC the description of an E/E component is a combination of the following (optional) aspects:
+  1. **Connector Interface / EE Component Header:** Defines the properties and possibilities for a connection to a wiring harness or other e/e components.
+  2. **Internal Connectivity:** Defines the electrical connectivity within a e/e component.
+  3. **Switching States:** Add variability of a certain degree to the internal connectivity.
+  4. **Electrical Interface:** Defines the electrical properties (e.g. peak currents) of a connector interface.
+  5. **Type Specific Properties:** Defines properties that apply only to specific e/e component types (e.g. capacity for a battery).
+
+E/E Components in terms of the VEC can be for example:
+  * ECU's
+  * [relays]({{< relref "relays.md" >}})
+  * [fuses]({{< relref "fuses.md" >}})
+  * [multi_fuses]({{< relref "multi_fuses.md" >}})
+  * [component_boxes]({{< relref "component_boxes.md" >}})
+
+## Connector Interface / EE Component Header 
+### Basic Structure 
+<imgcaption instances| Instantiation Example><img style='float: left; width: 621px;' src='/img/  ./ee_components/header_connector.jpg'></imgcaption>
+
+Any E/E-Component has some kind of connector interface. This can be an interface to attach a harness or another E/E component. For the variety of possible usage see the next section.
+
+An E/E-Component is represented in the VEC by an [EEComponentSpecification]({{< relref "/models/vec_v1_1_3/classes/eecomponentspecification.md" >}}).  The connector interface of an E/E-Component is represented by a [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}). The [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}) separates into two aspect:
+  1. **Geometrical:** It references a [ConnectorHousingSpecification]({{< relref "/models/vec_v1_1_3/classes/connectorhousingspecification.md" >}}) to describe the geometrical / mechanical properties of the connector, e.g. the shape, slot layout, number of cavities etc. As this is the same [Specification]({{< relref "/models/vec_v1_1_3/classes/Specification.md" >}}) that is used for harness connectors it just defines an empty housing, without pins and terminals. 
+  2. **Electrical:** The electrical properties of the connector, the actual pins in the housing, are represented by the [PinComponent]({{< relref "/models/vec_v1_1_3/classes/pincomponent.md" >}}). The physical properties of the pin are represented by a [TerminalSpecification]({{< relref "/models/vec_v1_1_3/classes/terminalspecification.md" >}}).
+
+<imgref instances> shows the structure for an E/E component with a single pin. The following XML listing shows the same as xml snippet.
+<Code:xml linenums|>
+<Specification xsi:type######"vec:EEComponentSpecification" id"id_ecomponent_spec_1498">
+    <Identification>DSC</Identification>
+    <DescribedPart>...</DescribedPart>
+    <HousingComponent id="id_housing_comp_1500">
+        <Identification>A1</Identification>
+        <HousingSpecification>id_connect_hous_spec_1501</HousingSpecification>
+        <PinComponent id="id_pin_comp_1506">
+            <Identification>1</Identification>
+            <PinSpecification>id_terminal_spec_1511</PinSpecification>
+            <ReferencedCavity>id_cavity_1504</ReferencedCavity>
+        </PinComponent>
+    </HousingComponent>
+</Specification>
+<Specification xsi:type######"vec:ConnectorHousingSpecification" id"id_connect_hous_spec_1501">
+    <Identification>37548</Identification>
+    <SpecialPartType>HarnessConnector</SpecialPartType>
+    <Slot xsi:type######"vec:Slot" id"id_slot_1502">
+        <SlotNumber>A</SlotNumber>
+        <Cavity id="id_cavity_1504">
+            <CavityNumber>1</CavityNumber>
+        </Cavity>
+    </Slot>
+</Specification>
+<Specification xsi:type######"vec:TerminalSpecification" id"id_terminal_spec_1511">
+    <Identification>Usn3B323a4a10a614881C33</Identification>
+    ...
+</Specification>
+</Code>
+
+### Connector / Interface Types 
+***Note:** This section is in particular relevant for component boxes, as they have the greatest variance of different interface types. However, all these interface types can as well appear in other EE components. To understand the technical background and the definition of the different types, please read the article about [component_boxes]({{< relref "component_boxes.md" >}}) *
+
+<imgcaption main_structure|Main Structure><img style='float: left; width: 500px;' src='/img/ ./ee_components/connector_structure.png'></imgcaption> All (pluggable) electrical interfaces of a EE component to other components or the harness are represented by a [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}). That means for each fuse, multi fuse or relay slot and for all pluggable harness connectors or direct contacting connectors a [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}) is defined.
+
+Each [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}) references a [ConnectorHousingSpecification]({{< relref "/models/vec_v1_1_3/classes/connectorhousingspecification.md" >}}) that defines the geometrical properties of the slot. 
+
+***Version < 1.2.0:** * The classification of the housing component (e.g. is it a fuse or relay slot) is done with the *specialPartType* of the associated [ConnectorHousingSpecification]({{< relref "/models/vec_v1_1_3/classes/connectorhousingspecification.md" >}}).
+
+***Version >= 1.2.0:** * VEC 1.2.0 introduced a *compatibleTypes* attribute in the [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}) to define what type of components are valid counter parts for a housing component. This is considered as an additional information to the pre 1.2.0 way.
+
+***Note:** Slots for multi fuses are also represented by one [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}).*
+
+<table slottypes>
+<caption>Mapping of slot types to values</caption>
+^ Type of Slot  ^ ConnectorHousingSpecification.SpecialPartType (V1.1.3)  ^ HousingComponent.CompatibleTypes (V1.2.0) ^
+| Fuse slot | FuseConnector | Fuse |
+| Multi fuse slot | MultiFuseConnector | MultiFuse |
+| Relays slot | RelayConnector | Relay |
+| Direct Contacting | WiringConnector | Terminal |
+| Slot for Harness Connector | HarnessConnector | ConnectorHousing |
+| Slot for Ring Terminals of a Harness | HarnessConnector | RingTerminal |
+| Modular Slot for other E/E-Components| ... | EEComponent |
+</table>
+
+
+In <imgref eecomponent_interfaces> the instantiation of such a structure is partially shown. The details of a connector description with [Slot]({{< relref "/models/vec_v1_1_3/classes/slot.md" >}}), [Cavity]({{< relref "/models/vec_v1_1_3/classes/cavity.md" >}}) and [PinComponent]({{< relref "/models/vec_v1_1_3/classes/pincomponent.md" >}}) are only implied on the left side.
+
+<imgcaption eecomponent_interfaces| Instantiation Example><img style='width: 1000px;' src='/img/./ee_components/eecomponent_interfaces.jpg'></imgcaption>
+
+The listing below shows the general xml structure for such a component box. Omitted blocks are marked with "...".
+
+
+<Code:xml linenums| Slots - General Structure> 
+<Specification xsi:type######"vec:EEComponentSpecification" id"id_ecomponent_spec_1463">
+  <Identification>Dnq3202104816a236</Identification>
+  <SpecialPartType>FuseOrRelayCarrier</SpecialPartType>
+  <DescribedPart>id_part_ver_1419</DescribedPart>
+  ...
+  <HousingComponent id="id_housing_comp_1466">
+      <Identification>B</Identification>
+      <HousingSpecification>id_connect_hous_spec_1430</HousingSpecification>
+      ...
+  </HousingComponent>
+  <HousingComponent id="id_housing_comp_1478">
+      <Identification>G2</Identification>
+      <HousingSpecification>id_connect_hous_spec_1459</HousingSpecification>
+      ...
+  </HousingComponent>
+</Specification> 
+
+<Specification xsi:type######"vec:ConnectorHousingSpecification" id"id_connect_hous_spec_1430">
+  <Identification>WIRING</Identification>
+  <SpecialPartType>WiringConnector</SpecialPartType>
+  <Slot xsi:type######"vec:Slot" id"id_slot_1432">
+      ...
+  </Slot>
+</Specification> 
+
+<Specification xsi:type######"vec:ConnectorHousingSpecification" id"id_connect_hous_spec_1459">
+  <Identification>FUSE</Identification>
+  <SpecialPartType>FuseConnector</SpecialPartType>
+  <Slot xsi:type######"vec:Slot" id"id_slot_1460">
+      ...
+  </Slot>
+</Specification> </Code>
+
+## Internal Connectivity 
+### Connections 
+<imgcaption schematic |Component Box Schematic Illustration><img style='float: left; width: 400|Component Bopx; height:  Schematic Illustrationpx;' src='/img/ ./ee_components/component_box_schematic.png'></imgcaption>
+This section applies to all kind of internal connections in E/E components. One of the major use cases for this is the representation of internal connectivity of component boxes, since this is an important information, for example for physical validation or the calculation of current flows in the network. The model elements can also be used to represent the internal connectivity of a relay or any other E/E component. However, when it comes to software enabled component states (e.g. ECUs) the feasibility is more than questionable. 
+
+In <imgref schematic> the internal connections are illustrated by the red and black lines (2). In terms of the VEC, an [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) defines a logical (conductive) connection between a number of [PinComponents]({{< relref "/models/vec_v1_1_3/classes/pincomponent.md" >}}) within a E/E component. This representation does not consider the actual realization of the conductivity. This means, when multiple pins are connected,  that the representation in the model is the same whether it is realized by point to point connections, a conductor rail or direct contacting. 
+
+In <imgref internal_connections> an instance diagram is shown for a power distribution connection between a supply on the left side and the individual fuse slots on the right side. 
+
+
+***Note:** The essential criteria for a [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) is the electrical conductivity. So even if the connection in the example would be realized by three individual conductors between the left and the right side, it would be represented by **one** [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) *
+
+<imgcaption internal_connections|Component Box Schematic Illustration><img style='' src='/img/./ee_components/internal_connections.jpg|Instancing for Internal Connections'></imgcaption>
+
+### Switching States 
+<imgcaption switching_states_img|Switching States Illustration><img style='float: left; width: 300px; height: 175|Switching States Illustrationpx;' src='/img/  ./ee_components/switching_states_illustration.jpg'></imgcaption>
+
+In <imgref switching_states_img> a simple [EEComponent]({{< relref "/models/vec_v1_1_3/classes/eecomponentspecification.md" >}}) with [SwitchingStates]({{< relref "/models/vec_v1_1_3/classes/switchingstate.md" >}}) is schematically shown. In <imgref switching_states> the corresponding representation in VEC is shown. It is a simple switch with two states. In the example, the switch has two [HousingComponents]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}), meaning it has two connectors, one for the IN-side and one for OUT-side. The housing component for the IN-side has one [PinComponent]({{< relref "/models/vec_v1_1_3/classes/pincomponent.md" >}}), the OUT-side has two of them. However, a real example could as well have just one [HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}}) with three [PinComponents]({{< relref "/models/vec_v1_1_3/classes/pincomponent.md" >}}). The pin on the IN-side is connected to the pins on the OUT-side with a switchable XOR-connection.
+
+The IN-side (highlighted in red) and the OUT-side (highlighted in green) are represented in the VEC as a connector interface of your choice, as described in [Connector Interface / EE Component Header]({{< relref "#connector_interface_ee_component_header.md" >}}). In the VEC a [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) is free of variance, therefore each state of the XOR-connection of the example is represented by an individual [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) (A.1 -> B.1) and (A.1 -> B.2). The switch in this example has two switching states (*B1* & *B2*), each referencing one [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}), meaning that if the state is active, the corresponding connections exist / have electrical conductivity. The fact, that *B1* & *B2* are mutally exclusive to each are other is currently not represented in the VEC. 
+
+***Note:** Without the additional information of the switching states, the representation with two [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) would be illegal, as it would semantically equivalent to representation with one [InternalComponentConnection]({{< relref "/models/vec_v1_1_3/classes/internalcomponentconnection.md" >}}) referencing three [PinComponent]({{< relref "/models/vec_v1_1_3/classes/pincomponent.md" >}})*
+
+<imgcaption switching_states|Switching States><img style='' src='/img/./ee_components/switching_states.jpg|Switching States'></imgcaption>
+
+<img style='' src='/img/tag>tutorials/vec/v113 part_master instantiation'>
+
+~~DISCUSSION~~
+
+-->
