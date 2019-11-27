@@ -32,7 +32,7 @@ All content merged into the `master` branch will be build and deployed automatic
 To work locally with this project, you'll have to follow the steps below:
 
 1. Fork, clone or download this project
-1. [Install][] Hugo
+1. [Install][] Hugo (Extended)
 1. Preview your project: `hugo server`
 1. Add content
 1. Generate the website: `hugo` (optional)
@@ -43,28 +43,64 @@ Read more at Hugo's [documentation][].
 ### Preview your site
 
 If you clone or download this project to your local computer and run `hugo server`,
-your site can be accessed under `localhost:1313/hugo/`.
+your site can be accessed under `localhost:1313/`.
 
-The theme used is adapted from http://themes.gohugo.io/beautifulhugo/.
+The theme used is adapted from https://sourcethemes.com/academic/.
 
-## GitLab User or Group Pages
+## Create Content
 
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
+### Implementation Guidelines
 
-You'll need to configure your site too: change this line
-in your `config.toml`, from `"https://pages.gitlab.io/hugo/"` to `baseurl = "https://namespace.gitlab.io"`.
-Proceed equally if you are using a [custom domain][post]: `baseurl = "http(s)://example.com"`.
+Create a new implementation guideline page
+```shell
+hugo new --kind specs specifications/vec/guidelines/awesome-tutorial
+```
+This creates a content file for the new guideline under 
+`content/specifications/vec/guidelines/awesome-tutorial/index.md`
 
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
+The guideline file created will look similiar to this one:
 
-## Did you fork this project?
+```markdown
+---
+title: "Awesome Tutorial"
+#linktitle: Link in Sidemenu
+type: specs
+# Table of Content on the right side. Only useful for large pages.
+toc: false
+authors: []
+tags: []
+categories: []
+date: 2019-11-27T16:57:42+01:00
+lastmod: 2019-11-27T16:57:42+01:00
+draft: false
 
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
+menu:
+  vec-guidelines:
+    # Toplevel element. For sub sections the identifier of the subsection
+    #parent: Example Topic
+    weight: 1000
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 1
+---
+
+Here we can start with the text.
+ <!--more--> 
+ And we can split more 
+
+## All sub headings are level 2 or lower
+```
+Important things to do:
+1.  Customize the menu entry, so the new guideline appears at the correct position.
+1.  If it has a long title (shown on top of the page), give it a short 'linktitle' for the side menu.
+1.  If it is a long page with subsections, give a toc (`toc: true`)
+1.  If want to define the length of the summary add the <!--more--> element.
+1.  The title is level h1. Give all subheadings level 2 or lower (`##`). 
+Otherwise the heading levels will be messed up, when we generate a single page version.
+1.  If you use [figures](https://sourcethemes.com/academic/docs/writing-markdown-latex/#images) do **NOT** reference by number. 
+The numbering is done with CSS and if we generate a single page version the will depend on 
+the position in the complete document.
+
 
 ## Troubleshooting
 
