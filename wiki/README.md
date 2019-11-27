@@ -2,10 +2,9 @@
 
 ---
 
-Example [Hugo] website using GitLab Pages.
-
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+This is the source for the new ECAD-WIKI. The current Wiki can be found under 
+http://ecad-wiki.prostep.org . The preview of the new Wiki can be found under 
+https://ecad-wiki.gitlab.io.
 
 ---
 
@@ -26,6 +25,8 @@ documentation https://docs.gitlab.com/ce/user/project/pages/.
 This project's static Pages are built by [GitLab CI][ci], following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).
 
+All content merged into the `master` branch will be build and deployed automatically.
+
 ## Building locally
 
 To work locally with this project, you'll have to follow the steps below:
@@ -35,6 +36,7 @@ To work locally with this project, you'll have to follow the steps below:
 1. Preview your project: `hugo server`
 1. Add content
 1. Generate the website: `hugo` (optional)
+1. Install Visual Studio Code as an effective editor (optional)
 
 Read more at Hugo's [documentation][].
 
