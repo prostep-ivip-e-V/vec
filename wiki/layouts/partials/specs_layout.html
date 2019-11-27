@@ -29,6 +29,14 @@
             {{ .Content }}
           </div>
 
+          <ul class="list-unstyled">
+            {{ if gt (len .Sections) 0}}
+            {{ range .Sections }}
+            <li><h5><a href="{{.RelPermalink}}">{{.LinkTitle}}</a></h5> {{with .Summary}}<p>{{. | plainify | emojify}}</p>{{end}}</li>
+            {{end}}
+            {{end}}
+          </ul>
+
           {{ partial "tags.html" . }}
 
           {{ if site.Params.docs_section_pager }}

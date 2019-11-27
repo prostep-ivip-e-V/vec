@@ -15,7 +15,7 @@ weight: 1
 ---
 ## Abstract 
 The VDA recommendation 4968 “Vehicle Electric Container (VEC)” defines an information model, a data dictionary, and an XML schema derived from and compliant to the model.
-
+ <!--more--> 
 The intention of the model was to cover a wide range of use cases and application scenarios. For this reason the specification had to be kept generic in some degree and in some aspects. However, for specific scenarios and / or use cases a more detailed description on "how the different pieces fit together" is possible. 
 
 To avoid dialects in the different VEC implementations, further guidelines or recommendations are necessary. This collection of implementation guidlines contributes to the unambiguous interpretation of the VEC standard. For various wiring harness definition or electrical system aspects and scenarios the correct instantiation is shown and specific hints for correct usage are given.
