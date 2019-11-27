@@ -11,10 +11,10 @@ draft: false
 menu:
   vec-guidelines:
     parent: ee-components
-    weight: 4300
+    weight: 4400
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 4300
+weight: 4400
 ---
 {{< figure src="relays.jpg" title="Relays" numbered="true" >}}
 
@@ -24,12 +24,8 @@ In the VEC schema a relay is a special type of an EE-Component. It also owns a *
 
 Additionally to these standard EE-Component structure the *RelaySpecification* also can contain so called *SwitchingStates.* Each state describes  an *InternalComponentConnection* as potentially existing, depending on the current switched state of the relay. In the example above the blue colored PinComponents describe the coi contact. The connection between the two pins 30 and 87 is permanently The green colored part describes the switch, whose connection *can* exist depending on the SwitchingState. So the InternalComponentConnection between the pins 85 and 86 is not permanently guaranteed.
 
-For more information see [Switching States](  ee_components#switching_states.md).
+For more information see [Switching States]( {{< relref "ee-components#switching-states" >}}).
 
 ## Instantiating relays 
 
-Instantiating relays is like instantiating any other EE-Component. A EEComponentRole under a PartOccurrence references the RelaySpecification and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see chapter [ee_components]( ee_components.md ).
-
-{{% alert warning %}}
-Links not Working!
-{{% /alert %}}
+Instantiating relays is like instantiating any other EE-Component. A EEComponentRole under a PartOccurrence references the RelaySpecification and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see chapter [E/E-Components]( {{< relref "ee-components" >}}).

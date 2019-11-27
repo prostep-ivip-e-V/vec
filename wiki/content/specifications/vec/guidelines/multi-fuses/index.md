@@ -2,8 +2,8 @@
 title: "Multi Fuses"
 #linktitle: Link in Sidemenu
 type: specs
-authors: ["part-master", "instantiation"]
-tags: []
+authors: ["becker"]
+tags: ["part-master", "instantiation"]
 categories: []
 date: 2019-03-07
 lastmod: 2019-03-07
@@ -23,11 +23,7 @@ A mutlifuse is a special type of fuse that combines multiple fuses in a single c
 
 An individual fuse component is located between each protected pin and the supplying pin. Each fuse component can have its own technical properties (e.g. max current).
 
-As shown in figure "Specification Multi Fuse" a multi fuse is represented in the VEC by a {{< vec-class multifusespecification >}}, which is a specialization of the {{< vec-class eecomponentspecification >}}. Therefore all aspects described in the [general section]( eecomponents) potentially apply to multi fuses as well. This sample describes only the aspects that are specific for multi fuses.  
-
-{{% alert warning %}}
-Links eecomponents
-{{% /alert %}}
+As shown in figure "Specification Multi Fuse" a multi fuse is represented in the VEC by a {{< vec-class multifusespecification >}}, which is a specialization of the {{< vec-class eecomponentspecification >}}. Therefore all aspects described in the [general section]({{< relref ee-components>}}) potentially apply to multi fuses as well. This sample describes only the aspects that are specific for multi fuses.  
 
 In the VEC, a multi fuse has __one__ {{< vec-class housingcomponent >}} with a {{< vec-class pincomponent >}} for each pin. Each integrated fuse in the multifuse is represented by a {{< vec-class fusecomponent >}}. The fuse component references the pin components that are connected through it and specifies the properties for this (e.g. iMax) through a {{< vec-class fusespecification >}}.
 
