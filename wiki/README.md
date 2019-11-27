@@ -31,7 +31,7 @@ All content merged into the `master` branch will be build and deployed automatic
 
 To work locally with this project, you'll have to follow the steps below:
 
-1. Fork, clone or download this project
+1. Clone this project
 1. [Install][] Hugo (Extended)
 1. Preview your project: `hugo server`
 1. Add content
@@ -50,6 +50,20 @@ The theme used is adapted from https://sourcethemes.com/academic/.
 ## Create Content
 
 ### Migration Cheat Sheat
+
+Best Practice is:
+
+1. Create a new guideline page using the hugo cli (see below).
+2. Adjust the metadata in frontmatter. This includes creation and lastmodified date from dokuwiki and the menue position.
+3. Paste the content of the (migrated) dokuiwiki page.
+4. From top down, replace:
+   1. All class references with {{< vec-class >}}.
+   2. All intrawiki links with relref links. If the target does npt ecist yet, create a dummy page ate the destination.
+   3. All images with the {{< figure >}}
+   4. All code sections with ````xml`
+   5. 
+
+#### Replace WikiLinks (in migrated .md)
 
 The DokuWIKI to Hugo conversion gives Guidelines with class links like:
 ```
