@@ -49,6 +49,21 @@ The theme used is adapted from https://sourcethemes.com/academic/.
 
 ## Create Content
 
+### Migration Cheat Sheat
+
+The DokuWIKI to Hugo conversion gives Guidelines with class links like:
+```
+[HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}})
+```
+In VS Code these can be replaced to correct links with a regex. The search term is:
+```
+\[\w*\]\(\{\{< relref "/models/vec_v1_1_3/classes/(\w*)\.md" >\}\}\)
+```
+the replacement term is:
+```
+{{< vec-class "$1" >}}
+```
+
 ### Implementation Guidelines
 
 Create a new implementation guideline page
