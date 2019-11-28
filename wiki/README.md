@@ -14,8 +14,11 @@ https://ecad-wiki.gitlab.io.
 
 - [GitLab CI](#gitlab-ci)
 - [Building locally](#building-locally)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
+  - [Preview your site](#preview-your-site)
+- [Create Content](#create-content)
+  - [Migration Cheat Sheat](#migration-cheat-sheat)
+    - [Replace WikiLinks (in migrated .md)](#replace-wikilinks-in-migrated-md)
+  - [Implementation Guidelines](#implementation-guidelines)
 - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -32,13 +35,16 @@ All content merged into the `master` branch will be build and deployed automatic
 To work locally with this project, you'll have to follow the steps below:
 
 1. Clone this project
-1. [Install][] Hugo (Extended)
+1. [Install][] Hugo (Extended). Currently Version 0.59.1 (before update see [^1]).  
 1. Preview your project: `hugo server`
 1. Add content
 1. Generate the website: `hugo` (optional)
 1. Install Visual Studio Code as an effective editor (optional)
 
 Read more at Hugo's [documentation][].
+
+[^1]: Version 0.60.0 fixed a bug for the generation of page TOC's that was also patched 
+by the current academic theme. If both are applied it result in an ugly page TOC.
 
 ### Preview your site
 
@@ -58,7 +64,13 @@ Best Practice is:
 3. Paste the content of the (migrated) dokuiwiki page.
 4. From top down, replace:
    1. All class references with {{< vec-class >}}.
-   2. All intrawiki links with relref links. If the target does npt ecist yet, create a dummy page ate the destination.
+   2. All intrawiki links with relref links. If the target does not exist yet, create a dummy page at the 
+   destination and add a:
+```markdown
+{{% alert warning %}}
+This is currently only a dummy to make the links working.
+{{% /alert %}}   
+```
    3. All images with the {{< figure >}}
    4. All code sections with ````xml`
    5. 
@@ -123,7 +135,7 @@ Important things to do:
 1.  Customize the menu entry, so the new guideline appears at the correct position.
 1.  If it has a long title (shown on top of the page), give it a short 'linktitle' for the side menu.
 1.  If it is a long page with subsections, give a toc (`toc: true`)
-1.  If want to define the length of the summary add the <!--more--> element.
+1.  If want to define the length of the summary add the `<!--more-->` element.
 1.  The title is level h1. Give all subheadings level 2 or lower (`##`). 
 Otherwise the heading levels will be messed up, when we generate a single page version.
 1.  If you use [figures](https://sourcethemes.com/academic/docs/writing-markdown-latex/#images) do **NOT** reference by number. 
