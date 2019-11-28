@@ -4,7 +4,7 @@ title: "Key Concepts"
 type: specs
 # Table of Content on the right side. Only useful for large pages.
 authors: ["becker"]
-tags: ["basics", "concept"]
+tags: ["Core"]
 categories: []
 date: 2019-11-06
 lastmod: 2019-11-28T15:11:41+01:00
