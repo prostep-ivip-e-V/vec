@@ -1,5 +1,4 @@
 +++
-# A Demo section created with the Blank widget.
 # Any elements can be added in the body: https://sourcethemes.com/academic/docs/writing-markdown-latex/
 # Add more sections by duplicating this file and customizing to your requirements.
 
@@ -9,7 +8,7 @@ active = true  # Activate this widget? true/false
 weight = 15  # Order that this section will appear.
 
 title = "ECAD WIKI"
-subtitle = ""
+subtitle = "Everything about VEC & Friends"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
