@@ -1,5 +1,5 @@
-{{ $basePath := "specifications/vec/V120/classes" }}
-{{ $pageName := .Get 0 }}
-{{ $completeUrl := printf "%s/%s.md" $basePath $pageName }}
-{{ $page := .Page.GetPage ($completeUrl) }}
+{{- $basePath := "specifications/vec/V120/classes" -}}
+{{- $pageName := .Get 0 -}}
+{{- $completeUrl := printf "%s/%s.md" $basePath $pageName -}}
+{{- $page := .Page.GetPage ($completeUrl) -}}
 <a {{ printf "href=%q" $page.Permalink | safeHTMLAttr }}>{{ $page.Title }}</a>

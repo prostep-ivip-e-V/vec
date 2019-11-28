@@ -21,7 +21,7 @@ weight: 1000
 
 {{< figure src="parts_and_documents.jpg" title="Parts and Documents" numbered="true" lightbox="true">}}
 
-The figure above illustrates one of the most fundamental concepts of the VEC -- the separation of a part and its description. In the VEC a part ({{<vec-class PartVersion>}} ) does not contain any information about the part, except its PDM Information (PartNumber, PartVersion…). All the information about the technical properties of a part is expressed by a subclass of {{< vec-class PartOrUsageRelatedSpecification>}}s (e.g. a {{< vec-class WireSpecification >}}). The specifications itsselfes are contained in a {{< vec-class DocumentVersion>}}.
+The figure above illustrates one of the most fundamental concepts of the VEC -- the separation of a part and its description. In the VEC a part ({{<vec-class PartVersion>}}) does not contain any information about the part, except its PDM Information (PartNumber, PartVersion…). All the information about the technical properties of a part is expressed by a subclass of {{< vec-class PartOrUsageRelatedSpecification>}}s (e.g. a {{< vec-class WireSpecification >}}). The specifications itsselfes are contained in a {{< vec-class DocumentVersion>}}.
 
 This approach enables the VEC to address two scenarios properly:
 
