@@ -26,8 +26,6 @@ weight: 2000
 
 Since most *NumericalValues* in the VEC are definitions for technical properties, each {{< vec-class NumericalValue >}} can reference a {{< vec-class Tolerance >}}. In the example, the specified value of '105.23' has a tolerance of +/- 20.0. Units for *NumericalValues* are defined globally in the VEC and are reused for each {{< vec-class NumericalValue >}}. The example shows the definition of the {{< vec-class CompositeUnit >}} Ohm per Kilometre.
 
-<br/>
-
 ## Reference Systems
 {{< figure src="reference_systems.jpg" title="Reference Systems" numbered="true" lightbox="true">}} 
 

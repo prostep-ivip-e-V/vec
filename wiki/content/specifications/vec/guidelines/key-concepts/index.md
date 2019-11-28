@@ -28,8 +28,6 @@ This approach enables the VEC to address two scenarios properly:
   * The description of a part is changed, but the part itself is not changed (rereleased). This can happen for example if the actual technical properties of the part stay the same, but the description is extended or corrected.
   * A document and the contained specifications are describing more than one part (e.g. a drawing for a certain class of terminals). In this case it can happen that the document and the specifications are changed, but not all of the described parts have to be changed (rereleased).  
 
-<br/>
-
 ## Usage Nodes
 
 {{< figure src="usage_nodes.jpg" title="Usage Nodes" numbered="true" >}}
