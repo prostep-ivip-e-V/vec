@@ -19,7 +19,7 @@ weight: 4200
 ---
 {{< figure src="multi-fuse.png" lightbox="true" class="float-right" title="Multi Fuse Illustration" width="300px" >}}
 
-A mutlifuse is a special type of fuse that combines multiple fuses in a single component (see [Multi Fuse Illustration]({{< relref "#multi-fuse illustration" >}})). In contrast to a regular fuse, where there are only two interchangeable pins, the multi fuse has a single dedicated supplying pin and multiple protected pins. 
+A mutlifuse is a special type of fuse that combines multiple fuses in a single component (see [Multi Fuse Illustration]({{< relref "#multi-fuse-illustration" >}})). In contrast to a regular fuse, where there are only two interchangeable pins, the multi fuse has a single dedicated supplying pin and multiple protected pins. 
 
 An individual fuse component is located between each protected pin and the supplying pin. Each fuse component can have its own technical properties (e.g. max current).
 
