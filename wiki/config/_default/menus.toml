@@ -30,12 +30,18 @@
 
 [[main]]
   name = "Specifications"
-  weight = 70
+  weight = 15
 
 [[main]]
   name = "VEC"
   url = "specifications/vec"
   weight = 10
+  parent = "Specifications"
+
+[[main]]
+  name = "KOMP"
+  url = "specifications/komp"
+  weight = 90
   parent = "Specifications"
 
 # Link to a PDF of your resume/CV from the menu.
