@@ -32,7 +32,8 @@
   {{ range $menu }}
   <div class="specs-toc-item{{ if $current_page.IsMenuCurrent $menu_name . }} active{{ end }}">
     <a class="specs-toc-link" {{ if .URL }}href="{{ .URL }}"{{else if .HasChildren }}href="{{ (index .Children 0).URL }}"{{end}}>{{ .Name }}</a>
-
+    
+    {{ if or ($current_page.IsMenuCurrent $menu_name .) ($current_page.HasMenuCurrent $menu_name .) }}
     {{- if .HasChildren }}
     <ul class="nav specs-sidenav">
       {{ range .Children }}
@@ -41,6 +42,7 @@
       </li>
       {{ end }}
     </ul>
+    {{ end }}
     {{ end }}
 
   </div>
