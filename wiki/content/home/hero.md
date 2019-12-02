@@ -51,6 +51,6 @@ hero_media = "hero-academic.png"
   label = 'Latest Release v1.2.0'
 +++
 
-**The Vehicle Electric Container** - Foundation for the Digitalization.
+**The Vehicle Electric Container** - Foundation for the Digitalization of your E/E Processes.
 
 Get the most comprehensive standard for the digital representation of information created during the Electrical System Development Process.

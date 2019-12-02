@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Terminals]({{< relref "../instances-of-components/instances-of-terminals" >}})<br/> [Placeable Elements]({{< relref "../description-of-components/placeable-elements" >}})<br/> [Terminals]({{< relref "../description-of-components/terminals" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -36,5 +36,5 @@ weight:
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | wireReception | 0..* | Specifies the WireReceptions of the terminal described by the TerminalSpecification.  |
-| [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | 0..* | wireReception | 1 | <html>   <head>     </head>   <body>     <p> References the <i>WireReception</i> that is instanced by this <i>WireReceptionReference.</i>      </p>    </body> </html>  |
 | [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | 0..1 | wireReception | 0..* | References the WireReceptions that participate in the InternalTerminalConnection.  |
+| [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | 0..* | wireReception | 1 | <html>   <head>     </head>   <body>     <p> References the <i>WireReception</i> that is instanced by this <i>WireReceptionReference.</i>      </p>    </body> </html>  |

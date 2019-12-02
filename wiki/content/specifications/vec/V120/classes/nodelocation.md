@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Location]({{< relref "location.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Hierarchical Topologies]({{< relref "../topology-and-geometry/hierarchical-topologies" >}})<br/> [Locations]({{< relref "../topology-and-geometry/locations" >}})<br/> [Topology Zones]({{< relref "../topology-and-geometry/topology-zones" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

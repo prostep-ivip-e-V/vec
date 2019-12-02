@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: key-concepts/localization-of-values    
     parent: key-concepts
-    weight: 1001003 
+    weight: 1001004 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1001003
+weight: 1001004
 ---
 {{< svgfigure src="localization-of-values.png" width="540" height="335" caption="Localization of Values" numbered="true" >}}
   {{< svglink relref="../classes/localizedstring.md" x="15.0" y="155.0" width="93.0" height="43.0" >}}

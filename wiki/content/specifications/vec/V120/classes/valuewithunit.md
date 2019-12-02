@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [NumericalValue]({{< relref "numericalvalue.md" >}}), [ValueRange]({{< relref "valuerange.md" >}}) |
-
+| **Usage in Diagrams**   | [Unit System]({{< relref "../key-concepts/unit-system" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

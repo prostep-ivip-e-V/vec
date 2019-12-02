@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ItemVersion]({{< relref "itemversion.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Conformance to Requirements]({{< relref "../description-of-components/conformance-to-requirements" >}})<br/> [Description of Parts]({{< relref "../description-of-components/description-of-parts" >}})<br/> [External Mapping]({{< relref "../external-mapping/external-mapping" >}})<br/> [Installation Instructions]({{< relref "../instances-of-components/installation-instructions" >}})<br/> [Item Equivalence]({{< relref "../pdm-information/item-equivalence" >}})<br/> [Lifecycle Information]({{< relref "../pdm-information/lifecycle-information" >}})<br/> [Parts and Documents]({{< relref "../key-concepts/parts-and-documents" >}})<br/> [VEC-Root]({{< relref "../xml-representation-of-the-model/vec-root" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -41,11 +41,11 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | itemEquivalence | 0..* | 1 | Specifies ItemEquivalances defined by the DocumentVersion.  |
 | [PartVersion]({{< relref "partversion.md" >}}) | referencedPart | 0..* | 0..* | The association is an informative link which PartVersions are described by the DocumentVersion.   |
+| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | itemEquivalence | 0..* | 1 | Specifies ItemEquivalances defined by the DocumentVersion.  |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | relatedDocument | 0..* | 0..* | The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model).   |
 | [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | sheetOrChapter | 0..* | 1 | Specifies SheetOrChapters defined in this DocumentVersion. These are especially useful if the DocumentVersion represents an external reference.   |
 | [Specification]({{< relref "specification.md" >}}) | specification | 0..* | 0..1 | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.   |
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | relatedDocument | 0..* | 0..* | The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model).   |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

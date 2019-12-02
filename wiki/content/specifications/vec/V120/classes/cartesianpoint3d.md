@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [3D Curves]({{< relref "../topology-and-geometry/3d-curves" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/> [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,6 +32,8 @@ weight:
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [NURBSControlPoint]({{< relref "nurbscontrolpoint.md" >}}) | 0..* |  | 1 | <html>   <head>     </head>   <body>     <p> The <i>CartesionPoint3D </i>that defines the position of this <i>NURBSControlPoint.</i>&#160;      </p>  </body> </html> |
-| [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 1 | cartesianPoint | 0..* | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.  |
+| [LocalPosition]({{< relref "localposition.md" >}}) | 0..* | cartesianPoint | 1 |  |
 | [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | 0..* | cartesianPoint | 1 | References the CartesianPoint3D where the GeometryNode3D is located.   |
+| [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}) | 0..1 | cartesianPoint | 0..* | <html>   <head>     </head>   <body> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.</body> </html> |
+| [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 1 | cartesianPoint | 0..* | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.  |
 | [Transformation3D]({{< relref "transformation3d.md" >}}) | 0..* | origin | 1 | Specifies the coordinates of the translation.  |

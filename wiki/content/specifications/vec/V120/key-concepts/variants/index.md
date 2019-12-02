@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: key-concepts/variants    
     parent: key-concepts
-    weight: 1001005 
+    weight: 1001006 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1001005
+weight: 1001006
 ---
 {{< svgfigure src="variants.png" width="523" height="574" caption="Variants" numbered="true" >}}
   {{< svglink relref="../classes/applicationconstrainttype.md" x="287.0" y="442.0" width="154.0" height="82.0" >}}

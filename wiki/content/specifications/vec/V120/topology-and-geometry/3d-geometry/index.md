@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: topology-and-geometry/3d-geometry    
     parent: topology-and-geometry
-    weight: 1005004 
+    weight: 1005005 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005004
+weight: 1005005
 ---
 {{< svgfigure src="3d-geometry.png" width="1035" height="989" caption="3D-Geometry" numbered="true" >}}
   {{< svglink relref="../classes/cartesianvector.md" x="700.0" y="491.0" width="100.0" height="43.0" >}}

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ItemVersion]({{< relref "itemversion.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Cavity Mapping]({{< relref "../description-of-components/cavity-mapping" >}})<br/> [Conformance to Requirements]({{< relref "../description-of-components/conformance-to-requirements" >}})<br/> [Connector Housings]({{< relref "../description-of-components/connector-housings" >}})<br/> [Description of Parts]({{< relref "../description-of-components/description-of-parts" >}})<br/> [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [General Technical Part]({{< relref "../description-of-components/general-technical-part" >}})<br/> [Instantiation of Components]({{< relref "../instances-of-components/instantiation-of-components" >}})<br/> [Lifecycle Information]({{< relref "../pdm-information/lifecycle-information" >}})<br/> [Part Substitutions]({{< relref "../description-of-components/part-substitutions" >}})<br/> [Parts and Documents]({{< relref "../key-concepts/parts-and-documents" >}})<br/> [Supplementary Parts]({{< relref "../description-of-components/supplementary-parts" >}})<br/> [Terminal Pairing]({{< relref "../description-of-components/terminal-pairing" >}})<br/> [Usage Constraints]({{< relref "../key-concepts/usage-constraints" >}})<br/> [VEC-Root]({{< relref "../xml-representation-of-the-model/vec-root" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

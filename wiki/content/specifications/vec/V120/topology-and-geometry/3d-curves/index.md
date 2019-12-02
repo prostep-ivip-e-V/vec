@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: topology-and-geometry/3d-curves    
     parent: topology-and-geometry
-    weight: 1005005 
+    weight: 1005006 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005005
+weight: 1005006
 ---
 {{< svgfigure src="3d-curves.png" width="681" height="542" caption="3D Curves" numbered="true" >}}
   {{< svglink relref="../classes/curve3d.md" x="379.0" y="259.0" width="81.0" height="34.0" >}}

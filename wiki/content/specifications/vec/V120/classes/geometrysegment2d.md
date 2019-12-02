@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [GeometrySegment]({{< relref "geometrysegment.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,8 +32,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | startNode | 1 | 0..* | References the GeometryNode2D where the GeometrySegment2D starts.   |
 | [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode2D where the GeometrySegment2D ends.   |
+| [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | startNode | 1 | 0..* | References the GeometryNode2D where the GeometrySegment2D starts.   |
 | [PathSegment]({{< relref "pathsegment.md" >}}) | pathSegment | 0..* | 1 | Specifies an ordered list of PathSegments that describe the appearance of the GeometrySegment2D. The appearance is described by the concatenation of the PathSegments beginning at the startNode of the GeometrySegment2D.  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

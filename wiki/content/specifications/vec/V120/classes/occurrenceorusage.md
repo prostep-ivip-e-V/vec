@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [PartOccurrence]({{< relref "partoccurrence.md" >}}), [PartUsage]({{< relref "partusage.md" >}}) |
-
+| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/> [Assemblies, Modules and Harness (Configurations)]({{< relref "../composite-part-descriptions/assemblies-modules-and-harness-configurations" >}})<br/> [Harness and Variants]({{< relref "../composite-part-descriptions/harness-and-variants" >}})<br/> [Installation Instructions]({{< relref "../instances-of-components/installation-instructions" >}})<br/> [Instantiation of Components]({{< relref "../instances-of-components/instantiation-of-components" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/> [Usage Node]({{< relref "../key-concepts/usage-node" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,9 +32,9 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p>    </body> </html>  |
 | [Role]({{< relref "role.md" >}}) | role | 0..* | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the different roles of the OccurrenceOrUsage.      </p>    </body> </html>  |
 | [Instruction]({{< relref "instruction.md" >}}) | installationInstruction | 0..* | 0..1 | Room to specify InstallationInstruction(s) for the OccurrenceOrUsage.   |
-| [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

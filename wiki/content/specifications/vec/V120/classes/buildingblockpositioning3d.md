@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,8 +28,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Transformation3D]({{< relref "transformation3d.md" >}}) | positioning | 0..1 | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the positioning of the building block in the harness geometry.      </p>    </body> </html>  |
 | [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | referenced3DBuildingBlock | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the building block that is positioned.      </p>    </body> </html>  |
+| [Transformation3D]({{< relref "transformation3d.md" >}}) | positioning | 0..1 | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the positioning of the building block in the harness geometry.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
