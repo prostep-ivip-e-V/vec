@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** | [FittingSpecification]({{< relref "fittingspecification.md" >}}), [StripeSpecification]({{< relref "stripespecification.md" >}}), [TapeSpecification]({{< relref "tapespecification.md" >}}), [TubeSpecification]({{< relref "tubespecification.md" >}}) |
-
+| **Usage in Diagrams**   | [Instances of Wire Protections]({{< relref "../instances-of-components/instances-of-wire-protections" >}})<br/> [Wire Protections]({{< relref "../description-of-components/wire-protections" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

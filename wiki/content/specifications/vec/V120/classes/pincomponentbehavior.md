@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Pinning Information & Pinning Variance]({{< relref "../description-of-components/pinning-information-pinning-variance" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -33,10 +33,10 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p>    </body> </html>  |
 | [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | voltageInformation | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p>    </body> </html>  |
-| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p>    </body> </html>  |
 | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) | opticalInformation | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the optical information of the pin, if it has the type optical.      </p>    </body> </html>  |
+| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p>    </body> </html>  |
+| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

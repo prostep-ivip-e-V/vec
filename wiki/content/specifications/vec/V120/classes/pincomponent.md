@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/> [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [EE-Component subclasses]({{< relref "../description-of-components/ee-component-subclasses" >}})<br/> [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [Instances of EE-Components]({{< relref "../instances-of-components/instances-of-ee-components" >}})<br/> [Multi Fuse]({{< relref "../description-of-components/multi-fuse" >}})<br/> [Pinning Information & Pinning Variance]({{< relref "../description-of-components/pinning-information-pinning-variance" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -31,9 +31,9 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | behaviour | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p>    </body> </html>  |
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | pinSpecification | 0..1 | 0..* | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300)  |
 | [Cavity]({{< relref "cavity.md" >}}) | referencedCavity | 0..1 | 0..* | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300)  |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | pinSpecification | 0..1 | 0..* | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300)  |
+| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | behaviour | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

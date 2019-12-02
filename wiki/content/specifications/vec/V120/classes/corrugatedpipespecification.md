@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [TubeSpecification]({{< relref "tubespecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Wire Protections]({{< relref "../description-of-components/wire-protections" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

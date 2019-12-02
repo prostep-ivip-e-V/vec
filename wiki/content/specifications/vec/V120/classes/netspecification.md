@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Connection Specification]({{< relref "../connectivity/connection-specification" >}})<br/> [Net Specification]({{< relref "../connectivity/net-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,7 +30,7 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification.  |
-| [NetType]({{< relref "nettype.md" >}}) | netType | 0..* | 1 |  |
 | [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification.  |
+| [NetType]({{< relref "nettype.md" >}}) | netType | 0..* | 1 |  |
 | [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | Specifies the NetWorkNodes defined in the NetSpecification.  |
+| [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification.  |

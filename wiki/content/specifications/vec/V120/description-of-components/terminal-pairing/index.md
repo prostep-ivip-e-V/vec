@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: description-of-components/terminal-pairing    
     parent: description-of-components
-    weight: 1003017 
+    weight: 1003018 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1003017
+weight: 1003018
 ---
 {{< svgfigure src="terminal-pairing.png" width="664" height="489" caption="Terminal Pairing" numbered="true" >}}
   {{< svglink relref="../classes/terminalpairingspecification.md" x="42.0" y="131.0" width="165.0" height="43.0" >}}

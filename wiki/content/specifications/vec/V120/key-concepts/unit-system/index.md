@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: key-concepts/unit-system    
     parent: key-concepts
-    weight: 1001002 
+    weight: 1001003 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1001002
+weight: 1001003
 ---
 {{< svgfigure src="unit-system.png" width="1247" height="800" caption="Unit System" numbered="true" >}}
   {{< svglink relref="../classes/customunit.md" x="938.0" y="358.0" width="139.0" height="55.0" >}}

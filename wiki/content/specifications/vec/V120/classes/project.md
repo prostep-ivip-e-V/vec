@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Lifecycle Information]({{< relref "../pdm-information/lifecycle-information" >}})<br/> [Usage Constraints]({{< relref "../key-concepts/usage-constraints" >}})<br/> [Usage Node]({{< relref "../key-concepts/usage-node" >}})<br/> [Variants]({{< relref "../key-concepts/variants" >}})<br/> [VEC-Root]({{< relref "../xml-representation-of-the-model/vec-root" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -33,8 +33,8 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | project | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p>    </body> </html>  |
-| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) |  | project | 0..* | <html>   <head>     </head>   <body>     <p> &#160;Defines the projects for which the application constraint applies.      </p>  </body> </html> |
 | [PartVersion]({{< relref "partversion.md" >}}) | 0..* | project | 0..1 | References the project that develops the PartVersion.   |
+| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) |  | project | 0..* | <html>   <head>     </head>   <body>     <p> &#160;Defines the projects for which the application constraint applies.      </p>  </body> </html> |
+| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | project | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p>    </body> </html>  |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | project | 0..* | Specifies the Projects used in the VEC-file.   |
 | [UsageNode]({{< relref "usagenode.md" >}}) | 0..* | usedInProject | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p>    </body> </html>  |

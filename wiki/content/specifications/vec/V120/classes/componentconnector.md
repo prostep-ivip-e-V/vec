@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Connection Specification]({{< relref "../connectivity/connection-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -34,5 +34,5 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ComponentNode]({{< relref "componentnode.md" >}}) | 1 | componentConnector | 0..* | Specifies the ComponentConnectors of a ComponentNode. |
 | [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 0..* | componentConnector | 0..1 | References the ComponentConnector that is realized by the referenced HousingComponentReference. |
+| [ComponentNode]({{< relref "componentnode.md" >}}) | 1 | componentConnector | 0..* | Specifies the ComponentConnectors of a ComponentNode. |

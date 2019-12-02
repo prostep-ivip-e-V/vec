@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [WireProtectionSpecification]({{< relref "wireprotectionspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** | [CorrugatedPipeSpecification]({{< relref "corrugatedpipespecification.md" >}}), [ShrinkableTubeSpecification]({{< relref "shrinkabletubespecification.md" >}}) |
-
+| **Usage in Diagrams**   | [Wire Protections]({{< relref "../description-of-components/wire-protections" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
