@@ -4,7 +4,7 @@ title: "Channels"
 type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: false
-authors: [becker]
+authors: [becker, fehlmann]
 tags: ["Cable duct", "Fixing", "Channel"]
 categories: []
 date: 2019-03-11
@@ -21,4 +21,4 @@ weight: 9000
 ---
 {{< figure src="channels.jpg" title="Channels" numbered="true" lightbox="true">}}
 
-{{< vec-class CableDuct >}}s can fulfill have to relevant aspects. They can be connected with the harness (placement). This is specified with the blue classes. At the same time a {{< vec-class CableDuct >}} can have properties of a {{< vec-class Fixing >}} since it is often mounted to the vehicle body as well. This aspect is defined by an additional {{< vec-class FixingSpecification >}}.
+*CableDucts* can fulfill have to relevant aspects. They can be connected with the harness (placement). This is specified with the blue classes. The {{< vec-class CableDuctSpecification >}} brings this aspect of use to given part. At the same time a CableDuct can have properties of a {{< vec-class Fixing >}} since it is often mounted to the vehicle body as well. This aspect is defined by an additional {{< vec-class FixingSpecification >}}.
