@@ -249,3 +249,41 @@ ul.toc-top {
   color: $sta-primary;
   text-decoration: none;
 }
+
+/*************************************************
+ *  Pager.
+ **************************************************/
+
+ .specs-nav {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  display: flex;
+}
+
+.specs-nav-item {
+  hyphens: auto;
+  word-wrap: break-word;
+  padding: 11px 0 12px;
+  width: 100%;
+}
+
+.specs-nav-item a {
+  color: #2b2b2b;
+  line-height: 1.7;
+  text-transform: none;
+}
+
+.specs-nav-item .meta-nav {
+  color: #767676;
+  font-weight: 900;
+  line-height: 2;
+  text-transform: uppercase;
+}
+
+.specs-nav-item.next{
+  text-align: right;
+}
+
+.dark .specs-nav-item a {
+  color: #ddd;
+}
