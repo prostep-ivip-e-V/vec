@@ -20,16 +20,16 @@ menu:
 weight: 10000
 ---
 ## With PlacementPoints 
-{{< figure src="fixing_with_placementpoints_illustration.jpg" title="Document Meta Information" numbered="true" lightbox="true">}}
+{{< figure src="fixing_with_placementpoints_illustration.jpg" title="Fixings with Placement Points" numbered="true" lightbox="true">}}
 
 This illustration shows the *Fixing* with a {{< vec-class PlacementPoint >}} and {{< vec-class MeasurementPoint >}} as a {{< vec-class PartOccurrance >}}.
 
-{{< figure src="fixings_with_placementpoints.jpg" title="Document Meta Information" numbered="true" lightbox="true">}}
+{{< figure src="fixings_with_placementpoints.jpg" title="Placement Points in the Model" numbered="true" lightbox="true">}}
 
 The ability to place a *Fixing* on a specific point in the topology is similar to Grommets covered by generic mechanism of {{< vec-class PlacementPoint >}} and {{< vec-class PlacementPointReference >}}. Additionally the measurement of *Fixing* is covered by {{< vec-class MeasurementPoint >}} and {{< vec-class MeasurementPointReference >}}.
 
 ## Fixings with additional Cable Ties 
-{{< figure src="fixings_with_additional_cable_ties.jpg" title="Document Meta Information" numbered="true" lightbox="true">}}
+{{< figure src="fixings_with_additional_cable_ties.jpg" title="Fixings with Additional Cable Tie" numbered="true" lightbox="true">}}
 
 The diagram illustrates the definition of a *Fixing* with *CableTies* as *Accessory*. The upper half of the diagram is the definition of the part master data.
 
