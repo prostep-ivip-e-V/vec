@@ -14,10 +14,10 @@ draft: false
 menu:
   vec-guidelines:
     parent: ee-components
-    weight: 4100
+    weight: 10100
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1
+weight: 10100
 ---
 {{% alert warning %}}
 This is currently only a dummy to make the links working.
