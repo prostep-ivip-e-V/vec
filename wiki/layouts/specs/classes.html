@@ -73,6 +73,10 @@
             </div>
           </div>
         </div>
+          <div class="article-widget">
+              {{ partial "specs_section_pager" . }}
+          </div>
+        </div>
 
         <div class="body-footer">
           <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
