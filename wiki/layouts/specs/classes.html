@@ -39,7 +39,6 @@
           {{ end }}
           </div>
 
-          <ul class="list-unstyled">
           <!-- range all pages sorted by their title -->
           {{ range .Data.Pages.ByTitle }}
             <!-- get the first character of each title. Assumes that the title is never empty! -->
@@ -53,17 +52,26 @@
               {{ if ne $firstChar $curLetter }}
               <!-- update the current letter and print it -->
               {{ $.Scratch.Set "curLetter" $firstChar }}
-              </ul>
-              <h3 id="{{ $firstChar }}">{{ $firstChar }}</h3>
-              <ul class="list-unstyled">
+              {{ if ne $firstChar "A" }}
+                      </ul>
+                    </div>
+                </div>
+              </div>
+              {{ end }}
+              <div class="card" id="{{ $firstChar }}">
+                  <div class="card-body">
+                      <h3 class="card-title mt-0">{{ $firstChar }}</h3>
+                      <div class="card-text">
+                          <ul class="list-unstyled">
               {{ end }}
 
             <li><a  href="{{ .RelPermalink }}">{{ .Title }}</a></li>
             {{ end }}
           {{ end }} 
-          </ul>
-
-        </div>
+                    </ul>
+                </div>
+            </div>
+          </div>
 
         <div class="body-footer">
           <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
