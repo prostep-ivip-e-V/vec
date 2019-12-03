@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: description-of-components/part-substitutions    
     parent: description-of-components
-    weight: 1003018 
+    weight: 1003019 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1003018
+weight: 1003019
 ---
 {{< svgfigure src="part-substitutions.png" width="615" height="485" caption="Part Substitutions" numbered="true" >}}
   {{< svglink relref="../classes/partorusagerelatedspecification.md" x="206.0" y="385.0" width="188.0" height="55.0" >}}

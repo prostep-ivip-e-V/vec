@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Part Substitutions]({{< relref "../description-of-components/part-substitutions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

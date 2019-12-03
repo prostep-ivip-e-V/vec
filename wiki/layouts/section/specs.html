@@ -1,0 +1,55 @@
+{{- define "main" -}}
+{{ partial "page_header" . }}
+<div class="universal-wrapper">
+  {{ with .Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
+  <ul class="list-unstyled">
+    {{ if gt (len .Sections) 0}}
+    {{ range .Sections }}
+    {{ $page := . }}
+    <li><h2>{{.Title}}</h2> 
+      <div class="article-style">
+        <p>
+        {{ if .Params.summary }}
+        {{ .Params.summary | plainify | emojify }}
+        {{ else if .Params.abstract }}
+        {{ .Params.abstract | plainify | emojify | truncate 250 }}
+        {{ else if .Summary }}
+        {{ .Summary | plainify | emojify }}
+        {{ end }} <a href="{{.RelPermalink}}">More...</a>
+      </p>
+      <ul class="list-unstyled pl-5">
+          {{ range .Params.links }}
+          {{ $pack := or .icon_pack "fas" }}
+          {{ $pack_prefix := $pack }}
+          {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+            {{ $pack_prefix = "fa" }}
+          {{ end }}
+          {{ $link := .url | default $page.RelPermalink }}
+          {{ $scheme := (urls.Parse $link).Scheme }}
+          {{ $target := "" }}
+          {{ if not $scheme }}
+            {{ $resource := $page.Resources.GetMatch $link }}
+            {{ if $resource }}
+              {{ $link = $resource.RelPermalink }}
+              {{ else }}
+              {{ $link = $link | relURL }}
+            {{ end }}
+          {{ else if in (slice "http" "https") $scheme }}
+            {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+          {{ end }}
+          <li> 
+            {{ if .icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} {{if .name}}mr-1{{end}}"></i>{{end}}
+            <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+            {{ with .name }}{{ . | safeHTML }}{{end}}
+          </a></li>
+        {{ end }}
+      </ul>
+    </li>
+    {{end}}
+    {{end}}
+  </ul>
+</div>
+
+{{- end -}}

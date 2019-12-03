@@ -20,6 +20,7 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
+| BaselineDefinition | <html>   <head>     </head>   <body> The <i>DocumentVersion </i>represents the definition of a baseline (see <i>BaselineSpecification</i>).  </body> </html> |
 | PartMaster | <html>   <head>     </head>   <body> Documents of this type describe the master data of a part / component (e.g. a <i>ConnectorHousing</i>, a&#160;<i>Terminal</i>, a <i>Wire</i>).   </body> </html>  |
 | NetworkArchitecture | <html>   <head>     </head>   <body>   </body> </html>  |
 | SystemSchematic | <html>   <head>     </head>   <body>   </body> </html>  |

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [CompositeUnit]({{< relref "compositeunit.md" >}}), [CustomUnit]({{< relref "customunit.md" >}}), [IECUnit]({{< relref "iecunit.md" >}}), [ImperialUnit]({{< relref "imperialunit.md" >}}), [OtherUnit]({{< relref "otherunit.md" >}}), [SIUnit]({{< relref "siunit.md" >}}), [USUnit]({{< relref "usunit.md" >}}) |
-
+| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/> [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/> [Unit System]({{< relref "../key-concepts/unit-system" >}})<br/> [VEC-Root]({{< relref "../xml-representation-of-the-model/vec-root" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,8 +29,9 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | 0..* | baseUnit | 1 |  |
 | [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 0..* | baseUnit | 1 |  |
+| [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}) |  | baseUnit | 1 | <html>   <head>     </head>   <body> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimeter).</body> </html> |
+| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | 0..* | baseUnit | 1 |  |
 | [CompositeUnit]({{< relref "compositeunit.md" >}}) |  | factors | 1..* | <html>   <head>     </head>   <body>     <p> References the <i>Units</i> that are used as factors to create the <i>CompositeUnit.</i>      </p>    </body> </html>  |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | unit | 0..* | Specifies the Units used in the VEC-file.   |
 | [ValueWithUnit]({{< relref "valuewithunit.md" >}}) | 0..* | unitComponent | 1 | References the unit of the value.   |

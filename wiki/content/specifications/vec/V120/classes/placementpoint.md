@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/> [Instances of Placeable Components]({{< relref "../instances-of-components/instances-of-placeable-components" >}})<br/> [Placeable Elements]({{< relref "../description-of-components/placeable-elements" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,10 +30,11 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | 0..* | placementPoint | 1 | <html>   <head>     </head>   <body>     <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p>    </body> </html>  |
+| [CableDuctOutlet]({{< relref "cableductoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p>    </body> </html>  |
+| [PlacementPointPosition]({{< relref "placementpointposition.md" >}}) | 0..* | placementPoint | 1 |  |
 | [WireReception]({{< relref "wirereception.md" >}}) | 0..* | placementPoint | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p>    </body> </html>  |
 | [FittingOutlet]({{< relref "fittingoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoint</i> that represents this <i>FittingOutlet</i> in a PlaceableElementSpecification.      </p>    </body> </html>  |
 | [CableLeadThrough]({{< relref "cableleadthrough.md" >}}) | 0..* | placementPoint | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableLeadThrough</i> in a PlaceableElementSpecification.      </p>    </body> </html>  |
-| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | placementPoint | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p>    </body> </html>  |
+| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | 0..* | placementPoint | 1 | <html>   <head>     </head>   <body>     <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p>    </body> </html>  |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | 0..* | placementPoint | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p>    </body> </html>  |
-| [CableDuctOutlet]({{< relref "cableductoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p>    </body> </html>  |
+| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | placementPoint | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p>    </body> </html>  |

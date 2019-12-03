@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/> [Hierarchical Topologies]({{< relref "../topology-and-geometry/hierarchical-topologies" >}})<br/> [Locations]({{< relref "../topology-and-geometry/locations" >}})<br/> [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/> [Topology Zones]({{< relref "../topology-and-geometry/topology-zones" >}})<br/> [Topology- and Topology Group Specification]({{< relref "../topology-and-geometry/topology--and-topology-group-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,15 +32,15 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TopologyNode]({{< relref "topologynode.md" >}}) | startNode | 1 | 0..* | References the TopologyNode where the TopologySegment starts.   |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | endNode | 1 | 0..* | References the TopologyNode where the TopologySegment ends.   |
-| [SegmentLength]({{< relref "segmentlength.md" >}}) | lengthInformation | 0..* | 1 | Specifies the different SegmentLengths of the TopologySegment.   |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | startNode | 1 | 0..* | References the TopologyNode where the TopologySegment starts.   |
 | [SegmentCrossSectionArea]({{< relref "segmentcrosssectionarea.md" >}}) | crossSectionAreaInformation | 0..* | 1 | Specifies the different SegmentCrossSectionAreas of the TopologySegment.   |
+| [SegmentLength]({{< relref "segmentlength.md" >}}) | lengthInformation | 0..* | 1 | Specifies the different SegmentLengths of the TopologySegment.   |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [ZoneAssignment]({{< relref "zoneassignment.md" >}}) | 0..* | assignedSegment | 1 | <html>   <head>     </head>   <body> The <i>TopologySegment</i> that is assigned to <i>TopologyZone</i> with this <i>ZoneAssignment.</i></body> </html> |
-| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | innerSegment |  |  |
+| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | innerSegment | 1 |  |
 | [Routing]({{< relref "routing.md" >}}) | 0..* | mandatorySegment | 0..* | Specifies some constraints for the routing. If the path of the routing is recalculated the referenced segments must be visited.   |
 | [SegmentLocation]({{< relref "segmentlocation.md" >}}) | 0..* | referencedSegment | 1 | References the TopologieSegment on which the Location is located.   |
 | [GeometrySegment]({{< relref "geometrysegment.md" >}}) | 0..* | referenceSegment | 0..1 | References the TopologySegment that is represented by the GeometrySegment.   |

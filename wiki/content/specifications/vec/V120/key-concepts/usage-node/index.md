@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: key-concepts/usage-node    
     parent: key-concepts
-    weight: 1001007 
+    weight: 1001008 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1001007
+weight: 1001008
 ---
 {{< svgfigure src="usage-node.png" width="889" height="773" caption="Usage Node" numbered="true" >}}
   {{< svglink relref="../classes/project.md" x="658.0" y="329.0" width="217.0" height="118.0" >}}

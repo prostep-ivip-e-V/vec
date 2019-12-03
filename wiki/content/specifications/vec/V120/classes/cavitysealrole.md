@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Contacting Specification]({{< relref "../connectivity/contacting-specification" >}})<br/> [Instances of Cavity Seals and Cavity Plugs]({{< relref "../instances-of-components/instances-of-cavity-seals-and-cavity-plugs" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

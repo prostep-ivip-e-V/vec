@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/> [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -41,5 +41,6 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
+| [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}) | 0..1 | boundingBoxPositioning | 0..1 | <html>   <head>     </head>   <body> The transformation that defines the positioning of the bounding box in coordinate system of the component.</body> </html> |
 | [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | 0..1 | orientation | 0..1 | Specifies the orientation of the view item.  |
 | [BuildingBlockPositioning3D]({{< relref "buildingblockpositioning3d.md" >}}) | 0..1 | positioning | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the positioning of the building block in the harness geometry.      </p>    </body> </html>  |

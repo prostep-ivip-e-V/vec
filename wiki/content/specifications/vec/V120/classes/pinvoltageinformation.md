@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Pinning Information & Pinning Variance]({{< relref "../description-of-components/pinning-information-pinning-variance" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

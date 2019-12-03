@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Pinning Information & Pinning Variance]({{< relref "../description-of-components/pinning-information-pinning-variance" >}})<br/> [Signal Specification]({{< relref "../connectivity/signal-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -41,14 +41,14 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | recommendedConductorSpecification | 0..1 |  | <html>   <head>     </head>   <body>     <p> Defines a recommended Specification for the cores that implement this signal.      </p>    </body> </html>  |
 | [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | recommendedInsulationSpecification | 0..1 |  | <html>   <head>     </head>   <body>     <p> Defines a recommended Specification for the insulation (e.g. the color) that implements this signal.      </p>    </body> </html>  |
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..1 |  |  |
+| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | recommendedConductorSpecification | 0..1 |  | <html>   <head>     </head>   <body>     <p> Defines a recommended Specification for the cores that implement this signal.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 0..* | signal | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p>    </body> </html>  |
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | signal | 0..1 | References the signal that is transmitted by the WireElementReference.  |
 | [SignalSpecification]({{< relref "signalspecification.md" >}}) | 1 | signal | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the signals.      </p>    </body> </html>  |
-| [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | signal | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p>    </body> </html>  |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | signal | 0..1 | References the signal that is transmitted by the connection.  |
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | signal | 0..1 | References the signal that is transmitted by the WireElementReference.  |
+| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 0..* | signal | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p>    </body> </html>  |
+| [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | signal | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p>    </body> </html>  |

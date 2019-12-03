@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [Location]({{< relref "location.md" >}}), [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) |
-
+| **Usage in Diagrams**   | [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

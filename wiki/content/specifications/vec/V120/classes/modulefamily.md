@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Harness and Variants]({{< relref "../composite-part-descriptions/harness-and-variants" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

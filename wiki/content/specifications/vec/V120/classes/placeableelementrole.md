@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Placeable Components]({{< relref "../instances-of-components/instances-of-placeable-components" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,9 +29,9 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placementPointReference | 0..* | 1 | <html>   <head>     </head>   <body>   </body> </html>  |
-| [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) | measurementPointReference | 0..* | 1 |  |
 | [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | placeableElementSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PlaceableElementSpecification</i> that is instanced by this <i>PlaceableElementRole.</i>      </p>    </body> </html>  |
+| [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) | measurementPointReference | 0..* | 1 |  |
+| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placementPointReference | 0..* | 1 | <html>   <head>     </head>   <body>   </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

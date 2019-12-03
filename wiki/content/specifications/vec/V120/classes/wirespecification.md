@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Wires]({{< relref "../instances-of-components/instances-of-wires" >}})<br/> [Wire]({{< relref "../description-of-components/wire" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

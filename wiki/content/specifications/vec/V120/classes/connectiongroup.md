@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Connection Specification]({{< relref "../connectivity/connection-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,12 +32,12 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Connection]({{< relref "connection.md" >}}) | connection | 2..* | 0..* | References the Connections that are grouped by the ConnectionGroup.   |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | subGroup | 0..* | 0..1 | Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup.  |
+| [Connection]({{< relref "connection.md" >}}) | connection | 2..* | 0..* | References the Connections that are grouped by the ConnectionGroup.   |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) |  | connectionGroup | 0..1 | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.</body> </html> |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 0..1 | connectionGroup | 0..* | Specifies the ConnectionGroup defined by the ConnectionSpecification.  |
 | [WireGrouping]({{< relref "wiregrouping.md" >}}) |  | connectionGroup | 0..1 | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i> </body> </html> |
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) |  | connectionGroup | 0..1 | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.</body> </html> |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..1 | subGroup | 0..* | Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup.  |

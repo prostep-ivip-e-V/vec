@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: topology-and-geometry/routing    
     parent: topology-and-geometry
-    weight: 1005009 
+    weight: 1005010 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005009
+weight: 1005010
 ---
 {{< svgfigure src="routing.png" width="791" height="474" caption="Routing" numbered="true" >}}
   {{< svglink relref="../classes/path.md" x="20.0" y="232.0" width="89.0" height="43.0" >}}

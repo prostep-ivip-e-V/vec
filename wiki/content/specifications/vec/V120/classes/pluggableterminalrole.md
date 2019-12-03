@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [TerminalRole]({{< relref "terminalrole.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Terminals]({{< relref "../instances-of-components/instances-of-terminals" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
