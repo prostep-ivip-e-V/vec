@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** | [AntennaSpecification]({{< relref "antennaspecification.md" >}}), [BatterySpecification]({{< relref "batteryspecification.md" >}}), [CapacitorSpecification]({{< relref "capacitorspecification.md" >}}), [DiodeSpecification]({{< relref "diodespecification.md" >}}), [FuseSpecification]({{< relref "fusespecification.md" >}}), [MultiFuseSpecification]({{< relref "multifusespecification.md" >}}), [PotentialDistributorSpecification]({{< relref "potentialdistributorspecification.md" >}}), [RelaySpecification]({{< relref "relayspecification.md" >}}) |
-
+| **Usage in Diagrams**   | [EE-Component subclasses]({{< relref "../description-of-components/ee-component-subclasses" >}})<br/> [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [Instances of EE-Components]({{< relref "../instances-of-components/instances-of-ee-components" >}})<br/> [Multi Fuse]({{< relref "../description-of-components/multi-fuse" >}})<br/> [Supplementary Parts]({{< relref "../description-of-components/supplementary-parts" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,10 +32,10 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ExtensionSlot]({{< relref "extensionslot.md" >}}) | extensionSlots | 0..* | 1 | Specifies the available ExtensionSlots of the EEComponent.  |
 | [HousingComponent]({{< relref "housingcomponent.md" >}}) | housingComponent | 0..* | 1 | Specifies the available connector interfaces of the EEComponent.   |
-| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | connections | 0..* | 1 |  |
+| [ExtensionSlot]({{< relref "extensionslot.md" >}}) | extensionSlots | 0..* | 1 | Specifies the available ExtensionSlots of the EEComponent.  |
 | [SwitchingState]({{< relref "switchingstate.md" >}}) | states | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the available <i>SwitchingStates</i> of the EEComponent.      </p>    </body> </html>  |
+| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | connections | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: topology-and-geometry/placement-and-dimensions    
     parent: topology-and-geometry
-    weight: 1005007 
+    weight: 1005008 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005007
+weight: 1005008
 ---
 {{< svgfigure src="placement-and-dimensions.png" width="856" height="807" caption="Placement and Dimensions" numbered="true" >}}
   {{< svglink relref="../classes/path.md" x="651.0" y="497.0" width="89.0" height="43.0" >}}

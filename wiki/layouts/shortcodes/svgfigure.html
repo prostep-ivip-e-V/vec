@@ -11,7 +11,7 @@
 
 <figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
     <svg width="100%" height="100%" viewBox="0 0 {{$width}} {{$height}}">
-        <image  xlink:href="{{$image_src}}"></image>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" height="{{$height}}px" width="{{$width}}px" xlink:href="{{$image_src}}"></image>
         {{.Inner}}
     </svg>
 {{ if $caption }}

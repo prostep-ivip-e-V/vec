@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Hierarchical Topologies]({{< relref "../topology-and-geometry/hierarchical-topologies" >}})<br/> [Locations]({{< relref "../topology-and-geometry/locations" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/> [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,7 +32,7 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | mappedPosition | 1 |  |
-| [Routing]({{< relref "routing.md" >}}) | 0..1 | path | 1 | Specifies a Path on the topology that is used for the routing.   |
-| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | path | 0..1 | Specifies a path in the topology along which the dimension is defined.   |
+| [SegmentMapping]({{< relref "segmentmapping.md" >}}) | 0..1 | mappedPosition | 1 |  |
 | [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | path | 0..1 | Specifies the topology path defining the way the OnWayPlacement takes in the topology.   |
+| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | path | 0..1 | Specifies a path in the topology along which the dimension is defined.   |
+| [Routing]({{< relref "routing.md" >}}) | 0..1 | path | 1 | Specifies a Path on the topology that is used for the routing.   |

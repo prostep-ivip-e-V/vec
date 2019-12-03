@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [External Mapping]({{< relref "../external-mapping/external-mapping" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,5 +30,5 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <html>   <head>     </head>   <body>     <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p>    </body> </html>  |
 | [ExternalMapping]({{< relref "externalmapping.md" >}}) | mappings | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the mappings of individual element.      </p>    </body> </html>  |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <html>   <head>     </head>   <body>     <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p>    </body> </html>  |

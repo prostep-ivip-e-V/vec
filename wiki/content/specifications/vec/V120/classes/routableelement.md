@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [Connection]({{< relref "connection.md" >}}), [WireElementReference]({{< relref "wireelementreference.md" >}}) |
-
+| **Usage in Diagrams**   | [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

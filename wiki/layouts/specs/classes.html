@@ -1,0 +1,91 @@
+{{- define "main" -}}
+{{ $current_page := . }}
+
+<div class="container-fluid specs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 specs-sidebar">
+      {{ partial "specs_sidebar" . }}
+    </div>
+
+    {{ if .Params.toc }}
+    <div class="d-none d-xl-block col-xl-2 specs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="specs-toc-title">{{ i18n "on_this_page" }}</a></li>
+      </ul>
+
+      {{ .TableOfContents }}
+
+      {{ partial "specs_toc_foot" . }}
+    </div>
+    {{ end }}
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 specs-content" role="main">
+
+      <article class="article">
+
+        <div class="specs-article-container">
+          <h1>{{ .Title }}</h1>
+
+          <div class="article-style">
+            {{ .Content }}
+          </div>
+
+          <!-- create a list with all uppercase letters -->
+          {{ $letters := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+
+          <div>
+          {{ range $letters }}
+            <a href="#{{.}}">{{.}}</a>
+          {{ end }}
+          </div>
+
+          <!-- range all pages sorted by their title -->
+          {{ range .Data.Pages.ByTitle }}
+            <!-- get the first character of each title. Assumes that the title is never empty! -->
+            {{ $firstChar := substr .Title 0 1 | upper }}
+          
+            <!-- in case $firstChar is a letter -->
+            {{ if $firstChar | in $letters }}
+              <!-- get the current letter -->
+              {{ $curLetter := $.Scratch.Get "curLetter" }}
+              <!-- if $curLetter isn't set or the letter has changed -->
+              {{ if ne $firstChar $curLetter }}
+              <!-- update the current letter and print it -->
+              {{ $.Scratch.Set "curLetter" $firstChar }}
+              {{ if ne $firstChar "A" }}
+                      </ul>
+                    </div>
+                </div>
+              </div>
+              {{ end }}
+              <div class="card" id="{{ $firstChar }}">
+                  <div class="card-body">
+                      <h3 class="card-title mt-0">{{ $firstChar }}</h3>
+                      <div class="card-text">
+                          <ul class="list-unstyled">
+              {{ end }}
+
+            <li><a  href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+          {{ end }} 
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+        <div class="body-footer">
+          <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
+
+          {{ partial "page_edit" . }}
+
+          {{ partial "comments" . }}
+        </div>
+
+      </article>
+
+      {{ partial "site_footer" . }}
+
+    </main>
+  </div>
+</div>
+{{- end -}}

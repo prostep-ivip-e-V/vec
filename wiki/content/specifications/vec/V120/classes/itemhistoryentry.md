@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Item History]({{< relref "../pdm-information/item-history" >}})<br/> [VEC-Root]({{< relref "../xml-representation-of-the-model/vec-root" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,8 +29,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | successorVersion | 1 | 0..* | References the ItemVersion that is the successor in the ItemHistoryEntry.   |
 | [ItemVersion]({{< relref "itemversion.md" >}}) | predecessorVersion | 1 | 0..* | References the ItemVersion that is the predecessor in the ItemHistoryEntry.   |
+| [ItemVersion]({{< relref "itemversion.md" >}}) | successorVersion | 1 | 0..* | References the ItemVersion that is the successor in the ItemHistoryEntry.   |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

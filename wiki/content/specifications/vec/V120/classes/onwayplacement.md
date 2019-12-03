@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Placement]({{< relref "placement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,6 +30,6 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Location]({{< relref "location.md" >}}) | startLocation | 1 | 0..1 | References the Location where OnWayPlacement starts.   |
 | [Path]({{< relref "path.md" >}}) | path | 0..1 | 0..1 | Specifies the topology path defining the way the OnWayPlacement takes in the topology.   |
+| [Location]({{< relref "location.md" >}}) | startLocation | 1 | 0..1 | References the Location where OnWayPlacement starts.   |
 | [Location]({{< relref "location.md" >}}) | endLocation | 1 | 0..1 | References the Location where OnWayPlacement ends.   |
