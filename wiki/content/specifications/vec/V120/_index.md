@@ -1,5 +1,4 @@
 
-
 ---
 title: VEC Version 1.2.0 Test Publication
 linktitle: Overview
@@ -15,4 +14,4 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
 ---
-Sumsi Dumsi
+Hier müssen wir uns noch einen Text einfallen lassen.
