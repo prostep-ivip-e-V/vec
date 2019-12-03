@@ -39,6 +39,7 @@
           {{ end }}
           </div>
 
+          <div class="card-columns">
           <!-- range all pages sorted by their title -->
           {{ range .Data.Pages.ByTitle }}
             <!-- get the first character of each title. Assumes that the title is never empty! -->
@@ -64,14 +65,14 @@
                       <div class="card-text">
                           <ul class="list-unstyled">
               {{ end }}
-
-            <li><a  href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            <li><a  href="{{ .RelPermalink }}">{{ .Title | truncate 22 }}</a></li>
             {{ end }}
           {{ end }} 
                     </ul>
                 </div>
             </div>
           </div>
+        </div>
 
         <div class="body-footer">
           <p>{{ i18n "last_updated" }} {{ $.Lastmod.Format site.Params.date_format }}</p>
