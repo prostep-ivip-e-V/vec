@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Wires]({{< relref "../instances-of-components/instances-of-wires" >}})<br/> [Wire]({{< relref "../description-of-components/wire" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,8 +29,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElement]({{< relref "wireelement.md" >}}) | subWireElement | 0..* | 0..1 | <html>   <head>     </head>   <body>     <p> Defines the <i>subWireElements </i>of this <i>WireElement</i>. The <i>subWireElements </i>shall be consistent with the <i>subWireElementSpecifications</i> of the <i>WireElementSpecification </i>referenced by this <i>WireElement </i>and shall resemble that hierarchy.      </p>  </body> </html> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | wireElementSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p>    </body> </html>  |
+| [WireElement]({{< relref "wireelement.md" >}}) | subWireElement | 0..* | 0..1 | <html>   <head>     </head>   <body>     <p> Defines the <i>subWireElements </i>of this <i>WireElement</i>. The <i>subWireElements </i>shall be consistent with the <i>subWireElementSpecifications</i> of the <i>WireElementSpecification </i>referenced by this <i>WireElement </i>and shall resemble that hierarchy.      </p>  </body> </html> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

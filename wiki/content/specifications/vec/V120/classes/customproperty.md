@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [BooleanValueProperty]({{< relref "booleanvalueproperty.md" >}}), [ComplexProperty]({{< relref "complexproperty.md" >}}), [DateValueProperty]({{< relref "datevalueproperty.md" >}}), [DoubleValueProperty]({{< relref "doublevalueproperty.md" >}}), [IntegerValueProperty]({{< relref "integervalueproperty.md" >}}), [LocalizedStringProperty]({{< relref "localizedstringproperty.md" >}}), [NumericalValueProperty]({{< relref "numericalvalueproperty.md" >}}), [SimpleValueProperty]({{< relref "simplevalueproperty.md" >}}), [ValueRangeProperty]({{< relref "valuerangeproperty.md" >}}) |
-
+| **Usage in Diagrams**   | [Extensibility with Custom Properties]({{< relref "../key-concepts/extensibility-with-custom-properties" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

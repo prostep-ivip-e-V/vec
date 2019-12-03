@@ -19,7 +19,7 @@ Abstract super-class for Localized text values.
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [LocalizedString]({{< relref "localizedstring.md" >}}), [LocalizedTypedString]({{< relref "localizedtypedstring.md" >}}) |
-
+| **Usage in Diagrams**   | [Localization of Values]({{< relref "../key-concepts/localization-of-values" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

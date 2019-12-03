@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Variant Structure]({{< relref "../key-concepts/variant-structure" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -33,5 +33,5 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [VariantGroup]({{< relref "variantgroup.md" >}}) | 0..* | variantCode | 0..* | References the VariantCodes that are member of the VariantGroup.   |
 | [VariantCodeSpecification]({{< relref "variantcodespecification.md" >}}) | 1 | variantCode | 0..* | Specifies the individual VariantCodes defined in the VariantCodeSpecification.  |
+| [VariantGroup]({{< relref "variantgroup.md" >}}) | 0..* | variantCode | 0..* | References the VariantCodes that are member of the VariantGroup.   |

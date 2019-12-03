@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [3D Curves]({{< relref "../topology-and-geometry/3d-curves" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,12 +30,12 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 1 | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.  |
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
 | [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | placedElementViewItem3D | 0..* | 1 | Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D.   |
+| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
+| [GeometrySegment3D]({{< relref "geometrysegment3d.md" >}}) | geometrySegment | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p>  </body> </html> |
+| [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 1 | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.  |
 | [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode3Ds defined by the BuildingBlockSpecification3D.  |
 | [TopologyZone]({{< relref "topologyzone.md" >}}) |  | 0..1 | 0..* | <html>   <head>     </head>   <body> References the Zone that is building block represents. This shall be a TopologyZone with the type &quot;DmuZone&quot;.</body> </html> |
-| [GeometrySegment3D]({{< relref "geometrysegment3d.md" >}}) | geometrySegment | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p>  </body> </html> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

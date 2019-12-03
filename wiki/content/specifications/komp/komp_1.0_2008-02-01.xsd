@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--KOMP XML Schema Version 1.0 © VDA, ProSTEP iViP 2008-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:KOMP="http://www.prostep.org/Car_electric_container/KOMPSchema" targetNamespace="http://www.prostep.org/Car_electric_container/KOMPSchema">
+	<xs:annotation>
+		<xs:documentation>
+				
+           	Car Electric Container Component XML Schema
+                
+	</xs:documentation>
+		<xs:appinfo source="http://www.prostep.org/Car_electric_container/KOMPSchema">
+			<KOMP:SchemaInfo name="KOMP.xsd" date="2008-02-01" version="1.0" status="released"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:complexType name="Approval">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Department" type="xs:string" minOccurs="0"/>
+			<xs:element name="Date" type="xs:string"/>
+			<xs:element name="Type_of_approval" type="xs:string"/>
+			<xs:element name="Is_applied_to" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to Part_with_title_block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Approvals">
+		<xs:sequence>
+			<xs:element name="Approval" type="KOMP:Approval" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Assembly_part_position">
+		<xs:sequence>
+			<xs:element name="Quantity" type="KOMP:Numerical_value"/>
+			<xs:element name="Contained_part" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Part</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Bolt_mounted_fixing">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Fixing">
+				<xs:sequence>
+					<xs:element name="Bolt_type" type="KOMP:Bolt_type" minOccurs="0"/>
+					<xs:element name="Bolt_diameter" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Bolt_height" type="KOMP:Numerical_value" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cable_designator">
+		<xs:sequence>
+			<xs:element name="Type" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cavity">
+		<xs:sequence>
+			<xs:element name="Available" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Specification" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Slot_specification_cavity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cavity_equipment">
+		<xs:sequence>
+			<xs:element name="Cavity" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to Cavity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Pin" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Pin</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Terminal" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Pluggable_terminal</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cavity_plug">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Hardness" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Cavity_plug_type" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Cavity_plug_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cavity_plug_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Specification">
+				<xs:sequence>
+					<xs:element name="Cavity_diameter" type="KOMP:Value_range" minOccurs="0"/>
+					<xs:element name="Sealing_specification" type="KOMP:Sealing_specification" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cavity_seal">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Hardness" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Cavity_seal_type" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Cavity_seal_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cavity_seal_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Specification">
+				<xs:sequence>
+					<xs:element name="Cavity_diameter" type="KOMP:Value_range" minOccurs="0"/>
+					<xs:element name="Wire_diameter" type="KOMP:Value_range" minOccurs="0"/>
+					<xs:element name="Sealing_specification" type="KOMP:Sealing_specification" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cavity_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Specification">
+				<xs:sequence>
+					<xs:element name="Maximum_wire_diameter" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Primary_locking" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Sealed" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Design" type="KOMP:Cavity_design" minOccurs="0"/>
+					<xs:element name="Angle" type="xs:double" minOccurs="0" maxOccurs="2"/>
+					<xs:element name="Plug_type" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Cavity_plug_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Seal_type" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Cavity_seal_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Terminal_type" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Terminal_reception_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Change">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change_request" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change_date" type="xs:string" minOccurs="0"/>
+			<xs:element name="Responsible_designer" type="xs:string"/>
+			<xs:element name="Designer_department" type="xs:string"/>
+			<xs:element name="Approver_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Approver_department" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Coding">
+		<xs:sequence>
+			<xs:element name="Coding" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Color">
+		<xs:sequence>
+			<xs:element name="Color_key" type="xs:string"/>
+			<xs:element name="Color_reference_system" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:element name="Component_model" type="KOMP:Component_model"/>
+	<xs:complexType name="Component_model">
+		<xs:sequence>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="Model_name" type="xs:string"/>
+			<xs:element name="Model_version" type="xs:string"/>
+			<xs:element name="Project_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Model_year" type="xs:string"/>
+			<xs:element name="Parts" type="KOMP:Parts" minOccurs="0"/>
+			<xs:element name="Specifications" type="KOMP:Specifications" minOccurs="0"/>
+			<xs:element name="Custom_properties" type="KOMP:Custom_properties" minOccurs="0"/>
+			<xs:element name="External_references" type="KOMP:External_references" minOccurs="0"/>
+			<xs:element name="Units" type="KOMP:Units" minOccurs="0"/>
+			<xs:element name="Wire_specifications" type="KOMP:Wire_specifications" minOccurs="0"/>
+			<xs:element name="Creations" type="KOMP:Creations" minOccurs="0"/>
+			<xs:element name="Approvals" type="KOMP:Approvals" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+		<xs:attribute name="version_id" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Connector_housing">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Slot" type="KOMP:Slot" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Connector_occurrence">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Abbreviation" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Part" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Connector_housing</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Cavity_equipment" type="KOMP:Cavity_equipment" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Core">
+		<xs:sequence>
+			<xs:element name="Cross_section_area" type="KOMP:Numerical_value"/>
+			<xs:element name="Resistance_per_metre" type="KOMP:Numerical_value"/>
+			<xs:element name="Mass_information_per_metre" type="KOMP:Numerical_value"/>
+			<xs:element name="Core_material" type="KOMP:Material" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Creation">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Department" type="xs:string"/>
+			<xs:element name="Date" type="xs:string"/>
+			<xs:element name="Is_applied_to" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to Part_with_title_block</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Creations">
+		<xs:sequence>
+			<xs:element name="Creation" type="KOMP:Creation" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Custom_properties">
+		<xs:sequence>
+			<xs:element name="Custom_property" type="KOMP:Custom_property" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Custom_property">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+			<xs:element name="Related_core" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Core</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_part" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_specification" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_terminal_reception" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Terminal_reception</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_wire_reception" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Wire_reception</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_wire_specification" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Wire_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="EE_Component">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Connector" type="KOMP:Connector_occurrence" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Pin" type="KOMP:Pin" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="External_reference">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part_with_title_block">
+				<xs:sequence>
+					<xs:element name="Document_type" type="xs:string" minOccurs="0"/>
+					<xs:element name="Document_number" type="xs:string" minOccurs="0"/>
+					<xs:element name="Change_level" type="xs:string" minOccurs="0"/>
+					<xs:element name="File_name" type="xs:string" minOccurs="0"/>
+					<xs:element name="Location" type="xs:string" minOccurs="0"/>
+					<xs:element name="Data_format" type="xs:string" minOccurs="0"/>
+					<xs:element name="Creating_system" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="External_references">
+		<xs:sequence>
+			<xs:element name="External_reference" type="KOMP:External_reference" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Fixing">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Offset" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Segment_diameter" type="KOMP:Value_range" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Grommet">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Hardness" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Hole_diameter" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Plate_thickness" type="KOMP:Value_range" minOccurs="0"/>
+					<xs:element name="Segment_diameter" type="KOMP:Value_range" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Hole_mounted_fixing">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Fixing">
+				<xs:sequence>
+					<xs:element name="Hole_diameter" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Plate_thickness" type="KOMP:Value_range" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Localized_string">
+		<xs:sequence>
+			<xs:element name="Language_code" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Mass_information">
+		<xs:sequence>
+			<xs:element name="Determination_type" type="KOMP:Value_determination" minOccurs="0"/>
+			<xs:element name="Value" type="KOMP:Numerical_value"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Material">
+		<xs:sequence>
+			<xs:element name="Material_key" type="xs:string"/>
+			<xs:element name="Material_reference_system" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Norm_code">
+		<xs:sequence>
+			<xs:element name="Norm_system" type="xs:string"/>
+			<xs:element name="Norm_code" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Numerical_value">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Value_with_unit">
+				<xs:sequence>
+					<xs:element name="Value_component" type="xs:double"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Part">
+		<xs:sequence>
+			<xs:element name="Predecessor_part_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Abbreviation" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Description" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Degree_of_maturity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Copyright_note" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Temperature_range" type="KOMP:Value_range" minOccurs="0"/>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_part" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Mass_information" type="KOMP:Mass_information" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Assembly_part_position" type="KOMP:Assembly_part_position" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Change" type="KOMP:Change" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Color_information" type="KOMP:Color" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Identification" type="KOMP:Part_identification" maxOccurs="unbounded"/>
+			<xs:element name="Material_information" type="KOMP:Material" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Norm_code" type="KOMP:Norm_code" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Processing_information" type="KOMP:Processing_instruction" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Robustness_specification" type="KOMP:Robustness_specification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Part_identification">
+		<xs:sequence>
+			<xs:element name="Role" type="KOMP:Role" minOccurs="0"/>
+			<xs:element name="Company_name" type="xs:string"/>
+			<xs:element name="Part_number" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Part_with_title_block" abstract="true">
+		<xs:sequence>
+			<xs:element name="Project_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_2" type="xs:string"/>
+			<xs:element name="Car_classification_level_3" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_4" type="xs:string" minOccurs="0"/>
+			<xs:element name="Model_year" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Parts">
+		<xs:sequence>
+			<xs:element name="Part" type="KOMP:Part" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Pin">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Signal_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Signal_direction" type="KOMP:Signal_direction" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Pluggable_terminal">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Terminal">
+				<xs:sequence>
+					<xs:element name="Sealing_specification" type="KOMP:Sealing_specification" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Processing_instruction">
+		<xs:sequence>
+			<xs:element name="Instruction_type" type="xs:string"/>
+			<xs:element name="Instruction_value" type="KOMP:Localized_string" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Ring_terminal">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Terminal">
+				<xs:sequence>
+					<xs:element name="Bolt_diameter" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Thickness" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Bolt_type" type="KOMP:Bolt_type" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Robustness_specification">
+		<xs:sequence>
+			<xs:element name="Robustness_class" type="KOMP:Robustness_class" minOccurs="0"/>
+			<xs:element name="Robustness_class_reference_system" type="xs:string" minOccurs="0"/>
+			<xs:element name="Robustness_class_key" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Sealing_specification">
+		<xs:sequence>
+			<xs:element name="Sealing_class" type="KOMP:Sealing_class" minOccurs="0"/>
+			<xs:element name="Sealing_class_reference_system" type="xs:string" minOccurs="0"/>
+			<xs:element name="Sealing_class_key" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Shield_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Wire_specification">
+				<xs:sequence>
+					<xs:element name="Shield_type" type="KOMP:Shield_type" minOccurs="0"/>
+					<xs:element name="Custom_shield_type" type="xs:string"/>
+					<xs:element name="Shielded_wire" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wire_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Shield" type="KOMP:Core" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Single_core_wire_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Wire_specification">
+				<xs:sequence>
+					<xs:element name="Base_colour" type="KOMP:Color" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Core" type="KOMP:Core"/>
+					<xs:element name="First_identification_color" type="KOMP:Color" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Second_identification_color" type="KOMP:Color" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Slot">
+		<xs:sequence>
+			<xs:element name="Slot_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Sealing_type" type="KOMP:Connector_sealing" minOccurs="0"/>
+			<xs:element name="Coding" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Coding</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Specification" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Slot_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Cavity" type="KOMP:Cavity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Color_information" type="KOMP:Color" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Sealing_specification" type="KOMP:Sealing_specification" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Slot_layout">
+		<xs:sequence>
+			<xs:element name="Grid_x" type="KOMP:Numerical_value" minOccurs="0"/>
+			<xs:element name="Grid_y" type="KOMP:Numerical_value" minOccurs="0"/>
+			<xs:element name="Row_count" type="xs:integer" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Slot_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Specification">
+				<xs:sequence>
+					<xs:element name="Gender" type="KOMP:Gender" minOccurs="0"/>
+					<xs:element name="Secondary_locking" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="EMV_protection_required" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Layout_type" type="KOMP:Slot_layout_type" minOccurs="0"/>
+					<xs:element name="Cavity" type="KOMP:Slot_specification_cavity" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Coding" type="KOMP:Coding" minOccurs="0"/>
+					<xs:element name="Slot_layout" type="KOMP:Slot_layout" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Slot_specification_cavity">
+		<xs:sequence>
+			<xs:element name="Cavity_number" type="xs:string"/>
+			<xs:element name="Cavity_specification" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Cavity_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Special_wire_position">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Related_wire" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Wire_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Special_wire_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Wire_specification">
+				<xs:sequence>
+					<xs:element name="Wire_element" type="KOMP:Special_wire_position" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Specification" abstract="true">
+		<xs:sequence>
+			<xs:element name="Specification_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Abbreviation" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Description" type="KOMP:Localized_string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Specifications">
+		<xs:sequence>
+			<xs:element name="Specification" type="KOMP:Specification" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Splice_terminal">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Terminal"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Terminal">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Angle" type="xs:double" minOccurs="0" maxOccurs="2"/>
+					<xs:element name="Terminal_reception_specification" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Terminal_reception_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Cable_designator" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Cable_designator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Plating_material" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Material</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Terminal_reception" type="KOMP:Terminal_reception" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Wire_reception" type="KOMP:Wire_reception" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Terminal_reception">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Gender" type="KOMP:Gender" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Terminal_reception_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Specification">
+				<xs:sequence>
+					<xs:element name="Reception_type" type="KOMP:Terminal_reception_type" minOccurs="0"/>
+					<xs:element name="Primary_locking" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Sealed" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Design" type="KOMP:Cavity_design" minOccurs="0"/>
+					<xs:element name="Custom_reception_type" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Unit">
+		<xs:sequence>
+			<xs:element name="Unit_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="SI_unit_name" type="KOMP:SI_unit_name" minOccurs="0"/>
+			<xs:element name="SI_unit_prefix" type="KOMP:SI_unit_prefix" minOccurs="0"/>
+			<xs:element name="SI_unit_dimension" type="KOMP:SI_unit_dimension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Units">
+		<xs:sequence>
+			<xs:element name="Unit" type="KOMP:Unit" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Value_range">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Value_with_unit">
+				<xs:sequence>
+					<xs:element name="Minimum" type="xs:double"/>
+					<xs:element name="Maximum" type="xs:double"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Value_with_unit">
+		<xs:sequence>
+			<xs:element name="Unit_component" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Specification" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wire_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wire_protection">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Part">
+				<xs:sequence>
+					<xs:element name="Bend_radius" type="KOMP:Numerical_value" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wire_reception">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Terminal_reception" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Terminal_reception</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Wire_reception_specification" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Wire_reception_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire_reception_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Specification">
+				<xs:sequence>
+					<xs:element name="Reception_type" type="KOMP:Wire_reception_type" minOccurs="0"/>
+					<xs:element name="Core_cross_section_area" type="KOMP:Value_range" minOccurs="0"/>
+					<xs:element name="Wire_diameter" type="KOMP:Value_range" minOccurs="0"/>
+					<xs:element name="Multi_contact" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Isolation_displacement_length" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Custom_reception_type" type="xs:string" minOccurs="0"/>
+					<xs:element name="Plating_material" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Material</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wire_specification" abstract="true">
+		<xs:sequence>
+			<xs:element name="Outside_diameter" type="KOMP:Numerical_value" minOccurs="0"/>
+			<xs:element name="Minimum_bend_radius" type="KOMP:Numerical_value" minOccurs="0"/>
+			<xs:element name="Cable_designator" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Cable_designator</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Isolation_material" type="KOMP:Material" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire_specifications">
+		<xs:sequence>
+			<xs:element name="Wire_specification" type="KOMP:Wire_specification" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wiring_group_position">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Related_wire" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Wire_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wiring_group_specification">
+		<xs:complexContent>
+			<xs:extension base="KOMP:Wire_specification">
+				<xs:sequence>
+					<xs:element name="Length_of_twist" type="KOMP:Numerical_value" minOccurs="0"/>
+					<xs:element name="Group_element" type="KOMP:Wiring_group_position" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="SI_unit_dimension">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="square"/>
+			<xs:enumeration value="cubic"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_unit_name">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metre"/>
+			<xs:enumeration value="kilogram"/>
+			<xs:enumeration value="second"/>
+			<xs:enumeration value="ampere"/>
+			<xs:enumeration value="kelvin"/>
+			<xs:enumeration value="hertz"/>
+			<xs:enumeration value="newton"/>
+			<xs:enumeration value="pascal"/>
+			<xs:enumeration value="joule"/>
+			<xs:enumeration value="watt"/>
+			<xs:enumeration value="coulomb"/>
+			<xs:enumeration value="volt"/>
+			<xs:enumeration value="farad"/>
+			<xs:enumeration value="ohm"/>
+			<xs:enumeration value="piece"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_unit_prefix">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="milli"/>
+			<xs:enumeration value="centi"/>
+			<xs:enumeration value="micro"/>
+			<xs:enumeration value="kilo"/>
+			<xs:enumeration value="mega"/>
+			<xs:enumeration value="tera"/>
+			<xs:enumeration value="nano"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Robustness_class">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Oil"/>
+			<xs:enumeration value="Petrol"/>
+			<xs:enumeration value="Water"/>
+			<xs:enumeration value="Detergent"/>
+			<xs:enumeration value="Antifreeze"/>
+			<xs:enumeration value="UV"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Role">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OEM"/>
+			<xs:enumeration value="Manufacturer"/>
+			<xs:enumeration value="Supplier"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Value_determination">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="calculated"/>
+			<xs:enumeration value="measured"/>
+			<xs:enumeration value="estimated"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Cavity_design">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Short"/>
+			<xs:enumeration value="Long"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Connector_sealing">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="No_sealing"/>
+			<xs:enumeration value="Single_cavity_sealing"/>
+			<xs:enumeration value="Slot_sealing"/>
+			<xs:enumeration value="Liquid_sealing"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Gender">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="male"/>
+			<xs:enumeration value="female"/>
+			<xs:enumeration value="undefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sealing_class">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Unsealed"/>
+			<xs:enumeration value="Contamination"/>
+			<xs:enumeration value="Complete"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Shield_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Meshwork"/>
+			<xs:enumeration value="Foil"/>
+			<xs:enumeration value="Custom_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Bolt_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Counter_nut"/>
+			<xs:enumeration value="Coarse_thread"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Terminal_reception_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ELO"/>
+			<xs:enumeration value="MQS"/>
+			<xs:enumeration value="DFK"/>
+			<xs:enumeration value="Custom_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Wire_reception_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Crimped"/>
+			<xs:enumeration value="Soldered"/>
+			<xs:enumeration value="Welded"/>
+			<xs:enumeration value="IDC"/>
+			<xs:enumeration value="Custom_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Slot_layout_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Regular"/>
+			<xs:enumeration value="Hybrid"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Signal_direction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="in"/>
+			<xs:enumeration value="out"/>
+			<xs:enumeration value="inout"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

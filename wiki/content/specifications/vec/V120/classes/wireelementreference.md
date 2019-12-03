@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [RoutableElement]({{< relref "routableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Wires]({{< relref "../instances-of-components/instances-of-wires" >}})<br/> [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/> [Wire Grouping Specification]({{< relref "../connectivity/wire-grouping-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -31,11 +31,11 @@ weight:
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [WireLength]({{< relref "wirelength.md" >}}) | wireLength | 0..* | 1 | Specifies the different length of a wire.   |
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.</body> </html> |
-| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the WireElementReference.  |
 | [WireEnd]({{< relref "wireend.md" >}}) | wireEnd | 0..* | 1 | Specifies the ends of the WireElementReference for contacting purposes.   |
-| [Connection]({{< relref "connection.md" >}}) | connection | 0..1 | 0..* | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341  |
 | [WireElement]({{< relref "wireelement.md" >}}) | referencedWireElement | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the WireElement that is represented by the WireElementReference.      </p>    </body> </html>  |
+| [Connection]({{< relref "connection.md" >}}) | connection | 0..1 | 0..* | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341  |
+| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the WireElementReference.  |
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.</body> </html> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
