@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/> [Instances of Placeable Components]({{< relref "../instances-of-components/instances-of-placeable-components" >}})<br/> [Placeable Elements]({{< relref "../description-of-components/placeable-elements" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,8 +32,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [MeasurementPoint]({{< relref "measurementpoint.md" >}}) | measurementPoint | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>MeasurementPoints</i> of an <i>PlaceableElement</i>.       </p>    </body> </html>  |
 | [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p>    </body> </html>  |
+| [MeasurementPoint]({{< relref "measurementpoint.md" >}}) | measurementPoint | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>MeasurementPoints</i> of an <i>PlaceableElement</i>.       </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [CartesianVector2D]({{< relref "cartesianvector2d.md" >}}), [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
-
+| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

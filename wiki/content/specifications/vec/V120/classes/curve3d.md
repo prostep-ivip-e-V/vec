@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [NURBSCurve]({{< relref "nurbscurve.md" >}}) |
-
+| **Usage in Diagrams**   | [3D Curves]({{< relref "../topology-and-geometry/3d-curves" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

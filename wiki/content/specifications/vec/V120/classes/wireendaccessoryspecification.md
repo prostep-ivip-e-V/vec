@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Terminals]({{< relref "../instances-of-components/instances-of-terminals" >}})<br/> [Wire End Accessory]({{< relref "../description-of-components/wire-end-accessory" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

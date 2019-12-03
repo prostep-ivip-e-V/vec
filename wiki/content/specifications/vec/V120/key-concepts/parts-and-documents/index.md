@@ -20,7 +20,7 @@ weight: 1001001
   {{< svglink relref="../classes/specification.md" x="302.0" y="588.0" width="217.0" height="67.0" >}}
   {{< svglink relref="../classes/aliasidentification.md" x="183.0" y="679.0" width="217.0" height="91.0" >}}
   {{< svglink relref="../classes/sheetorchapter.md" x="297.0" y="441.0" width="217.0" height="103.0" >}}
-  {{< svglink relref="../classes/documenttype.md" x="575.0" y="322.0" width="131.0" height="262.0" >}}
+  {{< svglink relref="../classes/documenttype.md" x="575.0" y="322.0" width="131.0" height="274.0" >}}
   {{< svglink relref="../classes/partversion.md" x="15.0" y="231.0" width="197.0" height="372.0" >}}
   {{< svglink relref="../classes/itemversion.md" x="15.0" y="77.0" width="526.0" height="91.0" >}}
   {{< svglink relref="../classes/extendableelement.md" x="15.0" y="7.0" width="526.0" height="34.0" >}}

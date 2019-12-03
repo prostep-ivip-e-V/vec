@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Default Dimensions]({{< relref "../topology-and-geometry/default-dimensions" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/> [Unit System]({{< relref "../key-concepts/unit-system" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,6 +30,6 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | tolerance | 0..1 |  |
 | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 0..1 | tolerance | 0..1 | Specifies the tolerance for the dimension.   |
+| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | tolerance | 0..1 |  |
 | [DefaultDimension]({{< relref "defaultdimension.md" >}}) | 0..1 | toleranceIndication | 1 |  |

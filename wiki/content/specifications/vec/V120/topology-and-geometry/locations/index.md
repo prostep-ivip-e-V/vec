@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: topology-and-geometry/locations    
     parent: topology-and-geometry
-    weight: 1005006 
+    weight: 1005007 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005006
+weight: 1005007
 ---
 {{< svgfigure src="locations.png" width="734" height="467" caption="Locations" numbered="true" >}}
   {{< svglink relref="../classes/path.md" x="630.0" y="253.0" width="89.0" height="43.0" >}}

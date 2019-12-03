@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Wires]({{< relref "../instances-of-components/instances-of-wires" >}})<br/> [Wire]({{< relref "../description-of-components/wire" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -41,10 +41,10 @@ weight:
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | conductorSpecification | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p>    </body> </html>  |
-| [FillerSpecification]({{< relref "fillerspecification.md" >}}) | fillerSpecification | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> If the <i>WireElement</i> is a filler then the specification of the filler is referenced here.      </p>    </body> </html>  |
-| [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | insulationSpecification | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> If the <i>WireElement</i> has an insulation then the specification of the insulation is referenced here.      </p>    </body> </html>  |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | subWireElementSpecification | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the contained subWireElements if the WireElement has sub elements. If a <i>WireElementSpecification </i>contains the same <i>WireElementSpecification </i>multiple times, then it shall be referenced as often as it occurs in the reality. Otherwise the <i>WireElementSpecification </i>wouldn't specify a wire element unambiguously, because the representation in the model would be the same, regardless of the number of sub elements. Therefore this association must not be realized with a &quot;set&quot; semantic.      </p>      <p> &#160;      </p>  </body> </html> |
+| [FillerSpecification]({{< relref "fillerspecification.md" >}}) | fillerSpecification | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> If the <i>WireElement</i> is a filler then the specification of the filler is referenced here.      </p>    </body> </html>  |
 | [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p>  </body> </html> |
+| [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | insulationSpecification | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> If the <i>WireElement</i> has an insulation then the specification of the insulation is referenced here.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

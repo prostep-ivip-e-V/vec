@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Fixings, Grommets and Cable Ducts]({{< relref "../instances-of-components/instances-of-fixings-grommets-and-cable-ducts" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

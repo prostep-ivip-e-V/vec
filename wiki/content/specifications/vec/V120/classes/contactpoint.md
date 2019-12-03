@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Contacting Specification]({{< relref "../connectivity/contacting-specification" >}})<br/> [Pin Wire Mapping]({{< relref "../connectivity/pin-wire-mapping" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -36,3 +36,4 @@ weight:
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [ContactingSpecification]({{< relref "contactingspecification.md" >}}) | 1 | contactPoint | 0..* | Specifies the ContactPoints defined by the ContactingSpecification.  |
+| [PinWireMappingPoint]({{< relref "pinwiremappingpoint.md" >}}) |  | contactPoint | 1 |  |

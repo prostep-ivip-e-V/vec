@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: topology-and-geometry/default-dimensions    
     parent: topology-and-geometry
-    weight: 1005008 
+    weight: 1005009 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005008
+weight: 1005009
 ---
 {{< svgfigure src="default-dimensions.png" width="246" height="425" caption="Default Dimensions" numbered="true" >}}
   {{< svglink relref="../classes/defaultdimensionspecification.md" x="26.0" y="127.0" width="194.0" height="43.0" >}}

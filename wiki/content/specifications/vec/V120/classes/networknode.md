@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Connection Specification]({{< relref "../connectivity/connection-specification" >}})<br/> [Net Specification]({{< relref "../connectivity/net-specification" >}})<br/> [Usage Node]({{< relref "../key-concepts/usage-node" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

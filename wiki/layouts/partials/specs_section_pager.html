@@ -1,0 +1,65 @@
+{{ $current_page := . }}
+{{/* Dynamically load menu for this specs page. */}}
+{{/* Attempt to get menu name from `menu_name` param, Hugo's front matter menu config, or the last dir of filepath. */}}
+{{ $menu_name := "" }}
+{{ range $k, $v := .Params.menu }}
+  {{ $menu_name = $k }}
+{{ end }}
+{{ $menu_name = .Params.menu_name | default $menu_name | default (path.Base (path.Split .File).Dir) }}
+{{ if not (index site.Menus $menu_name) }}
+  {{ errorf "Please define menu items named `menu: %s:` in your %s front matter or define `[[menu.%s]]` in `config/default/menus.toml`. See https://sourcethemes.com/academic/docs/managing-content/#menus" $menu_name .Path $menu_name }}
+{{ end }}
+{{ with (index site.Menus $menu_name) }}
+
+{{/* Enable Updates layout to order by descending version name. */}}
+{{ $menu := (index site.Menus $menu_name).ByWeight }}
+{{ if eq ($.Scratch.Get "docs_menu_sort" | default "weight") "name_reverse" }}
+  {{ $menu = (index site.Menus $menu_name).ByName.Reverse }}
+{{end}}
+{{ range $menu }}
+    {{ if and ($current_page.Scratch.Get "currentEntry") (not ($current_page.Scratch.Get "nextEntry")) }}
+        {{ $current_page.Scratch.Set "nextEntry" . }}
+    {{ end }}
+    {{ if $current_page.IsMenuCurrent $menu_name . }}
+        {{ $current_page.Scratch.Set "currentEntry" . }}
+    {{ end }}
+    {{ if not ($current_page.Scratch.Get "currentEntry")}}
+        {{ $current_page.Scratch.Set "previousEntry" . }}
+    {{ end }}
+    {{ if .HasChildren }}
+        {{ range .Children }}
+            {{ if and ($current_page.Scratch.Get "currentEntry") (not ($current_page.Scratch.Get "nextEntry")) }}
+                {{ $current_page.Scratch.Set "nextEntry" . }}
+            {{ end }}
+            {{ if $current_page.IsMenuCurrent $menu_name . }}
+                {{ $current_page.Scratch.Set "currentEntry" . }}
+            {{ end }}
+            {{ if not ($current_page.Scratch.Get "currentEntry")}}
+                {{ $current_page.Scratch.Set "previousEntry" . }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ end }}
+
+
+{{ $previous_entry := .Scratch.Get "previousEntry" }}
+{{ $next_entry := .Scratch.Get "nextEntry" }}
+{{ .Scratch.Delete "nextEntry" }}
+{{ .Scratch.Delete "previousEntry" }}
+{{ .Scratch.Delete "currentEntry" }}
+
+<div class="specs-nav">
+  <div class="specs-nav-item">
+  {{if $previous_entry}}
+    <div class="meta-nav">{{ i18n "previous" }}</div>
+    <a href="{{ $previous_entry.URL }}" rel="prev">{{ $previous_entry.Name }}</a>
+  {{end}}
+  </div>
+  <div class="specs-nav-item next">
+  {{if $next_entry}}
+    <div class="meta-nav">{{ i18n "next" }}</div>
+    <a href="{{ $next_entry.URL }}" rel="next">{{ $next_entry.Name }}</a>
+  {{end}}
+  </div>
+ </div>

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Connection Specification]({{< relref "../connectivity/connection-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,6 +30,6 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..* | 0..1 | Specifies the ComponentNodes defined by the ConnectionSpecification.  |
 | [Connection]({{< relref "connection.md" >}}) | connection | 0..* | 1 | Specifies the Connection defined by the ConnectionSpecification.  |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..* | 0..1 | Specifies the ConnectionGroup defined by the ConnectionSpecification.  |
+| [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..* | 0..1 | Specifies the ComponentNodes defined by the ConnectionSpecification.  |

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [CavityAccessorySpecification]({{< relref "cavityaccessoryspecification.md" >}}), [CavityPlugSpecification]({{< relref "cavityplugspecification.md" >}}), [CavitySealSpecification]({{< relref "cavitysealspecification.md" >}}) |
-
+| **Usage in Diagrams**   | [Cavity Seals and Cavity Plugs]({{< relref "../description-of-components/cavity-seals-and-cavity-plugs" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

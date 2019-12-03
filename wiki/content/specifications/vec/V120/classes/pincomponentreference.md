@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of EE-Components]({{< relref "../instances-of-components/instances-of-ee-components" >}})<br/> [Pin Wire Mapping]({{< relref "../connectivity/pin-wire-mapping" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,9 +29,10 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | terminalRole | 0..1 | 0..1 | References the TerminalRole of PinComponentReference. This is required to specify a Mating for EEComponents with other EEComponents or a Harness.  (KBLFRM-401)  |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 1 | 0..* | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401)  |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | terminalRole | 0..1 | 0..1 | References the TerminalRole of PinComponentReference. This is required to specify a Mating for EEComponents with other EEComponents or a Harness.  (KBLFRM-401)  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 1 | pinComponentRef | 0..* | Specifies the PinComponentReferences used in the HousingComponentReference.  (KBLFRM-401)  |
+| [PinWireMappingPoint]({{< relref "pinwiremappingpoint.md" >}}) |  | pinComponentReference | 1 |  |

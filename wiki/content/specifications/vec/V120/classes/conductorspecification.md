@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [CoreSpecification]({{< relref "corespecification.md" >}}), [FlatCoreSpecification]({{< relref "flatcorespecification.md" >}}), [ShieldSpecification]({{< relref "shieldspecification.md" >}}) |
-
+| **Usage in Diagrams**   | [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [Signal Specification]({{< relref "../connectivity/signal-specification" >}})<br/> [Terminal Pairing]({{< relref "../description-of-components/terminal-pairing" >}})<br/> [Wire]({{< relref "../description-of-components/wire" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -44,7 +44,7 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | conductorSpecification | 0..1 |  |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | 0..* | conductorSpecification | 0..1 | <html>   <head>     </head>   <body>     <p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p>    </body> </html>  |
+| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | conductorSpecification | 0..1 |  |
 | [Signal]({{< relref "signal.md" >}}) |  | recommendedConductorSpecification | 0..1 | <html>   <head>     </head>   <body>     <p> Defines a recommended Specification for the cores that implement this signal.      </p>    </body> </html>  |
 | [TerminalPairing]({{< relref "terminalpairing.md" >}}) | 0..* | referencedCoreSpecification | 1 | <html>   <head>     </head>   <body>     <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p>    </body> </html>  |

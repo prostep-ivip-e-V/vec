@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Description of Parts]({{< relref "../description-of-components/description-of-parts" >}})<br/> [Installation Instructions]({{< relref "../instances-of-components/installation-instructions" >}})<br/> [Lifecycle Information]({{< relref "../pdm-information/lifecycle-information" >}})<br/> [Parts and Documents]({{< relref "../key-concepts/parts-and-documents" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

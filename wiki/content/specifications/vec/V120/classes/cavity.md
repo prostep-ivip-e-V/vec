@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Cavity Seals and Cavity Plugs]({{< relref "../description-of-components/cavity-seals-and-cavity-plugs" >}})<br/> [Connector Housings]({{< relref "../description-of-components/connector-housings" >}})<br/> [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [Instances of Connector Housings]({{< relref "../instances-of-components/instances-of-connector-housings" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -31,8 +31,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | integratedTerminalSpecification | 0..1 |  | <html>   <head>     </head>   <body>     <p> Specifies the terminal, if the cavity has an integrated terminal (e.g. an IDC).      </p>  </body> </html> |
 | [CavitySpecification]({{< relref "cavityspecification.md" >}}) | cavitySpecification | 0..1 | 0..* | References the CavitySpecification that is satisfied by the cavity.  |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | integratedTerminalSpecification | 0..1 |  | <html>   <head>     </head>   <body>     <p> Specifies the terminal, if the cavity has an integrated terminal (e.g. an IDC).      </p>  </body> </html> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
@@ -40,6 +40,6 @@ weight:
 | [Slot]({{< relref "slot.md" >}}) | 1 | cavity | 1..* | <html>   <head>     </head>   <body>     <p> Specifies the Cavities forming the Slot.      </p>    </body> </html>  |
 | [OpenCavitiesAssignment]({{< relref "opencavitiesassignment.md" >}}) | 0..* | openCavities | 1..* | <html>   <head>     </head>   <body>     <p> Specifies the cavities that are open.      </p>    </body> </html>  |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | 0..* | reachableCavities | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p>    </body> </html>  |
-| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | referencedCavity | 1 | Points to the cavity referenced by the cavity reference.   |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | 0..* | referencedCavity | 0..1 | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300)  |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | referencedCavity | 1 | Points to the cavity referenced by the cavity reference.   |
 | [SealedCavitiesAssignment]({{< relref "sealedcavitiesassignment.md" >}}) | 0..* | sealedCavities | 1..* | <html>   <head>     </head>   <body>     <p> Specifies the Cavities that are sealed.      </p>    </body> </html>  |
