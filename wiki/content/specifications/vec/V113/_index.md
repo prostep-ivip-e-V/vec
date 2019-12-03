@@ -1,5 +1,3 @@
-
-
 ---
 title: VEC Version 1.1.3
 linktitle: Overview
