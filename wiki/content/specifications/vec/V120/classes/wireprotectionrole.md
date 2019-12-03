@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** | [TapeRole]({{< relref "taperole.md" >}}) |
-
+| **Usage in Diagrams**   | [Instances of Wire Protections]({{< relref "../instances-of-components/instances-of-wire-protections" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: description-of-components/conformance-to-requirements    
     parent: description-of-components
-    weight: 1003020 
+    weight: 1003021 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1003020
+weight: 1003021
 ---
 {{< svgfigure src="conformance-to-requirements.png" width="926" height="467" caption="Conformance to Requirements" numbered="true" >}}
   {{< svglink relref="../classes/partorusagerelatedspecification.md" x="324.0" y="169.0" width="188.0" height="55.0" >}}

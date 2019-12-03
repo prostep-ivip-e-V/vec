@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [TopologySpecification]({{< relref "topologyspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Topology- and Topology Group Specification]({{< relref "../topology-and-geometry/topology--and-topology-group-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

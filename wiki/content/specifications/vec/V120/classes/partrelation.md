@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [General Technical Part]({{< relref "../description-of-components/general-technical-part" >}})<br/> [Supplementary Parts]({{< relref "../description-of-components/supplementary-parts" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -33,7 +33,7 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ExtensionSlot]({{< relref "extensionslot.md" >}}) | 0..* | allowedInserts | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PartRelations</i> that are valid inserts for this <i>ExtensionSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ExtensionSlot</i> are always <i>EEComponents</i> by itself. Therefore the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;EEComponent.</i>      </p>  </body> </html> |
 | [ModularSlot]({{< relref "modularslot.md" >}}) | 0..* | allowedInserts | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PartRelations</i> that are valid inserts for this <i>ModularSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ModularSlot</i> are always ConnectorHousings by itself. Therefore the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;ConnectorHousing</i>      </p>  </body> </html> |
+| [ExtensionSlot]({{< relref "extensionslot.md" >}}) | 0..* | allowedInserts | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PartRelations</i> that are valid inserts for this <i>ExtensionSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ExtensionSlot</i> are always <i>EEComponents</i> by itself. Therefore the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;EEComponent.</i>      </p>  </body> </html> |
 | [GeneralTechnicalPartSpecification]({{< relref "generaltechnicalpartspecification.md" >}}) | 1 | partRelation | 0..* | Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips).  |
 | [Slot]({{< relref "slot.md" >}}) | 0..* | supplementaryParts | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p>  </body> </html> |

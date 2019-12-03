@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: key-concepts/usage-constraints    
     parent: key-concepts
-    weight: 1001008 
+    weight: 1001009 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1001008
+weight: 1001009
 ---
 {{< svgfigure src="usage-constraints.png" width="897" height="441" caption="Usage Constraints" numbered="true" >}}
   {{< svglink relref="../classes/usageconstrainttype.md" x="15.0" y="301.0" width="127.0" height="82.0" >}}

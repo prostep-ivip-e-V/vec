@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Pinning Information & Pinning Variance]({{< relref "../description-of-components/pinning-information-pinning-variance" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,5 +30,5 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | 0..1 | timing | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p>    </body> </html>  |
 | [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | 0..1 | timing | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the timing of the <i>PinVoltageInformation</i>.      </p>    </body> </html>  |
+| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | 0..1 | timing | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p>    </body> </html>  |

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [GeometrySegment]({{< relref "geometrysegment.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [3D Curves]({{< relref "../topology-and-geometry/3d-curves" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,8 +32,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D ends.   |
 | [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | startNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D starts.   |
+| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D ends.   |
 | [Curve3D]({{< relref "curve3d.md" >}}) | curve | 0..* |  | <html>   <head>     </head>   <body>     <p> Specifies an ordered list of curves which describe the centerline of the segment. If a segment is described by more than one curve, the centerlines of the individual curves are aligned in the order of this association.      </p>  </body> </html> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [EE-Component subclasses]({{< relref "../description-of-components/ee-component-subclasses" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -35,5 +35,5 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | cathode | 0..1 | 0..* |  |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | anode | 0..1 | 0..* |  |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | cathode | 0..1 | 0..* |  |
