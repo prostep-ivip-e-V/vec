@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Assemblies, Modules and Harness (Configurations)]({{< relref "../composite-part-descriptions/assemblies-modules-and-harness-configurations" >}})<br/> [Harness and Variants]({{< relref "../composite-part-descriptions/harness-and-variants" >}})<br/> [Instantiation of Components]({{< relref "../instances-of-components/instantiation-of-components" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -33,8 +33,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartVersion]({{< relref "partversion.md" >}}) | part | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> References the PartVersion that is instantiated by this PartOccurrence.      </p>    </body> </html>  |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | instanciatedOccurrence | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> References the PartOccurrence which is instantiated by the PartOccurrence. This reference is for example needed in the case of usage of assemblies.      </p>    </body> </html>  |
+| [PartVersion]({{< relref "partversion.md" >}}) | part | 0..1 | 0..* | <html>   <head>     </head>   <body>     <p> References the PartVersion that is instantiated by this PartOccurrence.      </p>    </body> </html>  |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | referenceElement | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> References the PartOcurrence for which this PartOccurrence is an accessory.      </p>    </body> </html>  |
 | [PartUsage]({{< relref "partusage.md" >}}) | realizedPartUsage | 0..1 | 0..* | References the PartUsage that is realized by the PartOccurrence.   |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | alternativeOccurrence | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> References the PartOcurrences that are an alternative for this PartOccurrence.      </p>    </body> </html>  |

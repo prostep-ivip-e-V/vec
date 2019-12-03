@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Coupling Specification]({{< relref "../connectivity/coupling-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,8 +29,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | secondTerminalReception | 1 | 0..* | References the second terminal reception that is mated.  |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | firstTerminalReception | 1 | 0..* | References the first terminal reception that is mated.  |
+| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | secondTerminalReception | 1 | 0..* | References the second terminal reception that is mated.  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

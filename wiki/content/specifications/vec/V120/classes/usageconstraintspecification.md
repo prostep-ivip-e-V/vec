@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Usage Constraints]({{< relref "../key-concepts/usage-constraints" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,5 +30,5 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | partUsageConstraint | 1..* | 1 | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification.   |
 | [PartVersion]({{< relref "partversion.md" >}}) | constrainedParts | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PartVersions</i> to which this <i>UsageConstraintSpecification</i> applies.      </p>    </body> </html>  |
+| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | partUsageConstraint | 1..* | 1 | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification.   |

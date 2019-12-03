@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [CustomProperty]({{< relref "customproperty.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Extensibility with Custom Properties]({{< relref "../key-concepts/extensibility-with-custom-properties" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

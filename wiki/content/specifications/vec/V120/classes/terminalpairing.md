@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Terminal Pairing]({{< relref "../description-of-components/terminal-pairing" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -31,9 +31,9 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | referencedCoreSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p>    </body> </html>  |
 | [PartVersion]({{< relref "partversion.md" >}}) | firstTerminal | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the first terminal of the TerminalPairing.      </p>  </body> </html> |
 | [PartVersion]({{< relref "partversion.md" >}}) | secondTerminal | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the second terminal of the TerminalPairing (first and second does not imply any specific order).      </p>  </body> </html> |
-| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | referencedCoreSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

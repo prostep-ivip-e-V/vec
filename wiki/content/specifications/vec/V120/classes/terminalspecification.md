@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** | [BoltTerminalSpecification]({{< relref "boltterminalspecification.md" >}}), [OpenWireEndTerminalSpecification]({{< relref "openwireendterminalspecification.md" >}}), [PluggableTerminalSpecification]({{< relref "pluggableterminalspecification.md" >}}), [RingTerminalSpecification]({{< relref "ringterminalspecification.md" >}}), [SpliceTerminalSpecification]({{< relref "spliceterminalspecification.md" >}}) |
-
+| **Usage in Diagrams**   | [Connector Housings]({{< relref "../description-of-components/connector-housings" >}})<br/> [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [Instances of Connector Housings]({{< relref "../instances-of-components/instances-of-connector-housings" >}})<br/> [Instances of Terminals]({{< relref "../instances-of-components/instances-of-terminals" >}})<br/> [Placeable Elements]({{< relref "../description-of-components/placeable-elements" >}})<br/> [Terminals]({{< relref "../description-of-components/terminals" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -33,10 +33,10 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | internalTerminalConnection | 0..* | 1 | Specifies the InternalTerminalConnections of the terminal.   |
 | [WireReception]({{< relref "wirereception.md" >}}) | wireReception | 0..* | 1 | Specifies the WireReceptions of the terminal described by the TerminalSpecification.  |
-| [TerminalCurrentInformation]({{< relref "terminalcurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>TerminalCurrentInformation</i> that is applicable for the terminal.      </p>    </body> </html>  |
 | [TerminalReception]({{< relref "terminalreception.md" >}}) | terminalReception | 0..* | 1 | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification.  |
+| [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | internalTerminalConnection | 0..* | 1 | Specifies the InternalTerminalConnections of the terminal.   |
+| [TerminalCurrentInformation]({{< relref "terminalcurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>TerminalCurrentInformation</i> that is applicable for the terminal.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
