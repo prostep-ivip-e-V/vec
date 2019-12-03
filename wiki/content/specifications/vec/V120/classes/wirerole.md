@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Instances of Wires]({{< relref "../instances-of-components/instances-of-wires" >}})<br/> [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/> [Wire Grouping Specification]({{< relref "../connectivity/wire-grouping-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,5 +29,5 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) | wireElementReference | 0..* | 1 | Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed.   |
 | [WireSpecification]({{< relref "wirespecification.md" >}}) | wireSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p>    </body> </html>  |
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) | wireElementReference | 0..* | 1 | Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed.   |

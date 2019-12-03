@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [DimensionAnchor]({{< relref "dimensionanchor.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [NodeLocation]({{< relref "nodelocation.md" >}}), [SegmentLocation]({{< relref "segmentlocation.md" >}}) |
-
+| **Usage in Diagrams**   | [Hierarchical Topologies]({{< relref "../topology-and-geometry/hierarchical-topologies" >}})<br/> [Locations]({{< relref "../topology-and-geometry/locations" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/> [Topology Zones]({{< relref "../topology-and-geometry/topology-zones" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -38,6 +38,6 @@ weight:
 | [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | endLocation | 1 | References the Location where OnWayPlacement ends.   |
 | [ZoneCoverage]({{< relref "zonecoverage.md" >}}) | 0..1 | firstLocation | 1 |  |
 | [OnPointPlacement]({{< relref "onpointplacement.md" >}}) | 0..1 | location | 1..* | References the Locations where Placement places the reference points of the placed element.   |
-| [NodeMapping]({{< relref "nodemapping.md" >}}) |  | mappedPosition | 1 |  |
+| [NodeMapping]({{< relref "nodemapping.md" >}}) | 0..1 | mappedPosition | 1 |  |
 | [ZoneCoverage]({{< relref "zonecoverage.md" >}}) | 0..1 | secondLocation | 1 |  |
 | [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | startLocation | 1 | References the Location where OnWayPlacement starts.   |

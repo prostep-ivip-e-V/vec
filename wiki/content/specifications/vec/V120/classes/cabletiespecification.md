@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Fixings, Grommets and CableDucts]({{< relref "../description-of-components/fixings-grommets-and-cableducts" >}})<br/> [Instances of Fixings, Grommets and Cable Ducts]({{< relref "../instances-of-components/instances-of-fixings-grommets-and-cable-ducts" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

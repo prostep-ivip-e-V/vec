@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Coupling Specification]({{< relref "../connectivity/coupling-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,8 +30,8 @@ weight:
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [TerminalRole]({{< relref "terminalrole.md" >}}) | secondTerminalRole | 1 | 0..* | References the second terminal that is mated.  |
-| [MatingDetail]({{< relref "matingdetail.md" >}}) | matingDetail | 0..* | 1 | Specifies the MatingDetails, if a detailed description of the relationships between TerminalReceptions and TerminalReceptions is needed.   |
 | [TerminalRole]({{< relref "terminalrole.md" >}}) | firstTerminalRole | 1 | 0..* | References the first terminal that is mated.  |
+| [MatingDetail]({{< relref "matingdetail.md" >}}) | matingDetail | 0..* | 1 | Specifies the MatingDetails, if a detailed description of the relationships between TerminalReceptions and TerminalReceptions is needed.   |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

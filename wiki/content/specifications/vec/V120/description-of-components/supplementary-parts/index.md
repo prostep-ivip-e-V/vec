@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: description-of-components/supplementary-parts    
     parent: description-of-components
-    weight: 1003019 
+    weight: 1003020 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1003019
+weight: 1003020
 ---
 {{< svgfigure src="supplementary-parts.png" width="1204" height="716" caption="Supplementary Parts" numbered="true" >}}
   {{< svglink relref="../classes/partrelationtype.md" x="92.0" y="351.0" width="114.0" height="94.0" >}}

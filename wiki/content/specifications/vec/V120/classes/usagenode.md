@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Usage Constraints]({{< relref "../key-concepts/usage-constraints" >}})<br/> [Usage Node]({{< relref "../key-concepts/usage-node" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,15 +32,15 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Project]({{< relref "project.md" >}}) | usedInProject | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p>    </body> </html>  |
 | [UsageNode]({{< relref "usagenode.md" >}}) | subUsageNodes | 0..* | 0..1 |  |
+| [Project]({{< relref "project.md" >}}) | usedInProject | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p>    </body> </html>  |
-| [TopologyNode]({{< relref "topologynode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p>    </body> </html>  |
 | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..* | realizedUsageNode | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p>    </body> </html>  |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p>    </body> </html>  |
 | [NetworkNode]({{< relref "networknode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p>    </body> </html>  |
+| [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <html>   <head>     </head>   <body>     <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p>    </body> </html>  |
 | [UsageNode]({{< relref "usagenode.md" >}}) | 0..1 | subUsageNodes | 0..* |  |
 | [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | usageNode | 0..* | <html>   <head>     </head>   <body> References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageNode.</body> </html> |
 | [UsageNodeSpecification]({{< relref "usagenodespecification.md" >}}) | 0..1 | usageNodes | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>UsageNodes</i> defined by this <i>UsageNodeSpecification.</i>      </p>    </body> </html>  |

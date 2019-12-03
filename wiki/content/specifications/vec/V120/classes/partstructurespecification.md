@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-
+| **Usage in Diagrams**   | [Assemblies, Modules and Harness (Configurations)]({{< relref "../composite-part-descriptions/assemblies-modules-and-harness-configurations" >}})<br/> [Harness and Variants]({{< relref "../composite-part-descriptions/harness-and-variants" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

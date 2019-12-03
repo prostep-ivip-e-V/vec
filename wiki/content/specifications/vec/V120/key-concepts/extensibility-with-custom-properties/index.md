@@ -8,10 +8,10 @@ menu:
   vec120:
     identifier: key-concepts/extensibility-with-custom-properties    
     parent: key-concepts
-    weight: 1001004 
+    weight: 1001005 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1001004
+weight: 1001005
 ---
 {{< svgfigure src="extensibility-with-custom-properties.png" width="831" height="392" caption="Extensibility with Custom Properties" numbered="true" >}}
   {{< svglink relref="../classes/valuerangeproperty.md" x="323.0" y="245.0" width="130.0" height="55.0" >}}

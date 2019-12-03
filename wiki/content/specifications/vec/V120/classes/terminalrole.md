@@ -19,7 +19,7 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** | [BoltTerminalRole]({{< relref "boltterminalrole.md" >}}), [OpenWireEndTerminalRole]({{< relref "openwireendterminalrole.md" >}}), [PluggableTerminalRole]({{< relref "pluggableterminalrole.md" >}}), [RingTerminalRole]({{< relref "ringterminalrole.md" >}}), [SpliceTerminalRole]({{< relref "spliceterminalrole.md" >}}) |
-
+| **Usage in Diagrams**   | [Contacting Specification]({{< relref "../connectivity/contacting-specification" >}})<br/> [Coupling Specification]({{< relref "../connectivity/coupling-specification" >}})<br/> [Instances of Connector Housings]({{< relref "../instances-of-components/instances-of-connector-housings" >}})<br/> [Instances of EE-Components]({{< relref "../instances-of-components/instances-of-ee-components" >}})<br/> [Instances of Terminals]({{< relref "../instances-of-components/instances-of-terminals" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -30,10 +30,10 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | wireReceptionReference | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p>    </body> </html>  |
-| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | terminalReceptionReference | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p>    </body> </html>  |
 | [ComponentPort]({{< relref "componentport.md" >}}) | componentPort | 0..1 | 0..* | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341  |
 | [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | terminalSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> &#160;References the <i>TerminalSpecification</i> that is instanced by this <i>TerminalRole.</i>      </p>    </body> </html>  |
+| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | terminalReceptionReference | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p>    </body> </html>  |
+| [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | wireReceptionReference | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p>    </body> </html>  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
