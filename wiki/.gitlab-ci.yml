@@ -33,7 +33,7 @@ deploy-index:
     - pages
   script:
     - npm install --save  atomic-algolia
-    - node deploy-index.js
+    - node deploy-algolia-index.js
   only:
     - master
    
