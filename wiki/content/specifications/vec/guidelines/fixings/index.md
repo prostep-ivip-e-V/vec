@@ -7,7 +7,7 @@ toc: false
 authors: [becker]
 tags: [""]
 categories: []
-date: 2019-03-11
+date: 2018-11-29
 lastmod: 2019-12-02T12:41:10+01:00
 draft: false
 
@@ -22,7 +22,7 @@ weight: 10000
 ## With PlacementPoints 
 {{< figure src="fixing_with_placementpoints_illustration.jpg" title="Fixings with Placement Points" numbered="true" lightbox="true">}}
 
-This illustration shows the *Fixing* with a {{< vec-class PlacementPoint >}} and {{< vec-class MeasurementPoint >}} as a {{< vec-class PartOccurrance >}}.
+This illustration shows the *Fixing* with a {{< vec-class PlacementPoint >}} and {{< vec-class MeasurementPoint >}} as a {{< vec-class PartOccurrence >}}.
 
 {{< figure src="fixings_with_placementpoints.jpg" title="Placement Points in the Model" numbered="true" lightbox="true">}}
 
@@ -33,7 +33,7 @@ The ability to place a *Fixing* on a specific point in the topology is similar t
 
 The diagram illustrates the definition of a *Fixing* with *CableTies* as *Accessory*. The upper half of the diagram is the definition of the part master data.
 
-The Fixing is described with a {{< vec-class PartVersion >}} and a {{< vec-class FixingSpecification >}}. To describe its accessories it has {{< vec-class GeneralTechnicalPartSpecification >}}* with {{< vec-class PartRelation >}}s to link the accessories. In this case, one *CableTie* is mandatory, a second one is an optional add on. Both are referencing the {{< vec-class PartVersion >}} of the *CableTie*.
+The Fixing is described with a {{< vec-class PartVersion >}} and a {{< vec-class FixingSpecification >}}. To describe its accessories it has {{< vec-class GeneralTechnicalPartSpecification >}} with {{< vec-class PartRelation >}}s to link the accessories. In this case, one *CableTie* is mandatory, a second one is an optional add on. Both are referencing the {{< vec-class PartVersion >}} of the *CableTie*.
 
 The *CableTie* is currently defined with a not further detailed {{< vec-class PartOrUsageRelatedSpecification >}}, since there is no {{< vec-class CableTieSpecification >}} in the VEC at the moment. That the accessory is a *CableTie* is defined by the value of the *specialPartType* attribute.
 
