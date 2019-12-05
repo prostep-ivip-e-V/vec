@@ -28,7 +28,7 @@ pages:
   
 deploy-index:
   image: node:latest
-  stage: deploy-index
+  stage: deploy
   dependencies:
     - pages
   script:
