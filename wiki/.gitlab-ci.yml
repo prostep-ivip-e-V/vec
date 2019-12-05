@@ -32,6 +32,7 @@ deploy-index:
   dependencies:
     - pages
   script:
+    - npm install --save  atomic-algolia
     - node deploy-index.js
   only:
     - master
