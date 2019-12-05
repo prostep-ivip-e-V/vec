@@ -13,10 +13,10 @@ draft: false
 menu:
   vec-guidelines:
     parent: ee-components
-    weight: 4300
+    weight: 10200
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 4300
+weight: 10200
 ---
 {{< figure src="fuses.jpg" title="Fuses" numbered="true" >}}
 

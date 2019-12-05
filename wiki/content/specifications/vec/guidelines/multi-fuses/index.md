@@ -12,10 +12,10 @@ draft: false
 menu:
   vec-guidelines:
     parent: ee-components
-    weight: 4200
+    weight: 10300
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 4200
+weight: 10300
 ---
 {{< figure src="multi-fuse.png" lightbox="true" class="float-right" title="Multi Fuse Illustration" width="300px" >}}
 
