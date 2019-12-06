@@ -1,4 +1,10 @@
-## Imprint
+---
+title: Imprint
+draft: false
+share: false
+commentable: false
+editable: false
+---
 prostep ivip Association  
 Dolivostr. 11  
 64293 Darmstadt  

@@ -1,3 +1,10 @@
+---
+title: Privacy Statement
+draft: false
+share: false
+commentable: false
+editable: false
+---
 ## Data protection
 This privacy statements explains how personal data (hereinafter referred to as "data") is collected, used, retained and disclosed within our online offering and associated websites, functions and content as well as external online presences. The terms used here, such as "personal data" and its "processing", are used as defined in Art. 4 of the European General Data Protection Regulation (GDPR)
 
