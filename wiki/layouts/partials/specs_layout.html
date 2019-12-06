@@ -25,6 +25,8 @@
         <div class="specs-article-container">
           <h1>{{ .Title }}</h1>
 
+          {{ partial "specs_metadata" (dict "page" $current_page "is_list" 0 "share" true) }}
+
           <div class="article-style">
             {{ .Content }}
           </div>
