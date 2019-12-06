@@ -1,0 +1,36 @@
+image: docker:latest
+
+# When using dind, it's wise to use the overlayfs driver for
+# improved performance.
+variables:
+  DOCKER_DRIVER: overlay2
+  IMAGE_NAME: $CI_REGISTRY_IMAGE/hugo_extended
+
+services:
+  - docker:dind
+
+stages:
+  - test
+  - deploy
+
+before_script:
+  - docker info
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+test:
+  stage: test
+  script:
+    - docker build -t $IMAGE_NAME .
+  except:
+    - schedules
+
+deploy:
+  stage: deploy
+  script:
+    - docker build -t $IMAGE_NAME .
+    - docker tag $IMAGE_NAME $IMAGE_NAME:$CI_COMMIT_REF_NAME
+    - docker push $IMAGE_NAME
+    - docker push $IMAGE_NAME:$CI_COMMIT_REF_NAME
+  only:
+    - tags
+
