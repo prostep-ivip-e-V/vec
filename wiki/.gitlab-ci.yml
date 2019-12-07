@@ -1,5 +1,7 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
-image: registry.gitlab.com/pages/hugo/hugo_extended:0.59.1
+# Using specific images, cause the community image does support git. 
+# To update the image, checkout the registry branch.
+image: registry.gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/hugo_extended:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
