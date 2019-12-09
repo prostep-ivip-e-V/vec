@@ -3,7 +3,7 @@ title: "System Schematic"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.
-toc: false
+toc: true
 authors: [fehlmann]
 tags: ["System schematic", "Usage Node", "Connection"]
 categories: []
@@ -113,6 +113,7 @@ To create a fully functional system, a partial system must be merged / combined 
 {{< figure src="componentnode_types.png" title="Open Enumeration with OpenLink" numbered="true" lightbox="true" class="float-right">}}
 
 The mapping of this advanced schematic example into the VEC context it is the following (see [this diagram]({{< relref "#advanced-system-schematic-example" >}})). 
+
   - To maintain the logical grouping of each partial system schematic, the content of each is contained in its own {{< vec-class DocumentVersion>}} with a single {{< vec-class ConnectionSpecification>}} in the same {{< vec-class VecContent>}}.
   -  The open link is represented by a "virtual" {{< vec-class ComponentNode>}}. Its naming is arbitrary and shall be choosen in a way, that a merge algorithm has the required information. For the clarity of the example it is here named *GROUND*. Depending on the used merge algorithm the name can be irrelevant if the merge algorithm for example only requires signal information.
   - The "virtual" component node shall be marked with the {{< vec-class ComponentNodeType>}} literal *OpenLink* (see [on the right]({{< relref "#open-enumeration-with-openLink" >}})).
