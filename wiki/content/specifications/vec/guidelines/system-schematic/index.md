@@ -196,3 +196,27 @@ The {{< vec-class PartUsage>}}s in the example are needed for to reasons:
   - They serve as a container to group the different possible alternatives (“realizedPartUsage”).
   - It is necessary to declare one of the EEComponents as the representative of all alternatives of a variant. This is done by the reference between the PartUsage and the corresponding {{< vec-class EEComponentSpecification>}}.
 
+
+## Realization Constraints
+
+Even if the schematic layer does not make statements about concrete technical realizations, for special use cases there is some background know how to avoid trouble or simply the need (e.g. because of law or company directives) to define the later realization in this early stadium. In the following section these realization constraints are explained in detail, devided into chapers for each type of constraint.
+
+### Wire Constraints
+
+#### Constraints for Single Core Wires or Conductors
+
+In the case of technical constraints against a single core wire or the conductor of a multi core wire e.g. to specify a must use wire color or type (or even a complete part number from the pdm system), a PartUsage is used to do so. This part usage is placed in a PartUsageSpecification which lays in one of the DocumentVersions of the schematic layer. The PartUsage contains a WireRole which has the ability to reference the Connection for which the constraint should be defined. On the other hand this role references it's corresponding WireSpecification with which the technical statements can be made. For details to the definition of master data for wires, please see [this tutorial]({{< relref "wires" >}})
+
+{{< figure src="wire_constraint.png" title="Wire Constraints" numbered="true" lightbox="true">}}
+
+#### Constraints for Multi Cores
+
+Constraints that concern more than one wire element can be realized with the help of the ConnectionGroup. For e.g. a shield or a twist a ConnectionGroup is placed beside the connections in a ConnectionSpecification of the system schematic layer. Be aware that there can be more than one of those specification in the vec content, because the system schematic can be devided into multiple parts to express the organization of them on several sheets. 
+As you can see in the diagram above the WireElements of the PartUsage multi core wire references a connection from the schematic layer each and these connections are grouped together in the ConnectionGroup which defines a twist for them.
+Now in the group the affected connections will be referenced and the GroupType attribute specifies the expected constraint type like e.g. twisted.
+
+### Direct Plugging / Screwed Connection
+
+Hinweis: erst ab 1.2
+
+
