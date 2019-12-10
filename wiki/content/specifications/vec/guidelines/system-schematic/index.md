@@ -215,8 +215,4 @@ Constraints that concern more than one wire element can be realized with the hel
 As you can see in the diagram above the WireElements of the PartUsage multi core wire references a connection from the schematic layer each and these connections are grouped together in the ConnectionGroup which defines a twist for them.
 Now in the group the affected connections will be referenced and the GroupType attribute specifies the expected constraint type like e.g. twisted.
 
-### Direct Plugging / Screwed Connection
-
-Hinweis: erst ab 1.2
-
 
