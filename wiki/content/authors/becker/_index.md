@@ -40,6 +40,9 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+- icon: xing
+  icon_pack: fab
+  link: https://www.xing.com/profile/Johannes_Becker2/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
@@ -54,6 +57,13 @@ email: "becker@4soft.de"
 user_groups:
 - VES-WF
 - ECAD-IF
+- Service Providers
 ---
+Johannes Becker manages the Harness Engineering division of 4Soft GmbH. 
+He is responsible for IT projects at OEMs and suppliers in the domain of physical wiring harnesses. 
+Johannes Becker studied computer science at Technische Universität München. 
+He has many years of experience as a project manager, requirements analyst and software 
+architect for the development of complex information systems. 
 
-Johannes Becker manages the Harness Engineering division of 4Soft GmbH. He is responsible for IT projects at OEMs and suppliers in the domain of physical wiring harnesses. Johannes Becker studied computer science at Technische Universität München. He has many years of experience as a project manager, requirements analyst and software architect for the development of complex information systems. Since 2010, he is active in the VDA's Vehicle Electric project group and has played a decisive role in shaping the KBL and VEC standards.
+Since 2010, he is active in the VDA's Vehicle Electric project group and has played 
+a decisive role in shaping the KBL and VEC standards.

@@ -1,5 +1,4 @@
-![Build Status](https://gitlab.com/pages/hugo/badges/master/build.svg)
-
+[![pipeline status](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/badges/master/pipeline.svg)](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/commits/master)
 ---
 
 This is the source for the new ECAD-WIKI. The current Wiki can be found under 
@@ -29,6 +28,26 @@ This project's static Pages are built by [GitLab CI][ci], following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).
 
 All content merged into the `master` branch will be build and deployed automatically.
+
+### Updating Hugo Version for CI Build
+
+This build uses it's own docker image based on GitLabs Hugo Docker image. This is 
+because GitLabs Hugo Docker image has no `git` installed and thus Hugo's 
+`enableGitInfo` can not be used. However, the image used in this build is based on 
+GitLabs Hugo Docker Image and just installs `git`. 
+
+The Docker image can be found in the `registry` branch of this repository 
+[here](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/tree/registry). In order to
+update to a newer version, the following things have to be done:
+
+1.  The first line for the `Dockerfile` has to be modified to desired version and commited.
+2.  A Tag with the version has to be created on the registry branch (e.g. `0.59.1`)
+
+If this is done, the ci for the registry branch builds the image and deploys it autmatically 
+into the container registry of this repository. By default the ci pipeline for ECAD WIKI 
+pages uses the `latest` available image in the registry. 
+
+All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry  
 
 ## Building locally
 

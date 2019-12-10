@@ -1,0 +1,47 @@
+---
+title: Privacy Statement
+draft: false
+share: false
+commentable: false
+editable: false
+---
+## Data protection
+This privacy statements explains how personal data (hereinafter referred to as "data") is collected, used, retained and disclosed within our online offering and associated websites, functions and content as well as external online presences. The terms used here, such as "personal data" and its "processing", are used as defined in Art. 4 of the European General Data Protection Regulation (GDPR)
+
+### Changes and updates to the privacy statement
+
+We ask that you read our privacy statement at regular intervals. We will modify the privacy statement as soon as changes to the processing of data carried out by us make this necessary. We will inform you as soon as the changes require your cooperation (e.g. consent) or other individual notification. Some prostep ivip Association websites may have their own, possibly different, privacy statements. Please read the privacy statement of each prostep ivip Association website that you visit. The different prostep ivip Association websites may includes links to websites operated by other providers which are not covered by this data privacy policy.
+
+### Security measures
+
+We take appropriate technical and organizational measures to ensure a level of protection commensurate with the risk, taking into account the state of the art, implementation costs and the nature, scope, circumstances and purposes of processing as well as the varying probabilities of occurrence and severity of the risk to the rights and freedoms of natural persons, pursuant to Art. 32 GDPR. These measures include in particular ensuring the confidentiality, integrity and availability of data by controlling physical access to the data, as well as access, input, transmission, security of availability and separation of the data. Furthermore, we have established procedures that guarantee that you can exercise your rights, the deletion of data and an appropriate response to data risks. We also take the protection of personal data into consideration during the development and selection of hardware, software and procedures in accordance with the principle of data protection by design and by default (Art. 25 GDPR).
+
+### Collecting, processing, using and deleting your personal data
+
+The prostep ivip Association collects, exports and uses personal information to provide you with better service and to better consider your needs and interests. This is done on the basis of this privacy statement and your consent. When you visit our website, your IP address is collected and cookies and other Internet technologies are used to collect general information about you and what is of interest to you. This website is operated by GitLab. The [GitLab Website Terms of Use](https://about.gitlab.com/terms/) apply. 
+*We also collect and process the information and data that you provide to us voluntarily, e.g. when you participate in discussion groups or forums. [habe ich mal reingenommen, falls wir die möglichkeit zur Kommentierung/Diskussion bieten wollen]*
+
+
+### Contributions and comments
+
+*[Modifiziert hineinnehmen, falls wir etwas ähnliches anbeiten wollen. Entfällt, wenn die "Welt" nur lesen darf.] In our blog, the authors present their subjective view of a topic. Readers have the opportunity to comment on the posts. Both the authors and those making comments can use a pseudonym instead of their real name. A valid e-mail address is however required, but it will not be published. Please note that the posts and comments on the blog can be seen by anyone using the Internet and can easily be found using search engines. If you have contributed a post or comment to the prostep ivip Association's blog, you have the right to ask us to delete or correct your post or comment.*
+
+### Social plugins
+
+The prostep ivip Association sometimes also uses social plugins (referred to in the following as "buttons") for social networks such as LinkedIn, Twitter and Xing. When you visit our website, these buttons do not send any data to the respective social networks unless you click on them. Not until you click on a button will a direct connection to the server operated by the respective social network be established, thus enabling it to collect data and set cookies. You can find out more about cookies under "Cookies and reach measurement" below. If you have logged onto a social network, the social network can associate your visit to this website with your user account on the social network. A social network cannot associate your visit to another prostep ivip Assocation website with your user account with the social network unless you click on the respective button during your visit to the other prostep ivip Assocation website. We have no influence on the amount of data that social networks collect when you click on their buttons. You can find information on what kind of data is collected, processed and used and for what purpose by the social networks in the privacy statement of the respective social network. This will also provide you with information about your rights and the options available for protecting your privacy.
+
+### Collaboration with processors and third parties
+
+If we disclose data to other persons or companies (processors or third parties) during our processing operation, transmit the data to them or otherwise grant them access to the data, this will only be done on the basis of a legal authorization (e.g. if transmission of the data to third parties such as payment service providers, is required for the fulfillment of a contract pursuant to Art. 6 Para. 1(b) GDPR ), if you have provided your consent, if a legal obligation provides for this, or on the basis of our legitimate interests (e.g. when using agents, web hosts, etc.). If we commission third parties with the processing of data within the framework of a so-called "order processing contract", this is done on the basis of Art. 28 GDPR.
+
+### Cookies and reach measurement
+
+Cookies are pieces of information that are transferred from our web server or third-party web servers to the web browser of the user and stored for later retrieval. Cookies can be small files or other types of stored information. We use session cookies, which are only stored on our website for the duration of your current visit. A randomly generated unique identification number, i.e. a session ID, is stored in a session cookie. A cookie also contains information about its origin and the storage period. These cookies cannot store any other data. Session cookies are deleted once you have finished using our online offering and, for example, log out or close your browser. In accordance with this privacy statement, the user is notified of the use of other cookies in the context of pseudonymous reach measurement. If users do not want cookies to be saved on their computers, they will be asked to the disable relevant option in the system settings of their browsers. Stored cookies can be deleted in the system settings of the browser. If cookies are disabled, you may not be able to use the full functionality of this website. You can object to the use of cookies for the purposes of reach measurement and advertising purposes, via the deactivation page of the Network Advertising Initiative (http://optout.networkadvertising.org/) and the US website (http://www.aboutads.info/choices) or the European website ( http://www.youronlinechoices.com/uk/your-ad-choices/).
+
+### Contact
+
+When contacting us (using the contact form or via e-mail), you details will be processed in the context of your contact request and its execution pursuant to Art. 6 para. 1(b) GDPR. Information about users may be stored in our request set-up. We delete requests once they are no longer needed. We review the need to store the data every two years. If statutory archiving obligations apply, the data will be deleted once these obligations expire (end of commercial retention obligation (6 years) and end of fiscal retention obligation (10 years)).
+
+### Rights of data subjects
+
+You have the right to request confirmation as to whether the relevant data is being processed and to request information about this data as well as further information and a copy of the data pursuant to Art. 15 GDPR. You have the right to request that incomplete personal data be completed and rectification of inaccurate data concerning you pursuant to Art. 16 GDPR. You have the right to demand that relevant data be deleted immediately pursuant to Art. 17 GDPR or, alternatively, to demand a restriction of the processing of the data pursuant to Art. 18 GDPR. You have the right to receive the personal data that you have provided to us pursuant to Art. 20 GDPR and to request its transmission to another controller. You also have the right to file a complaint with the relevant supervisory authority pursuant to Art. 77 GDPR. Data protection officer in Hesse Prof. Dr. Michael Ronellenfitsch Gustav-Stresemann-Ring 1 65189 Wiesbaden, Germany Right to revoke consent: You have the right to revoke consent at any time in the future pursuant to Art. 7 para. 3 GDPR. Right to object: You have the right to object to the future processing of your personal data at any time pursuant to Art. 21 GDPR. You may object in particular to the processing of your personal data for direct marketing purposes.
