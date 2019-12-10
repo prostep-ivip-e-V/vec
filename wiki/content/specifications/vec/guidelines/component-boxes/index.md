@@ -20,10 +20,10 @@ menu:
 weight: 11100
 ---
 
-***Note:** The following sections will cover the technical background about component boxes. The term "component box" will be used as a general term for all types of fuse and/or relay carrier, power distribution box etc. The detailed mapping of the different aspects on concepts of the VEC will be in [ee-components]({{< relref "ee-components" >}}), as the concepts are the same for regular E/E components and component boxes. *
+_**Note:** The following sections will cover the technical background about component boxes. The term "component box" will be used as a general term for all types of fuse and/or relay carrier, power distribution box etc. The detailed mapping of the different aspects on concepts of the VEC will be in [EE-Components]({{< relref "ee-components" >}}), as the concepts are the same for regular E/E components and component boxes._
 ## Overview 
 
-{{< figure src="../ee-components/component_box.jpg" title="Component Box Photo" numbered="true" lightbox="true" width="50%" class="float-right" style="margin-left:50;margin-right:50;">}}
+{{< figure src="../ee-components/component_box.jpg" title="Component Box Photo" numbered="true" lightbox="true" class="float-right w-50" >}}
 
 The [image on the right side]({{< relref "#component-box-photo" >}}) shows a photo of the front side of a component box. The [drawing]({{< relref "#component-box-drawing" >}}) shows a drawing of a component box. In general, a component box is a component (carrier) that can be equipped with other components (e.g. relays & fuses) and by this, provides fusing and switching functionality to the attached wiring harness.
 
@@ -36,7 +36,7 @@ Basically a component box can be divided into four aspects:
 
 For all of these aspects, different technical solutions and variants exist. In reality, a specific component box can virtually combine and mix up all of these solution variants. To create a concise representation of a component box in the VEC model, a combination of different concepts is necessary. Some of these concepts are not exclusively for component boxes.
 
-{{< figure src="../ee-components/multi_fuse.png" title="Multifuse" numbered="true" lightbox="true" class="float-right">}}
+{{< figure src="../ee-components/multi_fuse.png" title="Multifuse" numbered="true" lightbox="true" class="float-right w-25" >}}
 
 ## Plugability of E/E components 
 
@@ -54,17 +54,15 @@ A multi fuse is similar to a regular fuse. However, due to cost and packaging re
 
 A Relais is a component used for switching of loads and has more than 3 pins.
 
-
-
 ## Direct and Indirect Contacting 
 
-{{< figure src="../ee-components/component_box_drawing.png" title="Component Box Drawing" numbered="true" lightbox="true" width="50%">}}
+{{< figure src="../ee-components/direct_contacting.jpg" title="Direct Contacting" numbered="true" lightbox="true" class="float-left w-25">}}
 
-{{< figure src="../ee-components/direct_contacting.jpg" title="Direct Contacting" numbered="true" lightbox="true" class="float-left" width="50%">}}
+{{< figure src="../ee-components/component_box_drawing.png" title="Component Box Drawing" numbered="true" lightbox="true" class="float-right w-50" >}}
 
 There are two different ways to create an electrical connection between the end of a wire and a corresponding fuse or relays, direct and indirect contacting. In case of direct contacting (see [direct contacting]({{< relref "#direct-contacting" >}})) a terminal directly attached to the wire is locked into a cavity on ones side of the component box. The cavity goes through the component box and the pins of the fuse are directly plugged into the reception of the wire terminal. In this case, the component box itself does not provide a electrical conductivity.
 
-In case of indirect contacting the component box contains a conductor (e.g. a conductor rail) that connects multiple cavities of the component box, see [drawing]({{< relref "#component-box-drawing" >}}) #3, #4, #7 and #9. The pins of the fuse are plugged into receptions of the conductor rail. Same applies for the connection to the harness. The wire terminals are grouped together into a harness connector, which is then attached to the component box. The conductor rail is often used for implementing the power distribution on the input side of a component box. In this case, the connection to the wiring harness is often done with ring terminals attached to bolts of the component box, see [drawing]({{< relref "#component-box-drawing" >}}) #8, #13, #14 and #16.
+In case of indirect contacting the component box contains a conductor (e.g. a conductor rail) that connects multiple cavities of the component box, see #3, #4, #7 and #9 [in the component box drawing]({{< relref "#component-box-drawing" >}}). The pins of the fuse are plugged into receptions of the conductor rail. Same applies for the connection to the harness. The wire terminals are grouped together into a harness connector, which is then attached to the component box. The conductor rail is often used for implementing the power distribution on the input side of a component box. In this case, the connection to the wiring harness is often done with ring terminals attached to bolts of the component box, see #8, #13, #14 and #16 [in the component box drawing]({{< relref "#component-box-drawing" >}}).
 
 A combination of both in one component box __is__  possible (and likely), e.g. the supplying side is realized with a conductor rail (indirect contacting) and the protected side is realized with direct contacting.
 
