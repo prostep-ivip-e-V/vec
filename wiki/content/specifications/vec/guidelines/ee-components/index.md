@@ -4,7 +4,7 @@ linktitle: EE-Components
 type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
-authors: []
+authors: [becker, fehlmann]
 tags: ["part-master", "instantiation"]
 categories: []
 date: 2019-05-05T00:00:00+01:00
@@ -14,10 +14,10 @@ draft: false
 menu:
   vec-guidelines:
     identifier: ee-components
-    weight: 4000
+    weight: 11000
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1
+weight: 11000
 ---
 E/E components, represented in the VEC by the {{< vec-class "eecomponentspecification" >}} and 
 {{< vec-class "eecomponentrole" >}}, summarize all kinds of components with a more or less 
