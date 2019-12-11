@@ -83,7 +83,7 @@ For the calculation of current paths or electrical testing, a component box need
 ## Modularity 
 {{< figure src="../ee-components/modular_component_box_detail.jpg" title="Modular Component Box Details" numbered="true" lightbox="true" class="float-right">}}
 
-Some component boxes support modular concepts, e.g. the one shown in [the photo]({{< relref "#component-box-photo" >}}). That means the component box can be extended with additional carriers, sockets or smaller component boxes (in a LEGO like way). There are two concepts for modularity: with or without electrical connectivity. If you compare [the photo on top]({{< relref "#component-box-photo" >}}) with [the photo on the rigth]({{< relref "#modular-component-box-details" >}}) you can see, that the relays socket in the lower left corner is mechanically clipped to main component box, electrically it is independent.
+Some component boxes support modular concepts, e.g. the one shown in [the photo]({{< relref "#component-box-photo" >}}). That means the component box can be extended with additional carriers, sockets or smaller component boxes (in a LEGO like way). There are two concepts for modularity: with or without electrical connectivity. If you compare [the photo on top]({{< relref "#component-box-photo" >}}) with [the photo on the right]({{< relref "#modular-component-box-details" >}}) you can see, that the relays socket in the lower left corner is mechanically clipped to main component box, electrically it is independent.
 
 In contrast to this, the orange fuse socket right beside the relay socket has its upper part plugged into the main component box, with electric connectivity for power supply. The lower part of it provides an independent cavity for direct contacting of the protected side.
 
