@@ -6,7 +6,7 @@
     xmlns:uml="http://www.omg.org/spec/UML/20131001"
     xmlns:Stereotypes="http://www.magicdraw.com/schemas/Stereotypes.xmi"
     xmlns:MagicDraw_Profile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile"
-    exclude-result-prefixes="uml xmi Stereotypes" version="2.0">
+    exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile" version="2.0">
     
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space elements="*"/>
