@@ -1,0 +1,37 @@
+image: registry.gitlab.com/ecad-if/vec/maven:3.6-jdk-11
+
+cache:
+  paths:
+    - .m2/
+  # keep cache across branch
+  key: "$CI_PROJECT_ID"
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=${CI_PROJECT_DIR}/.m2"
+
+stages:
+  - build
+  - deploy
+    
+build-schema: 
+  stage: build
+  script:
+    - "mvn clean install"
+  artifacts:
+    expire_in: 1 days
+    when: always
+    paths:
+      - "target"
+      
+pages:
+   stage: deploy
+   only: 
+     - develop
+   dependencies:
+     - build-schema
+   script:
+     - "mkdir -p public/xsd"
+     - "cp target/xsd/*.* public/xsd"
+   artifacts:
+     paths:
+       - public
