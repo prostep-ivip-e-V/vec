@@ -217,6 +217,18 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			<plugin>
+				<groupId>com.amashchenko.maven.plugin</groupId>
+				<artifactId>gitflow-maven-plugin</artifactId>
+				<version>1.13.0</version>
+				<configuration>
+					<argLine>-DskipTests</argLine>
+					<installProject>true</installProject>
+					<skipTestProject>true</skipTestProject>
+					<useSnapshotInHotfix>true</useSnapshotInHotfix>
+					<postReleaseGoals>deploy</postReleaseGoals>
+				</configuration>
+			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
