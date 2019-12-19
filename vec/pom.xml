@@ -226,7 +226,7 @@
 					<installProject>true</installProject>
 					<skipTestProject>true</skipTestProject>
 					<useSnapshotInHotfix>true</useSnapshotInHotfix>
-					<postReleaseGoals>deploy</postReleaseGoals>
+					<postReleaseGoals>install</postReleaseGoals>
 				</configuration>
 			</plugin>
 		</plugins>
