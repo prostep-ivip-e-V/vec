@@ -6,7 +6,7 @@
     xmlns:uml="http://www.omg.org/spec/UML/20131001"
     xmlns:Stereotypes="http://www.magicdraw.com/schemas/Stereotypes.xmi"
     xmlns:MagicDraw_Profile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile"
-    exclude-result-prefixes="uml xmi Stereotypes" version="2.0">
+    exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile" version="2.0">
     
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space elements="*"/>
@@ -44,7 +44,7 @@
             <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Class' and not(@xmi:id=//MagicDraw_Profile:Legend/@base_Class)]" mode="create-type">
                 <xsl:sort select="@name"/>
             </xsl:apply-templates>
-            <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Enumeration' or @xmi:type='uml:PrimitiveType']" mode="create-type">
+            <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[not(@name = 'Date' or @name = 'String' or @name = 'Double' or @name = 'Integer'  or @name = 'Boolean') and (@xmi:type='uml:Enumeration' or @xmi:type='uml:PrimitiveType')]" mode="create-type">
                 <xsl:sort select="@name"/>                
             </xsl:apply-templates>
         </xsl:element>
