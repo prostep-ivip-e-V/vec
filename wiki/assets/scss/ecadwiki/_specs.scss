@@ -16,6 +16,7 @@
   color: #707070;
 }
 
+
 /* Docs content. */
 
 .specs-content {
@@ -113,6 +114,13 @@
   font-weight: bold;
   color: $sta-primary;
   background-color: transparent;
+}
+
+/* Specs Glossary */
+.specs-glossary-item {
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden;
 }
 
 /* Docs links. */
