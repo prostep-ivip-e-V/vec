@@ -36,6 +36,7 @@ deploy-index:
   script:
     - npm install --save  atomic-algolia
     - node deploy-algolia-index.js
+  when: manual
   only:
     - master
    
