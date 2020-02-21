@@ -31,17 +31,8 @@
             {{ .Content }}
           </div>
 
-          {{ $related := where (.Site.RegularPages.RelatedIndices . "classes" ) "Params.categories" "intersect" (slice "Implementation Guidelines") }}
-          {{ with $related }}
-          <div>
-            <h2>See Also</h2>
-            <ul>
-              {{ range . }}
-              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-              {{ end }}
-            </ul>
-          </div>
-          {{ end }}
+          {{ partial "specs_related.html" . }}
+
           {{ partial "tags.html" . }}
 
           <div class="article-widget">

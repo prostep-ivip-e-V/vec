@@ -266,3 +266,6 @@ plugins_js  = []
 [marketing]
   google_analytics = ""
   google_tag_manager = ""
+
+[VEC]
+  current_version = "1.2.0"
