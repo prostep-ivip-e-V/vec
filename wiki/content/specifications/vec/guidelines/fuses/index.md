@@ -30,4 +30,4 @@ The *PinComponent* can reference a {{< vec-class TerminalSpecification >}} to de
 
 ## Instantiating fuses 
 
-Instantiating fuses is like instantiating any other EE-Component. A {{< vec-class "EEComponentRole" >}} under a {{< vec-class "PartOccurrence" >}} references the {{< vec-class "FuseSpecification" >}} and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see [E/E-Components]({{< relref "ee-components" >}}).
+Instantiating fuses is like instantiating any other EE-Component. A {{< vec-class "EEComponentRole" >}} under a {{< vec-class "PartOccurrence" >}} references the {{< vec-class "FuseSpecification" >}} and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see [E/E-Components]({{< relref "../ee-components" >}}).
