@@ -5,6 +5,9 @@ toc: false
 type: specs
 date: "2019-03-08T00:00:00+01:00"
 draft: false
+cascade: 
+  specification: VEC
+  documentType: Guideline
 menu:
   vec-guidelines:
     identifier: index    

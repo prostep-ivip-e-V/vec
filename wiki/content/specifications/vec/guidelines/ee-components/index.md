@@ -6,10 +6,14 @@ type: specs
 toc: true
 authors: [becker, fehlmann]
 tags: ["part-master", "instantiation"]
-categories: []
+categories: ["Implementation Guidelines"]
 date: 2019-05-05T00:00:00+01:00
 lastmod: 2019-11-27T16:57:42+01:00
 draft: false
+
+classes:
+  - EEComponentSpecification
+  - FuseSpecification
 
 menu:
   vec-guidelines:

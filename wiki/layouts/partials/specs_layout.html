@@ -6,8 +6,8 @@
       {{ partial "specs_sidebar" . }}
     </div>
 
-    {{ if .Params.toc }}
     <div class="d-none d-xl-block col-xl-2 specs-toc">
+      {{ if .Params.toc }}
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="specs-toc-title">{{ i18n "on_this_page" }}</a></li>
       </ul>
@@ -15,8 +15,11 @@
       {{ .TableOfContents }}
 
       {{ partial "specs_toc_foot" . }}
+      {{ end }}
+
+      {{ partial "specs_related.html" . }}
+
     </div>
-    {{ end }}
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 specs-content" role="main">
 
@@ -30,6 +33,7 @@
           <div class="article-style">
             {{ .Content }}
           </div>
+
 
           {{ partial "tags.html" . }}
 

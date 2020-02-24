@@ -161,6 +161,43 @@ Otherwise the heading levels will be messed up, when we generate a single page v
 The numbering is done with CSS and if we generate a single page version the will depend on 
 the position in the complete document.
 
+#### Related content
+
+Implementation Guidelines, Recommendation Chapters and Classes are automatically cross-referenced. 
+This is done via the following frontmatter definitions:
+```markdown
+---
+specification: VEC
+version: 1.1.3
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - AbstractSlotReference
+---
+```
+Cross-reference are created for all `specs` that share the following attributes:
+
+* `specification`: Either `VEC` or `KBL`
+* `version`: The version of the spec (can be be omitted), see later.
+* `classes`: documents with shared classes are cross-referenced. More shared classes rank higher.
+* `documentType` & `elementType` are only used for showing the links in the correct categories.
+
+The behaviour for the link algorithm is the follwoing (corresponds to `documentType`): 
+
+**Guideline**: The values for `specification` and `documentType` are defined in the `_index.md` and 
+cascaded to all subordinate guidelines. The `elementType` is not used. The `version`-attribute is omitted 
+and the configuration value from `param.toml` is used. E.g:
+```toml
+[VEC]
+  current_version = "1.2.0"
+```
+So Guidelines always link to most recent recommendation documents.
+
+**Recommendation**: All values are generated from the model report. Every class page mentions "itself". 
+Every diagram references all classes shown on the diagram. The version is defined when generating the 
+report. As a result, a class relates to all diagrams where it is represented (but only in the same version
+of the recommendation) and vice versa. 
+
 
 ## Troubleshooting
 
