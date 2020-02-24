@@ -24,8 +24,8 @@ In the VEC schema a relay is a special type of an EE-Component. It also owns a {
 
 Additionally to these standard EE-Component structure the {{< vec-class RelaySpecification >}} also can contain so called {{< vec-class SwitchingState >}}s. Each state describes an {{< vec-class InternalComponentConnection >}} as potentially existing, depending on the current switched state of the relay. In the example above the blue colored {{< vec-class PinComponent >}}s describe the coi contact. The connection between the two pins 30 and 87 is permanently The green colored part describes the switch, whose connection *can* exist depending on the {{< vec-class SwitchingState >}}. So the {{< vec-class InternalComponentConnection >}} between the pins 85 and 86 is not permanently guaranteed.
 
-For more information see [Switching States]( {{< relref "ee-components#switching-states" >}}).
+For more information see [Switching States]( {{< relref "../ee-components#switching-states" >}}).
 
 ## Instantiating relays 
 
-Instantiating relays is like instantiating any other EE-Component. A {{< vec-class EEComponentRole >}} under a {{< vec-class PartOccurrence >}} references the {{< vec-class RelaySpecification >}} and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see chapter [E/E-Components]( {{< relref "ee-components" >}}).
+Instantiating relays is like instantiating any other EE-Component. A {{< vec-class EEComponentRole >}} under a {{< vec-class PartOccurrence >}} references the {{< vec-class RelaySpecification >}} and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see chapter [E/E-Components]( {{< relref "../ee-components" >}}).

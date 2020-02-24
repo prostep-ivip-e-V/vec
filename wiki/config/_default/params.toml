@@ -46,10 +46,6 @@ org_name = "prostep ivip"
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
 description = "Home of the standards KBL & VEC published by the VES-WF / ECAD-IF."
 
-# Display a logo in navigation bar rather than title (optional).
-#   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-logo = ""
-
 ############################
 ## Site Features
 ############################

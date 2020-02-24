@@ -20,7 +20,7 @@ menu:
 weight: 11100
 ---
 
-_**Note:** The following sections will cover the technical background about component boxes. The term "component box" will be used as a general term for all types of fuse and/or relay carrier, power distribution box etc. The detailed mapping of the different aspects on concepts of the VEC will be in [EE-Components]({{< relref "ee-components" >}}), as the concepts are the same for regular E/E components and component boxes._
+_**Note:** The following sections will cover the technical background about component boxes. The term "component box" will be used as a general term for all types of fuse and/or relay carrier, power distribution box etc. The detailed mapping of the different aspects on concepts of the VEC will be in [EE-Components]({{< relref "../ee-components" >}}), as the concepts are the same for regular E/E components and component boxes._
 ## Overview 
 
 {{< figure src="../ee-components/component_box.jpg" title="Component Box Photo" numbered="true" lightbox="true" class="float-right w-50" >}}

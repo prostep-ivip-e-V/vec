@@ -37,10 +37,10 @@ the following (optional) aspects:
 E/E Components in terms of the VEC can be for example:
 
   * ECU's
-  * [Relays]({{< relref "relays" >}})
-  * [Fuses]({{< relref "fuses" >}})
-  * [Multifuses]({{< relref "multi-fuses" >}})
-  * [Component Boxes]({{< relref "component-boxes" >}})
+  * [Relays]({{< relref "../relays" >}})
+  * [Fuses]({{< relref "../fuses" >}})
+  * [Multifuses]({{< relref "../multi-fuses" >}})
+  * [Component Boxes]({{< relref "../component-boxes" >}})
 
 ## Connector Interface / EE Component Header 
 ### Basic Structure
@@ -88,7 +88,7 @@ The figure _Instantiation Example_ shows the structure for an E/E component with
 _**Note:** This section is in particular relevant for component boxes, as they have the greatest 
 variance of different interface types. However, all these interface types can as well appear 
 in other EE components. To understand the technical background and the definition of the different 
-types, please read the article about [Component Boxes]({{< relref "component-boxes" >}})_
+types, please read the article about [Component Boxes]({{< relref "../component-boxes" >}})_
 
 {{< figure src="connector_structure.png" lightbox="true" class="float-right" title="Main Structure" width="500px" >}}
 
