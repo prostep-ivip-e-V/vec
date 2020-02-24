@@ -35,6 +35,40 @@
   margin-bottom: .25rem;
 }
 
+/* Specs Related Content */
+.specs-related h3 {
+  display: block;
+  padding: .125rem 1.5rem;
+  color: #99979c;
+  font-size: 0.7rem;
+}
+
+.specs-related > ul {
+  padding-left: 0;
+  border-left: 1px solid #eee;
+  list-style: none;
+}
+
+.specs-related ul li {
+  padding: .2rem 1.5rem;
+  font-weight: 600;
+}
+
+.specs-related a, .specs-related li {
+  display: block;
+  color: #99979c;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.specs-related a:hover {
+  color: #2962ff;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+
+
+
 /* Docs search. */
 
 .specs-search {
