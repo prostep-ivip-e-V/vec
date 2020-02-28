@@ -1,16 +1,16 @@
 ---
-title: VEC Version 1.2.0 Test Publication
+title: VEC Version 1.2.0
 linktitle: Overview
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
 menu:
-  vec120:
+  vec-1.2.0:
     identifier: index    
     weight: 1
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 2
+weight: 1
 ---
-Hier müssen wir uns noch einen Text einfallen lassen.
+Content goes here

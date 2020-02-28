@@ -2,14 +2,17 @@
 title: SlotSealingType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - SlotSealingType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines the possible sealing types for a slot, if the slot shall be sealed in its usage.      </p>    </body> </html> 
+<p> Defines the possible sealing types for a slot, if the slot shall be sealed in its usage.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,7 +23,7 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| None | <html>   <head>     </head>   <body>     <p> The <i>Slot </i>can not be sealed at all.      </p>    </body> </html>  |
-| SingleSealing | <html>   <head>     </head>   <body>     <p> The <i>Slot</i> is sealed with a single <i>Seal </i>per <i>Cavity</i> e.g. a <i>CavitySeal </i>or a <i>CavityPlug.</i>      </p>    </body> </html>  |
-| MultiSealing | <html>   <head>     </head>   <body>     <p> The <i>Slot </i>is sealed with a more complex sealing variant, typically sealing multiple cavities with a single seal (e.g. a <i>MulitCavityPlug </i>or a combination of those).       </p>    </body> </html>  |
-| Moulded | <html>   <head>     </head>   <body>     <p> The <i>Slot</i> is sealed by moulding it with some sort of sealing compound.      </p>    </body> </html>  |
+| None | <p> The <i>Slot </i>cannot be sealed at all.      </p> |
+| SingleSealing | <p> The <i>Slot</i> is sealed with a single <i>Seal </i>per <i>Cavity</i> e.g. a <i>CavitySeal </i>or a <i>CavityPlug.</i>      </p> |
+| MultiSealing | <p> The <i>Slot </i>is sealed with a more complex sealing variant, typically sealing multiple cavities with a single seal (e.g. a <i>MultiCavityPlug </i>or a combination of those).      </p> |
+| Moulded | <p> The <i>Slot</i> is sealed by moulding it with some sort of sealing compound.      </p> |

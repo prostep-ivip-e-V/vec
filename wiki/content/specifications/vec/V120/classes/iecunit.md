@@ -2,14 +2,17 @@
 title: IECUnit
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - IECUnit
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> The IECUnit class can define quantities in the terms of the IEC-Unit-System by specifying the corresponding IEC prefix (optional) and an IEC unit name.      </p>    </body> </html> 
+<p> The IECUnit class can define quantities in the terms of the IEC-Unit-System by specifying the corresponding IEC prefix (optional) and an IEC unit name.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,12 +22,11 @@ weight:
 | **Base Classifier**     | [Unit]({{< relref "unit.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Unit System]({{< relref "../key-concepts/unit-system" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|exponent | [Integer]({{< relref "integer.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p>    </body> </html>  | [Unit]({{< relref "unit.md" >}}) |
-|iecUnitName | [IECUnitName]({{< relref "iecunitname.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies the name of the IEC unit.      </p>    </body> </html>  | [IECUnit]({{< relref "iecunit.md" >}}) |
-|iecPrefix | [IECPrefix]({{< relref "iecprefix.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the prefix of the IEC unit.      </p>    </body> </html>  | [IECUnit]({{< relref "iecunit.md" >}}) |
+|exponent | [Integer]({{< relref "integer.md" >}}) | 0..1 | <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p> | [Unit]({{< relref "unit.md" >}}) |
+|iecUnitName | [IECUnitName]({{< relref "iecunitname.md" >}}) | 1 | <p> Specifies the name of the IEC unit.      </p> | [IECUnit]({{< relref "iecunit.md" >}}) |
+|iecPrefix | [IECPrefix]({{< relref "iecprefix.md" >}}) | 0..1 | <p> Specifies the prefix of the IEC unit.      </p> | [IECUnit]({{< relref "iecunit.md" >}}) |
 

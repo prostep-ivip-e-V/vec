@@ -73,8 +73,9 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 
 [related]
 threshold= 80
-includeNewer= false
+includeNewer= true
 toLower= false
+
 
 [[related.indices]]
 name= "classes"

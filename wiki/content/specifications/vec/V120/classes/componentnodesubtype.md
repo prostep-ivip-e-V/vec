@@ -2,14 +2,17 @@
 title: ComponentNodeSubType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - ComponentNodeSubType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Defines agreed values for <i>ComponentNodeSubTypes</i>. Not all combinations of <i>ComponentNodeSubTypes</i> and <i>ComponentNodeTypes</i> are semantically correct (e.g.&#160;Lamp, Microphone, Speaker, Motor are all Actuators).</body> </html>
+<p> Defines agreed values for <i>ComponentNodeSubTypes</i>. Not all combinations of <i>ComponentNodeSubTypes</i> and <i>ComponentNodeTypes</i> are semantically correct (e.g.&#160;Lamp, Microphone, Speaker, Motor are all Actuators).      </p>
 ## General Information
 
 | Attribute               | Value |

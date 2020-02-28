@@ -2,16 +2,41 @@
 title: 3D-Geometry
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - CartesianVector
+  - CartesianPoint3D
+  - GeometryNode3D
+  - GeometryType
+  - CartesianVector3D
+  - Unit
+  - Transformation3D
+  - BuildingBlockPositioning3D
+  - GeometrySegment
+  - GeometryNode
+  - OccurrenceOrUsageViewItem3D
+  - HarnessGeometrySpecification3D
+  - OccurrenceOrUsage
+  - TopologySegment
+  - TopologyNode
+  - GeometrySegment3D
+  - TopologyZone
+  - TopologySpecification
+  - BuildingBlockSpecification3D
 menu:
-  vec120:
-    identifier: topology-and-geometry/3d-geometry    
+  VEC-1.2.0:    
     parent: topology-and-geometry
-    weight: 1005005 
+    identifier: topology-and-geometry/3d-geometry
+    weight: 1008006 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1005005
+weight: 1008006
 ---
 {{< svgfigure src="3d-geometry.png" width="1035" height="989" caption="3D-Geometry" numbered="true" >}}
   {{< svglink relref="../../classes/cartesianvector.md" x="700.0" y="491.0" width="100.0" height="43.0" >}}
@@ -34,4 +59,4 @@ weight: 1005005
   {{< svglink relref="../../classes/topologyspecification.md" x="14.0" y="15.0" width="918.0" height="43.0" >}}
   {{< svglink relref="../../classes/buildingblockspecification3d.md" x="7.0" y="820.0" width="946.0" height="43.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> A <i>HarnessGeometrySpecification3D</i> represents either a 3D-model in the car coordinate system or a 3D-model in the formboard system. Each <i>HarnessGeometrySpecification3D</i> is a container for various instances of the class <i>BuildingBlockPositioning3D</i>. Each <i>BuildingBlockPositioning3D</i> determines the positioning of a specific <i>BuildingBlockSpecification3D</i> in the context of the <i>HarnessGeometrySpecification3D</i> by referencing a <i>BuildingBlockSpecification3D</i> and optionally specifying a <i>Transformation3D</i> for the case that a coordinate transformation is required.      </p>      <p> A <i>BuildingBlockSpecification3D</i> represents a specific geometrical subset normally belonging to a certain <i>Zone</i>. Each <i>BuildingBlockSpecification3D</i> is a container for various instances of the classes <i>GeometryNode3D</i>, <i>GeometrySegment3D</i>, <i>CartesianPoint3D</i> and <i>OccurrenceOrUsageViewItem3D</i>.      </p>      <p> Each <i>GeometryNode3D</i> references a <i>CartesianPoint3D</i> which determines its graphical within the <i>BuildingBlockSpecification3D</i>. Moreover, it can specify which <i>TopologyNode</i> it represents.      </p>      <p> Each <i>GeometrySegment3D</i> can specify an ordered set of <i>Curves</i> in order to approximate its geometry (explained in detail on the next diagram). Moreover, it can specify which <i>TopologySegment</i> it represents.      </p>      <p> Note: The data model does not constrain a <i>GeometryNode3D</i> respectively a <i>GeometrySegment3D</i> to reference a <i>TopologyNode</i> respectively a <i>TopologySegment</i>. This allows a VEC e.g. to transport 3D-information independently from a <i>TopologySpecification</i>. However, for the description of dimensions including tolerances as well as segment cross-section-areas and placements especially <i>OnWayPlacements</i> the VEC requires adequate references to the relevant elements in the topology.      </p>      <p> Each <i>OccurrenceOrUsageViewItem3D</i> can reference which <i>OccurrenceOrUsages</i> it represents. Furthermore, it can specify a <i>Transformation3D</i> which determines its position and orientation of the component's 3D model within the space of the <i>BuildingBlockSpecification3D. </i>If no <i>Transformation3D</i> is defined, the <i>OccurrenceOrUsageViewItem3D </i>is meant to be placed implicitly by its position in the topology (e.g. wire protections with an <i>OnWayPlacement</i>.      </p>  </body> </html>
+<p> A <i>HarnessGeometrySpecification3D</i> represents either a 3D-model in the car coordinate system or a 3D-model in the formboard system. Each <i>HarnessGeometrySpecification3D</i> is a container for various instances of the class <i>BuildingBlockPositioning3D</i>. Each <i>BuildingBlockPositioning3D</i> determines the positioning of a specific <i>BuildingBlockSpecification3D</i> in the context of the <i>HarnessGeometrySpecification3D</i> by referencing a <i>BuildingBlockSpecification3D</i> and optionally specifying a <i>Transformation3D</i> for the case that a coordinate transformation is required.      </p>      <p> A <i>BuildingBlockSpecification3D</i> represents a specific geometrical subset normally belonging to a certain <i>Zone</i>. Each <i>BuildingBlockSpecification3D</i> is a container for various instances of the classes <i>GeometryNode3D</i>, <i>GeometrySegment3D</i>, <i>CartesianPoint3D</i> and <i>OccurrenceOrUsageViewItem3D</i>.      </p>      <p> Each <i>GeometryNode3D</i> references a <i>CartesianPoint3D</i> which determines its position within the <i>BuildingBlockSpecification3D</i>. Moreover, it can specify which <i>TopologyNode</i> it represents.      </p>      <p> Each <i>GeometrySegment3D</i> can specify an ordered set of <i>Curves</i> in order to approximate its geometry (explained in detail on the next diagram). Moreover, it can specify which <i>TopologySegment</i> it represents.      </p>      <p> Note: The data model does not constrain a <i>GeometryNode3D</i> respectively a <i>GeometrySegment3D</i> to reference a <i>TopologyNode</i> respectively a <i>TopologySegment</i>. This allows a VEC e.g. to transport 3D-information independently from a <i>TopologySpecification</i>. However, for the description of dimensions including tolerances as well as segment cross-section-areas and placements especially <i>OnWayPlacements</i> the VEC requires adequate references to the relevant elements in the topology.      </p>      <p> Each <i>OccurrenceOrUsageViewItem3D</i> can reference which <i>OccurrenceOrUsages</i> it represents. Furthermore, it can specify a <i>Transformation3D</i> which determines its position and orientation of the component's 3D model within the space of the <i>BuildingBlockSpecification3D. </i>If no <i>Transformation3D</i> is defined, the <i>OccurrenceOrUsageViewItem3D </i>is meant to be placed implicitly by its position in the topology (e.g. wire protections with an <i>OnWayPlacement</i>.      </p>

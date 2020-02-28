@@ -2,14 +2,17 @@
 title: PartOrUsageRelatedSpecification
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PartOrUsageRelatedSpecification
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Base class for all specifications which are describing a <i>PartVersion</i> or a <i>PartUsage</i>. A <i>PartOrUsageRelatedSpecification</i> specifies a certain aspect of the described part or usage (e.g. general technical part information, connector housing aspects or wire aspects).      </p>    </body> </html> 
+<p> Base class for all specifications which are describing a <i>PartVersion</i> or a <i>PartUsage</i>. A <i>PartOrUsageRelatedSpecification</i> specifies a certain aspect of the described part or usage (e.g. general technical part information, connector housing aspects or wire aspects).      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -18,22 +21,21 @@ weight:
 | **Applied Stereotype**  |   |
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
-| **Derived Classifiers** | [CableDuctSpecification]({{< relref "cableductspecification.md" >}}), [CableTieSpecification]({{< relref "cabletiespecification.md" >}}), [CavityPartSpecification]({{< relref "cavitypartspecification.md" >}}), [ConnectorHousingCapSpecification]({{< relref "connectorhousingcapspecification.md" >}}), [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}), [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}), [FixingSpecification]({{< relref "fixingspecification.md" >}}), [GeneralTechnicalPartSpecification]({{< relref "generaltechnicalpartspecification.md" >}}), [GrommetSpecification]({{< relref "grommetspecification.md" >}}), [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}), [PartStructureSpecification]({{< relref "partstructurespecification.md" >}}), [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}), [RequirementsConformanceSpecification]({{< relref "requirementsconformancespecification.md" >}}), [TerminalSpecification]({{< relref "terminalspecification.md" >}}), [WireEndAccessorySpecification]({{< relref "wireendaccessoryspecification.md" >}}), [WireProtectionSpecification]({{< relref "wireprotectionspecification.md" >}}), [WireSpecification]({{< relref "wirespecification.md" >}}) |
-| **Usage in Diagrams**   | [Cavity Seals and Cavity Plugs]({{< relref "../description-of-components/cavity-seals-and-cavity-plugs" >}})<br/> [Conformance to Requirements]({{< relref "../description-of-components/conformance-to-requirements" >}})<br/> [Connector Housings]({{< relref "../description-of-components/connector-housings" >}})<br/> [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/> [Description of Parts]({{< relref "../description-of-components/description-of-parts" >}})<br/> [EE-Components]({{< relref "../description-of-components/ee-components" >}})<br/> [Fixings, Grommets and CableDucts]({{< relref "../description-of-components/fixings-grommets-and-cableducts" >}})<br/> [General Technical Part]({{< relref "../description-of-components/general-technical-part" >}})<br/> [Harness and Variants]({{< relref "../composite-part-descriptions/harness-and-variants" >}})<br/> [Instances of undefined Components]({{< relref "../instances-of-components/instances-of-undefined-components" >}})<br/> [Instantiation of Components]({{< relref "../instances-of-components/instantiation-of-components" >}})<br/> [Part Substitutions]({{< relref "../description-of-components/part-substitutions" >}})<br/> [Placeable Elements]({{< relref "../description-of-components/placeable-elements" >}})<br/> [Supplementary Parts]({{< relref "../description-of-components/supplementary-parts" >}})<br/> [Terminals]({{< relref "../description-of-components/terminals" >}})<br/> [Wire]({{< relref "../description-of-components/wire" >}})<br/> [Wire End Accessory]({{< relref "../description-of-components/wire-end-accessory" >}})<br/> [Wire Protections]({{< relref "../description-of-components/wire-protections" >}})<br/>  |
+| **Derived Classifiers** | [CableDuctSpecification]({{< relref "cableductspecification.md" >}}), [CableTieSpecification]({{< relref "cabletiespecification.md" >}}), [CavityPartSpecification]({{< relref "cavitypartspecification.md" >}}), [ConnectorHousingCapSpecification]({{< relref "connectorhousingcapspecification.md" >}}), [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}), [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}), [FerriteSpecification]({{< relref "ferritespecification.md" >}}), [FixingSpecification]({{< relref "fixingspecification.md" >}}), [GeneralTechnicalPartSpecification]({{< relref "generaltechnicalpartspecification.md" >}}), [GrommetSpecification]({{< relref "grommetspecification.md" >}}), [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}), [PartStructureSpecification]({{< relref "partstructurespecification.md" >}}), [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}), [RequirementsConformanceSpecification]({{< relref "requirementsconformancespecification.md" >}}), [TerminalSpecification]({{< relref "terminalspecification.md" >}}), [WireEndAccessorySpecification]({{< relref "wireendaccessoryspecification.md" >}}), [WireProtectionSpecification]({{< relref "wireprotectionspecification.md" >}}), [WireSpecification]({{< relref "wirespecification.md" >}}) |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. Over all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Specifies additional, human readable information about the specification.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
-|specialPartType | [String]({{< relref "string.md" >}}) | 0..1 | <html><body><p>The specialPartType allows the specification of subclassifications for a PartOrUsageRelatedSpecification (e.g. different types of connector housings).  </p></body></html> | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|specialPartType | [String]({{< relref "string.md" >}}) | 0..1 | <p>The specialPartType allows the specification of subclassifications for a PartOrUsageRelatedSpecification (e.g. different types of connector housings).  </p> | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartVersion]({{< relref "partversion.md" >}}) | describedPart | 0..* | 0..* | References the PartVersion(s) to which the information defined in this specification applies. Example: If the PartOrUsageRelatedSpecification is a GeneralTechnicalPartSpecifcation and it defines that the color is "green" then all PartVersion referenced by this association are "green".  |
+| [PartVersion]({{< relref "partversion.md" >}}) | describedPart | 0..* | 0..* | References the PartVersion(s) to which the information defined in this specification applies. Example: If the PartOrUsageRelatedSpecification is a GeneralTechnicalPartSpecifcation and it defines that the color is "green" then all PartVersion referenced by this association are "green". |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PartUsage]({{< relref "partusage.md" >}}) | 0..* | partOrUsageRelatedSpecification | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399  |
-| [SpecificRole]({{< relref "specificrole.md" >}}) | 0..* | specification | 1 | <html>   <head>     </head>   <body>     <p> References the <i>PartOrUsageRelatedSpecification </i>that is instantiated by this <i>SpecificRole.</i>      </p>    </body> </html>  |
+| [PartUsage]({{< relref "partusage.md" >}}) | 0..* | partOrUsageRelatedSpecification | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399 |
+| [SpecificRole]({{< relref "specificrole.md" >}}) | 0..* | specification | 1 | <p> References the <i>PartOrUsageRelatedSpecification </i>that is instantiated by this <i>SpecificRole.</i>      </p> |

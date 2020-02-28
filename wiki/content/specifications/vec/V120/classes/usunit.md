@@ -2,14 +2,17 @@
 title: USUnit
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - USUnit
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> The USUnit class can define quantities in the terms of the US-Unit-System by specifying the corresponding US unit name. The US Unit System is quite similar to the imperial unit system, however some units are defined slightly different.      </p>    </body> </html> 
+<p> The USUnit class can define quantities in the terms of the US-Unit-System by specifying the corresponding US unit name. The US Unit System is quite similar to the imperial unit system; however, some units are defined slightly different.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,11 +22,10 @@ weight:
 | **Base Classifier**     | [Unit]({{< relref "unit.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Unit System]({{< relref "../key-concepts/unit-system" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|exponent | [Integer]({{< relref "integer.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p>    </body> </html>  | [Unit]({{< relref "unit.md" >}}) |
-|usUnitName | [USUnitName]({{< relref "usunitname.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies the name of the <i>USUnit</i>.      </p>    </body> </html>  | [USUnit]({{< relref "usunit.md" >}}) |
+|exponent | [Integer]({{< relref "integer.md" >}}) | 0..1 | <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p> | [Unit]({{< relref "unit.md" >}}) |
+|usUnitName | [USUnitName]({{< relref "usunitname.md" >}}) | 1 | <p> Specifies the name of the <i>USUnit</i>.      </p> | [USUnit]({{< relref "usunit.md" >}}) |
 

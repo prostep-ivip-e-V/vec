@@ -2,14 +2,17 @@
 title: SegmentCrossSectionAreaType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - SegmentCrossSectionAreaType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Defines valid values the type of the cross section area of a <i>TopologySegment</i>, since a <i>TopologySegment</i> can have different cross section areas with different meanings in the process.    </body> </html> 
+<p> Defines valid values the type of the cross-section area of a <i>TopologySegment</i>, since a <i>TopologySegment</i> can have different cross section areas with different meanings in the process.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,5 +23,5 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Reserved | <html>   <head>     </head>   <body>     <p> <i>Reserved </i>is the the type for cross section areas that define a reserved space in the DMU&#160;for the&#160;<i>TopologySegment.</i>      </p>    </body> </html>  |
-| Real | <html>   <head>     </head>   <body>     <p> <i>Real</i> is the type for cross section areas that can be observed for <i>TopologySegments</i> with variants of a Harness that are produceable.      </p>    </body> </html>  |
+| Reserved | <p> <i>Reserved </i>is the type for cross section areas that define a reserved space in the DMU&#160;for the&#160;<i>TopologySegment.</i>      </p> |
+| Real | <p> <i>Real</i> is the type for cross section areas that can be observed for <i>TopologySegments</i> with variants of a Harness that are producible.      </p> |

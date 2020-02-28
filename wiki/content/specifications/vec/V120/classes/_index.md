@@ -4,13 +4,15 @@ linktitle: Classes
 toc: false
 type: specs
 layout: glossary
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
 menu:
-  vec120:
+  VEC-1.2.0:
     identifier: classes   
-    weight: 2
+    weight: 100000
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 2
+weight: 100000
 ---

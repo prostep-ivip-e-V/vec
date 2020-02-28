@@ -2,14 +2,17 @@
 title: ValueDetermination
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - ValueDetermination
+menu_name: vec-1.2.0
 ---
-<html><body><p>Enumeration for the definition of a value determination. (see KBLFRM-316) </p></body></html>
+<p>Enumeration for the definition of a value determination. (see KBLFRM-316) </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,6 +23,6 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Calculated | <html>   <head>     </head>   <body>     <p> The value is determined by a calculation algorithm.      </p>    </body> </html>  |
-| Measured | <html><body><p>The value is determined by an exact measurement. </p></body></html> |
-| Estimated | <html><body><p>The value is estimated by a person.  </p></body></html> |
+| Calculated | <p> The value is determined by a calculation algorithm.      </p> |
+| Measured | <p>The value is determined by an exact measurement. </p> |
+| Estimated | <p>The value is estimated by a person.  </p> |

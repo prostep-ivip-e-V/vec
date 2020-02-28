@@ -2,14 +2,17 @@
 title: WireReceptionReference
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - WireReceptionReference
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A <i>WireReceptionReference</i> is an instance of a <i>WireReception</i>.      </p>    </body> </html> 
+<p> A <i>WireReceptionReference</i> is an instance of a <i>WireReception</i>.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,19 +22,18 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Contacting Specification]({{< relref "../connectivity/contacting-specification" >}})<br/> [Instances of Terminals]({{< relref "../instances-of-components/instances-of-terminals" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies a unique <i>identification</i> of the <i>WireReceptionReference</i>. The <i>identification</i> is guaranteed to be unique within the <i>TerminalRole</i> (this might be for example a reception number).      </p>    </body> </html>  | [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique <i>identification</i> of the <i>WireReceptionReference</i>. The <i>identification</i> is guaranteed to be unique within the <i>TerminalRole</i> (this might be for example a reception number).      </p> | [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireReception]({{< relref "wirereception.md" >}}) | wireReception | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>WireReception</i> that is instanced by this <i>WireReceptionReference.</i>      </p>    </body> </html>  |
+| [WireReception]({{< relref "wirereception.md" >}}) | wireReception | 1 | 0..* | <p> References the <i>WireReception</i> that is instanced by this <i>WireReceptionReference.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireMountingDetail]({{< relref "wiremountingdetail.md" >}}) | 0..* | contactedWireReception | 1 | References the WireReception that is used for the WireMounting.   |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 1 | wireReceptionReference | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p>    </body> </html>  |
+| [WireMountingDetail]({{< relref "wiremountingdetail.md" >}}) | 0..* | contactedWireReception | 1 | References the WireReception that is used for the WireMounting. |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | 1 | wireReceptionReference | 0..* | <p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |

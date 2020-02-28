@@ -2,14 +2,17 @@
 title: TopologyZoneSpecification
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - TopologyZoneSpecification
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Specification for the definition of TopologZones</body> </html>
+<p> Specification for the definition of TopologyZones.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Topology Zones]({{< relref "../topology-and-geometry/topology-zones" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,4 +30,4 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TopologyZone]({{< relref "topologyzone.md" >}}) | zone | 0..* | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies the <i>TopologyZones</i> that are part of the <i>TopologyZoneSpecification</i>.      </p>  </body> </html> |
+| [TopologyZone]({{< relref "topologyzone.md" >}}) | zone | 0..* | 0..1 | <p> Specifies the <i>TopologyZones</i> that are part of the <i>TopologyZoneSpecification</i>.      </p> |

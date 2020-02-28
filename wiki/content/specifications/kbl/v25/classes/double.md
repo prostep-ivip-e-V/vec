@@ -1,0 +1,14 @@
+﻿---
+title: Double
+toc: false
+type: specs
+date: "2018-07-04"
+draft: false
+specification: KBL
+version: 2.5
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - Double
+menu_name: kbl-2.5
+---

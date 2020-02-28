@@ -2,12 +2,15 @@
 title: FuseComponent
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - FuseComponent
+menu_name: vec-1.2.0
 ---
 
 ## General Information
@@ -19,18 +22,17 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Multi Fuse]({{< relref "../description-of-components/multi-fuse" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Identification of the FuseComponent, which must be distinct for all FuseComponents of an MultiFuseSpecification.      </p>    </body> </html>  | [FuseComponent]({{< relref "fusecomponent.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Identification of the FuseComponent, which must be distinct for all FuseComponents of an MultiFuseSpecification.      </p> | [FuseComponent]({{< relref "fusecomponent.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | connectedPins | 0..2 | 0..* |  |
 | [FuseSpecification]({{< relref "fusespecification.md" >}}) | fuseSpecification | 0..1 |  |  |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | connectedPins | 0..2 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

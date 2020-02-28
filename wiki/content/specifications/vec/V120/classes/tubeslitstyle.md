@@ -2,14 +2,17 @@
 title: TubeSlitStyle
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - TubeSlitStyle
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines valid types / styles of a slitted tube.      </p>    </body> </html> 
+<p> Defines valid types / styles of a slitted tube.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,8 +23,8 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Slit | <html>   <head>     </head>   <body>     <p> The tube has just a simple slit.      </p>    </body> </html>  |
-| SelfClosing | <html>   <head>     </head>   <body>     <p> The slit of the tube is self closing.      </p>    </body> </html>  |
-| Closable | <html>   <head>     </head>   <body> The slit can be closed manually.   </body> </html>  |
-| Overlapping | <html>   <head>     </head>   <body>     <p> The edges of the slit are overlapping.      </p>    </body> </html>  |
-| TwoParts | <html>   <head>     </head>   <body>     <p> Two-parted tubes consist of inner tube and an outer tube (normally defined as one <i>PartNumber)</i>. Both tubes are slit and are combined into each other during assembly, thus creating one closed tube.      </p>    </body> </html>  |
+| Slit | <p> The tube has just a simple slit.      </p> |
+| SelfClosing | <p> The slit of the tube is self-closing.      </p> |
+| Closable | <p> The slit can be closed manually.      </p> |
+| Overlapping | <p> The edges of the slit are overlapping.      </p> |
+| TwoParts | <p> Two-parted tubes consist of inner tube and an outer tube (normally defined as one <i>PartNumber)</i>. Both tubes are slit and are combined into each other during assembly, thus creating one closed tube.      </p> |

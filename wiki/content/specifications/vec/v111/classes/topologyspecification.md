@@ -1,0 +1,41 @@
+﻿---
+title: TopologySpecification
+toc: false
+type: specs
+date: "2014-07-01"
+draft: false
+specification: VEC
+version: 1.1.1
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - TopologySpecification
+menu_name: vec-1.1.1
+---
+<p>Specification for the definition of a topology. A topology consists of TopologyNodes, TopologySegments and Zones.  </p>
+## General Information
+
+| Attribute               | Value |
+|-------------------------|-------|
+| **Owner**               | topology |
+| **Applied Stereotype**  |   |
+| **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
+| **Is Abstract**         | false |
+| **Derived Classifiers** | [TopologyGroupSpecification]({{< relref "topologygroupspecification.md" >}}) |
+
+## Attributes
+|  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
+|--------|--------|---------|---------------|--------------|
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. Over all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+
+## Outgoing Relations
+|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
+|----------|----------|-----------|-----------|-----------------|
+| [TopologyNode]({{< relref "topologynode.md" >}}) | topologyNode | 0..* | 1 | Specifies the TopologyNodes defined by the TopologySpecification. |
+| [TopologySegment]({{< relref "topologysegment.md" >}}) | topologySegment | 0..* | 1 | Specifies the TopologySegments defined by the TopologySpecification. |
+| [Zone]({{< relref "zone.md" >}}) | zone | 0..* | 0..1 | <p> Specifies the Zones that are part of the TopologySpecification.      </p> |
+##  Incoming Relations
+|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
+|----------|----------|-----------|-----------|----------------|
+| [TopologyGroupSpecification]({{< relref "topologygroupspecification.md" >}}) | 0..* | topologySpecification | 0..* |  |

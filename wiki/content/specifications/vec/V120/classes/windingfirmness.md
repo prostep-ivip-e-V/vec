@@ -2,14 +2,17 @@
 title: WindingFirmness
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - WindingFirmness
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Defines the firmness with which a tape is applied to a segment. </body> </html>
+Defines the firmness with which a tape is applied to a segment.
 ## General Information
 
 | Attribute               | Value |
@@ -20,5 +23,5 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Limp | <html>   <head>     </head>   <body>     <p> &#160;The taping is applied limp (loose taping).      </p>  </body> </html> |
-| Tight | <html>   <head>     </head>   <body>     <p> The taping is applied tight.      </p>  </body> </html> |
+| Limp | <p> &#160;The taping is applied limp (loose taping).      </p> |
+| Tight | <p> The taping is applied tight.      </p> |

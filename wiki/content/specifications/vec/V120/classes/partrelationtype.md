@@ -2,14 +2,17 @@
 title: PartRelationType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PartRelationType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines how the set of <i>acessoryParts </i>referenced by a <i>PartRelation</i> should be interpreted.      </p>    </body> </html> 
+<p> Defines how the set of <i>acessoryParts </i>referenced by a <i>PartRelation</i> should be interpreted.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,6 +23,7 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Mandatory | <html>   <head>     </head>   <body>     <p> <i>Mandatory </i>means that in a usage of a component <u>all</u> referenced <i>acessoryParts</i> must be used.      </p>    </body> </html>  |
-| Optional | <html>   <head>     </head>   <body>     <p> <i>Optional </i>means that in a usage of a component <u>some</u> referenced <i>acessoryParts</i> can be used by choice.      </p>    </body> </html>  |
-| OneOfAll | <html>   <head>     </head>   <body>     <p> <i>OneOfAll </i>means that in a usage of a component exactly <u>one</u> of the referenced <i>acessoryParts</i> must be selected.      </p>    </body> </html>  |
+| Mandatory | <p> <i>Mandatory </i>means that in a usage of a component <u>all</u> referenced <i>acessoryParts</i> must be used.      </p> |
+| Optional | <p> <i>Optional </i>means that in a usage of a component <u>some</u> referenced <i>acessoryParts</i> can be used by choice.      </p> |
+| OneOfAll | <p> <i>OneOfAll </i>means that in a usage of a component exactly <u>one</u> of the referenced <i>acessoryParts</i> must be selected.      </p> |
+| Custom | <p> Custom means, that there is some kind of custom constraints /&#160;logic between referenced<i> PartVersions</i> that has to be evaluated to determine the selected accessories.      </p> |

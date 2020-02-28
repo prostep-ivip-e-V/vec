@@ -2,14 +2,17 @@
 title: PartUsage
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PartUsage
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> PartUsages shall be used for the specification of the elements on an electrical system wiring plan and for the specification of the elements on a pure geometry description. PartUsages shall more than ever be used in cases where it is necessary to describe a certain instance of a part or part group, possibly together with certain technical properties, but where it is at the same time yet not possible to define a concrete part number.      </p>    </body> </html> 
+<p> PartUsages shall be used for the specification of the elements on an electrical system wiring plan and for the specification of the elements on a pure geometry description. PartUsages shall more than ever be used in cases where it is necessary to describe a certain instance of a part or part group, possibly together with certain technical properties, but where it is at the same time yet not possible to define a concrete part number.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,26 +22,25 @@ weight:
 | **Base Classifier**     | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Assemblies, Modules and Harness (Configurations)]({{< relref "../composite-part-descriptions/assemblies-modules-and-harness-configurations" >}})<br/> [Conformance to Requirements]({{< relref "../description-of-components/conformance-to-requirements" >}})<br/> [Instantiation of Components]({{< relref "../instances-of-components/instantiation-of-components" >}})<br/> [Part Substitutions]({{< relref "../description-of-components/part-substitutions" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the OccurrenceOrUsage. The identification is guaranteed to be unique within the context. Over all VEC-documents an OccurrenceOrUsage-instance can be trusted to be the same if the context-instance is the same and the identification of the OccurrenceOrUsage is the same.      </p>    </body> </html>  | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
-|aliasId | [AliasIdentification]({{< relref "aliasidentification.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Room to specify additional identifiers for the OccurrenceOrUsage.      </p>    </body> </html>  | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
-|abbreviation | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Specifies an abbreviation of the <i>OccurrenceOrUsage</i>. Normally this a human readable short name.      </p>    </body> </html>  | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Specifies additional, human readable information about the OccurrenceOrUsage.      </p>    </body> </html>  | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
-|primaryPartUsageType | [PrimaryPartType]({{< relref "primaryparttype.md" >}}) | 1 | <html><body><p>The primary type of the PartUsage defines the type of the described part (e.g. ConnectorHousing, Fixing, etc.) Since the VEC supports dual use parts (e.g. Fixing &amp; WireProtection) there is no direct connection between the primaryPartUsageType and the allowed specifications for the description of a PartUsage.  </p></body></html> | [PartUsage]({{< relref "partusage.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the OccurrenceOrUsage. The identification is guaranteed to be unique within the context. For all VEC-documents an OccurrenceOrUsage-instance can be trusted to be the same if the context-instance is the same and the identification of the OccurrenceOrUsage is the same.      </p> | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
+|aliasId | [AliasIdentification]({{< relref "aliasidentification.md" >}}) | 0..* | <p> Room to specify additional identifiers for the OccurrenceOrUsage.      </p> | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
+|abbreviation | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p> Specifies an abbreviation of the <i>OccurrenceOrUsage</i>. Normally this a human readable short name.      </p> | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the OccurrenceOrUsage.      </p> | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) |
+|primaryPartUsageType | [PrimaryPartType]({{< relref "primaryparttype.md" >}}) | 1 | <p>The primary type of the PartUsage defines the type of the described part (e.g. ConnectorHousing, Fixing, etc.) Since the VEC supports dual use parts (e.g. Fixing &amp; WireProtection) there is no direct connection between the primaryPartUsageType and the allowed specifications for the description of a PartUsage.  </p> | [PartUsage]({{< relref "partusage.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) | partOrUsageRelatedSpecification | 0..* | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399  |
-| [PartSubstitutionSpecification]({{< relref "partsubstitutionspecification.md" >}}) | partSubstitution | 0..1 |  |  |
+| [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) | partOrUsageRelatedSpecification | 0..* | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399 |
 | [PartUsage]({{< relref "partusage.md" >}}) | instanciatedUsage | 0..* | 0..* |  |
+| [PartSubstitutionSpecification]({{< relref "partsubstitutionspecification.md" >}}) | partSubstitution | 0..1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [PartUsage]({{< relref "partusage.md" >}}) | 0..* | instanciatedUsage | 0..* |  |
-| [PartUsageSpecification]({{< relref "partusagespecification.md" >}}) | 1 | partUsage | 0..* | Specifies the PartUsages defined by the PartUsageSpecification.  |
-| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | 0..* | realizedPartUsage | 0..1 | References the PartUsage that is realized by the PartOccurrence.   |
+| [PartUsageSpecification]({{< relref "partusagespecification.md" >}}) | 1 | partUsage | 0..* | Specifies the PartUsages defined by the PartUsageSpecification. |
+| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | 0..* | realizedPartUsage | 0..* | References the PartUsages that are realized by the PartOccurrence. |

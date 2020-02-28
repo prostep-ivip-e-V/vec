@@ -2,14 +2,17 @@
 title: LengthClassification
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - LengthClassification
+menu_name: vec-1.2.0
 ---
-<html><body><p>Enumeration for the definition of a LengthClassification. </p></body></html>
+<p>Enumeration for the definition of a LengthClassification. </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,5 +23,5 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Designed | <html>   <head>     </head>   <body>     <p> A designed length means that the value is derived automatically in a CAD Tool (e.g. from a 3D Geometry).      </p>  </body> </html> |
-| Adapted | <html>   <head>     </head>   <body>     <p> An adapted length means that the value is not the exact value taken from the CAD tool, but is adapted in some way. Adapted values are supposed for further use in the process, especially as basis for the product specification. Adapted values are normally created for example by rounding the designed values.      </p>  </body> </html> |
+| Designed | <p> A designed length means that the value is derived automatically in a CAD Tool (e.g. from a 3D Geometry).      </p> |
+| Adapted | <p> An adapted length means that the value is not the exact value taken from the CAD tool but is adapted in some way. Adapted values are supposed for further use in the process, especially as basis for the product specification. Adapted values are normally created for example by rounding the designed values.      </p> |

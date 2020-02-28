@@ -2,14 +2,17 @@
 title: NetGroup
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - NetGroup
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines a logical grouping of specific <i>Nets</i>. For example it can be used to identify all <i>Nets</i> of specific CAN domain, a function, a requirement level (e.g. Safety&#160;&amp;&#160;Security).      </p>  </body> </html>
+<p> Defines a logical grouping of specific <i>Nets</i>. For example, it can be used to identify all <i>Nets</i> of specific CAN domain, a function, a requirement level (e.g. Safety&#160;&amp;&#160;Security).      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,20 +22,19 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Connection Specification]({{< relref "../connectivity/connection-specification" >}})<br/> [Net Specification]({{< relref "../connectivity/net-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the NetGroup. The identification is guaranteed to be unique within the NetSpecification.      </p>    </body> </html>  | [NetGroup]({{< relref "netgroup.md" >}}) |
-|netGroupType | [String]({{< relref "string.md" >}}) | 0..1 | <html><body><p>Specifies the type of the group.  </p></body></html> | [NetGroup]({{< relref "netgroup.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <html><body><p>Room for additional, human readable information about the NetGroup. </p></body></html> | [NetGroup]({{< relref "netgroup.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the NetGroup. The identification is guaranteed to be unique within the NetSpecification.      </p> | [NetGroup]({{< relref "netgroup.md" >}}) |
+|netGroupType | [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the type of the group.  </p> | [NetGroup]({{< relref "netgroup.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>Room for additional, human readable information about the NetGroup. </p> | [NetGroup]({{< relref "netgroup.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Net]({{< relref "net.md" >}}) | net | 2..* | 0..1 | References the Nets that are grouped by the NetGroup.   |
+| [Net]({{< relref "net.md" >}}) | net | 2..* | 0..1 | References the Nets that are grouped by the NetGroup. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netGroup | 0..* | Specifies the NetGroup defined in the NetSpecification.  |
+| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netGroup | 0..* | Specifies the NetGroup defined in the NetSpecification. |

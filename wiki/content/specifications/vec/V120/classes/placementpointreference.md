@@ -2,14 +2,17 @@
 title: PlacementPointReference
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PlacementPointReference
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A <i>PlacementPointReference</i> is the instance of a <i>PlacementPoint</i> in the context of an <i>OccurrenceOrUsage</i>.      </p>    </body> </html> 
+<p> A <i>PlacementPointReference</i> is the instance of a <i>PlacementPoint</i> in the context of an <i>OccurrenceOrUsage</i>.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,19 +22,18 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Instances of Placeable Components]({{< relref "../instances-of-components/instances-of-placeable-components" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the PlacementPointReference. The identification is guaranteed to be unique within the containing PlaceableElementRole.      </p>    </body> </html>  | [PlacementPointReference]({{< relref "placementpointreference.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the PlacementPointReference. The identification is guaranteed to be unique within the containing PlaceableElementRole.      </p> | [PlacementPointReference]({{< relref "placementpointreference.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p>    </body> </html>  |
+| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 1 | 0..* | <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Location]({{< relref "location.md" >}}) | 0..* | placedPlacementPoints | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PlacementPointReference </i>that is placed by this location.      </p>    </body> </html>  |
-| [PlaceableElementRole]({{< relref "placeableelementrole.md" >}}) | 1 | placementPointReference | 0..* | <html>   <head>     </head>   <body>   </body> </html>  |
+| [Location]({{< relref "location.md" >}}) | 0..* | placedPlacementPoints | 0..* | <p> References the <i>PlacementPointReference </i>that is placed by this location.      </p> |
+| [PlaceableElementRole]({{< relref "placeableelementrole.md" >}}) | 1 | placementPointReference | 0..* |  |

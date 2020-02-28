@@ -2,16 +2,37 @@
 title: Instances of Connector Housings
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - AbstractSlot
+  - Role
+  - ModularSlotReference
+  - AbstractSlotReference
+  - SlotReference
+  - TerminalRole
+  - ConnectorHousingRole
+  - CavityReference
+  - Cavity
+  - ModularSlot
+  - ConnectorHousingCapRole
+  - TerminalSpecification
+  - ConnectorHousingCapSpecification
+  - ConnectorHousingSpecification
+  - Slot
 menu:
-  vec120:
-    identifier: instances-of-components/instances-of-connector-housings    
+  VEC-1.2.0:    
     parent: instances-of-components
-    weight: 1004004 
+    identifier: instances-of-components/instances-of-connector-housings
+    weight: 1007004 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1004004
+weight: 1007004
 ---
 {{< svgfigure src="instances-of-connector-housings.png" width="1203" height="752" caption="Instances of Connector Housings" numbered="true" >}}
   {{< svglink relref="../../classes/abstractslot.md" x="175.0" y="280.0" width="132.0" height="55.0" >}}
@@ -30,4 +51,4 @@ weight: 1004004
   {{< svglink relref="../../classes/connectorhousingspecification.md" x="112.0" y="126.0" width="254.0" height="115.0" >}}
   {{< svglink relref="../../classes/slot.md" x="217.0" y="392.0" width="277.0" height="79.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> The diagram shows the mapping between the part master data of a connector housing (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side).      </p>    </body> </html> 
+<p> The diagram shows the mapping between the part master data of a connector housing (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side).      </p>

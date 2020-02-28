@@ -2,16 +2,29 @@
 title: Instances of Placeable Components
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - MeasurementPoint
+  - PlaceableElementRole
+  - PlacementPointReference
+  - MeasurementPointReference
+  - PlacementPoint
+  - Role
+  - PlaceableElementSpecification
 menu:
-  vec120:
-    identifier: instances-of-components/instances-of-placeable-components    
+  VEC-1.2.0:    
     parent: instances-of-components
-    weight: 1004010 
+    identifier: instances-of-components/instances-of-placeable-components
+    weight: 1007011 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1004010
+weight: 1007011
 ---
 {{< svgfigure src="instances-of-placeable-components.png" width="696" height="516" caption="Instances of Placeable Components" numbered="true" >}}
   {{< svglink relref="../../classes/measurementpoint.md" x="42.0" y="439.0" width="129.0" height="55.0" >}}
@@ -22,4 +35,4 @@ weight: 1004010
   {{< svglink relref="../../classes/role.md" x="420.0" y="49.0" width="202.0" height="55.0" >}}
   {{< svglink relref="../../classes/placeableelementspecification.md" x="47.0" y="136.0" width="224.0" height="55.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> The diagram shows the mapping between the part master data of a <i>PlaceableElement</i> (partly displayed on the left side)&#160;and the corresponding instance specific information (displayed on the right side).      </p>    </body> </html> 
+<p> The diagram shows the mapping between the part master data of a <i>PlaceableElement</i> (partly displayed on the left side)&#160;and the corresponding instance specific information (displayed on the right side).      </p>

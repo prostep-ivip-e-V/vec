@@ -2,14 +2,17 @@
 title: CavityAddOn
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - CavityAddOn
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Specifies the wire addon needed to reach a <i>Cavity</i> from a specific <i>SegmentConnectionPoint</i>. For each <i>SegmentConnectionPoint</i> there shall be no more than one add-on value per cavity and type.      </p>  </body> </html>
+<p> Specifies the wire addon needed to reach a <i>Cavity</i> from a specific <i>SegmentConnectionPoint</i>. For each <i>SegmentConnectionPoint</i> there shall be no more than one add-on value per cavity and type.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,13 +22,12 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Connector Housings]({{< relref "../description-of-components/connector-housings" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|wireAddOn | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies the wire length add on needed for the cavity.      </p>    </body> </html>  | [CavityAddOn]({{< relref "cavityaddon.md" >}}) |
-|type | [WireAddOnType]({{< relref "wireaddontype.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Defines the type of the add-on (see <i>CavityAddOn</i>).      </p>  </body> </html> | [CavityAddOn]({{< relref "cavityaddon.md" >}}) |
+|wireAddOn | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> Specifies the wire length add on needed for the cavity.      </p> | [CavityAddOn]({{< relref "cavityaddon.md" >}}) |
+|type | [WireAddOnType]({{< relref "wireaddontype.md" >}}) | 1 | <p> Defines the type of the add-on (see <i>CavityAddOn</i>).      </p> | [CavityAddOn]({{< relref "cavityaddon.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |

@@ -2,16 +2,35 @@
 title: Harness and Variants
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - Role
+  - ModuleListSpecification
+  - CompositionSpecification
+  - PartStructureSpecification
+  - ModuleFamilySpecification
+  - PartWithSubComponentsRole
+  - PartOrUsageRelatedSpecification
+  - PartOccurrence
+  - OccurrenceOrUsage
+  - ModuleFamily
+  - ModuleList
+  - Specification
+  - ConfigurableElement
 menu:
-  vec120:
-    identifier: composite-part-descriptions/harness-and-variants    
+  VEC-1.2.0:    
     parent: composite-part-descriptions
-    weight: 1007004 
+    identifier: composite-part-descriptions/harness-and-variants
+    weight: 1010004 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1007004
+weight: 1010004
 ---
 {{< svgfigure src="harness-and-variants.png" width="804" height="660" caption="Harness and Variants" numbered="true" >}}
   {{< svglink relref="../../classes/role.md" x="246.0" y="475.0" width="138.0" height="55.0" >}}
@@ -28,4 +47,4 @@ weight: 1007004
   {{< svglink relref="../../classes/specification.md" x="35.0" y="15.0" width="477.0" height="67.0" >}}
   {{< svglink relref="../../classes/configurableelement.md" x="28.0" y="603.0" width="673.0" height="43.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> In addition to the <i>CompositionSpecification</i> and the <i>PartStructureSpecification</i>, the VEC defines two other concepts to control occurrences, especially composite parts (e.g. modules): <i>ModuleFamily</i> and <i>ModuleList</i>.     </p>      <p> <i>PartWithSubComponentsRoles</i> referenced by a <i>ModuleFamily </i>respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentRoles</i> belong to are mutually exclusive.     </p>      <p> A <i>ModuleList</i> specifies a set of <i>PartWithSubComponentsRoles. </i>The definition requires that if one or more of this <i>PartWithSubComponentsRoles</i> respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentRoles</i> belong to are part of an assembly the referenced <i>completitionComponents</i> have to be added.      </p>    </body> </html> 
+<p> In addition to the <i>CompositionSpecification</i> and the <i>PartStructureSpecification</i>, the VEC defines two other concepts to control occurrences, especially composite parts (e.g. modules): <i>ModuleFamily</i> and <i>ModuleList</i>.      </p>      <p> <i>PartWithSubComponentsRoles</i> referenced by a <i>ModuleFamily </i>respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentsRoles</i> belong to are mutually exclusive.      </p>      <p> A <i>ModuleList</i> specifies a set of <i>PartWithSubComponentsRoles. </i>The definition requires that if one or more of this <i>PartWithSubComponentsRoles</i> respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentsRoles</i> belong to are part of an assembly the referenced <i>completitionComponents</i> have to be added.      </p>

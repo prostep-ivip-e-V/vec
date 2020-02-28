@@ -2,14 +2,17 @@
 title: WireAddOnType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - WireAddOnType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Specifies possible values for the t<i>ype </i>of wire add-ons (e.g. <i>CavityAddOn</i>).</body> </html>
+Specifies possible values for the t<i>ype </i>of wire add-ons (e.g. <i>CavityAddOn</i>).
 ## General Information
 
 | Attribute               | Value |
@@ -20,5 +23,5 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Contract | <html>   <head>     </head>   <body>     <p> The agreed add-on for any negotiations and calculations.      </p>  </body> </html> |
-| Production | <html>   <head>     </head>   <body>     <p> The add-on length for the use in production environments.      </p>  </body> </html> |
+| Contract | <p> The agreed add-on for any negotiations and calculations.      </p> |
+| Production | <p> The add-on length for the use in production environments.      </p> |

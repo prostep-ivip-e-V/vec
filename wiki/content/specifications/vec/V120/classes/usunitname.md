@@ -2,14 +2,17 @@
 title: USUnitName
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - USUnitName
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Enumeration for the definition of US unit names.      </p>    </body> </html> 
+<p> Enumeration for the definition of US unit names.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -44,4 +47,4 @@ weight:
 | Perch |  |
 | Rood |  |
 | Acre |  |
-| AWG | <html>   <head>     </head>   <body>     <p> American wire gauge (AWG), also known as the Brown &amp; Sharpe wire gauge, is a standardized wire gauge system used in the United States and Canada.      </p>    </body> </html>  |
+| AWG | <p> American wire gauge (AWG), also known as the Brown &amp; Sharpe wire gauge, is a standardized wire gauge system used in the United States and Canada.      </p> |

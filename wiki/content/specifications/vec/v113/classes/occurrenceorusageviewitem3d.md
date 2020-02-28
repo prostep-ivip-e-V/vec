@@ -1,0 +1,40 @@
+﻿---
+title: OccurrenceOrUsageViewItem3D
+toc: false
+type: specs
+date: "2017-02-21"
+draft: false
+specification: VEC
+version: 1.1.3
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - OccurrenceOrUsageViewItem3D
+menu_name: vec-1.1.3
+---
+<p>An OccurrenceOrUsageViewItem3D specifies the representation of an OcurrenceOrUsage in a 3D-model.  </p>
+## General Information
+
+| Attribute               | Value |
+|-------------------------|-------|
+| **Owner**               | geo_3d |
+| **Applied Stereotype**  |   |
+| **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
+| **Is Abstract**         | false |
+| **Derived Classifiers** |   |
+
+## Attributes
+|  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
+|--------|--------|---------|---------------|--------------|
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the OccurrenceOrUsageViewItem. The identification is guaranteed to be unique within the BuildingBlockSpecification3D.      </p> | [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) |
+|aliasId | [AliasIdentification]({{< relref "aliasidentification.md" >}}) | 0..* | <p> Specifies additional identifiers for the OccurrenceOrUsageViewItem3D.      </p> | [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) |
+
+## Outgoing Relations
+|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
+|----------|----------|-----------|-----------|-----------------|
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | occurrenceOrUsage | 0..1 | 0..* | <p> Specifies the OccurrenceOrUsage which is represented by the view item.      </p> |
+| [Transformation3D]({{< relref "transformation3d.md" >}}) | orientation | 0..1 | 0..1 | Specifies the orientation of the view item. |
+##  Incoming Relations
+|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
+|----------|----------|-----------|-----------|----------------|
+| [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 1 | placedElementViewItem3D | 0..* | Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D. |

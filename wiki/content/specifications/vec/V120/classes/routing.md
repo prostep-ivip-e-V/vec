@@ -2,14 +2,17 @@
 title: Routing
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - Routing
+menu_name: vec-1.2.0
 ---
-<html><body><p>A Routing is the assignment of a RoutableElement (Connection or WireElementReference) to a path in the topology.  </p></body></html>
+<p>A Routing is the assignment of a RoutableElement (Connection or WireElementReference) to a path in the topology.  </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,22 +22,21 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the Routing. The identification is guaranteed to be unique within the RoutingSpecification.      </p>    </body> </html>  | [Routing]({{< relref "routing.md" >}}) |
-|specialRoutedComment | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..1 | <html><body><p>Allows the specification of an explanation why this routing has been routed in a special way.  </p></body></html> | [Routing]({{< relref "routing.md" >}}) |
-|specialRouted | [Boolean]({{< relref "boolean.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies that routing has been created in a special way. This means it has not been calculated in the standard way, because for some reason the result of the standard calculation has been inconvenient.      </p>    </body> </html>  | [Routing]({{< relref "routing.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the Routing. The identification is guaranteed to be unique within the RoutingSpecification.      </p> | [Routing]({{< relref "routing.md" >}}) |
+|specialRoutedComment | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..1 | <p>Allows the specification of an explanation why this routing has been routed in a special way.  </p> | [Routing]({{< relref "routing.md" >}}) |
+|specialRouted | [Boolean]({{< relref "boolean.md" >}}) | 0..1 | <p> Specifies that routing has been created in a special way. This means it has not been calculated in the standard way, because for some reason the result of the standard calculation has been inconvenient.      </p> | [Routing]({{< relref "routing.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [RoutableElement]({{< relref "routableelement.md" >}}) | routedElement | 1 | 0..* | Specifies the Element that is routed.   |
-| [TopologySegment]({{< relref "topologysegment.md" >}}) | mandatorySegment | 0..* | 0..* | Specifies some constraints for the routing. If the path of the routing is recalculated the referenced segments must be visited.   |
-| [Path]({{< relref "path.md" >}}) | path | 1 | 0..1 | Specifies a Path on the topology that is used for the routing.   |
+| [Path]({{< relref "path.md" >}}) | path | 1 | 0..1 | Specifies a Path on the topology that is used for the routing. |
+| [RoutableElement]({{< relref "routableelement.md" >}}) | routedElement | 1 | 0..* | Specifies the Element that is routed. |
+| [TopologySegment]({{< relref "topologysegment.md" >}}) | mandatorySegment | 0..* | 0..* | Specifies some constraints for the routing. If the path of the routing is recalculated the referenced segments must be visited. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [RoutingSpecification]({{< relref "routingspecification.md" >}}) | 1 | routing | 0..* | Specifies the Routings described by the RoutingSpecification.  |
+| [RoutingSpecification]({{< relref "routingspecification.md" >}}) | 1 | routing | 0..* | Specifies the Routings described by the RoutingSpecification. |

@@ -2,14 +2,17 @@
 title: NetworkNodeType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - NetworkNodeType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines the common agreed values for the Types of a NetworkNode.      </p>    </body> </html> 
+<p> Defines the common agreed values for the Types of a NetworkNode.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -28,5 +31,5 @@ weight:
 | Generator |  |
 | PowerDistribution |  |
 | Switch |  |
-| OpenEnd | <html>   <head>     </head>   <body> Defines that this NetworkNode is the end point for some unconnected nets that require wires and routings in the resulting harness (e.g. an antenna). A NetworkNode of this type is used whenever nets shall not be connected (on one side).</body> </html> |
-| Ground | <html>   <head>     </head>   <body>     <p> Defines that this NetworkNode is a grounding point.      </p>  </body> </html> |
+| OpenEnd | <p> Defines that this NetworkNode is the end point for some unconnected nets that require wires and routings in the resulting harness (e.g. an antenna). A NetworkNode of this type is used whenever nets shall not be connected (on one side).      </p> |
+| Ground | <p> Defines that this NetworkNode is a grounding point.      </p> |
