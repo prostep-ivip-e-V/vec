@@ -33,63 +33,63 @@ Even if the system schematic in this example only shows pins which are connected
 
 The following XML listing contains the component nodes and connection from the example above.
 
-{{< highlight xml "linenos=table,linenostart=1" >}}
+```xml
 <Specification xsi:type="vec:ConnectionSpecification" id="id_connect_spec_2506">
-            <Identification>ConSpec_V..58L..</Identification>
-            <ComponentNode id="id_comp_node_2507">
-                <Identification>MX1.1</Identification>
-                <ComponentConnector id="id_component_connector_2509">
-                    <Identification>A</Identification>
-                    <ComponentPort id="id_comp_port_2510">
-                        <Identification>1</Identification>
-                    </ComponentPort>
-                </ComponentConnector>
-            </ComponentNode>
-            <ComponentNode id="id_comp_node_2513">
-                <Identification>MX3.1</Identification>
-                <ComponentConnector id="id_component_connector_2518">
-                    <Identification>A</Identification>
-                    <ComponentPort id="id_comp_port_2519">
-                        <Identification>1</Identification>
-                    </ComponentPort>
-                </ComponentConnector>
-            </ComponentNode>
-            <ComponentNode id="id_comp_node_2521">
-                <Identification>MX3.2</Identification>
-                <ComponentConnector id="id_component_connector_2523">
-                    <Identification>A</Identification>
-                    <ComponentPort id="id_comp_port_2524">
-                        <Identification>1</Identification>
-                    </ComponentPort>
-                </ComponentConnector>
-            </ComponentNode>
-            <ComponentNode id="id_comp_node_2533">
-                <Identification>E1.1</Identification>
-                <ComponentConnector id="id_component_connector_2535">
-                    <Identification>A</Identification>
-                    <ComponentPort id="id_comp_port_2538">
-                        <Identification>1</Identification>
-                    </ComponentPort>
-                </ComponentConnector>
-            </ComponentNode>
-            <Connection id="id_connection_2784">
-                <Identification>V..58L..</Identification>
-                <ConnectionEnd id="id_conn_end_2785">
-                    <Identification>MX1.1-A1</Identification>
-                    <ConnectedComponentPort>id_comp_port_2510</ConnectedComponentPort>
-                </ConnectionEnd>
-                <ConnectionEnd id="id_conn_end_2786">
-                    <Identification>MX3.1-A1</Identification>
-                    <ConnectedComponentPort>id_comp_port_2519</ConnectedComponentPort>
-                </ConnectionEnd>
-                <ConnectionEnd id="id_conn_end_2787">
-                    <Identification>MX3.2-A1</Identification>
-                    <ConnectedComponentPort>id_comp_port_2524</ConnectedComponentPort>
-                </ConnectionEnd>
-            </Connection>
-            [...]
-        </Specification>
-{{< / highlight >}}
+    <Identification>ConSpec_V..58L..</Identification>
+    <ComponentNode id="id_comp_node_2507">
+        <Identification>MX1.1</Identification>
+        <ComponentConnector id="id_component_connector_2509">
+            <Identification>A</Identification>
+            <ComponentPort id="id_comp_port_2510">
+                <Identification>1</Identification>
+            </ComponentPort>
+        </ComponentConnector>
+    </ComponentNode>
+    <ComponentNode id="id_comp_node_2513">
+        <Identification>MX3.1</Identification>
+        <ComponentConnector id="id_component_connector_2518">
+            <Identification>A</Identification>
+            <ComponentPort id="id_comp_port_2519">
+                <Identification>1</Identification>
+            </ComponentPort>
+        </ComponentConnector>
+    </ComponentNode>
+    <ComponentNode id="id_comp_node_2521">
+        <Identification>MX3.2</Identification>
+        <ComponentConnector id="id_component_connector_2523">
+            <Identification>A</Identification>
+            <ComponentPort id="id_comp_port_2524">
+                <Identification>1</Identification>
+            </ComponentPort>
+        </ComponentConnector>
+    </ComponentNode>
+    <ComponentNode id="id_comp_node_2533">
+        <Identification>E1.1</Identification>
+        <ComponentConnector id="id_component_connector_2535">
+            <Identification>A</Identification>
+            <ComponentPort id="id_comp_port_2538">
+                <Identification>1</Identification>
+            </ComponentPort>
+        </ComponentConnector>
+    </ComponentNode>
+    <Connection id="id_connection_2784">
+        <Identification>V..58L..</Identification>
+        <ConnectionEnd id="id_conn_end_2785">
+            <Identification>MX1.1-A1</Identification>
+            <ConnectedComponentPort>id_comp_port_2510</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="id_conn_end_2786">
+            <Identification>MX3.1-A1</Identification>
+            <ConnectedComponentPort>id_comp_port_2519</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="id_conn_end_2787">
+            <Identification>MX3.2-A1</Identification>
+            <ConnectedComponentPort>id_comp_port_2524</ConnectedComponentPort>
+        </ConnectionEnd>
+    </Connection>
+    [...]
+</Specification>
+```
 
 ### Potential Nodes
 
@@ -131,43 +131,43 @@ __**Note:**__ It is possible to reference a {{< vec-class ComponentPort>}} from 
 
 The following listing shows the additional {{< vec-class ComponentNode>}} as XML.
 
-{{< highlight xml "linenos=table,linenostart=1" >}}
+```xml
 <Specification xsi:type="vec:ConnectionSpecification" id="id_connect_spec_2506">
-            <Identification>ConSpec_V..58L..</Identification>
-            [...]
-            <ComponentNode id="id_comp_node_2533">
-                <Identification>E1.1</Identification>
-                <ComponentConnector id="id_component_connector_2535">
-                    <Identification>A</Identification>
-                    <ComponentPort id="id_comp_port_2538">
-                        <Identification>1</Identification>
-                    </ComponentPort>
-                </ComponentConnector>
-            </ComponentNode>
-            <ComponentNode id="id_comp_node_2634">
-                <Identification>GROUND</Identification>
-                <ComponentNodeType>OpenLink</ComponentNodeType>
-                <ComponentConnector id="id_component_connector_2636">
-                    <Identification>A</Identification>
-                    <ComponentPort id="id_comp_port_2639">
-                        <Identification>1</Identification>
-                    </ComponentPort>
-                </ComponentConnector>
-            </ComponentNode>
-            [...]
-            <Connection id="id_connection_2885">
-                <Identification>GROUND..SYS_055A</Identification>
-                <ConnectionEnd id="id_conn_end_2886">
-                    <Identification>E1.1-A1</Identification>
-                    <ConnectedComponentPort>id_comp_port_2538</ConnectedComponentPort>
-                </ConnectionEnd>
-                <ConnectionEnd id="id_conn_end_2887">
-                    <Identification>GROUND-A1</Identification>
-                    <ConnectedComponentPort>id_comp_port_2639</ConnectedComponentPort>
-                </ConnectionEnd>
-            </Connection>
-        </Specification>
-{{< / highlight >}}
+    <Identification>ConSpec_V..58L..</Identification>
+    [...]
+    <ComponentNode id="id_comp_node_2533">
+        <Identification>E1.1</Identification>
+        <ComponentConnector id="id_component_connector_2535">
+            <Identification>A</Identification>
+            <ComponentPort id="id_comp_port_2538">
+                <Identification>1</Identification>
+            </ComponentPort>
+        </ComponentConnector>
+    </ComponentNode>
+    <ComponentNode id="id_comp_node_2634">
+        <Identification>GROUND</Identification>
+        <ComponentNodeType>OpenLink</ComponentNodeType>
+        <ComponentConnector id="id_component_connector_2636">
+            <Identification>A</Identification>
+            <ComponentPort id="id_comp_port_2639">
+                <Identification>1</Identification>
+            </ComponentPort>
+        </ComponentConnector>
+    </ComponentNode>
+    [...]
+    <Connection id="id_connection_2885">
+        <Identification>GROUND..SYS_055A</Identification>
+        <ConnectionEnd id="id_conn_end_2886">
+            <Identification>E1.1-A1</Identification>
+            <ConnectedComponentPort>id_comp_port_2538</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="id_conn_end_2887">
+            <Identification>GROUND-A1</Identification>
+            <ConnectedComponentPort>id_comp_port_2639</ConnectedComponentPort>
+        </ConnectionEnd>
+    </Connection>
+</Specification>
+```
 
 
 ## Coupling Devices
