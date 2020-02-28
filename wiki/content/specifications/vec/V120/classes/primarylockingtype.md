@@ -2,14 +2,17 @@
 title: PrimaryLockingType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PrimaryLockingType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines the valid primary locking types for terminals.      </p>    </body> </html> 
+<p> Defines the valid primary locking types for terminals.      </p>
 ## General Information
 
 | Attribute               | Value |

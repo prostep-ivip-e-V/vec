@@ -2,14 +2,17 @@
 title: PrimaryPartType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PrimaryPartType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> The primary type of the part defines the type of the part (e.g. ConnectorHousing, Fixing, etc.) Since the VEC supports dual use parts (e.g. Fixing &amp; WireProtection) the primary part type is necessary to define which specification associated to part is the primary character of the part. Therefore all primary part types correspond to a PartOrUsageRelatedSpecification (e.g. ConnectorHousing --&gt; ConnectorHousingSpecification).     </p>      <p> The primary part type 'Other' is used if the PartVersion is not further specified by the VEC, which means it has no PartOrUsageRelatedSpecification, only a GeneralTechnicalPartSpecification or a direct instance of PartOrUsageRelatedSpecification.      </p>    </body> </html> 
+<p> The primary type of the part defines the type of the part (e.g. ConnectorHousing, Fixing, etc.) Since the VEC supports dual use parts (e.g. Fixing &amp; WireProtection) the primary part type is necessary to define which specification associated to part is the primary character of the part. Therefore, all primary part types correspond to a PartOrUsageRelatedSpecification (e.g. ConnectorHousing --&gt; ConnectorHousingSpecification).      </p>      <p> The primary part type 'Other' is used if the PartVersion is not further specified by the VEC, which means it has no PartOrUsageRelatedSpecification, only a GeneralTechnicalPartSpecification or a direct instance of PartOrUsageRelatedSpecification.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -36,6 +39,7 @@ weight:
 | Diode |  |
 | EdgeMountedFixing |  |
 | EEComponent |  |
+| Ferrite |  |
 | Fitting |  |
 | Fixing |  |
 | Fuse |  |

@@ -2,14 +2,17 @@
 title: WireElementReference
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - WireElementReference
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A WireElementReference represents the usage of a WireElement in the context of a PartUsage or PartOccurrence. For contacting purposes a WireElementReference has WireEnds. KBLFRM-384      </p>    </body> </html> 
+<p> A WireElementReference represents the usage of a WireElement in the context of a PartUsage or PartOccurrence. For contacting purposes, a WireElementReference has WireEnds. KBLFRM-384      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,25 +22,24 @@ weight:
 | **Base Classifier**     | [RoutableElement]({{< relref "routableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Instances of Wires]({{< relref "../instances-of-components/instances-of-wires" >}})<br/> [Routing]({{< relref "../topology-and-geometry/routing" >}})<br/> [Wire Grouping Specification]({{< relref "../connectivity/wire-grouping-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the WireElementReference. The identification is guaranteed to be unique within the WireRole.      </p>    </body> </html>  | [WireElementReference]({{< relref "wireelementreference.md" >}}) |
-|unconnected | [Boolean]({{< relref "boolean.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> If this attribute is <i>true</i>, the <i>WireElementReference</i> is not connected (unused) on purpose. This can be the case for example if a multi core is used, but not all cores are necessary in a specific situation.      </p>      <p> However, for all <i>WireElements</i> defined in the <i>WireSpecification</i> a corresponding <i>WireElementReference</i> shall exist. This attribute can be used to mark these unused cores explicitly.      </p>  </body> </html> | [WireElementReference]({{< relref "wireelementreference.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the WireElementReference. The identification is guaranteed to be unique within the WireRole.      </p> | [WireElementReference]({{< relref "wireelementreference.md" >}}) |
+|unconnected | [Boolean]({{< relref "boolean.md" >}}) | 0..1 | <p> If this attribute is <i>true</i>, the <i>WireElementReference</i> is not connected (unused) on purpose. This can be the case for example if a multi core is used, but not all cores are necessary in a specific situation.      </p>      <p> However, for all <i>WireElements</i> defined in the <i>WireSpecification</i> a corresponding <i>WireElementReference</i> shall exist. This attribute can be used to mark these unused cores explicitly.      </p> | [WireElementReference]({{< relref "wireelementreference.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireLength]({{< relref "wirelength.md" >}}) | wireLength | 0..* | 1 | Specifies the different length of a wire.   |
-| [WireEnd]({{< relref "wireend.md" >}}) | wireEnd | 0..* | 1 | Specifies the ends of the WireElementReference for contacting purposes.   |
-| [WireElement]({{< relref "wireelement.md" >}}) | referencedWireElement | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the WireElement that is represented by the WireElementReference.      </p>    </body> </html>  |
-| [Connection]({{< relref "connection.md" >}}) | connection | 0..1 | 0..* | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341  |
-| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the WireElementReference.  |
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.</body> </html> |
+| [WireElement]({{< relref "wireelement.md" >}}) | referencedWireElement | 1 | 0..* | <p> References the WireElement that is represented by the WireElementReference.      </p> |
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.      </p> |
+| [Connection]({{< relref "connection.md" >}}) | connection | 0..1 | 0..* | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341 |
+| [WireEnd]({{< relref "wireend.md" >}}) | wireEnd | 0..* | 1 | Specifies the ends of the WireElementReference for contacting purposes. |
+| [WireLength]({{< relref "wirelength.md" >}}) | wireLength | 0..* | 1 | Specifies the different length of a wire. |
+| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the WireElementReference. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireGrouping]({{< relref "wiregrouping.md" >}}) | 0..* | relatedWireRole | 2..* | References the concrete wire elements (WireElementReference) that are grouped by the WireGrouping.   |
-| [WireRole]({{< relref "wirerole.md" >}}) | 1 | wireElementReference | 0..* | Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed.   |
+| [WireGrouping]({{< relref "wiregrouping.md" >}}) | 0..* | relatedWireElementReference | 0..* | <p> References the concrete wire elements (<i>WireElementReference</i>) that are grouped by the WireGrouping.      </p> |
+| [WireRole]({{< relref "wirerole.md" >}}) | 1 | wireElementReference | 0..* | Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed. |

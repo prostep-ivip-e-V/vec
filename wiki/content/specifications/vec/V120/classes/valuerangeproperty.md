@@ -2,14 +2,17 @@
 title: ValueRangeProperty
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - ValueRangeProperty
+menu_name: vec-1.2.0
 ---
-<html><body><p>A custom property with a value range. (see KBLFRM-319) </p></body></html>
+<p>A custom property with a value range. (see KBLFRM-319) </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,11 +22,10 @@ weight:
 | **Base Classifier**     | [CustomProperty]({{< relref "customproperty.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Extensibility with Custom Properties]({{< relref "../key-concepts/extensibility-with-custom-properties" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
 |propertyType | [String]({{< relref "string.md" >}}) | 1 |  | [CustomProperty]({{< relref "customproperty.md" >}}) |
-|value | [ValueRange]({{< relref "valuerange.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Defines the value of the CustomProperty.      </p>    </body> </html>  | [ValueRangeProperty]({{< relref "valuerangeproperty.md" >}}) |
+|value | [ValueRange]({{< relref "valuerange.md" >}}) | 1 | <p> Defines the value of the CustomProperty.      </p> | [ValueRangeProperty]({{< relref "valuerangeproperty.md" >}}) |
 

@@ -2,14 +2,17 @@
 title: CavitySealRole
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - CavitySealRole
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A CavitySealRole defines the instance specific properties and relationships of a cavity seal.      </p>    </body> </html> 
+<p> A CavitySealRole defines the instance specific properties and relationships of a cavity seal.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,18 +22,18 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Contacting Specification]({{< relref "../connectivity/contacting-specification" >}})<br/> [Instances of Cavity Seals and Cavity Plugs]({{< relref "../instances-of-components/instances-of-cavity-seals-and-cavity-plugs" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <html><body><p>Specifies a unique identification of the Role. The identification is guaranteed to be unqiue within the OccurrenceOrUsage. </p></body></html> | [Role]({{< relref "role.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the Role. The identification is guaranteed to be unique within the OccurrenceOrUsage.      </p> | [Role]({{< relref "role.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavitySealSpecification]({{< relref "cavitysealspecification.md" >}}) | cavitySealSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>CavitySealSpecification </i>that is instanced by this <i>CavitySealRole.</i>      </p>    </body> </html>  |
+| [CavitySealSpecification]({{< relref "cavitysealspecification.md" >}}) | cavitySealSpecification | 1 | 0..* | <p> References the <i>CavitySealSpecification </i>that is instanced by this <i>CavitySealRole.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireMounting]({{< relref "wiremounting.md" >}}) | 0..* | mountedCavitySeal | 0..1 | <html>   <head>     </head>   <body>     <p> References the cavity seal that is used for the wire mounting.      </p>    </body> </html>  |
+| [WireMounting]({{< relref "wiremounting.md" >}}) | 0..* | mountedCavitySeal | 0..1 | <p> References the cavity seal that is used for the wire mounting.      </p> |
+| [CableLeadThroughReference]({{< relref "cableleadthroughreference.md" >}}) | 0..* | usedSeals | 0..* |  |

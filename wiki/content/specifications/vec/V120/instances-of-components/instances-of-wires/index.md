@@ -2,16 +2,31 @@
 title: Instances of Wires
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - WireElement
+  - Role
+  - WireRole
+  - WireEnd
+  - WireLength
+  - WireElementReference
+  - WireLengthType
+  - WireSpecification
+  - WireElementSpecification
 menu:
-  vec120:
-    identifier: instances-of-components/instances-of-wires    
+  VEC-1.2.0:    
     parent: instances-of-components
-    weight: 1004002 
+    identifier: instances-of-components/instances-of-wires
+    weight: 1007002 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1004002
+weight: 1007002
 ---
 {{< svgfigure src="instances-of-wires.png" width="758" height="611" caption="Instances of Wires" numbered="true" >}}
   {{< svglink relref="../../classes/wireelement.md" x="185.0" y="231.0" width="126.0" height="55.0" >}}
@@ -24,4 +39,4 @@ weight: 1004002
   {{< svglink relref="../../classes/wirespecification.md" x="52.0" y="140.0" width="260.0" height="43.0" >}}
   {{< svglink relref="../../classes/wireelementspecification.md" x="45.0" y="336.0" width="267.0" height="163.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> The diagram shows the mapping between the part master data of a wire (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side).      </p>    </body> </html> 
+<p> The diagram shows the mapping between the part master data of a wire (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side).      </p>

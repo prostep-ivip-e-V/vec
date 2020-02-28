@@ -2,12 +2,15 @@
 title: LocalizedTypedStringType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - LocalizedTypedStringType
+menu_name: vec-1.2.0
 ---
 
 ## General Information
@@ -20,5 +23,5 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Title | <html>   <head>     </head>   <body> The LocalizedTypedString represents a Title in accordance to ISO 7200.</body> </html> |
-| SupplementaryTitle | <html>   <head>     </head>   <body> The LocalizedTypedString represents a SupplementaryTitle in accordance to ISO 7200.</body> </html> |
+| Title | <p> The LocalizedTypedString represents a Title in accordance to ISO 7200.      </p> |
+| SupplementaryTitle | <p> The LocalizedTypedString represents a SupplementaryTitle in accordance to ISO 7200.      </p> |

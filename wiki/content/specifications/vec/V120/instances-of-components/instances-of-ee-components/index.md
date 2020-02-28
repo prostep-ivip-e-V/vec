@@ -2,16 +2,34 @@
 title: Instances of EE-Components
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - Role
+  - EEComponentRole
+  - PinComponentReference
+  - TerminalRole
+  - ConnectorHousingRole
+  - HousingComponentReference
+  - ExtensionSlotReference
+  - ExtensionSlot
+  - ConfigurableElement
+  - PinComponent
+  - EEComponentSpecification
+  - HousingComponent
 menu:
-  vec120:
-    identifier: instances-of-components/instances-of-ee-components    
+  VEC-1.2.0:    
     parent: instances-of-components
-    weight: 1004006 
+    identifier: instances-of-components/instances-of-ee-components
+    weight: 1007006 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1004006
+weight: 1007006
 ---
 {{< svgfigure src="instances-of-ee-components.png" width="1213" height="674" caption="Instances of EE-Components" numbered="true" >}}
   {{< svglink relref="../../classes/role.md" x="695.0" y="42.0" width="138.0" height="55.0" >}}
@@ -27,4 +45,4 @@ weight: 1004006
   {{< svglink relref="../../classes/eecomponentspecification.md" x="7.0" y="147.0" width="236.0" height="55.0" >}}
   {{< svglink relref="../../classes/housingcomponent.md" x="49.0" y="315.0" width="246.0" height="79.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> The diagram shows the mapping between the part master data of a EE components (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side). Additionally an <i>EEComponentRole</i> can reference one or more <i>ConnectorHousingRoles</i>, <i>AbstractSlotRoles </i>or <i>CavityReferences</i> onto which it is mounted.      </p>    </body> </html> 
+<p> The diagram shows the mapping between the part master data of an EE-component (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side). Additionally, an <i>EEComponentRole</i> can reference one or more <i>ConnectorHousingRoles</i>, <i>AbstractSlotRoles </i>or <i>CavityReferences</i> onto which it is mounted.      </p>

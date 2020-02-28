@@ -2,14 +2,17 @@
 title: PartSubstitutionSpecification
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PartSubstitutionSpecification
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A <i>PartSubstitutionSpecification</i> defines a set of <i>PartVersions</i> that can be used alternatively, due to an incomplete specification for the 150% product description. For a concrete wiring harness only on valid <i>PartVersion</i> remains. The selection logic for valid <i>PartVersions</i> is not included in the VEC.      </p>      <p> A <i>PartSubstitutionSpecification </i>can be used for example tubes or ring terminals, where a part of the specification is known at design time, but not yet the complete specification. For tubes for example the tube diameter is not known at design time, since it depends on the bundle diameter of a specific configuration.       </p>    </body> </html> 
+<p> A <i>PartSubstitutionSpecification</i> defines a set of <i>PartVersions</i> that can be used alternatively, due to an incomplete specification for the 150% product description. For a concrete wiring harness only on valid <i>PartVersion</i> remains. The selection logic for valid <i>PartVersions</i> is not included in the VEC.      </p>      <p> A <i>PartSubstitutionSpecification </i>can be used for example tubes or ring terminals, where a part of the specification is known at design time, but not yet the complete specification. For tubes for example the tube diameter is not known at design time, since it depends on the bundle diameter of a specific configuration.       </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,13 +22,12 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Part Substitutions]({{< relref "../description-of-components/part-substitutions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. Over all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Specifies additional, human readable information about the specification.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |

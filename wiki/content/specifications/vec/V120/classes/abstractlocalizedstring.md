@@ -2,14 +2,17 @@
 title: AbstractLocalizedString
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - AbstractLocalizedString
+menu_name: vec-1.2.0
 ---
-Abstract super-class for Localized text values. 
+Abstract super-class for Localized text values.
 ## General Information
 
 | Attribute               | Value |
@@ -19,11 +22,10 @@ Abstract super-class for Localized text values.
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [LocalizedString]({{< relref "localizedstring.md" >}}), [LocalizedTypedString]({{< relref "localizedtypedstring.md" >}}) |
-| **Usage in Diagrams**   | [Localization of Values]({{< relref "../key-concepts/localization-of-values" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|languageCode | [LanguageCode]({{< relref "languagecode.md" >}}) | 1 | <html><body><p>References the corresponding languageCode of the value.  </p></body></html> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
-|value | [String]({{< relref "string.md" >}}) | 1 | <html><body><p>The value of the LocalizedString in language defined by the languageCode. </p></body></html> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
+|languageCode | [LanguageCode]({{< relref "languagecode.md" >}}) | 1 | <p>References the corresponding languageCode of the value.  </p> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
+|value | [String]({{< relref "string.md" >}}) | 1 | <p>The value of the LocalizedString in language defined by the languageCode. </p> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
 

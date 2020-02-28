@@ -2,14 +2,17 @@
 title: PinWireMappingPoint
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PinWireMappingPoint
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> The <i>PinWireMappingPoint </i>creates a single variance free mapping between a <i>ContactPoint</i> and a <i>PinComponentReference </i>within a <i>PinWireMappingSpecification</i> (more details there)<i>.</i></body> </html>
+<p> The <i>PinWireMappingPoint </i>creates a single variance free mapping between a <i>ContactPoint</i> and a <i>PinComponentReference </i>within a <i>PinWireMappingSpecification</i> (more details there)<i>.</i>      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Pin Wire Mapping]({{< relref "../connectivity/pin-wire-mapping" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,8 +30,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | pinComponentReference | 1 |  |  |
 | [ContactPoint]({{< relref "contactpoint.md" >}}) | contactPoint | 1 |  |  |
+| [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | pinComponentReference | 1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

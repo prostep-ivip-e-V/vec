@@ -2,14 +2,17 @@
 title: WireGrouping
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - WireGrouping
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A WireGrouping is the assignment of WireElementReferences to a WireGroupSpecification. A WireGrouping is needed if individual wire (e.g. with own part numbers) should be grouped (e.g. combined to a twisted pair) and the grouping is not have an individual part.      </p>    </body> </html> 
+<p> A <i>WireGrouping</i> is the definition of a multi core wire in its usage.&#160;The elements of a <i>WireGrouping </i>are well defined wires (e.g. with a part number). The grouping itself is only created in its concrete usage. The most common use case is the individual definition of unshielded twisted pair wires without creating the full combinatorics of every possible core / insulation / twist combination in a part master data system (and by this creating part numbers for all of them). However, there are other use cases as well.      </p>      <p> A <i>WireGrouping </i>groups the <i>relatedWireElementReferences</i> on an equal level containedWireGroupings are on a lower level. So, in order to create something like a shielded twisted pair, one <i>WireGrouping </i>&quot;A&quot; that references two <i>WireElementReferences </i>is required to represent the twisted pair and another <i>WireGrouping &quot;</i>B&quot; that contains <i>WireGrouping </i>&quot;A&quot; and references the &quot;shield wire element&quot;.      </p>      <p> &#160;The referenced <i>WireGroupSpecification</i> defines the handling of the <i>WireGrouping</i> during its assembly (e.g. twist).      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,20 +22,21 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Wire Grouping Specification]({{< relref "../connectivity/wire-grouping-specification" >}})<br/> [Wiring Specification]({{< relref "../connectivity/wiring-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the WireGrouping. The identification is guaranteed to be unique within the WireGroupingSpecification.      </p>    </body> </html>  | [WireGrouping]({{< relref "wiregrouping.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the WireGrouping. The identification is guaranteed to be unique within the WireGroupingSpecification.      </p> | [WireGrouping]({{< relref "wiregrouping.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 1 | 0..* | References the WireGroupSpecification that applies to the WireGrouping.   |
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) | relatedWireRole | 2..* | 0..* | References the concrete wire elements (WireElementReference) that are grouped by the WireGrouping.   |
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <html>   <head>     </head>   <body> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i> </body> </html> |
+| [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p> |
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) | relatedWireElementReference | 0..* | 0..* | <p> References the concrete wire elements (<i>WireElementReference</i>) that are grouped by the WireGrouping.      </p> |
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p> |
+| [WireGrouping]({{< relref "wiregrouping.md" >}}) | containedWireGroupings | 0..* | 0..1 | <p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireGroupingSpecification]({{< relref "wiregroupingspecification.md" >}}) | 1 | wireGrouping | 1..* | Specifies the WireGroupings described by the WireGroupingSpecification.  |
+| [WireGrouping]({{< relref "wiregrouping.md" >}}) | 0..1 | containedWireGroupings | 0..* | <p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p> |
+| [WireGroupingSpecification]({{< relref "wiregroupingspecification.md" >}}) | 0..1 | wireGrouping | 1..* | Specifies the WireGroupings described by the WireGroupingSpecification. |

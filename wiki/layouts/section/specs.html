@@ -6,7 +6,7 @@
   {{ end }}
   <ul class="list-unstyled">
     {{ if gt (len .Sections) 0}}
-    {{ range .Sections }}
+    {{ range sort .Sections "Date" "desc" }}
     {{ $page := . }}
     <li><h2>{{.Title}}</h2> 
       <div class="article-style">

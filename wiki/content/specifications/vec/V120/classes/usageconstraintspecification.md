@@ -2,14 +2,17 @@
 title: UsageConstraintSpecification
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - UsageConstraintSpecification
+menu_name: vec-1.2.0
 ---
-<html><body><p>Specification for the definition of usage constraints. The associated UsageContraints are restricting the possible usages of the associated PartVersions and PartUsages.  </p></body></html>
+<p> Specification for the definition of usage constraints. The associated UsageConstraints are restricting the possible usages of the associated PartVersions and PartUsages.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,16 +22,15 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Usage Constraints]({{< relref "../key-concepts/usage-constraints" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. Over all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Specifies additional, human readable information about the specification.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartVersion]({{< relref "partversion.md" >}}) | constrainedParts | 0..* | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PartVersions</i> to which this <i>UsageConstraintSpecification</i> applies.      </p>    </body> </html>  |
-| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | partUsageConstraint | 1..* | 1 | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification.   |
+| [PartVersion]({{< relref "partversion.md" >}}) | constrainedParts | 0..* | 0..* | <p> References the <i>PartVersions</i> to which this <i>UsageConstraintSpecification</i> applies.      </p> |
+| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | partUsageConstraint | 1..* | 1 | <p> Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. The ordering of this association is relevant. The elements shall arranged in the order of ascending priority.&#160;That means, elements further back in the collection have a higher priority.      </p> |

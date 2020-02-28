@@ -2,16 +2,30 @@
 title: Instances of Cavity Seals and Cavity Plugs
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+layout: diagram
+date: "2020-02-01"
 draft: false
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Diagram
+classes:
+  - Role
+  - CavitySealRole
+  - CavityPlugRole
+  - CavityPlugSpecification
+  - CavityReference
+  - CavityAccessoryRole
+  - CavityAccessorySpecification
+  - CavitySealSpecification
 menu:
-  vec120:
-    identifier: instances-of-components/instances-of-cavity-seals-and-cavity-plugs    
+  VEC-1.2.0:    
     parent: instances-of-components
-    weight: 1004005 
+    identifier: instances-of-components/instances-of-cavity-seals-and-cavity-plugs
+    weight: 1007005 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 1004005
+weight: 1007005
 ---
 {{< svgfigure src="instances-of-cavity-seals-and-cavity-plugs.png" width="854" height="516" caption="Instances of Cavity Seals and Cavity Plugs" numbered="true" >}}
   {{< svglink relref="../../classes/role.md" x="497.0" y="35.0" width="138.0" height="55.0" >}}
@@ -23,4 +37,4 @@ weight: 1004005
   {{< svglink relref="../../classes/cavityaccessoryspecification.md" x="182.0" y="427.0" width="247.0" height="67.0" >}}
   {{< svglink relref="../../classes/cavitysealspecification.md" x="21.0" y="126.0" width="247.0" height="115.0" >}}
 {{< / svgfigure >}}
-<html>   <head>     </head>   <body>     <p> The diagram shows the mapping between the part master data of a cavity seals and cavity plugs (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side).      </p>    </body> </html> 
+<p> The diagram shows the mapping between the part master data of a cavity seals and cavity plugs (partly displayed on the left side)&#160;and the instance specific information (displayed on the right side).      </p>

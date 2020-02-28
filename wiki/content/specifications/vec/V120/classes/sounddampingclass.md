@@ -2,14 +2,17 @@
 title: SoundDampingClass
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - SoundDampingClass
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Allows the definition of a sound damping class. The sound damping class of a component is specified as a level of sound damping. The level is specified by the <i>classKey</i>. Valid keys are specified by the <i>referenceSystem</i>. Attributes of the type <i>SoundDampingClass</i> normally have the multiplicity [0..*]. This means that such an attribute can have <i>SoundDampingClass</i> entries for different <i>referenceSystems</i>. It must not have multiple entries for the same <i>referenceSystem</i>.      </p>    </body> </html> 
+<p> Allows the definition of a sound damping class. The sound damping class of a component is specified as a level of sound damping. The level is specified by the <i>classKey</i>. Valid keys are specified by the <i>referenceSystem</i>. Attributes of the type <i>SoundDampingClass</i> normally have the multiplicity [0..*]. This means that such an attribute can have <i>SoundDampingClass</i> entries for different <i>referenceSystems</i>. It must not have multiple entries for the same <i>referenceSystem</i>.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,11 +22,10 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Foundation Classes for Physical Properties]({{< relref "../description-of-components/foundation-classes-for-physical-properties" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|classKey | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a key for the level defined in the sound damping class (e.g. A, B, C).      </p>    </body> </html>  | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
-|referenceSystem | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> The identification of the sound damping class reference system, which is defining possible values and the semantic of sound damping keys.      </p>    </body> </html>  | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
+|classKey | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a key for the level defined in the sound damping class (e.g. A, B, C).      </p> | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
+|referenceSystem | [String]({{< relref "string.md" >}}) | 1 | <p> The identification of the sound damping class reference system, which is defining possible values and the semantic of sound damping keys.      </p> | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
 

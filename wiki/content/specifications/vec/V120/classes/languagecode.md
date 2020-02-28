@@ -2,14 +2,17 @@
 title: LanguageCode
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - LanguageCode
+menu_name: vec-1.2.0
 ---
-<html><body><p>Enumeration for the definition of ISO language codes. (see KBLFRM-317) </p></body></html>
+<p>Enumeration for the definition of ISO language codes. (see KBLFRM-317) </p>
 ## General Information
 
 | Attribute               | Value |
@@ -20,8 +23,8 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Aa | <html>   <head>     </head>   <body>     <p> Afar      </p>    </body> </html>  |
-| Ab | <html>   <head>     </head>   <body>     <p> Abkhazian      </p>    </body> </html>  |
+| Aa | <p> Afar      </p> |
+| Ab | <p> Abkhazian      </p> |
 | Af |  |
 | Am |  |
 | Ar |  |
@@ -160,5 +163,5 @@ weight:
 | Yi |  |
 | Yo |  |
 | Za |  |
-| Zh | <html>   <head>     </head>   <body>     <p> Chinese      </p>    </body> </html>  |
-| Zu | <html>   <head>     </head>   <body>     <p> Zulu      </p>    </body> </html>  |
+| Zh | <p> Chinese      </p> |
+| Zu | <p> Zulu      </p> |

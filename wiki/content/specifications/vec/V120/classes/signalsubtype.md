@@ -2,12 +2,15 @@
 title: SignalSubType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - SignalSubType
+menu_name: vec-1.2.0
 ---
 
 ## General Information
@@ -20,19 +23,24 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| CAN | <html>   <head>     </head>   <body>     <p> &#160;Controller Area Network      </p>  </body> </html> |
+| CAN | <p> &#160;Controller Area Network      </p> |
 | LIN | Local Interconnect Network |
 | FlexRay |  |
 | MOST |  |
 | Ethernet |  |
 | BroadR-Reach |  |
 | RTPGE |  |
-| APIX | <html>   <head>     </head>   <body>     <p> Automotive Pixel Link      </p>  </body> </html> |
+| APIX | <p> Automotive Pixel Link      </p> |
 | APIX2 |  |
 | APIX3 |  |
 | FBAS |  |
-| USB | <html>   <head>     </head>   <body>     <p> Universal Serial&#160;Bus Version 1.X: The &quot;USB&quot; literal represents all USB 1.X Versions for USB 2.0 or USB 3.X the corresponding literals shall be used.      </p>  </body> </html> |
-| USB2 | <html>   <head>     </head>   <body>     <p> Universal Serial&#160;Bus Version 2.0      </p>  </body> </html> |
-| USB3.X | <html>   <head>     </head>   <body>     <p> Universal Serial&#160;Bus Version 3.X      </p>  </body> </html> |
-| LVDS | <html>   <head>     </head>   <body>     <p> low-voltage differential signaling      </p>  </body> </html> |
+| USB | <p> Universal Serial&#160;Bus Version 1.X: The &quot;USB&quot; literal represents all USB 1.X Versions for USB 2.0 or USB 3.X the corresponding literals shall be used.      </p> |
+| USB2 | <p> Universal Serial&#160;Bus Version 2.0      </p> |
+| USB3.X | <p> Universal Serial&#160;Bus Version 3.X      </p> |
+| LVDS | <p> low-voltage differential signalling      </p> |
 | RGB |  |
+| BTLE | <p> Bluetooth Low Energy      </p> |
+| NFC | <p> Near Field Communication      </p> |
+| IEEE802.11 | also: Wi-Fi, Wireless LAN |
+| SignalGround |  |
+| PowerGround |  |

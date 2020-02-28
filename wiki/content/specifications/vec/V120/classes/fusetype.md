@@ -2,14 +2,17 @@
 title: FuseType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - FuseType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Defines the values for the type a fuse. This is the geometrical type.   </body> </html> 
+Defines the values for the type a fuse. This is the geometrical type.
 ## General Information
 
 | Attribute               | Value |
@@ -20,13 +23,13 @@ weight:
 ## Enumeration Literals
 | Name          | **Description** |
 |---------------|-----------------|
-| Type_SF51 | <html>   <head>     </head>   <body>     <p> also known as: mega      </p>    </body> </html>  |
-| Type_SF30 | <html>   <head>     </head>   <body>     <p> also known as: midi      </p>    </body> </html>  |
-| Type_SF | <html>   <head>     </head>   <body>     <p> also known as: strip      </p>    </body> </html>  |
-| Type_F | <html>   <head>     </head>   <body>     <p> also known as: mini      </p>    </body> </html>  |
-| Type_C | <html>   <head>     </head>   <body>     <p> also known as: ato      </p>    </body> </html>  |
-| Type_E | <html>   <head>     </head>   <body>     <p> also known as: maxi      </p>    </body> </html>  |
-| Type_A1 | <html>   <head>     </head>   <body>     <p> also known as: jcase      </p>    </body> </html>  |
-| Type_A1S | <html>   <head>     </head>   <body>     <p> also known as: flat      </p>    </body> </html>  |
-| Form_CB15_CatE | <html>   <head>     </head>   <body>     <p> also known as: auto      </p>    </body> </html>  |
+| Type_SF51 | <p> also known as: mega      </p> |
+| Type_SF30 | <p> also known as: midi      </p> |
+| Type_SF | <p> also known as: strip      </p> |
+| Type_F | <p> also known as: mini      </p> |
+| Type_C | <p> also known as: ato      </p> |
+| Type_E | <p> also known as: maxi      </p> |
+| Type_A1 | <p> also known as: jcase      </p> |
+| Type_A1S | <p> also known as: flat      </p> |
+| Form_CB15_CatE | <p> also known as: auto      </p> |
 | MITOX |  |

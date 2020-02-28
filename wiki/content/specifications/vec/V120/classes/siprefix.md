@@ -2,14 +2,17 @@
 title: SiPrefix
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - SiPrefix
+menu_name: vec-1.2.0
 ---
-<html><body><p>Enumeration for the definition of SI unit prefixes. </p></body></html>
+<p>Enumeration for the definition of SI unit prefixes. </p>
 ## General Information
 
 | Attribute               | Value |

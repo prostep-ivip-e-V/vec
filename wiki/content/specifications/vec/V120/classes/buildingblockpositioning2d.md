@@ -2,14 +2,17 @@
 title: BuildingBlockPositioning2D
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - BuildingBlockPositioning2D
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines the position of a BuildingBlock2D on a HarnessDrawing.      </p>    </body> </html> 
+<p> Defines the position of a BuildingBlock2D on a HarnessDrawing.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,9 +30,9 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | centerPoint | 0..1 | 0..1 | Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing.   |
-| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | referenced2DBuildingBlock | 1 | 0..* | References the building block which is placed on the harness drawing.   |
+| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | centerPoint | 0..1 | 0..1 | Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing. |
+| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | referenced2DBuildingBlock | 1 | 0..* | References the building block which is placed on the harness drawing. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [HarnessDrawingSpecification2D]({{< relref "harnessdrawingspecification2d.md" >}}) | 1 | buildingBlockPositionings | 1..* | Specifies the BuildingBlockPositioning2Ds that are forming the 2D harness drawing.   |
+| [HarnessDrawingSpecification2D]({{< relref "harnessdrawingspecification2d.md" >}}) | 1 | buildingBlockPositionings | 1..* | Specifies the BuildingBlockPositioning2Ds that are forming the 2D harness drawing. |

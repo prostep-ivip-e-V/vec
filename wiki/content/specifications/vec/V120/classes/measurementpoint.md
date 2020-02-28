@@ -2,14 +2,17 @@
 title: MeasurementPoint
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - MeasurementPoint
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines a reference point on a component that can be used to apply a Dimension. This is normally a significant point of the component e.g. an edge, a hole, a bolt or something similar.      </p>    </body> </html> 
+<p> Defines a reference point on a component that can be used to apply a Dimension. This is normally a significant point of the component e.g. an edge, a hole, a bolt or something similar.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,16 +22,15 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Coordinate Systems of Components]({{< relref "../description-of-components/coordinate-systems-of-components" >}})<br/> [Instances of Placeable Components]({{< relref "../instances-of-components/instances-of-placeable-components" >}})<br/> [Placeable Elements]({{< relref "../description-of-components/placeable-elements" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the MeasurementPoint. The identification is guaranteed to be unique within a component.      </p>    </body> </html>  | [MeasurementPoint]({{< relref "measurementpoint.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the MeasurementPoint. The identification is guaranteed to be unique within a component.      </p> | [MeasurementPoint]({{< relref "measurementpoint.md" >}}) |
 
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) | 0..* | measurementPoint | 1 | <html>   <head>     </head>   <body>     <p> References the <i>MeasurementPoint</i> that is instanced by this <i>MeasurementPointReference.</i>      </p>    </body> </html>  |
-| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | measurementPoint | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the <i>MeasurementPoints</i> of an <i>PlaceableElement</i>.       </p>    </body> </html>  |
+| [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) | 0..* | measurementPoint | 1 | <p> References the <i>MeasurementPoint</i> that is instanced by this <i>MeasurementPointReference.</i>      </p> |
 | [MeasurePointPosition]({{< relref "measurepointposition.md" >}}) | 0..* | measurementPoint | 1 |  |
+| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | measurementPoint | 0..* | <p> Specifies the <i>MeasurementPoints</i> of a <i>PlaceableElement</i>.      </p> |

@@ -2,14 +2,17 @@
 title: DocumentBasedInstruction
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - DocumentBasedInstruction
+menu_name: vec-1.2.0
 ---
-<html><body><p>A DocumentBasedInstruction is an Instruction to a SheetOrChapter in a DocumentVersion or to a complete DocumentVersion. </p></body></html>
+<p>A DocumentBasedInstruction is an Instruction to a SheetOrChapter in a DocumentVersion or to a complete DocumentVersion. </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     | [Instruction]({{< relref "instruction.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Installation Instructions]({{< relref "../instances-of-components/installation-instructions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,5 +30,5 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | referencedDocument | 1 | 0..* | References the DocumentVersion that is used as an Instruction.  |
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | referencedSheetOrChapter | 0..1 | 0..* | References the SheetOrChapter that is used as an Instruction.  |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | referencedDocument | 1 | 0..* | References the DocumentVersion that is used as an Instruction. |
+| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | referencedSheetOrChapter | 0..1 | 0..* | References the SheetOrChapter that is used as an Instruction. |

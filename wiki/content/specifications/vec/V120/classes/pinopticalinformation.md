@@ -2,14 +2,17 @@
 title: PinOpticalInformation
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PinOpticalInformation
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Allows the specification of optical information in a PinComponentBehavior.      </p>    </body> </html> 
+<p> Allows the specification of optical information in a PinComponentBehavior.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,15 +22,14 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Pinning Information & Pinning Variance]({{< relref "../description-of-components/pinning-information-pinning-variance" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|frequency | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> The frequency of the optical signal.      </p>    </body> </html>  | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
-|attenuation | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 0..1 | <html>   <head>     </head>   <body>     <p> The attenuation of the optical pin at the defined frequency.       </p>    </body> </html>  | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
+|frequency | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> The frequency of the optical signal.      </p> | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
+|attenuation | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 0..1 | <p> The attenuation of the optical pin at the defined frequency.       </p> | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
 
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 1 | opticalInformation | 0..* | <html>   <head>     </head>   <body>     <p> Specifies the optical information of the pin, if it has the type optical.      </p>    </body> </html>  |
+| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 1 | opticalInformation | 0..* | <p> Specifies the optical information of the pin, if it has the type optical.      </p> |

@@ -2,14 +2,17 @@
 title: PinCurrentType
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PinCurrentType
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Defines the different available current types of a pin.      </p>    </body> </html> 
+<p> Defines the different available current types of a pin.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -28,5 +31,6 @@ weight:
 | blockCurrent |  |
 | startStopCurrent |  |
 | overrunCurrent |  |
-| leakageCurrent | <html>   <head>     </head>   <body> Defines the current that leaks at this pin.   </body> </html>  |
-| deepSleepCurrent | <html>   <head>     </head>   <body>     <p> Defines the current on the pin, when the EEComponent is in deep sleep mode.      </p>    </body> </html>  |
+| leakageCurrent | <p> Defines the current that leaks at this pin.      </p> |
+| deepSleepCurrent | <p> Defines the current on the pin, when the EEComponent is in deep sleep mode.      </p> |
+| clippingCurrent | <p> Current at which the output driver of an ECU turns off or limits the current on an output in (a behavior similar to a fuse).      </p> |

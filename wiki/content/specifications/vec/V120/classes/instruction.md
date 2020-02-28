@@ -2,14 +2,17 @@
 title: Instruction
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - Instruction
+menu_name: vec-1.2.0
 ---
-<html><body><p>Abstract super class to specify different types of instructions. Possible instructions are text, file or document based.  </p></body></html>
+<p>Abstract super class to specify different types of instructions. Possible instructions are text, file or document based.  </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [DocumentBasedInstruction]({{< relref "documentbasedinstruction.md" >}}), [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}), [TextBasedInstruction]({{< relref "textbasedinstruction.md" >}}) |
-| **Usage in Diagrams**   | [Installation Instructions]({{< relref "../instances-of-components/installation-instructions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,4 +30,4 @@ weight:
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..1 | installationInstruction | 0..* | Room to specify InstallationInstruction(s) for the OccurrenceOrUsage.   |
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..1 | installationInstruction | 0..* | Room to specify InstallationInstruction(s) for the OccurrenceOrUsage. |

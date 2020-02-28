@@ -2,14 +2,17 @@
 title: CartesianVector
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - CartesianVector
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Abstract super class for vectors, either 2D or 3D.      </p>    </body> </html> 
+<p> Abstract super class for vectors, either 2D or 3D.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [CartesianVector2D]({{< relref "cartesianvector2d.md" >}}), [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
-| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/> [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |

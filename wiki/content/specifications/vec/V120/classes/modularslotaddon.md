@@ -2,14 +2,17 @@
 title: ModularSlotAddOn
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - ModularSlotAddOn
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Specifies the wire addon needed to reach a <i>ModularSlot</i> from a specific <i>SegmentConnectionPoint</i>. The addon needed to reach the cavities of the insert(s) from this point is defined by the <i>ConnectorHousingSpecification </i>of the insert.      </p>    </body> </html> 
+<p> Specifies the wire addon needed to reach a <i>ModularSlot</i> from a specific <i>SegmentConnectionPoint</i>. The addon needed to reach the cavities of the insert(s) from this point is defined by the <i>ConnectorHousingSpecification </i>of the insert.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,12 +22,11 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Connector Housings]({{< relref "../description-of-components/connector-housings" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|wireAddOn | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies the wire length add on needed for the modular slot.      </p>    </body> </html>  | [ModularSlotAddOn]({{< relref "modularslotaddon.md" >}}) |
+|wireAddOn | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> Specifies the wire length add on needed for the modular slot.      </p> | [ModularSlotAddOn]({{< relref "modularslotaddon.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |

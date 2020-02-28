@@ -2,14 +2,17 @@
 title: NodeMapping
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - NodeMapping
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body> Defines the relationship of an inner node to its outer topology. The relationship to the outer topology is expressed with a <i>Location</i>.</body> </html>
+<p> Defines the relationship of an inner node to its outer topology. The relationship to the outer topology is expressed with a <i>Location</i>.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Hierarchical Topologies]({{< relref "../topology-and-geometry/hierarchical-topologies" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -28,8 +30,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Location]({{< relref "location.md" >}}) | mappedPosition | 1 | 0..1 |  |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | innerNode | 1 |  |  |
+| [Location]({{< relref "location.md" >}}) | mappedPosition | 1 | 0..1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

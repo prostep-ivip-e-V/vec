@@ -1,0 +1,44 @@
+﻿---
+title: PinComponent
+toc: false
+type: specs
+date: "2014-07-01"
+draft: false
+specification: VEC
+version: 1.1.1
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PinComponent
+menu_name: vec-1.1.1
+---
+<p> A PinComponent describes a pin of an EEComponent. A PinComponent is part of a HousingComponent and is defined by tree aspects.      </p>      <ol>       <li> Its geometric position in the <i>HousingComponent</i>, which is defined by the <i>referencedCavity.</i>       </li>       <li> Its physical electrical properties, which are defined by the referenced <i>TerminalSpecification.</i>       </li>       <li> Its electrical behaviour, which is defined configuration dependent by its <i>PinComponentBehaviour.</i>       </li>     </ol>
+## General Information
+
+| Attribute               | Value |
+|-------------------------|-------|
+| **Owner**               | electrical_parts |
+| **Applied Stereotype**  |   |
+| **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
+| **Is Abstract**         | false |
+| **Derived Classifiers** |   |
+
+## Attributes
+|  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
+|--------|--------|---------|---------------|--------------|
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p>Identification of the PinComponent, which must be distinct for all PinComponent of a HousingComponents.  </p> | [PinComponent]({{< relref "pincomponent.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the <i>PinComponent</i>.      </p> | [PinComponent]({{< relref "pincomponent.md" >}}) |
+
+## Outgoing Relations
+|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
+|----------|----------|-----------|-----------|-----------------|
+| [Cavity]({{< relref "cavity.md" >}}) | referencedCavity | 0..1 | 0..* | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | pinSpecification | 0..1 | 0..* | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300) |
+| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | behaviour | 0..* | 1 | <p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p> |
+##  Incoming Relations
+|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
+|----------|----------|-----------|-----------|----------------|
+| [RelaySpecification]({{< relref "relayspecification.md" >}}) |  | coilContact | 0..2 | References the PinComponents that are the CoilContacts of the Relay.  (see KBLFRM-300) |
+| [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | 0..* | pinComponent | 1 | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
+| [HousingComponent]({{< relref "housingcomponent.md" >}}) | 1 | pinComponent | 0..* | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
+| [RelaySpecification]({{< relref "relayspecification.md" >}}) |  | switchContact | 0..* | References the PinComponents that are the SwitchContacts of the Relay. |

@@ -2,14 +2,17 @@
 title: PlaceableElementRole
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - PlaceableElementRole
+menu_name: vec-1.2.0
 ---
-<html><body><p>A PlaceableElementRole defines the instance specific properties and relationships of a PlaceableElement. </p></body></html>
+<p>A PlaceableElementRole defines the instance specific properties and relationships of a PlaceableElement. </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,20 +22,19 @@ weight:
 | **Base Classifier**     | [Role]({{< relref "role.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Instances of Placeable Components]({{< relref "../instances-of-components/instances-of-placeable-components" >}})<br/> [Placement and Dimensions]({{< relref "../topology-and-geometry/placement-and-dimensions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <html><body><p>Specifies a unique identification of the Role. The identification is guaranteed to be unqiue within the OccurrenceOrUsage. </p></body></html> | [Role]({{< relref "role.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the Role. The identification is guaranteed to be unique within the OccurrenceOrUsage.      </p> | [Role]({{< relref "role.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | placeableElementSpecification | 1 | 0..* | <html>   <head>     </head>   <body>     <p> References the <i>PlaceableElementSpecification</i> that is instanced by this <i>PlaceableElementRole.</i>      </p>    </body> </html>  |
+| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | placeableElementSpecification | 1 | 0..* | <p> References the <i>PlaceableElementSpecification</i> that is instanced by this <i>PlaceableElementRole.</i>      </p> |
 | [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) | measurementPointReference | 0..* | 1 |  |
-| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placementPointReference | 0..* | 1 | <html>   <head>     </head>   <body>   </body> </html>  |
+| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placementPointReference | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Placement]({{< relref "placement.md" >}}) | 0..* | placedElement | 1..* | References the PlaceableElementRoles placed by the Placement.   |
+| [Placement]({{< relref "placement.md" >}}) | 0..* | placedElement | 1..* | References the PlaceableElementRoles placed by the Placement. |

@@ -2,14 +2,17 @@
 title: CavityMounting
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - CavityMounting
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> A CavityMounting defines the cavities (CavityReference) where the contacted elements (Terminal) will be mounted.      </p>    </body> </html> 
+<p> A CavityMounting defines the cavities (CavityReference) where the contacted elements (Terminal) will be mounted.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Contacting Specification]({{< relref "../connectivity/contacting-specification" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -29,10 +31,10 @@ weight:
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [CavityAccessoryRole]({{< relref "cavityaccessoryrole.md" >}}) | cavityAccessory | 0..* | 0..* |  |
-| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | replacedPlug | 0..* | 0..* | References the cavity plugs that are obsolete if the cavity mounting is realized.   |
-| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1..* | 0..* | References the cavities that are used for the cavity mounting.   |
-| [CavityMountingDetail]({{< relref "cavitymountingdetail.md" >}}) | cavityMountingDetail | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the CavityMoutingDetails, if a detailed description of the relationships between Cavities and TerminalReceptions is needed.      </p>    </body> </html>  |
+| [CavityMountingDetail]({{< relref "cavitymountingdetail.md" >}}) | cavityMountingDetail | 0..* | 1 | <p> Specifies the CavityMoutingDetails, if a detailed description of the relationships between Cavities and TerminalReceptions is needed.      </p> |
+| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | replacedPlug | 0..* | 0..* | References the cavity plugs that are obsolete if the cavity mounting is realized. |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1..* | 0..* | References the cavities that are used for the cavity mounting. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ContactPoint]({{< relref "contactpoint.md" >}}) | 1 | cavityMounting | 0..* | Defines the mounting to a cavity of the terminal associated with the ContactPoint.  The cardinality is 0..* in order to allow a variant dependant cavity mounting. In such a scenario a cavity mounting is valid in a configuration if all addressed cavities and therefore the associated connector housing is available.   |
+| [ContactPoint]({{< relref "contactpoint.md" >}}) | 1 | cavityMounting | 0..* | Defines the mounting to a cavity of the terminal associated with the ContactPoint.  The cardinality is 0..* in order to allow a variant dependant cavity mounting. In such a scenario a cavity mounting is valid in a configuration if all addressed cavities and therefore the associated connector housing is available. |

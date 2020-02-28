@@ -2,14 +2,17 @@
 title: Transformation2D
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - Transformation2D
+menu_name: vec-1.2.0
 ---
-<html><body><p>A Transformation is a geometric transformation and specifies a transformation matrix.  </p></body></html>
+<p>A Transformation is a geometric transformation and specifies a transformation matrix.  </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,7 +22,6 @@ weight:
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [2D-Geometry]({{< relref "../topology-and-geometry/2d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
@@ -32,8 +34,8 @@ weight:
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | origin | 1 | 0..* | References the CartesianPoint2D that is the origin of the Transformation2D.   |
+| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | origin | 1 | 0..* | References the CartesianPoint2D that is the origin of the Transformation2D. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | 1 | orientation | 0..1 | Specifies the orientation of the view item.  |
+| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | 1 | orientation | 0..1 | Specifies the orientation of the view item. |

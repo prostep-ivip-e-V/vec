@@ -2,14 +2,17 @@
 title: WireReceptionAddOn
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - WireReceptionAddOn
+menu_name: vec-1.2.0
 ---
-<html>   <head>     </head>   <body>     <p> Specifies the wire addon required for this wire reception.      </p>  </body> </html>
+<p> Specifies the wire addon required for this wire reception.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,13 +22,12 @@ weight:
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Terminals]({{< relref "../description-of-components/terminals" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|wireAddOn | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies the wire length add on needed for the wire reception.      </p>  </body> </html> | [WireReceptionAddOn]({{< relref "wirereceptionaddon.md" >}}) |
-|type | [WireAddOnType]({{< relref "wireaddontype.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Defines the type of the add-on.      </p>  </body> </html> | [WireReceptionAddOn]({{< relref "wirereceptionaddon.md" >}}) |
+|wireAddOn | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> Specifies the wire length add on needed for the wire reception.      </p> | [WireReceptionAddOn]({{< relref "wirereceptionaddon.md" >}}) |
+|type | [WireAddOnType]({{< relref "wireaddontype.md" >}}) | 1 | <p> Defines the type of the add-on.      </p> | [WireReceptionAddOn]({{< relref "wirereceptionaddon.md" >}}) |
 
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

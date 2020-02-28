@@ -2,14 +2,17 @@
 title: HarnessGeometrySpecification3D
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - HarnessGeometrySpecification3D
+menu_name: vec-1.2.0
 ---
-<html><body><p>The HarnessGeometrieSpecification3D specifies a three dimensional model of a harness. A harness model is composed of one or more BuildingBlockSpecifaction3D which are placed in the model.   </p></body></html>
+<p> The HarnessGeometrieSpecification3D specifies a three-dimensional model of a harness. A harness model is composed of one or more BuildingBlockSpecifaction3D which are placed in the model.      </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,16 +22,15 @@ weight:
 | **Base Classifier**     | [Specification]({{< relref "specification.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [3D-Geometry]({{< relref "../topology-and-geometry/3d-geometry" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <html>   <head>     </head>   <body>     <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. Over all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <html>   <head>     </head>   <body>     <p> Specifies additional, human readable information about the specification.      </p>    </body> </html>  | [Specification]({{< relref "specification.md" >}}) |
-|type | [GeometryType]({{< relref "geometrytype.md" >}}) | 1 | <html><body><p>Specifies the type of the harness geometry.  </p></body></html> | [HarnessGeometrySpecification3D]({{< relref "harnessgeometryspecification3d.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|type | [GeometryType]({{< relref "geometrytype.md" >}}) | 1 | <p>Specifies the type of the harness geometry.  </p> | [HarnessGeometrySpecification3D]({{< relref "harnessgeometryspecification3d.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [BuildingBlockPositioning3D]({{< relref "buildingblockpositioning3d.md" >}}) | buildingBlockPositionings | 0..* | 1 | <html>   <head>     </head>   <body>     <p> Specifies the BuildingBlockPositioning3Ds that are forming the HarnessGeometrySpecification3D.      </p>    </body> </html>  |
+| [BuildingBlockPositioning3D]({{< relref "buildingblockpositioning3d.md" >}}) | buildingBlockPositionings | 0..* | 1 | <p> Specifies the BuildingBlockPositioning3Ds that are forming the HarnessGeometrySpecification3D.      </p> |

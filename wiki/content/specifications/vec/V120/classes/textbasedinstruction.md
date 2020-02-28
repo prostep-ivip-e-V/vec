@@ -2,14 +2,17 @@
 title: TextBasedInstruction
 toc: false
 type: specs
-date: "2019-05-05T00:00:00+01:00"
+date: "2020-02-01"
 draft: false
-menu_name: vec120
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 
+specification: VEC
+version: 1.2.0
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - TextBasedInstruction
+menu_name: vec-1.2.0
 ---
-<html><body><p>A TextBasedInstruction is used to specify human readable instructions in text.  </p></body></html>
+<p>A TextBasedInstruction is used to specify human readable instructions in text.  </p>
 ## General Information
 
 | Attribute               | Value |
@@ -19,10 +22,9 @@ weight:
 | **Base Classifier**     | [Instruction]({{< relref "instruction.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
-| **Usage in Diagrams**   | [Installation Instructions]({{< relref "../instances-of-components/installation-instructions" >}})<br/>  |
 
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|installationInstruction | [LocalizedString]({{< relref "localizedstring.md" >}}) | 1..* | <html><body><p>Specifies the instruction in a human readable form. Different languages are possible.  </p></body></html> | [TextBasedInstruction]({{< relref "textbasedinstruction.md" >}}) |
+|installationInstruction | [LocalizedString]({{< relref "localizedstring.md" >}}) | 1..* | <p>Specifies the instruction in a human readable form. Different languages are possible.  </p> | [TextBasedInstruction]({{< relref "textbasedinstruction.md" >}}) |
 
