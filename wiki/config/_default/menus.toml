@@ -18,9 +18,15 @@
   weight = 15
 
 [[main]]
-  name = "VEC"
+  name = "Vehicle Electric Container (VEC)"
   url = "specifications/vec"
   weight = 10
+  parent = "Specifications"
+
+[[main]]
+  name = "Kabelbaumliste (KBL)"
+  url = "specifications/kbl"
+  weight = 20
   parent = "Specifications"
 
 [[main]]
@@ -28,4 +34,3 @@
   url = "specifications/komp"
   weight = 90
   parent = "Specifications"
-
