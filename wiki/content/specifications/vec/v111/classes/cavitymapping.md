@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Defines the mapping of two cavities contained Slot A &amp; B of the containing SlotMapping-object.      </p>
+
 ## General Information
 
 | Attribute               | Value |

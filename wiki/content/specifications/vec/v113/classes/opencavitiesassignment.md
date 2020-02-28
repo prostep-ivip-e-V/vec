@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> An OpenCavitiesAssignment groups the cavities of ONE connector that are open in a MultiCavitySeal. If a MultiCavitySeal fits into more than one connector, than there are as many OpenCavitiesAssignments.      </p>
+
 ## General Information
 
 | Attribute               | Value |

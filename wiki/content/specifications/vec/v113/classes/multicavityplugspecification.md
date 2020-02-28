@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the definition of cavity plugs that apply to more than one cavity. A cavity plug is a water tight non-electrical object to fill an empty cavity. MultiCavityPlugs are formed to fit into one connector / slot and to seal more than one cavity at once. Normally there are different variants of these MultiCavityPlugs that can seal a connector in different pinning scenarios. The cavities that are plugged by a MultiCavityPlug are defined with a SealedCavitiesAssignment.      </p>
+
 ## General Information
 
 | Attribute               | Value |

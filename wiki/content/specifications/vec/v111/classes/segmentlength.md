@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Specifies the length of a segment.  Attributes of the type SegmentLength normally have the multiplicity [0..*]. This means that such an attribute can have SegmentLength-entries for different classifications. It must not have multiple entries with the same classification.  </p>
+
 ## General Information
 
 | Attribute               | Value |

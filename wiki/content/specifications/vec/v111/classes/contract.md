@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A Contract-instance describes the relationship between an ItemVersion-instance and a Company-instance additionally defining the role the company takes in reference to the ItemVersion.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | 0..* | contract | 0..* | References the contracts that apply to an ItemVersion. |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | contract | 0..* | Specifies the contracts used in the VEC-file. |
+| [ItemVersion]({{< relref "itemversion.md" >}}) | 0..* | contract | 0..* | References the contracts that apply to an ItemVersion. |

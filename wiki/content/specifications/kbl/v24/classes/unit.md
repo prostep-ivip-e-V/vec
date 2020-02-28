@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Unit is a quantity chosen as a standard in terms of which other quantities may be expressed. Example: A unit of square milli metre is defined as a SI_unit with Si_unit_name "metre", Si_prefix "milli" and Si_dimension "square".</p>
+
 ## General Information
 
 | Attribute               | Value |

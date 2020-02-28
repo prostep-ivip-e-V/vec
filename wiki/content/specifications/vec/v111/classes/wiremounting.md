@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A wire mouting defines the mouting of a wire end to terminal. If the contacting is required to be water proof a cavity seal can be mounted additionally.      </p>
+
 ## General Information
 
 | Attribute               | Value |

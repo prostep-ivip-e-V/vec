@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Terminal_occurrence is the occurrence of a General_terminal in a module part list. Note: The number of occurrences used in a specific module or harness can be calculated by the individual occurrences. Note: The usage of a Terminal_occurrence for a particular Cavity is specified by the Part_usage object.</p>
+
 ## General Information
 
 | Attribute               | Value |

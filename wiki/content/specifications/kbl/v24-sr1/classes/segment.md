@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>Verbindungsabschnitt  A Segment is a section of a Connection where no intermediate electrical contacts appear. At the beginning and at the end the same wires go in and out. Cables and wires are divided in segments. Every segment has its conditions like length, temperature range, etc.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -37,16 +38,16 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
 | [Cross_section_area]({{< relref "cross_section_area.md" >}}) | Cross_section_area_information | 0..* | 1 |  |
-| [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
-| [Node]({{< relref "node.md" >}}) | End_node | 1 | 0..* |  |
 | [B_spline_curve]({{< relref "b_spline_curve.md" >}}) | Center_curve | 0..* | 1 |  |
+| [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
+| [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
+| [Node]({{< relref "node.md" >}}) | End_node | 1 | 0..* |  |
 | [Protection_area]({{< relref "protection_area.md" >}}) | Protection_area | 0..* | 1 |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [KBL_container]({{< relref "kbl_container.md" >}}) | 1 | Segment | 0..* |  |
-| [Dimension_specification]({{< relref "dimension_specification.md" >}}) | 0..* | Segments | 0..* | <p> Defines an ordered list of segments along which the dimension specification is defined.      </p> |
 | [Routing]({{< relref "routing.md" >}}) | 0..* | Segments | 0..* |  |
+| [Dimension_specification]({{< relref "dimension_specification.md" >}}) | 0..* | Segments | 0..* | <p> Defines an ordered list of segments along which the dimension specification is defined.      </p> |

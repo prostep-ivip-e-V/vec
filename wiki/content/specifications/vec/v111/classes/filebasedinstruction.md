@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>A FileBasedInstruction is an Instruction that references a file packaged together with a VEC-document. Such a file can be for example an image.   </p>
+
 ## General Information
 
 | Attribute               | Value |

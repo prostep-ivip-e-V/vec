@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Base class for all specifications which are describing a <i>PartVersion</i> or a <i>PartUsage</i>. A <i>PartOrUsageRelatedSpecification</i> specifies a certain aspect of the described part or usage (e.g. general technical part information, connector housing aspects or wire aspects).      </p>
+
 ## General Information
 
 | Attribute               | Value |

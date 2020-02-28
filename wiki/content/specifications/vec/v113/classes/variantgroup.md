@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> With a VariantGroup it is possible to group VariantCodes. The semantic of this grouping should be defined with the groupType (e.g. composition, choice, etc.).      </p>
+
 ## General Information
 
 | Attribute               | Value |

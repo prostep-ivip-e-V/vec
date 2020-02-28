@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Abstract class either for a single numerical measure or a range of numerical measures with upper, lower, or upper and lower bounds. </p>
+
 ## General Information
 
 | Attribute               | Value |

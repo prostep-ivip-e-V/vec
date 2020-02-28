@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification that contains <i>AssignmentGroups</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

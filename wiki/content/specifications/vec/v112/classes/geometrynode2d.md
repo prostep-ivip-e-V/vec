@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A GeometryNode2D is the geometric representation of a TopologyNode in 2D-space.      </p>
+
 ## General Information
 
 | Attribute               | Value |

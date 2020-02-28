@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A <i>WireReceptionReference</i> is an instance of a <i>WireReception</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

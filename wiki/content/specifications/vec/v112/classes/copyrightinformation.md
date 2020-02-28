@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A CopyrightInformation-instance specifies copyright information for one or more Items.      </p>
+
 ## General Information
 
 | Attribute               | Value |

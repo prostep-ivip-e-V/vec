@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Specification for the definition of grommets. </p>
+
 ## General Information
 
 | Attribute               | Value |

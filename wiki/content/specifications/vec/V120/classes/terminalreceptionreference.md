@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>TerminalReceptionReference</i> is an instance of a <i>TerminalReception</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

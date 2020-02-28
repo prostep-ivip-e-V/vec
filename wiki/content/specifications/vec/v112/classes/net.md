@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A Net is an undirected connection between a number of NetworkPorts.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -37,6 +38,6 @@ menu_name: vec-1.1.2
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | net | 0..* | Specifies the Nets defined in the NetSpecification. |
+| [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | net | 0..1 | References the Net that is realized by the Connection. |

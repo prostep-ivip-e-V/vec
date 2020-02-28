@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A RoutableElement is an element that can be routed, which mean it is possible to assign it to a Path in the Topology.  </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A WireEnd is the end of a wire. This class mainly needed for the definition of a contacting. As a wire can be contacted on more than two ends (e.g. IDC) the WireEnd has a position on the wire.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,6 +37,6 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireMountingDetail]({{< relref "wiremountingdetail.md" >}}) | 0..* | referencedWireEnd | 1..* | References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception). |
 | [WireMounting]({{< relref "wiremounting.md" >}}) | 0..* | referencedWireEnd | 1..* | <p> References the wire ends that are used for the wire mounting. The minimum cardinality is one, because a wire mounting without wire end makes no sense.     </p>      <p> The maximum cardinality is * in order to support multi crimps.      </p> |
+| [WireMountingDetail]({{< relref "wiremountingdetail.md" >}}) | 0..* | referencedWireEnd | 1..* | References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception). |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | 1 | wireEnd | 0..* | Specifies the ends of the WireElementReference for contacting purposes. |

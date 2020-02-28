@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> The CompositionSpecificiation is used to define a set of occurrences required to describe unambiguously the design of a composite part. This does not have to be necessarily the same occurrences which are building the bill of material. Example: A company might want to regard an antenna cable as one part out of a bill of material perspective. However, at the same time it may be useful for the company to be able to describe the contacting of the antenna cable within the VEC. (see also PartStructureSpecification)      </p>
+
 ## General Information
 
 | Attribute               | Value |

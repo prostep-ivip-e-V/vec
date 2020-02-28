@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A node forms begin and end of a Segment.      </p>      <p> &#160;A <i>Node</i> can define a <i>Folding_direction</i>. It specifies the direction into which the <i>Node </i>and its adjacent branch is folded in the finished harness product. This definition is necessary for example for end splices, where the splice is placed on a short branch, that is folded into /&#160;onto another segment after the assembly of the splice. In the finished product, such branches are cover by the the <i>Wire_protection</i> that covers the <i>Segment</i> into which the branch is folded.      </p>      <p> For the sake of a clear interpretation, the following restrictions apply:      </p>      <ol>       <li> A branch is a linear subset of the topology (Node -&gt; Segment -&gt; Node -&gt; Segment -&gt; Node -&gt;...), with at least one segment. No splitting or branching is allowed.        </li>       <li> A <i>Folding_direction</i> shall be defined only for Nodes that are at the end of a branch (The <i>Node</i> is only referenced by 1 <i>Segment</i>).        </li>       <li> The branch is folded completely into the direction defined by the <i>Folding_direction .</i>All <i>Segments</i> starting at the <i>Node</i> defining the Folding_direction, till the first <i>Node</i> that has more than two <i>Segments</i> pointing to it. This <i>Node</i> is the beginning of the branch.        </li>       <li> The <i>Segment</i> referenced in the <i>Folding_direction</i> shall be a <i>Segment</i> that is adjacent to the Node where the branch is beginning.        </li>     </ol>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,9 +35,9 @@ menu_name: kbl-2.5
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Cartesian_point]({{< relref "cartesian_point.md" >}}) | Cartesian_point | 1 | 0..* |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 | [Located_component]({{< relref "located_component.md" >}}) | referenced_components | 0..* | 0..* |  |
 | [Segment]({{< relref "segment.md" >}}) | Folding_direction | 0..1 |  | <p> Defines the direction (Segment)&#160;in which this <i>Node</i> will be folded (see Description of <i>Node</i>).      </p> |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | referenced_cavities | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

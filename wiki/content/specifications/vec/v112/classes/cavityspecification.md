@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specification for the definition of cavities.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -40,5 +41,5 @@ menu_name: vec-1.1.2
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Cavity]({{< relref "cavity.md" >}}) | 0..* | cavitySpecification | 0..1 | References the CavitySpecification that is satisfied by the cavity. |
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | cavitySpecification | 0..* | <p> References the CavitySpecifications for which the compatibility statement is stated.      </p> |
+| [Cavity]({{< relref "cavity.md" >}}) | 0..* | cavitySpecification | 0..1 | References the CavitySpecification that is satisfied by the cavity. |

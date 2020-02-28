@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Specified_ special_terminal _occurrence is the occurrence of a Special_terminal_occurrence within an Assembly_part_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |

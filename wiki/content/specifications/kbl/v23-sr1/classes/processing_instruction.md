@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Processing_instruction is the description of the methods that can be used to process a Part.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,8 +33,8 @@ menu_name: kbl-2.3.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Protection_area]({{< relref "protection_area.md" >}}) | 1 | Processing_information | 0..* |  |
 | [Wiring_group]({{< relref "wiring_group.md" >}}) | 1 | Processing_information | 0..* |  |
-| [Part]({{< relref "part.md" >}}) | 1 | Processing_information | 0..* |  |
-| [Connection]({{< relref "connection.md" >}}) | 1 | Processing_information | 0..* |  |
 | [Node]({{< relref "node.md" >}}) | 1 | Processing_information | 0..* |  |
+| [Part]({{< relref "part.md" >}}) | 1 | Processing_information | 0..* |  |
+| [Protection_area]({{< relref "protection_area.md" >}}) | 1 | Processing_information | 0..* |  |
+| [Connection]({{< relref "connection.md" >}}) | 1 | Processing_information | 0..* |  |

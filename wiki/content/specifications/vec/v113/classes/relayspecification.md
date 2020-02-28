@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Specification of the electrological aspects of a relay. </p>
+
 ## General Information
 
 | Attribute               | Value |

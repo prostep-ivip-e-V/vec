@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Specification for the description of a PinMapping. A PinMapping allows the mapping between the Cavities of two independent ConnectorHousingSpecifications. This is for example needed to determine the Mating for an Inliner or for the Mating between an EE-Component and a ConnectorHousing. The PinMapping is a part master data.      </p>
+
 ## General Information
 
 | Attribute               | Value |

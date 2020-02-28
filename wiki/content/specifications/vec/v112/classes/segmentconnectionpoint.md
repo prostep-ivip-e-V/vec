@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Specifies a point where the connector can be attached to the topology (sometimes called bundle position point or insertion point).  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,9 +33,9 @@ menu_name: vec-1.1.2
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ModularSlotAddOn]({{< relref "modularslotaddon.md" >}}) | ModularSlotAddOns | 0..* | 1 |  |
-| [Cavity]({{< relref "cavity.md" >}}) | reachableCavities | 0..* | 0..* | <p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p> |
-| [CavityAddOn]({{< relref "cavityaddon.md" >}}) | cavityAddOns | 0..* | 1 |  |
 | [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..1 | 0..* | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
+| [CavityAddOn]({{< relref "cavityaddon.md" >}}) | cavityAddOns | 0..* | 1 |  |
+| [Cavity]({{< relref "cavity.md" >}}) | reachableCavities | 0..* | 0..* | <p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

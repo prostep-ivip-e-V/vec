@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>A TextBasedInstruction is used to specify human readable instructions in text.  </p>
+
 ## General Information
 
 | Attribute               | Value |

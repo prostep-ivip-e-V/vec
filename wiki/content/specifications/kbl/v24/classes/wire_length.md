@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>Kabellänge  A Wire_length is a mechanism to define a length for a wire together with a description of the kind of the length (e.g. for DMU, for manufacturing).</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: kbl-2.4
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [General_wire_occurrence]({{< relref "general_wire_occurrence.md" >}}) | 1 | Length_information | 1..* |  |
 | [Core_occurrence]({{< relref "core_occurrence.md" >}}) | 1 | Length_information | 1..* |  |
+| [General_wire_occurrence]({{< relref "general_wire_occurrence.md" >}}) | 1 | Length_information | 1..* |  |

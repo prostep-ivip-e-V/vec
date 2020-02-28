@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>TopologySegment</i> is a distance in the Topology where no intermediate electrical contacts appear. If a Topology contains routed wires, then the wire at the beginning of a TopologySegment must be the same as in the ending.      </p>      <p> <i>TopologySegments</i> are a logical construct to describe the physical representation of a wiring harness topology. Therefore, a <i>TopologySegment</i> is only valid if it has a physical manifestation. <i>TopologySegments</i> with a length of 0 or less do not have a physical manifestation and are therefore <u>not</u> valid.      </p>      <p> Additionally, the usage of <i>TopologySegments</i> with a length of 0 create problems in the overall process. For example, the synchronization of 3D /&#160;2D&#160;systems becomes harder or even impossible and the handling of wire protections on those <i>TopologySegment</i> is also unclear.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,10 +35,10 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [TopologyNode]({{< relref "topologynode.md" >}}) | endNode | 1 | 0..* | References the TopologyNode where the TopologySegment ends. |
+| [TopologySegment]({{< relref "topologysegment.md" >}}) | instantiatedSegment | 0..1 | 0..* | <p> If this <i>TopologySegment</i> is an instance of another <i>To</i><i>pologySegment </i>that is defined elsewhere (e.g. the topology of an assembly), then the instantiated may be referenced here.      </p> |
 | [SegmentCrossSectionArea]({{< relref "segmentcrosssectionarea.md" >}}) | crossSectionAreaInformation | 0..* | 1 | Specifies the different SegmentCrossSectionAreas of the TopologySegment. |
 | [SegmentLength]({{< relref "segmentlength.md" >}}) | lengthInformation | 0..* | 1 | Specifies the different SegmentLengths of the TopologySegment. |
-| [TopologySegment]({{< relref "topologysegment.md" >}}) | instantiatedSegment | 0..1 | 0..* | <p> If this <i>TopologySegment</i> is an instance of another <i>To</i><i>pologySegment </i>that is defined elsewhere (e.g. the topology of an assembly), then the instantiated may be referenced here.      </p> |
-| [TopologyNode]({{< relref "topologynode.md" >}}) | endNode | 1 | 0..* | References the TopologyNode where the TopologySegment ends. |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | startNode | 1 | 0..* | References the TopologyNode where the TopologySegment starts. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Specific <i>WireProtectionRole </i>for instances of <i>TapeSpecification.</i>
+
 ## General Information
 
 | Attribute               | Value |

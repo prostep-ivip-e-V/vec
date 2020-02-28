@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines the type (system) of a terminal. The type is specified by a combination of a name for the system and an optional nominalSize.     </p>      <p> In some processes the terminal type is referred as cavity system, because the system of cavities, terminals, seals, plugs and other cavity accessories must match&#160;/&#160;be compatible.     </p>      <p> However, since a terminal has only one since type and a cavity can be compatible to more than one it is named <i>TerminalType</i> in the VEC.      </p>
+
 ## General Information
 
 | Attribute               | Value |

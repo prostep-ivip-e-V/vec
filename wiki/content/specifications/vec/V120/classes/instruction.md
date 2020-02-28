@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>Abstract super class to specify different types of instructions. Possible instructions are text, file or document based.  </p>
+
 ## General Information
 
 | Attribute               | Value |

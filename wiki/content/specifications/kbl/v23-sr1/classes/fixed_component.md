@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Fixed_component is an object that can be assigned by a fixing.</p>
+
 ## General Information
 
 | Attribute               | Value |

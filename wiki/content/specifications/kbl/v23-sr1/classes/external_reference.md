@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>An External_reference is a mechanism to provide information of the documents associated with the Part. Example: 3D model, form board drawings, etc.</p>
+
 ## General Information
 
 | Attribute               | Value |

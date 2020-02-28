@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A bridge terminal is a part that behaves like terminal but has no <i>WireReceptions.</i> It is used to create short circuit between different pins in a connector. In its use, it can realize a schematic connection on its own and independently of other components.      </p>
+
 ## General Information
 
 | Attribute               | Value |

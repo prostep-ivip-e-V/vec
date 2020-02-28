@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Co_pack_occurrence is the occurrence of a Co_pack_part in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

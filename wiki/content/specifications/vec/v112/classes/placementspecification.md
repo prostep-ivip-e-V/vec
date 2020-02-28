@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specification for the description of placements. <i>Placements</i> are used to connect <i>OccurrenceOrUsages</i> with a topology.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Dimension]({{< relref "dimension.md" >}}) | dimension | 0..* | 1 | Specifies the Dimensions defined by the PlacementSpecification. |
 | [Placement]({{< relref "placement.md" >}}) | placement | 0..* | 1 | Specifies the Placements defined by the PlacementSpecification. |
+| [Dimension]({{< relref "dimension.md" >}}) | dimension | 0..* | 1 | Specifies the Dimensions defined by the PlacementSpecification. |

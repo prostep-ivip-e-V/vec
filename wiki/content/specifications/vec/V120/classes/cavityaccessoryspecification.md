@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>CavityAccessory</i> is a non-electrical part used in a cavity with no sealing properties (e.g. a wire fixation).      </p>
+
 ## General Information
 
 | Attribute               | Value |

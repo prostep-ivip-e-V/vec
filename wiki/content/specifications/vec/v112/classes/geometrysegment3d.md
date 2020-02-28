@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A GeometrySegment3D is the geometric representation of a TopologySegment in 3D-space.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,9 +35,9 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D ends. |
 | [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | startNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D starts. |
 | [BSplineCurve]({{< relref "bsplinecurve.md" >}}) | bSplineCurve | 0..* | 1 | Specifies an ordered list of BSplineCurves defining the 3D appearance of the GeometrySegment3D. |
-| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D ends. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

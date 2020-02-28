@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A ModuleList is a mechanism to control additional / completition PartOccurrences. This means for a car configuration, if at least one of the modules in the list participates in the configuration, the &quot;completitionComponent&quot; participates, too.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,8 +33,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | completionComponents | 1..* | 0..* | References the components that are used as completition, if any of the Modules in the ModuleList appears in a configuration. |
 | [PartWithSubComponentsRole]({{< relref "partwithsubcomponentsrole.md" >}}) | moduleInList | 1..* | 0..* | References the Modules that belong to the ModuleList. If any of the referenced Modules participates in a configuration the completition components participate, too. |
+| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | completionComponents | 1..* | 0..* | References the components that are used as completition, if any of the Modules in the ModuleList appears in a configuration. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

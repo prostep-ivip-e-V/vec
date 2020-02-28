@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> An <i>AbstractSlot</i> is a geometrical place in a connector housing, which can contain / group cavities. This can be either direct, if it is <i>Slot</i> and indirect if it is a <i>ModularSlot</i>.     </p>      <p> If it is a <i>Slot</i>, than it is an inseparable part of the connector housing, which means it is created during the manufacturing process of the connector housing.     </p>      <p> If it is a <i>ModularSlot</i> it is a place where one or more other connector housing can be place during the assembly.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,11 +32,11 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [SlotSpecification]({{< relref "slotspecification.md" >}}) | slotSpecification | 0..1 | 0..* | References the SlotSpecification that is satisfied by the slot. |
 | [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the slot that is satisfied by the Slot. |
+| [SlotSpecification]({{< relref "slotspecification.md" >}}) | slotSpecification | 0..1 | 0..* | References the SlotSpecification that is satisfied by the slot. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | 0..* | referencedSlot | 1 | Points to the slot referenced by the slot reference. |
-| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | slot | 0..* | <p> References explicit Slots for which the compatibility statement is stated.      </p> |
 | [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | 1 | slot | 0..* | Specifies the slots forming the ConnectorHousing. |
+| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | slot | 0..* | <p> References explicit Slots for which the compatibility statement is stated.      </p> |

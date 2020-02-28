@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 Specification for the description of the contacting. A contacting defines the relationships between Terminals, Seals, Plugs, Cavities and Wires.
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the description of a part structure. This specification defines the PartOccurrences that are in the bill of material of the described PartOrUsage. This is necessary, because it is possible, that for a definite description a Part more PartOccurrences are needed than the ones that are in the bill of material (see CompositionSpecification).      </p>
+
 ## General Information
 
 | Attribute               | Value |

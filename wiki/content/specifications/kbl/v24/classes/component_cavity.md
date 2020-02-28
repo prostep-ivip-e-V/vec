@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 A slot in the Component_box where a Component can be mounted.
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,6 +32,6 @@ A slot in the Component_box where a Component can be mounted.
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | 0..* | Component_cavities | 0..* |  |
 | [Component_slot]({{< relref "component_slot.md" >}}) | 1 | Component_cavities | 0..* |  |
+| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | 0..* | Component_cavities | 0..* |  |
 | [Component_cavity_occurrence]({{< relref "component_cavity_occurrence.md" >}}) | 0..* | Part | 1 |  |

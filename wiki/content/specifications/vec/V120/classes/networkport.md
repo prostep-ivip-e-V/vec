@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> NetworkPort is the source or the receiver of a of a Net.      </p>
+
 ## General Information
 
 | Attribute               | Value |

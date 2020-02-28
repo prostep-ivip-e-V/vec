@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Creation assigns creation information to a Module or Harness.</p>
+
 ## General Information
 
 | Attribute               | Value |

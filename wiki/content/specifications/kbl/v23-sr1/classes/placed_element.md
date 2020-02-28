@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Placed_element is an element where a Dimension_specification can apply.</p>
+
 ## General Information
 
 | Attribute               | Value |

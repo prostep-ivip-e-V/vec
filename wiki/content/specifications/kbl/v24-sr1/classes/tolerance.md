@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Tolerance is the specification of the allowable range for a dimension.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: kbl-2.4.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Default_dimension_specification]({{< relref "default_dimension_specification.md" >}}) | 1 | Tolerance_indication | 0..1 | <p> The Tolerance_indication, which defines the values of the tolerance (e.g. +-5mm).      </p> |
 | [Dimension_specification]({{< relref "dimension_specification.md" >}}) | 1 | Tolerance_indication | 0..1 |  |
+| [Default_dimension_specification]({{< relref "default_dimension_specification.md" >}}) | 1 | Tolerance_indication | 0..1 | <p> The Tolerance_indication, which defines the values of the tolerance (e.g. +-5mm).      </p> |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 
+
 ## General Information
 
 | Attribute               | Value |
@@ -35,5 +36,5 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Component_box_occurrence]({{< relref "component_box_occurrence.md" >}}) | Related_occurrence | 1..* | 0..* |  |
 | [Assembly_part_occurrence]({{< relref "assembly_part_occurrence.md" >}}) | Related_assembly | 1..* | 0..* |  |
+| [Component_box_occurrence]({{< relref "component_box_occurrence.md" >}}) | Related_occurrence | 1..* | 0..* |  |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Routing is a course taken to get from a starting point to a destination.</p>
+
 ## General Information
 
 | Attribute               | Value |

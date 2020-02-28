@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>An Approval is a judgment concerning the quality of those modules or harnesses that are subject of the Approval. An Approval represents a statement made by technical personnel or management personnel whether certain requirements are met. The absence of approval information does not imply any approval status by default.</p>
+
 ## General Information
 
 | Attribute               | Value |

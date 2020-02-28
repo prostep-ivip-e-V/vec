@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> For regularly laid out slots the slot layout describes the positions of the cavities      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> With a CavityMountingDetail it is possible to describe a detailed cavity mounting.     </p>      <p> This is needed if the information which terminal reception is mounted into which cavity is important. There are cases where this information can be relevant (e.g. bridge contacts with an asymmetric wire mounting).      </p>
+
 ## General Information
 
 | Attribute               | Value |

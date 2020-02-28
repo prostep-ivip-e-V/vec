@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Dimension_specification is the definition of the distance between two elements.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,11 +33,11 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Segment]({{< relref "segment.md" >}}) | Segments | 0..* | 0..* | <p> Defines an ordered list of segments along which the dimension specification is defined.      </p> |
-| [Placed_element]({{< relref "placed_element.md" >}}) | target | 1 | 0..* |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
 | [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 |  |
+| [Placed_element]({{< relref "placed_element.md" >}}) | target | 1 | 0..* |  |
 | [Placed_element]({{< relref "placed_element.md" >}}) | origin | 1 | 0..* |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
+| [Segment]({{< relref "segment.md" >}}) | Segments | 0..* | 0..* | <p> Defines an ordered list of segments along which the dimension specification is defined.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

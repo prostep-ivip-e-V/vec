@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the size of an element by width &amp; height. Per definition is width &gt; height.      </p>
+
 ## General Information
 
 | Attribute               | Value |

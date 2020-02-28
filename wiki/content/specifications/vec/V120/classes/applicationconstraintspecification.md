@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the definition of application constraints. The associated ApplicationConstraints are restricting the possible usages of the associated <i>ConfigurableElements</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

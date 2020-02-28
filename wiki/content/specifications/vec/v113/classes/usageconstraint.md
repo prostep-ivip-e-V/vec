@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Specifies a constraint of the possible usages for PartVersion or PartUsages. UsageContraints are of part master data information. UsageConstraints specify general restrictions for the application of a PartVersion or PartUsage (e.g. a certain period of time in which the part is allowed to be used).  (see KBLFRM-229) </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,8 +37,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [UsageNode]({{< relref "usagenode.md" >}}) | usageNode | 0..* | 0..* | References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageConstraint. |
 | [Project]({{< relref "project.md" >}}) | project | 0..* | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
+| [UsageNode]({{< relref "usagenode.md" >}}) | usageNode | 0..* | 0..* | References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageConstraint. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

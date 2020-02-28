@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Specification for the description of tapes.  </p>
+
 ## General Information
 
 | Attribute               | Value |

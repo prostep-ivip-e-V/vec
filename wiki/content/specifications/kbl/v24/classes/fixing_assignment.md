@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Fixing_assignment assigns a Fixing_occurrence or an Accessory_occurrence to a Segment.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Specification for the description of a Mating. A mating allows the mapping between independent harness sections of the electrical system. This is done by the mapping of TerminalRoles of one side to the other.      </p>
+
 ## General Information
 
 | Attribute               | Value |

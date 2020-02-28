@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>Kabelbaumvariante  A superset of all available functions (150%) is described in function diagram. The harness configuration describes the harness of useful car configurations.  A Harness_configuration is a variant of an harness.</p>
+
 ## General Information
 
 | Attribute               | Value |

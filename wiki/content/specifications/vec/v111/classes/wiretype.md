@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Specifies a wire type. A wire type is always defined by a key value. What wire type is meant by this key value is defined by a standard reference system.     </p>
+
 ## General Information
 
 | Attribute               | Value |

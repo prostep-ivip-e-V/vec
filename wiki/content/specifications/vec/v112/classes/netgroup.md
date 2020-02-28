@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A NetGroup allows the grouping of the Nets. </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -37,5 +38,5 @@ menu_name: vec-1.1.2
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netGroup | 0..* | Specifies the NetGroup defined in the NetSpecification. |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | netGroup | 0..1 | References the NetworkGroup that is realized by the ComponentGroup. |
+| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netGroup | 0..* | Specifies the NetGroup defined in the NetSpecification. |

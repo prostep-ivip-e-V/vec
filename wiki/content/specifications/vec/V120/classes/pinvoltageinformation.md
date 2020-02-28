@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Allows the definition of voltages for a pin of an <i>EEComponent</i>. A current can be further specified by a duration. Attributes of the type <i>PinVoltageInformation</i> normally have the multiplicity [0..*]. This means that such an attribute can have <i>PinVoltageInformation</i> entries for different types and durations. It must not have multiple entries for the same type and duration.      </p>
+
 ## General Information
 
 | Attribute               | Value |

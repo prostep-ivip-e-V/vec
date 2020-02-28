@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specifies a certain development project. Instances of this class are assumed to be constant. Thus this is located directly under VEC-root element.      </p>
+
 ## General Information
 
 | Attribute               | Value |

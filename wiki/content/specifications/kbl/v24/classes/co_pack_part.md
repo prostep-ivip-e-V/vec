@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>Kabelbaumzubehör  A Co_pack_part is a Part which is supplied and installed with the wiring harness, but without any electrical connection.</p>
+
 ## General Information
 
 | Attribute               | Value |

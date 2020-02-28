@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A <i>SlotReference</i> represents the usage of a <i>Slot</i> in the context of PartUsage or PartOccurrence.      </p>
+
 ## General Information
 
 | Attribute               | Value |

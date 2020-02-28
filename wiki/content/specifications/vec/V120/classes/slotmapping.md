@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>Defines the mapping of two slots contained PartVersion A &amp; B of the containing Mapping-object. </p>
+
 ## General Information
 
 | Attribute               | Value |

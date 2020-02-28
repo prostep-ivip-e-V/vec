@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> As the name implies, a <i>TopologyBendingRestriction</i> defines restrictions on the bendability a path in the <i>Topology.</i> There are multiple reasons, why such restrictions exist, for example:      </p>      <ul>       <li> There is a bending restriction for a wire in the segment.        </li>       <li> The number of wires and the segment diameter is such, that excessive bending causes intolerable torsion forces on wires in the segment.        </li>       <li> Other technical reasons        </li>     </ul>     <p> Since these restrictions can be determined using a variety of methods the VEC provides a concept to store this information for later use. This makes the information available in the downstream processes, without detailed knowledge of the determination procedure (e.g. during form board design, packaging or installation).      </p>      <p> The restriction applies to a path of segments as this can cover different case:      </p>      <ul>       <li> a single segment        </li>       <li> two adjacent segments at a node        </li>       <li> the complete path of a wire        </li>     </ul>
+
 ## General Information
 
 | Attribute               | Value |

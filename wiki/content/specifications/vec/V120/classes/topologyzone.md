@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>TopologyZone</i> divides a topology in different sections / design spaces. A <i>TopologyZone</i> may be subdivided in further <i>TopologyZone</i>. There can be multiple reasons for creating an orthogonal sectioning on a <i>Topology</i>. Therefore, <i>TopologyZones</i> can be overlapping.      </p>
+
 ## General Information
 
 | Attribute               | Value |

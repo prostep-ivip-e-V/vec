@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A CavityReference represents the usage of a Cavity in the context of PartUsage or PartOccurrence.      </p>
+
 ## General Information
 
 | Attribute               | Value |

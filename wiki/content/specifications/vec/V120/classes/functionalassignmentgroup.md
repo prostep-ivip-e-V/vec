@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The <i>FunctionalAssignmentGroup </i>clusters elements that contribute to a specific function or a functional aspect. With such a group, certain functional requirements can be associated.      </p>
+
 ## General Information
 
 | Attribute               | Value |

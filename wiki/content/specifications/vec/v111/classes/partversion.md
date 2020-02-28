@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> The PartVersion is one of the two anchors for PDM information in the VEC. All technical information about a PartVersion is contained in one or more documents. These describing elements are normally referencing to the PartVersion.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -52,6 +53,6 @@ menu_name: vec-1.1.1
 | [ContactSystem]({{< relref "contactsystem.md" >}}) | 0..* | firstTerminal | 1 | <p> References the first terminal of the ContactSystem.      </p> |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | 0..* | part | 0..1 | <p> References the PartVersion that is instantiated by this PartOccurrence.      </p> |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | partVersion | 0..* | Specifies the PartVersions contained in the VEC-file. |
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..* | referencedPart | 0..* | The association is an informative link which PartVersions are described by the SheetOrChapter. |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | 0..* | referencedPart | 0..* | The association is an informative link which PartVersions are described by the DocumentVersion. |
+| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..* | referencedPart | 0..* | The association is an informative link which PartVersions are described by the SheetOrChapter. |
 | [ContactSystem]({{< relref "contactsystem.md" >}}) | 0..* | secondTerminal | 1 | <p> References the second terminal of the ContactSystem.      </p> |

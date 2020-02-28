@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A WireGrouping is the assignment of WireElementReferences to a WireGroupSpecification. A WireGrouping is needed if individual wire (e.g. with own part numbers) should be grouped (e.g. combined to a twisted pair) and the grouping is not have an individual part.      </p>
+
 ## General Information
 
 | Attribute               | Value |

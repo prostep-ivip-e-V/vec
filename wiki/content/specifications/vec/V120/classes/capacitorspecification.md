@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification of the electrological aspects of a capacitor.&#160;      </p>
+
 ## General Information
 
 | Attribute               | Value |

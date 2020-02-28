@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A <i>DimensionAnchor</i> represents an abstract anchor onto which a <i>Dimension</i> can be specified.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Wire_protection_occurrence is the occurrence of a Wire_protection in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

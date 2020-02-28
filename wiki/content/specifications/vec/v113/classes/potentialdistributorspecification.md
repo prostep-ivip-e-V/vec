@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 Specifies the properties of a potential distributor (e.g. a joint connector).
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>Enables the specification of value ranges which can be tolerated. </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,6 +33,6 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | tolerance | 0..1 |  |
 | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 0..1 | tolerance | 0..1 | Specifies the tolerance for the dimension. |
+| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | tolerance | 0..1 |  |
 | [DefaultDimension]({{< relref "defaultdimension.md" >}}) | 0..1 | toleranceIndication | 1 |  |

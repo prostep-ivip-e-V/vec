@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> The USUnit class can define quantities in the terms of the US-Unit-System by specifying the corresponding US unit name. The US Unit System is quite similar to the imperial unit system, however some units are defined slightly different.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the position of a MeasurementPoint within the coordinate system of the component. MeasurementPoint onto which dimension can be defined<i>.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

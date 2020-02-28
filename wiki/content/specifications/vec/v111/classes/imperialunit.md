@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>The ImperialUnit class can define quantities in the terms of the Imperial-Unit-System by specifying the corresponding Imperial unit name. </p>
+
 ## General Information
 
 | Attribute               | Value |

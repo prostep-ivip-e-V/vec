@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Value_range is a pair of numerical values representing the range in which the value shall lie.</p>
+
 ## General Information
 
 | Attribute               | Value |

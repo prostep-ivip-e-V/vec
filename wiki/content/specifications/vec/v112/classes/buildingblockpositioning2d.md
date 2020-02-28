@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Defines the position of a BuildingBlock2D on a HarnessDrawing.      </p>
+
 ## General Information
 
 | Attribute               | Value |

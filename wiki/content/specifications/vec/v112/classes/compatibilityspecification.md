@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A CompatibilitySpecification specifies a set of CompatibilityStatements.      </p>
+
 ## General Information
 
 | Attribute               | Value |

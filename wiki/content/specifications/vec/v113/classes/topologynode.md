@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A TopologyNode is a point in the Topology where TopologySegments are starting and ending.  </p>
+
 ## General Information
 
 | Attribute               | Value |

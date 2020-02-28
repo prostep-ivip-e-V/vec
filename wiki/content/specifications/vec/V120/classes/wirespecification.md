@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the definition of a wire. This can either be a complex multicore wire or a normal single core. In the VEC a wire is defined by one WireElement, which may be composed from other WireElements.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,8 +34,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1 | 0..1 | <p> Specifies the <i>WireElement</i> that represents the root of the <i>WireSpecification</i>.      </p> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | wireElementSpecification | 1 | 0..* | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
+| [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1 | 0..1 | <p> Specifies the <i>WireElement</i> that represents the root of the <i>WireSpecification</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

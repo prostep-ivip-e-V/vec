@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A PinComponent describes a pin of an EEComponent. A PinComponent is part of a HousingComponent and is defined by tree aspects.      </p>      <ol>       <li> Its geometric position in the <i>HousingComponent</i>, which is defined by the <i>referencedCavity.</i>       </li>       <li> Its physical electrical properties, which are defined by the referenced <i>TerminalSpecification.</i>       </li>       <li> Its electrical behaviour, which is defined configuration dependent by its <i>PinComponentBehaviour.</i>       </li>     </ol>
+
 ## General Information
 
 | Attribute               | Value |
@@ -42,6 +43,6 @@ menu_name: vec-1.2.0
 | [DiodeSpecification]({{< relref "diodespecification.md" >}}) | 0..* | anode | 0..1 |  |
 | [DiodeSpecification]({{< relref "diodespecification.md" >}}) | 0..* | cathode | 0..1 |  |
 | [FuseComponent]({{< relref "fusecomponent.md" >}}) | 0..* | connectedPins | 0..2 |  |
-| [HousingComponent]({{< relref "housingcomponent.md" >}}) | 1 | pinComponent | 0..* | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 | [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | 0..* | pinComponent | 1 | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
+| [HousingComponent]({{< relref "housingcomponent.md" >}}) | 1 | pinComponent | 0..* | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 | [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | pins | 2..* |  |

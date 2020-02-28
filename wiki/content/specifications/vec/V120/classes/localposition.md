@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A<i> LocalPosition </i>defines the position of a relevant point of component within the coordinate system of the component.      </p>
+
 ## General Information
 
 | Attribute               | Value |

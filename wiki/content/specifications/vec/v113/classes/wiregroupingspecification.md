@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the description of WireGroupings.      </p>
+
 ## General Information
 
 | Attribute               | Value |

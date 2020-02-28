@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A connection end is the end of a Connection at a ComponentPort.      </p>
+
 ## General Information
 
 | Attribute               | Value |

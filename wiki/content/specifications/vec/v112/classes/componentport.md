@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Defines a port of ComponentNode. A ComponentPort is usually the realization of a NetworkPort. Electrological connections are defined between two or more ComponentPorts.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -38,7 +39,7 @@ menu_name: vec-1.1.2
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..1 | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
 | [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..1 | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..1 | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 1 | componentPort | 0..* | Specifies the ComponentPorts of the ComponentNode. |
 | [ConnectionEnd]({{< relref "connectionend.md" >}}) | 0..* | connectedComponentPort | 1 | References the ComponentPort that is connected by the ConnectionEnd. |

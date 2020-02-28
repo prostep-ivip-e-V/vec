@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Austauschbauteil  A Part_substitution is a mechanism that describes the replacement of a sealing plug with a terminal. Typically usage: an optional module is added to a harness and a common connector will be used.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Routing is a course taken to get from a starting point to a destination.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,9 +34,9 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Segment]({{< relref "segment.md" >}}) | Mandatory_segments | 0..* | 0..* | <p> References a list of segments that are mandatory to be visited during the routing process. As a consequence the <i>Segments</i> determined by a routing algorithm shall contain these <i>Mandatory_segments.</i>      </p> |
 | [Segment]({{< relref "segment.md" >}}) | Segments | 0..* | 0..* | <p> Represents the result of a routing algorithm.      </p> |
 | [Connection]({{< relref "connection.md" >}}) | Routed_wire | 1 | 0..* |  |
+| [Segment]({{< relref "segment.md" >}}) | Mandatory_segments | 0..* | 0..* | <p> References a list of segments that are mandatory to be visited during the routing process. As a consequence the <i>Segments</i> determined by a routing algorithm shall contain these <i>Mandatory_segments.</i>      </p> |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

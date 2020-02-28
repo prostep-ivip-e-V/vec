@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>CableLeadThrough</i> specifies a hole in the grommet through which wires can pass through the grommet. The <i>CableLeadThroughSpecification </i>defines the technical properties of a <i>CableLeadThrough</i> (or a set of similar ones).      </p>
+
 ## General Information
 
 | Attribute               | Value |

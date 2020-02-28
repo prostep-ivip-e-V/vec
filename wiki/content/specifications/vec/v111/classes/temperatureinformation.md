@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Defines the temperature information for a general technical part. It is necessary to define this in an external class and not as an attribute, since a part can have multiple different temperature information e.g. operating temperature, storage temperature, processing temperature, environment temperature. An additional constraint is that one GeneralTechnicalPartSpecification can own multiple TemperatureInformations, but must not have more than one TemperatureInformations of the same temperatureType.      </p>
+
 ## General Information
 
 | Attribute               | Value |

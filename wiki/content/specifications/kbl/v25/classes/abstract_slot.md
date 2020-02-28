@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 An abstract slot, which is either a Slot or a Modular_slot.
+
 ## General Information
 
 | Attribute               | Value |

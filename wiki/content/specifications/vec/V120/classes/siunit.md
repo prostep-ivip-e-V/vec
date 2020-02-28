@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The SIUnit class can define quantities in the terms of the SI-Unit-System by specifying the corresponding SI prefix (optional) and a SI unit name. The usage of SI units must be the preferred way of expressing units, since these units can be easily translated into other SI units.      </p>
+
 ## General Information
 
 | Attribute               | Value |

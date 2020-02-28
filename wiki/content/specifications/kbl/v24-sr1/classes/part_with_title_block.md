@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Part_with_title_block is a mechanism to assign additional information to a Harness, a Harness_configuration or a Module.</p>
+
 ## General Information
 
 | Attribute               | Value |

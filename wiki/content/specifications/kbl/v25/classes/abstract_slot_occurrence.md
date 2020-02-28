@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> An abstract slot occurrence, which is either a Slot_occurrence or a Modular_slot_occurrence.&#160;      </p>
+
 ## General Information
 
 | Attribute               | Value |

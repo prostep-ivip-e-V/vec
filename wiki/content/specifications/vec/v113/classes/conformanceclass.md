@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> The ConformanceClass element represents a link to a ConformanceClass to which the vec-file is compliant.      </p>
+
 ## General Information
 
 | Attribute               | Value |

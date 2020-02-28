@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Kabelader  A core is part of a cable. A cable consists of 1-n cores  A Core is a single conductor of a multi-core wire including its isolation.</p>
+
 ## General Information
 
 | Attribute               | Value |

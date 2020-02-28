@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>An ItemHistroyEntry defines the direct relationship between ItemVersions in the terms of predecessor and successor. There are two possible types of relationships between ItemVersions, derivation and sequence. Derivation means for example for parts, that the successor version is a new part developed on the base of the predecessor version. Sequence means the successor version is an improvement of the predecessor version.  By the combination of more than one ItemHistoryEntry a linear sequence of ItemVersions can be represented.  </p>
+
 ## General Information
 
 | Attribute               | Value |

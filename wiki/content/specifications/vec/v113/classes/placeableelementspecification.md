@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the general aspects of a component that are enabling the component to be placed in a topology. All components that should have the ability to be placed on a certain position in the topology must have a PlaceableElementSpecification      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,8 +35,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..* | 1 | <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p> |
 | [MeasurementPoint]({{< relref "measurementpoint.md" >}}) | measurementPoint | 0..* | 1 | <p> Specifies the <i>MeasurementPoints</i> of an <i>PlaceableElement</i>.       </p> |
+| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..* | 1 | <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

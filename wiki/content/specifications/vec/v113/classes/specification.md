@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Abstract super-class for all specifications. Every technical information exchanged with the VEC is contained in the different specializations of a specification.   </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications. |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |
+| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications. |

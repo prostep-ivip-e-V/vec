@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 The Schematic_connection represents a logical connection. It can referenced by the physical connections (Connection) and be used to transfer the information of the logical connection, if it is realized by multiple Connections (e.g. different routings, different wire types).
+
 ## General Information
 
 | Attribute               | Value |

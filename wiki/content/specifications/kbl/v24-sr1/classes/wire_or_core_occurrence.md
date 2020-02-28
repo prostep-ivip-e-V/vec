@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Wire_or_core_occurrence is an occurrence of a single wire, a multi-core wire, or a individual core of a multi-core wire.</p>
+
 ## General Information
 
 | Attribute               | Value |

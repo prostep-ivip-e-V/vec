@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>An OnPointPlacement is a placement of an OccurrenceOrUsage that places it onto discrete points, in most cases one point. In some cases it is necessary to place a component (with more than one reference point) onto multiple points (e.g. a cable channel).  </p>
+
 ## General Information
 
 | Attribute               | Value |

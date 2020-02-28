@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Core_occurrence is the occurrence of a Core within a Special_wire_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A <i>PinComponentBehavior</i> specifies the electrical behavior of a <i>PinComponent.</i> Since the behavior of a pin is configuration dependent (e.g. the software deployed on an ECU) the <i>PinComponentBehavior </i>inherits from <i>ConfigurableElement.</i> Therefore a <i>PinComponent</i> can specify multiple <i>PinComponentBehavior.</i>        </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -35,9 +36,9 @@ menu_name: vec-1.1.1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p> |
-| [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | voltageInformation | 0..* | 1 | <p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
 | [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
 | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) | opticalInformation | 0..* | 1 | <p> Specifies the optical information of the pin, if it has the type optical.      </p> |
+| [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | voltageInformation | 0..* | 1 | <p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

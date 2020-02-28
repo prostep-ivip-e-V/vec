@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A CartesianPoint3D is a point that is defined by its coordinates in a rectangular three-dimensional Cartesian coordinate system.      </p>
+
 ## General Information
 
 | Attribute               | Value |

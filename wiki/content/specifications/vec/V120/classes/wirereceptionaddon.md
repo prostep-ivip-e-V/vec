@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specifies the wire addon required for this wire reception.      </p>
+
 ## General Information
 
 | Attribute               | Value |

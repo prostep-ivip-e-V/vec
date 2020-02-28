@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Specifies the cross section area of a segment. For the data exchange  the cross section area is used and not the diameter, because the diameter is only a valid measure for circular segments.  For circular segments, the diameter and the cross section area can be translated into each other without the loss of information.  Attributes of the type SegmentCrossSectionArea normally have the multiplicity [0..*]. This means that such an attribute can have SegmentCrossSectionArea entries for different crossSectionAreaTypes and valueDeterminations. It must not have multiple entries with the same crossSectionAreaType and valueDetermination.  </p>
+
 ## General Information
 
 | Attribute               | Value |

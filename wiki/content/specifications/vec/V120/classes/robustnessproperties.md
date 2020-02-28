@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Allows the definition of robustness properties. Robustness of component is specified as a level of robustness against a specific influence (e.g. oil, water, UV-light). The influence is specified by the <i>class</i> and the level is specified by the <i>classKey</i>. Valid robustness classes and keys are specified by the reference system. Attributes of the type RobustnessProperties normally have the multiplicity [0..*]. This means that such an attribute can have RobustnessProperties entries for different <i>classReferenceSystems</i> and <i>classes</i>. It must not have multiple entries for the same <i>class</i> and <i>classReferenceSystem</i>.      </p>      <p> Note: Most reference systems just define one class or at least some of the possible classes, but not all (e.g. the ISO 20653 defines &quot;Solid Particle Protection&quot; and &quot;Liquid&#160;Ingress&#160;Protection&quot;, whereas the ISO 6722 defines &quot;Ambient&#160;Temperature&quot; among others).      </p>
+
 ## General Information
 
 | Attribute               | Value |

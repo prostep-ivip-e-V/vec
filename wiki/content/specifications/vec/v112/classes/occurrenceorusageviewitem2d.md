@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>An OccurrenceOrUsageViewItem2D specifies the representation of a OcurrenceOrUsage in a 2DDrawing.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,8 +34,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | occurrenceOrUsage | 0..1 | 0..* | Specifies the OccurrenceOrUsage which is represented by the view item. |
 | [Transformation2D]({{< relref "transformation2d.md" >}}) | orientation | 0..1 | 1 | Specifies the orientation of the view item. |
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | occurrenceOrUsage | 0..1 | 0..* | Specifies the OccurrenceOrUsage which is represented by the view item. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Module is a physical part of harness electrically defined by one or more module groups including required harness furniture.</p>
+
 ## General Information
 
 | Attribute               | Value |

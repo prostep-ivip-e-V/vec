@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Part_with_title_block is a mechanism to assign additional information to a Harness, a Harness_configuration or a Module.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -47,5 +48,5 @@ menu_name: kbl-2.5
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Creation]({{< relref "creation.md" >}}) | 0..* | Is_applied_to | 1..* |  |
 | [Approval]({{< relref "approval.md" >}}) | 0..* | Is_applied_to | 1..* |  |
+| [Creation]({{< relref "creation.md" >}}) | 0..* | Is_applied_to | 1..* |  |

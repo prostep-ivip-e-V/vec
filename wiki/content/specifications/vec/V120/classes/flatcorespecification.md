@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the properties of a flat (rectangular)&#160;conductor which are specific for them.      </p>
+
 ## General Information
 
 | Attribute               | Value |

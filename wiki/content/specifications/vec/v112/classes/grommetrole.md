@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A GrommetRole defines the instance specific properties and relationships of a grommet.      </p>
+
 ## General Information
 
 | Attribute               | Value |

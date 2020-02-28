@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A placement defines the placement of a PlaceableElementRole onto a Topology. For the definition of the place on the Topology, Locations are used. A Placement can either be a placement on discrete points (OnPointPlacement) or on an area of the topology (OnWayPlacement).  </p>
+
 ## General Information
 
 | Attribute               | Value |

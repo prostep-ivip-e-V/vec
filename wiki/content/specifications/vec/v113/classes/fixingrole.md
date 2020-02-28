@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A FixingRole defines the instance specific properties and relationships of a fixing. </p>
+
 ## General Information
 
 | Attribute               | Value |

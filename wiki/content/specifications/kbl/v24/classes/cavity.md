@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>Kontaktkammer  A cavity is a defined space in a housing for location of an electrical terminal or cavity plug/seal (can be empty).</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -35,6 +36,6 @@ menu_name: kbl-2.4
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | 0..* | Cavities | 0..* |  |
 | [Slot]({{< relref "slot.md" >}}) | 1 | Cavities | 1..* |  |
+| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | 0..* | Cavities | 0..* |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | 1..* | Part | 1 |  |

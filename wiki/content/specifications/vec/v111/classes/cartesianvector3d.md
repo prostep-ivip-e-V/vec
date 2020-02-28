@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A Cartesian vector in three dimensional space.      </p>
+
 ## General Information
 
 | Attribute               | Value |

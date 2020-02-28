@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A cavity is a defined space in a connector housing for location of an electrical terminal or cavity plug or seal. A cavity may also be empty.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,8 +34,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | integratedTerminalSpecification | 0..1 |  | <p> Specifies of the terminal, if the cavity has an integrated terminal (e.g. an IDC).       </p> |
 | [CavitySpecification]({{< relref "cavityspecification.md" >}}) | cavitySpecification | 0..1 | 0..* | References the CavitySpecification that is satisfied by the cavity. |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | integratedTerminalSpecification | 0..1 |  | <p> Specifies of the terminal, if the cavity has an integrated terminal (e.g. an IDC).       </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
@@ -43,6 +44,6 @@ menu_name: vec-1.1.3
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | cavity | 0..* | <p> References explicit cavities for which the compatibility statement is stated.      </p> |
 | [OpenCavitiesAssignment]({{< relref "opencavitiesassignment.md" >}}) | 0..* | openCavities | 1..* | <p> Specifies the cavities that are open.      </p> |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | 0..* | reachableCavities | 0..* | <p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p> |
-| [PinComponent]({{< relref "pincomponent.md" >}}) | 0..* | referencedCavity | 0..1 | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |
 | [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | referencedCavity | 1 | Points to the cavity referenced by the cavity reference. |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | 0..* | referencedCavity | 0..1 | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |
 | [SealedCavitiesAssignment]({{< relref "sealedcavitiesassignment.md" >}}) | 0..* | sealedCavities | 1..* | <p> Specifies the Cavities that are sealed.      </p> |

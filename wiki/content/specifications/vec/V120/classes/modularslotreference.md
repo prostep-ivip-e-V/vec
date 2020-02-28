@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>ModularSlotReference</i> represents the usage of a <i>ModularSlot</i> in the context of PartUsage or PartOccurrence.      </p>
+
 ## General Information
 
 | Attribute               | Value |

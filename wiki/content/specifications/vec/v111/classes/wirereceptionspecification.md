@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Specification for the definition of wire receptions. A WireReception is the area of a terminal where the contacting with a (e.g. by crimping) takes place.      </p>
+
 ## General Information
 
 | Attribute               | Value |

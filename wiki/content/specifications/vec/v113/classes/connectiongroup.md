@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A ConnectionGroup references two or more Connections expressing that the physical realization of the referenced Connection shall be somehow grouped e.g. twisted. For complex structures a ConnectionGroup can specify subgroups.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,8 +35,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..1 | 0..* | References the NetworkGroup that is realized by the ComponentGroup. |
 | [Connection]({{< relref "connection.md" >}}) | connection | 2..* | 0..* | References the Connections that are grouped by the ConnectionGroup. |
+| [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..1 | 0..* | References the NetworkGroup that is realized by the ComponentGroup. |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | subGroup | 0..* | 0..1 | Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

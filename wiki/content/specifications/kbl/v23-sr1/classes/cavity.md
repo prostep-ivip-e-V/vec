@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Kontaktkammer  A cavity is a defined space in a housing for location of an electrical terminal or cavity plug/seal (can be empty).</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the length of a WireElementReference. A WireElementReference can have multiple lengths of different types but must not have more than one length of the same type.      </p>
+
 ## General Information
 
 | Attribute               | Value |

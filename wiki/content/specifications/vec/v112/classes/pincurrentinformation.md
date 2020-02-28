@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Allows the definition of currents for a pin of an EEComponent. A current can be further specified by a duration. Attributes of the type PinCurrentInformation normally have the multiplicity [0..*]. This means that such an attribute can have PinCurrentInformation entries for different types and durations. It must not have multiple entries for the same type and duration.  </p>
+
 ## General Information
 
 | Attribute               | Value |

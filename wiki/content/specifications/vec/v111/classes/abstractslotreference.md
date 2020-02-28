@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> An <i>AbstractSlotReference</i> represents the usage of an AbstractSlot in the context of PartUsage or PartOccurrence.      </p>
+
 ## General Information
 
 | Attribute               | Value |

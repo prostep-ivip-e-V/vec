@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A <i>SealedCavitiesAssignment</i> groups the cavities of ONE connector that are sealed by a MultiCavityPlug. If a MultiCavityPlug fits into more than one connector, than there are as many <i>SealedCavitiesAssignments</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>An OnWayPlacement places an OccurrenceOrUsage onto an area of the Topology (e.g. a tape or a tube). The area is defined by a startLocation and an endLocation. If startLocation and endLocation are not located on the same TopologySegment it is possible to specify a Path of TopologySegments over which the OnWayPlacement goes.  </p>
+
 ## General Information
 
 | Attribute               | Value |

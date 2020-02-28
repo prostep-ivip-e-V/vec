@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A GeometrySegment is the geometric representation of a TopologySegment. A TopologySegment may be represented by more than one GeometrySegment. A GeometrySegment is either a GeometrySegment2D or a GeometrySegment3D.      </p>
+
 ## General Information
 
 | Attribute               | Value |

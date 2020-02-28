@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>The OtherUnit class can be used to define a unit, which is necessary in the context of data exchange but not contained in the standard systems (e.g. Piece).  </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 A contact system is a standard reference setup of two terminals and defined length of a core contacted to both terminals.
+
 ## General Information
 
 | Attribute               | Value |

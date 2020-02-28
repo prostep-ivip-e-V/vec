@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for cavity seals that apply to more than one cavity. A CavitySeal is a water tight non-electrical object to fill a populated Cavity. MultiCavitySeals are formed to fit into one connector / slot and to seal more than one cavity at once.     </p>      <p> There are existing two types of MultiCavitySeals:     </p>      <ol>       <li> In first type the MultiCavitySeal has an opening for all cavities of the connector. Each opening can be filled either with a wire (without an individual seal) or with a CavityPlug (e.g. a synthetic pin) or a MultiCavityPlug.       </li>       <li> In the second type, the MultiCavitySeal has a specific configuration of openings for some cavities of the connector. These MultiCavitySeals are sealing all cavities with an opening and a wire in it and all cavities where no opening in the MultiCavitySeal exists. For each opening that has no wire it an additional CavityPlug is needed.&#160;       </li>     </ol>     <p> The cavities that are left open by a MultiCavitySeal are defined with a SealedCavitiesAssignment.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Wire_colour is a mechanism to define a colour for a wire together with a description of the kind of the colour.</p>
+
 ## General Information
 
 | Attribute               | Value |

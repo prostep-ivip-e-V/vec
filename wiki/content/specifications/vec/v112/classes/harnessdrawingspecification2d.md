@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>The HarnessDrawingSpecification2D specifies a two dimensional drawing of a harness. A harness drawing is composed of one or more BuildingBlockSpecifaction2D which are placed on the drawing.   </p>
+
 ## General Information
 
 | Attribute               | Value |

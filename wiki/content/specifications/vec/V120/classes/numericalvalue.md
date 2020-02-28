@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>A quantity expressed with a numerical value and a unit. </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Abstract base class for all elements which can be configured with a VariantConfiguration.      </p>
+
 ## General Information
 
 | Attribute               | Value |

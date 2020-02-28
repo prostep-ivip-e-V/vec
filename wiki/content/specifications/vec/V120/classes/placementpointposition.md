@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the position of a PlacementPoint within the coordinate system of the component. PlacementPoints are points where a component is attached to a <i>TopologySegment. </i>Therefor a <i>PlacementPointPosition</i> can define a tangent vector (in the coordinate system of the component) for a segment that is connected to the <i>PlacementPoint.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

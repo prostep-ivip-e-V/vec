@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>CavityAccessoryRole</i> defines the instance specific properties and relationships of a cavity accessory.      </p>
+
 ## General Information
 
 | Attribute               | Value |

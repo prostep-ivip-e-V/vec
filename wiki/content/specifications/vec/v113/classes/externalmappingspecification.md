@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> An<i> ExternalMappingSpecification </i>is used to define a mapping between an external data source (represented by the referenced <i>mappedDocument</i>) and the content of a VEC file.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ExternalMapping]({{< relref "externalmapping.md" >}}) | mappings | 0..* | 1 | <p> Specifies the mappings of individual element.      </p> |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p> |
+| [ExternalMapping]({{< relref "externalmapping.md" >}}) | mappings | 0..* | 1 | <p> Specifies the mappings of individual element.      </p> |

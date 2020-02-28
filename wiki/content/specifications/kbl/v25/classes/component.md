@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Component is an object which belongs to the harness. Example: Fuse, fusebox, relay sockets</p>
+
 ## General Information
 
 | Attribute               | Value |

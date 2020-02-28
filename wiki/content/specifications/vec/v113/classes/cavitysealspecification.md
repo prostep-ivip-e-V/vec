@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the definition of cavity seals. A <i>CavitySeal</i> is a water tight non-electrical object to fill a populated Cavity.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -40,5 +41,5 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | 0..* | cavitySealSpecification | 1 | <p> References the <i>CavitySealSpecification </i>that is instanced by this <i>CavitySealRole.</i>      </p> |
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | cavitySealSpecification | 0..* | <p> References the CavitySealSpecifications for which the compatibility statement is stated.      </p> |
+| [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | 0..* | cavitySealSpecification | 1 | <p> References the <i>CavitySealSpecification </i>that is instanced by this <i>CavitySealRole.</i>      </p> |

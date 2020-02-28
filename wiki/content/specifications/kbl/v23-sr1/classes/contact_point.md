@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Contact_point defines the positions where electrical connectivity takes place.</p>
+
 ## General Information
 
 | Attribute               | Value |

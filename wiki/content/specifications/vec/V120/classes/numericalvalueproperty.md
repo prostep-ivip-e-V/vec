@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>A custom property with a numerical value. (see KBLFRM-319) </p>
+
 ## General Information
 
 | Attribute               | Value |

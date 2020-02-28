@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>A PinComponentReference represents the usage of a PinComponent in the context of a PartUsage or PartOccurrence.  (KBLFRM-401) </p>
+
 ## General Information
 
 | Attribute               | Value |

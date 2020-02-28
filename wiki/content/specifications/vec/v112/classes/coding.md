@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specifies the coding of a slot or a connector housing.      </p>
+
 ## General Information
 
 | Attribute               | Value |

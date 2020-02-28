@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>Mehrdrahtleitung  A Special_wire_occurrence is the occurrence of a multi-core wire in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

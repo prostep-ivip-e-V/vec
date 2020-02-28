@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A CavitySealRole defines the instance specific properties and relationships of a cavity seal.      </p>
+
 ## General Information
 
 | Attribute               | Value |

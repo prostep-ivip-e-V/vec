@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Abstract super-class for Localized text values.
+
 ## General Information
 
 | Attribute               | Value |

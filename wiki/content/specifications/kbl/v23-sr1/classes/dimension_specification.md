@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Dimension_specification is the definition of the distance between two elements.</p>
+
 ## General Information
 
 | Attribute               | Value |

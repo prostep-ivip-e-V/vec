@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A node forms begin and end of a Segment.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,9 +34,9 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [Located_component]({{< relref "located_component.md" >}}) | referenced_components | 0..* | 0..* |  |
 | [Cartesian_point]({{< relref "cartesian_point.md" >}}) | Cartesian_point | 1 | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
-| [Located_component]({{< relref "located_component.md" >}}) | referenced_components | 0..* | 0..* |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | referenced_cavities | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

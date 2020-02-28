@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>CableDuctRole</i> defines the instance specific properties and relationships of a cable duct.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>An External_reference is a mechanism to provide information of the documents associated with the Part. Example: 3D model, form board drawings, etc.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -41,11 +42,11 @@ menu_name: kbl-2.5
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [KBL_container]({{< relref "kbl_container.md" >}}) | 1 | External_reference | 0..* |  |
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | 0..* | External_reference | 0..1 |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | 0..* | External_reference | 0..1 |  |
-| [Change_description]({{< relref "change_description.md" >}}) | 0..* | External_references | 0..* | <p> Allows the referencing of external / additional documents related to the change description.      </p> |
-| [Schematic_connection]({{< relref "schematic_connection.md" >}}) | 0..* | External_references | 0..* |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | 0..* | External_reference | 0..1 |  |
+| [KBL_container]({{< relref "kbl_container.md" >}}) | 1 | External_reference | 0..* |  |
 | [Part]({{< relref "part.md" >}}) | 0..* | External_references | 0..* |  |
 | [Default_dimension_specification]({{< relref "default_dimension_specification.md" >}}) | 0..* | External_references | 0..* | <p> An External_reference which can be used to reference an external document in which the default values are defined (e.g. a company standard).      </p> |
+| [Schematic_connection]({{< relref "schematic_connection.md" >}}) | 0..* | External_references | 0..* |  |
+| [Change_description]({{< relref "change_description.md" >}}) | 0..* | External_references | 0..* | <p> Allows the referencing of external / additional documents related to the change description.      </p> |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | External_references | 0..* |  |

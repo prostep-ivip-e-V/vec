@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>Specifies a TopologyNode as a Location.  </p>
+
 ## General Information
 
 | Attribute               | Value |

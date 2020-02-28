@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Wire_occurrence is the occurrence of a single wire in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

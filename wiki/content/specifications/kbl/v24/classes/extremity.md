@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>The Extremity specifies the Contact_point which is connected by a spcific Connection.</p>
+
 ## General Information
 
 | Attribute               | Value |

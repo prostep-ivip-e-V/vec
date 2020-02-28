@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines the properties of a circular conductor (core) which are specific for them.      </p>
+
 ## General Information
 
 | Attribute               | Value |

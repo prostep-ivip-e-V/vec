@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines two or more ItemVersions to be equivalent out of the view of a certain company. The ItemEquivalence class will most likely be used by a company to express which PartNumber a certain PartVersion has in the context of other companies (same applies to <i>DocumentVersions</i>). However, for every other company separate ItemVersion-instances are needed as the statement of equivalence can be very subjective.      </p>
+
 ## General Information
 
 | Attribute               | Value |

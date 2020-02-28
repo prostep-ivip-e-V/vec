@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A Creation-instance provides additional information to the owning ItemVersion stating personal information on the creator and the creation date. </p>
+
 ## General Information
 
 | Attribute               | Value |

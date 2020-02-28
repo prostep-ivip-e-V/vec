@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Specification for the definition of common properties for technical parts.  </p>
+
 ## General Information
 
 | Attribute               | Value |

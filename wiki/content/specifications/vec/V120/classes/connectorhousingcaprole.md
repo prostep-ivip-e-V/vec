@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 A&#160;<i>ConnectorHousingCapRole</i> defines the instance-specific properties of a cap for a connector (backshells).
+
 ## General Information
 
 | Attribute               | Value |

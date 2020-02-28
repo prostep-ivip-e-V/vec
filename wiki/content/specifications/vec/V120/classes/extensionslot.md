@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> An <i>ExtensionSlot </i>defines a slot within an EE-Component where other EE-Components can be plugged into (modular extension). This is necessary for example for modular power distributions.      </p>
+
 ## General Information
 
 | Attribute               | Value |

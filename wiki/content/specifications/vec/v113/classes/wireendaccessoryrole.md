@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A <i>WireEndAccessoryRole</i> defines the instance specific properties and relationships of a <i>WireEndAccessory</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

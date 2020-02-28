@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Specification for the definition of common properties for technical parts.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -38,5 +39,5 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [BoundingBox]({{< relref "boundingbox.md" >}}) | boundingBox | 0..1 |  | Defines the bounding box of the part. |
 | [PartRelation]({{< relref "partrelation.md" >}}) | partRelation | 0..* | 1 | Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips). |
+| [BoundingBox]({{< relref "boundingbox.md" >}}) | boundingBox | 0..1 |  | Defines the bounding box of the part. |

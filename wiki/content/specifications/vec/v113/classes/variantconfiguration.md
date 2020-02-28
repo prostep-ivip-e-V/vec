@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A variant configuration defines a condition with which it is possible to express the inclusion or exclusion of ConfigurableElements in different variants of a product.  </p>
+
 ## General Information
 
 | Attribute               | Value |

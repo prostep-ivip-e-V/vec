@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Represents a control point of a <i>NURBSCurve. </i>It consists of a referenced <i>CartesianPoint3D</i> for the position and a <i>weight</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

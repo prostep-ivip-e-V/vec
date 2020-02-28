@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 A custom property with a date value.
+
 ## General Information
 
 | Attribute               | Value |

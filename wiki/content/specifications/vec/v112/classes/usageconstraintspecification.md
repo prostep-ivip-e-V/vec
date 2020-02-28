@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Specification for the definition of usage constraints. The associated UsageContraints are restricting the possible usages of the associated PartVersions and PartUsages.  </p>
+
 ## General Information
 
 | Attribute               | Value |

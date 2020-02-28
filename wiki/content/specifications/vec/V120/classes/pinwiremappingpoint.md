@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The <i>PinWireMappingPoint </i>creates a single variance free mapping between a <i>ContactPoint</i> and a <i>PinComponentReference </i>within a <i>PinWireMappingSpecification</i> (more details there)<i>.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,8 +31,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ContactPoint]({{< relref "contactpoint.md" >}}) | contactPoint | 1 |  |  |
 | [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | pinComponentReference | 1 |  |  |
+| [ContactPoint]({{< relref "contactpoint.md" >}}) | contactPoint | 1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

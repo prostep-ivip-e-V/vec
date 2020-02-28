@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>Kontakt  A General_terminal is a device designed to terminate a conductor to be affixed usually to a post, stud, chassis, or other conductor or the like in order to establish electrical connection. Note:  A General_terminal describes the active part of the connector, which connects electrical, equal to "contact".</p>
+
 ## General Information
 
 | Attribute               | Value |

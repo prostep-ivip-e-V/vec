@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>Kontaktkammerversiegelung  Connector accessory to fill and seal a populated cavity.  A Cavity_seal is a water tight non-electrical object to fill a populated Cavity.</p>
+
 ## General Information
 
 | Attribute               | Value |

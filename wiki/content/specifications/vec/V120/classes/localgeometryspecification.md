@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>LocalGeometrySpecification </i>is responsible to create a relationship between the 3D model of a component (e.g. a connector, a cable duct or a fixing)&#160;and entities of the VEC. The 'Local' in the name refers to the fact that all definitions within this specification are 'local' to the 3D model of a specific component (a component in a library, not in a specific usage).      </p>      <p> Specifically, it defines a transformation to transform the <i>BoundingBox</i> of a component into to coordinate system of the component and it defines the positions of <i>Placement-</i> and <i>MeasurementPoints</i> in this coordinate system.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Connection_or_occurrence is an object that is controlled by a Module or a Harness.</p>
+
 ## General Information
 
 | Attribute               | Value |

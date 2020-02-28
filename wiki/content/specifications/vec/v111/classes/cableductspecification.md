@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Specification for cable ducts. A cable duct can have one or more outlets.      </p>
+
 ## General Information
 
 | Attribute               | Value |

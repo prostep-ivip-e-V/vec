@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> Kabelbaum     </p>      <p> All wires in the car need to connect the ECU's, sensors, switches, and actuators. The harness depends on the car configuration.     </p>      <p> A Harness is an assembly of insulated conductors formed to a predetermined pattern or configuration.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -48,12 +49,12 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Harness_configuration]({{< relref "harness_configuration.md" >}}) | Harness_configuration | 0..* | 1 |  |
-| [Module_configuration]({{< relref "module_configuration.md" >}}) | Module_configuration | 0..* | 1 |  |
+| [Connection_or_occurrence]({{< relref "connection_or_occurrence.md" >}}) | Components | 0..* | 1 |  |
 | [Module_family]({{< relref "module_family.md" >}}) | Module_families | 0..* | 1 |  |
+| [Module_configuration]({{< relref "module_configuration.md" >}}) | Module_configuration | 0..* | 1 |  |
+| [Harness_configuration]({{< relref "harness_configuration.md" >}}) | Harness_configuration | 0..* | 1 |  |
 | [Schematic_connection]({{< relref "schematic_connection.md" >}}) |  | 0..* | 1 |  |
 | [Module]({{< relref "module.md" >}}) | Module | 0..* | 1 |  |
-| [Connection_or_occurrence]({{< relref "connection_or_occurrence.md" >}}) | Components | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

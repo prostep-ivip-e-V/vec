@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>An OccurrenceOrUsageViewItem3D specifies the representation of an OcurrenceOrUsage in a 3D-model.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,8 +33,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | occurrenceOrUsage | 0..1 | 0..* | <p> Specifies the OccurrenceOrUsage which is represented by the view item.      </p> |
 | [Transformation3D]({{< relref "transformation3d.md" >}}) | orientation | 0..1 | 0..1 | Specifies the orientation of the view item. |
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | occurrenceOrUsage | 0..1 | 0..* | <p> Specifies the OccurrenceOrUsage which is represented by the view item.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

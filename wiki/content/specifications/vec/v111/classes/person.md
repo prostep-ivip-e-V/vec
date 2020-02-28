@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Specifies all relevant data of a person.  </p>
+
 ## General Information
 
 | Attribute               | Value |

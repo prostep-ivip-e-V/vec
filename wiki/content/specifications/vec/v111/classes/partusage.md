@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> PartUsages shall be used for the specification of the elements on an electrical system wiring plan and for the specification of the elements on a pure geometry description. PartUsages shall more than ever be used in cases where it is necessary to describe a certain instance of a part or part group, possibly together with certain technical properties, but where it is at the same time yet not possible to define a concrete part number.      </p>
+
 ## General Information
 
 | Attribute               | Value |

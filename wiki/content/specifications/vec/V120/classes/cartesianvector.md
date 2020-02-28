@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Abstract super class for vectors, either 2D or 3D.      </p>
+
 ## General Information
 
 | Attribute               | Value |

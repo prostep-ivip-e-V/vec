@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the relationship of an inner node to its outer topology. The relationship to the outer topology is expressed with a <i>Location</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,8 +31,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TopologyNode]({{< relref "topologynode.md" >}}) | innerNode | 1 |  |  |
 | [Location]({{< relref "location.md" >}}) | mappedPosition | 1 | 0..1 |  |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | innerNode | 1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

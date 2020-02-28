@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,6 +31,6 @@ menu_name: kbl-2.4.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
-| [Accessory_occurrence]({{< relref "accessory_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
 | [Component_box_occurrence]({{< relref "component_box_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
+| [Accessory_occurrence]({{< relref "accessory_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
+| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |

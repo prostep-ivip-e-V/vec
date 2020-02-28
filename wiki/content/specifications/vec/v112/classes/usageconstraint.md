@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Specifies a constraint of the possible usages for PartVersion or PartUsages. UsageContraints are of part master data information. UsageConstraints specify general restrictions for the application of a PartVersion or PartUsage (e.g. a certain period of time in which the part is allowed to be used).  (see KBLFRM-229) </p>
+
 ## General Information
 
 | Attribute               | Value |

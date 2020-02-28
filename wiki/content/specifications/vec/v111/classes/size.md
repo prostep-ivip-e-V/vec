@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Defines the size of an element by width &amp; height.  </p>
+
 ## General Information
 
 | Attribute               | Value |

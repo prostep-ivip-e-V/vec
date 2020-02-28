@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Specified_connector_occurrence is the occurrence of a Connector_occurrence within an Assembly_part_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |

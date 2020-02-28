@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Specified_ co_pack _occurrence is the occurrence of a Co_pack_occurrence within an Assembly_part_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |

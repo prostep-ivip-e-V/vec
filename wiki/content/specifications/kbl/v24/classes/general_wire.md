@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A General_wire is a physical wire, performing electrical connection. A General_wire can either be used to define a single wire or a multi-core wire.</p>
+
 ## General Information
 
 | Attribute               | Value |

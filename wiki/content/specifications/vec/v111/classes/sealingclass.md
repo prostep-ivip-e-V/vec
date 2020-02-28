@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Allows the definition of a sealing class. The sealing class of a component is specified as a level of sealing against a specific influence. The influence is specified by the sealingClass and the level is specified by the sealingClassKey. Valid sealing classes and keys are specified by the reference system. Attributes of the type SealingClass normally have the multiplicity [0..*]. This means that such an attribute can have SealingClass entries for different sealingClassReferenceSystems and sealingClasses. It must not have multiple entries for the same sealing class and reference system.  </p>
+
 ## General Information
 
 | Attribute               | Value |

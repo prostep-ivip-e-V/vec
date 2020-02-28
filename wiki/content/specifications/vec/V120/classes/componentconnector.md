@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>ComponentConnector</i> is a grouping of <i>ComponentPorts</i> and represents a logical abstraction of a connector of an <i>EEComponent</i>. When the <i>ComponentNode</i> is realized by an <i>EEComponentRole</i> the <i>ComponentConnector</i> will result in a <i>HousingComponent.</i>      </p>      <p> It is permitted that a <i>ComponentConnector</i> is a 150% definition of connector.      </p>
+
 ## General Information
 
 | Attribute               | Value |

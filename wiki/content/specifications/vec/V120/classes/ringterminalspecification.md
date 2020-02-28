@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the definition of ring terminals. These are the counterparts to bolt terminals.      </p>
+
 ## General Information
 
 | Attribute               | Value |

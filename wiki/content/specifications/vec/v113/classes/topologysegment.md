@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A TopologySegment is a distance in the Topology where no intermediate electrical contacts appear. If a Topology contains routed wires, then the wire at the beginning of a TopologySegment have to be the same as in the ending. </p>
+
 ## General Information
 
 | Attribute               | Value |

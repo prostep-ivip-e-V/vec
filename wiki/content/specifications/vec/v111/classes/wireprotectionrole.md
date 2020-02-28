@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A WireProtectionRole defines the instance specific properties and relationships of a wire protection.      </p>
+
 ## General Information
 
 | Attribute               | Value |

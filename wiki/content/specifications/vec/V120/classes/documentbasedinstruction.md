@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>A DocumentBasedInstruction is an Instruction to a SheetOrChapter in a DocumentVersion or to a complete DocumentVersion. </p>
+
 ## General Information
 
 | Attribute               | Value |

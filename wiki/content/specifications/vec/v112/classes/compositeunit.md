@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Defines a unit as a composition of other units. The composition is done by multiplying the different other units. By this way combined units like kg/m can be formed.      </p>
+
 ## General Information
 
 | Attribute               | Value |

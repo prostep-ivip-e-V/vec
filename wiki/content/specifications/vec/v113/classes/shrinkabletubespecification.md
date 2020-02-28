@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Specification of tubes that are shrinkable.  </p>
+
 ## General Information
 
 | Attribute               | Value |

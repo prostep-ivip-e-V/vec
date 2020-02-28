@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,10 +37,10 @@ menu_name: kbl-2.5
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Contact_point]({{< relref "contact_point.md" >}}) | Contact_points | 0..* | 1 |  |
-| [Component_box_connector_occurrence]({{< relref "component_box_connector_occurrence.md" >}}) | Component_box_connectors | 0..* | 1 |  |
-| [Component_box]({{< relref "component_box.md" >}}) | Part | 1 | 0..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Reference_element]({{< relref "reference_element.md" >}}) | Reference_element | 0..* | 0..* |  |
+| [Component_box_connector_occurrence]({{< relref "component_box_connector_occurrence.md" >}}) | Component_box_connectors | 0..* | 1 |  |
+| [Component_box]({{< relref "component_box.md" >}}) | Part | 1 | 0..* |  |
 | [Component_slot_occurrence]({{< relref "component_slot_occurrence.md" >}}) | Component_slots | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

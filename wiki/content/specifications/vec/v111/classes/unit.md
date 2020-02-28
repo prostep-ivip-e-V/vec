@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>A precisely specified quantity in terms of which the magnitudes of other quantities of the same kind can be stated. The different systems to define units are represented by the subclasses of this class (e.g. SIUnit, ImperialUnit). </p>
+
 ## General Information
 
 | Attribute               | Value |

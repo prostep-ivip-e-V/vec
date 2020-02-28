@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Defines the position of a BuildingBlock3D in the HarnessGeometry.      </p>
+
 ## General Information
 
 | Attribute               | Value |

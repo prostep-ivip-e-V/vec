@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>Steckverbinder  A Connector_occurrence is the occurrence of a Connector_housing in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

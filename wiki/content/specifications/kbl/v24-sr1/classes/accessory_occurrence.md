@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>An Accessory_occurrence is the occurrence of an Accessory in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -35,8 +36,8 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Accessory]({{< relref "accessory.md" >}}) | Part | 1 | 1..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Accessory]({{< relref "accessory.md" >}}) | Part | 1 | 1..* |  |
 | [Reference_element]({{< relref "reference_element.md" >}}) | Reference_element | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

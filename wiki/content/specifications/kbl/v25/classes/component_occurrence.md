@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Component_occurrence is the occurrence of a Component in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,10 +35,10 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Component_pin_map]({{< relref "component_pin_map.md" >}}) | Component_pin_maps | 0..* | 1 | The <i>Component_pin_map</i> used for this <i>Component_occurrence.</i> |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
-| [Mounting_element]({{< relref "mounting_element.md" >}}) | Mounting | 0..* | 0..* |  |
 | [Component]({{< relref "component.md" >}}) | Part | 1 | 1..* |  |
+| [Component_pin_map]({{< relref "component_pin_map.md" >}}) | Component_pin_maps | 0..* | 1 | The <i>Component_pin_map</i> used for this <i>Component_occurrence.</i> |
+| [Mounting_element]({{< relref "mounting_element.md" >}}) | Mounting | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the definition of open wire ends. An open wire end is an end of wire located at a specific location in the harness. Open wire ends are not connected to some other component, in contrast to regular connectors or ring terminals. Only one wire is ending at a single open wire end, otherwise it would be a splice.      </p>
+
 ## General Information
 
 | Attribute               | Value |

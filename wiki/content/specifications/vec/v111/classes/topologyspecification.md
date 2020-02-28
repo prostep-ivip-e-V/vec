@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Specification for the definition of a topology. A topology consists of TopologyNodes, TopologySegments and Zones.  </p>
+
 ## General Information
 
 | Attribute               | Value |

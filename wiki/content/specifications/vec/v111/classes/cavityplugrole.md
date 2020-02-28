@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A CavityPlugRole defines the instance specific properties and relationships of a cavity plug.      </p>
+
 ## General Information
 
 | Attribute               | Value |

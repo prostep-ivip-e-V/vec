@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A Segment is a distance in the Topology where no intermediate electrical contacts appear. If a Topology contains routed wires, then the wires at the beginning of a Segment have to be the same as in the ending. Every segment has its conditions like length, temperature range, etc.      </p>      <p> Segments are a logical construct to describe the physical representation of a wiring harness topology. Therefore a segment is only valid if it has a physical manifestation. Segments with a length of 0 or less do not have a physical manifestation and are therefore <u>not</u> valid.      </p>      <p> Additionally the usage of segments with a length of 0 create problems in the overall process. For example the synchronization of 3D /&#160;2D&#160;systems becomes harder or even impossible and the handling of wire protections on those segments is also unclear.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -37,13 +38,13 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [B_spline_curve]({{< relref "b_spline_curve.md" >}}) | Center_curve | 0..* | 1 |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
 | [Cross_section_area]({{< relref "cross_section_area.md" >}}) | Cross_section_area_information | 0..* | 1 |  |
-| [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
 | [Protection_area]({{< relref "protection_area.md" >}}) | Protection_area | 0..* | 1 |  |
 | [Node]({{< relref "node.md" >}}) | End_node | 1 | 0..* |  |
-| [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
+| [B_spline_curve]({{< relref "b_spline_curve.md" >}}) | Center_curve | 0..* | 1 |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

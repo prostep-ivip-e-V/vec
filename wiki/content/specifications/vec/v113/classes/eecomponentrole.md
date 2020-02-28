@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> An EEComponentRole defines the instance specific properties and relationships of an EE-component.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,10 +32,10 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | EEComponentSpecification | 1 | 0..* | <p> References the <i>EEComponentSpecification </i>that is instanced by this <i>EEComponentRole.</i>      </p> |
-| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | housingComponentRef | 0..* | 1 | Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401) |
-| [ExtensionSlotReference]({{< relref "extensionslotreference.md" >}}) | extensionSlotRef | 0..* | 1 | Specifies the ExtensionSlotReferences used in the EEComponentRole. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..1 | 0..* | References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341 |
+| [ExtensionSlotReference]({{< relref "extensionslotreference.md" >}}) | extensionSlotRef | 0..* | 1 | Specifies the ExtensionSlotReferences used in the EEComponentRole. |
+| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | housingComponentRef | 0..* | 1 | Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401) |
+| [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | EEComponentSpecification | 1 | 0..* | <p> References the <i>EEComponentSpecification </i>that is instanced by this <i>EEComponentRole.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

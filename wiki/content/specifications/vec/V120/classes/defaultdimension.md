@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>DefaultDimension</i> defines a tolerance value that shall be applied to a part, if no explicit tolerance value has been defined.      </p>
+
 ## General Information
 
 | Attribute               | Value |

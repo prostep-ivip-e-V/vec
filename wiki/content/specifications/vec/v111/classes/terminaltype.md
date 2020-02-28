@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Defines the type of a terminal. The type is specified by a combination of a name for and an optional nominalSize.  </p>
+
 ## General Information
 
 | Attribute               | Value |

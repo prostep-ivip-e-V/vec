@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A <i>MeasurementPointReference</i> is the instance of a <i>MeasurementPoint</i> in the context of an <i>OccurrenceOrUsage</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

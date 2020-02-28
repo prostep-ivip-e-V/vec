@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Specification for the definition of fittings. A fitting is a part that is used to connect pipes or tube. A fitting has a specific form (e.g. Y,T)  </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Specified_ accessory _occurrence is the occurrence of a accessory_occurrence within an Assembly_part_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -35,5 +36,5 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Accessory_occurrence]({{< relref "accessory_occurrence.md" >}}) | Related_occurrence | 1 | 0..* |  |
 | [Assembly_part_occurrence]({{< relref "assembly_part_occurrence.md" >}}) | Related_assembly | 1 | 0..* |  |
+| [Accessory_occurrence]({{< relref "accessory_occurrence.md" >}}) | Related_occurrence | 1 | 0..* |  |

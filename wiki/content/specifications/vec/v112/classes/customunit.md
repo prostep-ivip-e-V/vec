@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A CustomUnit can be used to define "FreeText"-Units. Custom units must not be used for units that can be expressed by any of the other subclasses of Unit. Custom units are only allowed if a unit  is needed that cannot be handled by any of the other classes.  </p>
+
 ## General Information
 
 | Attribute               | Value |

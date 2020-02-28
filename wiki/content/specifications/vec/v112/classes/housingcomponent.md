@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A HousingComponent describes the interface of an EEComponent with which it can be connected to another EEComponent or a harness. The characteristics of the interface can be described with a referenced ConnectorHousingSpecification. (see KBLFRM-300)      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,10 +33,10 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | housingSpecification | 0..1 | 0..* | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 0..* | 1 | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
+| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | housingSpecification | 0..1 | 0..* | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | 1 | housingComponent | 0..* | Specifies the available connector interfaces of the EEComponent. |
 | [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 0..* | housingComponent | 1 | Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401) |
+| [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | 1 | housingComponent | 0..* | Specifies the available connector interfaces of the EEComponent. |

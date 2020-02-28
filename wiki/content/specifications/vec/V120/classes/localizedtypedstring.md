@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Allows the internationalization of text contents in a typed way. Attributes of the type LocalizedTypedString normally have the multiplicity [0..*]. This means that such an attribute can have multiple values for different locales and types. It must not have multiple values for the same locale and type.
+
 ## General Information
 
 | Attribute               | Value |

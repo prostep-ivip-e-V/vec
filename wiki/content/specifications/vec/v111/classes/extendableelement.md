@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Abstract base class for extendable elements. Extendable elements have the possibility to define non-standard custom properties.  </p>
+
 ## General Information
 
 | Attribute               | Value |

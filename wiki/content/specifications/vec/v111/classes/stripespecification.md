@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Specifies a stripe which has fixed length and width. Stripes can be used for example for sealing. </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines the power consumption of an <i>EEComponent</i>. An <i>EEComponent</i> can have multiple different <i>PowerConsumptions</i> e.g. standby, maximum. An <i>EEComponent</i> can have multiple <i>PowerConsumptions</i>, but must not have more than one <i>PowerConsumptions</i> of the same <i>type</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A variant configuration defines a condition with which it is possible to express the inclusion or exclusion of ConfigurableElements in different variants of a product.      </p>      <p> A <i>VariantConfiguration </i>can reference another <i>VariantConfiguration</i> as <i>baseInclusion</i>. In this case, a <i>VariantConfiguration</i> can only be satisfied if its <i>baseInclusion </i>is also satisfied.      </p>
+
 ## General Information
 
 | Attribute               | Value |

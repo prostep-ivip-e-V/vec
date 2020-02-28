@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A Routing is the assignment of a RoutableElement (Connection or WireElementReference) to a path in the topology.  </p>
+
 ## General Information
 
 | Attribute               | Value |

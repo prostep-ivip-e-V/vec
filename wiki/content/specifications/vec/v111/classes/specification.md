@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Abstract super-class for all specifications. Every technical information exchanged with the VEC is contained in the different specializations of a specification.   </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Allows the definition of an abrasion resistance class. The abrasion resistance class of a component is specified as a level of resistance against abrasion. The level is specified by the ClassKey. Valid keys are specified by the reference system.     </p>      <p> Attributes of the type AbrasionResistanceClass normally have the multiplicity [0..*]. This means that such an attribute can have AbrasionResistanceClass entries for different ReferenceSystems. It must not have multiple entries for the same reference system.      </p>
+
 ## General Information
 
 | Attribute               | Value |

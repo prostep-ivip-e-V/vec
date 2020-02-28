@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the definition of WireGroups. Wire groups are for example used for the representation of twisted pairs.      </p>
+
 ## General Information
 
 | Attribute               | Value |

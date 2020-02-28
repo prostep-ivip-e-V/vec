@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Base-class for the specification of electrological components, which are connected to the harness. Usually electrological components are not part of the harness e.g. a fuses, a switch or a control device. All EEComponents can have one or more HousingComponents which are possible interfaces for the connection to a harness.      </p>
+
 ## General Information
 
 | Attribute               | Value |

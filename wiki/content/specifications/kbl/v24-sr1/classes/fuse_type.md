@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 Allows the definition of fuse type information.
+
 ## General Information
 
 | Attribute               | Value |

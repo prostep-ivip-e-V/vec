@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> An <i>AssignmentGroup</i> is a concept that allows the clustering of arbitrary elements in ways that are orthogonal to hierarchical and semantic structure of the VEC.      </p>
+
 ## General Information
 
 | Attribute               | Value |

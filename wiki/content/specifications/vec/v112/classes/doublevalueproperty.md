@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 A custom property with a double value.
+
 ## General Information
 
 | Attribute               | Value |

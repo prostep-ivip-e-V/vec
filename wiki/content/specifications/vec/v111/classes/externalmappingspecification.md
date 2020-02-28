@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> An<i> ExternalMappingSpecification </i>is used to define a mapping between an external data source (represented by the referenced <i>mappedDocument</i>) and the content of a VEC file.      </p>
+
 ## General Information
 
 | Attribute               | Value |

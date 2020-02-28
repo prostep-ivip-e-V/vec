@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The <i>Curve3D</i> is an abstract representation of a curve, that defines the three-dimensional appearance of the centreline of a segment. The concrete type of the curve (e.g. NURBSCurve) defines the mathematical function that applies to curve and stores the required parameter set for this function in the VEC.      </p>
+
 ## General Information
 
 | Attribute               | Value |

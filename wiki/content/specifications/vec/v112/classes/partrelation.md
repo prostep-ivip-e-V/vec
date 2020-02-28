@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A PartRelation can define Accessories to a specific Part. For example a fixing can need an additional cable tie. Accessories can either be mandatory, optional or one out of a group.  (see KBLFRM-311) </p>
+
 ## General Information
 
 | Attribute               | Value |

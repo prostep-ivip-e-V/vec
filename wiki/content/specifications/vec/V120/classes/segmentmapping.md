@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the relationship of an inner segment to its outer topology. The relationship to the outer topology is expressed with a <i>Path.</i>      </p>      <p> <i>&#160;</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,8 +31,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TopologySegment]({{< relref "topologysegment.md" >}}) | innerSegment | 1 |  |  |
 | [Path]({{< relref "path.md" >}}) | mappedPosition | 1 | 0..1 |  |
+| [TopologySegment]({{< relref "topologysegment.md" >}}) | innerSegment | 1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

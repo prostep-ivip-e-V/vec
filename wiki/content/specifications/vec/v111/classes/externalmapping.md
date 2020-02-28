@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> An <i>ExternalMapping </i>is used to relate an <i>ExtendableElement </i>in the VEC with an element located in an external data source. The element in the VEC&#160;is referenced by the <i>mappedElement</i>, the external element is identified by the attribute <i>externalReference.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

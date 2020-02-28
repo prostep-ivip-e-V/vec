@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A GeometrySegment is the geometric representation of a TopologySegment. A TopologySegment may be represented by more than one GeometrySegments, but only within different <i>BuildingBlockSpecification2D/3D.</i> That means, in a single BuildingBlockSpecification a <i>TopologySegment</i> shall only be represent once&#160;(or not).      </p>      <p> Furthermore, the definition of the <i>GeometrySegment</i> shall be consistent to the definition in the <i>TopologySpecification. </i>That means, that a <i>GeometrySegment</i> shall have those <i>GeometryNodes </i>as start- &amp;&#160;endNode that represent the <i>TopologyNodes</i> referenced from the corresponding <i>TopologySegment</i>.      </p>      <p> A GeometrySegment is either a GeometrySegment2D or a GeometrySegment3D.      </p>
+
 ## General Information
 
 | Attribute               | Value |

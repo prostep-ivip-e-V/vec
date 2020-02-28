@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Kabellänge  A Wire_length is a mechanism to define a length for a wire together with a description of the kind of the length (e.g. for DMU, for manufacturing).</p>
+
 ## General Information
 
 | Attribute               | Value |

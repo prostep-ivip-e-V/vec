@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A pair of numerical values representing a value range. </p>
+
 ## General Information
 
 | Attribute               | Value |

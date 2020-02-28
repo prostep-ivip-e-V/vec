@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Cartesian_point is a point that is defined by its coordinates in a rectangular Cartesian coordinate system.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,7 +32,7 @@ menu_name: kbl-2.5
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Node]({{< relref "node.md" >}}) | 0..* | Cartesian_point | 1 |  |
 | [KBL_container]({{< relref "kbl_container.md" >}}) | 1 | Cartesian_point | 0..* |  |
 | [Transformation]({{< relref "transformation.md" >}}) | 0..* | Cartesian_point | 1 |  |
+| [Node]({{< relref "node.md" >}}) | 0..* | Cartesian_point | 1 |  |
 | [B_spline_curve]({{< relref "b_spline_curve.md" >}}) | 0..* | Control_points | 2..* |  |

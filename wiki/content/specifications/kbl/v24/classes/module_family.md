@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>Funktionsfamilie  Description of a set of modules.  A Module_family is a mechanism to group mutually exclusive modules. EXAMPLE "audio equipment"</p>
+
 ## General Information
 
 | Attribute               | Value |

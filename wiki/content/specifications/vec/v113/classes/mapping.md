@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>The Mapping defines the concrete mapping two parts aliased as A &amp; B. For performance reasons the roles PartSideA and PartSideB are abbreviated to A &amp; B. </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,9 +31,9 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [PartVersion]({{< relref "partversion.md" >}}) | A | 1 | 0..* |  |
 | [SlotMapping]({{< relref "slotmapping.md" >}}) | slotMapping | 0..* | 1 |  |
 | [PartVersion]({{< relref "partversion.md" >}}) | B | 1 | 0..* |  |
-| [PartVersion]({{< relref "partversion.md" >}}) | A | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

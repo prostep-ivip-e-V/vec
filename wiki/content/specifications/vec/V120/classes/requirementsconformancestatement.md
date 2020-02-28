@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>RequirementsConformanceStatement</i> states that the <i>PartVersions</i> referenced by the parent <i>RequirementsConformanceSpecification</i> satisfy or do not satisfy the requirements defined in the associated <i>DocumentVersion</i> (via the <i>requirementsSpecification</i> association)<i>.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

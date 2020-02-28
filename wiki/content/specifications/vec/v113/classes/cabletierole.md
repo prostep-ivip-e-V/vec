@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 A <i>CableTieRole</i> defines the instance specific properties and relationships of a cable tie.
+
 ## General Information
 
 | Attribute               | Value |

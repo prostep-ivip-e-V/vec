@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> The PartVersion is one of the two anchors for PDM information in the VEC. All technical information about a PartVersion is contained in one or more documents. These describing elements are normally referencing to the PartVersion.      </p>
+
 ## General Information
 
 | Attribute               | Value |

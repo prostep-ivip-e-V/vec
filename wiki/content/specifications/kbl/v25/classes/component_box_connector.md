@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A connector in the component_box where either a harness connector is attached to or where wires from the harness are attached directly.      </p>
+
 ## General Information
 
 | Attribute               | Value |

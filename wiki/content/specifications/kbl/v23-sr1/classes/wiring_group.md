@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Wiring_goup is a mechanism to group wire or core occurrences together. Example: Twisted pairs.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,5 +33,5 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Assigned_wire | 2..* | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Assigned_wire | 2..* | 0..* |  |

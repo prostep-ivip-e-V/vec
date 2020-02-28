@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the definition of caps (backshells) of connectors. Different caps can add additional wire length addons to a connector housing.      </p>      <p> A 'cap' which already defines the number of cavities, coding etc. is in the&#160;VEC&#160;defined by <i>ConnectorHousingSpecification</i> with <i>ModularSlots</i> and not by a <i>ConnectorHousingCapSpecification</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

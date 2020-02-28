@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A slot is a group of cavities in a connector housing with own properties. The design of a slot is described in a SlotSpecification.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,5 +35,5 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartRelation]({{< relref "partrelation.md" >}}) | supplementaryParts | 0..* | 0..* | <p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p> |
 | [Cavity]({{< relref "cavity.md" >}}) | cavity | 1..* | 1 | <p> Specifies the Cavities forming the Slot.      </p> |
+| [PartRelation]({{< relref "partrelation.md" >}}) | supplementaryParts | 0..* | 0..* | <p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p> |

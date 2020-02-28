@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Slot_occurrence is the occurrence of a Slot in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,9 +32,9 @@ menu_name: kbl-2.4
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
-| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Cavities | 1..* | 1 |  |
 | [Slot]({{< relref "slot.md" >}}) | Part | 1 | 1..* |  |
 | [Slot_occurrence]({{< relref "slot_occurrence.md" >}}) | Mated_slots | 0..* | 0..* |  |
+| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Cavities | 1..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

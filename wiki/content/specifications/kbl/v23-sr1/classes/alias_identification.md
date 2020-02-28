@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Alternative Identifikation  An Alias_identification is a mechanism to associate an object with an additional identifier that is used to identify the object of interest in a different context, either in another Organization, or in some other context. The scope of the Alias_identification shall be specified by the attributes 'Scope' and/or by the attribute 'Description'.</p>
+
 ## General Information
 
 | Attribute               | Value |

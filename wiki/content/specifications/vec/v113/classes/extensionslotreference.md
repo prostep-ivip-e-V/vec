@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A ExtensionSlotReference represents the usage of a ExtensionSlot in the context of a PartUsage or PartOccurrence.      </p>
+
 ## General Information
 
 | Attribute               | Value |

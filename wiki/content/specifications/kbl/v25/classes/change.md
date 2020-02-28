@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Change is a mechanism to keep track of the change history. The set of changes assigned to a Part covers all modification numbers up to the last modification level of the version of the Part.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A Wire_colour is a mechanism to define a colour for a wire together with a description of the kind of the colour. For the <i>Colour_value</i> the values of IEC 60757 should be used where applicable.      </p>
+
 ## General Information
 
 | Attribute               | Value |

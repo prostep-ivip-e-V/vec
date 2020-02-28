@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A custom property that represents a tuple of values.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> With a WireMountingDetail it is possible to describe a detailed wire mounting.     </p>      <p> This is needed if the information which wire end is mounted onto which wire reception is important (e.g. coax contacts).      </p>
+
 ## General Information
 
 | Attribute               | Value |

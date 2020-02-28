@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Positionierbare Komponenten der KBL: z.B. Connector_occurrence, Accessory_occurrence, Fixing_occurrence, ... A Located_component is a component which can get a position in the topology by a node.</p>
+
 ## General Information
 
 | Attribute               | Value |

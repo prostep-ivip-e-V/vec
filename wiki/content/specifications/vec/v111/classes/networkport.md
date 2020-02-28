@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>NetworkPort is the source or the receiver of a signal transmitted by a Net.  </p>
+
 ## General Information
 
 | Attribute               | Value |

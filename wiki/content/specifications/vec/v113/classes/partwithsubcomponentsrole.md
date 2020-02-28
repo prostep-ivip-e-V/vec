@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A PartWithSubComponentsRole defines the instance specific properties and relationships of a part with subcomponents. A PartWithSubComponents is a composite part like an Assembly, a Module, Harness.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,8 +32,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartStructureSpecification]({{< relref "partstructurespecification.md" >}}) | partStructureSpecification | 1 | 0..* | <p> References the <i>PartStructureSpecification </i>that is instantiated by this <i>PartWithSubComponentsRole</i>.      </p> |
 | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | subComponent | 1..* | 0..* | <p> References the subcomponents that belong to this instance of a PartWithSubComponents.      </p> |
+| [PartStructureSpecification]({{< relref "partstructurespecification.md" >}}) | partStructureSpecification | 1 | 0..* | <p> References the <i>PartStructureSpecification </i>that is instantiated by this <i>PartWithSubComponentsRole</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

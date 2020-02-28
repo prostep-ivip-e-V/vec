@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 A slot in the Component_box where a Component can be mounted.
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A <i>WireElement </i>specifies a <i>WireElementSpecification</i> in the context of a <i>WireSpecification</i>. This is necessary to define a unique <i>identification</i> of a <i>WireElementSpecification </i>in the context of a <i>WireSpecification. </i>Additionally the <i>WireElement</i> serves as anchor for the instancing of a wire (<i>WireElementReference</i>).      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Allows the specification of optical information in a PinComponentBehavior.      </p>
+
 ## General Information
 
 | Attribute               | Value |

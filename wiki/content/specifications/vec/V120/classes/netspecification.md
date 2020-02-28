@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>Specification for the description of electrological nets.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,7 +33,7 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..* | 1 |  |
-| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |
+| [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |
 | [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification. |
+| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>Kabelschutzmantel  A Wire_protection is a mechanism to describe harness wrappings, a shield to prevent the wire from damaging.. It covers all kinds of wrappings modeled by CAD systems.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 
+
 ## General Information
 
 | Attribute               | Value |
@@ -40,8 +41,8 @@ menu_name: kbl-2.5
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Changed_element]({{< relref "changed_element.md" >}}) | Changed_elements | 0..* | 1 |  |
-| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* | <p> Allows the referencing of external / additional documents related to the change description.      </p> |
 | [Change]({{< relref "change.md" >}}) | Related_changes | 0..* | 0..* |  |
+| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* | <p> Allows the referencing of external / additional documents related to the change description.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

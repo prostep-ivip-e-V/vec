@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>A Location specifies a distinct position on a topology. Locations can be used for the placement of components or for the definition of Dimensions.  </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>The DocumentVersion is one of the two anchors for PDM information in the VEC. All technical information about a PartVersion is contained in one or more documents. The documents are containing the actual content of the VEC since all Specifications are an element of a document. </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -42,11 +43,11 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | sheetOrChapter | 0..* | 1 | Specifies SheetOrChapters defined in this DocumentVersion. These are especially useful if the DocumentVersion represents an external reference. |
+| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | itemEquivalence | 0..* | 1 | Specifies ItemEquivalances defined by the DocumentVersion. |
+| [Specification]({{< relref "specification.md" >}}) | specification | 0..* | 0..1 | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | relatedDocument | 0..* | 0..* | The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model). |
 | [PartVersion]({{< relref "partversion.md" >}}) | referencedPart | 0..* | 0..* | The association is an informative link which PartVersions are described by the DocumentVersion. |
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | sheetOrChapter | 0..* | 1 | Specifies SheetOrChapters defined in this DocumentVersion. These are especially useful if the DocumentVersion represents an external reference. |
-| [Specification]({{< relref "specification.md" >}}) | specification | 0..* | 0..1 | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |
-| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | itemEquivalence | 0..* | 1 | Specifies ItemEquivalances defined by the DocumentVersion. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

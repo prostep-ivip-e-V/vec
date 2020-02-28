@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>ZoneAssignment </i>defines that a specific TopologySegment is affected by the <i>TopologyZone.</i> If a coverage is defined, only the parts of the Segment that have a coverage are affected. If no coverage is defined, the whole segment is affected.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,9 +31,9 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ZoneCoverage]({{< relref "zonecoverage.md" >}}) | coverage | 0..* | 1 | <p> Contains a set of <i>ZoneCoverages</i> that define the areas of a <i>TopologySegment</i> that is affected by the TopologyZone.&#160;If no coverage is defined, the complete segment is affected. Multiple coverages can be necessary if the <i>TopologySegment</i> zigzags in and out of the <i>TopologyZone.</i>      </p> |
 | [TopologySegment]({{< relref "topologysegment.md" >}}) | assignedSegment | 1 | 0..* | <p> The <i>TopologySegment</i> that is assigned to <i>TopologyZone</i> with this <i>ZoneAssignment.</i>      </p> |
 | [ZoneAssignment]({{< relref "zoneassignment.md" >}}) |  |  |  |  |
+| [ZoneCoverage]({{< relref "zonecoverage.md" >}}) | coverage | 0..* | 1 | <p> Contains a set of <i>ZoneCoverages</i> that define the areas of a <i>TopologySegment</i> that is affected by the TopologyZone.&#160;If no coverage is defined, the complete segment is affected. Multiple coverages can be necessary if the <i>TopologySegment</i> zigzags in and out of the <i>TopologyZone.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

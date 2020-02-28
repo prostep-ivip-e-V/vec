@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Allows the definition of mass information. Attributes of the type MassInformation normally have the multiplicity [0..*]. This means that such an attribute can have mass values for different determinationTypes and valueSources. It must not have multiple values for the same determinationType and valueSource.      </p>
+
 ## General Information
 
 | Attribute               | Value |

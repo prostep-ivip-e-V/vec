@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A General_wire_occurrence is the occurrence of a Wire_occurrence or a Special_wire_occurrence in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,6 +31,6 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Wire_length]({{< relref "wire_length.md" >}}) | Length_information | 1..* | 1 |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Wire_length]({{< relref "wire_length.md" >}}) | Length_information | 1..* | 1 |  |
 | [General_wire]({{< relref "general_wire.md" >}}) | Part | 1 | 1..* |  |

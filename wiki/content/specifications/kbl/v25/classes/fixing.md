@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>Kabelbefestigung  A Fixing is an accessory part of the harness, used to fix the position. Fixing elements cover all parts, that are used in cable section. Example:  clips, sleeves, cable ducts, grommet, etc.</p>
+
 ## General Information
 
 | Attribute               | Value |

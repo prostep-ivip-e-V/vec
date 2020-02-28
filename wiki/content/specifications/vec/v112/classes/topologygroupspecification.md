@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A TopologyGroupSpecification defines a new Topology based on the grouped Topologies. (see KBLFRM-240)      </p>
+
 ## General Information
 
 | Attribute               | Value |

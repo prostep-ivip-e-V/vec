@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>An OccurrenceOrUsageViewItem2D specifies the representation of a OcurrenceOrUsage in a 2DDrawing.  </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> The IECUnit class can define quantities in the terms of the IEC-Unit-System by specifying the corresponding IEC prefix (optional) and an IEC unit name.      </p>
+
 ## General Information
 
 | Attribute               | Value |

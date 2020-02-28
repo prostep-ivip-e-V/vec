@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>A ModularSlot is a place in a connector housing where different other connector housings can be placed during the assembly (e.g. by clicking them into the connector housing).  </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the definition of fixings. A fixing is used to fix the harness in a certain position (e.g. at the car body, a seat, an ECU etc.). The FixingSpecification describes how the fixing is attached to the &quot;non-harness&quot; element. The attachment to harness is described by a PlaceableElementSpecification.      </p>
+
 ## General Information
 
 | Attribute               | Value |

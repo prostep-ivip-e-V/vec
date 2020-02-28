@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the description of a Coupling. A coupling allows the mapping between independent harness sections or EEComponents of the electrical system. This is done by the mapping of either or bot, ConnectorHousingRoles &amp;&#160;TerminalRoles of one side to the other.      </p>
+
 ## General Information
 
 | Attribute               | Value |

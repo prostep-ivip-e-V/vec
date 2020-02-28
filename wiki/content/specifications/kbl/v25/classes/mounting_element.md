@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Mounting_element is an object which is associated with a Component_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |

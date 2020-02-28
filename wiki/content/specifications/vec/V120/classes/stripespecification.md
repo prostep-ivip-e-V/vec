@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specifies a stripe which has fixed length and width. A stripe is a textile, foam or similar piece with fixed length &amp;&#160;width that is wrapped around the harness.      </p>
+
 ## General Information
 
 | Attribute               | Value |

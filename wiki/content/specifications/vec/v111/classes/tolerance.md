@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Enables the specification of value ranges which can be tolerated. </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>TopologyBendingRestrictionSpecification </i>can be used to define <i>TopologyBendingRestrictions.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

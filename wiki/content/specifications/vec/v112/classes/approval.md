@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Defines the approval of an ItemVersion. This consists of the StatusOfApproval and the Permissions issued for the approval.      </p>
+
 ## General Information
 
 | Attribute               | Value |

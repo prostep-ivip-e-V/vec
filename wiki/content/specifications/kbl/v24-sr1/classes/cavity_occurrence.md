@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Cavity_occurrence is the occurrence of a Cavity in the context of a connector_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,9 +32,9 @@ menu_name: kbl-2.4.sr1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Cavity_plug_occurrence]({{< relref "cavity_plug_occurrence.md" >}}) | Associated_plug  | 0..1 | 1..* |  |
-| [Cavity]({{< relref "cavity.md" >}}) | Part | 1 | 1..* |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Mated_cavities | 0..* | 0..* |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
+| [Cavity]({{< relref "cavity.md" >}}) | Part | 1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Connection_or_occurrence is an object that is controlled by a Module or a Harness.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,6 +31,6 @@ menu_name: kbl-2.5
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Assembly_part]({{< relref "assembly_part.md" >}}) | 1 | Components | 0..* |  |
 | [Harness]({{< relref "harness.md" >}}) | 1 | Components | 0..* |  |
+| [Assembly_part]({{< relref "assembly_part.md" >}}) | 1 | Components | 0..* |  |
 | [Module_configuration]({{< relref "module_configuration.md" >}}) | 0..* | Controlled_components | 0..* |  |

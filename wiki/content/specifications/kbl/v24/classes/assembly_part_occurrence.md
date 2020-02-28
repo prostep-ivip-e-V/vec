@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>An Assembly_part_occurrence is the occurrence of an Assembly_part in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -35,21 +36,21 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Assembly_part]({{< relref "assembly_part.md" >}}) | Part | 1 | 1..* |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [Specified_terminal_occurrence]({{< relref "specified_terminal_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
 | [Specified_accessory_occurrence]({{< relref "specified_accessory_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_component_occurrence]({{< relref "specified_component_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_connector_occurrence]({{< relref "specified_connector_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
 | [Specified_wire_protection_occurrence]({{< relref "specified_wire_protection_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
 | [Specified_special_terminal_occurrence]({{< relref "specified_special_terminal_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_special_wire_occurrence]({{< relref "specified_special_wire_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_fixing_occurrence]({{< relref "specified_fixing_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_co_pack_occurrence]({{< relref "specified_co_pack_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
 | [Specified_cavity_plug_occurrence]({{< relref "specified_cavity_plug_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_wire_occurrence]({{< relref "specified_wire_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
-| [Specified_component_box_occurrence]({{< relref "specified_component_box_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
 | [Specified_cavity_seal_occurrence]({{< relref "specified_cavity_seal_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_co_pack_occurrence]({{< relref "specified_co_pack_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_wire_occurrence]({{< relref "specified_wire_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_component_occurrence]({{< relref "specified_component_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_connector_occurrence]({{< relref "specified_connector_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_special_wire_occurrence]({{< relref "specified_special_wire_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_component_box_occurrence]({{< relref "specified_component_box_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |
+| [Specified_fixing_occurrence]({{< relref "specified_fixing_occurrence.md" >}}) | 0..* | Related_assembly | 1 |  |

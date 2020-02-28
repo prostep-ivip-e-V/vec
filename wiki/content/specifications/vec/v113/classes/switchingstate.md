@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A <i>SwitchingState</i> defines a certain static state of an <i>EEComponent</i>. Under which conditions or when such a state applies, should be described in an external description model.     </p>      <p> A <i>SwitchingState</i> references a collection of <i>InternalComponentConnections</i>, with the semantic that these connections exist (and only these connections) when the switching state is active.      </p>
+
 ## General Information
 
 | Attribute               | Value |

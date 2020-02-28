@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Defines the properties of a conductor which are specific for cores.      </p>
+
 ## General Information
 
 | Attribute               | Value |

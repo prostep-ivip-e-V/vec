@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the definition of WireGroups. Wire groups are for example used for the representation of twisted pairs.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -34,5 +35,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireGrouping]({{< relref "wiregrouping.md" >}}) | 0..* | wireGroupSpecification | 0..1 | <p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | 0..* | wireGroupSpecification | 0..1 | <p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p> |
+| [WireGrouping]({{< relref "wiregrouping.md" >}}) | 0..* | wireGroupSpecification | 0..1 | <p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p> |

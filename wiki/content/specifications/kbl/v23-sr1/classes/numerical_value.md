@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Numerical_value is a quantity expressed with a numerical value and a unit.</p>
+
 ## General Information
 
 | Attribute               | Value |

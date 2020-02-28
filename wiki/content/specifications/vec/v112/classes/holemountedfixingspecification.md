@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specification for fixings that are mounted with a hole. This means, the fixing itself has got a hole, which is mounted onto a bolt.      </p>
+
 ## General Information
 
 | Attribute               | Value |

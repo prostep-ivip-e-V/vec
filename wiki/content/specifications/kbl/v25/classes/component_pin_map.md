@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A <i>Component_pin_map</i> defines a mapping between the pins a <i>Component_occurrence</i> and the cavities of the <i>Component_box_occurrence</i> on which the <i>Component_occurrence</i> is mounted.      </p>      <p> The cavity numbers used in the <i>Component_pin_map</i> shall be a subset of the <i>Component_cavity_occurrences</i> referenced in the <i>Mounting</i> of the <i>Component_occurrence</i>.     </p>      <p> This object is optional and can be used in cases where the Component_occurrence is mounted on more than on cavity and it is relevant which pin of the Component_occurrence is connected to which cavity (e.g. in cases of relays).       </p>
+
 ## General Information
 
 | Attribute               | Value |

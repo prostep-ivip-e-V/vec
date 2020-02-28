@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A TerminalReception is the area of a terminal where the contacting with another terminal (e.g. between a connector housing and a control unit) takes place. Normally the terminal reception is placed in a cavity of a connector housing.     </p>      <p> This class represents such an area on the terminal.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,6 +37,6 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | terminalReception | 0..* | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | 0..* | terminalReception | 1 | <p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p> |
 | [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | 0..1 | terminalReception | 0..* | References the TerminalReceptions that participate in the InternalTerminalConnection. |
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | terminalReception | 0..* | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |

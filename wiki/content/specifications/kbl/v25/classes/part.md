@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A part is an element of a product relevant for a bill-of material.     </p>      <p> &#160;     </p>      <p> <u><b>Remark:</b></u>&#160;     </p>      <p> A real part is normally unambiguously identified by its <i>Part_number</i> and <i>Company_name</i>. In the KBL,&#160;the actual classification of a <i>Part</i> (e.g. <i>Accessory, Connector_housing</i>) defines how the <i>Part</i> can be used in the <i>Harness</i> (in the KBL)<i>. </i>However, in reality there are parts that have multiple uses (e.g. a tape can be used as <i>Wire_protection</i> or as <i>Accessory</i>). Therefore it is allowed to have multiple instances of the KBL Classification&#160;<i>Part </i>with the same <i>Part_number, Company_name</i> in a single KBL&#160;file, if all have different concrete classifications. This is not a violation of the constraint for uniqueness of part number, since all KBL&#160;<i>Part</i>s are referencing the same single real part.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -42,7 +43,7 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Change]({{< relref "change.md" >}}) | Change | 0..* | 1 |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
-| [Material]({{< relref "material.md" >}}) | Material_information | 0..1 | 1 |  |
 | [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
+| [Material]({{< relref "material.md" >}}) | Material_information | 0..1 | 1 |  |
+| [Change]({{< relref "change.md" >}}) | Change | 0..* | 1 |  |

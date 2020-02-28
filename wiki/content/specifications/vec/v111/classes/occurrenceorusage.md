@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>An OccurrenceOrUsage is an abstract appearance of a part in the harness. This can either be a concrete part (with a part number a.s.o) or the description (specification / requirements) of a part that should be used at that position. In the first case it would be a PartOccurrence in the second case a PartUsage.  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -40,6 +41,6 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | 0..* | occurrenceOrUsage | 0..1 | <p> Specifies the OccurrenceOrUsage which is represented by the view item.      </p> |
 | [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | 0..* | occurrenceOrUsage | 0..1 | Specifies the OccurrenceOrUsage which is represented by the view item. |
+| [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | 0..* | occurrenceOrUsage | 0..1 | <p> Specifies the OccurrenceOrUsage which is represented by the view item.      </p> |
 | [PartWithSubComponentsRole]({{< relref "partwithsubcomponentsrole.md" >}}) | 0..* | subComponent | 1..* | <p> References the subcomponents that belong to this instance of a PartWithSubComponents.      </p> |

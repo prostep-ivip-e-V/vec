@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A&#160;<i>TopologyMappingSpecification</i> allows the definition of hierarchical topologies. It relates an outer topology with an enclosed inner topology.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,6 +34,6 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [TopologySpecification]({{< relref "topologyspecification.md" >}}) | outerTopology | 1 |  |  |
-| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | 0..* |  |  |
-| [NodeMapping]({{< relref "nodemapping.md" >}}) |  | 0..* | 1 |  |
 | [TopologySpecification]({{< relref "topologyspecification.md" >}}) | innerTopolgy | 1 |  |  |
+| [NodeMapping]({{< relref "nodemapping.md" >}}) |  | 0..* | 1 |  |
+| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | 0..* |  |  |

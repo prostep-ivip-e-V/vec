@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>The Extremity specifies the Contact_point which is connected by a spcific Connection.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,8 +32,8 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Contact_point]({{< relref "contact_point.md" >}}) | Contact_point | 1 | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [Contact_point]({{< relref "contact_point.md" >}}) | Contact_point | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

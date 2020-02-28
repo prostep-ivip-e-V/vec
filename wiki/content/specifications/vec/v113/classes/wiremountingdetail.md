@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> With a WireMountingDetail it is possible to describe a detailed wire mounting.     </p>      <p> This is needed if the information which wire end is mounted onto which wire reception is important (e.g. coax contacts).      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,8 +31,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireEnd]({{< relref "wireend.md" >}}) | referencedWireEnd | 1..* | 0..* | References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception). |
 | [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | contactedWireReception | 1 | 0..* | References the WireReception that is used for the WireMounting. |
+| [WireEnd]({{< relref "wireend.md" >}}) | referencedWireEnd | 1..* | 0..* | References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception). |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

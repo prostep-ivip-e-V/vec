@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> The <i>Wire_length</i> specifies a length for a wire together with a description of the kind of the length (<i>Length_type)</i>. The <i>Length_value </i>is always an absolute value.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Specification for the definition of cavity seals. A cavity plug is a water tight non-electrical object to fill an empty cavity.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p> A Modular_slot can hold Component_boxes as inserts in order to describe modular component boxes recursively.      </p>
+
 ## General Information
 
 | Attribute               | Value |

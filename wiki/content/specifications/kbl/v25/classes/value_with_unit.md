@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Value_with_unit is either a single numerical measure, or a range of numerical measures with upper, lower, or upper and lower bounds.</p>
+
 ## General Information
 
 | Attribute               | Value |

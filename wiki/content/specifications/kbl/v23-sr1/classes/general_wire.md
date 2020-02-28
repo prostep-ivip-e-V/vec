@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A General_wire is a physical wire, performing electrical connection. A General_wire can either be used to define a single wire or a multi-core wire.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -45,8 +46,8 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Wire_colour]({{< relref "wire_colour.md" >}}) | Cover_colour | 1..* | 1 |  |
 | [Core]({{< relref "core.md" >}}) | Core | 0..* | 1 |  |
+| [Wire_colour]({{< relref "wire_colour.md" >}}) | Cover_colour | 1..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Specified_ co_pack _occurrence is the occurrence of a Co_pack_occurrence within an Assembly_part_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,5 +34,5 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Co_pack_occurrence]({{< relref "co_pack_occurrence.md" >}}) | Related_occurrence | 1 | 0..* |  |
 | [Assembly_part_occurrence]({{< relref "assembly_part_occurrence.md" >}}) | Related_assembly | 1 | 0..* |  |
+| [Co_pack_occurrence]({{< relref "co_pack_occurrence.md" >}}) | Related_occurrence | 1 | 0..* |  |

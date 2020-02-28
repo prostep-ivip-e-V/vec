@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A Net is an undirected link between <i>NetworkPorts</i>.&#160;It defines that the <i>NetworkPorts</i> are related to each other with the <i>Net</i>.      </p>      <p> A <i>Net</i> is normally an instance of a <i>NetType.</i>&#160;E.g. if &quot;CAN-BUS&quot; is defined as a <i>NetType</i> typical <i>Nets</i> would be &quot;BODY-CAN&quot;, &quot;AUDIO-CAN&quot;.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -38,5 +39,5 @@ menu_name: vec-1.2.0
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | net | 0..* | Specifies the Nets defined in the NetSpecification. |
-| [Connection]({{< relref "connection.md" >}}) | 0..* | net | 0..1 | References the Net that is realized by the Connection. |
 | [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |
+| [Connection]({{< relref "connection.md" >}}) | 0..* | net | 0..1 | References the Net that is realized by the Connection. |

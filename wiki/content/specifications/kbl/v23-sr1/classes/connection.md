@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Verbindung  A Connection is a mechanism to specify the electrical connectivity between two or more contact points.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -33,11 +34,11 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Wire | 1 | 0..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Extremity]({{< relref "extremity.md" >}}) | Extremities | 2..* | 1 |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 | [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Wire | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

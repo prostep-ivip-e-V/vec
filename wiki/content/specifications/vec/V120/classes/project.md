@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specifies a certain vehicle project. Instances of this class are assumed to be constant. Thus, this is located directly under VEC-root element.      </p>      <p> A vehicle project can be some abstract or concrete node in the product structure, addressed by the car classification levels.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,7 +37,7 @@ menu_name: vec-1.2.0
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) |  | project | 0..* | <p> &#160;Defines the projects for which the application constraint applies.      </p> |
-| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | project | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | project | 0..* | Specifies the Projects used in the VEC-file. |
+| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | project | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
 | [PartVersion]({{< relref "partversion.md" >}}) | 0..* | project | 0..1 | References the project that develops the PartVersion. |
 | [UsageNode]({{< relref "usagenode.md" >}}) | 0..* | usedInProject | 0..* | <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p> |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Special_terminal_occurrence is the occurrence of a General_terminal with an identifier in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

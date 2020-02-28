@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Module_configuration is a grouping of wires and components fulfilling a specific functionality of a harness.  Example: Option: Audio System with CD Changer</p>
+
 ## General Information
 
 | Attribute               | Value |

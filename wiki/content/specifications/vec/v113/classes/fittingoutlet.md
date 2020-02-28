@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p>Specifies one outlet of the fitting.  </p>
+
 ## General Information
 
 | Attribute               | Value |

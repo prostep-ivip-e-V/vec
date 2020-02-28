@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A WireRole defines the instance specific properties and relationships of a wire.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,5 +32,5 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireSpecification]({{< relref "wirespecification.md" >}}) | wireSpecification | 1 | 0..* | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | wireElementReference | 0..* | 1 | Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed. |
+| [WireSpecification]({{< relref "wirespecification.md" >}}) | wireSpecification | 1 | 0..* | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |

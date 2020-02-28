@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specification for the description of a three dimensional building block. A building block is a reusable section of a geometry.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,12 +33,12 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Zone]({{< relref "zone.md" >}}) |  | 0..1 | 0..* | References the Zone that is building block describes. |
-| [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | placedElementViewItem3D | 0..* | 1 | Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D. |
-| [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 1 | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D. |
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
 | [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode3Ds defined by the BuildingBlockSpecification3D. |
 | [GeometrySegment3D]({{< relref "geometrysegment3d.md" >}}) | geometrySegment | 0..* | 1 | Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D. |
+| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
+| [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 1 | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D. |
+| [Zone]({{< relref "zone.md" >}}) |  | 0..1 | 0..* | References the Zone that is building block describes. |
+| [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | placedElementViewItem3D | 0..* | 1 | Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification to define any hierarchical structure on variant groups (e.g. by the means of a functional organization).&#160;The hierarchy starts with a single root node.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> A ConnectorHousingRole defines the instance specific properties and relationships of a connector housing.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A PathSegment is a part of the 2D presentation of a GeometrySegment2D. The complete presentation of a GeometrySegment2D is built from an ordered list of PathSegments. Each PathSegment has an ordered list of control points through which the path goes. If no curveRadius is specified the control points are connected by a direct straight line. If a curveRadius is specified, the PathSegment can be drawn by a segment of a circle which touches all control points and has the radius specified.      </p>
+
 ## General Information
 
 | Attribute               | Value |

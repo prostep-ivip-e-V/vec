@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> A Default_dimension_specification defines tolerance values that shall be applied to the harness, if no explicit tolerance value has been defined.     </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,8 +33,8 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 | <p> The Tolerance_indication, which defines the values of the tolerance (e.g. +-5mm).      </p> |
 | [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* | <p> An External_reference which can be used to reference an external document in which the default values are defined (e.g. a company standard).      </p> |
+| [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 | <p> The Tolerance_indication, which defines the values of the tolerance (e.g. +-5mm).      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

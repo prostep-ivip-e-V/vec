@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,8 +31,8 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Component_box_connector]({{< relref "component_box_connector.md" >}}) | Part | 1 |  |  |
 | [Abstract_slot_occurrence]({{< relref "abstract_slot_occurrence.md" >}}) | Slots | 0..* | 1 |  |
+| [Component_box_connector]({{< relref "component_box_connector.md" >}}) | Part | 1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

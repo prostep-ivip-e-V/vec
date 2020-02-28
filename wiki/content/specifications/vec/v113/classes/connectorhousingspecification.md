@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Specification for the definition of connector housings. A connector housing consists of a one or more slots. In the means of the VEC, a connector housing can be a conventional connector housing, a contact module or a connector shell.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -40,11 +41,11 @@ menu_name: vec-1.1.3
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | segmentConnectionPoint | 0..* | 1 | <p> Specifies the <i>SegmentConnectionPoints </i>the connector housing.      </p> |
-| [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the connector housing that is satisfied by the connector housing. |
 | [AbstractSlot]({{< relref "abstractslot.md" >}}) | slot | 0..* | 1 | Specifies the slots forming the ConnectorHousing. |
+| [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the connector housing that is satisfied by the connector housing. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | connectorHousingSpecification | 0..* | <p> References the ConnectorHousingSpecifications for which the compatibility statement is stated.      </p> |
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | 0..* | connectorHousingSpecification | 1 | <p> References the <i>ConnectorHousingSpecification </i>that is instanced by this <i>ConnectorHousingRole.</i>      </p> |
+| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | connectorHousingSpecification | 0..* | <p> References the ConnectorHousingSpecifications for which the compatibility statement is stated.      </p> |
 | [HousingComponent]({{< relref "housingcomponent.md" >}}) | 0..* | housingSpecification | 0..1 | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |

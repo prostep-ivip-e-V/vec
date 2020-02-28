@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>A placement defines the placement of a PlaceableElementRole onto a Topology. For the definition of the place on the Topology, Locations are used. A Placement can either be a placement on discrete points (OnPointPlacement) or on an area of the topology (OnWayPlacement).  </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,8 +33,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Placement]({{< relref "placement.md" >}}) | isOnTopOf | 0..* | 0..* | Specifies constraints on ordering of Placements. All referenced Placements have to be below (nearer to the center of the Segment) this Placement.  (see KBLFRM-171) |
 | [PlaceableElementRole]({{< relref "placeableelementrole.md" >}}) | placedElement | 1..* | 0..* | References the PlaceableElementRoles placed by the Placement. |
+| [Placement]({{< relref "placement.md" >}}) | isOnTopOf | 0..* | 0..* | Specifies constraints on ordering of Placements. All referenced Placements have to be below (nearer to the center of the Segment) this Placement.  (see KBLFRM-171) |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

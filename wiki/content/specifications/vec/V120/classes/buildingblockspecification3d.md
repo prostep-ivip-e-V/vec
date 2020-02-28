@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specification for the description of a three-dimensional building block. A building block is a reusable section of a geometry.      </p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -32,12 +33,12 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [GeometrySegment3D]({{< relref "geometrysegment3d.md" >}}) | geometrySegment | 0..* | 1 | <p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p> |
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
-| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode3Ds defined by the BuildingBlockSpecification3D. |
-| [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | placedElementViewItem3D | 0..* | 1 | Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D. |
 | [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 1 | Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D. |
 | [TopologyZone]({{< relref "topologyzone.md" >}}) |  | 0..1 | 0..* | <p> References the Zone that is building block represents. This shall be a TopologyZone with the type &quot;DmuZone&quot;.      </p> |
+| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
+| [GeometrySegment3D]({{< relref "geometrysegment3d.md" >}}) | geometrySegment | 0..* | 1 | <p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p> |
+| [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | placedElementViewItem3D | 0..* | 1 | Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D. |
+| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode3Ds defined by the BuildingBlockSpecification3D. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

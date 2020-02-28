@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Specifies the wire addon needed to reach a <i>Cavity</i> from a specific <i>SegmentConnectionPoint</i>. For each <i>SegmentConnectionPoint</i> there shall be no more than one add-on value per cavity and type.      </p>
+
 ## General Information
 
 | Attribute               | Value |

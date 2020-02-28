@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>A SpliceTerminalRole defines the instance specific properties and relationships of a splice terminal. </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 The <i>CavityPartSpecification</i> is an abstract class for common properties of non-electrical parts that are used in <i>Cavities</i>.
+
 ## General Information
 
 | Attribute               | Value |

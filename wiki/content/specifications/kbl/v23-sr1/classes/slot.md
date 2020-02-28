@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Slot is a mechanism to group the Cavity objects of a Connector_housing.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Contact_point defines the positions where electrical connectivity takes place.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -31,9 +32,9 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Part_usage_select]({{< relref "part_usage_select.md" >}}) | Associated_parts | 0..* | 1..* |  |
-| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Contacted_cavity | 1..* | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
+| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Contacted_cavity | 1..* | 0..* |  |
+| [Part_usage_select]({{< relref "part_usage_select.md" >}}) | Associated_parts | 0..* | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

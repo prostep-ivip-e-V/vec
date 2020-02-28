@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A SpecificRole is the possibility to define instance specific properties with custom properties (see ExtendableElement). This is necessary, if the part is described by custom properties of a PartOrUsageRelatedSpecification.      </p>
+
 ## General Information
 
 | Attribute               | Value |

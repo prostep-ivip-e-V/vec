@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> A GeometrySegment2D is the geometric representation of a TopologySegment in 2D-space.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Abstract base class for custom properties. Basically a custom property is key / value pair. The key (propertyType) defines the meaning of the value. A custom property can either be a simple value (string), a numerical value or a value range.  </p>
+
 ## General Information
 
 | Attribute               | Value |

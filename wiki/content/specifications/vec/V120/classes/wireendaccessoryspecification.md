@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> <i>WireEndAccessorySpecifications </i>are describing parts that are used for a treatment of a wire end before the actual terminal is attached to the <i>WireEnd</i> (e.g. a ferrule).     </p>      <p> The actual specification is done by the referenced <i>WireReceptionSpecification</i> since a <i>WireEndAccessory </i>is basically just a single <i>WireReception</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

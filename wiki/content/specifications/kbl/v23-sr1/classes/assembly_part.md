@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>Teilmontiertes Bauteil  An assembly of multiple parts identified by a common part number.  An Assembly_part is a component that contains other subordinate objects. An Assembly_part is ordered as a part to be bought under a part number, due to limited functionalities of the CAD systems these must be described however with several individual parts.</p>
+
 ## General Information
 
 | Attribute               | Value |

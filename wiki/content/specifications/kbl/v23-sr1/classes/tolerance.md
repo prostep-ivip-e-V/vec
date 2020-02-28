@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Tolerance is the specification of the allowable range for a dimension.</p>
+
 ## General Information
 
 | Attribute               | Value |

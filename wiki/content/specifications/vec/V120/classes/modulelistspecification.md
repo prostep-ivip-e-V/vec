@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p>Specification for the description of module lists (see ModuleList).  </p>
+
 ## General Information
 
 | Attribute               | Value |

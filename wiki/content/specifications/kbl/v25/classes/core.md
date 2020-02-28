@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>Kabelader  A core is part of a cable. A cable consists of 1-n cores  A Core is a single conductor of a multi-core wire including its isolation.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,8 +37,8 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
 | [Wire_colour]({{< relref "wire_colour.md" >}}) | Core_colour | 1..* | 1 |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

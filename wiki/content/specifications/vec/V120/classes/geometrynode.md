@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A GeometryNode is the geometric representation of a TopologyNode. A TopologyNode may be represented by more than one GeometryNodes, but only within different <i>BuildingBlockSpecification2D/3D.</i> That means, in a single BuildingBlockSpecification a <i>TopologyNode</i> shall only be represent once&#160;(or not).      </p>      <p> A GeometryNode is either a GeometryNode2D or a GeometryNode3D.      </p>
+
 ## General Information
 
 | Attribute               | Value |

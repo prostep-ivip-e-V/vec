@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 A component box is part, that can hold components (e.g. relais, fuses etc.).
+
 ## General Information
 
 | Attribute               | Value |

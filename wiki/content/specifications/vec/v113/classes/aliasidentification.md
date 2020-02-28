@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Class for the definition of alias identifications. Alias identifications are additional identifications for VEC-elements, which are valid in a certain scope (e.g. PPS-ID's).      </p>
+
 ## General Information
 
 | Attribute               | Value |

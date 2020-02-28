@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 
+
 ## General Information
 
 | Attribute               | Value |

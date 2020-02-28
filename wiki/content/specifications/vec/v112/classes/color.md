@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specifies a color value. A color is always defined by a key value. What color is meant by this key value is defined by a standard reference systems (e.g. RAL).     </p>      <p> For example if a RAL color should be expressed in the terms of the VEC the <i>referenceSystem</i> would be &quot;RAL&quot;, the <i>key</i> would be the RAL number defined by the standard (e.g. &quot;1003&quot; for signal yellow).      </p>
+
 ## General Information
 
 | Attribute               | Value |

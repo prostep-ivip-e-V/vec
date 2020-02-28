@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> A ModuleList is a mechanism to control additional / completition PartOccurrences. This means for a car configuration, if at least one of the modules in the list participates in the configuration, the &quot;completitionComponent&quot; participates, too.      </p>
+
 ## General Information
 
 | Attribute               | Value |

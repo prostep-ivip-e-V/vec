@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 A component box is part, that can hold components (e.g. relais, fuses etc.).
+
 ## General Information
 
 | Attribute               | Value |
@@ -42,9 +43,9 @@ A component box is part, that can hold components (e.g. relais, fuses etc.).
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | Connections | 0..* | 1 |  |
 | [Component_box_connector]({{< relref "component_box_connector.md" >}}) | Component_box_connectors | 0..* | 1 |  |
 | [Component_slot]({{< relref "component_slot.md" >}}) | Component_slots | 0..* | 1 |  |
+| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | Connections | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

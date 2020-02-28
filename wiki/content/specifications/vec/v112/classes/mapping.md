@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>The Mapping defines the concrete mapping two parts aliased as A &amp; B. For performance reasons the roles PartSideA and PartSideB are abbreviated to A &amp; B. </p>
+
 ## General Information
 
 | Attribute               | Value |

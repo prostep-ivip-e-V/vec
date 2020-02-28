@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The HarnessGeometrieSpecification3D specifies a three-dimensional model of a harness. A harness model is composed of one or more BuildingBlockSpecifaction3D which are placed in the model.      </p>
+
 ## General Information
 
 | Attribute               | Value |

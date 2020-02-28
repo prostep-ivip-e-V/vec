@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A DocumentRelatedAssignmentGroup allows the creation of traceability links to elements in a <i>DocumentVersion</i> for a set of VEC&#160;objects. The semantic of the traceability link is defined by the <i>DocumentRelationType.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

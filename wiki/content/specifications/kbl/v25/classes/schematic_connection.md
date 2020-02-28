@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 The Schematic_connection represents a logical connection. It can be referenced by the physical connections (Connection) and be used to transfer the information of the logical connection, if it is realized by multiple Connections (e.g. different routings, different wire types).
+
 ## General Information
 
 | Attribute               | Value |
@@ -36,8 +37,8 @@ The Schematic_connection represents a logical connection. It can be referenced b
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Cavities | 2..* | 0..* |  |
 | [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
+| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Cavities | 2..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

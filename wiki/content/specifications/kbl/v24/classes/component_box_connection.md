@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p> Defines the internal connectivity of a Component_box.      </p>
+
 ## General Information
 
 | Attribute               | Value |

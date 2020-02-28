@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Routing is a course taken to get from a starting point to a destination.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -30,9 +31,9 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [Connection]({{< relref "connection.md" >}}) | Routed_wire | 1 | 0..* |  |
 | [Segment]({{< relref "segment.md" >}}) | Segments | 0..* | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
-| [Connection]({{< relref "connection.md" >}}) | Routed_wire | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

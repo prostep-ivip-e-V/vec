@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Fixing_occurrence is the occurrence of a Fixing in a module part list.</p>
+
 ## General Information
 
 | Attribute               | Value |

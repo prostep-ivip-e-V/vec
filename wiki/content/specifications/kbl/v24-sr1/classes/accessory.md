@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>Zubehör  Components which may be used with connectors to facilitate their use in a wide range of applications. Accessories perform no electrical function and include such items as caps, covers, gaskets washers and boots.  An Accessory is any supplementary portion of a connector with the obligation to help a Harness  to perform its function. Example: An Accessory may be a sleeve, a cap, a cable strap or comparable parts, which are installed to a plug.</p>
+
 ## General Information
 
 | Attribute               | Value |

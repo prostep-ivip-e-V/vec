@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Part_usage is an object which replaces a Cavity_occurrence.</p>
+
 ## General Information
 
 | Attribute               | Value |

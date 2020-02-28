@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A <i>RequirementsConformanceSpecification </i>can be used to express the conformance of a <i>PartVersion </i>(or a group of <i>PartVersions</i>). The <i>PartVersions</i> to which this <i>RequirementsConformanceSpecification</i> applies are expressed through the <i>describedPart </i>reference.      </p>
+
 ## General Information
 
 | Attribute               | Value |

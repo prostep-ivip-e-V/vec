@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>A Module_configuration is a grouping of wires and components fulfilling a specific functionality of a harness.  Example: Option: Audio System with CD Changer</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -37,5 +38,5 @@ menu_name: kbl-2.5
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Module]({{< relref "module.md" >}}) | 1 | Module_configuration | 1 |  |
 | [Harness]({{< relref "harness.md" >}}) | 1 | Module_configuration | 0..* |  |
+| [Module]({{< relref "module.md" >}}) | 1 | Module_configuration | 1 |  |

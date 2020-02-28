@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p>A Contact_point defines the positions where electrical connectivity takes place.</p>
+
 ## General Information
 
 | Attribute               | Value |
@@ -38,5 +39,5 @@ menu_name: kbl-2.4
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [Extremity]({{< relref "extremity.md" >}}) | 0..* | Contact_point | 1 |  |
-| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | 1 | Contact_points | 0..* |  |
 | [Component_box_occurrence]({{< relref "component_box_occurrence.md" >}}) | 1 | Contact_points | 0..* |  |
+| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | 1 | Contact_points | 0..* |  |

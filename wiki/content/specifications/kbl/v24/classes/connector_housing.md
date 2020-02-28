@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p> Body of the connector with 1-n cavities. A Connector_housing is a non populated connector, i.e. without addressed/populated cavities. A Connector_housing without any slot allows for the representation of a connector shell (Mehrfachstecker)      </p>
+
 ## General Information
 
 | Attribute               | Value |

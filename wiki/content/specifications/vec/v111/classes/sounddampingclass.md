@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Allows the definition of a sound damping class. The sound damping class of a component is specified as a level of sound damping. The level is specified by the <i>classKey</i>. Valid keys are specified by the <i>referenceSystem</i>. Attributes of the type <i>SoundDampingClass</i> normally have the multiplicity [0..*]. This means that such an attribute can have <i>SoundDampingClass</i> entries for different <i>referenceSystems</i>. It must not have multiple entries for the same <i>referenceSystem</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

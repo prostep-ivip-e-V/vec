@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> A custom property with a boolean value.      </p>
+
 ## General Information
 
 | Attribute               | Value |

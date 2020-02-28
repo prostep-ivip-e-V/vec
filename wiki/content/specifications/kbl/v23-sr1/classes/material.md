@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A Material is the substance out of which a Part is or can be made.</p>
+
 ## General Information
 
 | Attribute               | Value |

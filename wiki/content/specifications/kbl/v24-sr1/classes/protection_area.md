@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>Schutzzone  A Protection_area is a a mechanism to describe the area on a Segment covered by a Wire_protection_occurrence. Some segments of a harness are crossing areas with critical conditions like higher temperatures, higher humidity, etc. To prevent the damage of the cable, protect shields are mounted for that segment. Note: For each Segment covered by a particular Wire_protection_occurrence a separate Protection_area has to be instantiated.</p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>A PartWithSubComponentsRole defines the instance specific properties and relationships of a part with subcomponents. A PartWithSubComponents is a composite part like an Assembly, a Module, Harness.  </p>
+
 ## General Information
 
 | Attribute               | Value |

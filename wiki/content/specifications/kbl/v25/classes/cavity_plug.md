@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p>Blindstopfen  Connector accessory to fill and seal empty cavities  A Cavity_plug is a water tight non-electrical object to fill an empty cavity.</p>
+
 ## General Information
 
 | Attribute               | Value |

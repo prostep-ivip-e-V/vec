@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 The CartesianDimension specifies the size of an object in 2D-space.
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The <i>ConductorCurrentInformation</i> specifies the maximum current for which a conductor is approved. As the maximum current is dependent from the voltage and the environment temperature it is modelled as a class and not only as an attribute.      </p>
+
 ## General Information
 
 | Attribute               | Value |

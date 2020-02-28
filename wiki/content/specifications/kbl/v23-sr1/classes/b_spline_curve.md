@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.3.sr1
 ---
 <p>A B-spline curve is a piecewise parametric polynomial or rational curve described in terms of control points and basis functions. The B-spline curve has been selected as the most stable format to represent all types of polynomial or rational parametric curves. With appropriate attribute values it is capable of representing single span or spline curves of explicit polynomial, rational, Bezier or B-spline type.  Within the Harness Engineering Information Model the definition has been restricted to a uniform B_spline_curve, where the knots are evenly spaced. Suitable default values for the knots and knot multiplicities are derived in this case. A B-spline is uniform if and only if all knots are of multiplicity 1 and they differ by a positive constant from the preceding knot. In this case the knot spacing is 1.0, starting at -d , where d is the degree. Note:  If the B-spline curve is uniform and degree=1, the B-spline is equivalent to a polyline.</p>
+
 ## General Information
 
 | Attribute               | Value |

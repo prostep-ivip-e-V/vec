@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4.sr1
 ---
 <p>A Cavity_plug_occurrence is the occurrence of a Cavity_plug in a module part list. Note: Cavity_plugs do not show up in a module bill of material.</p>
+
 ## General Information
 
 | Attribute               | Value |

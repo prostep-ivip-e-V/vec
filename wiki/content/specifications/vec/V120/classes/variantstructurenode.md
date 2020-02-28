@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> <i>VariantStructureNodes</i> can be used to define a hierarchical structure on <i>VariantGroups</i>. Every <i>VariantStructureNodes</i> can reference <i>VariantGroups</i> and <i>VariantStructureNodes</i> as children.      </p>
+
 ## General Information
 
 | Attribute               | Value |
