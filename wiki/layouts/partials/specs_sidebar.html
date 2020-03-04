@@ -11,8 +11,8 @@
   {{ errorf "Please define menu items named `menu: %s:` in your %s front matter or define `[[menu.%s]]` in `config/default/menus.toml`. See https://sourcethemes.com/academic/docs/managing-content/#menus" $menu_name .Path $menu_name }}
 {{ end }}
 
-<form class="specs-search d-flex align-items-center">
-  <button class="btn specs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#specs-nav" aria-controls="specs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+<form class="specs-search d-flex align-items-center d-md-none">
+  <button class="btn specs-toggle p-0 mr-3" type="button" data-toggle="collapse" data-target="#specs-nav" aria-controls="specs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
 
