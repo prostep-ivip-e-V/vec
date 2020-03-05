@@ -34,6 +34,10 @@
             {{ .Content }}
           </div>
 
+          {{ if .Params.links }}
+          <h2>Additional Resources</h2>
+          {{ partial "specs_links.html" . }}
+          {{ end }}
 
           {{ partial "tags.html" . }}
 
