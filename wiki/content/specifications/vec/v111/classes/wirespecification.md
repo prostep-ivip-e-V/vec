@@ -39,5 +39,5 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireRole]({{< relref "wirerole.md" >}}) | 0..* | wireSpecification | 1 | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | wireSpecification | 0..* | <p> References the WireSpecifications for which the compatibility statement is stated.      </p> |
+| [WireRole]({{< relref "wirerole.md" >}}) | 0..* | wireSpecification | 1 | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |

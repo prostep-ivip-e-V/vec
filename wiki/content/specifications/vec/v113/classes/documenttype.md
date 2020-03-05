@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines the predefined <i>DocumentTypes</i> of a <i>PartVersion.</i> A certain <i>DocumentType </i>has normally a typical set of information that is defined within its scope. E.g. a part master document contains <i>Specifications</i> that are used for the description of a defined <i>PartVersion.</i>     </p>      <p> <i>The content and the degree of information a DocumentType</i> may vary in the different processes.       </p>
+
 ## General Information
 
 | Attribute               | Value |

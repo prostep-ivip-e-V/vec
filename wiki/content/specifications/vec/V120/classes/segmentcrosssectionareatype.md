@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines valid values the type of the cross-section area of a <i>TopologySegment</i>, since a <i>TopologySegment</i> can have different cross section areas with different meanings in the process.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Enumeration for the definition of the SegmentForm.      </p>
+
 ## General Information
 
 | Attribute               | Value |

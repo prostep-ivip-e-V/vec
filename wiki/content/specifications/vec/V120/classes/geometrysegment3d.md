@@ -35,9 +35,9 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Curve3D]({{< relref "curve3d.md" >}}) | curve | 0..* |  | <p> Specifies an ordered list of curves which describe the centerline of the segment. If a segment is described by more than one curve, the centrelines of the individual curves are aligned in the order of this association.      </p> |
-| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D ends. |
 | [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | startNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D starts. |
+| [GeometryNode3D]({{< relref "geometrynode3d.md" >}}) | endNode | 1 | 0..* | References the GeometryNode3D where the GeometrySegment3D ends. |
+| [Curve3D]({{< relref "curve3d.md" >}}) | curve | 0..* |  | <p> Specifies an ordered list of curves which describe the centerline of the segment. If a segment is described by more than one curve, the centrelines of the individual curves are aligned in the order of this association.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

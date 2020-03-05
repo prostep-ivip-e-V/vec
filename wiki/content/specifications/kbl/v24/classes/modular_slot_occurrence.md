@@ -31,5 +31,5 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Component_box_occurrence]({{< relref "component_box_occurrence.md" >}}) | Used_insets | 0..* | 0..* |  |
 | [Modular_slot]({{< relref "modular_slot.md" >}}) | Part | 1 | 0..* |  |
+| [Component_box_occurrence]({{< relref "component_box_occurrence.md" >}}) | Used_insets | 0..* | 0..* |  |

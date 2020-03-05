@@ -36,9 +36,9 @@ menu_name: vec-1.1.3
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [SegmentLength]({{< relref "segmentlength.md" >}}) | lengthInformation | 0..* | 1 | Specifies the different SegmentLengths of the TopologySegment. |
-| [TopologyNode]({{< relref "topologynode.md" >}}) | startNode | 1 | 0..* | References the TopologyNode where the TopologySegment starts. |
 | [SegmentCrossSectionArea]({{< relref "segmentcrosssectionarea.md" >}}) | crossSectionAreaInformation | 0..* | 1 | Specifies the different SegmentCrossSectionAreas of the TopologySegment. |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | endNode | 1 | 0..* | References the TopologyNode where the TopologySegment ends. |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | startNode | 1 | 0..* | References the TopologyNode where the TopologySegment starts. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -34,9 +34,9 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [Cartesian_point]({{< relref "cartesian_point.md" >}}) | Cartesian_point | 1 | 0..* |  |
 | [Located_component]({{< relref "located_component.md" >}}) | referenced_components | 0..* | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
-| [Cartesian_point]({{< relref "cartesian_point.md" >}}) | Cartesian_point | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

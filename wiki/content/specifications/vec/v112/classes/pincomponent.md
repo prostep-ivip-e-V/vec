@@ -34,12 +34,12 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | pinSpecification | 0..1 | 0..* | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300) |
 | [Cavity]({{< relref "cavity.md" >}}) | referencedCavity | 0..1 | 0..* | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |
 | [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | behaviour | 0..* | 1 | <p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p> |
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | pinSpecification | 0..1 | 0..* | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300) |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [HousingComponent]({{< relref "housingcomponent.md" >}}) | 1 | pinComponent | 0..* | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 | [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | 0..* | pinComponent | 1 | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
+| [HousingComponent]({{< relref "housingcomponent.md" >}}) | 1 | pinComponent | 0..* | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 | [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | pins | 1..* |  |

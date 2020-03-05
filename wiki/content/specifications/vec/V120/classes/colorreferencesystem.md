@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the literals that shall be used for specific color reference systems.      </p>
+
 ## General Information
 
 | Attribute               | Value |

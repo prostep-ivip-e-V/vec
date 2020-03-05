@@ -39,12 +39,12 @@ menu_name: vec-1.1.2
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the connector housing that is satisfied by the connector housing. |
-| [AbstractSlot]({{< relref "abstractslot.md" >}}) | slot | 0..* | 1 | Specifies the slots forming the ConnectorHousing. |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | segmentConnectionPoint | 0..* | 1 | <p> Specifies the <i>SegmentConnectionPoints </i>the connector housing.      </p> |
+| [AbstractSlot]({{< relref "abstractslot.md" >}}) | slot | 0..* | 1 | Specifies the slots forming the ConnectorHousing. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [ModularSlot]({{< relref "modularslot.md" >}}) | 0..* | allowedInserts | 0..* | <p> References the <i>ConnectorHousingSpecifications</i> that are valid inserts for this <i>ModularSlot.</i>      </p> |
-| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | connectorHousingSpecification | 0..* | <p> References the ConnectorHousingSpecifications for which the compatibility statement is stated.      </p> |
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | 0..* | connectorHousingSpecification | 1 | <p> References the <i>ConnectorHousingSpecification </i>that is instanced by this <i>ConnectorHousingRole.</i>      </p> |
+| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | connectorHousingSpecification | 0..* | <p> References the ConnectorHousingSpecifications for which the compatibility statement is stated.      </p> |
 | [HousingComponent]({{< relref "housingcomponent.md" >}}) | 0..* | housingSpecification | 0..1 | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |

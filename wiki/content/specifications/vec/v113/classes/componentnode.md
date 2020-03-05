@@ -36,8 +36,8 @@ menu_name: vec-1.1.3
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p> |
-| [ComponentConnector]({{< relref "componentconnector.md" >}}) | componentConnector | 0..* | 1 | Specifies the ComponentConnectors of a ComponentNode. |
 | [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..1 | 0..* | References the NetworkNode that is realized by the ComponentNode. |
+| [ComponentConnector]({{< relref "componentconnector.md" >}}) | componentConnector | 0..* | 1 | Specifies the ComponentConnectors of a ComponentNode. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | childNode | 0..* | 0..1 | Specifies the ComponentNodes that are a child of this ComponentNode. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

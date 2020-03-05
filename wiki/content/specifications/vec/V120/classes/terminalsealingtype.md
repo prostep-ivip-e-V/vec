@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the possible sealing types for a terminal, if the terminal shall be sealed in its usage.      </p>
+
 ## General Information
 
 | Attribute               | Value |

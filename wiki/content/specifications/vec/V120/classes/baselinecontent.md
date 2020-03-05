@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Enumeration to define the state of the content of the baseline in regard of its defined scope.      </p>
+
 ## General Information
 
 | Attribute               | Value |

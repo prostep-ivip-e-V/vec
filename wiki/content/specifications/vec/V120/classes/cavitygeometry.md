@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Defines valid values of the geometry of cavities in the sealing area (crimp end).
+
 ## General Information
 
 | Attribute               | Value |

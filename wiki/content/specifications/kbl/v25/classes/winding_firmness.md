@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> The winding firmness defines how a firm wire protection (if it is a tape) is applied to the segment.&#160;      </p>
+
 ## General Information
 
 | Attribute               | Value |

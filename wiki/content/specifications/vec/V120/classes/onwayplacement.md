@@ -33,6 +33,6 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Location]({{< relref "location.md" >}}) | startLocation | 1 | 0..1 | References the Location where OnWayPlacement starts. |
 | [Path]({{< relref "path.md" >}}) | path | 0..1 | 0..1 | Specifies the topology path defining the way the OnWayPlacement takes in the topology. |
+| [Location]({{< relref "location.md" >}}) | startLocation | 1 | 0..1 | References the Location where OnWayPlacement starts. |
 | [Location]({{< relref "location.md" >}}) | endLocation | 1 | 0..1 | References the Location where OnWayPlacement ends. |

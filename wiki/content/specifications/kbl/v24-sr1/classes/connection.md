@@ -37,12 +37,12 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Extremity]({{< relref "extremity.md" >}}) | Extremities | 2..* | 1 |  |
-| [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Wire | 1 | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
 | [Schematic_connection]({{< relref "schematic_connection.md" >}}) | Realized_schematic_connection | 0..1 | 0..* |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Wire | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

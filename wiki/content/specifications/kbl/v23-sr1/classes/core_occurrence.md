@@ -32,8 +32,8 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Core]({{< relref "core.md" >}}) | Part | 1 | 1..* |  |
 | [Wire_length]({{< relref "wire_length.md" >}}) | Length_information | 1..* | 1 |  |
+| [Core]({{< relref "core.md" >}}) | Part | 1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

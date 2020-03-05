@@ -32,11 +32,11 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireLength]({{< relref "wirelength.md" >}}) | wireLength | 0..* | 1 | Specifies the different length of a wire. |
-| [WireEnd]({{< relref "wireend.md" >}}) | wireEnd | 0..* | 1 | Specifies the ends of the WireElementReference for contacting purposes. |
-| [WireElement]({{< relref "wireelement.md" >}}) | referencedWireElement | 1 | 0..* | <p> References the WireElement that is represented by the WireElementReference.      </p> |
 | [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the WireElementReference. |
 | [Connection]({{< relref "connection.md" >}}) | connection | 0..1 | 0..* | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341 |
+| [WireEnd]({{< relref "wireend.md" >}}) | wireEnd | 0..* | 1 | Specifies the ends of the WireElementReference for contacting purposes. |
+| [WireLength]({{< relref "wirelength.md" >}}) | wireLength | 0..* | 1 | Specifies the different length of a wire. |
+| [WireElement]({{< relref "wireelement.md" >}}) | referencedWireElement | 1 | 0..* | <p> References the WireElement that is represented by the WireElementReference.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

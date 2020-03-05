@@ -35,10 +35,10 @@ menu_name: kbl-2.3.sr1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
-| [Extremity]({{< relref "extremity.md" >}}) | Extremities | 2..* | 1 |  |
 | [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 | [Wire_or_core_occurrence]({{< relref "wire_or_core_occurrence.md" >}}) | Wire | 1 | 0..* |  |
+| [Extremity]({{< relref "extremity.md" >}}) | Extremities | 2..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

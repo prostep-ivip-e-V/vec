@@ -37,7 +37,7 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netType | 0..* |  |
 | [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
 | [Net]({{< relref "net.md" >}}) |  | netType | 0..1 |  |
 | [NetworkPort]({{< relref "networkport.md" >}}) | 0..* | netType | 0..1 |  |
+| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netType | 0..* |  |

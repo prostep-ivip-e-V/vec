@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Enumeration for the different types of <i>UsageNodes.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

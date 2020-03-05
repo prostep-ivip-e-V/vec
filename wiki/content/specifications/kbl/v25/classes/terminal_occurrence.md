@@ -32,8 +32,8 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [General_terminal]({{< relref "general_terminal.md" >}}) | Part | 1 | 1..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [General_terminal]({{< relref "general_terminal.md" >}}) | Part | 1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

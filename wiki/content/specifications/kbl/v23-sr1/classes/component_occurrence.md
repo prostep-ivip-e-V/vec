@@ -34,8 +34,8 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Mounting_element]({{< relref "mounting_element.md" >}}) | Mounting | 1..* | 0..* |  |
 | [Component]({{< relref "component.md" >}}) | Part | 1 | 1..* |  |
+| [Mounting_element]({{< relref "mounting_element.md" >}}) | Mounting | 1..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

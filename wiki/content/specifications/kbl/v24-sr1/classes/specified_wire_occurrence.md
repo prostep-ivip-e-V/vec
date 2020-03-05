@@ -32,5 +32,5 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Wire_occurrence]({{< relref "wire_occurrence.md" >}}) | Related_occurrence | 1 | 0..* |  |
 | [Assembly_part_occurrence]({{< relref "assembly_part_occurrence.md" >}}) | Related_assembly | 1 | 0..* |  |
+| [Wire_occurrence]({{< relref "wire_occurrence.md" >}}) | Related_occurrence | 1 | 0..* |  |

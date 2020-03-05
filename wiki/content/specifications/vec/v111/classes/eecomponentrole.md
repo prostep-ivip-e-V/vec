@@ -32,9 +32,9 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..1 | 0..* | References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341 |
 | [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | EEComponentSpecification | 1 | 0..* | <p> References the <i>EEComponentSpecification </i>that is instanced by this <i>EEComponentRole.</i>      </p> |
-| [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | mountingSlot | 0..* | 0..* | Specifies the slots to which into which the EE-component is mounted. |
-| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | mountingHousing | 0..* | 0..* | Specifies the connector housing to which into which the EE-component is mounted. |
 | [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | housingComponentRef | 0..* | 1 | Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401) |
 | [CavityReference]({{< relref "cavityreference.md" >}}) | mountingCavity | 0..* | 0..* | Specifies the cavities to which into which the EE-component is mounted. |
+| [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | mountingSlot | 0..* | 0..* | Specifies the slots to which into which the EE-component is mounted. |
+| [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..1 | 0..* | References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341 |
+| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | mountingHousing | 0..* | 0..* | Specifies the connector housing to which into which the EE-component is mounted. |

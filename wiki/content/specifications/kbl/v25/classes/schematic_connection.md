@@ -37,8 +37,8 @@ The Schematic_connection represents a logical connection. It can be referenced b
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Cavities | 2..* | 0..* |  |
+| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

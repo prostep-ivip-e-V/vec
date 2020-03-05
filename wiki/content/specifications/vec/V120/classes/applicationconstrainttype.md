@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Enumeration for the definition of the type of an ApplicationConstraints. Valid values are allow and deny.      </p>
+
 ## General Information
 
 | Attribute               | Value |

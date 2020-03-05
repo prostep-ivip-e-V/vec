@@ -36,8 +36,8 @@ menu_name: vec-1.1.1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Role]({{< relref "role.md" >}}) | role | 0..* | 0..1 | <p> Specifies the different roles of the OccurrenceOrUsage.      </p> |
-| [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
 | [Instruction]({{< relref "instruction.md" >}}) | installationInstruction | 0..* | 0..1 | Room to specify InstallationInstruction(s) for the OccurrenceOrUsage. |
+| [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

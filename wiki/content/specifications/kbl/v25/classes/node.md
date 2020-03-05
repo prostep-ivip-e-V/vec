@@ -35,10 +35,10 @@ menu_name: kbl-2.5
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Cartesian_point]({{< relref "cartesian_point.md" >}}) | Cartesian_point | 1 | 0..* |  |
-| [Located_component]({{< relref "located_component.md" >}}) | referenced_components | 0..* | 0..* |  |
-| [Segment]({{< relref "segment.md" >}}) | Folding_direction | 0..1 |  | <p> Defines the direction (Segment)&#160;in which this <i>Node</i> will be folded (see Description of <i>Node</i>).      </p> |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | referenced_cavities | 0..* | 0..* |  |
+| [Located_component]({{< relref "located_component.md" >}}) | referenced_components | 0..* | 0..* |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
+| [Segment]({{< relref "segment.md" >}}) | Folding_direction | 0..1 |  | <p> Defines the direction (Segment)&#160;in which this <i>Node</i> will be folded (see Description of <i>Node</i>).      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

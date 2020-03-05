@@ -32,11 +32,11 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the slot that is satisfied by the Slot. |
 | [SlotSpecification]({{< relref "slotspecification.md" >}}) | slotSpecification | 0..1 | 0..* | References the SlotSpecification that is satisfied by the slot. |
+| [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the slot that is satisfied by the Slot. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | 0..* | referencedSlot | 1 | Points to the slot referenced by the slot reference. |
-| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | 1 | slot | 0..* | Specifies the slots forming the ConnectorHousing. |
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | slot | 0..* | <p> References explicit Slots for which the compatibility statement is stated.      </p> |
+| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | 1 | slot | 0..* | Specifies the slots forming the ConnectorHousing. |

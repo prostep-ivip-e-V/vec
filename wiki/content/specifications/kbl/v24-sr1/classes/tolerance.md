@@ -33,5 +33,5 @@ menu_name: kbl-2.4.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Dimension_specification]({{< relref "dimension_specification.md" >}}) | 1 | Tolerance_indication | 0..1 |  |
 | [Default_dimension_specification]({{< relref "default_dimension_specification.md" >}}) | 1 | Tolerance_indication | 0..1 | <p> The Tolerance_indication, which defines the values of the tolerance (e.g. +-5mm).      </p> |
+| [Dimension_specification]({{< relref "dimension_specification.md" >}}) | 1 | Tolerance_indication | 0..1 |  |

@@ -32,14 +32,14 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavitySpecification]({{< relref "cavityspecification.md" >}}) | cavitySpecification | 0..* | 0..* | <p> References the CavitySpecifications for which the compatibility statement is stated.      </p> |
-| [CavityPlugSpecification]({{< relref "cavityplugspecification.md" >}}) | cavityPlugSpecification | 0..* | 0..* | <p> References the CavityPlugSpecifications for which the compatibility statement is stated.      </p> |
 | [AbstractSlot]({{< relref "abstractslot.md" >}}) | slot | 0..* | 0..* | <p> References explicit Slots for which the compatibility statement is stated.      </p> |
+| [CavityPlugSpecification]({{< relref "cavityplugspecification.md" >}}) | cavityPlugSpecification | 0..* | 0..* | <p> References the CavityPlugSpecifications for which the compatibility statement is stated.      </p> |
 | [WireSpecification]({{< relref "wirespecification.md" >}}) | wireSpecification | 0..* | 0..* | <p> References the WireSpecifications for which the compatibility statement is stated.      </p> |
+| [CavitySpecification]({{< relref "cavityspecification.md" >}}) | cavitySpecification | 0..* | 0..* | <p> References the CavitySpecifications for which the compatibility statement is stated.      </p> |
 | [CavitySealSpecification]({{< relref "cavitysealspecification.md" >}}) | cavitySealSpecification | 0..* | 0..* | <p> References the CavitySealSpecifications for which the compatibility statement is stated.      </p> |
-| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | connectorHousingSpecification | 0..* | 0..* | <p> References the ConnectorHousingSpecifications for which the compatibility statement is stated.      </p> |
 | [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | terminalSpecification | 0..* | 0..* | <p> References the TerminalSpecifications for which the compatibility statement is stated.      </p> |
 | [Cavity]({{< relref "cavity.md" >}}) | cavity | 0..* | 0..* | <p> References explicit cavities for which the compatibility statement is stated.      </p> |
+| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | connectorHousingSpecification | 0..* | 0..* | <p> References the ConnectorHousingSpecifications for which the compatibility statement is stated.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

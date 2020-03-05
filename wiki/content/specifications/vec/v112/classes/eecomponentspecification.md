@@ -35,10 +35,10 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | connections | 0..* | 1 |  |
-| [HousingComponent]({{< relref "housingcomponent.md" >}}) | housingComponent | 0..* | 1 | Specifies the available connector interfaces of the EEComponent. |
-| [SwitchingState]({{< relref "switchingstate.md" >}}) | states | 0..* | 1 | <p> Specifies the available <i>SwitchingStates</i> of the EEComponent.      </p> |
 | [ExtensionSlot]({{< relref "extensionslot.md" >}}) | extensionSlots | 0..* | 1 | Specifies the available ExtensionSlots of the EEComponent. |
+| [SwitchingState]({{< relref "switchingstate.md" >}}) | states | 0..* | 1 | <p> Specifies the available <i>SwitchingStates</i> of the EEComponent.      </p> |
+| [HousingComponent]({{< relref "housingcomponent.md" >}}) | housingComponent | 0..* | 1 | Specifies the available connector interfaces of the EEComponent. |
+| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | connections | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

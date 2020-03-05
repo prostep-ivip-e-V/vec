@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> &#160;Defines the type of taping.       </p>
+
 ## General Information
 
 | Attribute               | Value |

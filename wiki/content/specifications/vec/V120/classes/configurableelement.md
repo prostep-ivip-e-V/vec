@@ -31,6 +31,6 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | applicationConstraint | 0..* |  | <p> References the application constraints that apply to the ConfigurableElement.      </p> |
 | [AssignmentGroup]({{< relref "assignmentgroup.md" >}}) | associatedAssignmentGroups | 0..* | 0..* |  |
+| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | applicationConstraint | 0..* |  | <p> References the application constraints that apply to the ConfigurableElement.      </p> |
 | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) | configInfo | 0..1 | 0..* | References the configuration information that applies to the ConfigurableElement. |

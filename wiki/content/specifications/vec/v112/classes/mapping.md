@@ -31,9 +31,9 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [SlotMapping]({{< relref "slotmapping.md" >}}) | slotMapping | 0..* | 1 |  |
-| [PartVersion]({{< relref "partversion.md" >}}) | A | 1 | 0..* |  |
 | [PartVersion]({{< relref "partversion.md" >}}) | B | 1 | 0..* |  |
+| [PartVersion]({{< relref "partversion.md" >}}) | A | 1 | 0..* |  |
+| [SlotMapping]({{< relref "slotmapping.md" >}}) | slotMapping | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

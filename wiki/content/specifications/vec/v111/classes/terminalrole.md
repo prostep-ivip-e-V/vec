@@ -33,10 +33,10 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ComponentPort]({{< relref "componentport.md" >}}) | componentPort | 0..1 | 0..* | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
-| [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | wireReceptionReference | 0..* | 1 | <p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |
 | [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | terminalSpecification | 1 | 0..* | <p> &#160;References the <i>TerminalSpecification</i> that is instanced by this <i>TerminalRole.</i>      </p> |
+| [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | wireReceptionReference | 0..* | 1 | <p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | terminalReceptionReference | 0..* | 1 | <p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |
+| [ComponentPort]({{< relref "componentport.md" >}}) | componentPort | 0..1 | 0..* | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

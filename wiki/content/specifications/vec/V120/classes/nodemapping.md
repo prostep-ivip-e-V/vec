@@ -31,8 +31,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Location]({{< relref "location.md" >}}) | mappedPosition | 1 | 0..1 |  |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | innerNode | 1 |  |  |
+| [Location]({{< relref "location.md" >}}) | mappedPosition | 1 | 0..1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

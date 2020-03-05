@@ -33,9 +33,9 @@ A contact system is a standard reference setup of two terminals and defined leng
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | referencedCoreSpecification | 1 | 0..* | <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p> |
-| [PartVersion]({{< relref "partversion.md" >}}) | firstTerminal | 1 | 0..* | <p> References the first terminal of the ContactSystem.      </p> |
 | [PartVersion]({{< relref "partversion.md" >}}) | secondTerminal | 1 | 0..* | <p> References the second terminal of the ContactSystem.      </p> |
+| [PartVersion]({{< relref "partversion.md" >}}) | firstTerminal | 1 | 0..* | <p> References the first terminal of the ContactSystem.      </p> |
+| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | referencedCoreSpecification | 1 | 0..* | <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

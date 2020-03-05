@@ -32,8 +32,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | firstTerminalReception | 1 | 0..* | References the first terminal reception that is mated. |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | secondTerminalReception | 1 | 0..* | References the second terminal reception that is mated. |
+| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | firstTerminalReception | 1 | 0..* | References the first terminal reception that is mated. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines the common agreed values for the Types of a NetworkNode.      </p>
+
 ## General Information
 
 | Attribute               | Value |

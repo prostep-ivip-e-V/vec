@@ -40,5 +40,5 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | networkNode | 0..* | Specifies the NetWorkNodes defined in the NetSpecification. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | networkNode | 0..1 | References the NetworkNode that is realized by the ComponentNode. |
+| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | networkNode | 0..* | Specifies the NetWorkNodes defined in the NetSpecification. |

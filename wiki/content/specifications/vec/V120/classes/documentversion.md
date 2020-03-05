@@ -44,11 +44,11 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | itemEquivalence | 0..* | 1 | Specifies ItemEquivalances defined by the DocumentVersion. |
-| [PartVersion]({{< relref "partversion.md" >}}) | referencedPart | 0..* | 0..* | The association is an informative link which PartVersions are described by the DocumentVersion. |
 | [Specification]({{< relref "specification.md" >}}) | specification | 0..* | 0..1 | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | relatedDocument | 0..* | 0..* | The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model). |
+| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | itemEquivalence | 0..* | 1 | Specifies ItemEquivalances defined by the DocumentVersion. |
 | [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | sheetOrChapter | 0..* | 1 | Specifies SheetOrChapters defined in this DocumentVersion. These are especially useful if the DocumentVersion represents an external reference. |
+| [PartVersion]({{< relref "partversion.md" >}}) | referencedPart | 0..* | 0..* | The association is an informative link which PartVersions are described by the DocumentVersion. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

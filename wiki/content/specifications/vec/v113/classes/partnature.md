@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> <i>OpenEnumeration</i> that defines the nature of a <i>PartVersion</i>. The nature specifies how the <i>PartVersion </i>can be used in the different processes or the significance of the <i>PartVersion</i> in the process.       </p>
+
 ## General Information
 
 | Attribute               | Value |

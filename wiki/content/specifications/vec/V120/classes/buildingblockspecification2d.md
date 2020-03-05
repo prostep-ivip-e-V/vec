@@ -33,12 +33,12 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D. |
 | [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
-| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | placedElementViewItem | 0..* | 1 | Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D. |
 | [GeometrySegment2D]({{< relref "geometrysegment2d.md" >}}) | geometrySegment | 0..* | 1 | Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D. |
-| [CartesianDimension]({{< relref "cartesiandimension.md" >}}) | boundingBox | 1 | 0..1 | Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions. |
 | [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D. |
+| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | placedElementViewItem | 0..* | 1 | Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D. |
+| [CartesianDimension]({{< relref "cartesiandimension.md" >}}) | boundingBox | 1 | 0..1 | Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions. |
+| [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

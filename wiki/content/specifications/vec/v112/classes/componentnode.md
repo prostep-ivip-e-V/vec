@@ -35,14 +35,14 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..1 | 0..* | References the NetworkNode that is realized by the ComponentNode. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | childNode | 0..* | 0..1 | Specifies the ComponentNodes that are a child of this ComponentNode. |
-| [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p> |
 | [ComponentPort]({{< relref "componentport.md" >}}) | componentPort | 0..* | 1 | Specifies the ComponentPorts of the ComponentNode. |
+| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..1 | 0..* | References the NetworkNode that is realized by the ComponentNode. |
+| [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 0..1 | childNode | 0..* | Specifies the ComponentNodes that are a child of this ComponentNode. |
-| [EEComponentRole]({{< relref "eecomponentrole.md" >}}) | 0..* | componentNode | 0..1 | References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341 |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 0..1 | componentNode | 0..* | Specifies the ComponentNodes defined by the ConnectionSpecification. |
+| [EEComponentRole]({{< relref "eecomponentrole.md" >}}) | 0..* | componentNode | 0..1 | References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341 |
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | 0..* | componentNode | 0..1 | <p> References the ComponentNode that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p> |

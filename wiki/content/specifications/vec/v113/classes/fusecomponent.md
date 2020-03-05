@@ -32,8 +32,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [FuseSpecification]({{< relref "fusespecification.md" >}}) | fuseSpecification | 0..1 |  |  |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | connectedPins | 0..2 | 0..* |  |
+| [FuseSpecification]({{< relref "fusespecification.md" >}}) | fuseSpecification | 0..1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -33,11 +33,11 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> References the <i>Signal</i> that is transmitted by the <i>Net</i>.      </p> |
 | [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 1..* | 1 | References the NetworkPorts that are connected by the Net. |
+| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> References the <i>Signal</i> that is transmitted by the <i>Net</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | net | 0..* | Specifies the Nets defined in the NetSpecification. |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | net | 0..1 | References the Net that is realized by the Connection. |
+| [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |

@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> Defines the valid values for Tolenrance&#160;types<i>.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

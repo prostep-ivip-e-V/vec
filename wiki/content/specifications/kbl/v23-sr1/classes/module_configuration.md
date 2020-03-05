@@ -37,5 +37,5 @@ menu_name: kbl-2.3.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Module]({{< relref "module.md" >}}) | 1 | Module_configuration | 1 |  |
 | [Harness]({{< relref "harness.md" >}}) | 1 | Module_configuration | 0..* |  |
+| [Module]({{< relref "module.md" >}}) | 1 | Module_configuration | 1 |  |

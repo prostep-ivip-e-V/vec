@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specifies the appliance type of a relais.      </p>
+
 ## General Information
 
 | Attribute               | Value |

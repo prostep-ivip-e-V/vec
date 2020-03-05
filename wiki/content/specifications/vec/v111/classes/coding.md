@@ -32,5 +32,5 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [AbstractSlot]({{< relref "abstractslot.md" >}}) | 0..1 | coding | 0..1 | Defines coding of the slot that is satisfied by the Slot. |
 | [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | 0..1 | coding | 0..1 | Defines coding of the connector housing that is satisfied by the connector housing. |
+| [AbstractSlot]({{< relref "abstractslot.md" >}}) | 0..1 | coding | 0..1 | Defines coding of the slot that is satisfied by the Slot. |

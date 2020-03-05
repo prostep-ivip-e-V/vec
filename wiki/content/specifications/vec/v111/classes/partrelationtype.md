@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Defines how the set of <i>acessoryParts </i>referenced by a <i>PartRelation</i> should be interpreted.      </p>
+
 ## General Information
 
 | Attribute               | Value |

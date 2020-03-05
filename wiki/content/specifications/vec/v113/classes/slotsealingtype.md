@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines the possible sealing types for a slot, if the slot shall be sealed in its usage.      </p>
+
 ## General Information
 
 | Attribute               | Value |

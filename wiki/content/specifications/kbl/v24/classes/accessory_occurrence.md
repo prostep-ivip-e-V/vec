@@ -36,9 +36,9 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Reference_element]({{< relref "reference_element.md" >}}) | Reference_element | 0..* | 0..* |  |
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Accessory]({{< relref "accessory.md" >}}) | Part | 1 | 1..* |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Reference_element]({{< relref "reference_element.md" >}}) | Reference_element | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

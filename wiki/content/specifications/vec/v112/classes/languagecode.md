@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Enumeration for the definition of ISO language codes. (see KBLFRM-317) </p>
+
 ## General Information
 
 | Attribute               | Value |

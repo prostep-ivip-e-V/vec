@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Enumeration for the definition of roles a contractor has in a contract.      </p>
+
 ## General Information
 
 | Attribute               | Value |

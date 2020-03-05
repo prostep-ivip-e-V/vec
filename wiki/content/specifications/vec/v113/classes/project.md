@@ -36,7 +36,7 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | project | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
 | [PartVersion]({{< relref "partversion.md" >}}) | 0..* | project | 0..1 | References the project that develops the PartVersion. |
+| [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | project | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | project | 0..* | Specifies the Projects used in the VEC-file. |
 | [UsageNode]({{< relref "usagenode.md" >}}) | 0..* | usedInProject | 0..* | <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p> |

@@ -37,5 +37,5 @@ menu_name: vec-1.1.2
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | 0..* | cavityPlugSpecification | 1 | <p> References the <i>CavityPlugSpecification </i>that is instanced by this <i>CavityPlugRole.</i>      </p> |
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | cavityPlugSpecification | 0..* | <p> References the CavityPlugSpecifications for which the compatibility statement is stated.      </p> |
+| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | 0..* | cavityPlugSpecification | 1 | <p> References the <i>CavityPlugSpecification </i>that is instanced by this <i>CavityPlugRole.</i>      </p> |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The <i>WireReceptionType</i> defines in an <i>OpenEnumeration</i> how a wire is joined with a wire reception.      </p>
+
 ## General Information
 
 | Attribute               | Value |

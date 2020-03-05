@@ -39,5 +39,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 0..* | housingComponent | 1 | Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401) |
 | [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | 1 | housingComponent | 0..* | Specifies the available connector interfaces of the EEComponent. |
+| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 0..* | housingComponent | 1 | Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401) |

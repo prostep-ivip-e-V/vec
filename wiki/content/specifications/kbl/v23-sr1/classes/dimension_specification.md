@@ -31,8 +31,8 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 |  |
 | [Placed_element]({{< relref "placed_element.md" >}}) | target | 1 | 0..* |  |
+| [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 |  |
 | [Placed_element]({{< relref "placed_element.md" >}}) | origin | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

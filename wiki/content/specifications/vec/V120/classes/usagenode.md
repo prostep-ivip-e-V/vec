@@ -35,15 +35,15 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Project]({{< relref "project.md" >}}) | usedInProject | 0..* | 0..* | <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p> |
 | [UsageNode]({{< relref "usagenode.md" >}}) | subUsageNodes | 0..* | 0..1 |  |
+| [Project]({{< relref "project.md" >}}) | usedInProject | 0..* | 0..* | <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetworkNode]({{< relref "networknode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p> |
-| [TopologyNode]({{< relref "topologynode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p> |
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p> |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p> |
+| [NetworkNode]({{< relref "networknode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p> |
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
 | [UsageNode]({{< relref "usagenode.md" >}}) | 0..1 | subUsageNodes | 0..* |  |
 | [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | usageNode | 0..* | <p> References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageNode.      </p> |
 | [UsageNodeSpecification]({{< relref "usagenodespecification.md" >}}) | 0..1 | usageNodes | 0..* | <p> Specifies the <i>UsageNodes</i> defined by this <i>UsageNodeSpecification.</i>      </p> |

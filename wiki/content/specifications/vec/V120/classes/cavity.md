@@ -34,13 +34,13 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | integratedTerminalSpecification | 0..1 |  | <p> Specifies the terminal, if the cavity has an integrated terminal (e.g. an IDC).      </p> |
 | [CavitySpecification]({{< relref "cavityspecification.md" >}}) | cavitySpecification | 0..1 | 0..* | References the CavitySpecification that is satisfied by the cavity. |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | integratedTerminalSpecification | 0..1 |  | <p> Specifies the terminal, if the cavity has an integrated terminal (e.g. an IDC).      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [CavityAddOn]({{< relref "cavityaddon.md" >}}) | 0..* | cavity | 1 |  |
 | [Slot]({{< relref "slot.md" >}}) | 1 | cavity | 1..* | <p> Specifies the Cavities forming the Slot.      </p> |
+| [CavityAddOn]({{< relref "cavityaddon.md" >}}) | 0..* | cavity | 1 |  |
 | [OpenCavitiesAssignment]({{< relref "opencavitiesassignment.md" >}}) | 0..* | openCavities | 1..* | <p> Specifies the cavities that are open.      </p> |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | 0..* | reachableCavities | 0..* | <p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p> |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | 0..* | referencedCavity | 0..1 | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |

@@ -32,8 +32,8 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Abstract_slot]({{< relref "abstract_slot.md" >}}) | Integrated_slots | 0..* | 1 |  |
 | [Connector_housing]({{< relref "connector_housing.md" >}}) | Compatible_housings | 0..* | 0..* |  |
+| [Abstract_slot]({{< relref "abstract_slot.md" >}}) | Integrated_slots | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

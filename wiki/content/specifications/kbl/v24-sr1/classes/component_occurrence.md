@@ -35,8 +35,8 @@ menu_name: kbl-2.4.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Mounting_element]({{< relref "mounting_element.md" >}}) | Mounting | 0..* | 0..* |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Component]({{< relref "component.md" >}}) | Part | 1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Defines the values for the type a fuse. This is the geometrical type.
+
 ## General Information
 
 | Attribute               | Value |

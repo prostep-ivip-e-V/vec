@@ -40,6 +40,6 @@ menu_name: vec-1.1.3
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..1 | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
-| [ComponentConnector]({{< relref "componentconnector.md" >}}) | 1 | componentPort | 0..* | Specifies the ComponentPorts of the ComponentConnector. |
 | [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..1 | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
+| [ComponentConnector]({{< relref "componentconnector.md" >}}) | 1 | componentPort | 0..* | Specifies the ComponentPorts of the ComponentConnector. |
 | [ConnectionEnd]({{< relref "connectionend.md" >}}) | 0..* | connectedComponentPort | 1 | References the ComponentPort that is connected by the ConnectionEnd. |

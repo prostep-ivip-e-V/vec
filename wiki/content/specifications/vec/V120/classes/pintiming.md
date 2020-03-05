@@ -33,5 +33,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | 0..1 | timing | 0..* | <p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p> |
 | [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | 0..1 | timing | 0..* | <p> Specifies the timing of the <i>PinVoltageInformation</i>.      </p> |
+| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | 0..1 | timing | 0..* | <p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p> |

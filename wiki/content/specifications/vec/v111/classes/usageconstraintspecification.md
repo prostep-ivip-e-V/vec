@@ -33,5 +33,5 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartVersion]({{< relref "partversion.md" >}}) | constrainedParts | 0..* | 0..* | <p> References the <i>PartVersions</i> to which this <i>UsageConstraintSpecification</i> applies.      </p> |
 | [UsageConstraint]({{< relref "usageconstraint.md" >}}) | partUsageConstraint | 1..* | 1 | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. |
+| [PartVersion]({{< relref "partversion.md" >}}) | constrainedParts | 0..* | 0..* | <p> References the <i>PartVersions</i> to which this <i>UsageConstraintSpecification</i> applies.      </p> |

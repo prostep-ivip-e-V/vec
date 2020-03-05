@@ -32,10 +32,10 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [MatingPoint]({{< relref "matingpoint.md" >}}) | matingPoint | 0..* | 1 | Specifies the MatingPoints defined by the MatingSpecification. |
-| [SlotCoupling]({{< relref "slotcoupling.md" >}}) | slotCoupling | 0..* | 1 |  |
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | firstConnector | 0..1 | 0..* |  |
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | secondConnector | 0..1 | 0..* |  |
+| [SlotCoupling]({{< relref "slotcoupling.md" >}}) | slotCoupling | 0..* | 1 |  |
+| [MatingPoint]({{< relref "matingpoint.md" >}}) | matingPoint | 0..* | 1 | Specifies the MatingPoints defined by the MatingSpecification. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

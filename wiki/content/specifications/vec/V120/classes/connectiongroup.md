@@ -35,12 +35,12 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Connection]({{< relref "connection.md" >}}) | connection | 2..* | 0..* | References the Connections that are grouped by the ConnectionGroup. |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | subGroup | 0..* | 0..1 | Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup. |
+| [Connection]({{< relref "connection.md" >}}) | connection | 2..* | 0..* | References the Connections that are grouped by the ConnectionGroup. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) |  | connectionGroup | 0..1 | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.      </p> |
 | [WireGrouping]({{< relref "wiregrouping.md" >}}) |  | connectionGroup | 0..1 | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p> |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 0..1 | connectionGroup | 0..* | Specifies the ConnectionGroup defined by the ConnectionSpecification. |
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) |  | connectionGroup | 0..1 | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.      </p> |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..1 | subGroup | 0..* | Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup. |

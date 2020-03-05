@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 
+
 ## General Information
 
 | Attribute               | Value |

@@ -33,8 +33,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartWithSubComponentsRole]({{< relref "partwithsubcomponentsrole.md" >}}) | moduleInList | 1..* | 0..* | References the Modules that belong to the ModuleList. If any of the referenced Modules participates in a configuration the completition components participate, too. |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | completionComponents | 1..* | 0..* | References the components that are used as completition, if any of the Modules in the ModuleList appears in a configuration. |
+| [PartWithSubComponentsRole]({{< relref "partwithsubcomponentsrole.md" >}}) | moduleInList | 1..* | 0..* | References the Modules that belong to the ModuleList. If any of the referenced Modules participates in a configuration the completition components participate, too. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -34,10 +34,10 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1..* | 0..1 | <p> Specifies the WireElements that are available in the <i>WireSpecification</i>.      </p> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | wireElementSpecification | 1 | 0..* | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
+| [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1..* | 0..1 | <p> Specifies the WireElements that are available in the <i>WireSpecification</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | wireSpecification | 0..* | <p> References the WireSpecifications for which the compatibility statement is stated.      </p> |
 | [WireRole]({{< relref "wirerole.md" >}}) | 0..* | wireSpecification | 1 | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |
+| [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | wireSpecification | 0..* | <p> References the WireSpecifications for which the compatibility statement is stated.      </p> |

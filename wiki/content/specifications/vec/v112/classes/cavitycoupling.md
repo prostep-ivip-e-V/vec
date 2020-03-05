@@ -32,8 +32,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityReference]({{< relref "cavityreference.md" >}}) | firstCavity | 1 | 0..* |  |
 | [CavityReference]({{< relref "cavityreference.md" >}}) | secondCavity | 1 | 0..* |  |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | firstCavity | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

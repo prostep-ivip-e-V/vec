@@ -36,8 +36,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) | partOrUsageRelatedSpecification | 0..* | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399 |
 | [PartSubstitutionSpecification]({{< relref "partsubstitutionspecification.md" >}}) | partSubstitution | 0..1 |  |  |
+| [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) | partOrUsageRelatedSpecification | 0..* | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399 |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

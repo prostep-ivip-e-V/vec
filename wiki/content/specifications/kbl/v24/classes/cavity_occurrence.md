@@ -31,10 +31,10 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Mated_cavities | 0..* | 0..* |  |
-| [Cavity_plug_occurrence]({{< relref "cavity_plug_occurrence.md" >}}) | Associated_plug  | 0..1 | 1..* |  |
 | [Cavity]({{< relref "cavity.md" >}}) | Part | 1 | 1..* |  |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
+| [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | Mated_cavities | 0..* | 0..* |  |
+| [Cavity_plug_occurrence]({{< relref "cavity_plug_occurrence.md" >}}) | Associated_plug  | 0..1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -36,14 +36,14 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | Reference_element | 0..* | 0..* |  |
-| [Connector_housing]({{< relref "connector_housing.md" >}}) | Part | 1 | 1..* |  |
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
 | [Slot_occurrence]({{< relref "slot_occurrence.md" >}}) | Slots | 0..* | 1 |  |
 | [Contact_point]({{< relref "contact_point.md" >}}) | Contact_points | 0..* | 1 |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Connector_housing]({{< relref "connector_housing.md" >}}) | Part | 1 | 1..* |  |
+| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | Reference_element | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
 | [Accessory_occurrence]({{< relref "accessory_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
+| [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | 0..* | Reference_element | 0..* |  |
 | [Specified_connector_occurrence]({{< relref "specified_connector_occurrence.md" >}}) | 0..* | Related_occurrence | 1 |  |

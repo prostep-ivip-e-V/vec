@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines valid shapes of the cross section of a tube.      </p>
+
 ## General Information
 
 | Attribute               | Value |

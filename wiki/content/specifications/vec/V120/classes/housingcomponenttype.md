@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the valid HousingComponentTypes. The values in this Enumeration are matching the relevant <i>PrimaryPartTypes. </i>For a description of the values see <i>PrimaryPartType.</i>      </p>
+
 ## General Information
 
 | Attribute               | Value |

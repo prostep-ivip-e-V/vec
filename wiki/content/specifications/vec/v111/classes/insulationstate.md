@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p>Enumeration for the definition of the insulation state of the splice.  </p>
+
 ## General Information
 
 | Attribute               | Value |

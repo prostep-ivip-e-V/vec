@@ -48,8 +48,8 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Module_family]({{< relref "module_family.md" >}}) | Of_family | 0..1 | 0..* |  |
 | [Module_configuration]({{< relref "module_configuration.md" >}}) | Module_configuration | 1 | 1 |  |
+| [Module_family]({{< relref "module_family.md" >}}) | Of_family | 0..1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

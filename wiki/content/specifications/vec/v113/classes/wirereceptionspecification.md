@@ -44,5 +44,5 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireEndAccessorySpecification]({{< relref "wireendaccessoryspecification.md" >}}) |  | wireReceptionSpecification | 0..1 | <p> References the single <i>WireReceptionSpecification</i> that is specifying the properties of the <i>WireEndAccessory</i> that are related to wire.      </p> |
 | [WireReception]({{< relref "wirereception.md" >}}) | 0..* | wireReceptionSpecification | 0..1 | References the WireReceptionSpecification that specifies the WireReception. |
+| [WireEndAccessorySpecification]({{< relref "wireendaccessoryspecification.md" >}}) |  | wireReceptionSpecification | 0..1 | <p> References the single <i>WireReceptionSpecification</i> that is specifying the properties of the <i>WireEndAccessory</i> that are related to wire.      </p> |

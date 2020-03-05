@@ -36,6 +36,6 @@ menu_name: kbl-2.4.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | 0..* | Cavities | 0..* |  |
 | [Slot]({{< relref "slot.md" >}}) | 1 | Cavities | 1..* |  |
+| [Component_box_connection]({{< relref "component_box_connection.md" >}}) | 0..* | Cavities | 0..* |  |
 | [Cavity_occurrence]({{< relref "cavity_occurrence.md" >}}) | 1..* | Part | 1 |  |

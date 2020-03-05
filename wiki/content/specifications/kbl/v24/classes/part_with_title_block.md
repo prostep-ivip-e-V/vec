@@ -47,5 +47,5 @@ menu_name: kbl-2.4
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Approval]({{< relref "approval.md" >}}) | 0..* | Is_applied_to | 1..* |  |
 | [Creation]({{< relref "creation.md" >}}) | 0..* | Is_applied_to | 1..* |  |
+| [Approval]({{< relref "approval.md" >}}) | 0..* | Is_applied_to | 1..* |  |

@@ -39,5 +39,5 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Connection]({{< relref "connection.md" >}}) | 1 | connectionEnd | 2..* | Specifies the ConnectionEnds of the Connection. |
 | [WireEnd]({{< relref "wireend.md" >}}) | 0..* | connectionEnd | 0..1 |  |
+| [Connection]({{< relref "connection.md" >}}) | 1 | connectionEnd | 2..* | Specifies the ConnectionEnds of the Connection. |

@@ -42,7 +42,7 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
-| [Material]({{< relref "material.md" >}}) | Material_information | 0..1 | 1 |  |
 | [Change]({{< relref "change.md" >}}) | Change | 0..* | 1 |  |
+| [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* |  |
+| [Material]({{< relref "material.md" >}}) | Material_information | 0..1 | 1 |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |

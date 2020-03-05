@@ -35,12 +35,12 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Role]({{< relref "role.md" >}}) | role | 0..* | 0..1 | <p> Specifies the different roles of the OccurrenceOrUsage.      </p> |
-| [Instruction]({{< relref "instruction.md" >}}) | installationInstruction | 0..* | 0..1 | Room to specify InstallationInstruction(s) for the OccurrenceOrUsage. |
 | [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
+| [Instruction]({{< relref "instruction.md" >}}) | installationInstruction | 0..* | 0..1 | Room to specify InstallationInstruction(s) for the OccurrenceOrUsage. |
+| [Role]({{< relref "role.md" >}}) | role | 0..* | 0..1 | <p> Specifies the different roles of the OccurrenceOrUsage.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | 0..* | occurrenceOrUsage | 0..1 | Specifies the OccurrenceOrUsage which is represented by the view item. |
 | [OccurrenceOrUsageViewItem3D]({{< relref "occurrenceorusageviewitem3d.md" >}}) | 0..* | occurrenceOrUsage | 0..1 | <p> Specifies the OccurrenceOrUsage which is represented by the view item.      </p> |
+| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | 0..* | occurrenceOrUsage | 0..1 | Specifies the OccurrenceOrUsage which is represented by the view item. |
 | [PartWithSubComponentsRole]({{< relref "partwithsubcomponentsrole.md" >}}) | 0..* | subComponent | 1..* | <p> References the subcomponents that belong to this instance of a PartWithSubComponents.      </p> |

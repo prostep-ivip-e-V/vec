@@ -32,9 +32,9 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityCoupling]({{< relref "cavitycoupling.md" >}}) | cavityCoupling | 0..* | 1 |  |
-| [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | secondSlot | 1 | 0..* |  |
 | [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | firstSlot | 1 | 0..* |  |
+| [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | secondSlot | 1 | 0..* |  |
+| [CavityCoupling]({{< relref "cavitycoupling.md" >}}) | cavityCoupling | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

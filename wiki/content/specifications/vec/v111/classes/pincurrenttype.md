@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Defines the different available current types of a pin.      </p>
+
 ## General Information
 
 | Attribute               | Value |

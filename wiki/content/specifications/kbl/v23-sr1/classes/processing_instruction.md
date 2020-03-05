@@ -34,7 +34,7 @@ menu_name: kbl-2.3.sr1
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [Wiring_group]({{< relref "wiring_group.md" >}}) | 1 | Processing_information | 0..* |  |
-| [Node]({{< relref "node.md" >}}) | 1 | Processing_information | 0..* |  |
-| [Part]({{< relref "part.md" >}}) | 1 | Processing_information | 0..* |  |
 | [Protection_area]({{< relref "protection_area.md" >}}) | 1 | Processing_information | 0..* |  |
 | [Connection]({{< relref "connection.md" >}}) | 1 | Processing_information | 0..* |  |
+| [Node]({{< relref "node.md" >}}) | 1 | Processing_information | 0..* |  |
+| [Part]({{< relref "part.md" >}}) | 1 | Processing_information | 0..* |  |

@@ -36,10 +36,10 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) | opticalInformation | 0..* | 1 | <p> Specifies the optical information of the pin, if it has the type optical.      </p> |
-| [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | voltageInformation | 0..* | 1 | <p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
-| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
 | [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p> |
+| [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) | opticalInformation | 0..* | 1 | <p> Specifies the optical information of the pin, if it has the type optical.      </p> |
+| [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
+| [PinVoltageInformation]({{< relref "pinvoltageinformation.md" >}}) | voltageInformation | 0..* | 1 | <p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

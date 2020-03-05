@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Defines possible sources for <i>MassInformations</i>.       </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -33,8 +33,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 0..* | 1 | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 | [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | housingSpecification | 0..1 | 0..* | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 0..* | 1 | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -32,8 +32,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartStructureSpecification]({{< relref "partstructurespecification.md" >}}) | partStructureSpecification | 1 | 0..* | <p> References the <i>PartStructureSpecification </i>that is instantiated by this <i>PartWithSubComponentsRole</i>.      </p> |
 | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | subComponent | 1..* | 0..* | <p> References the subcomponents that belong to this instance of a PartWithSubComponents.      </p> |
+| [PartStructureSpecification]({{< relref "partstructurespecification.md" >}}) | partStructureSpecification | 1 | 0..* | <p> References the <i>PartStructureSpecification </i>that is instantiated by this <i>PartWithSubComponentsRole</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -33,8 +33,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TopologyNode]({{< relref "topologynode.md" >}}) | topologyNode | 0..* | 1 | Specifies the TopologyNodes defined by the TopologySpecification. |
 | [TopologySegment]({{< relref "topologysegment.md" >}}) | topologySegment | 0..* | 1 | Specifies the TopologySegments defined by the TopologySpecification. |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | topologyNode | 0..* | 1 | Specifies the TopologyNodes defined by the TopologySpecification. |
 | [Zone]({{< relref "zone.md" >}}) | zone | 0..* | 0..1 | <p> Specifies the Zones that are part of the TopologySpecification.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

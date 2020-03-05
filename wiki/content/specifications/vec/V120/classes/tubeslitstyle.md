@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines valid types / styles of a slitted tube.      </p>
+
 ## General Information
 
 | Attribute               | Value |

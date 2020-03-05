@@ -35,8 +35,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Project]({{< relref "project.md" >}}) | usedInProject | 0..* | 0..* | <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p> |
 | [UsageNode]({{< relref "usagenode.md" >}}) | subUsageNodes | 0..* | 0..1 |  |
+| [Project]({{< relref "project.md" >}}) | usedInProject | 0..* | 0..* | <p> Specifies the <i>Projects</i> in which the <i>UsageNode</i> can be used.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -35,11 +35,11 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Project]({{< relref "project.md" >}}) | project | 0..* | 1 | Specifies the Projects used in the VEC-file. |
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | documentVersion | 0..* | 1 | Specifies the DocumentVersions contained in the VEC-file. |
-| [Unit]({{< relref "unit.md" >}}) | unit | 0..* | 1 | Specifies the Units used in the VEC-file. |
-| [Contract]({{< relref "contract.md" >}}) | contract | 0..* | 1 | Specifies the contracts used in the VEC-file. |
-| [PartVersion]({{< relref "partversion.md" >}}) | partVersion | 0..* | 1 | Specifies the PartVersions contained in the VEC-file. |
-| [ItemHistoryEntry]({{< relref "itemhistoryentry.md" >}}) | itemHistoryEntry | 0..* | 1 | Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file. |
 | [CopyrightInformation]({{< relref "copyrightinformation.md" >}}) | copyrightInformation | 0..* | 1 | Specifies the CopyrightInformation used in the VEC-file. |
+| [Unit]({{< relref "unit.md" >}}) | unit | 0..* | 1 | Specifies the Units used in the VEC-file. |
 | [ConformanceClass]({{< relref "conformanceclass.md" >}}) | compliantConformanceClass | 0..* | 1 | Specifies references to the conformance classes that apply to the VEC-file. |
+| [Project]({{< relref "project.md" >}}) | project | 0..* | 1 | Specifies the Projects used in the VEC-file. |
+| [Contract]({{< relref "contract.md" >}}) | contract | 0..* | 1 | Specifies the contracts used in the VEC-file. |
+| [ItemHistoryEntry]({{< relref "itemhistoryentry.md" >}}) | itemHistoryEntry | 0..* | 1 | Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file. |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | documentVersion | 0..* | 1 | Specifies the DocumentVersions contained in the VEC-file. |
+| [PartVersion]({{< relref "partversion.md" >}}) | partVersion | 0..* | 1 | Specifies the PartVersions contained in the VEC-file. |

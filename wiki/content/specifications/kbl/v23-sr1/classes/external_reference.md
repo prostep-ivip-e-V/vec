@@ -39,5 +39,5 @@ menu_name: kbl-2.3.sr1
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [KBL_container]({{< relref "kbl_container.md" >}}) | 1 | External_reference | 0..* |  |
-| [Part]({{< relref "part.md" >}}) | 0..* | External_references | 0..* |  |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | External_references | 0..* |  |
+| [Part]({{< relref "part.md" >}}) | 0..* | External_references | 0..* |  |

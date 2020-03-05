@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Defines the firmness with which a tape is applied to a segment.
+
 ## General Information
 
 | Attribute               | Value |

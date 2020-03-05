@@ -31,6 +31,6 @@ menu_name: kbl-2.4.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Harness]({{< relref "harness.md" >}}) | 1 | Components | 0..* |  |
 | [Assembly_part]({{< relref "assembly_part.md" >}}) | 1 | Components | 0..* |  |
+| [Harness]({{< relref "harness.md" >}}) | 1 | Components | 0..* |  |
 | [Module_configuration]({{< relref "module_configuration.md" >}}) | 0..* | Controlled_components | 0..* |  |

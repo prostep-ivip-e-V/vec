@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> Defines the predefined <i>Document_types</i> of an <i>External_reference.</i> A certain <i>Document_type </i>has normally a typical set of information that is defined within its scope.      </p>
+
 ## General Information
 
 | Attribute               | Value |

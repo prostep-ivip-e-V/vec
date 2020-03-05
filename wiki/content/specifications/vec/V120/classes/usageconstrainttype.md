@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Enumeration for the definition of the type of a UsageConstraint. Valid values are allow and deny.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -40,10 +40,10 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [TopologyNode]({{< relref "topologynode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p> |
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
-| [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p> |
 | [NetworkNode]({{< relref "networknode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p> |
+| [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>ComponentNode</i>.      </p> |
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p> |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | 0..* | realizedUsageNode | 0..1 | <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p> |
 | [UsageNode]({{< relref "usagenode.md" >}}) | 0..1 | subUsageNodes | 0..* |  |
 | [UsageConstraint]({{< relref "usageconstraint.md" >}}) | 0..* | usageNode | 0..* | References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageConstraint. |
 | [UsageNodeSpecification]({{< relref "usagenodespecification.md" >}}) | 0..1 | usageNodes | 0..* | <p> Specifies the <i>UsageNodes</i> defined by this <i>UsageNodeSpecification.</i>      </p> |

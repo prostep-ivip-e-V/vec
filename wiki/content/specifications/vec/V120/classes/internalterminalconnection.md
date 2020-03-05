@@ -32,8 +32,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TerminalReception]({{< relref "terminalreception.md" >}}) | terminalReception | 0..* | 0..1 | References the TerminalReceptions that participate in the InternalTerminalConnection. |
 | [WireReception]({{< relref "wirereception.md" >}}) | wireReception | 0..* | 0..1 | References the WireReceptions that participate in the InternalTerminalConnection. |
+| [TerminalReception]({{< relref "terminalreception.md" >}}) | terminalReception | 0..* | 0..1 | References the TerminalReceptions that participate in the InternalTerminalConnection. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

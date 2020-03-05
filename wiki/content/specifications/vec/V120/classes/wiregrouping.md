@@ -33,9 +33,9 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..1 |  | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p> |
-| [WireGrouping]({{< relref "wiregrouping.md" >}}) | containedWireGroupings | 0..* | 0..1 | <p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p> |
 | [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p> |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | relatedWireElementReference | 0..* | 0..* | <p> References the concrete wire elements (<i>WireElementReference</i>) that are grouped by the WireGrouping.      </p> |
+| [WireGrouping]({{< relref "wiregrouping.md" >}}) | containedWireGroupings | 0..* | 0..1 | <p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

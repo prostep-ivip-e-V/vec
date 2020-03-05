@@ -34,8 +34,8 @@ menu_name: vec-1.1.3
 |----------|----------|-----------|-----------|-----------------|
 | [ComponentConnector]({{< relref "componentconnector.md" >}}) | componentConnector | 0..1 | 0..* | References the ComponentConnector that is realized by the referenced HousingComponentReference. |
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | connectorHousingRole | 0..1 | 0..1 |  |
-| [HousingComponent]({{< relref "housingcomponent.md" >}}) | housingComponent | 1 | 0..* | Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401) |
 | [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | pinComponentRef | 0..* | 1 | Specifies the PinComponentReferences used in the HousingComponentReference.  (KBLFRM-401) |
+| [HousingComponent]({{< relref "housingcomponent.md" >}}) | housingComponent | 1 | 0..* | Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401) |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

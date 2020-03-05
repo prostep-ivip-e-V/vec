@@ -32,8 +32,8 @@ menu_name: kbl-2.4
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
-| [Connection]({{< relref "connection.md" >}}) | Routed_wire | 1 | 0..* |  |
 | [Segment]({{< relref "segment.md" >}}) | Segments | 0..* | 0..* |  |
+| [Connection]({{< relref "connection.md" >}}) | Routed_wire | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

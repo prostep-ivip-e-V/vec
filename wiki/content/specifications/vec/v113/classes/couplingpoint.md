@@ -33,9 +33,9 @@ menu_name: vec-1.1.3
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | firstConnector | 0..1 | 0..* |  |
-| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | secondConnector | 0..1 | 0..* |  |
 | [MatingPoint]({{< relref "matingpoint.md" >}}) | matingPoint | 0..* | 1 | Specifies the MatingPoints defined by the MatingSpecification. |
 | [SlotCoupling]({{< relref "slotcoupling.md" >}}) | slotCoupling | 0..* | 1 |  |
+| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | secondConnector | 0..1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

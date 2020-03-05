@@ -38,10 +38,10 @@ menu_name: kbl-2.4.sr1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Contact_point]({{< relref "contact_point.md" >}}) | Contact_points | 0..* | 1 |  |
-| [Connector_housing]({{< relref "connector_housing.md" >}}) | Part | 1 | 1..* |  |
-| [Slot_occurrence]({{< relref "slot_occurrence.md" >}}) | Slots | 0..* | 1 |  |
 | [Reference_element]({{< relref "reference_element.md" >}}) | Reference_element | 0..* | 0..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Connector_housing]({{< relref "connector_housing.md" >}}) | Part | 1 | 1..* |  |
+| [Slot_occurrence]({{< relref "slot_occurrence.md" >}}) | Slots | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

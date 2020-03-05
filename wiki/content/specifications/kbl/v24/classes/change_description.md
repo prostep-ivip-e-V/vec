@@ -40,8 +40,8 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Change]({{< relref "change.md" >}}) | Related_changes | 0..* | 0..* |  |
 | [Changed_element]({{< relref "changed_element.md" >}}) | Changed_elements | 0..* | 1 |  |
+| [Change]({{< relref "change.md" >}}) | Related_changes | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

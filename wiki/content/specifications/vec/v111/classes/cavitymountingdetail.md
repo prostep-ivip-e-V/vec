@@ -31,8 +31,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1 | 0..* | References the cavity that is used for the detailed description of the cavity mounting. |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | terminalReceptionReference | 1 | 0..* | References the TerminalReception that is used for the detailed description of the cavity mounting. |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1 | 0..* | References the cavity that is used for the detailed description of the cavity mounting. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

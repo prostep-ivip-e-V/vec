@@ -32,8 +32,8 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Cavity_seal]({{< relref "cavity_seal.md" >}}) | Part | 1 | 1..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [Cavity_seal]({{< relref "cavity_seal.md" >}}) | Part | 1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

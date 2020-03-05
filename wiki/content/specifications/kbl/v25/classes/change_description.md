@@ -40,9 +40,9 @@ menu_name: kbl-2.5
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Changed_element]({{< relref "changed_element.md" >}}) | Changed_elements | 0..* | 1 |  |
 | [Change]({{< relref "change.md" >}}) | Related_changes | 0..* | 0..* |  |
 | [External_reference]({{< relref "external_reference.md" >}}) | External_references | 0..* | 0..* | <p> Allows the referencing of external / additional documents related to the change description.      </p> |
+| [Changed_element]({{< relref "changed_element.md" >}}) | Changed_elements | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -33,6 +33,6 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | Specifies the NetWorkNodes defined in the NetSpecification. |
 | [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification. |
 | [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |
+| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | Specifies the NetWorkNodes defined in the NetSpecification. |

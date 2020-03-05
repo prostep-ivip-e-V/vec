@@ -33,5 +33,5 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p> |
 | [ExternalMapping]({{< relref "externalmapping.md" >}}) | mappings | 0..* | 1 | <p> Specifies the mappings of individual element.      </p> |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p> |

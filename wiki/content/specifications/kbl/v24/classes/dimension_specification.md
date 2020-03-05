@@ -33,11 +33,11 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 |  |
+| [Placed_element]({{< relref "placed_element.md" >}}) | target | 1 | 0..* |  |
 | [Segment]({{< relref "segment.md" >}}) | Segments | 0..* | 0..* | <p> Defines an ordered list of segments along which the dimension specification is defined.      </p> |
 | [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 0..1 |  |
-| [Tolerance]({{< relref "tolerance.md" >}}) | Tolerance_indication | 0..1 | 1 |  |
 | [Placed_element]({{< relref "placed_element.md" >}}) | origin | 1 | 0..* |  |
-| [Placed_element]({{< relref "placed_element.md" >}}) | target | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

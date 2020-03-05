@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines valid values for the type of VariantGroups.      </p>
+
 ## General Information
 
 | Attribute               | Value |

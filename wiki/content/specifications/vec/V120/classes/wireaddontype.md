@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Specifies possible values for the t<i>ype </i>of wire add-ons (e.g. <i>CavityAddOn</i>).
+
 ## General Information
 
 | Attribute               | Value |

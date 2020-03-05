@@ -34,9 +34,9 @@ menu_name: vec-1.1.1
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [FittingOutlet]({{< relref "fittingoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>FittingOutlet</i> in a PlaceableElementSpecification.      </p> |
-| [WireReception]({{< relref "wirereception.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p> |
 | [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | 0..* | placementPoint | 1 | <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p> |
+| [CableLeadThrough]({{< relref "cableleadthrough.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableLeadThrough</i> in a PlaceableElementSpecification.      </p> |
 | [CableDuctOutlet]({{< relref "cableductoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p> |
 | [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | placementPoint | 0..* | <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p> |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
-| [CableLeadThrough]({{< relref "cableleadthrough.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableLeadThrough</i> in a PlaceableElementSpecification.      </p> |
+| [WireReception]({{< relref "wirereception.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p> |

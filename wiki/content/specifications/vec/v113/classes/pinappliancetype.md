@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.3
 ---
 <p> Classifies the appliance of a Pin in terms of the duration of the appliance.     </p>      <p> E.g. the power supply pin of a power window has &quot;shortTerm&quot; PinApplianceType, in contrast to the head light which is a &quot;long term&quot;.      </p>
+
 ## General Information
 
 | Attribute               | Value |

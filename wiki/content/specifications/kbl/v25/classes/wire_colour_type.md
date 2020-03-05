@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> This <i>OpenEnumeration</i> defines valid values for the different wire colour types.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -38,5 +38,5 @@ menu_name: vec-1.1.3
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | 0..1 | terminalReception | 0..* | References the TerminalReceptions that participate in the InternalTerminalConnection. |
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | terminalReception | 0..* | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | 0..* | terminalReception | 1 | <p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p> |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | terminalReception | 0..* | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |

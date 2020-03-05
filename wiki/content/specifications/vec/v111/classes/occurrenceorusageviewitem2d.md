@@ -34,8 +34,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Transformation2D]({{< relref "transformation2d.md" >}}) | orientation | 0..1 | 1 | Specifies the orientation of the view item. |
 | [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | occurrenceOrUsage | 0..1 | 0..* | Specifies the OccurrenceOrUsage which is represented by the view item. |
+| [Transformation2D]({{< relref "transformation2d.md" >}}) | orientation | 0..1 | 1 | Specifies the orientation of the view item. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

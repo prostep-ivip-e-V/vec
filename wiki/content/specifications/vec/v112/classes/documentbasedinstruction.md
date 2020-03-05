@@ -31,5 +31,5 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | referencedDocument | 1 | 0..* | References the DocumentVersion that is used as an Instruction. |
 | [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | referencedSheetOrChapter | 0..1 | 0..* | References the SheetOrChapter that is used as an Instruction. |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | referencedDocument | 1 | 0..* | References the DocumentVersion that is used as an Instruction. |

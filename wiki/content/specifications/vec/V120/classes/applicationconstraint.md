@@ -37,8 +37,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Project]({{< relref "project.md" >}}) | project | 0..* |  | <p> &#160;Defines the projects for which the application constraint applies.      </p> |
 | [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | baseInclusion | 0..1 | 0..* | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |
+| [Project]({{< relref "project.md" >}}) | project | 0..* |  | <p> &#160;Defines the projects for which the application constraint applies.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

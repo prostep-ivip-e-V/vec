@@ -33,5 +33,5 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |
 | [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications. |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |

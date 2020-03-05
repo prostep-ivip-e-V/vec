@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the valid primary locking types for terminals.      </p>
+
 ## General Information
 
 | Attribute               | Value |

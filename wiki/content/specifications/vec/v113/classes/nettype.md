@@ -37,6 +37,6 @@ menu_name: vec-1.1.3
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netType | 0..* |  |
-| [Net]({{< relref "net.md" >}}) |  | netType | 0..1 |  |
 | [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
+| [Net]({{< relref "net.md" >}}) |  | netType | 0..1 |  |
 | [NetworkPort]({{< relref "networkport.md" >}}) | 0..* | netType | 0..1 |  |

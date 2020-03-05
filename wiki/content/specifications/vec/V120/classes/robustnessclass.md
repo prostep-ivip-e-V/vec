@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 Defines the literals that shall be used for specific robustness classes.
+
 ## General Information
 
 | Attribute               | Value |

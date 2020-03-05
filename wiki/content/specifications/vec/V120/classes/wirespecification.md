@@ -34,8 +34,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | wireElementSpecification | 1 | 0..* | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
 | [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1 | 0..1 | <p> Specifies the <i>WireElement</i> that represents the root of the <i>WireSpecification</i>.      </p> |
+| [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | wireElementSpecification | 1 | 0..* | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

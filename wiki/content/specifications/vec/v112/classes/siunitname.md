@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Enumeration for the definition of SI unit names. In difference to the SI-System gram is used as literal for the measurement of mass, instead of kilogram. Since a unit is formed with prefix and unit name gram would have to be defined as milli kilogram otherwise. </p>
+
 ## General Information
 
 | Attribute               | Value |

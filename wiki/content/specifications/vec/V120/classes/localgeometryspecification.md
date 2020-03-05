@@ -34,7 +34,7 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [LocalPosition]({{< relref "localposition.md" >}}) | positions | 0..* | 1 | <p> All position defined by this <i>LocalGeometrySpecification.</i>      </p> |
 | [Transformation3D]({{< relref "transformation3d.md" >}}) | boundingBoxPositioning | 0..1 | 0..1 | <p> The transformation that defines the positioning of the bounding box in coordinate system of the component.      </p> |
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 |  | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
+| [LocalPosition]({{< relref "localposition.md" >}}) | positions | 0..* | 1 | <p> All position defined by this <i>LocalGeometrySpecification.</i>      </p> |
 | [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 0..1 | <p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p> |
+| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 |  | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |

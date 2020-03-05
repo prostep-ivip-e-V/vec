@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Enumeration for the definition of the type of relationship represented by an ItemHistoryEntry. (see KBLFRM-271)      </p>
+
 ## General Information
 
 | Attribute               | Value |

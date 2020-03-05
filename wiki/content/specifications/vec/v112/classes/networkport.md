@@ -38,6 +38,6 @@ menu_name: vec-1.1.2
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Net]({{< relref "net.md" >}}) | 1 | networkPort | 1..* | References the NetworkPorts that are connected by the Net. |
 | [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | networkPort | 0..1 | References the NetworkPort that is realized by the ComponentPort. |
+| [Net]({{< relref "net.md" >}}) | 1 | networkPort | 1..* | References the NetworkPorts that are connected by the Net. |
 | [NetworkNode]({{< relref "networknode.md" >}}) | 1 | port | 0..* | Specifies the NetworkPorts of a NetworkNode. |

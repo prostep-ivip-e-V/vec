@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p>Enumeration for the definition of a value determination. (see KBLFRM-316) </p>
+
 ## General Information
 
 | Attribute               | Value |

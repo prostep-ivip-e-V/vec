@@ -40,10 +40,10 @@ menu_name: kbl-2.3.sr1
 |----------|----------|-----------|-----------|-----------------|
 | [Protection_area]({{< relref "protection_area.md" >}}) | Protection_area | 0..* | 1 |  |
 | [Node]({{< relref "node.md" >}}) | End_node | 1 | 0..* |  |
-| [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
 | [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
 | [B_spline_curve]({{< relref "b_spline_curve.md" >}}) | Center_curve | 0..* | 1 |  |
 | [Cross_section_area]({{< relref "cross_section_area.md" >}}) | Cross_section_area_information | 0..* | 1 |  |
+| [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -35,9 +35,9 @@ menu_name: kbl-2.3.sr1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [Accessory]({{< relref "accessory.md" >}}) | Part | 1 | 1..* |  |
 | [Connector_occurrence]({{< relref "connector_occurrence.md" >}}) | Reference_element | 0..* | 0..* |  |
 | [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
-| [Accessory]({{< relref "accessory.md" >}}) | Part | 1 | 1..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -40,6 +40,6 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | connection | 2..* | References the Connections that are grouped by the ConnectionGroup. |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 1 | connection | 0..* | Specifies the Connection defined by the ConnectionSpecification. |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | connection | 0..1 | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341 |
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | connection | 2..* | References the Connections that are grouped by the ConnectionGroup. |

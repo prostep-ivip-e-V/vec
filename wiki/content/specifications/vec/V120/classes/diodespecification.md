@@ -38,5 +38,5 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | cathode | 0..1 | 0..* |  |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | anode | 0..1 | 0..* |  |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | cathode | 0..1 | 0..* |  |

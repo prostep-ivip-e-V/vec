@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.1
 ---
 <p> Enumeration for the definition of AnchorType of the SegmentLocation.      </p>
+
 ## General Information
 
 | Attribute               | Value |

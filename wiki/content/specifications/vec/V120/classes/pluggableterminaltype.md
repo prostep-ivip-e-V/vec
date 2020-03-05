@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines valid values for the type of PluggableTerminals. The type defines constraints about the numbers of wire and&#160;terminal receptions and their relations.      </p>
+
 ## General Information
 
 | Attribute               | Value |

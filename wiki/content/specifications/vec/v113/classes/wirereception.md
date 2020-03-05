@@ -33,11 +33,11 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..1 | 0..* | <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p> |
 | [WireReceptionSpecification]({{< relref "wirereceptionspecification.md" >}}) | wireReceptionSpecification | 0..1 | 0..* | References the WireReceptionSpecification that specifies the WireReception. |
+| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..1 | 0..* | <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | wireReception | 0..* | Specifies the WireReceptions of the terminal described by the TerminalSpecification. |
 | [WireReceptionReference]({{< relref "wirereceptionreference.md" >}}) | 0..* | wireReception | 1 | <p> References the <i>WireReception</i> that is instanced by this <i>WireReceptionReference.</i>      </p> |
+| [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | wireReception | 0..* | Specifies the WireReceptions of the terminal described by the TerminalSpecification. |
 | [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | 0..1 | wireReception | 0..* | References the WireReceptions that participate in the InternalTerminalConnection. |

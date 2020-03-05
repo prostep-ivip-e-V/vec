@@ -34,9 +34,9 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [PartVersion]({{< relref "partversion.md" >}}) | firstTerminal | 1 | 0..* | <p> References the first terminal of the TerminalPairing.      </p> |
 | [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | referencedCoreSpecification | 1 | 0..* | <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p> |
 | [PartVersion]({{< relref "partversion.md" >}}) | secondTerminal | 1 | 0..* | <p> References the second terminal of the TerminalPairing (first and second does not imply any specific order).      </p> |
-| [PartVersion]({{< relref "partversion.md" >}}) | firstTerminal | 1 | 0..* | <p> References the first terminal of the TerminalPairing.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

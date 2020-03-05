@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the shape of a wire element.      </p>
+
 ## General Information
 
 | Attribute               | Value |

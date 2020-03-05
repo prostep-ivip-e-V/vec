@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> The <i>Instruction_classification</i> of an instruction defines how <i>Instruction_type</i> and <i>Instruction_value</i> of a <i>Processing_instruction</i> or a <i>Installation_instruction</i> shall be interpreted. The interpretations and constraints are defined per literal.      </p>
+
 ## General Information
 
 | Attribute               | Value |

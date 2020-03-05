@@ -35,8 +35,8 @@ menu_name: vec-1.1.2
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [TopologySegment]({{< relref "topologysegment.md" >}}) | mandatorySegment | 0..* | 0..* | Specifies some constraints for the routing. If the path of the routing is recalculated the referenced segments must be visited. |
-| [RoutableElement]({{< relref "routableelement.md" >}}) | routedElement | 1 | 0..* | Specifies the Element that is routed. |
 | [Path]({{< relref "path.md" >}}) | path | 1 | 0..1 | Specifies a Path on the topology that is used for the routing. |
+| [RoutableElement]({{< relref "routableelement.md" >}}) | routedElement | 1 | 0..* | Specifies the Element that is routed. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

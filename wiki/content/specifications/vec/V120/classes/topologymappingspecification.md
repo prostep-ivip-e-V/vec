@@ -33,7 +33,7 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | 0..* |  |  |
 | [TopologySpecification]({{< relref "topologyspecification.md" >}}) | outerTopology | 1 |  |  |
 | [TopologySpecification]({{< relref "topologyspecification.md" >}}) | innerTopolgy | 1 |  |  |
 | [NodeMapping]({{< relref "nodemapping.md" >}}) |  | 0..* | 1 |  |
-| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | 0..* |  |  |

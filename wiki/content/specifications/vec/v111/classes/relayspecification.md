@@ -37,5 +37,5 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | switchContact | 0..* |  | References the PinComponents that are the SwitchContacts of the Relay. |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | coilContact | 0..2 |  | References the PinComponents that are the CoilContacts of the Relay.  (see KBLFRM-300) |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | switchContact | 0..* |  | References the PinComponents that are the SwitchContacts of the Relay. |

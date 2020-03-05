@@ -38,5 +38,5 @@ menu_name: vec-1.1.3
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | netGroup | 0..1 | References the NetworkGroup that is realized by the ComponentGroup. |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netGroup | 0..* | Specifies the NetGroup defined in the NetSpecification. |
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | netGroup | 0..1 | References the NetworkGroup that is realized by the ComponentGroup. |

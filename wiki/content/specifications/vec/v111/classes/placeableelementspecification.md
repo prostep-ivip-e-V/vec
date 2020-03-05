@@ -35,8 +35,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [MeasurementPoint]({{< relref "measurementpoint.md" >}}) | measurementPoint | 0..* | 1 | <p> Specifies the <i>MeasurementPoints</i> of an <i>PlaceableElement</i>.       </p> |
 | [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..* | 1 | <p> Specifies the <i>PlacementPoints</i> of an <i>PlaceableElementSpecification</i>.      </p> |
+| [MeasurementPoint]({{< relref "measurementpoint.md" >}}) | measurementPoint | 0..* | 1 | <p> Specifies the <i>MeasurementPoints</i> of an <i>PlaceableElement</i>.       </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

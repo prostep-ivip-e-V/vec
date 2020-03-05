@@ -33,8 +33,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetType]({{< relref "nettype.md" >}}) | netType | 0..1 |  |  |
 | [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 1..* | 1 | References the NetworkPorts that are connected by the Net. |
+| [NetType]({{< relref "nettype.md" >}}) | netType | 0..1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

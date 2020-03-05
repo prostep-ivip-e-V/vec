@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Specifies the type of a <i>PinComponent</i>.      </p>
+
 ## General Information
 
 | Attribute               | Value |

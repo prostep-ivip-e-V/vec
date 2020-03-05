@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> Defines the type of a Part_number since part numbers are used in the process to identify different characteristics.      </p>
+
 ## General Information
 
 | Attribute               | Value |

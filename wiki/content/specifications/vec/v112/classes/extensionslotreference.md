@@ -32,8 +32,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [EEComponentRole]({{< relref "eecomponentrole.md" >}}) | usedInserts | 0..* | 0..* | Defines the inserts used for extension slot in a defined instance. These can be more than one EEComponentRole, because of variance in a 150% specification. |
 | [ExtensionSlot]({{< relref "extensionslot.md" >}}) | extensionSlot | 1 |  |  |
+| [EEComponentRole]({{< relref "eecomponentrole.md" >}}) | usedInserts | 0..* | 0..* | Defines the inserts used for extension slot in a defined instance. These can be more than one EEComponentRole, because of variance in a 150% specification. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

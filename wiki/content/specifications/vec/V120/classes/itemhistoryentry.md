@@ -32,8 +32,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | predecessorVersion | 1 | 0..* | References the ItemVersion that is the predecessor in the ItemHistoryEntry. |
 | [ItemVersion]({{< relref "itemversion.md" >}}) | successorVersion | 1 | 0..* | References the ItemVersion that is the successor in the ItemHistoryEntry. |
+| [ItemVersion]({{< relref "itemversion.md" >}}) | predecessorVersion | 1 | 0..* | References the ItemVersion that is the predecessor in the ItemHistoryEntry. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

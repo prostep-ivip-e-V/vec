@@ -32,8 +32,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) | relatedWireRole | 2..* | 0..* | References the concrete wire elements (WireElementReference) that are grouped by the WireGrouping. |
 | [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 1 | 0..* | References the WireGroupSpecification that applies to the WireGrouping. |
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) | relatedWireRole | 2..* | 0..* | References the concrete wire elements (WireElementReference) that are grouped by the WireGrouping. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

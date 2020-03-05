@@ -35,5 +35,5 @@ menu_name: vec-1.1.3
 |----------|----------|-----------|-----------|-----------------|
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..* | 1 |  |
 | [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | Specifies the NetWorkNodes defined in the NetSpecification. |
-| [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |
 | [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification. |
+| [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |

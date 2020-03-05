@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Enumeration the define the valid states of a baseline.      </p>
+
 ## General Information
 
 | Attribute               | Value |

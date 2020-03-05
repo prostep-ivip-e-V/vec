@@ -47,8 +47,8 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Wire_colour]({{< relref "wire_colour.md" >}}) | Cover_colour | 1..* | 1 |  |
 | [Core]({{< relref "core.md" >}}) | Core | 0..* | 1 |  |
+| [Wire_colour]({{< relref "wire_colour.md" >}}) | Cover_colour | 1..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

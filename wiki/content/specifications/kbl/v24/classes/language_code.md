@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.4
 ---
 <p> Enumeration for the definition of ISO language codes.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -33,8 +33,8 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ExtensionSlotReference]({{< relref "extensionslotreference.md" >}}) | extensionSlotRef | 0..* | 1 | Specifies the ExtensionSlotReferences used in the EEComponentRole. |
-| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | housingComponentRef | 0..* | 1 | Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401) |
 | [EEComponentSpecification]({{< relref "eecomponentspecification.md" >}}) | EEComponentSpecification | 1 | 0..* | <p> References the <i>EEComponentSpecification </i>that is instanced by this <i>EEComponentRole.</i>      </p> |
+| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | housingComponentRef | 0..* | 1 | Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401) |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..1 | 0..* | References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341 |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

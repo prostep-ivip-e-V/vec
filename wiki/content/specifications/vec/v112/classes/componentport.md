@@ -34,12 +34,12 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p> |
 | [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 0..1 | 0..* | References the NetworkPort that is realized by the ComponentPort. |
+| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..1 | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..1 | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 1 | componentPort | 0..* | Specifies the ComponentPorts of the ComponentNode. |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..1 | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..1 | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
 | [ConnectionEnd]({{< relref "connectionend.md" >}}) | 0..* | connectedComponentPort | 1 | References the ComponentPort that is connected by the ConnectionEnd. |

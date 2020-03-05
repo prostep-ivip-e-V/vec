@@ -32,8 +32,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | usedPlugs | 0..* | 0..* | <p> References the plugs that are used with this CableLeadThroughReference. This association might be a 150% selection.      </p> |
 | [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | usedSeals | 0..* | 0..* |  |
+| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | usedPlugs | 0..* | 0..* | <p> References the plugs that are used with this CableLeadThroughReference. This association might be a 150% selection.      </p> |
 | [CableLeadThrough]({{< relref "cableleadthrough.md" >}}) |  | 0..1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

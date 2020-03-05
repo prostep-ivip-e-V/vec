@@ -40,14 +40,14 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> is a member of a wire group then the specification of the wire group is referenced here.      </p> |
 | [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | insulationSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> has an insulation then the specification of the insulation is referenced here.      </p> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | subWireElementSpecification | 0..* | 0..* | Specifies the contained subWireElements if the WireElement has sub elements. |
-| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | conductorSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p> |
+| [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> is a member of a wire group then the specification of the wire group is referenced here.      </p> |
 | [FillerSpecification]({{< relref "fillerspecification.md" >}}) | fillerSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> is a filler then the specification of the filler is referenced here.      </p> |
+| [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | conductorSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | 0..* | subWireElementSpecification | 0..* | Specifies the contained subWireElements if the WireElement has sub elements. |
-| [WireElement]({{< relref "wireelement.md" >}}) | 0..* | wireElementSpecification | 1 | <p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p> |
 | [WireSpecification]({{< relref "wirespecification.md" >}}) | 0..* | wireElementSpecification | 1 | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
+| [WireElement]({{< relref "wireelement.md" >}}) | 0..* | wireElementSpecification | 1 | <p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p> |

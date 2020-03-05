@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines valid values for the geometry of a <i>CableLeadThrough</i> in the sealing area.      </p>
+
 ## General Information
 
 | Attribute               | Value |

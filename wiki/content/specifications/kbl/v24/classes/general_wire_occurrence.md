@@ -31,6 +31,6 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
-| [General_wire]({{< relref "general_wire.md" >}}) | Part | 1 | 1..* |  |
 | [Wire_length]({{< relref "wire_length.md" >}}) | Length_information | 1..* | 1 |  |
+| [General_wire]({{< relref "general_wire.md" >}}) | Part | 1 | 1..* |  |
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |

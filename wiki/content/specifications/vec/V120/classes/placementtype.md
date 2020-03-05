@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines the type for which a <i>PlaceableElement</i> can be used.       </p>
+
 ## General Information
 
 | Attribute               | Value |

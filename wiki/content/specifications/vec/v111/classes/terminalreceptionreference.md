@@ -38,5 +38,5 @@ menu_name: vec-1.1.1
 |----------|----------|-----------|-----------|----------------|
 | [MatingDetail]({{< relref "matingdetail.md" >}}) | 0..* | firstTerminalReception | 1 | References the first terminal reception that is mated. |
 | [MatingDetail]({{< relref "matingdetail.md" >}}) | 0..* | secondTerminalReception | 1 | References the second terminal reception that is mated. |
-| [CavityMountingDetail]({{< relref "cavitymountingdetail.md" >}}) | 0..* | terminalReceptionReference | 1 | References the TerminalReception that is used for the detailed description of the cavity mounting. |
 | [TerminalRole]({{< relref "terminalrole.md" >}}) | 1 | terminalReceptionReference | 0..* | <p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |
+| [CavityMountingDetail]({{< relref "cavitymountingdetail.md" >}}) | 0..* | terminalReceptionReference | 1 | References the TerminalReception that is used for the detailed description of the cavity mounting. |

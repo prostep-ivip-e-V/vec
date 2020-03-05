@@ -13,6 +13,7 @@ classes:
 menu_name: kbl-2.5
 ---
 <p> The winding type defines how a wire protection (if it is a tape) is applied to the segment.      </p>
+
 ## General Information
 
 | Attribute               | Value |

@@ -36,11 +36,11 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | instanciatedOccurrence | 0..* | 0..* | <p> References the PartOccurrence which is instantiated by the PartOccurrence. This reference is for example needed in the case of usage of assemblies.      </p> |
+| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | referenceElement | 0..* | 0..* | <p> References the PartOcurrence for which this PartOccurrence is an accessory.      </p> |
 | [PartUsage]({{< relref "partusage.md" >}}) | realizedPartUsage | 0..1 | 0..* | References the PartUsage that is realized by the PartOccurrence. |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | alternativeOccurrence | 0..* | 0..* | <p> References the PartOcurrences that are an alternative for this PartOccurrence.      </p> |
 | [PartVersion]({{< relref "partversion.md" >}}) | part | 0..1 | 0..* | <p> References the PartVersion that is instantiated by this PartOccurrence.      </p> |
-| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | instanciatedOccurrence | 0..* | 0..* | <p> References the PartOccurrence which is instantiated by the PartOccurrence. This reference is for example needed in the case of usage of assemblies.      </p> |
-| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | referenceElement | 0..* | 0..* | <p> References the PartOcurrence for which this PartOccurrence is an accessory.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

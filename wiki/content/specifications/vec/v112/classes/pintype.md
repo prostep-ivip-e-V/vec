@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.1.2
 ---
 <p> Defines the type of a pin.      </p>
+
 ## General Information
 
 | Attribute               | Value |

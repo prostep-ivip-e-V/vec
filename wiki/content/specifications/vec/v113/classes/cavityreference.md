@@ -32,8 +32,8 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ComponentPort]({{< relref "componentport.md" >}}) | componentPort | 0..1 | 0..* | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
 | [Cavity]({{< relref "cavity.md" >}}) | referencedCavity | 1 | 0..* | Points to the cavity referenced by the cavity reference. |
+| [ComponentPort]({{< relref "componentport.md" >}}) | componentPort | 0..1 | 0..* | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

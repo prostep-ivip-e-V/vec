@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> There can be various reasons to define TopologyZones. These can be differentiated with these type literals.      </p>
+
 ## General Information
 
 | Attribute               | Value |

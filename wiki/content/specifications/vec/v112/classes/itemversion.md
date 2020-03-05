@@ -35,14 +35,14 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ChangeDescription]({{< relref "changedescription.md" >}}) | changeDescription | 0..* | 0..1 | Specifies the change history of the ItemVersion. |
-| [Creation]({{< relref "creation.md" >}}) | creation | 0..1 | 1 | Specifies the information about the creation of the ItemVersion. |
 | [Contract]({{< relref "contract.md" >}}) | contract | 0..* | 0..* | References the contracts that apply to an ItemVersion. |
+| [ChangeDescription]({{< relref "changedescription.md" >}}) | changeDescription | 0..* | 0..1 | Specifies the change history of the ItemVersion. |
 | [Approval]({{< relref "approval.md" >}}) | approval | 0..* | 1 | Specifies the approval information of the ItemVersion. |
+| [Creation]({{< relref "creation.md" >}}) | creation | 0..1 | 1 | Specifies the information about the creation of the ItemVersion. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | 0..* | item | 2..* | References all ItemVersion that are considered to be equivalent by the ItemEquivalence. |
 | [CopyrightInformation]({{< relref "copyrightinformation.md" >}}) | 0..1 | item | 1..* | References all ItemVersions to which the copyright information applies to. |
+| [ItemEquivalence]({{< relref "itemequivalence.md" >}}) | 0..* | item | 2..* | References all ItemVersion that are considered to be equivalent by the ItemEquivalence. |
 | [ItemHistoryEntry]({{< relref "itemhistoryentry.md" >}}) | 0..* | predecessorVersion | 1 | References the ItemVersion that is the predecessor in the ItemHistoryEntry. |
 | [ItemHistoryEntry]({{< relref "itemhistoryentry.md" >}}) | 0..* | successorVersion | 1 | References the ItemVersion that is the successor in the ItemHistoryEntry. |

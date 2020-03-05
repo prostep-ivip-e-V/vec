@@ -31,9 +31,9 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1..* | 0..* | References the cavities that are used for the cavity mounting. |
 | [CavityMountingDetail]({{< relref "cavitymountingdetail.md" >}}) | cavityMountingDetail | 0..* | 1 | <p> Specifies the CavityMoutingDetails, if a detailed description of the relationships between Cavities and TerminalReceptions is needed.      </p> |
 | [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | replacedPlug | 0..* | 0..* | References the cavity plugs that are obsolete if the cavity mounting is realized. |
-| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1..* | 0..* | References the cavities that are used for the cavity mounting. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

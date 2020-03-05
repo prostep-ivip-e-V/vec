@@ -33,8 +33,8 @@ menu_name: vec-1.1.2
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlaceableElementRole]({{< relref "placeableelementrole.md" >}}) | placedElement | 1..* | 0..* | References the PlaceableElementRoles placed by the Placement. |
 | [Placement]({{< relref "placement.md" >}}) | isOnTopOf | 0..* | 0..* | Specifies constraints on ordering of Placements. All referenced Placements have to be below (nearer to the center of the Segment) this Placement.  (see KBLFRM-171) |
+| [PlaceableElementRole]({{< relref "placeableelementrole.md" >}}) | placedElement | 1..* | 0..* | References the PlaceableElementRoles placed by the Placement. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

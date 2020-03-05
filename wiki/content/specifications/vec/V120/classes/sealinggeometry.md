@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> Defines valid values of the geometry of a cavity sealing. It defines the cross-section geometry.      </p>
+
 ## General Information
 
 | Attribute               | Value |

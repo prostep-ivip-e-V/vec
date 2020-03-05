@@ -33,5 +33,5 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Placement]({{< relref "placement.md" >}}) | placement | 0..* | 1 | Specifies the Placements defined by the PlacementSpecification. |
 | [Dimension]({{< relref "dimension.md" >}}) | dimension | 0..* | 1 | Specifies the Dimensions defined by the PlacementSpecification. |
+| [Placement]({{< relref "placement.md" >}}) | placement | 0..* | 1 | Specifies the Placements defined by the PlacementSpecification. |

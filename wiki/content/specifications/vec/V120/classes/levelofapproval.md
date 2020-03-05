@@ -13,6 +13,7 @@ classes:
 menu_name: vec-1.2.0
 ---
 <p> The&#160;LevelOfApproval standardizes the approval levels most engineering processes have in common. See <i>Approval.levelOfApproval </i>for more details.      </p>
+
 ## General Information
 
 | Attribute               | Value |

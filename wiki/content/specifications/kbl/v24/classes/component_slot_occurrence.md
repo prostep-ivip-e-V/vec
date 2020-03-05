@@ -32,8 +32,8 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Component_slot]({{< relref "component_slot.md" >}}) | Part | 1 | 0..* |  |
 | [Component_cavity_occurrence]({{< relref "component_cavity_occurrence.md" >}}) | Component_cavities | 0..* | 1 |  |
+| [Component_slot]({{< relref "component_slot.md" >}}) | Part | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

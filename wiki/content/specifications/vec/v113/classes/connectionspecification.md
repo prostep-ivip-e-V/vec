@@ -33,6 +33,6 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..* | 0..1 | Specifies the ConnectionGroup defined by the ConnectionSpecification. |
 | [Connection]({{< relref "connection.md" >}}) | connection | 0..* | 1 | Specifies the Connection defined by the ConnectionSpecification. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..* | 0..1 | Specifies the ComponentNodes defined by the ConnectionSpecification. |
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..* | 0..1 | Specifies the ConnectionGroup defined by the ConnectionSpecification. |

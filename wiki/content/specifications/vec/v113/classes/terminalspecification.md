@@ -37,14 +37,14 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireReception]({{< relref "wirereception.md" >}}) | wireReception | 0..* | 1 | Specifies the WireReceptions of the terminal described by the TerminalSpecification. |
-| [TerminalReception]({{< relref "terminalreception.md" >}}) | terminalReception | 0..* | 1 | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |
 | [TerminalCurrentInformation]({{< relref "terminalcurrentinformation.md" >}}) | currentInformation | 0..* | 1 | <p> Specifies the <i>TerminalCurrentInformation</i> that is applicable for the terminal.      </p> |
 | [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | internalTerminalConnection | 0..* | 1 | Specifies the InternalTerminalConnections of the terminal. |
+| [WireReception]({{< relref "wirereception.md" >}}) | wireReception | 0..* | 1 | Specifies the WireReceptions of the terminal described by the TerminalSpecification. |
+| [TerminalReception]({{< relref "terminalreception.md" >}}) | terminalReception | 0..* | 1 | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [Cavity]({{< relref "cavity.md" >}}) |  | integratedTerminalSpecification | 0..1 | <p> Specifies of the terminal, if the cavity has an integrated terminal (e.g. an IDC).       </p> |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | 0..* | pinSpecification | 0..1 | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300) |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | terminalSpecification | 1 | <p> &#160;References the <i>TerminalSpecification</i> that is instanced by this <i>TerminalRole.</i>      </p> |
 | [CompatibilityStatement]({{< relref "compatibilitystatement.md" >}}) | 0..* | terminalSpecification | 0..* | <p> References the TerminalSpecifications for which the compatibility statement is stated.      </p> |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | terminalSpecification | 1 | <p> &#160;References the <i>TerminalSpecification</i> that is instanced by this <i>TerminalRole.</i>      </p> |

@@ -34,12 +34,12 @@ menu_name: vec-1.1.3
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ConnectionEnd]({{< relref "connectionend.md" >}}) | connectionEnd | 2..* | 1 | Specifies the ConnectionEnds of the Connection. |
 | [Net]({{< relref "net.md" >}}) | net | 0..1 | 0..* | References the Net that is realized by the Connection. |
+| [ConnectionEnd]({{< relref "connectionend.md" >}}) | connectionEnd | 2..* | 1 | Specifies the ConnectionEnds of the Connection. |
 | [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the connection. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | connection | 2..* | References the Connections that are grouped by the ConnectionGroup. |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 1 | connection | 0..* | Specifies the Connection defined by the ConnectionSpecification. |
+| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | connection | 2..* | References the Connections that are grouped by the ConnectionGroup. |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | connection | 0..1 | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341 |

@@ -33,5 +33,5 @@ menu_name: kbl-2.3.sr1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [General_wire_occurrence]({{< relref "general_wire_occurrence.md" >}}) | 1 | Length_information | 1..* |  |
 | [Core_occurrence]({{< relref "core_occurrence.md" >}}) | 1 | Length_information | 1..* |  |
+| [General_wire_occurrence]({{< relref "general_wire_occurrence.md" >}}) | 1 | Length_information | 1..* |  |

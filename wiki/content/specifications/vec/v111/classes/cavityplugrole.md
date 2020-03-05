@@ -32,8 +32,8 @@ menu_name: vec-1.1.1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityReference]({{< relref "cavityreference.md" >}}) | pluggedCavityRef | 0..* | 0..* | Defines which cavity / cavities in a connector instance is sealed by the plug. |
 | [CavityPlugSpecification]({{< relref "cavityplugspecification.md" >}}) | cavityPlugSpecification | 1 | 0..* | <p> References the <i>CavityPlugSpecification </i>that is instanced by this <i>CavityPlugRole.</i>      </p> |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | pluggedCavityRef | 0..* | 0..* | Defines which cavity / cavities in a connector instance is sealed by the plug. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

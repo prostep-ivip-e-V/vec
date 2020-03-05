@@ -38,13 +38,13 @@ menu_name: kbl-2.4
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
-| [Cross_section_area]({{< relref "cross_section_area.md" >}}) | Cross_section_area_information | 0..* | 1 |  |
-| [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
-| [Node]({{< relref "node.md" >}}) | End_node | 1 | 0..* |  |
-| [Protection_area]({{< relref "protection_area.md" >}}) | Protection_area | 0..* | 1 |  |
 | [Fixing_assignment]({{< relref "fixing_assignment.md" >}}) | Fixing_assignment  | 0..* | 1 |  |
 | [B_spline_curve]({{< relref "b_spline_curve.md" >}}) | Center_curve | 0..* | 1 |  |
+| [Node]({{< relref "node.md" >}}) | Start_node | 1 | 0..* |  |
+| [Cross_section_area]({{< relref "cross_section_area.md" >}}) | Cross_section_area_information | 0..* | 1 |  |
+| [Protection_area]({{< relref "protection_area.md" >}}) | Protection_area | 0..* | 1 |  |
+| [Node]({{< relref "node.md" >}}) | End_node | 1 | 0..* |  |
+| [Processing_instruction]({{< relref "processing_instruction.md" >}}) | Processing_information | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

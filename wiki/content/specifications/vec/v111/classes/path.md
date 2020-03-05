@@ -35,6 +35,6 @@ menu_name: vec-1.1.1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Routing]({{< relref "routing.md" >}}) | 0..1 | path | 1 | Specifies a Path on the topology that is used for the routing. |
 | [Dimension]({{< relref "dimension.md" >}}) | 0..1 | path | 0..1 | Specifies a path in the topology along which the dimension is defined. |
 | [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | path | 0..1 | Specifies the topology path defining the way the OnWayPlacement takes in the topology. |
+| [Routing]({{< relref "routing.md" >}}) | 0..1 | path | 1 | Specifies a Path on the topology that is used for the routing. |
