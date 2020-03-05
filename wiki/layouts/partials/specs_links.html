@@ -1,0 +1,29 @@
+{{ $page := . }}
+<ul class="list-unstyled pl-5">
+    {{ range .Params.links }}
+    {{ $pack := or .icon_pack "fas" }}
+    {{ $pack_prefix := $pack }}
+    {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+      {{ $pack_prefix = "fa" }}
+    {{ end }}
+    {{ $link := .url | default $page.RelPermalink }}
+    {{ $scheme := (urls.Parse $link).Scheme }}
+    {{ $target := "" }}
+    {{ $is_self_link := false }}
+    {{ if not $scheme }}
+      {{ $resource := $page.Resources.GetMatch $link }}
+      {{ if $resource }}
+        {{ $link = $resource.RelPermalink }}
+        {{ else }}
+        {{ $link = $link | relURL }}
+      {{ end }}
+    {{ else if in (slice "http" "https") $scheme }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+    <li>  
+      {{ if .icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} {{if .name}}mr-1{{end}}"></i>{{end}}
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+      {{ with .name }}{{ . | safeHTML }}{{end}}
+    </a></li>
+  {{ end }}
+</ul>
