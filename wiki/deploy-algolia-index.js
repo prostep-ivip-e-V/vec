@@ -1,4 +1,4 @@
-var atomicalgolia = require("atomic-algolia")
+var atomicalgolia = require("./algolia-update/update.js")
 var indexName = "ecadwiki"
 var indexPath = "public/index.json"
 var cb = function(error, result) {
@@ -7,4 +7,4 @@ var cb = function(error, result) {
     console.log(result)
 }
 
-atomicalgolia(indexName, indexPath, cb)
+atomicalgolia(indexName, indexPath, {verbose: true}, cb)
