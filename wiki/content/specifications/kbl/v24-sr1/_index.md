@@ -1,5 +1,5 @@
 ---
-title: KBL Version 2.4.sr1
+title: KBL Version 2.4 SR-1
 linktitle: Overview
 toc: false
 type: specs
@@ -12,5 +12,13 @@ menu:
     identifier: index    
     weight: 1
 weight: 1
+
+links:
+  - icon_pack: fas
+    icon: folder-open
+    name: KBL 2.4 SR-1 - Online Model Description
+  - icon_pack: far
+    icon: file-code
+    name: kbl24_sr1.xsd
+    url: kbl24_sr1.xsd
 ---
-Content goes here
