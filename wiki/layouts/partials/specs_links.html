@@ -15,7 +15,12 @@
       {{ if $resource }}
         {{ $link = $resource.RelPermalink }}
         {{ else }}
-        {{ $link = $link | relURL }}
+        {{ $linkPage := $page.GetPage $link}}
+        {{ if $linkPage }}
+          {{ $link = $linkPage.RelPermalink }}
+        {{ else }}
+          {{ $link = $link | relURL }}
+        {{ end }}
       {{ end }}
     {{ else if in (slice "http" "https") $scheme }}
       {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
