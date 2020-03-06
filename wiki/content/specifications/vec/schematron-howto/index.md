@@ -2,13 +2,14 @@
 title: "Schematron Validation How To"
 subtitle: ""
 summary: ""
-authors: []
+authors: [becker]
 tags: []
 categories: []
 date: 2017-01-26
 lastmod: 2019-11-29T16:01:58+01:00
 featured: false
 draft: false
+profile: false
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
