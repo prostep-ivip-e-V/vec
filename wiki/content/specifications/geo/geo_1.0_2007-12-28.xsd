@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--GEO XML Schema Version 1.0 © VDA, ProSTEP iViP 2007-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:GEO="http://www.prostep.org/Car_electric_container/GEOSchema" targetNamespace="http://www.prostep.org/Car_electric_container/GEOSchema">
+	<xs:annotation>
+		<xs:documentation>
+				
+           	Car Electric Container Geometry XML Schema
+                
+	</xs:documentation>
+		<xs:appinfo source="http://www.prostep.org/Car_electric_container/GEOSchema">
+			<GEO:SchemaInfo name="GEO.xsd" date="2007-12-28" version="1.0" status="released"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:complexType name="Alias_identification">
+		<xs:sequence>
+			<xs:element name="Alias_id" type="xs:string"/>
+			<xs:element name="Scope" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Assembly_part_occurrence">
+		<xs:sequence>
+			<xs:element name="Part_reference" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Assembly_specifications">
+		<xs:sequence>
+			<xs:element name="Assembly_part_occurrence" type="GEO:Assembly_part_occurrence" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="B_spline_curve">
+		<xs:sequence>
+			<xs:element name="Degree" type="xs:integer"/>
+			<xs:element name="Control_point" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Cartesian_point</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Box_view_item">
+		<xs:complexContent>
+			<xs:extension base="GEO:View_item">
+				<xs:sequence>
+					<xs:element name="Installation_instruction" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Installation_instruction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Processing_instruction" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Processing_instruction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Center_point" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Cartesian_point</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Bounding_box" type="GEO:Cartesian_dimension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cartesian_dimension">
+		<xs:sequence>
+			<xs:element name="Width" type="xs:double"/>
+			<xs:element name="Height" type="xs:double"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cartesian_point">
+		<xs:sequence>
+			<xs:element name="X_coordinate" type="xs:double"/>
+			<xs:element name="Y_coordinate" type="xs:double"/>
+			<xs:element name="Z_coordinate" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cartesian_points">
+		<xs:sequence>
+			<xs:element name="Cartesian_point" type="GEO:Cartesian_point" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cartesian_vector">
+		<xs:sequence>
+			<xs:element name="X_coordinate" type="xs:double"/>
+			<xs:element name="Y_coordinate" type="xs:double"/>
+			<xs:element name="Z_coordinate" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Change">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change_request" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change_date" type="xs:string" minOccurs="0"/>
+			<xs:element name="Responsible_designer" type="xs:string"/>
+			<xs:element name="Designer_department" type="xs:string"/>
+			<xs:element name="Approver_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Approver_department" type="xs:string" minOccurs="0"/>
+			<xs:element name="Type" type="GEO:Change_type" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Change_records">
+		<xs:sequence>
+			<xs:element name="Change" type="GEO:Change" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Geometry_module">
+		<xs:sequence>
+			<xs:element name="Title" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="Degree_of_maturity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Zone" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Zone</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Package_configuration" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Variant_configuration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="View_item" type="GEO:View_item" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Placement" type="GEO:Transformation" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Dimension_specification">
+		<xs:sequence>
+			<xs:element name="Specified_length" type="GEO:Numerical_value"/>
+			<xs:element name="Origin" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Dimension_specification_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Target" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Dimension_specification_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Tolerance_indication" type="GEO:Tolerance" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Dimension_specification_reference" abstract="true">
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Dimension_specifications">
+		<xs:sequence>
+			<xs:element name="Dimension_specification" type="GEO:Dimension_specification" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Drawing_section">
+		<xs:sequence>
+			<xs:element name="Title" type="xs:string"/>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Section_configuration" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Variant_configuration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="View_item" type="GEO:View_item" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Bounding_box" type="GEO:Cartesian_dimension"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Drawing_section_placement">
+		<xs:sequence>
+			<xs:element name="Drawing_section" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Drawing_section</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Center_point" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Cartesian_point</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="External_reference">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Document_type" type="xs:string" minOccurs="0"/>
+			<xs:element name="Document_number" type="xs:string"/>
+			<xs:element name="Change_level" type="xs:string" minOccurs="0"/>
+			<xs:element name="File_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Location" type="xs:string" minOccurs="0"/>
+			<xs:element name="Data_format" type="xs:string" minOccurs="0"/>
+			<xs:element name="Creating_system" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="External_references">
+		<xs:sequence>
+			<xs:element name="External_reference" type="GEO:External_reference" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Fixing_assignment">
+		<xs:complexContent>
+			<xs:extension base="GEO:Dimension_specification_reference">
+				<xs:sequence>
+					<xs:element name="Location" type="xs:double"/>
+					<xs:element name="Orientation_x" type="xs:double"/>
+					<xs:element name="Orientation_y" type="xs:double"/>
+					<xs:element name="Orientation_z" type="xs:double" minOccurs="0"/>
+					<xs:element name="Protection_layer" type="xs:integer" minOccurs="0"/>
+					<xs:element name="Type" type="GEO:Fixing_assignment_type"/>
+					<xs:element name="Fixing_occurrence" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Part_occurence</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Geometry_node">
+		<xs:complexContent>
+			<xs:extension base="GEO:View_item">
+				<xs:sequence>
+					<xs:element name="Cartesian_point" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Cartesian_point</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Reference_node" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Topology_node</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Geometry_segment" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="GEO:View_item">
+				<xs:sequence>
+					<xs:element name="End_node" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Geometry_node</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Reference_segment" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Topology_segment</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Start_node" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Geometry_node</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="End_vector" type="GEO:Cartesian_vector"/>
+					<xs:element name="Start_vector" type="GEO:Cartesian_vector"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Geometry_segment_2D">
+		<xs:complexContent>
+			<xs:extension base="GEO:Geometry_segment">
+				<xs:sequence>
+					<xs:element name="Path_segment" type="GEO:Path_segment" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Geometry_segment_3D">
+		<xs:complexContent>
+			<xs:extension base="GEO:Geometry_segment">
+				<xs:sequence>
+					<xs:element name="B_spline_curve" type="GEO:B_spline_curve" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Harness">
+		<xs:sequence>
+			<xs:element name="Part_number" type="xs:string"/>
+			<xs:element name="Company_name" type="xs:string"/>
+			<xs:element name="Alias_id" type="GEO:Alias_identification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="Abbreviation" type="xs:string"/>
+			<xs:element name="Description" type="xs:string"/>
+			<xs:element name="Predecessor_part_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Degree_of_maturity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Mass_information" type="GEO:Numerical_value" minOccurs="0"/>
+			<xs:element name="Project_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_2" type="xs:string"/>
+			<xs:element name="Car_classification_level_3" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_4" type="xs:string" minOccurs="0"/>
+			<xs:element name="Model_year" type="xs:string"/>
+			<xs:element name="Topology" type="GEO:Harness_topology"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Harness_drawing">
+		<xs:complexContent>
+			<xs:extension base="GEO:Harness_view">
+				<xs:sequence>
+					<xs:element name="Global_instruction" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Processing_instruction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Drawing_section_placement" type="GEO:Drawing_section_placement" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Harness_geometry">
+		<xs:complexContent>
+			<xs:extension base="GEO:Harness_view">
+				<xs:sequence>
+					<xs:element name="Type" type="GEO:Geometry_type"/>
+					<xs:element name="Geometry_module" type="GEO:Geometry_module" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Harness_drawing" type="GEO:Harness_drawing" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Drawing_section" type="GEO:Drawing_section" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Harness_geometry_model">
+		<xs:sequence>
+			<xs:element name="Model_name" type="xs:string"/>
+			<xs:element name="Model_version" type="xs:string"/>
+			<xs:element name="External_references" type="GEO:External_references" minOccurs="0"/>
+			<xs:element name="Dimension_specifications" type="GEO:Dimension_specifications" minOccurs="0"/>
+			<xs:element name="Harness" type="GEO:Harness"/>
+			<xs:element name="Variant_configurations" type="GEO:Variant_configurations" minOccurs="0"/>
+			<xs:element name="Part_references" type="GEO:Part_references" minOccurs="0"/>
+			<xs:element name="Installation_instructions" type="GEO:Installation_instructions" minOccurs="0"/>
+			<xs:element name="Processing_instructions" type="GEO:Processing_instructions" minOccurs="0"/>
+			<xs:element name="Change_records" type="GEO:Change_records" minOccurs="0"/>
+			<xs:element name="Symbols" type="GEO:Symbols" minOccurs="0"/>
+			<xs:element name="Cartesian_points" type="GEO:Cartesian_points" minOccurs="0"/>
+			<xs:element name="Assembly_specifications" type="GEO:Assembly_specifications" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Harness_topology">
+		<xs:sequence>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Topology_segment" type="GEO:Topology_segment" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Topology_node" type="GEO:Topology_node" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Zone" type="GEO:Zone" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Part_occurence" type="GEO:Part_occurence" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Harness_view" type="GEO:Harness_view" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Harness_view">
+		<xs:sequence>
+			<xs:element name="Title" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="Degree_of_maturity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Installation_instruction">
+		<xs:sequence>
+			<xs:element name="Installation_instruction_type" type="xs:string"/>
+			<xs:element name="Instruction_value" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Installation_instructions">
+		<xs:sequence>
+			<xs:element name="Installation_instruction" type="GEO:Installation_instruction" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Numerical_value">
+		<xs:complexContent>
+			<xs:extension base="GEO:Value_with_unit">
+				<xs:sequence>
+					<xs:element name="Value_component" type="xs:double"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Part_occurence">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Installation_instruction" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Installation_instruction</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Topology_node" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Topology_node</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Part_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Assembly_part_occurrence" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Assembly_part_occurrence</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_occurrence" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_occurence</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Part_occurence_view_item">
+		<xs:complexContent>
+			<xs:extension base="GEO:View_item">
+				<xs:sequence>
+					<xs:element name="Symbol" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Symbol</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Part_occurence" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Part_occurence</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Placement" type="GEO:Transformation" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Part_reference">
+		<xs:sequence>
+			<xs:element name="Part_number" type="xs:string"/>
+			<xs:element name="Company_name" type="xs:string"/>
+			<xs:element name="Version" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Abbreviation" type="xs:string" minOccurs="0"/>
+			<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Variant_configuration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Part_references">
+		<xs:sequence>
+			<xs:element name="Part_reference" type="GEO:Part_reference" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Path_segment">
+		<xs:sequence>
+			<xs:element name="Curve_radius" type="xs:double" minOccurs="0"/>
+			<xs:element name="Control_point" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Cartesian_point</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Processing_instruction">
+		<xs:sequence>
+			<xs:element name="Instruction_type" type="xs:string"/>
+			<xs:element name="Instruction_value" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Processing_instructions">
+		<xs:sequence>
+			<xs:element name="Processing_instruction" type="GEO:Processing_instruction" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Protection_area">
+		<xs:sequence>
+			<xs:element name="Start_location" type="xs:double"/>
+			<xs:element name="End_location" type="xs:double"/>
+			<xs:element name="Taping_direction" type="GEO:Taping_direction"/>
+			<xs:element name="Gradient" type="GEO:Value_with_unit" minOccurs="0"/>
+			<xs:element name="Protection_layer" type="xs:integer" minOccurs="0"/>
+			<xs:element name="Processing_instruction" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Processing_instruction</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Wire_protection_occurrence" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_occurence</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Protection_area_assignment">
+		<xs:complexContent>
+			<xs:extension base="GEO:Dimension_specification_reference">
+				<xs:sequence>
+					<xs:element name="Location" type="GEO:Protection_area_location"/>
+					<xs:element name="Protection_area" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Protection_area</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Segment_cross_section_area">
+		<xs:sequence>
+			<xs:element name="Value_determination" type="GEO:Value_determination"/>
+			<xs:element name="Area" type="GEO:Numerical_value"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Segment_length">
+		<xs:sequence>
+			<xs:element name="Length" type="GEO:Numerical_value"/>
+			<xs:element name="Value_determination" type="GEO:Value_determination"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Symbol">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Type" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Symbols">
+		<xs:sequence>
+			<xs:element name="Symbol" type="GEO:Symbol" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Tolerance">
+		<xs:sequence>
+			<xs:element name="Addition" type="GEO:Numerical_value" minOccurs="0"/>
+			<xs:element name="Deduction" type="GEO:Numerical_value" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Topology_node">
+		<xs:complexContent>
+			<xs:extension base="GEO:Dimension_specification_reference">
+				<xs:sequence>
+					<xs:element name="Id" type="xs:string"/>
+					<xs:element name="Bend_radius" type="GEO:Numerical_value"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Topology_segment">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Form" type="GEO:Segment_form"/>
+			<xs:element name="Processing_instruction" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Processing_instruction</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="End_node" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Topology_node</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Start_node" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Topology_node</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Fixing_assignment" type="GEO:Fixing_assignment" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Protection_area" type="GEO:Protection_area" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Cross_section_area_infomation" type="GEO:Segment_cross_section_area" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Length_information" type="GEO:Segment_length" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Transformation">
+		<xs:sequence>
+			<xs:element name="U_x" type="xs:double"/>
+			<xs:element name="U_y" type="xs:double"/>
+			<xs:element name="U_z" type="xs:double" minOccurs="0"/>
+			<xs:element name="V_x" type="xs:double"/>
+			<xs:element name="V_y" type="xs:double"/>
+			<xs:element name="V_z" type="xs:double" minOccurs="0"/>
+			<xs:element name="Origin" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Cartesian_point</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Unit">
+		<xs:sequence>
+			<xs:element name="Unit_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Si_unit_name" type="GEO:SI_unit_name" minOccurs="0"/>
+			<xs:element name="Si_prefix" type="GEO:SI_prefix" minOccurs="0"/>
+			<xs:element name="Si_dimension" type="GEO:SI_unit_dimension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Value_range">
+		<xs:complexContent>
+			<xs:extension base="GEO:Value_with_unit">
+				<xs:sequence>
+					<xs:element name="Minimum" type="xs:double"/>
+					<xs:element name="Maximum" type="xs:double"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Value_with_unit" abstract="true">
+		<xs:sequence>
+			<xs:element name="Unit_component" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Variant_configuration">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Logistic_control_information" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Variant_configurations">
+		<xs:sequence>
+			<xs:element name="Variant_configuration" type="GEO:Variant_configuration" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="View_item" abstract="true">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Alias_id" type="GEO:Alias_identification"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Zone">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Subzone" type="GEO:Zone" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="Geometry_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DMU_geometry"/>
+			<xs:enumeration value="Formboard_geometry"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Segment_form">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="circular"/>
+			<xs:enumeration value="noncircular"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Taping_direction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Value_determination">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="calculated"/>
+			<xs:enumeration value="reserved"/>
+			<xs:enumeration value="measured"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Fixing_assignment_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bundle_fixing"/>
+			<xs:enumeration value="Fitting_point"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Protection_area_location">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Start"/>
+			<xs:enumeration value="End"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_prefix">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="milli"/>
+			<xs:enumeration value="centi"/>
+			<xs:enumeration value="micro"/>
+			<xs:enumeration value="kilo"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Change_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="New"/>
+			<xs:enumeration value="Change"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_unit_name">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metre"/>
+			<xs:enumeration value="gram"/>
+			<xs:enumeration value="second"/>
+			<xs:enumeration value="ampere"/>
+			<xs:enumeration value="kelvin"/>
+			<xs:enumeration value="hertz"/>
+			<xs:enumeration value="newton"/>
+			<xs:enumeration value="pascal"/>
+			<xs:enumeration value="joule"/>
+			<xs:enumeration value="watt"/>
+			<xs:enumeration value="coulomb"/>
+			<xs:enumeration value="volt"/>
+			<xs:enumeration value="farad"/>
+			<xs:enumeration value="ohm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_unit_dimension">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="square"/>
+			<xs:enumeration value="cubic"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

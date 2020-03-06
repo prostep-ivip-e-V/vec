@@ -1,5 +1,5 @@
 ---
-title: "KOMP"
+title: "GEO"
 subtitle: ""
 summary: ""
 authors: []
@@ -12,11 +12,11 @@ draft: false
 profile: false
 share: false
 ---
-The first version of the "Component Model (German: Komponente)". The content has been integrated and further developed in the VEC model. 
+The first version of the "Geometrical Model". The content has been integrated and further developed in the VEC model. 
 
 **Disclaimer: The model is no longer maintained and is only listed here due to historical reasons. It must not be used for new implementations.**
 
 ## Version 1.0
 
-* KOMP XML Schema: [{{< icon name="file-code" pack="far" >}} komp_1.0_2008-02-01.xsd](komp_1.0_2008-02-01.xsd)
-* [{{< icon name="file-pdf" pack="far" >}} KOMP Tutorials](komp_1_0_tutorial_en.pdf)
+* GEO XML Schema: [{{< icon name="file-code" pack="far" >}} geo_1.0_2007-12-28.xsd](geo_1.0_2007-12-28.xsd)
+* [{{< icon name="file-pdf" pack="far" >}} GEO Tutorials](geo_1_0_tutorial.pdf)

@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ELOG XML Schema Version 1.1 © VDA, ProSTEP iViP 2007-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ELOG="http://www.prostep.org/Car_electric_container/ELOGSchema" targetNamespace="http://www.prostep.org/Car_electric_container/ELOGSchema">
+	<xs:annotation>
+		<xs:documentation>
+				
+                Car Electric Container Electrologic XML Schema
+                
+	</xs:documentation>
+		<xs:appinfo source="http://www.prostep.org/Car_electric_container/ELOGSchema">
+			<ELOG:SchemaInfo name="ELOG.xsd" date="2007-09-11" version="1.1" status="released"/>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:complexType name="Antenna_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_component_specification">
+				<xs:sequence>
+					<xs:element name="F_min" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="F_max" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="Impedance" type="ELOG:Numerical_value" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Approval">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Department" type="xs:string" minOccurs="0"/>
+			<xs:element name="Date" type="xs:string"/>
+			<xs:element name="Type_of_approval" type="xs:string"/>
+			<xs:element name="Is_applied_to" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to ELOG_design</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Battery_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_component_specification">
+				<xs:sequence>
+					<xs:element name="U" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="I" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="I_cool" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="Capacity" type="ELOG:Numerical_value" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Cartesian_dimension">
+		<xs:sequence>
+			<xs:element name="Width" type="xs:double"/>
+			<xs:element name="Height" type="xs:double"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Cartesian_point">
+		<xs:sequence>
+			<xs:element name="X_coordinate" type="xs:double"/>
+			<xs:element name="Y_coordinate" type="xs:double"/>
+			<xs:element name="Z_coordinate" type="xs:double" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Change">
+		<xs:sequence>
+			<xs:element name="Approver_department" type="xs:string" minOccurs="0"/>
+			<xs:element name="Approver_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change_date" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change_request" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Designer_department" type="xs:string" minOccurs="0"/>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Responsible_designer" type="xs:string" minOccurs="0"/>
+			<xs:element name="Type" type="ELOG:Change_type" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Change_records">
+		<xs:sequence>
+			<xs:element name="Change" type="ELOG:Change" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Component_connector">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connector">
+				<xs:sequence>
+					<xs:element name="Wiring_component_pin" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_component_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Component_pin_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Edge" type="ELOG:Edge"/>
+					<xs:element name="Position_on_edge" type="xs:double"/>
+					<xs:element name="Wiring_component_pin" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_component_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Schematic_component_pin" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Schematic_component_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="ELOG_component_view_item" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to ELOG_component_view_item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Connection_class">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Connections">
+		<xs:sequence>
+			<xs:element name="Virtual_connection" type="ELOG:Virtual_connection" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Connector_pin_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Edge" type="ELOG:Edge"/>
+					<xs:element name="Position_on_edge" type="xs:double"/>
+					<xs:element name="Schematic_connector_pin" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Schematic_connector_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wiring_connector_pin" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_connector_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Inline_connector_view_item" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Inline_connector_view_item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Creation">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Department" type="xs:string"/>
+			<xs:element name="Date" type="xs:string"/>
+			<xs:element name="Is_applied_to" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to ELOG_design</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Custom_properties">
+		<xs:sequence>
+			<xs:element name="Custom_property" type="ELOG:Custom_property" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Custom_property">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+			<xs:element name="Related_concept" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Schematic_concept</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_sheet" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Sheet</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_specification" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to ELOG_component_specification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Related_system" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_component">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Component_type" type="ELOG:ELOG_component_type"/>
+			<xs:element name="Custom_component_type" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Abbreviation" type="xs:string" minOccurs="0"/>
+			<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Variant_configuration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Node_content" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Node_content</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Assembly_part" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Component" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Parent" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to ELOG_component</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ELOG_component_specification" type="ELOG:ELOG_component_specification" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Schematic_component_pin" type="ELOG:Schematic_component_pin" maxOccurs="unbounded"/>
+			<xs:element name="Component_connector" type="ELOG:Component_connector" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_component_specification">
+		<xs:sequence>
+			<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Variant_configuration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_component_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Orientation" type="xs:double"/>
+					<xs:element name="Located_component" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to ELOG_component</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Center_point" type="ELOG:Cartesian_point"/>
+					<xs:element name="Dimension" type="ELOG:Cartesian_dimension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ELOG_components">
+		<xs:sequence>
+			<xs:element name="ELOG_component" type="ELOG:ELOG_component" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_connection" abstract="true">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Assembly_part" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_connection_group" abstract="true">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Group_type" type="ELOG:Connection_group_type"/>
+			<xs:element name="Custom_group_type" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_connection_groups">
+		<xs:sequence>
+			<xs:element name="ELOG_connection_group" type="ELOG:ELOG_connection_group" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_connection_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Located_connection" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to ELOG_connection</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Control_point" type="ELOG:Cartesian_point" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ELOG_connector" abstract="true">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Assembly_part" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Connector_housing" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_design">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="Degree_of_maturity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Part_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sheet" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Sheet</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="System" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to System</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_designs">
+		<xs:sequence>
+			<xs:element name="ELOG_design" type="ELOG:ELOG_design" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_interface">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="ELOG_connector" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to ELOG_connector</xs:documentation>
+					<xs:appinfo>There shall be at least 2 elements referenced.</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Node_content" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Node_content</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ELOG_slot" type="ELOG:ELOG_slot" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_interfaces">
+		<xs:sequence>
+			<xs:element name="ELOG_interface" type="ELOG:ELOG_interface" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:element name="ELOG_model" type="ELOG:ELOG_model"/>
+	<xs:complexType name="ELOG_model">
+		<xs:sequence>
+			<xs:element name="Units" type="ELOG:Units" minOccurs="0"/>
+			<xs:element name="ELOG_components" type="ELOG:ELOG_components" minOccurs="0"/>
+			<xs:element name="Connections" type="ELOG:Connections" minOccurs="0"/>
+			<xs:element name="ELOG_signal_classes" type="ELOG:ELOG_signal_classes" minOccurs="0"/>
+			<xs:element name="Wire_occurrences" type="ELOG:Wire_occurrences" minOccurs="0"/>
+			<xs:element name="ELOG_connection_groups" type="ELOG:ELOG_connection_groups" minOccurs="0"/>
+			<xs:element name="Systems" type="ELOG:Systems" minOccurs="0"/>
+			<xs:element name="Variant_configurations" type="ELOG:Variant_configurations" minOccurs="0"/>
+			<xs:element name="Zones" type="ELOG:Zones" minOccurs="0"/>
+			<xs:element name="Terminal_specifications" type="ELOG:Terminal_specifications" minOccurs="0"/>
+			<xs:element name="Sheets" type="ELOG:Sheets" minOccurs="0"/>
+			<xs:element name="External_references" type="ELOG:External_references" minOccurs="0"/>
+			<xs:element name="Installation_instructions" type="ELOG:Installation_instructions" minOccurs="0"/>
+			<xs:element name="Harness_connectors" type="ELOG:Harness_connectors" minOccurs="0"/>
+			<xs:element name="Change_records" type="ELOG:Change_records" minOccurs="0"/>
+			<xs:element name="Wire_specifications" type="ELOG:Wire_specifications" minOccurs="0"/>
+			<xs:element name="Symbols" type="ELOG:Symbols" minOccurs="0"/>
+			<xs:element name="ELOG_interfaces" type="ELOG:ELOG_interfaces" minOccurs="0"/>
+			<xs:element name="Part_references" type="ELOG:Part_references" minOccurs="0"/>
+			<xs:element name="Schematic_concepts" type="ELOG:Schematic_concepts" minOccurs="0"/>
+			<xs:element name="Custom_properties" type="ELOG:Custom_properties" minOccurs="0"/>
+			<xs:element name="Processing_instructions" type="ELOG:Processing_instructions" minOccurs="0"/>
+			<xs:element name="Harness_sections" type="ELOG:Harness_sections" minOccurs="0"/>
+			<xs:element name="ELOG_designs" type="ELOG:ELOG_designs" minOccurs="0"/>
+			<xs:element name="Version" type="xs:string" minOccurs="0"/>
+			<xs:element name="Model_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Model_version" type="xs:string" minOccurs="0"/>
+			<xs:element name="Project_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_2" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_3" type="xs:string" minOccurs="0"/>
+			<xs:element name="Car_classification_level_4" type="xs:string" minOccurs="0"/>
+			<xs:element name="Model_year" type="xs:string" minOccurs="0"/>
+			<xs:element name="Generating_system_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Generating_system_version" type="xs:string" minOccurs="0"/>
+			<xs:element name="Content_type" type="ELOG:Content_type" minOccurs="0"/>
+			<xs:element name="File_name" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+		<xs:attribute name="version_id" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_pin" abstract="true">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_signal_classes">
+		<xs:sequence>
+			<xs:element name="Connection_class" type="ELOG:Connection_class" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ELOG_slot">
+		<xs:sequence>
+			<xs:element name="Slot_id" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="External_reference">
+		<xs:sequence>
+			<xs:element name="Document_type" type="xs:string" minOccurs="0"/>
+			<xs:element name="Document_number" type="xs:string"/>
+			<xs:element name="Change_level" type="xs:string" minOccurs="0"/>
+			<xs:element name="File_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Location" type="xs:string" minOccurs="0"/>
+			<xs:element name="Data_format" type="xs:string" minOccurs="0"/>
+			<xs:element name="Creating_system" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="External_references">
+		<xs:sequence>
+			<xs:element name="External_reference" type="ELOG:External_reference" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Fuse_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_component_specification">
+				<xs:sequence>
+					<xs:element name="Fuse_type" type="xs:string"/>
+					<xs:element name="I_max" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="Slot_number" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Harness_connector">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connector">
+				<xs:sequence>
+					<xs:element name="Harness_section" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Harness_section</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wiring_harness_pin" type="ELOG:Wiring_harness_pin" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Schematic_connector_pin" type="ELOG:Schematic_connector_pin" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Harness_connectors">
+		<xs:sequence>
+			<xs:element name="Harness_connector" type="ELOG:Harness_connector" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Harness_pin_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Wiring_harness_pin" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_harness_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Component_pin_view_item" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Component_pin_view_item</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Harness_section">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Harness_sections">
+		<xs:sequence>
+			<xs:element name="Harness_section" type="ELOG:Harness_section" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Inline_connector_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Orientation" type="xs:double"/>
+					<xs:element name="Harness_connector" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Harness_connector</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Center_point" type="ELOG:Cartesian_point"/>
+					<xs:element name="Dimension" type="ELOG:Cartesian_dimension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Installation_instruction">
+		<xs:sequence>
+			<xs:element name="Installation_instruction_type" type="xs:string"/>
+			<xs:element name="Instruction_value" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Installation_instruction_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Orientation" type="xs:double"/>
+					<xs:element name="Located_instruction" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Installation_instruction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Bounding_box" type="ELOG:Cartesian_dimension"/>
+					<xs:element name="Center_point" type="ELOG:Cartesian_point"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Installation_instructions">
+		<xs:sequence>
+			<xs:element name="Installation_instruction" type="ELOG:Installation_instruction" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Node_content">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Volume" type="ELOG:Numerical_value"/>
+			<xs:element name="Temperature" type="ELOG:Value_range"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Numerical_value">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Value_with_unit">
+				<xs:sequence>
+					<xs:element name="Value_component" type="xs:double"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Part_reference">
+		<xs:sequence>
+			<xs:element name="Part_number" type="xs:string"/>
+			<xs:element name="Company_name" type="xs:string"/>
+			<xs:element name="Version" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Abbreviation" type="xs:string" minOccurs="0"/>
+			<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Variant_configuration</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Part_references">
+		<xs:sequence>
+			<xs:element name="Part_reference" type="ELOG:Part_reference" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Path_node">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Zone" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Zone</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Node_content" type="ELOG:Node_content" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Path_node_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Located_path_node" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Path_node</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Center_point" type="ELOG:Cartesian_point"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Path_way">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Length" type="ELOG:Numerical_value"/>
+			<xs:element name="Path_node" type="xs:IDREFS">
+				<xs:annotation>
+					<xs:documentation>ref to Path_node</xs:documentation>
+					<xs:appinfo>There shall be at least 2 elements referenced.</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Path_way_routing">
+		<xs:sequence>
+			<xs:element name="Path_way" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Path_way</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Path_way_view_item">
+		<xs:complexContent>
+			<xs:extension base="ELOG:View_item">
+				<xs:sequence>
+					<xs:element name="Located_path_way" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Path_way</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Control_point" type="ELOG:Cartesian_point" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Processing_instruction">
+		<xs:sequence>
+			<xs:element name="Instruction_type" type="xs:string"/>
+			<xs:element name="Instruction_value" type="xs:string"/>
+			<xs:element name="Part_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Processing_instructions">
+		<xs:sequence>
+			<xs:element name="Processing_instruction" type="ELOG:Processing_instruction" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Relais_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_component_specification">
+				<xs:sequence>
+					<xs:element name="I_max" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="Relais_type" type="ELOG:Relais_type"/>
+					<xs:element name="Custom_relais_type" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_component_pin" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Schematic_pin">
+				<xs:sequence>
+					<xs:element name="System" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to System</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_component_pin_external">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Schematic_component_pin">
+				<xs:sequence>
+					<xs:element name="Wiring_component_pin" type="ELOG:Wiring_component_pin" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_component_pin_internal">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Schematic_component_pin"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_concept">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Path_way" type="ELOG:Path_way" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Path_way_routing" type="ELOG:Path_way_routing" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Path_node" type="ELOG:Path_node" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Schematic_concept_diagram">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Sheet"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_concepts">
+		<xs:sequence>
+			<xs:element name="Schematic_concept" type="ELOG:Schematic_concept" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Schematic_connection">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connection">
+				<xs:sequence>
+					<xs:element name="Schematic_pin" type="xs:IDREFS">
+						<xs:annotation>
+							<xs:documentation>ref to Schematic_pin</xs:documentation>
+							<xs:appinfo>There shall be at least 2 elements referenced.</xs:appinfo>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Harness_section" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Harness_section</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Schematic_connection_group" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Schematic_connection_group</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Path_way_routing" type="ELOG:Path_way_routing" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_connection_group">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connection_group">
+				<xs:sequence>
+					<xs:element name="Installation_instruction" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Installation_instruction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_connector_pin">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Schematic_pin">
+				<xs:sequence>
+					<xs:element name="Socket" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Schematic_connector_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wiring_connector_pin" type="ELOG:Wiring_connector_pin" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_diagram">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Sheet"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Schematic_pin" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_pin">
+				<xs:sequence>
+					<xs:element name="Signal_direction" type="ELOG:Signal_direction" minOccurs="0"/>
+					<xs:element name="Alias_signal_name" type="xs:string" minOccurs="0"/>
+					<xs:element name="Surface_material" type="xs:string" minOccurs="0"/>
+					<xs:element name="Virtual_connection" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Virtual_connection</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Variant_configuration</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Sheet" abstract="true">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Version" type="xs:string"/>
+			<xs:element name="Degree_of_maturity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+			<xs:element name="Part_number" type="xs:string" minOccurs="0"/>
+			<xs:element name="Change" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Change</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="External_reference" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to External_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="View_item" type="ELOG:View_item" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Sheets">
+		<xs:sequence>
+			<xs:element name="Sheet" type="ELOG:Sheet" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Shield_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Wiring_connection_group">
+				<xs:sequence>
+					<xs:element name="Shield" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_connection</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Single_core_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Wire_specification">
+				<xs:sequence>
+					<xs:element name="General_wire" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Part_reference</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Symbol">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Type" type="xs:string"/>
+			<xs:element name="Content"><![CDATA[]]></xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Symbols">
+		<xs:sequence>
+			<xs:element name="Symbol" type="ELOG:Symbol" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="System">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Systems">
+		<xs:sequence>
+			<xs:element name="System" type="ELOG:System" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Terminal_connection">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connection">
+				<xs:sequence>
+					<xs:element name="Connection_type" type="ELOG:Terminal_connection_type"/>
+					<xs:element name="Custom_connection_type" type="xs:string" minOccurs="0"/>
+					<xs:element name="In" type="xs:IDREFS">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Out" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Terminal_connection_part" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Part_reference</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Terminal_specification">
+		<xs:sequence>
+			<xs:element name="Terminal_type" type="ELOG:Terminal_type"/>
+			<xs:element name="Custom_terminal_type" type="xs:string" minOccurs="0"/>
+			<xs:element name="Gender" type="ELOG:Gender_type" minOccurs="0"/>
+			<xs:element name="Processing_instruction" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Processing_instruction</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Terminal_specifications">
+		<xs:sequence>
+			<xs:element name="Terminal_specification" type="ELOG:Terminal_specification" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Unit">
+		<xs:sequence>
+			<xs:element name="Unit_name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Si_unit_name" type="ELOG:Si_unit_name" minOccurs="0"/>
+			<xs:element name="Si_unit_prefix" type="ELOG:Si_unit_prefix" minOccurs="0"/>
+			<xs:element name="Si_unit_dimension" type="ELOG:SI_unit_dimension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Units">
+		<xs:sequence>
+			<xs:element name="Unit" type="ELOG:Unit" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Value_range">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Value_with_unit">
+				<xs:sequence>
+					<xs:element name="Minimum" type="xs:double"/>
+					<xs:element name="Maximum" type="xs:double"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Value_with_unit">
+		<xs:sequence>
+			<xs:element name="Unit_component" type="xs:IDREF">
+				<xs:annotation>
+					<xs:documentation>ref to Unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Variant_configuration">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Logistic_control_information" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Variant_configurations">
+		<xs:sequence>
+			<xs:element name="Variant_configuration" type="ELOG:Variant_configuration" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="View_item" abstract="true">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Symbol" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Symbol</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Virtual_connection">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Connection_class" type="xs:IDREF" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Connection_class</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Schematic_connection" type="ELOG:Schematic_connection" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Terminal_connection" type="ELOG:Terminal_connection" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Wiring_connection" type="ELOG:Wiring_connection" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire_occurrence">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:string"/>
+			<xs:element name="Wire_type" type="xs:string"/>
+			<xs:element name="Color" type="xs:string"/>
+			<xs:element name="General_wire" type="xs:IDREFS" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ref to Part_reference</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire_occurrence_specification">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Wire_specification">
+				<xs:sequence>
+					<xs:element name="Core_id" type="xs:string"/>
+					<xs:element name="Wire_occurrence" type="xs:IDREF">
+						<xs:annotation>
+							<xs:documentation>ref to Wire_occurrence</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wire_occurrences">
+		<xs:sequence>
+			<xs:element name="Wire_occurrence" type="ELOG:Wire_occurrence" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire_specification" abstract="true">
+		<xs:sequence>
+			<xs:element name="Wire_type" type="xs:string"/>
+			<xs:element name="Cross_section_area" type="ELOG:Numerical_value"/>
+			<xs:element name="Color" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wire_specifications">
+		<xs:sequence>
+			<xs:element name="Wire_specification" type="ELOG:Wire_specification" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Wiring_component_pin">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Wiring_pin">
+				<xs:sequence>
+					<xs:element name="Pin_type" type="ELOG:Pin_type"/>
+					<xs:element name="Custom_pin_type" type="xs:string" minOccurs="0"/>
+					<xs:element name="Gender" type="ELOG:Gender_type" minOccurs="0"/>
+					<xs:element name="Wiring_harness_pin" type="xs:IDREFS">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_harness_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wiring_connection">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connection">
+				<xs:sequence>
+					<xs:element name="Wire_length" type="ELOG:Numerical_value" minOccurs="0"/>
+					<xs:element name="Wiring_connector_pin" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_connector_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wiring_harness_pin" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_harness_pin</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wire_specification" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wire_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Variant_configuration</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wiring_connection_group">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_connection_group">
+				<xs:sequence>
+					<xs:element name="Wiring_connection_group" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_connection_group</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Wiring_connection" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Wiring_connection</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Processing_instruction" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Processing_instruction</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wiring_connector_pin">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Wiring_pin">
+				<xs:sequence>
+					<xs:element name="Terminal_specification" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Terminal_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Terminal" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Part_reference</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wiring_diagram">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Sheet"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wiring_harness_pin">
+		<xs:complexContent>
+			<xs:extension base="ELOG:Wiring_pin">
+				<xs:sequence>
+					<xs:element name="Multi_connection" type="xs:boolean" minOccurs="0"/>
+					<xs:element name="Terminal_specification" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Terminal_specification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Terminal" type="xs:IDREFS" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Part_reference</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Wiring_pin" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="ELOG:ELOG_pin">
+				<xs:sequence>
+					<xs:element name="Cavity_number" type="xs:string"/>
+					<xs:element name="Surface_material" type="xs:string" minOccurs="0"/>
+					<xs:element name="ELOG_slot" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to ELOG_slot</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Variant_configuration" type="xs:IDREF" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>ref to Variant_configuration</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Zone">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Description" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Zones">
+		<xs:sequence>
+			<xs:element name="Zone" type="ELOG:Zone" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="Edge">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="North"/>
+			<xs:enumeration value="East"/>
+			<xs:enumeration value="South"/>
+			<xs:enumeration value="West"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Pin_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Coax_center"/>
+			<xs:enumeration value="Coax_shield"/>
+			<xs:enumeration value="Bolt_connector"/>
+			<xs:enumeration value="Custom_pin_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Signal_direction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="in"/>
+			<xs:enumeration value="out"/>
+			<xs:enumeration value="inout"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Terminal_connection_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bridge"/>
+			<xs:enumeration value="Coil"/>
+			<xs:enumeration value="Diode"/>
+			<xs:enumeration value="Custom_connection_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ELOG_component_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Device"/>
+			<xs:enumeration value="Actuator"/>
+			<xs:enumeration value="Sensor"/>
+			<xs:enumeration value="Power_distributor"/>
+			<xs:enumeration value="Ground_distributor"/>
+			<xs:enumeration value="Battery"/>
+			<xs:enumeration value="Antenna"/>
+			<xs:enumeration value="Relais"/>
+			<xs:enumeration value="Fuse"/>
+			<xs:enumeration value="Custom_component_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Relais_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Close"/>
+			<xs:enumeration value="Open"/>
+			<xs:enumeration value="Switch"/>
+			<xs:enumeration value="Double_close"/>
+			<xs:enumeration value="Double_open"/>
+			<xs:enumeration value="Double_switch"/>
+			<xs:enumeration value="Open_close"/>
+			<xs:enumeration value="Custom_relais_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Connection_group_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Twisted"/>
+			<xs:enumeration value="Shielded"/>
+			<xs:enumeration value="Insulated"/>
+			<xs:enumeration value="Custom_group_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Terminal_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="Coax_center"/>
+			<xs:enumeration value="Coax_shield"/>
+			<xs:enumeration value="Multi_contact"/>
+			<xs:enumeration value="IDC"/>
+			<xs:enumeration value="IDS"/>
+			<xs:enumeration value="Ring_terminal"/>
+			<xs:enumeration value="Bridge"/>
+			<xs:enumeration value="Bridge_splice"/>
+			<xs:enumeration value="Terminal_splice"/>
+			<xs:enumeration value="Custom_terminal_type"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Gender_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="male"/>
+			<xs:enumeration value="female"/>
+			<xs:enumeration value="undefined"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Content_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="with_layout"/>
+			<xs:enumeration value="without_layout"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Si_unit_name">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metre"/>
+			<xs:enumeration value="gram"/>
+			<xs:enumeration value="second"/>
+			<xs:enumeration value="ampere"/>
+			<xs:enumeration value="kelvin"/>
+			<xs:enumeration value="hertz"/>
+			<xs:enumeration value="newton"/>
+			<xs:enumeration value="pascal"/>
+			<xs:enumeration value="joule"/>
+			<xs:enumeration value="watt"/>
+			<xs:enumeration value="coulomb"/>
+			<xs:enumeration value="volt"/>
+			<xs:enumeration value="farad"/>
+			<xs:enumeration value="ohm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Si_unit_prefix">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="milli"/>
+			<xs:enumeration value="centi"/>
+			<xs:enumeration value="micro"/>
+			<xs:enumeration value="kilo"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI_unit_dimension">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="square"/>
+			<xs:enumeration value="cubic"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Change_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="New"/>
+			<xs:enumeration value="Change"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

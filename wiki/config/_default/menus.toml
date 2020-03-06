@@ -11,26 +11,36 @@
 [[main]]
   name = "News"
   url = "news"
-  weight = 20
+  weight = 50
 
 [[main]]
-  name = "Specifications"
-  weight = 15
+  name = "Archive"
+  weight = 100
 
 [[main]]
   name = "Vehicle Electric Container (VEC)"
   url = "specifications/vec"
-  weight = 10
-  parent = "Specifications"
+  weight = 20
 
 [[main]]
   name = "Kabelbaumliste (KBL)"
   url = "specifications/kbl"
-  weight = 20
-  parent = "Specifications"
+  weight = 30
+  
+[[main]]
+  name = "ELOG"
+  url = "specifications/elog"
+  weight = 70
+  parent = "Archive"
 
 [[main]]
+  name = "GEO"
+  url = "specifications/geo"
+  weight = 80
+  parent = "Archive"
+
+  [[main]]
   name = "KOMP"
   url = "specifications/komp"
   weight = 90
-  parent = "Specifications"
+  parent = "Archive"
