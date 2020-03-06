@@ -15,6 +15,10 @@ links:
   - icon_pack: far
     icon: folder-open
     name: VEC Online Model Description
+  - icon_pack: fas
+    icon: shipping-fast
+    name: Release Notes
+    url: 'release-notes'
   - icon_pack: far
     icon: file-code
     name: vec_1.1.3.xsd
