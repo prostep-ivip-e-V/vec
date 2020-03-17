@@ -91,7 +91,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, .1)
 }
 
-@media (min-width:768px) {
+@include media-breakpoint-up(md) { 
   .specs-sidebar {
     border-right: 1px solid rgba(0, 0, 0, .1)
   }
@@ -106,7 +106,7 @@
   }
 }
 
-@media (min-width:1200px) {
+@include media-breakpoint-up(lg) { 
   .specs-sidebar {
     border-right: 1px solid rgba(0, 0, 0, .1)
   }
@@ -121,7 +121,7 @@
   }
 }
 
-@media (min-width:1200px) {
+@include media-breakpoint-up(lg) { 
   .specs-sidebar {
     flex: 0 1 320px
   }
@@ -173,20 +173,27 @@
   margin-left: -15px;
 }
 
-@media (min-width:768px) {
+@include media-breakpoint-up(md) { /* Match max-width of .nav-bar query. */
+  .specs-links {
+    display: block!important;
+  }
+
   @supports ((position:-webkit-sticky) or (position:sticky)) {
     .specs-links {
-      max-height: calc(100vh - 5rem - 70px);
+      max-height: calc(100vh - 50px);
       overflow-y: auto;
     }
   }
 }
 
-@media (min-width:768px) {
-  .specs-links {
-    display: block!important;
+@include media-breakpoint-up(lg) { /* Match max-width of .nav-bar query. */
+  @supports ((position:-webkit-sticky) or (position:sticky)) {
+    .specs-links {
+      max-height: calc(100vh - 70px);
+    }
   }
 }
+
 
 /* Docs TOC. */
 
