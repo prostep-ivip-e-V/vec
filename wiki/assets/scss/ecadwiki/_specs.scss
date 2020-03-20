@@ -340,33 +340,6 @@ ul.toc-top {
 .specs-overall-toc {
 
 }
-/*
-ol {
-  counter-reset: item;
-  margin: 0;
-  padding: 0;
-}
-
-ol > li {
-  display: table;
-  counter-increment: item;
-  margin-bottom: 0.6em;
-
-  &:before {
-    content: counters(item, ".") ". ";
-    display: table-cell;
-    padding-right: 0.6em;
-  }
-}
-
-li ol > li {
-  margin: 0;
-
-  &:before {
-    content: counters(item, ".") " ";
-  }
-}
-*/
 
 .specs-overall-toc ol {
   list-style-type: none;
@@ -392,6 +365,10 @@ li ol > li {
     text-align: right;
     padding-right: 0.5rem;
   }
+}
+
+.specs-overall-toc li li {
+  font-weight: normal;
 }
 
 .specs-overall-toc a {
