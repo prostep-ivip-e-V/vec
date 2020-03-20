@@ -39,6 +39,12 @@
           {{ partial "specs_links.html" . }}
           {{ end }}
 
+          {{ if .Params.specs.history }}
+          <h2>Latest Changes</h2>
+          The following table contains lately changed pages, sorted descending by last change.
+          {{ partial "specs_change_history.html" . }}
+          {{ end }}
+
           {{ if .Params.specs.toc }}
           <h2>Table of Content</h2>
           {{ partial "specs_overall_toc.html" . }}
