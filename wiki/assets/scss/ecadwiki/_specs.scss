@@ -340,8 +340,37 @@ ul.toc-top {
 .specs-overall-toc {
 
 }
+/*
+ol {
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+}
+
+ol > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+
+  &:before {
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    padding-right: 0.6em;
+  }
+}
+
+li ol > li {
+  margin: 0;
+
+  &:before {
+    content: counters(item, ".") " ";
+  }
+}
+*/
 
 .specs-overall-toc ol {
+  list-style-type: none;
+  display: table;
   counter-reset: item;
   padding-left: 1.5rem;
 }
@@ -350,15 +379,19 @@ ul.toc-top {
   padding-left: 0.5;
 }
 
-.specs-overall-toc li {
-  display: block;
+.specs-overall-toc ol>li {
+  display: table-row;
+  counter-increment: item;
   padding: .25rem;
   font-weight: bold;
   color: rgba(0, 0, 0, .65);
-}
-.specs-overall-toc li:before {
-  content: counters(item, ".") ". ";
-  counter-increment: item
+
+  &:before{
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    text-align: right;
+    padding-right: 0.5rem;
+  }
 }
 
 .specs-overall-toc a {
