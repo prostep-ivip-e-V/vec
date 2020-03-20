@@ -39,6 +39,11 @@
           {{ partial "specs_links.html" . }}
           {{ end }}
 
+          {{ if .Params.specs.toc }}
+          <h2>Table of Content</h2>
+          {{ partial "specs_overall_toc.html" . }}
+          {{ end }}
+
           {{ partial "tags.html" . }}
 
           <div class="article-widget">

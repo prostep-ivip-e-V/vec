@@ -5,6 +5,10 @@ toc: false
 type: specs
 date: "2020-02-28T00:00:00+01:00"
 draft: false
+
+specs:
+  toc: true
+
 cascade: 
   specification: VEC
   documentType: Guideline

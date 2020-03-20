@@ -5,6 +5,8 @@ toc: false
 type: specs
 date: "2020-02-01"
 draft: false
+specs:
+  toc: true
 specification: VEC
 version: 1.2.0
 menu:
