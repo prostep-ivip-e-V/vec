@@ -7,6 +7,8 @@ date: "2015-10-16"
 draft: false
 specification: VEC
 version: 1.1.2
+specs:
+  toc: true
 menu:
   vec-1.1.2:
     identifier: index    

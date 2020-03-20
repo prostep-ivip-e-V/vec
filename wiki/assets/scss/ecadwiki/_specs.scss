@@ -336,3 +336,41 @@ ul.toc-top {
 .dark .specs-nav-item a {
   color: #ddd;
 }
+
+.specs-overall-toc {
+
+}
+
+.specs-overall-toc ol {
+  list-style-type: none;
+  display: table;
+  counter-reset: item;
+  padding-left: 1.5rem;
+}
+
+.specs-overall-toc>ol {
+  padding-left: 0.5;
+}
+
+.specs-overall-toc ol>li {
+  display: table-row;
+  counter-increment: item;
+  padding: .25rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .65);
+
+  &:before{
+    content: counters(item, ".") ". ";
+    display: table-cell;
+    text-align: right;
+    padding-right: 0.5rem;
+  }
+}
+
+.specs-overall-toc li li {
+  font-weight: normal;
+}
+
+.specs-overall-toc a {
+  color: rgba(0, 0, 0, .65);
+}

@@ -7,6 +7,8 @@ date: "2015-03-16"
 draft: false
 specification: KBL
 version: 2.4
+specs:
+  toc: true
 menu:
   kbl-2.4:
     identifier: index    

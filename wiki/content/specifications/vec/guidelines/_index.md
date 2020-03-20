@@ -5,6 +5,11 @@ toc: false
 type: specs
 date: "2020-02-28T00:00:00+01:00"
 draft: false
+
+specs:
+  toc: true
+  history: true
+
 cascade: 
   specification: VEC
   documentType: Guideline
@@ -23,20 +28,3 @@ To avoid dialects in the different VEC implementations, further guidelines or re
 
 ## Contributing and Proposals 
 If you find any bugs in the implementation guidelines or if you have a request for specific topic, or if you would like to contribute your own tutorials please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/). If you don't have an account there yet, see [[:wiki:howto]] for the procedure to get one.
-
-## Table of Content
-The documentation of the specific areas and topics can be found in the following pages.
-
-{{% alert warning %}}
-Work in Progress
-{{% /alert %}}
-
-## Change History
-The following table contains all pages in the implementation guide, sorted descending by last change. Please ignore the indentation of page names, it is without meaning in this table.
-
-{{% alert warning %}}
-Work in Progress
-{{% /alert %}}
-
-
-

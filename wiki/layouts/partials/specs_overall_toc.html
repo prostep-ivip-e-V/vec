@@ -1,0 +1,34 @@
+{{ $current_page := . }}
+
+{{/* Dynamically load menu for this specs page. */}}
+{{/* Attempt to get menu name from `menu_name` param, Hugo's front matter menu config, or the last dir of filepath. */}}
+{{ $menu_name := "" }}
+{{ range $k, $v := .Params.menu }}
+  {{ $menu_name = $k }}
+{{ end }}
+{{ $menu_name = .Params.menu_name | default $menu_name | default (path.Base (path.Split .File).Dir) }}
+{{ if not (index site.Menus $menu_name) }}
+  {{ errorf "Please define menu items named `menu: %s:` in your %s front matter or define `[[menu.%s]]` in `config/default/menus.toml`. See https://sourcethemes.com/academic/docs/managing-content/#menus" $menu_name .Path $menu_name }}
+{{ end }}
+
+{{ with (index site.Menus $menu_name) }}
+{{ $menu := (index site.Menus $menu_name).ByWeight }}
+<div class="specs-overall-toc">
+  <ol>
+  {{ range $menu }}
+  <li class="{{ if $current_page.IsMenuCurrent $menu_name . }} active{{ end }}">
+      <a {{ if .URL }}href="{{ .URL }}"{{else if .HasChildren }}href="{{ (index .Children 0).URL }}"{{end}}>{{ .Name }}</a>
+      {{- if .HasChildren }}
+      <ol>
+        {{ range .Children }}
+        <li {{ if $current_page.IsMenuCurrent $menu_name . }}class="active"{{ end }}>
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ol>
+      {{ end }}
+  </li>
+  {{ end }}
+  </ol>
+</div>
+{{ end }}

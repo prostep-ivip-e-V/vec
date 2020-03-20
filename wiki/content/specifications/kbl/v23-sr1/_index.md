@@ -7,6 +7,8 @@ date: "2005-11-01"
 draft: false
 specification: KBL
 version: 2.3.sr1
+specs:
+  toc: true
 menu:
   kbl-2.3.sr1:
     identifier: index    
