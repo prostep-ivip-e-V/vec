@@ -164,6 +164,14 @@
 											<name>VEC_VERSION</name>
 											<value>${project.version}</value>
 										</parameter>
+										<parameter>
+											<name>revision</name>
+											<value>${buildNumber}</value>												
+										</parameter>
+										<parameter>
+											<name>timestamp</name>
+											<value>${timestamp}</value>												
+										</parameter>										
 									</parameters>
 									<fileMappers>
 										<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
