@@ -18,6 +18,10 @@ links:
   - icon_pack: far
     icon: folder-open
     name: VEC Online Model Description
+  - icon_pack: fas
+    icon: shipping-fast
+    name: Release Notes
+    url: 'release-notes'    
   - icon_pack: far
     icon: file-pdf
     name: VEC Tutorials 1.4
