@@ -49,11 +49,11 @@ subtitle = "Everything about VEC & Friends"
  # css_class = ""
 +++
 Welcome to the **ECAD Wiki** on the wiring harness and electrical system activities 
-of [propstep ivip](http://www.prostep.org) and [VDA](http://www.vda.de). The ECAD Wiki 
+of [prostep ivip](http://www.prostep.org) and [VDA](http://www.vda.de). The ECAD Wiki 
 is our information platform to provide our specifications and related information.
 
 You will find here all specifications and recommendations published by the joint 
-Project Group PDM4VES together with additional background information, tutorials 
+Project Group VES-WF together with additional background information, tutorials 
 and examples. Furthermore the ECAD Wiki is a source for articles dedicated to 
 engineering processes and methods in the electrical system development and their
 related technologies.
