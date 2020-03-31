@@ -1,6 +1,6 @@
 ---
 title: Vehicle Electric Systems Workflow Forum
-summary: "The VES-WF is an association of companies that are active in the field of wiring harness desing and manufacturing.<br/>
+summary: "The VES-WF is an association of companies that are active in the field of wiring harness design and manufacturing.<br/>
 
 
 The objective with regard to a model-based development process is the definition of an integrated and complete digital product model of the vehicle electric system."
