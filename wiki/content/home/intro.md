@@ -58,7 +58,7 @@ guidelines and examples. Furthermore the ECAD Wiki is a source for articles dedi
 engineering processes and methods in the electrical system development and their
 related technologies.
 
-The standards published here are Open Standards. If you find a bug, have a feature request or if you want to 
+Everything published here is Open Source. If you find a bug, have a feature request or if you want to 
 participate in the improvement and development process, then [see here]({{< relref "post/how-to-contribute" >}}) how 
 you can contribute. 
 
