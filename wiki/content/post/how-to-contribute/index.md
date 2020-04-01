@@ -1,6 +1,4 @@
 ---
-# Documentation: https://sourcethemes.com/academic/docs/managing-content/
-
 title: "How to Contribute"
 subtitle: ""
 summary: ""
@@ -16,18 +14,27 @@ profile: false
 commentable: false
 editable: true
 
-# Featured image
-# To use, add an image named `featured.jpg/png` to your page's folder.
-# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
 image:
-  caption: ""
-  focal_point: ""
+  caption: "Credit: [Business photo created by jcomp - www.freepik.com](https://www.freepik.com/free-photos-vectors/business)"
+  placement: 2
+  focal_point: "Smart"
   preview_only: false
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-projects: []
 ---
+## You want to particiapte actively?
+
+Under the umbrella of the prostep ivip, the continous development and improvement process of the standards takes place in two project groups, the VES-WF and the ECAD-IF. A more detailed description of the group activities can be found here: [VES-WF](https://www.prostep.org/en/projects/pdm-for-vehicle-electric-systems-pdm4ves/) / [ECAD-IF](https://www.prostep.org/en/projects/ecad-implementor-forum/).
+
+If you want to join, please reach out to the contact person listed on the corresponding page.
+
+## You found a bug or you have a feature request or a question?
+
+Continuous development and improvement is curcial, also for standards. An essential factor to achieve this is feedback from the user and implementor commmunity. Therefore: 
+
+**If you find a bug or an error in the recommendations, the schemas or 
+any of the provided documentation, please do not hesitate to drop us an issue in our [issue tracking system](https://track.prostep.com/projects/KBLFRM/). The same applies to all kinds of feature requests and questions.**
+
+
+
+The issue management is done in a JIRA instance provided by the prostep ivip. To get an account, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
+
+
