@@ -18,6 +18,19 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 200
 ---
+{{% alert warning %}}
+**Disclaimer**
+
+This material has been developed in the context of the revision of the CES Guidelines. It represents the 
+state of work and discussion that was reached at the end of 2019. Thus no warranty is made as to their 
+completeness, correctness or consistency. Since it is currently mainly a collection of existing information, 
+the contents are currently still in German.
+
+The documents are made available in the Wiki to allow the participants to continue working on
+the documents in the future. They shall not be used to develop software or services on it or become the 
+subject of agreements between development partners.
+{{% /alert %}}
+
 ## 1. Parallele Segmente unter gemeinsamer Wicklung.
 
 {{< figure class="w-25 float-left" src="ii-segmente-gemeinsame-wicklung.png" title="Parallele Wicklung" numbered="true" lightbox="true">}}
@@ -89,7 +102,7 @@ l<sub>(2)</sub> =  ~35mm
 
 Die 35mm sind ca. doppelte Tapebreite (18mm). Ist das noch innerhalb von Fertigungsvorgaben abbildbar, oder explizit darzustellen?
 
-### 3. Vorschlag für einen werkzeugneutrale Konstruktionsmethodik.
+## 3. Vorschlag für einen werkzeugneutrale Konstruktionsmethodik.
 **Randbedingungen** 
 
 1. Gemeinsame Wicklung wird in dedizierten Bereichen verwendet, sodass vereinfacht angenommen werden kann, dass Segmente die gemeinsam gewickelt werden, im Wesentlichen parallel verlaufen.
