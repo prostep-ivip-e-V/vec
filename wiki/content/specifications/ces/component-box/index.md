@@ -4,7 +4,6 @@ title: "Sicherungsträger, Relaissockelleisten, CAN-Verteiler"
 type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
-authors: [becker]
 tags: []
 categories: []
 date: 2019-11-18
@@ -19,6 +18,20 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
 ---
+{{% alert warning %}}
+**Disclaimer**
+
+This material has been developed in the context of the revision of the CES Guidelines. It represents the 
+state of work and discussion that was reached at the end of 2019. Thus no warranty is made as to their 
+completeness, correctness or consistency. 
+
+Since it is currently mainly a collection of existing information, 
+the contents are currently still in German.
+
+The documents are made available in the Wiki to allow the participants to continue working on
+the documents in the future. They shall not be used to develop software or services on it or become the 
+subject of agreements between development partners.
+{{% /alert %}}
 ## Allgemeine Basis
 ### Component Type
   * Sicherungsträger: Component Type = CONNECTOR
