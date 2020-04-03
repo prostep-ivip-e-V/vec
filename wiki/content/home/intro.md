@@ -49,7 +49,7 @@ subtitle = "Everything about VEC & Friends"
  # css_class = ""
 +++
 This is the place for all information about the standardization activities 
-of the [prostep ivip](http://www.prostep.org) and the [VDA](http://www.vda.de) in the field of 
+of the [prostep ivip Association](http://www.prostep.org/en) and the [VDA](http://www.vda.de/en) in the field of 
 wiring harness development and electrical systems design. 
 
 You will find here all specifications and recommendations published by the joint 

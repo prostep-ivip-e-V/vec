@@ -14,7 +14,7 @@ share: false
 ---
 The first version of the "Component Model (German: Komponente)". The content has been integrated and further developed in the VEC model. 
 
-**Disclaimer: The model is no longer maintained and is only listed here due to historical reasons. It must not be used for new implementations.**
+**Disclaimer: The model is no longer maintained and is only listed here due to historical reasons. It shall not be used for new implementations.**
 
 ## Version 1.0
 
