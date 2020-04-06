@@ -22,7 +22,7 @@ image:
 ---
 ## Do you want to participate actively?
 
-Under the umbrella of the prostep ivip, the continous development and improvement process of the standards takes place in two project groups, the VES-WF and the ECAD-IF. A more detailed description of the group activities can be found here: [VES-WF](https://www.prostep.org/en/projects/pdm-for-vehicle-electric-systems-pdm4ves/) / [ECAD-IF](https://www.prostep.org/en/projects/ecad-implementor-forum/).
+Under the umbrella of the prostep ivip Association, the continous development and improvement process of the standards takes place in two project groups, the VES-WF and the ECAD-IF. A more detailed description of the group activities can be found here: [VES-WF](https://www.prostep.org/en/projects/pdm-for-vehicle-electric-systems-pdm4ves/) / [ECAD-IF](https://www.prostep.org/en/projects/ecad-implementor-forum/).
 
 If you want to join, please reach out to the contact person listed on the corresponding page.
 
@@ -35,6 +35,6 @@ any of the provided documentation, please do not hesitate to drop us an issue in
 
 
 
-The issue management is done in a JIRA instance provided by the prostep ivip. To receive access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
+The issue management is done in a JIRA instance provided by prostep ivip. To request access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
 
 

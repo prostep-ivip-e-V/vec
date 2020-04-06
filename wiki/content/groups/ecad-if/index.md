@@ -4,7 +4,7 @@ summary: "The ECAD-IF is an association of tool manufacturers and vendors that i
 
 
 
-The objective is to support implementation projects and to ensure inter-operability between the different platforms."
+The objective is to support implementation projects and to ensure interoperability between the different platforms by establishing common test activities and publishing implementation guidelines."
 tags:
 - Project Group
 date: "2020-03-31"

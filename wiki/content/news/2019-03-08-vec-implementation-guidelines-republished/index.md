@@ -1,5 +1,5 @@
 ---
-title: "VEC Implementation Guidelines Republished"
+title: "VEC Implementation Guidelines republished"
 authors: [becker]
 tags: []
 categories: []
