@@ -35,6 +35,6 @@ any of the provided documentation, please do not hesitate to drop us an issue in
 
 
 
-The issue management is done in a JIRA instance provided by prostep ivip. To grant access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
+The issue management is done in a JIRA instance provided by prostep ivip. To request access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
 
 
