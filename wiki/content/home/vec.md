@@ -38,7 +38,7 @@ hero_media = "hero-academic.png"
 #   Remove a link/note by deleting a cta/note block.
 [cta]
   url = "specifications/vec/v113"
-  label = "Specification"
+  label = "View Documentation"
   icon_pack = "fas"
   icon = "book"
   
