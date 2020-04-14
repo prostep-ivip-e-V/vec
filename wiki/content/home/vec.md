@@ -40,7 +40,7 @@ hero_media = "hero-academic.png"
   url = "specifications/vec/v113"
   label = "Specification"
   icon_pack = "fas"
-  icon = "download"
+  icon = "book"
   
 [cta_alt]
   url = "specifications/vec/guidelines"
