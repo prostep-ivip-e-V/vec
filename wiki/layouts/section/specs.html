@@ -8,7 +8,7 @@
     {{ if gt (len .Sections) 0}}
     {{ range sort .Sections "Date" "desc" }}
     {{ $page := . }}
-    <li><h3>{{.Title}}</h3> 
+    <li><h3 class="article-title" style="font-size: 1.25rem;"><a href="{{.RelPermalink}}">{{.Title}}</a></h3> 
       <div class="article-style">
         <p>
         {{ if .Params.summary }}
