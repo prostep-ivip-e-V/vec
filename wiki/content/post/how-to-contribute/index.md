@@ -7,7 +7,7 @@ tags: []
 categories: []
 date: 2020-03-31T17:38:52+02:00
 lastmod: 2020-03-31T17:38:52+02:00
-featured: false
+featured: true
 draft: false
 share: false
 profile: false

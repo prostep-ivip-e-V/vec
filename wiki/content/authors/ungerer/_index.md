@@ -18,7 +18,7 @@ organizations:
   url: "https://www.prostep.com"
 
 # Short bio (displayed in user profile at end of posts)
-bio: As a service provider for the VES-WF and the ECAD-IF, I am one of the authors of the VEC and the KBL.
+bio: As a service provider I am in charge of coordinating the VES-WF and the ECAD-IF activities.
 
 interests:
 - Information Modelling
