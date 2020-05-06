@@ -1,0 +1,8 @@
+{{- $basePath := .Site.Params.KBL.current_base_url -}}
+{{- $pageName := .Get 0 -}}
+{{- $completeUrl := printf "%s/%s.md" $basePath $pageName -}}
+{{- with .Page.GetPage ($completeUrl) -}}
+<a {{ printf "href=%q" .Permalink | safeHTMLAttr }}>{{ .Title }}</a>
+{{- else -}}
+{{- errorf "vec class page not found for %s: %s" $pageName .Position -}}
+{{- end -}}
