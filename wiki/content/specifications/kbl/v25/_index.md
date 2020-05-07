@@ -19,7 +19,7 @@ links:
   - icon_pack: fas
     icon: globe
     name: PSI19 prostep ivip Recommendation KBL
-    url: https://www.prostep.org/en/mediathek/veroeffentlichungen
+    url: https://www.prostep.org/en/medialibrary/publications
   - icon_pack: fas
     icon: folder-open
     name: KBL 2.5 - Online Model Description
