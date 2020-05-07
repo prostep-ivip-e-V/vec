@@ -21,7 +21,7 @@ menu:
 {{% alert warning %}}
 **Disclaimer:** This page is currently under review by the community.  
 
-The content of this page can be subject to change at any time. If you find any issues or if you have review any comments please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/). 
+The content of this page can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/). 
 
 This page resolves [KBLFRM-923](https://track.prostep.com/browse/KBLFRM-923)
 {{% /alert %}}
@@ -34,7 +34,7 @@ The following section contains a short wrap-up about NURBS (Non-uniform rational
 
 NURBS are a commonly used as a representation of surfaces and curves in computer-aided design and are part of numerous industry wide standards. For the KBL & VEC only the representation of curves (the 3D centerline of {{% kbl-class "Segment" %}}s) as NURBS is relevant. NURBS are representing a curve as a mathematical function. The appearance of the curve can be influenced by a set of parameters:
 
-* **Degree $d$:** This is usally one of $\left [1,2,3,5 \right ]$. Sometimes, there are references to the *Order* of a NURBS, where *order* is $d + 1$. The *degree* defines the number of control points that influence any given point of the curve. 
+* **Degree $d$:** This is usally one of $\left [1,2,3,5 \right ]$. Sometimes, there are references to the *order* of a NURBS, where *order* is $d + 1$. The *degree* defines the number of control points that influence any given point of the curve. 
 * **Control Points**: The control points define the shape curve. Each NURBS can have $n$ control points, where $n > d$.
 * **Weight**: Each control point can define an individual weight.
 * **Knot vector**: The knot vector defines where and how the control points affect the NURBS curve. The number of knots is equal to $n + d + 1$. The values in the vector have a non-decreasing order. However, consecutive knots can have the same value, e.g. $(0,0,1,2,3,4,4)$ is a valid vector. A number of coinciding knots is sometimes referred to as a knot with a certain **multiplicity**. A knot where the *multiplicity* is equal to the *order* ($d+1$) is a **full** multiplicity knot. 
@@ -49,7 +49,7 @@ The NURBS (<u>N</u>on-<u>U</u>niform <u>R</u>ational <u>B</u>-<u>S</u>pline) are
 
 ## Current Situation in the KBL
 
-The intention of the KBL was, to keep the B-spline data model as simple as possible. Therefore the data model just contains the *control points* and the *degree*, assuming that all other parameters have an unambigious default when the set of valid NURBS are restricted to **Uniform non-rational B-Splines (UNRBS)**. This is the reason why KBL model does not define a *weight* nor a *knot-vector*. 
+The intention of the KBL was, to keep the B-spline data model as simple as possible. Therefore the data model just contains the *control points* and the *degree*, assuming that all other parameters have an unambigious default when the set of valid NURBS are restricted to **Uniform non-rational B-Splines (UNRBS)**. This is the reason why the KBL model does not define a *weight* nor a *knot-vector*. 
 
 Unfortunately, the definition of the KBL was not as precise as it could have been. No concrete definition was made as to whether these are *clamped* or *unclamped* uniform B-Splines. At the moment implementations for both variants exist. 
 
