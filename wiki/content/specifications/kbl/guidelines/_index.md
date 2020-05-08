@@ -21,11 +21,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
 ---
-{{% alert warning %}}
-**Disclaimer:** This page is currently under review by the community.  
-
-The content of this page can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/).  
-{{% /alert %}}
 The VDA / PSI recommendation Harness Description List (KBL) defines an information model, a data dictionary, and an XML schema derived from and compliant to the model. The intention of the model was to cover a wide range of use cases and application scenarios. For this reason the specification had to be kept generic in some degree and in some aspects. However, for specific scenarios and / or use cases a more detailed description on "how the different pieces fit together" is possible. 
 <!--more--> 
 
