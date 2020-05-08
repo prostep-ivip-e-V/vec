@@ -19,4 +19,4 @@ For each Version several documents are distributed:
   3. **XML Schema** Files: Starting with version 2.5 there are two schema variants distributed. One variant defining *OpenEnumerations* as String values and a strict variant, where the *OpenEnuermations* are defined as schema restrictions. For more information about the *OpenEnumerations* see the corresponding chapter in the prostep ivip / VDA Recommendation.
 
 
-## Version History 
+## Versions and Implementation Guidelines
