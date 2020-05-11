@@ -2,7 +2,7 @@
 title: ConnectorHousingCapRole
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -12,7 +12,7 @@ classes:
   - ConnectorHousingCapRole
 menu_name: vec-1.2.0
 ---
-A&#160;<i>ConnectorHousingCapRole</i> defines the instance-specific properties of a cap for a connector (backshells).
+<p> A&#160;<i>ConnectorHousingCapRole</i> defines the instance-specific properties of a cap for a connector (backshells).      </p>
 
 ## General Information
 

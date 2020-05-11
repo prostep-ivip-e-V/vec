@@ -2,7 +2,7 @@
 title: VariantCode
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -36,5 +36,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [VariantCodeSpecification]({{< relref "variantcodespecification.md" >}}) | 1 | variantCode | 0..* | Specifies the individual VariantCodes defined in the VariantCodeSpecification. |
 | [VariantGroup]({{< relref "variantgroup.md" >}}) | 0..* | variantCode | 0..* | References the VariantCodes that are member of the VariantGroup. |
+| [VariantCodeSpecification]({{< relref "variantcodespecification.md" >}}) | 1 | variantCode | 0..* | Specifies the individual VariantCodes defined in the VariantCodeSpecification. |

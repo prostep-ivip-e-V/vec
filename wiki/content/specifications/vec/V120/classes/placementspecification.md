@@ -2,7 +2,7 @@
 title: PlacementSpecification
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -33,5 +33,5 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Dimension]({{< relref "dimension.md" >}}) | dimension | 0..* | 1 | Specifies the Dimensions defined by the PlacementSpecification. |
 | [Placement]({{< relref "placement.md" >}}) | placement | 0..* | 1 | Specifies the Placements defined by the PlacementSpecification. |
+| [Dimension]({{< relref "dimension.md" >}}) | dimension | 0..* | 1 | Specifies the Dimensions defined by the PlacementSpecification. |

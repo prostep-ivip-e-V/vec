@@ -2,7 +2,7 @@
 title: WireMounting
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -31,10 +31,10 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireEndAccessoryRole]({{< relref "wireendaccessoryrole.md" >}}) | wireEndAccessory | 0..* | 0..* |  |
 | [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | mountedCavitySeal | 0..1 | 0..* | <p> References the cavity seal that is used for the wire mounting.      </p> |
-| [WireEnd]({{< relref "wireend.md" >}}) | referencedWireEnd | 1..* | 0..* | <p> References the wire ends that are used for the wire mounting. The minimum cardinality is one, because a wire mounting without wire end makes no sense.     </p>      <p> The maximum cardinality is * in order to support multi crimps.      </p> |
 | [WireMountingDetail]({{< relref "wiremountingdetail.md" >}}) | wireMountingDetail | 0..* | 1 | <p> Specifies the WireMoutingDetails, if a detailed description of the relationships between WireEnds and WireReceptions is needed.      </p> |
+| [WireEndAccessoryRole]({{< relref "wireendaccessoryrole.md" >}}) | wireEndAccessory | 0..* | 0..* |  |
+| [WireEnd]({{< relref "wireend.md" >}}) | referencedWireEnd | 1..* | 0..* | <p> References the wire ends that are used for the wire mounting. The minimum cardinality is one, because a wire mounting without wire end makes no sense.     </p>      <p> The maximum cardinality is * in order to support multi crimps.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

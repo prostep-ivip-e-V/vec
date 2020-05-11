@@ -2,7 +2,7 @@
 title: ContactPoint
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -38,5 +38,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ContactingSpecification]({{< relref "contactingspecification.md" >}}) | 1 | contactPoint | 0..* | Specifies the ContactPoints defined by the ContactingSpecification. |
 | [PinWireMappingPoint]({{< relref "pinwiremappingpoint.md" >}}) |  | contactPoint | 1 |  |
+| [ContactingSpecification]({{< relref "contactingspecification.md" >}}) | 1 | contactPoint | 0..* | Specifies the ContactPoints defined by the ContactingSpecification. |

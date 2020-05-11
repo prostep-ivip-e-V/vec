@@ -2,7 +2,7 @@
 title: CustomProperty
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -32,5 +32,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ExtendableElement]({{< relref "extendableelement.md" >}}) | 1 | customProperty | 0..* | Specifies the CustomProperties of the ExtendableElement. |
 | [ComplexProperty]({{< relref "complexproperty.md" >}}) | 1 | customProperty | 0..* | <p> The customProperties that represent the individual values of the complex property.      </p> |
+| [ExtendableElement]({{< relref "extendableelement.md" >}}) | 1 | customProperty | 0..* | Specifies the CustomProperties of the ExtendableElement. |

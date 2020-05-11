@@ -2,7 +2,7 @@
 title: NetworkNode
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -36,10 +36,10 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetworkPort]({{< relref "networkport.md" >}}) | port | 0..* | 1 | Specifies the NetworkPorts of a NetworkNode. |
 | [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p> |
+| [NetworkPort]({{< relref "networkport.md" >}}) | port | 0..* | 1 | Specifies the NetworkPorts of a NetworkNode. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | networkNode | 0..1 | References the NetworkNode that is realized by the ComponentNode. |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | networkNode | 0..* | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |
+| [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | networkNode | 0..1 | References the NetworkNode that is realized by the ComponentNode. |

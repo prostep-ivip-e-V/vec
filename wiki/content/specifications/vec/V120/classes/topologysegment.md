@@ -2,7 +2,7 @@
 title: TopologySegment
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -37,9 +37,9 @@ menu_name: vec-1.2.0
 |----------|----------|-----------|-----------|-----------------|
 | [TopologySegment]({{< relref "topologysegment.md" >}}) | instantiatedSegment | 0..1 | 0..* | <p> If this <i>TopologySegment</i> is an instance of another <i>To</i><i>pologySegment </i>that is defined elsewhere (e.g. the topology of an assembly), then the instantiated may be referenced here.      </p> |
 | [SegmentCrossSectionArea]({{< relref "segmentcrosssectionarea.md" >}}) | crossSectionAreaInformation | 0..* | 1 | Specifies the different SegmentCrossSectionAreas of the TopologySegment. |
+| [SegmentLength]({{< relref "segmentlength.md" >}}) | lengthInformation | 0..* | 1 | Specifies the different SegmentLengths of the TopologySegment. |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | startNode | 1 | 0..* | References the TopologyNode where the TopologySegment starts. |
 | [TopologyNode]({{< relref "topologynode.md" >}}) | endNode | 1 | 0..* | References the TopologyNode where the TopologySegment ends. |
-| [SegmentLength]({{< relref "segmentlength.md" >}}) | lengthInformation | 0..* | 1 | Specifies the different SegmentLengths of the TopologySegment. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

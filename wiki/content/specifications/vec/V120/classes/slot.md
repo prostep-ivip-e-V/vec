@@ -2,7 +2,7 @@
 title: Slot
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -35,5 +35,5 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Cavity]({{< relref "cavity.md" >}}) | cavity | 1..* | 1 | <p> Specifies the Cavities forming the Slot.      </p> |
 | [PartRelation]({{< relref "partrelation.md" >}}) | supplementaryParts | 0..* | 0..* | <p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p> |
+| [Cavity]({{< relref "cavity.md" >}}) | cavity | 1..* | 1 | <p> Specifies the Cavities forming the Slot.      </p> |

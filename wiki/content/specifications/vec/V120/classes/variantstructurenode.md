@@ -2,7 +2,7 @@
 title: VariantStructureNode
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -27,10 +27,10 @@ menu_name: vec-1.2.0
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p>Specifies a unique identification of the variant code. </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
-|aliasId | [AliasIdentification]({{< relref "aliasidentification.md" >}}) | 0..* | <p> Room to specify additional identifiers for the VariantStructureNode.      </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
-|abbreviation | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..1 | <p> Room for a human readable short name, title etc. of the VariantGroup.      </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>On optional human readable description of the variant group. </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
+|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the <i>VariantStructureNode</i>.      </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
+|aliasId | [AliasIdentification]({{< relref "aliasidentification.md" >}}) | 0..* | <p> Room to specify additional identifiers for the <i>VariantStructureNode</i>.      </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
+|abbreviation | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..1 | <p> Room for a human readable short name, title etc. of the <i>VariantStructureNode</i>.      </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
+|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> On optional human readable description of the <i>VariantStructureNode</i>.      </p> | [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) |
 
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |

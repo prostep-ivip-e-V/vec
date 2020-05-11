@@ -2,7 +2,7 @@
 title: PinComponentReference
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -32,8 +32,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 1 | 0..* | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
 | [TerminalRole]({{< relref "terminalrole.md" >}}) | terminalRole | 0..1 | 0..1 | References the TerminalRole of PinComponentReference. This is required to specify a Mating for EEComponents with other EEComponents or a Harness.  (KBLFRM-401) |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 1 | 0..* | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

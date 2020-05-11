@@ -2,7 +2,7 @@
 title: FunctionalAssignmentGroup
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -31,3 +31,7 @@ menu_name: vec-1.2.0
 |description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the <i>AssignmentGroup</i>.      </p> | [AssignmentGroup]({{< relref "assignmentgroup.md" >}}) |
 |functionalRequirements | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) | 0..* | <p> Functional requirements that apply to the members of this group.      </p>      <p> &#160;      </p> | [FunctionalAssignmentGroup]({{< relref "functionalassignmentgroup.md" >}}) |
 
+##  Incoming Relations
+|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
+|----------|----------|-----------|-----------|----------------|
+| [FunctionalStructureNode]({{< relref "functionalstructurenode.md" >}}) | 0..* | containedGroups | 0..* |  |

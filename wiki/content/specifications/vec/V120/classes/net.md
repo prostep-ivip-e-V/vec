@@ -2,7 +2,7 @@
 title: Net
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -33,11 +33,11 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 1..* | 1 | References the NetworkPorts that are connected by the Net. |
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..1 |  |  |
+| [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 1..* | 1 | References the NetworkPorts that are connected by the Net. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | net | 0..* | Specifies the Nets defined in the NetSpecification. |
-| [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | net | 0..1 | References the Net that is realized by the Connection. |
+| [NetGroup]({{< relref "netgroup.md" >}}) | 0..1 | net | 2..* | References the Nets that are grouped by the NetGroup. |
+| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | net | 0..* | Specifies the Nets defined in the NetSpecification. |

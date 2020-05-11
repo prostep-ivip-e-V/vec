@@ -2,7 +2,7 @@
 title: ItemVersion
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -35,11 +35,11 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Creation]({{< relref "creation.md" >}}) | creation | 0..1 | 1 | Specifies the information about the creation of the ItemVersion. |
-| [ChangeDescription]({{< relref "changedescription.md" >}}) | changeDescription | 0..* | 0..1 | Specifies the change history of the ItemVersion. |
-| [Contract]({{< relref "contract.md" >}}) | contract | 0..* | 0..* | References the contracts that apply to an ItemVersion. |
-| [Approval]({{< relref "approval.md" >}}) | approval | 0..* | 1 | Specifies the approval information of the ItemVersion. |
 | [CopyrightInformation]({{< relref "copyrightinformation.md" >}}) | copyrightInformation | 0..1 | 0..* | <p> References the <i>CopyrightInformation</i> that is in effect for this <i>ItemVersion. </i>If no <i>CopyrightInformation</i> is referenced by the <i>ItemVersion</i>, the <i>CopyrightInformation </i>that is referenced by the <i>VecContent</i> (if defined) shall be considered as in effect for this <i>ItemVersion.</i>      </p> |
+| [ChangeDescription]({{< relref "changedescription.md" >}}) | changeDescription | 0..* | 0..1 | Specifies the change history of the ItemVersion. |
+| [Approval]({{< relref "approval.md" >}}) | approval | 0..* | 1 | Specifies the approval information of the ItemVersion. |
+| [Contract]({{< relref "contract.md" >}}) | contract | 0..* | 0..* | References the contracts that apply to an ItemVersion. |
+| [Creation]({{< relref "creation.md" >}}) | creation | 0..1 | 1 | Specifies the information about the creation of the ItemVersion. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

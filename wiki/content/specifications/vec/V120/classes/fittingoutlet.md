@@ -2,7 +2,7 @@
 title: FittingOutlet
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -12,7 +12,7 @@ classes:
   - FittingOutlet
 menu_name: vec-1.2.0
 ---
-<p>Specifies one outlet of the fitting.  </p>
+<p> Specifies one outlet of the fitting.      </p>
 
 ## General Information
 

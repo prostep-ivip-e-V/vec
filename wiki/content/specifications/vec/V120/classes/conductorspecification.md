@@ -2,7 +2,7 @@
 title: ConductorSpecification
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -47,7 +47,7 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | conductorSpecification | 0..1 |  |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | 0..* | conductorSpecification | 0..1 | <p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p> |
+| [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | conductorSpecification | 0..1 |  |
 | [Signal]({{< relref "signal.md" >}}) |  | recommendedConductorSpecification | 0..1 | <p> Defines a recommended Specification for the cores that implement this signal.      </p> |
 | [TerminalPairing]({{< relref "terminalpairing.md" >}}) | 0..* | referencedCoreSpecification | 1 | <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p> |

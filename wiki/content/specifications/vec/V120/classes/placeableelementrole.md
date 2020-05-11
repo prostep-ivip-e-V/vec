@@ -2,7 +2,7 @@
 title: PlaceableElementRole
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -33,8 +33,8 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [MeasurementPointReference]({{< relref "measurementpointreference.md" >}}) | measurementPointReference | 0..* | 1 |  |
-| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placementPointReference | 0..* | 1 |  |
 | [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | placeableElementSpecification | 1 | 0..* | <p> References the <i>PlaceableElementSpecification</i> that is instanced by this <i>PlaceableElementRole.</i>      </p> |
+| [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | placementPointReference | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

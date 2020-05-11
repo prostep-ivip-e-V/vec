@@ -3,7 +3,7 @@ title: Placeable Elements
 toc: false
 type: specs
 layout: diagram
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0

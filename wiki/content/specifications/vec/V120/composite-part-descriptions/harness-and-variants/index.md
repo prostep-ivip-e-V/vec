@@ -3,7 +3,7 @@ title: Harness and Variants
 toc: false
 type: specs
 layout: diagram
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -47,4 +47,4 @@ weight: 1010004
   {{< svglink relref="../../classes/specification.md" x="35.0" y="15.0" width="477.0" height="67.0" >}}
   {{< svglink relref="../../classes/configurableelement.md" x="28.0" y="603.0" width="673.0" height="43.0" >}}
 {{< / svgfigure >}}
-<p> In addition to the <i>CompositionSpecification</i> and the <i>PartStructureSpecification</i>, the VEC defines two other concepts to control occurrences, especially composite parts (e.g. modules): <i>ModuleFamily</i> and <i>ModuleList</i>.      </p>      <p> <i>PartWithSubComponentsRoles</i> referenced by a <i>ModuleFamily </i>respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentsRoles</i> belong to are mutually exclusive.      </p>      <p> A <i>ModuleList</i> specifies a set of <i>PartWithSubComponentsRoles. </i>The definition requires that if one or more of this <i>PartWithSubComponentsRoles</i> respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentsRoles</i> belong to are part of an assembly the referenced <i>completitionComponents</i> have to be added.      </p>
+<p> In addition to the <i>CompositionSpecification</i> and the <i>PartStructureSpecification</i>, the VEC defines two other concepts to control occurrences, especially composite parts (e.g. modules): <i>ModuleFamily</i> and <i>ModuleList</i>.      </p>      <p> <i>PartWithSubComponentsRoles</i> referenced by a <i>ModuleFamily </i>respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentsRoles</i> belong to are mutually exclusive.      </p>      <p> A <i>ModuleList</i> specifies a set of <i>PartWithSubComponentsRoles. </i>The definition requires that if one or more of this <i>PartWithSubComponentsRoles</i> respectively the <i>OccurrenceOrUsage</i> these <i>PartWithSubComponentsRoles</i> belong to are part of an assembly the referenced <i>completionComponents</i> have to be added.      </p>

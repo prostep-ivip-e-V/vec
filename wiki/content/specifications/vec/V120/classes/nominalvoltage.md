@@ -2,7 +2,7 @@
 title: NominalVoltage
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -27,7 +27,7 @@ menu_name: vec-1.2.0
 | 12V |  |
 | 24V |  |
 | 48V |  |
-| HV | <p> HV defines all voltages that are dangerous to health or life. HV is a literal for a superset of HV1-5 where the concrete class is not known or not specified. That means in turn, that if a nominal voltage of HV1 - HV5 is defined, then it is also HV.       </p> |
+| HV | <p> HV defines all voltages that are dangerous to health or life, regardless if alternating (AC) or direct current (DC). This literal should be used if the concrete class is not known, not defined or not specified.      </p> |
 | HV1 | <p> HV Class 1 (200V&#160;DC)      </p> |
 | HV2 | <p> HV Class 2 (300V&#160;DC)      </p> |
 | HV3 | <p> HV Class 3 (600V&#160;DC)      </p> |

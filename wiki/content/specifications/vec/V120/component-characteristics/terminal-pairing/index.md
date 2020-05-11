@@ -3,7 +3,7 @@ title: Terminal Pairing
 toc: false
 type: specs
 layout: diagram
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -31,4 +31,4 @@ weight: 1005004
   {{< svglink relref="../../classes/terminalpairing.md" x="47.0" y="225.0" width="215.0" height="79.0" >}}
   {{< svglink relref="../../classes/specification.md" x="43.0" y="15.0" width="217.0" height="67.0" >}}
 {{< / svgfigure >}}
-<p> A <i>TerminalPairingSpecification</i> is a container for various <i>TerminalPairing</i>. A <i>TerminalPairing</i> is an aspect of part master definition of terminals and represents a specific pair of pluggable terminals. It specifies properties of that terminal pair in combination with a specific <i>ConductorSpecification.</i>      </p>
+<p> A <i>TerminalPairingSpecification</i> is a container for various <i>TerminalPairing</i>. A <i>TerminalPairing</i> is an aspect of part master definition of terminals and represents a specific pair of terminals pluggable to each other. It specifies properties of that terminal pair in combination with a specific <i>ConductorSpecification.</i>      </p>

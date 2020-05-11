@@ -2,7 +2,7 @@
 title: PotentialDistributorSpecification
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -12,7 +12,7 @@ classes:
   - PotentialDistributorSpecification
 menu_name: vec-1.2.0
 ---
-Specifies the properties of a potential distributor (e.g. a joint connector).
+<p> Specifies the properties of a potential distributor (e.g. a joint connector).      </p>
 
 ## General Information
 

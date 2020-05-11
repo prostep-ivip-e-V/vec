@@ -2,7 +2,7 @@
 title: DocumentRelatedAssignmentGroup
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -35,5 +35,5 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | relatedSheetOrChapter | 0..1 | 0..* | <p> Allows a more specific relationship to a <i>SheetOrChapter</i> within the <i>relatedDocumentVersion.</i>      </p>      <p> <i>&#160;</i>      </p> |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | relatedDocumentVersion | 1 | 0..* | <p> References the <i>DocumentVersion</i> to which this group relates.      </p> |
+| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | relatedSheetOrChapter | 0..1 | 0..* | <p> Allows a more specific relationship to a <i>SheetOrChapter</i> within the <i>relatedDocumentVersion.</i>      </p>      <p> <i>&#160;</i>      </p> |

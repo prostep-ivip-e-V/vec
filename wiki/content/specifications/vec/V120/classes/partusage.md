@@ -2,7 +2,7 @@
 title: PartUsage
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -37,8 +37,8 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [PartSubstitutionSpecification]({{< relref "partsubstitutionspecification.md" >}}) | partSubstitution | 0..1 |  |  |
-| [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) | partOrUsageRelatedSpecification | 0..* | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399 |
 | [PartUsage]({{< relref "partusage.md" >}}) | instanciatedUsage | 0..* | 0..* |  |
+| [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) | partOrUsageRelatedSpecification | 0..* | 0..* | References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399 |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

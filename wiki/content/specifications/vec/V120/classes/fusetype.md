@@ -2,7 +2,7 @@
 title: FuseType
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -12,7 +12,7 @@ classes:
   - FuseType
 menu_name: vec-1.2.0
 ---
-Defines the values for the type a fuse. This is the geometrical type.
+<p> Defines the values for the type a fuse. This is the geometrical type.      </p>
 
 ## General Information
 

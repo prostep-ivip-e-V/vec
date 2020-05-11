@@ -3,7 +3,7 @@ title: Grommets
 toc: false
 type: specs
 layout: diagram
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -43,4 +43,4 @@ weight: 1005010
   {{< svglink relref="../../classes/cableleadthroughspecification.md" x="36.0" y="610.0" width="283.0" height="115.0" >}}
   {{< svglink relref="../../classes/partorusagerelatedspecification.md" x="134.0" y="176.0" width="827.0" height="57.0" >}}
 {{< / svgfigure >}}
-<p> This diagram displays the relevant classes for grommets. Basically, grommets belong to the same category of parts like fixings and cable ducts. Grommets are mounted onto a harness topology and are used to guide cables safely, and in some cases sealed, through openings, for example in the car body.      </p>      <p> There are cases, where additional sealing of a cable lead through is not done with some kind of manufacturing steps (e.g. Foamed), but with additional sealing components. These are common case e.g. in high voltage applications where one load through per wire is used. Those are often sealed with an additional single wire seal. In the VEC those seals are represented by a <i>CavitySeal</i>- or <i>CavityPlugSpecification</i>. Even if the name &quot;Cavity...&quot; seems awkward in the combination with grommets &amp;&#160;cable lead throughs, the properties remain the same.      </p>      <p> The <i>CableLeadThroughSpecification</i> includes all attributes that are necessary to calculate appropriate seals.      </p>
+<p> This diagram displays the relevant classes for grommets. Basically, grommets belong to the same category of parts like fixings and cable ducts. Grommets are mounted onto a harness topology and are used to guide cables safely, and in some cases sealed, through openings, for example in the car body.      </p>      <p> There are cases, where additional sealing of a cable lead through is not done with some kind of manufacturing steps (e.g. Foamed), but with additional sealing components. These are common case e.g. in high voltage applications where one lead through per wire is used. Those are often sealed with an additional single wire seal. In the VEC those seals are represented by a <i>CavitySeal</i>- or <i>CavityPlugSpecification</i>. Even if the name &quot;Cavity...&quot; seems awkward in the combination with grommets &amp;&#160;cable lead throughs, the properties remain the same.      </p>      <p> The <i>CableLeadThroughSpecification</i> includes all attributes that are necessary to calculate appropriate seals.      </p>

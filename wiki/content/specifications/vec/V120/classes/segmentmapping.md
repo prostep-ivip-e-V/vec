@@ -2,7 +2,7 @@
 title: SegmentMapping
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -31,8 +31,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Path]({{< relref "path.md" >}}) | mappedPosition | 1 | 0..1 |  |
 | [TopologySegment]({{< relref "topologysegment.md" >}}) | innerSegment | 1 |  |  |
+| [Path]({{< relref "path.md" >}}) | mappedPosition | 1 | 0..1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

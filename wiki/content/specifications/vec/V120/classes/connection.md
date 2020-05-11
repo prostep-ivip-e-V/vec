@@ -2,7 +2,7 @@
 title: Connection
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -35,14 +35,14 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Net]({{< relref "net.md" >}}) | net | 0..1 | 0..* | References the Net that is realized by the Connection. |
-| [ConnectionEnd]({{< relref "connectionend.md" >}}) | connectionEnd | 2..* | 1 | Specifies the ConnectionEnds of the Connection. |
 | [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | References the signal that is transmitted by the connection. |
+| [ConnectionEnd]({{< relref "connectionend.md" >}}) | connectionEnd | 2..* | 1 | Specifies the ConnectionEnds of the Connection. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
+| [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | connection | 0..1 | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341 |
 | [MatingDetail]({{< relref "matingdetail.md" >}}) | 0..* | connection | 0..1 | <p> References the <i>Connection</i> that is realized by this <i>MatingPointDetail</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p>      <p> The definition at level of the <i>MatingDetail </i>might be required if the <i>TerminalRole </i>of the MatingPoint carries multiple different potentials (e.g. Coax).      </p> |
+| [MatingPoint]({{< relref "matingpoint.md" >}}) | 0..* | connection | 0..1 | <p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p> |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..* | connection | 2..* | References the Connections that are grouped by the ConnectionGroup. |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 1 | connection | 0..* | Specifies the Connection defined by the ConnectionSpecification. |
 | [BridgeTerminalRole]({{< relref "bridgeterminalrole.md" >}}) | 0..* | connection | 0..1 | References the <i>Connection</i> that is realized by this <i>BridgeTerminalRole.</i> |
-| [MatingPoint]({{< relref "matingpoint.md" >}}) | 0..* | connection | 0..1 | <p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p> |
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | connection | 0..1 | References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341 |

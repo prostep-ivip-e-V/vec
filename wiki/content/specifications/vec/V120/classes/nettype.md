@@ -2,7 +2,7 @@
 title: NetType
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -37,7 +37,7 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
 | [Net]({{< relref "net.md" >}}) |  | netType | 0..1 |  |
-| [NetworkPort]({{< relref "networkport.md" >}}) | 0..* | netType | 0..1 |  |
+| [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netType | 0..* |  |
+| [NetworkPort]({{< relref "networkport.md" >}}) | 0..* | netType | 0..1 |  |

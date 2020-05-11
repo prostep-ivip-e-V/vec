@@ -2,7 +2,7 @@
 title: ExtendableElement
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -31,8 +31,8 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CustomProperty]({{< relref "customproperty.md" >}}) | customProperty | 0..* | 1 | Specifies the CustomProperties of the ExtendableElement. |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | referencedExternalDocuments | 0..* | 0..* | <p> This association allows all <i>ExtendableElements</i> in the VEC&#160;to reference <i>DocumentVersions </i>as &quot;external reference&quot;.      </p>      <p> This association shall be used for the extension of elements in the VEC&#160;with information that cannot be represented in the VEC&#160;in an appropriate way but can be expressed in some external format (e.g. a specific symbol for a <i>ComponentNode</i>).      </p>      <p> D<i>ocumentVersions</i> referenced by this association shall not contain any <i>Specifications.</i>      </p>      <p> This association is no replacement for associations with a more precise semantic like the <i>DocumentBasedInstruction</i> or the associations between <i>PartVersion </i>and <i>DocumentVersion.</i>      </p>      <p> &#160;      </p> |
+| [CustomProperty]({{< relref "customproperty.md" >}}) | customProperty | 0..* | 1 | Specifies the CustomProperties of the ExtendableElement. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -2,7 +2,7 @@
 title: ChangeDescription
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -38,5 +38,5 @@ menu_name: vec-1.2.0
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | 0..1 | changeDescription | 0..* | Specifies the change history of the ItemVersion. |
 | [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..1 | changeDescription | 0..* | Specifies the change history of the SheetOrChapter. |
+| [ItemVersion]({{< relref "itemversion.md" >}}) | 0..1 | changeDescription | 0..* | Specifies the change history of the ItemVersion. |

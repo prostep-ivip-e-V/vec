@@ -2,7 +2,7 @@
 title: CavitySealSpecification
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0

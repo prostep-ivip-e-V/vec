@@ -2,7 +2,7 @@
 title: Signal
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -45,14 +45,14 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | recommendedInsulationSpecification | 0..1 |  | <p> Defines a recommended Specification for the insulation (e.g. the color) that implements this signal.      </p> |
 | [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | recommendedConductorSpecification | 0..1 |  | <p> Defines a recommended Specification for the cores that implement this signal.      </p> |
+| [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | recommendedInsulationSpecification | 0..1 |  | <p> Defines a recommended Specification for the insulation (e.g. the color) that implements this signal.      </p> |
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..1 |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 0..* | signal | 0..1 | <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p> |
-| [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | signal | 0..1 | <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p> |
-| [SignalSpecification]({{< relref "signalspecification.md" >}}) | 1 | signal | 0..* | <p> Specifies the signals.      </p> |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | 0..* | signal | 0..1 | References the signal that is transmitted by the WireElementReference. |
+| [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | signal | 0..1 | <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p> |
+| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 0..* | signal | 0..1 | <p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p> |
 | [Connection]({{< relref "connection.md" >}}) | 0..* | signal | 0..1 | References the signal that is transmitted by the connection. |
+| [SignalSpecification]({{< relref "signalspecification.md" >}}) | 1 | signal | 0..* | <p> Specifies the signals.      </p> |

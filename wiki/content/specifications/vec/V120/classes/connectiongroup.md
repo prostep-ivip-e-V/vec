@@ -2,7 +2,7 @@
 title: ConnectionGroup
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -41,6 +41,6 @@ menu_name: vec-1.2.0
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) |  | connectionGroup | 0..1 | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.      </p> |
-| [WireGrouping]({{< relref "wiregrouping.md" >}}) |  | connectionGroup | 0..1 | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p> |
 | [ConnectionSpecification]({{< relref "connectionspecification.md" >}}) | 0..1 | connectionGroup | 0..* | Specifies the ConnectionGroup defined by the ConnectionSpecification. |
+| [WireGrouping]({{< relref "wiregrouping.md" >}}) |  | connectionGroup | 0..1 | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p> |
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | 0..1 | subGroup | 0..* | Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup. |

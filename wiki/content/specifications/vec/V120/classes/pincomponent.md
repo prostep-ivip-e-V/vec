@@ -2,7 +2,7 @@
 title: PinComponent
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -35,14 +35,14 @@ menu_name: vec-1.2.0
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | behaviour | 0..* | 1 | <p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p> |
-| [Cavity]({{< relref "cavity.md" >}}) | referencedCavity | 0..1 | 0..* | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |
 | [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | pinSpecification | 0..1 | 0..* | References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300) |
+| [Cavity]({{< relref "cavity.md" >}}) | referencedCavity | 0..1 | 0..* | Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300) |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [DiodeSpecification]({{< relref "diodespecification.md" >}}) | 0..* | anode | 0..1 |  |
 | [DiodeSpecification]({{< relref "diodespecification.md" >}}) | 0..* | cathode | 0..1 |  |
 | [FuseComponent]({{< relref "fusecomponent.md" >}}) | 0..* | connectedPins | 0..2 |  |
-| [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | 0..* | pinComponent | 1 | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
 | [HousingComponent]({{< relref "housingcomponent.md" >}}) | 1 | pinComponent | 0..* | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
+| [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | 0..* | pinComponent | 1 | Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401) |
 | [InternalComponentConnection]({{< relref "internalcomponentconnection.md" >}}) | 0..* | pins | 2..* |  |

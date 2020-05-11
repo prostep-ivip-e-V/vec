@@ -2,7 +2,7 @@
 title: WireLengthType
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -12,7 +12,7 @@ classes:
   - WireLengthType
 menu_name: vec-1.2.0
 ---
-Specifies possible values for the <i>lengthType </i>of <i>WireLength</i>.
+<p> Specifies possible values for the <i>lengthType </i>of <i>WireLength</i>.      </p>
 
 ## General Information
 

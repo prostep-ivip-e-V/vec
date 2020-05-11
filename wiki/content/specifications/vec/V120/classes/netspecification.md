@@ -2,7 +2,7 @@
 title: NetSpecification
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -35,5 +35,5 @@ menu_name: vec-1.2.0
 |----------|----------|-----------|-----------|-----------------|
 | [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..* | 1 |  |
-| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |
 | [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification. |
+| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |

@@ -2,7 +2,7 @@
 title: CableTieRole
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -12,7 +12,7 @@ classes:
   - CableTieRole
 menu_name: vec-1.2.0
 ---
-A <i>CableTieRole</i> defines the instance specific properties and relationships of a cable tie.
+<p> A <i>CableTieRole</i> defines the instance specific properties and relationships of a cable tie.      </p>
 
 ## General Information
 

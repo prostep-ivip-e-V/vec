@@ -2,7 +2,7 @@
 title: ConfigurableElement
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -31,6 +31,6 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [AssignmentGroup]({{< relref "assignmentgroup.md" >}}) | associatedAssignmentGroups | 0..* | 0..* |  |
 | [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | applicationConstraint | 0..* |  | <p> References the application constraints that apply to the ConfigurableElement.      </p> |
 | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) | configInfo | 0..1 | 0..* | References the configuration information that applies to the ConfigurableElement. |
+| [AssignmentGroup]({{< relref "assignmentgroup.md" >}}) | associatedAssignmentGroups | 0..* | 0..* |  |

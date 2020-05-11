@@ -2,7 +2,7 @@
 title: ConnectorHousingSpecification
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -39,9 +39,9 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | segmentConnectionPoint | 0..* | 1 | <p> Specifies the <i>SegmentConnectionPoints </i>the connector housing.      </p> |
 | [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the connector housing that is satisfied by the connector housing. |
 | [AbstractSlot]({{< relref "abstractslot.md" >}}) | slot | 0..* | 1 | Specifies the slots forming the ConnectorHousing. |
-| [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | segmentConnectionPoint | 0..* | 1 | <p> Specifies the <i>SegmentConnectionPoints </i>the connector housing.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

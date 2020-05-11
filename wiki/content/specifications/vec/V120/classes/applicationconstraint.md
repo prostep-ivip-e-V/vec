@@ -2,7 +2,7 @@
 title: ApplicationConstraint
 toc: false
 type: specs
-date: "2020-02-01"
+date: "2020-05-11"
 draft: false
 specification: VEC
 version: 1.2.0
@@ -37,11 +37,11 @@ menu_name: vec-1.2.0
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | baseInclusion | 0..1 | 0..* | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |
 | [Project]({{< relref "project.md" >}}) | project | 0..* |  | <p> &#160;Defines the projects for which the application constraint applies.      </p> |
+| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | baseInclusion | 0..1 | 0..* | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ConfigurableElement]({{< relref "configurableelement.md" >}}) |  | applicationConstraint | 0..* | <p> References the application constraints that apply to the ConfigurableElement.      </p> |
 | [ApplicationConstraintSpecification]({{< relref "applicationconstraintspecification.md" >}}) | 1 | applicationConstraint | 1..* | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. |
+| [ConfigurableElement]({{< relref "configurableelement.md" >}}) |  | applicationConstraint | 0..* | <p> References the application constraints that apply to the ConfigurableElement.      </p> |
 | [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | 0..* | baseInclusion | 0..1 | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |
