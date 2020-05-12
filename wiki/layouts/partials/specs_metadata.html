@@ -16,7 +16,10 @@
   <span class="article-date">
     Published on {{ $page.Date.Format site.Params.date_format }}
   </span>
-
+  {{ if $page.Params.version }}
+  <span class="middot-divider"></span>  
+  <span>{{  $page.Params.specification }} Version {{  $page.Params.version }}</span>
+  {{ end }}
   {{ if ne ($page.Lastmod.Format "2006-01-02") ($page.Date.Format "2006-01-02") }}
   <span class="middot-divider"></span>
   <span class="article-date">

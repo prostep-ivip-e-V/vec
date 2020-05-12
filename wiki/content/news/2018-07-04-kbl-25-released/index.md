@@ -1,5 +1,5 @@
 ---
-title: "KBL 2.5 Released"
+title: "KBL 2.5 released"
 subtitle: "The KBL version 2.5 is released and publicly available!"
 authors: [ungerer]
 tags: []

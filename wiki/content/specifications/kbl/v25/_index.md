@@ -19,14 +19,14 @@ links:
   - icon_pack: fas
     icon: globe
     name: PSI19 prostep ivip Recommendation KBL
-    url: https://www.prostep.org/mediathek/veroeffentlichungen
+    url: https://www.prostep.org/en/medialibrary/publications
   - icon_pack: fas
     icon: folder-open
     name: KBL 2.5 - Online Model Description
   - icon_pack: far
     icon: file-code
-    name: kbl25.xsd
-    url: kbl25.xsd
+    name: kbl2.5.xsd
+    url: kbl2.5.xsd
 ---
 This version incorporates the results of the harmonization activities and eliminates various dialects. <!--more-->
 
@@ -34,4 +34,4 @@ This version incorporates the results of the harmonization activities and elimin
 * OpenEnumerations (analogous to VEC)
 * New features for requirements currently realized by dialects like Forced Routing or Id‘s for Fixing_assignments
 
-For detailed release notes see [KBL JIRA Release Notes](https://track.prostep.com/secure/ReleaseNote.jspa?version######38370&projectId10550).
+For detailed release notes see [KBL JIRA Release Notes](https://track.prostep.com/secure/ReleaseNote.jspa?version=38370&projectId=10550).

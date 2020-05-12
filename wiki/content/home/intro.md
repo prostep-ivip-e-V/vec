@@ -7,7 +7,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 15  # Order that this section will appear.
 
-title = "This is the ECAD WIKI"
+title = "Welcome to the **ECAD Wiki**"
 subtitle = "Everything about VEC & Friends"
 
 [design]
@@ -48,18 +48,19 @@ subtitle = "Everything about VEC & Friends"
  # CSS class.
  # css_class = ""
 +++
-Welcome to the **ECAD Wiki** on the wiring harness and electrical system activities 
-of [propstep ivip](http://www.prostep.org) and [VDA](http://www.vda.de). The ECAD Wiki 
-is our information platform to provide our specifications and related information.
+This is the place for all information about the standardization activities 
+of the [prostep ivip Association](http://www.prostep.org/en) and the [VDA](http://www.vda.de/en) in the field of 
+wiring harness development and electrical systems design. 
 
 You will find here all specifications and recommendations published by the joint 
-Project Group PDM4VES together with additional background information, tutorials 
-and examples. Furthermore the ECAD Wiki is a source for articles dedicated to 
+Project Group VES-WF together with additional background information, implementation 
+guidelines and examples. Furthermore the ECAD Wiki is a source for articles dedicated to 
 engineering processes and methods in the electrical system development and their
 related technologies.
 
-The ECAD Wiki is an open wiki. [See]() how you can contribute. 
+If you find a bug, have a feature request or if you want to 
+participate in the improvement and development process, then [see here]({{< relref "post/how-to-contribute" >}}) how 
+you can contribute. 
 
-[Test]({{< relref path="#about" >}})
 
 

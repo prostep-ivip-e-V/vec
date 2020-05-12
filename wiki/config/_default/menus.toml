@@ -10,8 +10,18 @@
 
 [[main]]
   name = "News"
-  url = "news"
-  weight = 50
+  url = "#news"
+  weight = 15
+
+[[main]]
+  name = "Events"
+  url = "#featured"
+  weight = 17
+
+[[main]]
+  name = "Project Groups"
+  url = "#groups"
+  weight = 19
 
 [[main]]
   name = "Archive"

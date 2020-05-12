@@ -54,7 +54,7 @@ Title | M | The title refers to the content of the document. | LocalizedTypedStr
 Supplementary title | O | The supplementary title field may be used to give further information on the object, when needed | LocalizedTypedString with the type ‚SupplementaryTitle ‘ in DocumentVersion.Description (see below)
 
 
-All Attributes in the VEC with the type {{<vec-class AbstractLocalizedString>}} can be realized either with an instance from the class {{<vec-class LocalizedString>}} or {{<vec-class LocalizedTypedString>}}. While the LocalizedString must be used just once for each attribute and language code the LocalizedTypedString must be used once for each attribute and language code AND each type. The OpenEnumertation {{<vec-class LocalizedTypedStringType>}} enables the possibility to place e.g. the title and the supplementary title for e.g. 'En' in the description mapping.
+All Attributes in the VEC with the type {{<vec-class AbstractLocalizedString>}} can be realized either with an instance from the class {{<vec-class LocalizedString>}} or {{<vec-class LocalizedTypedString>}}. While the LocalizedString must be used just once for each attribute and language code the LocalizedTypedString must be used once for each attribute and language code AND each type. The OpenEnumertation LocalizedTypedStringType enables the possibility to place e.g. the title and the supplementary title for e.g. 'En' in the description mapping.
 
 {{< figure src="typed_string_type.png" title="LocalizedTypedStringType" numbered="true" lightbox="true" >}}
 

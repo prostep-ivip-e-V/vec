@@ -19,12 +19,6 @@ We take appropriate technical and organizational measures to ensure a level of p
 ### Collecting, processing, using and deleting your personal data
 
 The prostep ivip Association collects, exports and uses personal information to provide you with better service and to better consider your needs and interests. This is done on the basis of this privacy statement and your consent. When you visit our website, your IP address is collected and cookies and other Internet technologies are used to collect general information about you and what is of interest to you. This website is operated by GitLab. The [GitLab Website Terms of Use](https://about.gitlab.com/terms/) apply. 
-*We also collect and process the information and data that you provide to us voluntarily, e.g. when you participate in discussion groups or forums. [habe ich mal reingenommen, falls wir die möglichkeit zur Kommentierung/Diskussion bieten wollen]*
-
-
-### Contributions and comments
-
-*[Modifiziert hineinnehmen, falls wir etwas ähnliches anbeiten wollen. Entfällt, wenn die "Welt" nur lesen darf.] In our blog, the authors present their subjective view of a topic. Readers have the opportunity to comment on the posts. Both the authors and those making comments can use a pseudonym instead of their real name. A valid e-mail address is however required, but it will not be published. Please note that the posts and comments on the blog can be seen by anyone using the Internet and can easily be found using search engines. If you have contributed a post or comment to the prostep ivip Association's blog, you have the right to ask us to delete or correct your post or comment.*
 
 ### Social plugins
 

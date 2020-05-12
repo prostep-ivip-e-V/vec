@@ -37,18 +37,18 @@ hero_media = "hero-academic.png"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-  url = "specifications/vec/v120"
-  label = "Specification"
+  url = "specifications/vec/v113"
+  label = "Documentation"
   icon_pack = "fas"
-  icon = "download"
+  icon = "book"
   
 [cta_alt]
   url = "specifications/vec/guidelines"
-  label = "View Implementation Guidelines"
+  label = "Implementation Guidelines"
 
 # Note. An optional note to show underneath the links.
 [cta_note]
-  label = 'Latest Release v1.2.0'
+  label = 'Latest Release v1.1.3'
 +++
 
 **The Vehicle Electric Container** - Foundation for the Digitalization of your E/E Processes.

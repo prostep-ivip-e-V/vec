@@ -1,0 +1,12 @@
+{{ $current_page := . }}
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script type="text/javascript">
+    var tracePageTitle = "{{ $current_page.Title }}";
+</script>
+<nav class="navbar navbar-light navbar-trace d-none d-lg-flex" id="navbar-trace">
+    <div class="container">
+        <ol class="breadcrumb" id="navbar-trace-list">
+            <li class="breadcrumb-item"><b>Trace:</b></li>            
+        </ol>
+    </div>
+</nav>

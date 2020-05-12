@@ -3,7 +3,7 @@
 
 title: "Volkswagen KBL documentation updated"
 subtitle: ""
-summary: "Now with detailed description of the Usage of the KBL element B_spline_curve"
+summary: "Now with detailed description of the usage of the KBL element B_spline_curve"
 authors: [becker]
 tags: []
 categories: []

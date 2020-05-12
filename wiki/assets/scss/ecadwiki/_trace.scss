@@ -1,0 +1,31 @@
+.navbar-trace{
+    top: 70px;
+    height: 40px;
+    z-index: 1020;
+    box-shadow: 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.11);
+}
+
+nav.navbar-trace ol.breadcrumb{
+    background-color: unset;
+    padding: 0.5rem 0rem;
+    margin-bottom: 0;
+}
+
+nav.navbar-trace li.breadcrumb-item {
+    padding-left: 9px;
+}
+
+nav.navbar-trace li.breadcrumb-item i {
+    padding-right: 9px;
+}
+
+nav.navbar-trace li.breadcrumb-item::before {
+    content: none;
+}
+
+@include media-breakpoint-up(lg) { 
+    body {
+        margin-top: 110px;
+    }
+}
+

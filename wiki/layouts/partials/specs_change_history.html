@@ -31,8 +31,8 @@
   {{ range first 10 $history }}
     <tr>
       {{ if .IsDescendant $current_page }}
-      <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-      <td>{{ .GitInfo.Subject }}</td>
+      <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>      
+      <td>{{ if .GitInfo }}{{ .GitInfo.Subject }}{{ end }}</td>
       <td>{{ .Date.Format "2006-01-02" }}</td>
       <td>{{ .Lastmod.Format "2006-01-02" }}</td>
       {{ end }}

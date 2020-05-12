@@ -1,12 +1,13 @@
 ---
 # Documentation: https://sourcethemes.com/academic/docs/managing-content/
 
-title: "Survey on VEC and KBL Usage"
+title: "Survey on VEC and KBL usage"
 authors: []
 tags: []
 categories: []
 date: 2017-12-21
 lastmod: 2017-12-21
+expirydate: 2020-01-01
 featured: false
 draft: false
 

@@ -1,4 +1,5 @@
 @import "ecadwiki/_specs";
+@import "ecadwiki/trace";
 
 .article-style figure {
     margin-top: 0;
@@ -11,4 +12,12 @@
 
 .article-container {
     max-width: 1000px;
+}
+
+#groups .card-image {
+    padding: $spacer $spacer 0;
+}
+
+#groups .project-card{
+    width: calc(50% - 2*20px);
 }
