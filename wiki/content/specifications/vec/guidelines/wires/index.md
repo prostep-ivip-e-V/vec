@@ -21,6 +21,14 @@ weight: 5000
 ---
 ## Single Core Specification
 
+{{% alert warning %}}
+**Deprecation**
+
+This page still refers to the model representation in VEC V1.1.3. 
+
+Due to incompatible changes in wire representation from Version V1.1.3 -> V1.2.0, this guideline is currently not valid for VEC > V1.1.3.
+{{% /alert %}}
+
 {{< figure src="single_core_specification.jpg" lightbox="true" title="Single Core Specification">}}
 
 The figure above illustrates the specification of a single core wire. The {{< vec-class WireSpecification >}} is the {{< vec-class PartOrUsageRelatedSpecification >}} describing the {{< vec-class PartVersion >}}. In order to make it possible to reuse the specification of the different {{< vec-class WireElement >}}s (see [Multi Core Specification]({{< relref "#multi-core-specification" >}})), the actual definition of the structure of the wire is delegated to a {{< vec-class WireElementSpecification >}}. The {{< vec-class WireElement >}} defines the context specific identification of a {{< vec-class WireElementSpecification >}} in the context of a specific {{< vec-class WireSpecification >}} (mainly needed for multi cores, but due to a consistent modeling approach also necessary for single cores). The {{< vec-class WireElement >}} is used for reference when a {{< vec-class WireSpecification >}} is instantiated (e.g. by a {{< vec-class PartOccurrence >}}).
