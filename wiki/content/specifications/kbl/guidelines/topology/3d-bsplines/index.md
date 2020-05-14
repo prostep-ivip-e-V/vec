@@ -45,7 +45,9 @@ The NURBS (<u>N</u>on-<u>U</u>niform <u>R</u>ational <u>B</u>-<u>S</u>pline) are
 
 1. If all control points have the same weight ($w=1.0$) the B-Spline is called **non-rational**
 2. If knot vector starts and ends with a **full** multiplicity knot the B-spline is called **clamped**. A *clamped* B-spline starts in the first and ends in the last control point.
-3. **Uniform**: There are some slightly different interpretations about the defintion of *uniformity*. In general *uniform* refers to the distribution of the  knot values in the knot vector. Some sources (e.g. [^2]) define, that if the knot vector is clamped, all other knots have a multiplicity of one, and all knots (values) have the same distance, the B-spline is called **uniform**. For example a NURBS with $d=4$ and with a knot vector $(0,0,0,0,0,1,2,3,4,5,5,5,5,5)$ would be *uniform*. Other sources (e.g. [^4]) differentiate between *clamped uniform* and *unclamped uniform*. 
+3. **Uniform**: There are some slightly different interpretations about the defintion of *uniformity*. In general *uniform* refers to the distribution of the  knot values in the knot vector. Some sources (e.g. [^2]) define, that if the knot vector is clamped, all other knots have a multiplicity of one, and all knots (values) have the same distance, the B-spline is called **uniform**. For example a NURBS with $d=4$ and with a knot vector $(0,0,0,0,0,1,2,3,4,5,5,5,5,5)$ would be *uniform*. Other sources (e.g. [^4]) differentiate between *clamped uniform* and *unclamped uniform*: 
+   * **Clamped uniform** would correspond to the defintion above,
+   * **Unclamped uniform** would require all knots to have a multiplicity of one, and all knots (values) to have the same distance (e.g. $(0,1,2,3,4,5,6,7,8,9,10,11,12)$).
 
 ## Current Situation in the KBL
 
@@ -55,7 +57,7 @@ Unfortunately, the definition of the KBL was not as precise as it could have bee
 
 A subsequent restriction to one of the two variants was discussed in the relevant committees and considered impracticable. The reasons for this were, on the one hand, the large volume of existing data and, on the other hand, the non-trivial conversion process between the two variants, which makes it virtually impossible to implement it in practice.
 
-## Defintion
+## Definition
 
 The {{% kbl-class "B_Spline_curve" %}} in the KBL represents a **uniform non-rational B-spline** (either *clamped* or *unclamped*).  When rendering 3D KBL data, the renderer has to use external knowledge to determine which variant is used. 
 
