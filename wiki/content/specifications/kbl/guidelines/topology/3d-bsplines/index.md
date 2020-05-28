@@ -3,7 +3,7 @@ title: "3D B-Spline Representation"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.
-toc: false
+toc: true
 authors: [becker]
 tags: []
 categories: []
@@ -11,6 +11,9 @@ date: 2020-05-04T09:25:01+02:00
 lastmod: 2020-05-04T09:25:01+02:00
 draft: false
 math: true
+
+classes:
+  - B_spline_curve
 
 menu:
   kbl-guidelines:
