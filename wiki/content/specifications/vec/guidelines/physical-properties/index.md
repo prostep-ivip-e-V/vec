@@ -34,7 +34,7 @@ Many technical properties are defined as {{< vec-class NumericalValue >}}. Those
 
 {{< figure src="numerical_values.jpg" title="Numerical Values" numbered="true" lightbox="true">}} 
 
-The object diagram above illustrates the VEC represenation the following value: 
+The object diagram above illustrates the VEC representation of the following value: 
 
 $$105.23 \ \Omega /km \pm 20.0$$ 
 
