@@ -21,8 +21,7 @@ classes:
 
 menu:
   vec-guidelines:
-    # Toplevel element. For sub sections the identifier of the subsection
-    #parent: Example Topic
+    parent: key-concepts
     weight: 2000
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
