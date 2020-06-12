@@ -12,12 +12,15 @@ https://ecad-wiki.gitlab.io.
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [GitLab CI](#gitlab-ci)
+  - [Updating Hugo Version for CI Build](#updating-hugo-version-for-ci-build)
 - [Building locally](#building-locally)
   - [Preview your site](#preview-your-site)
 - [Create Content](#create-content)
   - [Migration Cheat Sheat](#migration-cheat-sheat)
     - [Replace WikiLinks (in migrated .md)](#replace-wikilinks-in-migrated-md)
   - [Implementation Guidelines](#implementation-guidelines)
+    - [Related content](#related-content)
+    - [Creating Diagrams](#creating-diagrams)
 - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
