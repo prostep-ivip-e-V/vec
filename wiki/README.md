@@ -198,6 +198,11 @@ Every diagram references all classes shown on the diagram. The version is define
 report. As a result, a class relates to all diagrams where it is represented (but only in the same version
 of the recommendation) and vice versa. 
 
+#### Creating Diagrams
+
+Visio like Diagrams can be created as SVG via [draw.io](https://draw.io). The WEB editor 
+supports gitlab.com as backend for storage, so can load & save directly from a gitlab branch.
+
 
 ## Troubleshooting
 
