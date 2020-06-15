@@ -27,6 +27,10 @@ links:
     icon: file-code
     name: kbl2.5.xsd
     url: kbl2.5.xsd
+  - icon_pack: far
+    icon: file-code
+    name: kbl2.5-strict.xsd
+    url: kbl2.5-strict.xsd    
 ---
 This version incorporates the results of the harmonization activities and eliminates various dialects. <!--more-->
 
