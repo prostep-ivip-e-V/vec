@@ -1,0 +1,9 @@
+{{- $issueNumber := .Get 0 -}}
+{{- $completeUrl := printf "https://track.prostep.com/browse/%s" $issueNumber -}}
+<div class="alert alert-warning">
+    <div>
+        <p><strong>Disclaimer:</strong> This page or section is currently under review by the community.</p>
+        <p>The content of this page or section can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue on the <a target="_blank" href="https://track.prostep.com/projects/KBLFRM/">PROSTEP JIRA</a>.</p>
+        <p>This page or section resolves <a target="_blank" href="{{$completeUrl}}">{{$issueNumber}}</a></p>
+    </div>
+</div>
