@@ -24,13 +24,7 @@ menu:
     #parent: Example Topic
     weight: 4000
 ---
-{{% alert warning %}}
-**Disclaimer:** This page is currently under review by the community.  
-
-The content of this page can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/). 
-
-This page resolves [KBLFRM-631](https://track.prostep.com/browse/KBLFRM-631)
-{{% /alert %}}
+{{< review "KBLFRM-631" >}}
 
 {{< figure src="sealed-ring-terminal.png" lightbox="true" class="float-right" numbered="true" title="Sealed ring terminal with overlapping protection" width="400px" >}}
 
