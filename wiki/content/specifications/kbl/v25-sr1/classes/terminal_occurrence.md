@@ -1,0 +1,41 @@
+﻿---
+title: Terminal_occurrence
+toc: false
+type: specs
+date: "2020-06-25"
+draft: false
+specification: KBL
+version: 2.5.sr1
+documentType: "Recommendation"
+elementType: Class
+classes:
+  - Terminal_occurrence
+menu_name: kbl-2.5.sr1
+---
+<p>A Terminal_occurrence is the occurrence of a General_terminal in a module part list. Note: The number of occurrences used in a specific module or harness can be calculated by the individual occurrences. Note: The usage of a Terminal_occurrence for a particular Cavity is specified by the Part_usage object.</p>
+
+## General Information
+
+| Attribute               | Value |
+|-------------------------|-------|
+| **Owner**               | 3_Part_structure |
+| **Applied Stereotype**  |   |
+| **Base Classifier**     | [Changed_element]({{< relref "changed_element.md" >}})<br/> [Connection_or_occurrence]({{< relref "connection_or_occurrence.md" >}})<br/> [Part_usage_select]({{< relref "part_usage_select.md" >}})<br/> [Reference_element]({{< relref "reference_element.md" >}})<br/>  |
+| **Is Abstract**         | false |
+| **Derived Classifiers** | [Specified_terminal_occurrence]({{< relref "specified_terminal_occurrence.md" >}}) |
+
+## Attributes
+|  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
+|--------|--------|---------|---------------|--------------|
+|Id | [String]({{< relref "string.md" >}}) | 0..1 | <p> The id specifies the identifier of the Terminal_occurrence.      </p> | [Terminal_occurrence]({{< relref "terminal_occurrence.md" >}}) |
+
+## Outgoing Relations
+|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
+|----------|----------|-----------|-----------|-----------------|
+| [Installation_instruction]({{< relref "installation_instruction.md" >}}) | Installation_information | 0..* | 1 |  |
+| [General_terminal]({{< relref "general_terminal.md" >}}) | Part | 1 | 1..* |  |
+| [Reference_element]({{< relref "reference_element.md" >}}) | Reference_element | 0..* | 0..* |  |
+##  Incoming Relations
+|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
+|----------|----------|-----------|-----------|----------------|
+| [Specified_terminal_occurrence]({{< relref "specified_terminal_occurrence.md" >}}) | 0..* | Related_occurrence | 1..* |  |
