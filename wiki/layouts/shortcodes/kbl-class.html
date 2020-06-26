@@ -4,5 +4,5 @@
 {{- with .Page.GetPage ($completeUrl) -}}
 <a {{ printf "href=%q" .Permalink | safeHTMLAttr }}>{{ .Title }}</a>
 {{- else -}}
-{{- errorf "vec class page not found for %s: %s" $pageName .Position -}}
+{{- errorf "kbl class page not found for %s: %s - %s" $pageName .Position $completeUrl -}}
 {{- end -}}
