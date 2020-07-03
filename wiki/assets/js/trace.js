@@ -17,6 +17,13 @@ function RecordCurrentPage(title){
     storeHistory(history);
 }
 
+function truncateString(str, num) {
+    if (str.length <= num) {
+      return str
+    }
+    return str.slice(0, num) + '&hellip;'
+}
+
 function readHistory(){
     var content = Cookies.get('trace');
 
@@ -47,7 +54,7 @@ function InitializeTraceList(){
             newLi.classList.add('active');
             newLi.innerHTML = newLi.innerHTML + element.title;
         } else {
-            newLi.innerHTML = newLi.innerHTML +  '<a href="' + element.url + '">'+ element.title +'</a>';
+            newLi.innerHTML = newLi.innerHTML +  '<a href="' + element.url + '" title="' + element.title + '">'+ truncateString(element.title,25) +'</a>';
         }
         breadcrumbList.appendChild(newLi);             
     });
