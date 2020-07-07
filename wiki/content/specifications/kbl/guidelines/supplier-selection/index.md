@@ -5,7 +5,6 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: ["Review"]
 categories: []
 date: 2020-05-26
 lastmod: 2020-05-26
@@ -23,13 +22,6 @@ menu:
     #parent: Example Topic
     weight: 3000
 ---
-{{% alert warning %}}
-**Disclaimer:** This page is currently under review by the community.  
-
-The content of this page can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/). 
-
-This page resolves [KBLFRM-801](https://track.prostep.com/browse/KBLFRM-801)
-{{% /alert %}}
 
 The {{< kbl-class "part" >}} in the KBL represents an identifier for the PDM information of a component in the context of a specific company. Therefore the {{< kbl-class "part" >}} has the mandatory key attributes *Part_number* and *Company_name*. The most common case in the KBL is, that the {{< kbl-class "part" >}} within a harness, represents an OEM component specification. 
 

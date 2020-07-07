@@ -5,7 +5,6 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: ["Review"]
 categories: []
 date: 2020-05-04T09:25:01+02:00
 lastmod: 2020-05-04T09:25:01+02:00
@@ -21,13 +20,6 @@ menu:
     #parent: Example Topic
     weight: 2000
 ---
-{{% alert warning %}}
-**Disclaimer:** This page is currently under review by the community.  
-
-The content of this page can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue on the [PROSTEP JIRA](https://track.prostep.com/projects/KBLFRM/). 
-
-This page resolves [KBLFRM-923](https://track.prostep.com/browse/KBLFRM-923)
-{{% /alert %}}
 
 For historical reasons the documentation of the {{% kbl-class "B_Spline_curve" %}} is not clear and unfortunately leaves room for interpretation. This Implementation Guideline clarifies the relevant facts and describes the valid interpretations in the field.
 
