@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?elena version="2.8.0-b7" system="Windows 10 10.0" compilation_date="11.07.2018" compilation_time="17:12:00"?>
+<?extraction date="18.07.2018" time="13:11:58"?>
+<?pc checksum="695947884"?>
+<?xsd validated="true"?>
+<kbl:KBL_container xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KBL_container" version_id="2.3 SR-1">
+	<Cartesian_point id="Cartesian_point_1">
+		<Coordinates>2835.768688</Coordinates>
+		<Coordinates>432.983286</Coordinates>
+		<Coordinates>312.981781</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_2">
+		<Coordinates>1744.378607</Coordinates>
+		<Coordinates>298.122794</Coordinates>
+		<Coordinates>108.426730</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_3">
+		<Coordinates>-72992.624842</Coordinates>
+		<Coordinates>-87163.253273</Coordinates>
+		<Coordinates>48243.877044</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_4">
+		<Coordinates>-6866.761167</Coordinates>
+		<Coordinates>4821.907432</Coordinates>
+		<Coordinates>-16665.890871</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_5">
+		<Coordinates>10405.895905</Coordinates>
+		<Coordinates>-126.757845</Coordinates>
+		<Coordinates>8512.999427</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_6">
+		<Coordinates>-4485.749332</Coordinates>
+		<Coordinates>447.283456</Coordinates>
+		<Coordinates>-6767.988836</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_7">
+		<Coordinates>12943.888130</Coordinates>
+		<Coordinates>589.766603</Coordinates>
+		<Coordinates>11244.317031</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_8">
+		<Coordinates>-44361.324327</Coordinates>
+		<Coordinates>-3363.124837</Coordinates>
+		<Coordinates>-40397.248229</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_9">
+		<Coordinates>665128.246155</Coordinates>
+		<Coordinates>80031.756330</Coordinates>
+		<Coordinates>557404.203109</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_10">
+		<Coordinates>2801.286879</Coordinates>
+		<Coordinates>437.135800</Coordinates>
+		<Coordinates>313.625164</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_11">
+		<Coordinates>1773.833308</Coordinates>
+		<Coordinates>276.554818</Coordinates>
+		<Coordinates>104.426730</Coordinates>
+	</Cartesian_point>
+	<Connector_housing id="id_315_1">
+		<Part_number>2Da10221248</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH</Description>
+		<Mass_information id="id_380_3">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>17.0</Value_component>
+		</Mass_information>
+		<Housing_colour>nd</Housing_colour>
+		<Slots id="id_341_2">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_2">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_0">
+		<Part_number>7Ya102612461C</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABSCHUHE_BATERIE</Description>
+		<Mass_information id="id_380_5">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>109.0</Value_component>
+		</Mass_information>
+		<Housing_colour>nd</Housing_colour>
+		<Slots id="id_341_0">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_0">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<General_terminal id="id_326_0">
+		<Part_number>7Ya102612461C</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABSCHUHE_BATERIE</Description>
+		<Mass_information id="id_380_4">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>109.0</Value_component>
+		</Mass_information>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_1">
+		<Part_number>2Da10221248</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH</Description>
+		<Mass_information id="id_380_2">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>17.0</Value_component>
+		</Mass_information>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_wire id="id_327_0">
+		<Part_number>O10a210601a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_1">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>266.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>29.4</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_0">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>25</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>9.8</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_0">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<Harness id="id_328_0">
+		<Part_number>000971228</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>LTGS Batterie Plus</Description>
+		<Project_number>VNG</Project_number>
+		<Car_classification_level_2>VW1200</Car_classification_level_2>
+		<Model_year>2018</Model_year>
+		<Content>harness complete set</Content>
+		<Connection id="id_314_0">
+			<Id>V.30.SZS1034.Bvj31XB.B.1.Tbny1111</Id>
+			<Signal_name>V.30.SZS1034.Bvj3</Signal_name>
+			<Wire>id_350_0</Wire>
+			<Extremities id="id_377_0">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_0</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_1">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_1</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connector_occurrence id="id_316_1">
+			<Id>XB.B.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_1</Part>
+			<Contact_points id="id_372_1">
+				<Id>XB.B.1-1#1_V.30.SYS_034.Anl3_XA.A.1.Last_1_1</Id>
+				<Associated_parts>id_342_1</Associated_parts>
+				<Contacted_cavity>id_370_3</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_3">
+				<Part>id_341_2</Part>
+				<Cavities id="id_370_3">
+					<Part>id_370_2</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_0">
+			<Id>XA.A.1.Last</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_0</Part>
+			<Contact_points id="id_372_0">
+				<Id>XA.A.1.Last-1#1_V.30.SYS_034.Anl3_XA.A.1.Last_1_1</Id>
+				<Associated_parts>id_342_0</Associated_parts>
+				<Contacted_cavity>id_370_1</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_1">
+				<Part>id_341_0</Part>
+				<Cavities id="id_370_1">
+					<Part>id_370_0</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_0">
+			<Part>id_327_0</Part>
+			<Length_information id="id_388_0">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_0">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1082.07</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>1</Wire_number>
+		</General_wire_occurrence>
+		<Special_terminal_occurrence id="id_342_0">
+			<Id>XA.A.1.Last</Id>
+			<Description>Batterie</Description>
+			<Placement id="Placement_2">
+				<U>-0.590791</U>
+				<U>-0.806825</U>
+				<U>-0.000000</U>
+				<V>0.806825</V>
+				<V>-0.590791</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_2</Cartesian_point>
+			</Placement>
+			<Part>id_326_0</Part>
+		</Special_terminal_occurrence>
+		<Special_terminal_occurrence id="id_342_1">
+			<Id>XB.B.1</Id>
+			<Description>Anlasser</Description>
+			<Placement id="Placement_1">
+				<U>0.032469</U>
+				<U>0.410791</U>
+				<U>-0.911151</U>
+				<V>-0.999473</V>
+				<V>0.013345</V>
+				<V>-0.029600</V>
+				<Cartesian_point>Cartesian_point_1</Cartesian_point>
+			</Placement>
+			<Part>id_326_1</Part>
+		</Special_terminal_occurrence>
+		<Module id="id_331_0">
+			<Part_number>aaa10821339</Part_number>
+			<Company_name>GCMC</Company_name>
+			<Version>/NULL</Version>
+			<Abbreviation>/NULL</Abbreviation>
+			<Description>Variante</Description>
+			<Mass_information id="id_380_0">
+				<Unit_component>id_346_2</Unit_component>
+				<Value_component>50.0</Value_component>
+			</Mass_information>
+			<Car_classification_level_2>/NULL</Car_classification_level_2>
+			<Model_year>/NULL</Model_year>
+			<Content>variant</Content>
+			<Of_family>id_332_0</Of_family>
+			<Module_configuration id="id_353_0">
+				<Logistic_control_information>L0L</Logistic_control_information>
+				<Configuration_type>option code</Configuration_type>
+				<Controlled_components>id_342_1 id_342_0 id_350_0 id_314_0</Controlled_components>
+			</Module_configuration>
+		</Module>
+		<Module_families id="id_332_0">
+			<Id>VAR</Id>
+			<Description>Varianten</Description>
+		</Module_families>
+	</Harness>
+	<Node id="Node_1">
+		<Id>PNID1</Id>
+		<Cartesian_point>Cartesian_point_10</Cartesian_point>
+		<Referenced_components>id_342_1</Referenced_components>
+	</Node>
+	<Node id="Node_2">
+		<Id>PNID2</Id>
+		<Cartesian_point>Cartesian_point_11</Cartesian_point>
+		<Referenced_components>id_342_0</Referenced_components>
+	</Node>
+	<Routing id="id_338_0">
+		<Routed_wire>id_314_0</Routed_wire>
+		<Segments>Segment_1</Segments>
+	</Routing>
+	<Segment id="Segment_1">
+		<Id>ROUTING_BAUKST_BATTERIE_PLUS-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>-0.999473</Start_vector>
+		<Start_vector>0.013345</Start_vector>
+		<Start_vector>-0.029600</Start_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>1.000000</End_vector>
+		<Virtual_length id="Virtual_length_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1082.076241</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_2</End_node>
+		<Start_node>Node_1</Start_node>
+		<Center_curve id="Center_curve_1">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_3 Cartesian_point_4 Cartesian_point_5 Cartesian_point_6 Cartesian_point_7 Cartesian_point_8 Cartesian_point_9</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_1">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_1">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>63.617251</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Unit id="id_346_2">
+		<Si_unit_name>gram</Si_unit_name>
+	</Unit>
+	<Unit id="id_346_1">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+	</Unit>
+	<Unit id="id_346_0">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+		<Si_dimension>square</Si_dimension>
+	</Unit>
+	<Unit id="id_346_3">
+		<Unit_name>GramPerMetre</Unit_name>
+	</Unit>
+</kbl:KBL_container>

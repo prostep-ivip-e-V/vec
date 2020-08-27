@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?elena version="2.8.0-b7" system="Windows 10 10.0" compilation_date="11.07.2018" compilation_time="17:12:00"?>
+<?extraction date="18.07.2018" time="13:36:41"?>
+<?pc checksum="695947884"?>
+<?xsd validated="true"?>
+<kbl:KBL_container xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KBL_container" version_id="2.3 SR-1">
+	<Cartesian_point id="Cartesian_point_1">
+		<Coordinates>2620.481510</Coordinates>
+		<Coordinates>-108.840669</Coordinates>
+		<Coordinates>518.295202</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_2">
+		<Coordinates>2497.897437</Coordinates>
+		<Coordinates>155.396631</Coordinates>
+		<Coordinates>501.749223</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_3">
+		<Coordinates>2454.646017</Coordinates>
+		<Coordinates>153.721817</Coordinates>
+		<Coordinates>504.804123</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_4">
+		<Coordinates>2520.098253</Coordinates>
+		<Coordinates>85.376448</Coordinates>
+		<Coordinates>495.960064</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_5">
+		<Coordinates>-71526.932889</Coordinates>
+		<Coordinates>-4617.126573</Coordinates>
+		<Coordinates>-6470.593117</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_6">
+		<Coordinates>7405.061756</Coordinates>
+		<Coordinates>275.387302</Coordinates>
+		<Coordinates>888.196766</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_7">
+		<Coordinates>1428.158146</Coordinates>
+		<Coordinates>-356.067006</Coordinates>
+		<Coordinates>425.627974</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_8">
+		<Coordinates>3410.498095</Coordinates>
+		<Coordinates>182.997181</Coordinates>
+		<Coordinates>556.315993</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_9">
+		<Coordinates>1461.409198</Coordinates>
+		<Coordinates>-108.738891</Coordinates>
+		<Coordinates>448.118965</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_10">
+		<Coordinates>4602.962272</Coordinates>
+		<Coordinates>1186.743920</Coordinates>
+		<Coordinates>539.616687</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_11">
+		<Coordinates>-7508.048828</Coordinates>
+		<Coordinates>-13160.198319</Coordinates>
+		<Coordinates>2366.360070</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_12">
+		<Coordinates>2538.519840</Coordinates>
+		<Coordinates>61.363011</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_13">
+		<Coordinates>2531.437948</Coordinates>
+		<Coordinates>68.423238</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_14">
+		<Coordinates>2524.356056</Coordinates>
+		<Coordinates>75.483465</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_15">
+		<Coordinates>2517.274164</Coordinates>
+		<Coordinates>82.543692</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_16">
+		<Coordinates>2510.192272</Coordinates>
+		<Coordinates>89.603920</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_17">
+		<Coordinates>2503.110380</Coordinates>
+		<Coordinates>96.664147</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_18">
+		<Coordinates>2496.028489</Coordinates>
+		<Coordinates>103.724374</Coordinates>
+		<Coordinates>502.240083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_19">
+		<Coordinates>2565.031514</Coordinates>
+		<Coordinates>45.671320</Coordinates>
+		<Coordinates>399.868952</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_20">
+		<Coordinates>2525.996300</Coordinates>
+		<Coordinates>67.929974</Coordinates>
+		<Coordinates>558.657463</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_21">
+		<Coordinates>2524.957456</Coordinates>
+		<Coordinates>77.675654</Coordinates>
+		<Coordinates>475.627021</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_22">
+		<Coordinates>2503.420453</Coordinates>
+		<Coordinates>94.171792</Coordinates>
+		<Coordinates>523.052293</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_23">
+		<Coordinates>2496.399139</Coordinates>
+		<Coordinates>105.887620</Coordinates>
+		<Coordinates>478.095874</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_24">
+		<Coordinates>2476.217106</Coordinates>
+		<Coordinates>121.937539</Coordinates>
+		<Coordinates>516.897760</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_25">
+		<Coordinates>2461.537065</Coordinates>
+		<Coordinates>136.175541</Coordinates>
+		<Coordinates>520.683508</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_26">
+		<Coordinates>4074.844786</Coordinates>
+		<Coordinates>1699.227450</Coordinates>
+		<Coordinates>-714.187262</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_27">
+		<Coordinates>2487.602461</Coordinates>
+		<Coordinates>216.585288</Coordinates>
+		<Coordinates>468.436452</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_28">
+		<Coordinates>2432.903635</Coordinates>
+		<Coordinates>115.612728</Coordinates>
+		<Coordinates>530.818046</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_29">
+		<Coordinates>2479.282570</Coordinates>
+		<Coordinates>107.499728</Coordinates>
+		<Coordinates>500.077614</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_30">
+		<Coordinates>2534.537275</Coordinates>
+		<Coordinates>106.165283</Coordinates>
+		<Coordinates>476.433386</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_31">
+		<Coordinates>2510.197748</Coordinates>
+		<Coordinates>28.378562</Coordinates>
+		<Coordinates>563.087307</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_32">
+		<Coordinates>1582.025395</Coordinates>
+		<Coordinates>-950.922242</Coordinates>
+		<Coordinates>2272.636487</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_33">
+		<Coordinates>-68230.207284</Coordinates>
+		<Coordinates>-6274.323628</Coordinates>
+		<Coordinates>71236.161464</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_34">
+		<Coordinates>10613.997319</Coordinates>
+		<Coordinates>2124.930917</Coordinates>
+		<Coordinates>-9342.480199</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_35">
+		<Coordinates>75.054772</Coordinates>
+		<Coordinates>-903.833600</Coordinates>
+		<Coordinates>4328.618278</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_36">
+		<Coordinates>3828.367547</Coordinates>
+		<Coordinates>901.162855</Coordinates>
+		<Coordinates>-2444.283996</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_37">
+		<Coordinates>1415.942412</Coordinates>
+		<Coordinates>-780.933975</Coordinates>
+		<Coordinates>4615.287213</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_38">
+		<Coordinates>3690.102554</Coordinates>
+		<Coordinates>2473.062996</Coordinates>
+		<Coordinates>-10855.114327</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_39">
+		<Coordinates>4598.377983</Coordinates>
+		<Coordinates>-15712.912627</Coordinates>
+		<Coordinates>87745.765845</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_40">
+		<Coordinates>2638.526470</Coordinates>
+		<Coordinates>-64.164598</Coordinates>
+		<Coordinates>509.425137</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_41">
+		<Coordinates>2500.000000</Coordinates>
+		<Coordinates>100.000000</Coordinates>
+		<Coordinates>500.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_42">
+		<Coordinates>2467.121169</Coordinates>
+		<Coordinates>121.533820</Coordinates>
+		<Coordinates>506.995792</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_43">
+		<Coordinates>2518.899931</Coordinates>
+		<Coordinates>155.787799</Coordinates>
+		<Coordinates>502.827753</Coordinates>
+	</Cartesian_point>
+	<Cavity_plug id="id_309_0">
+		<Part_number>2Ka10831955</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_5">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.03</Value_component>
+		</Mass_information>
+	</Cavity_plug>
+	<Cavity_plug id="id_309_1">
+		<Part_number>46810831953</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_10">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.34</Value_component>
+		</Mass_information>
+	</Cavity_plug>
+	<Cavity_plug id="id_309_2">
+		<Part_number>46810831952</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_13">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.13</Value_component>
+		</Mass_information>
+	</Cavity_plug>
+	<Cavity_seal id="id_311_0">
+		<Part_number>2Ka10831855</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_8">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.03</Value_component>
+		</Mass_information>
+	</Cavity_seal>
+	<Cavity_seal id="id_311_1">
+		<Part_number>46810831853</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_14">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+	</Cavity_seal>
+	<Cavity_seal id="id_311_2">
+		<Part_number>46810831852</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_9">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+	</Cavity_seal>
+	<Connector_housing id="id_315_0">
+		<Part_number>2Ka10a71345</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>5</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEHAEUSE_4-POLIG_4.8_9.5MM</Description>
+		<Mass_information id="id_380_18">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>31.0</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_0">
+			<Id>default</Id>
+			<Number_of_cavities>4</Number_of_cavities>
+			<Cavities id="id_370_0">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_1">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_2">
+				<Cavity_number>3</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_3">
+				<Cavity_number>4</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_2">
+		<Part_number>O1a2816a916</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH_A8_1</Description>
+		<Mass_information id="id_380_6">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Housing_colour>nd</Housing_colour>
+		<Slots id="id_341_4">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_12">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_1">
+		<Part_number>5Ea10821003</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEH_2POL_KOD_A_VIOLETT</Description>
+		<Mass_information id="id_380_12">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>10.0</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_2">
+			<Id>default</Id>
+			<Number_of_cavities>2</Number_of_cavities>
+			<Cavities id="id_370_8">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_9">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Fixing id="Fixing_1">
+		<Part_number>2Da10821959</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>LEITUNGSCLIP LOCHBEFESTIGUNG 6,5</Description>
+		<Mass_information id="id_380_11">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>2.0</Value_component>
+		</Mass_information>
+		<Fixing_type>SPT</Fixing_type>
+	</Fixing>
+	<General_terminal id="id_326_0">
+		<Part_number>O10a815351a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>-</Description>
+		<Mass_information id="id_380_4">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_1">
+		<Part_number>O10a814371a3</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKT_4.8-1</Description>
+		<Mass_information id="id_380_16">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_2">
+		<Part_number>O12a515381a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Hochdruck</Description>
+		<Mass_information id="id_380_2">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.43</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_3">
+		<Part_number>O1a2816a916</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH_A8_1</Description>
+		<Mass_information id="id_380_7">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_wire id="id_327_0">
+		<Part_number>O1a481aa015</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_17">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_0">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_0">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_1">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>vi</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_1">
+		<Part_number>O1a481aa412</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_3">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_1">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_2">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>rt</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_3">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>ge</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_2">
+		<Part_number>O1a2913741a</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_15">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>68.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>15.3</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_2">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>6</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>5.1</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_4">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>rt</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_5">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>ws</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<Harness id="id_328_0">
+		<Part_number>000971230</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>LTGS Generator</Description>
+		<Project_number>VNG</Project_number>
+		<Car_classification_level_2>VW1200</Car_classification_level_2>
+		<Model_year>2018</Model_year>
+		<Content>harness complete set</Content>
+		<Cavity_plug_occurrence id="id_310_0">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_1">
+			<Part>id_309_1</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_2">
+			<Part>id_309_1</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_3">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_4">
+			<Part>id_309_2</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_5">
+			<Part>id_309_2</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_seal_occurrence id="id_312_0">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_1">
+			<Part>id_311_1</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_2">
+			<Part>id_311_1</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_3">
+			<Part>id_311_2</Part>
+		</Cavity_seal_occurrence>
+		<Connection id="id_314_0">
+			<Id>V.15B.SZS1090.1LMM.2B11311</Id>
+			<Signal_name>V.15B.SZS1090.</Signal_name>
+			<Wire>id_350_0</Wire>
+			<Extremities id="id_377_0">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_1</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_1">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_2</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_1">
+			<Id>V.301SyUfv.SZS1035.1XC.H.11111</Id>
+			<Signal_name>V.301SyUfv.SZS1035.</Signal_name>
+			<Wire>id_350_1</Wire>
+			<Extremities id="id_377_2">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_0</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_3">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_3</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_2">
+			<Id>X.30rfg.SZS1035.1XC.H.11112</Id>
+			<Signal_name>X.30rfg.SZS1035.</Signal_name>
+			<Wire>id_350_2</Wire>
+			<Extremities id="id_377_4">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_0</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_5">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_4</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connector_occurrence id="id_316_0">
+			<Id>TMM.2A1</Id>
+			<Description>Koppelstelle im Motorraum Mitte</Description>
+			<Placement id="Placement_1">
+				<U>0.895988</U>
+				<U>-0.323450</U>
+				<U>-0.304279</U>
+				<V>-0.262441</V>
+				<V>0.167059</V>
+				<V>-0.950377</V>
+				<Cartesian_point>Cartesian_point_1</Cartesian_point>
+			</Placement>
+			<Part>id_315_0</Part>
+			<Contact_points id="id_372_1">
+				<Id>TMM.2A1-3#1_V.15A.SYS_090._TMM.2A1_3_1</Id>
+				<Associated_parts>id_312_2 id_344_2</Associated_parts>
+				<Contacted_cavity>id_370_6</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_3">
+				<Id>TMM.2A1-2#2_V.30_StGen.SYS_035._XB.C.1_1_1</Id>
+				<Associated_parts>id_312_1 id_344_1</Associated_parts>
+				<Contacted_cavity>id_370_5</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_4">
+				<Id>TMM.2A1-1#3_X.30ref.SYS_035._XB.C.1_1_2</Id>
+				<Associated_parts>id_312_0 id_344_0</Associated_parts>
+				<Contacted_cavity>id_370_4</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_1">
+				<Part>id_341_0</Part>
+				<Cavities id="id_370_4">
+					<Associated_plug>id_310_0</Associated_plug>
+					<Part>id_370_0</Part>
+				</Cavities>
+				<Cavities id="id_370_5">
+					<Associated_plug>id_310_1</Associated_plug>
+					<Part>id_370_1</Part>
+				</Cavities>
+				<Cavities id="id_370_6">
+					<Associated_plug>id_310_2</Associated_plug>
+					<Part>id_370_2</Part>
+				</Cavities>
+				<Cavities id="id_370_7">
+					<Associated_plug>id_310_3</Associated_plug>
+					<Part>id_370_3</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_2">
+			<Id>XB.C.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_2</Part>
+			<Contact_points id="id_372_0">
+				<Id>XB.C.1-1#2_V.30_StGen.SYS_035._XB.C.1_1_1#3_X.30ref.SYS_035._XB.C.1_1_2</Id>
+				<Associated_parts>id_342_0</Associated_parts>
+				<Contacted_cavity>id_370_13</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_5">
+				<Part>id_341_4</Part>
+				<Cavities id="id_370_13">
+					<Part>id_370_12</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_1">
+			<Id>XA.C.1</Id>
+			<Description>Drehstromgenerator</Description>
+			<Placement id="Placement_3">
+				<U>0.197034</U>
+				<U>0.009613</U>
+				<U>-0.980350</U>
+				<V>0.935333</V>
+				<V>0.297838</V>
+				<V>0.190907</V>
+				<Cartesian_point>Cartesian_point_3</Cartesian_point>
+			</Placement>
+			<Part>id_315_1</Part>
+			<Contact_points id="id_372_2">
+				<Id>XA.C.1-2#1_V.15A.SYS_090._TMM.2A1_3_1</Id>
+				<Associated_parts>id_312_3 id_344_3</Associated_parts>
+				<Contacted_cavity>id_370_11</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_3">
+				<Part>id_341_2</Part>
+				<Cavities id="id_370_10">
+					<Associated_plug>id_310_4</Associated_plug>
+					<Part>id_370_8</Part>
+				</Cavities>
+				<Cavities id="id_370_11">
+					<Associated_plug>id_310_5</Associated_plug>
+					<Part>id_370_9</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Fixing_occurrence id="Fixing_occurrence_1">
+			<Id>CL_01_Gen</Id>
+			<Placement id="Placement_4">
+				<U>0.706023</U>
+				<U>0.708189</U>
+				<U>0.000000</U>
+				<V>-0.708189</V>
+				<V>0.706023</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_4</Cartesian_point>
+			</Placement>
+			<Part>Fixing_1</Part>
+		</Fixing_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_0">
+			<Part>id_327_0</Part>
+			<Length_information id="id_388_0">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_0">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>261.31</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>1</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_1">
+			<Part>id_327_1</Part>
+			<Length_information id="id_388_1">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_1">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>321.1</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>2</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_2">
+			<Part>id_327_2</Part>
+			<Length_information id="id_388_2">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_2">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>321.1</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>3</Wire_number>
+		</General_wire_occurrence>
+		<Special_terminal_occurrence id="id_342_0">
+			<Id>XB.C.1</Id>
+			<Description>Drehstromgenerator</Description>
+			<Placement id="Placement_2">
+				<U>0.048744</U>
+				<U>-0.726090</U>
+				<U>-0.685870</U>
+				<V>0.998294</V>
+				<V>0.057522</V>
+				<V>0.010053</V>
+				<Cartesian_point>Cartesian_point_2</Cartesian_point>
+			</Placement>
+			<Part>id_326_3</Part>
+		</Special_terminal_occurrence>
+		<Terminal_occurrence id="id_344_0">
+			<Part>id_326_0</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_1">
+			<Part>id_326_1</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_2">
+			<Part>id_326_1</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_3">
+			<Part>id_326_2</Part>
+		</Terminal_occurrence>
+		<Wire_protection_occurrence id="Wire_protection_occurrence_1">
+			<Id>N___105_343_01.1</Id>
+			<Protection_length id="Protection_length_1">
+				<Unit_component>id_346_1</Unit_component>
+				<Value_component>209.800923</Value_component>
+			</Protection_length>
+			<Part>Wire_protection_1</Part>
+		</Wire_protection_occurrence>
+		<Wire_protection_occurrence id="Wire_protection_occurrence_2">
+			<Id>N___105_343_01.2</Id>
+			<Protection_length id="Protection_length_2">
+				<Unit_component>id_346_1</Unit_component>
+				<Value_component>96.309790</Value_component>
+			</Protection_length>
+			<Part>Wire_protection_1</Part>
+		</Wire_protection_occurrence>
+		<Wire_protection_occurrence id="Wire_protection_occurrence_3">
+			<Id>N___105_343_01.3</Id>
+			<Protection_length id="Protection_length_3">
+				<Unit_component>id_346_1</Unit_component>
+				<Value_component>36.518424</Value_component>
+			</Protection_length>
+			<Part>Wire_protection_1</Part>
+		</Wire_protection_occurrence>
+		<Module id="id_331_0">
+			<Part_number>aaa1082134a</Part_number>
+			<Company_name>GCMC</Company_name>
+			<Version>/NULL</Version>
+			<Abbreviation>/NULL</Abbreviation>
+			<Description>Variante</Description>
+			<Mass_information id="id_380_0">
+				<Unit_component>id_346_2</Unit_component>
+				<Value_component>90.0</Value_component>
+			</Mass_information>
+			<Car_classification_level_2>/NULL</Car_classification_level_2>
+			<Model_year>/NULL</Model_year>
+			<Content>variant</Content>
+			<Of_family>id_332_0</Of_family>
+			<Module_configuration id="id_353_0">
+				<Logistic_control_information>L0L</Logistic_control_information>
+				<Configuration_type>option code</Configuration_type>
+				<Controlled_components>Fixing_occurrence_1 Wire_protection_occurrence_1 Wire_protection_occurrence_2 Wire_protection_occurrence_3 id_310_0 id_310_1 id_310_2 id_310_3 id_310_4 id_310_5 id_312_0 id_312_1 id_312_2 id_312_3 id_314_0 id_314_1 id_314_2 id_316_0 id_316_1 id_342_0 id_344_0 id_344_1 id_344_2 id_344_3 id_350_0 id_350_1 id_350_2</Controlled_components>
+			</Module_configuration>
+		</Module>
+		<Module_families id="id_332_0">
+			<Id>VAR</Id>
+			<Description>Varianten</Description>
+		</Module_families>
+	</Harness>
+	<Node id="Node_1">
+		<Id>PNID1</Id>
+		<Cartesian_point>Cartesian_point_40</Cartesian_point>
+		<Referenced_components>id_316_0</Referenced_components>
+	</Node>
+	<Node id="Node_2">
+		<Id>PNID2</Id>
+		<Cartesian_point>Cartesian_point_41</Cartesian_point>
+	</Node>
+	<Node id="Node_3">
+		<Id>PNID3</Id>
+		<Cartesian_point>Cartesian_point_42</Cartesian_point>
+		<Referenced_components>id_316_1</Referenced_components>
+	</Node>
+	<Node id="Node_4">
+		<Id>PNID4</Id>
+		<Cartesian_point>Cartesian_point_43</Cartesian_point>
+		<Referenced_components>id_342_0</Referenced_components>
+	</Node>
+	<Routing id="id_338_0">
+		<Routed_wire>id_314_0</Routed_wire>
+		<Segments>Segment_1 Segment_2</Segments>
+	</Routing>
+	<Routing id="id_338_1">
+		<Routed_wire>id_314_1</Routed_wire>
+		<Segments>Segment_3 Segment_1</Segments>
+	</Routing>
+	<Routing id="id_338_2">
+		<Routed_wire>id_314_2</Routed_wire>
+		<Segments>Segment_3 Segment_1</Segments>
+	</Routing>
+	<Segment id="Segment_1">
+		<Id>ROUTING_BAUKST_LTGS_GENERATOR-Multi-branchable142/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>0.358231</Start_vector>
+		<Start_vector>0.931382</Start_vector>
+		<Start_vector>0.064796</Start_vector>
+		<End_vector>-0.649703</End_vector>
+		<End_vector>0.682776</End_vector>
+		<End_vector>-0.334221</End_vector>
+		<Virtual_length id="Virtual_length_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>219.800924</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_2</End_node>
+		<Start_node>Node_1</Start_node>
+		<Center_curve id="Center_curve_1">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_5 Cartesian_point_6 Cartesian_point_7 Cartesian_point_8 Cartesian_point_9 Cartesian_point_10 Cartesian_point_11</Control_points>
+		</Center_curve>
+		<Center_curve id="Center_curve_2">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_12 Cartesian_point_13 Cartesian_point_14 Cartesian_point_15 Cartesian_point_16 Cartesian_point_17 Cartesian_point_18</Control_points>
+		</Center_curve>
+		<Center_curve id="Center_curve_3">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_19 Cartesian_point_20 Cartesian_point_21 Cartesian_point_22 Cartesian_point_23 Cartesian_point_24 Cartesian_point_25</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_1">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_1">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>63.617251</Value_component>
+			</Area>
+		</Cross_section_area_information>
+		<Fixing_assignment id="Fixing_assignment_1">
+			<Location>0.886766</Location>
+			<Orientation>0.000000</Orientation>
+			<Orientation>0.000000</Orientation>
+			<Orientation>1.000000</Orientation>
+			<Fixing>Fixing_occurrence_1</Fixing>
+		</Fixing_assignment>
+		<Protection_area id="Protection_area_1">
+			<Start_location>0.045496</Start_location>
+			<End_location>1.000000</End_location>
+			<Associated_protection>Wire_protection_occurrence_1</Associated_protection>
+		</Protection_area>
+	</Segment>
+	<Segment id="Segment_2">
+		<Id>ROUTING_BAUKST_LTGS_GENERATOR-Multi-branchable142/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>0.293821</Start_vector>
+		<Start_vector>-0.954568</Start_vector>
+		<Start_vector>0.049693</Start_vector>
+		<End_vector>0.649703</End_vector>
+		<End_vector>-0.682776</End_vector>
+		<End_vector>0.334221</End_vector>
+		<Virtual_length id="Virtual_length_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>41.518514</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_2</End_node>
+		<Start_node>Node_3</Start_node>
+		<Center_curve id="Center_curve_4">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_26 Cartesian_point_27 Cartesian_point_28 Cartesian_point_29 Cartesian_point_30 Cartesian_point_31 Cartesian_point_32</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_2">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_2">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>63.617251</Value_component>
+			</Area>
+		</Cross_section_area_information>
+		<Protection_area id="Protection_area_2">
+			<Start_location>0.120430</Start_location>
+			<End_location>1.000000</End_location>
+			<Associated_protection>Wire_protection_occurrence_3</Associated_protection>
+		</Protection_area>
+	</Segment>
+	<Segment id="Segment_3">
+		<Id>ROUTING_BAUKST_LTGS_GENERATOR-Multi-branchable142/ElecRouteBody.3/Flexible Curve.3</Id>
+		<Start_vector>-0.649703</Start_vector>
+		<Start_vector>0.682776</Start_vector>
+		<Start_vector>-0.334221</Start_vector>
+		<End_vector>-0.998294</End_vector>
+		<End_vector>-0.057522</End_vector>
+		<End_vector>-0.010053</End_vector>
+		<Virtual_length id="Virtual_length_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>101.309787</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_4</End_node>
+		<Start_node>Node_2</Start_node>
+		<Center_curve id="Center_curve_5">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_33 Cartesian_point_34 Cartesian_point_35 Cartesian_point_36 Cartesian_point_37 Cartesian_point_38 Cartesian_point_39</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_3">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_3">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+		<Protection_area id="Protection_area_3">
+			<Start_location>0.000000</Start_location>
+			<End_location>0.950646</End_location>
+			<Associated_protection>Wire_protection_occurrence_2</Associated_protection>
+		</Protection_area>
+	</Segment>
+	<Unit id="id_346_2">
+		<Si_unit_name>gram</Si_unit_name>
+	</Unit>
+	<Unit id="id_346_1">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+	</Unit>
+	<Unit id="id_346_0">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+		<Si_dimension>square</Si_dimension>
+	</Unit>
+	<Unit id="id_346_3">
+		<Unit_name>GramPerMetre</Unit_name>
+	</Unit>
+	<Wire_protection id="Wire_protection_1">
+		<Part_number>O1112a614541a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>6</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>PET Vlies</Description>
+		<Mass_information id="id_380_1">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Protection_type>TAPE</Protection_type>
+	</Wire_protection>
+</kbl:KBL_container>
