@@ -1,0 +1,4223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?elena version="2.8.0-b7" system="Windows 10 10.0" compilation_date="11.07.2018" compilation_time="17:12:00"?>
+<?extraction date="18.07.2018" time="13:19:42"?>
+<?pc checksum="695947884"?>
+<?xsd validated="true"?>
+<kbl:KBL_container xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KBL_container" version_id="2.3 SR-1">
+	<Cartesian_point id="Cartesian_point_1">
+		<Coordinates>2560.506678</Coordinates>
+		<Coordinates>-215.602681</Coordinates>
+		<Coordinates>368.219292</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_2">
+		<Coordinates>2550.000000</Coordinates>
+		<Coordinates>2.401427</Coordinates>
+		<Coordinates>382.400000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_3">
+		<Coordinates>2550.000000</Coordinates>
+		<Coordinates>62.275754</Coordinates>
+		<Coordinates>388.334138</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_4">
+		<Coordinates>2550.000000</Coordinates>
+		<Coordinates>62.272371</Coordinates>
+		<Coordinates>368.334138</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_5">
+		<Coordinates>2570.000000</Coordinates>
+		<Coordinates>62.272371</Coordinates>
+		<Coordinates>368.334138</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_6">
+		<Coordinates>2570.000000</Coordinates>
+		<Coordinates>62.275754</Coordinates>
+		<Coordinates>388.334138</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_7">
+		<Coordinates>2559.593018</Coordinates>
+		<Coordinates>62.819165</Coordinates>
+		<Coordinates>377.833876</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_8">
+		<Coordinates>2594.445313</Coordinates>
+		<Coordinates>-12.330036</Coordinates>
+		<Coordinates>394.655891</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_9">
+		<Coordinates>2800.000000</Coordinates>
+		<Coordinates>253.001077</Coordinates>
+		<Coordinates>368.915721</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_10">
+		<Coordinates>2800.000000</Coordinates>
+		<Coordinates>-253.095983</Coordinates>
+		<Coordinates>368.781167</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_11">
+		<Coordinates>3000.000000</Coordinates>
+		<Coordinates>253.000002</Coordinates>
+		<Coordinates>368.610974</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_12">
+		<Coordinates>3000.000000</Coordinates>
+		<Coordinates>-253.095177</Coordinates>
+		<Coordinates>368.548721</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_13">
+		<Coordinates>3000.000000</Coordinates>
+		<Coordinates>16.354896</Coordinates>
+		<Coordinates>403.880711</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_14">
+		<Coordinates>2900.000000</Coordinates>
+		<Coordinates>9.871972</Coordinates>
+		<Coordinates>401.359147</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_15">
+		<Coordinates>2900.000000</Coordinates>
+		<Coordinates>-50.000000</Coordinates>
+		<Coordinates>400.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_16">
+		<Coordinates>2900.000000</Coordinates>
+		<Coordinates>-50.000000</Coordinates>
+		<Coordinates>402.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_17">
+		<Coordinates>2690.349854</Coordinates>
+		<Coordinates>57.811786</Coordinates>
+		<Coordinates>390.612494</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_18">
+		<Coordinates>2697.611572</Coordinates>
+		<Coordinates>-94.313053</Coordinates>
+		<Coordinates>404.288213</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_19">
+		<Coordinates>2648.536545</Coordinates>
+		<Coordinates>-9.686443</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_20">
+		<Coordinates>2560.000000</Coordinates>
+		<Coordinates>-134.519113</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_21">
+		<Coordinates>2359.819533</Coordinates>
+		<Coordinates>-525.918853</Coordinates>
+		<Coordinates>-226.730385</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_22">
+		<Coordinates>2675.066797</Coordinates>
+		<Coordinates>-289.834463</Coordinates>
+		<Coordinates>686.496922</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_23">
+		<Coordinates>2514.037752</Coordinates>
+		<Coordinates>-259.607226</Coordinates>
+		<Coordinates>228.886149</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_24">
+		<Coordinates>2600.775711</Coordinates>
+		<Coordinates>-122.289611</Coordinates>
+		<Coordinates>484.425868</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_25">
+		<Coordinates>2521.938467</Coordinates>
+		<Coordinates>-56.537261</Coordinates>
+		<Coordinates>263.386468</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_26">
+		<Coordinates>2588.288596</Coordinates>
+		<Coordinates>71.968283</Coordinates>
+		<Coordinates>460.243022</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_27">
+		<Coordinates>2632.649461</Coordinates>
+		<Coordinates>190.969581</Coordinates>
+		<Coordinates>593.814905</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_28">
+		<Coordinates>2560.597408</Coordinates>
+		<Coordinates>-189.832087</Coordinates>
+		<Coordinates>371.404495</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_29">
+		<Coordinates>2576.492750</Coordinates>
+		<Coordinates>-145.364387</Coordinates>
+		<Coordinates>408.784873</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_30">
+		<Coordinates>2561.284308</Coordinates>
+		<Coordinates>-109.639020</Coordinates>
+		<Coordinates>373.020265</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_31">
+		<Coordinates>2554.571559</Coordinates>
+		<Coordinates>-71.525771</Coordinates>
+		<Coordinates>357.234254</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_32">
+		<Coordinates>2565.482102</Coordinates>
+		<Coordinates>-28.459147</Coordinates>
+		<Coordinates>382.891930</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_33">
+		<Coordinates>2558.364189</Coordinates>
+		<Coordinates>9.540223</Coordinates>
+		<Coordinates>366.153167</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_34">
+		<Coordinates>2547.337456</Coordinates>
+		<Coordinates>46.440942</Coordinates>
+		<Coordinates>340.221967</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_35">
+		<Coordinates>-939.806720</Coordinates>
+		<Coordinates>2936.563174</Coordinates>
+		<Coordinates>-3569.560043</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_36">
+		<Coordinates>4163.478216</Coordinates>
+		<Coordinates>-1735.352921</Coordinates>
+		<Coordinates>2533.718603</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_37">
+		<Coordinates>2112.384521</Coordinates>
+		<Coordinates>153.826666</Coordinates>
+		<Coordinates>-297.907700</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_38">
+		<Coordinates>2602.619364</Coordinates>
+		<Coordinates>58.595089</Coordinates>
+		<Coordinates>563.183550</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_39">
+		<Coordinates>3189.404597</Coordinates>
+		<Coordinates>-605.707790</Coordinates>
+		<Coordinates>827.298035</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_40">
+		<Coordinates>1094.313062</Coordinates>
+		<Coordinates>1552.527454</Coordinates>
+		<Coordinates>-1721.695114</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_41">
+		<Coordinates>6143.855362</Coordinates>
+		<Coordinates>-2895.320720</Coordinates>
+		<Coordinates>4612.787876</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_42">
+		<Coordinates>-11634.263701</Coordinates>
+		<Coordinates>20727.426652</Coordinates>
+		<Coordinates>-11109.671790</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_43">
+		<Coordinates>4363.180582</Coordinates>
+		<Coordinates>-2756.699684</Coordinates>
+		<Coordinates>1817.325725</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_44">
+		<Coordinates>1972.385931</Coordinates>
+		<Coordinates>781.123779</Coordinates>
+		<Coordinates>-119.217807</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_45">
+		<Coordinates>2900.991558</Coordinates>
+		<Coordinates>-534.252720</Coordinates>
+		<Coordinates>671.842378</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_46">
+		<Coordinates>2301.239118</Coordinates>
+		<Coordinates>471.725673</Coordinates>
+		<Coordinates>104.119627</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_47">
+		<Coordinates>3202.339241</Coordinates>
+		<Coordinates>-1038.967849</Coordinates>
+		<Coordinates>1094.666395</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_48">
+		<Coordinates>-2395.554597</Coordinates>
+		<Coordinates>8897.839392</Coordinates>
+		<Coordinates>-5165.843122</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_49">
+		<Coordinates>2541.250095</Coordinates>
+		<Coordinates>-146.316368</Coordinates>
+		<Coordinates>386.334101</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_50">
+		<Coordinates>2578.759277</Coordinates>
+		<Coordinates>-98.654400</Coordinates>
+		<Coordinates>353.743714</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_51">
+		<Coordinates>2571.240714</Coordinates>
+		<Coordinates>-64.699799</Coordinates>
+		<Coordinates>360.250505</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_52">
+		<Coordinates>2548.759286</Coordinates>
+		<Coordinates>-35.300201</Coordinates>
+		<Coordinates>379.749490</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_53">
+		<Coordinates>2541.240718</Coordinates>
+		<Coordinates>-1.345601</Coordinates>
+		<Coordinates>386.256318</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_54">
+		<Coordinates>2578.749960</Coordinates>
+		<Coordinates>46.316385</Coordinates>
+		<Coordinates>353.665558</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_55">
+		<Coordinates>2691.770859</Coordinates>
+		<Coordinates>116.965666</Coordinates>
+		<Coordinates>255.507861</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_56">
+		<Coordinates>32379.894482</Coordinates>
+		<Coordinates>-16831.793884</Coordinates>
+		<Coordinates>-5197.708168</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_57">
+		<Coordinates>642.124487</Coordinates>
+		<Coordinates>863.420511</Coordinates>
+		<Coordinates>700.390217</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_58">
+		<Coordinates>3024.156864</Coordinates>
+		<Coordinates>-357.274945</Coordinates>
+		<Coordinates>275.646591</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_59">
+		<Coordinates>2253.667298</Coordinates>
+		<Coordinates>169.777732</Coordinates>
+		<Coordinates>435.106503</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_60">
+		<Coordinates>3133.582323</Coordinates>
+		<Coordinates>-218.148644</Coordinates>
+		<Coordinates>288.724954</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_61">
+		<Coordinates>1701.920446</Coordinates>
+		<Coordinates>675.455858</Coordinates>
+		<Coordinates>570.709092</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_62">
+		<Coordinates>11022.083460</Coordinates>
+		<Coordinates>-4391.717142</Coordinates>
+		<Coordinates>-1139.764232</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_63">
+		<Coordinates>2607.819749</Coordinates>
+		<Coordinates>-978.622824</Coordinates>
+		<Coordinates>431.831898</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_64">
+		<Coordinates>2550.045206</Coordinates>
+		<Coordinates>-124.298107</Coordinates>
+		<Coordinates>377.854134</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_65">
+		<Coordinates>2607.437796</Coordinates>
+		<Coordinates>15.887942</Coordinates>
+		<Coordinates>368.996191</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_66">
+		<Coordinates>2687.834297</Coordinates>
+		<Coordinates>13.429285</Coordinates>
+		<Coordinates>369.151320</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_67">
+		<Coordinates>2772.193935</Coordinates>
+		<Coordinates>-13.604347</Coordinates>
+		<Coordinates>370.859694</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_68">
+		<Coordinates>2852.377053</Coordinates>
+		<Coordinates>-14.739842</Coordinates>
+		<Coordinates>370.931574</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_69">
+		<Coordinates>2911.982390</Coordinates>
+		<Coordinates>111.725208</Coordinates>
+		<Coordinates>362.937050</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_70">
+		<Coordinates>-13897.181594</Coordinates>
+		<Coordinates>-21984.742288</Coordinates>
+		<Coordinates>791.323899</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_71">
+		<Coordinates>2625.291800</Coordinates>
+		<Coordinates>191.612502</Coordinates>
+		<Coordinates>370.631996</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_72">
+		<Coordinates>2633.078584</Coordinates>
+		<Coordinates>52.134565</Coordinates>
+		<Coordinates>370.430738</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_73">
+		<Coordinates>2747.933704</Coordinates>
+		<Coordinates>57.335066</Coordinates>
+		<Coordinates>367.505964</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_74">
+		<Coordinates>2533.332007</Coordinates>
+		<Coordinates>-382.650186</Coordinates>
+		<Coordinates>372.970670</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_75">
+		<Coordinates>2789.913706</Coordinates>
+		<Coordinates>-185.938534</Coordinates>
+		<Coordinates>366.440088</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_76">
+		<Coordinates>1321.902994</Coordinates>
+		<Coordinates>-2319.620228</Coordinates>
+		<Coordinates>403.787390</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_77">
+		<Coordinates>-29591.166492</Coordinates>
+		<Coordinates>22882.909482</Coordinates>
+		<Coordinates>1191.043374</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_78">
+		<Coordinates>4566.569824</Coordinates>
+		<Coordinates>-1525.131271</Coordinates>
+		<Coordinates>321.193508</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_79">
+		<Coordinates>2102.528469</Coordinates>
+		<Coordinates>342.808659</Coordinates>
+		<Coordinates>383.941694</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_80">
+		<Coordinates>3027.614649</Coordinates>
+		<Coordinates>-220.937018</Coordinates>
+		<Coordinates>360.383786</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_81">
+		<Coordinates>2178.577681</Coordinates>
+		<Coordinates>488.243650</Coordinates>
+		<Coordinates>382.005036</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_82">
+		<Coordinates>3814.537175</Coordinates>
+		<Coordinates>-585.550819</Coordinates>
+		<Coordinates>340.344658</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_83">
+		<Coordinates>-6109.395251</Coordinates>
+		<Coordinates>6634.831460</Coordinates>
+		<Coordinates>593.060119</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_84">
+		<Coordinates>2883.118343</Coordinates>
+		<Coordinates>-26.197088</Coordinates>
+		<Coordinates>364.065642</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_85">
+		<Coordinates>2536.764304</Coordinates>
+		<Coordinates>25.581478</Coordinates>
+		<Coordinates>372.883129</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_86">
+		<Coordinates>2713.548539</Coordinates>
+		<Coordinates>74.673671</Coordinates>
+		<Coordinates>368.381855</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_87">
+		<Coordinates>2597.725362</Coordinates>
+		<Coordinates>125.268436</Coordinates>
+		<Coordinates>371.331119</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_88">
+		<Coordinates>2700.303838</Coordinates>
+		<Coordinates>174.741684</Coordinates>
+		<Coordinates>368.719057</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_89">
+		<Coordinates>2599.279294</Coordinates>
+		<Coordinates>225.260456</Coordinates>
+		<Coordinates>371.291550</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_90">
+		<Coordinates>2627.230693</Coordinates>
+		<Coordinates>275.116923</Coordinates>
+		<Coordinates>370.579545</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_91">
+		<Coordinates>-4422.253292</Coordinates>
+		<Coordinates>-2623.714836</Coordinates>
+		<Coordinates>-4952.813752</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_92">
+		<Coordinates>2752.859313</Coordinates>
+		<Coordinates>-28.012013</Coordinates>
+		<Coordinates>543.765468</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_93">
+		<Coordinates>2536.744640</Coordinates>
+		<Coordinates>35.809235</Coordinates>
+		<Coordinates>378.183254</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_94">
+		<Coordinates>2573.401153</Coordinates>
+		<Coordinates>186.217822</Coordinates>
+		<Coordinates>406.241414</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_95">
+		<Coordinates>2416.005748</Coordinates>
+		<Coordinates>270.153488</Coordinates>
+		<Coordinates>285.643401</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_96">
+		<Coordinates>2532.825345</Coordinates>
+		<Coordinates>448.022121</Coordinates>
+		<Coordinates>375.113066</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_97">
+		<Coordinates>1480.767426</Coordinates>
+		<Coordinates>225.489124</Coordinates>
+		<Coordinates>-430.869612</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_98">
+		<Coordinates>-14382.223050</Coordinates>
+		<Coordinates>-6310.583893</Coordinates>
+		<Coordinates>-8887.338252</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_99">
+		<Coordinates>3443.829568</Coordinates>
+		<Coordinates>202.824624</Coordinates>
+		<Coordinates>866.496138</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_100">
+		<Coordinates>2390.939938</Coordinates>
+		<Coordinates>-27.551121</Coordinates>
+		<Coordinates>290.362291</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_101">
+		<Coordinates>2696.985049</Coordinates>
+		<Coordinates>227.500898</Coordinates>
+		<Coordinates>457.796229</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_102">
+		<Coordinates>2264.337191</Coordinates>
+		<Coordinates>218.682943</Coordinates>
+		<Coordinates>221.040325</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_103">
+		<Coordinates>2863.281931</Coordinates>
+		<Coordinates>578.362217</Coordinates>
+		<Coordinates>548.741163</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_104">
+		<Coordinates>-1253.792645</Coordinates>
+		<Coordinates>-746.577087</Coordinates>
+		<Coordinates>-1704.032471</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_105">
+		<Coordinates>-7021.432587</Coordinates>
+		<Coordinates>-3223.169379</Coordinates>
+		<Coordinates>-4157.411603</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_106">
+		<Coordinates>2899.957564</Coordinates>
+		<Coordinates>7.768762</Coordinates>
+		<Coordinates>538.605668</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_107">
+		<Coordinates>2518.285868</Coordinates>
+		<Coordinates>27.567900</Coordinates>
+		<Coordinates>358.238593</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_108">
+		<Coordinates>2601.829025</Coordinates>
+		<Coordinates>192.359815</Coordinates>
+		<Coordinates>398.056361</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_109">
+		<Coordinates>2381.883014</Coordinates>
+		<Coordinates>262.563742</Coordinates>
+		<Coordinates>294.234455</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_110">
+		<Coordinates>2588.704907</Coordinates>
+		<Coordinates>465.777746</Coordinates>
+		<Coordinates>392.400727</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_111">
+		<Coordinates>920.532588</Coordinates>
+		<Coordinates>84.615267</Coordinates>
+		<Coordinates>-396.873441</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_112">
+		<Coordinates>-3914.512114</Coordinates>
+		<Coordinates>-1673.848598</Coordinates>
+		<Coordinates>-1396.530935</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_113">
+		<Coordinates>2701.930001</Coordinates>
+		<Coordinates>-40.814473</Coordinates>
+		<Coordinates>456.675870</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_114">
+		<Coordinates>2551.929025</Coordinates>
+		<Coordinates>35.096876</Coordinates>
+		<Coordinates>346.162077</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_115">
+		<Coordinates>2564.555721</Coordinates>
+		<Coordinates>185.236147</Coordinates>
+		<Coordinates>389.464894</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_116">
+		<Coordinates>2424.917148</Coordinates>
+		<Coordinates>275.325225</Coordinates>
+		<Coordinates>316.124168</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_117">
+		<Coordinates>2505.741378</Coordinates>
+		<Coordinates>442.269140</Coordinates>
+		<Coordinates>382.437952</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_118">
+		<Coordinates>2190.050570</Coordinates>
+		<Coordinates>-658.582909</Coordinates>
+		<Coordinates>-3074.774347</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_119">
+		<Coordinates>-11596.650999</Coordinates>
+		<Coordinates>-4654.323132</Coordinates>
+		<Coordinates>-3335.653902</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_120">
+		<Coordinates>3206.742245</Coordinates>
+		<Coordinates>93.609332</Coordinates>
+		<Coordinates>534.846978</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_121">
+		<Coordinates>2457.469706</Coordinates>
+		<Coordinates>3.011024</Coordinates>
+		<Coordinates>338.915660</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_122">
+		<Coordinates>2656.953419</Coordinates>
+		<Coordinates>207.576669</Coordinates>
+		<Coordinates>391.049213</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_123">
+		<Coordinates>2314.497282</Coordinates>
+		<Coordinates>243.541466</Coordinates>
+		<Coordinates>301.486049</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_124">
+		<Coordinates>2730.124583</Coordinates>
+		<Coordinates>515.350723</Coordinates>
+		<Coordinates>410.134292</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_125">
+		<Coordinates>-277.728157</Coordinates>
+		<Coordinates>-277.905892</Coordinates>
+		<Coordinates>-376.343303</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_126">
+		<Coordinates>32832.789010</Coordinates>
+		<Coordinates>-91702.122117</Coordinates>
+		<Coordinates>6792.384706</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_127">
+		<Coordinates>1972.978910</Coordinates>
+		<Coordinates>6044.053878</Coordinates>
+		<Coordinates>104.585480</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_128">
+		<Coordinates>2194.382331</Coordinates>
+		<Coordinates>-1436.884942</Coordinates>
+		<Coordinates>367.175848</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_129">
+		<Coordinates>2846.809946</Coordinates>
+		<Coordinates>1408.509262</Coordinates>
+		<Coordinates>353.080303</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_130">
+		<Coordinates>2226.040635</Coordinates>
+		<Coordinates>-1453.769370</Coordinates>
+		<Coordinates>371.396955</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_131">
+		<Coordinates>5383.029088</Coordinates>
+		<Coordinates>4225.360450</Coordinates>
+		<Coordinates>559.258837</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_132">
+		<Coordinates>-57886.305351</Coordinates>
+		<Coordinates>-43318.605124</Coordinates>
+		<Coordinates>-5303.494542</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_133">
+		<Coordinates>-259.401720</Coordinates>
+		<Coordinates>-7526.317962</Coordinates>
+		<Coordinates>-29273.774704</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_134">
+		<Coordinates>2781.871968</Coordinates>
+		<Coordinates>704.992867</Coordinates>
+		<Coordinates>4992.039957</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_135">
+		<Coordinates>2805.305624</Coordinates>
+		<Coordinates>236.156152</Coordinates>
+		<Coordinates>-1237.209823</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_136">
+		<Coordinates>2359.533133</Coordinates>
+		<Coordinates>-31.606571</Coordinates>
+		<Coordinates>1333.984639</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_137">
+		<Coordinates>3317.971749</Coordinates>
+		<Coordinates>247.501688</Coordinates>
+		<Coordinates>-339.502067</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_138">
+		<Coordinates>787.004987</Coordinates>
+		<Coordinates>-539.845170</Coordinates>
+		<Coordinates>1253.120508</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_139">
+		<Coordinates>14901.843303</Coordinates>
+		<Coordinates>2460.512663</Coordinates>
+		<Coordinates>-4444.754606</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_140">
+		<Coordinates>2545.289858</Coordinates>
+		<Coordinates>-97.827624</Coordinates>
+		<Coordinates>363.379357</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_141">
+		<Coordinates>2533.955234</Coordinates>
+		<Coordinates>-47.007004</Coordinates>
+		<Coordinates>372.915432</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_142">
+		<Coordinates>2582.107292</Coordinates>
+		<Coordinates>-29.165610</Coordinates>
+		<Coordinates>371.427883</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_143">
+		<Coordinates>2624.258907</Coordinates>
+		<Coordinates>-7.997590</Coordinates>
+		<Coordinates>371.052311</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_144">
+		<Coordinates>2678.466173</Coordinates>
+		<Coordinates>6.486815</Coordinates>
+		<Coordinates>368.442694</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_145">
+		<Coordinates>2698.828043</Coordinates>
+		<Coordinates>39.735000</Coordinates>
+		<Coordinates>372.105063</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_146">
+		<Coordinates>3029.756430</Coordinates>
+		<Coordinates>-99.193904</Coordinates>
+		<Coordinates>318.215232</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_147">
+		<Coordinates>2640.552057</Coordinates>
+		<Coordinates>91.676413</Coordinates>
+		<Coordinates>559.429626</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_148">
+		<Coordinates>2571.923477</Coordinates>
+		<Coordinates>-41.185808</Coordinates>
+		<Coordinates>398.039532</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_149">
+		<Coordinates>2542.305307</Coordinates>
+		<Coordinates>-75.014545</Coordinates>
+		<Coordinates>328.388585</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_150">
+		<Coordinates>2580.626409</Coordinates>
+		<Coordinates>-104.271242</Coordinates>
+		<Coordinates>418.505758</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_151">
+		<Coordinates>2529.890479</Coordinates>
+		<Coordinates>-144.192452</Coordinates>
+		<Coordinates>299.193423</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_152">
+		<Coordinates>2630.674391</Coordinates>
+		<Coordinates>-180.807825</Coordinates>
+		<Coordinates>536.200339</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_153">
+		<Coordinates>2392.133538</Coordinates>
+		<Coordinates>5.335285</Coordinates>
+		<Coordinates>-24.760932</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_154">
+		<Coordinates>2529.635619</Coordinates>
+		<Coordinates>-42.126536</Coordinates>
+		<Coordinates>478.266095</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_155">
+		<Coordinates>2524.455866</Coordinates>
+		<Coordinates>62.314130</Coordinates>
+		<Coordinates>354.072984</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_156">
+		<Coordinates>2603.139582</Coordinates>
+		<Coordinates>-84.134114</Coordinates>
+		<Coordinates>376.819933</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_157">
+		<Coordinates>2605.919728</Coordinates>
+		<Coordinates>41.888691</Coordinates>
+		<Coordinates>369.182424</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_158">
+		<Coordinates>2674.720327</Coordinates>
+		<Coordinates>-78.696656</Coordinates>
+		<Coordinates>366.241146</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_159">
+		<Coordinates>2656.140122</Coordinates>
+		<Coordinates>143.018348</Coordinates>
+		<Coordinates>393.032825</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_160">
+		<Coordinates>2752.002713</Coordinates>
+		<Coordinates>-222.709964</Coordinates>
+		<Coordinates>66.401825</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_161">
+		<Coordinates>558.516259</Coordinates>
+		<Coordinates>-10889.391488</Coordinates>
+		<Coordinates>-6247.317232</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_162">
+		<Coordinates>2806.343512</Coordinates>
+		<Coordinates>1701.603862</Coordinates>
+		<Coordinates>1080.298304</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_163">
+		<Coordinates>2506.534404</Coordinates>
+		<Coordinates>-651.972695</Coordinates>
+		<Coordinates>211.691485</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_164">
+		<Coordinates>2940.183608</Coordinates>
+		<Coordinates>509.651322</Coordinates>
+		<Coordinates>377.130352</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_165">
+		<Coordinates>2744.879506</Coordinates>
+		<Coordinates>-787.755659</Coordinates>
+		<Coordinates>590.866639</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_166">
+		<Coordinates>3712.931888</Coordinates>
+		<Coordinates>1781.098715</Coordinates>
+		<Coordinates>-433.279315</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_167">
+		<Coordinates>-1267.896713</Coordinates>
+		<Coordinates>-13173.846258</Coordinates>
+		<Coordinates>8655.116837</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_168">
+		<Coordinates>-453.707165</Coordinates>
+		<Coordinates>-6386.996200</Coordinates>
+		<Coordinates>7254.182830</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_169">
+		<Coordinates>2552.153889</Coordinates>
+		<Coordinates>13.586330</Coordinates>
+		<Coordinates>214.109818</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_170">
+		<Coordinates>2657.113464</Coordinates>
+		<Coordinates>118.410189</Coordinates>
+		<Coordinates>346.964415</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_171">
+		<Coordinates>2804.187636</Coordinates>
+		<Coordinates>-98.045450</Coordinates>
+		<Coordinates>389.241926</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_172">
+		<Coordinates>2951.080290</Coordinates>
+		<Coordinates>0.494855</Coordinates>
+		<Coordinates>421.608069</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_173">
+		<Coordinates>3056.426590</Coordinates>
+		<Coordinates>-565.782628</Coordinates>
+		<Coordinates>575.582681</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_174">
+		<Coordinates>6056.216878</Coordinates>
+		<Coordinates>16369.700340</Coordinates>
+		<Coordinates>-6795.992540</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_175">
+		<Coordinates>-4475.644955</Coordinates>
+		<Coordinates>9921.561398</Coordinates>
+		<Coordinates>11848.454352</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_176">
+		<Coordinates>3748.591481</Coordinates>
+		<Coordinates>-1015.659249</Coordinates>
+		<Coordinates>949.515076</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_177">
+		<Coordinates>2081.567879</Coordinates>
+		<Coordinates>397.286461</Coordinates>
+		<Coordinates>-116.052140</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_178">
+		<Coordinates>3274.049667</Coordinates>
+		<Coordinates>-315.358962</Coordinates>
+		<Coordinates>798.251602</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_179">
+		<Coordinates>2342.005473</Coordinates>
+		<Coordinates>433.546555</Coordinates>
+		<Coordinates>-151.306483</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_180">
+		<Coordinates>5515.119718</Coordinates>
+		<Coordinates>-1483.242502</Coordinates>
+		<Coordinates>3029.418128</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_181">
+		<Coordinates>-44808.436729</Coordinates>
+		<Coordinates>27857.030529</Coordinates>
+		<Coordinates>-59233.936662</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_182">
+		<Coordinates>-1855.239379</Coordinates>
+		<Coordinates>31275.873925</Coordinates>
+		<Coordinates>4680.887185</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_183">
+		<Coordinates>5501.958171</Coordinates>
+		<Coordinates>-3570.195700</Coordinates>
+		<Coordinates>2570.091623</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_184">
+		<Coordinates>1047.311745</Coordinates>
+		<Coordinates>1343.791631</Coordinates>
+		<Coordinates>-879.581287</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_185">
+		<Coordinates>4199.693064</Coordinates>
+		<Coordinates>-1045.352174</Coordinates>
+		<Coordinates>1482.265107</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_186">
+		<Coordinates>1017.362348</Coordinates>
+		<Coordinates>1529.275070</Coordinates>
+		<Coordinates>-1297.677876</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_187">
+		<Coordinates>11258.517424</Coordinates>
+		<Coordinates>-5072.114087</Coordinates>
+		<Coordinates>7181.015453</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_188">
+		<Coordinates>-122484.955143</Coordinates>
+		<Coordinates>70645.866768</Coordinates>
+		<Coordinates>-109459.072399</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_189">
+		<Coordinates>31752.030156</Coordinates>
+		<Coordinates>-4867.745737</Coordinates>
+		<Coordinates>-4059.304210</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_190">
+		<Coordinates>1354.461736</Coordinates>
+		<Coordinates>-105.513209</Coordinates>
+		<Coordinates>574.823699</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_191">
+		<Coordinates>2917.798877</Coordinates>
+		<Coordinates>-72.019566</Coordinates>
+		<Coordinates>331.501081</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_192">
+		<Coordinates>2443.865283</Coordinates>
+		<Coordinates>262.896116</Coordinates>
+		<Coordinates>399.087316</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_193">
+		<Coordinates>3116.401916</Coordinates>
+		<Coordinates>428.187120</Coordinates>
+		<Coordinates>291.714261</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_194">
+		<Coordinates>2186.165301</Coordinates>
+		<Coordinates>830.614589</Coordinates>
+		<Coordinates>428.944707</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_195">
+		<Coordinates>8518.885880</Coordinates>
+		<Coordinates>158.459611</Coordinates>
+		<Coordinates>-542.309606</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_196">
+		<Coordinates>3451.327442</Coordinates>
+		<Coordinates>-1363.062380</Coordinates>
+		<Coordinates>1052.719459</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_197">
+		<Coordinates>2854.551607</Coordinates>
+		<Coordinates>-216.299257</Coordinates>
+		<Coordinates>528.084920</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_198">
+		<Coordinates>2658.437836</Coordinates>
+		<Coordinates>440.665076</Coordinates>
+		<Coordinates>295.059223</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_199">
+		<Coordinates>2796.015947</Coordinates>
+		<Coordinates>408.896431</Coordinates>
+		<Coordinates>355.031373</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_200">
+		<Coordinates>2877.690511</Coordinates>
+		<Coordinates>153.959441</Coordinates>
+		<Coordinates>426.355261</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_201">
+		<Coordinates>2565.829270</Coordinates>
+		<Coordinates>348.857001</Coordinates>
+		<Coordinates>216.830300</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_202">
+		<Coordinates>1902.783218</Coordinates>
+		<Coordinates>1231.067778</Coordinates>
+		<Coordinates>-294.359226</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_203">
+		<Coordinates>60110.537440</Coordinates>
+		<Coordinates>-144725.363597</Coordinates>
+		<Coordinates>18191.056967</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_204">
+		<Coordinates>1527.314592</Coordinates>
+		<Coordinates>12620.816167</Coordinates>
+		<Coordinates>-711.191531</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_205">
+		<Coordinates>2147.285944</Coordinates>
+		<Coordinates>-3555.694798</Coordinates>
+		<Coordinates>586.157883</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_206">
+		<Coordinates>3571.765781</Coordinates>
+		<Coordinates>3106.540404</Coordinates>
+		<Coordinates>227.435670</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_207">
+		<Coordinates>1678.873997</Coordinates>
+		<Coordinates>-3474.415473</Coordinates>
+		<Coordinates>496.525792</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_208">
+		<Coordinates>9983.092168</Coordinates>
+		<Coordinates>11025.151056</Coordinates>
+		<Coordinates>339.636943</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_209">
+		<Coordinates>-118652.169654</Coordinates>
+		<Coordinates>-111281.552080</Coordinates>
+		<Coordinates>-5305.283143</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_210">
+		<Coordinates>55382.785773</Coordinates>
+		<Coordinates>1221.560486</Coordinates>
+		<Coordinates>-7248.683157</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_211">
+		<Coordinates>-653.408617</Coordinates>
+		<Coordinates>98.126806</Coordinates>
+		<Coordinates>856.424522</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_212">
+		<Coordinates>3500.930834</Coordinates>
+		<Coordinates>-35.179796</Coordinates>
+		<Coordinates>249.599579</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_213">
+		<Coordinates>2078.767379</Coordinates>
+		<Coordinates>-260.219202</Coordinates>
+		<Coordinates>449.916700</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_214">
+		<Coordinates>3575.596189</Coordinates>
+		<Coordinates>-437.241535</Coordinates>
+		<Coordinates>227.740276</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_215">
+		<Coordinates>983.662417</Coordinates>
+		<Coordinates>-681.523524</Coordinates>
+		<Coordinates>597.373229</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_216">
+		<Coordinates>17413.795844</Coordinates>
+		<Coordinates>-612.894783</Coordinates>
+		<Coordinates>-1786.281395</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_217">
+		<Coordinates>3696.360480</Coordinates>
+		<Coordinates>2881.364989</Coordinates>
+		<Coordinates>1565.781257</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_218">
+		<Coordinates>2789.244498</Coordinates>
+		<Coordinates>156.322110</Coordinates>
+		<Coordinates>503.304268</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_219">
+		<Coordinates>2674.756109</Coordinates>
+		<Coordinates>-452.567478</Coordinates>
+		<Coordinates>298.168605</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_220">
+		<Coordinates>2791.865408</Coordinates>
+		<Coordinates>-383.881405</Coordinates>
+		<Coordinates>355.874765</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_221">
+		<Coordinates>2873.515178</Coordinates>
+		<Coordinates>-191.497632</Coordinates>
+		<Coordinates>420.679496</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_222">
+		<Coordinates>2606.639816</Coordinates>
+		<Coordinates>-268.797603</Coordinates>
+		<Coordinates>246.046696</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_223">
+		<Coordinates>1226.161064</Coordinates>
+		<Coordinates>-1342.552794</Coordinates>
+		<Coordinates>-721.689198</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_224">
+		<Coordinates>53537.113060</Coordinates>
+		<Coordinates>139985.130452</Coordinates>
+		<Coordinates>19293.948168</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_225">
+		<Coordinates>1982.722779</Coordinates>
+		<Coordinates>-12248.281957</Coordinates>
+		<Coordinates>-790.837122</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_226">
+		<Coordinates>2020.432290</Coordinates>
+		<Coordinates>3443.995430</Coordinates>
+		<Coordinates>610.069363</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_227">
+		<Coordinates>3651.105412</Coordinates>
+		<Coordinates>-3032.453915</Coordinates>
+		<Coordinates>211.184019</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_228">
+		<Coordinates>1587.006857</Coordinates>
+		<Coordinates>3380.128689</Coordinates>
+		<Coordinates>517.194397</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_229">
+		<Coordinates>10183.911540</Coordinates>
+		<Coordinates>-10785.931512</Coordinates>
+		<Coordinates>285.165898</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_230">
+		<Coordinates>-119540.316264</Coordinates>
+		<Coordinates>109672.346258</Coordinates>
+		<Coordinates>-4886.240778</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_231">
+		<Coordinates>2563.682047</Coordinates>
+		<Coordinates>-188.236089</Coordinates>
+		<Coordinates>374.718188</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_232">
+		<Coordinates>2560.000000</Coordinates>
+		<Coordinates>-90.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_233">
+		<Coordinates>2560.000000</Coordinates>
+		<Coordinates>-50.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_234">
+		<Coordinates>2697.611572</Coordinates>
+		<Coordinates>-100.828506</Coordinates>
+		<Coordinates>433.270257</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_235">
+		<Coordinates>2594.445313</Coordinates>
+		<Coordinates>-38.109917</Coordinates>
+		<Coordinates>398.045247</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_236">
+		<Coordinates>2550.000000</Coordinates>
+		<Coordinates>-16.800799</Coordinates>
+		<Coordinates>378.661418</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_237">
+		<Coordinates>2603.714903</Coordinates>
+		<Coordinates>-18.876431</Coordinates>
+		<Coordinates>371.141550</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_238">
+		<Coordinates>2650.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_239">
+		<Coordinates>2730.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_240">
+		<Coordinates>2650.000000</Coordinates>
+		<Coordinates>-150.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_241">
+		<Coordinates>2650.000000</Coordinates>
+		<Coordinates>100.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_242">
+		<Coordinates>2650.000000</Coordinates>
+		<Coordinates>150.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_243">
+		<Coordinates>2549.999875</Coordinates>
+		<Coordinates>109.275754</Coordinates>
+		<Coordinates>388.326187</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_244">
+		<Coordinates>2500.000000</Coordinates>
+		<Coordinates>230.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_245">
+		<Coordinates>2569.999875</Coordinates>
+		<Coordinates>109.275754</Coordinates>
+		<Coordinates>388.326187</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_246">
+		<Coordinates>2559.592893</Coordinates>
+		<Coordinates>109.819071</Coordinates>
+		<Coordinates>377.927712</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_247">
+		<Coordinates>2549.999875</Coordinates>
+		<Coordinates>109.272370</Coordinates>
+		<Coordinates>368.326187</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_248">
+		<Coordinates>2569.999875</Coordinates>
+		<Coordinates>109.272370</Coordinates>
+		<Coordinates>368.326187</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_249">
+		<Coordinates>2690.349854</Coordinates>
+		<Coordinates>70.910495</Coordinates>
+		<Coordinates>419.149905</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_250">
+		<Coordinates>2560.000000</Coordinates>
+		<Coordinates>-124.519113</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_251">
+		<Coordinates>2638.623192</Coordinates>
+		<Coordinates>-11.000000</Coordinates>
+		<Coordinates>370.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_252">
+		<Coordinates>2879.079286</Coordinates>
+		<Coordinates>-43.193846</Coordinates>
+		<Coordinates>402.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_253">
+		<Coordinates>2878.293149</Coordinates>
+		<Coordinates>-53.579475</Coordinates>
+		<Coordinates>404.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_254">
+		<Coordinates>2900.000000</Coordinates>
+		<Coordinates>0.881292</Coordinates>
+		<Coordinates>421.048425</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_255">
+		<Coordinates>3000.000000</Coordinates>
+		<Coordinates>0.980564</Coordinates>
+		<Coordinates>427.830709</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_256">
+		<Coordinates>2750.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_257">
+		<Coordinates>2799.999875</Coordinates>
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>368.597489</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_258">
+		<Coordinates>2999.999875</Coordinates>
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>368.597489</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_259">
+		<Coordinates>2750.000000</Coordinates>
+		<Coordinates>-350.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_260">
+		<Coordinates>2799.999875</Coordinates>
+		<Coordinates>-300.095152</Coordinates>
+		<Coordinates>368.501769</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_261">
+		<Coordinates>2999.999875</Coordinates>
+		<Coordinates>-300.095154</Coordinates>
+		<Coordinates>368.502241</Coordinates>
+	</Cartesian_point>
+	<Cavity_plug id="id_309_0">
+		<Part_number>46810831952</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_19">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.13</Value_component>
+		</Mass_information>
+	</Cavity_plug>
+	<Cavity_plug id="id_309_1">
+		<Part_number>4681083195a</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>6</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_2">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.07</Value_component>
+		</Mass_information>
+	</Cavity_plug>
+	<Cavity_seal id="id_311_0">
+		<Part_number>46810831852</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_3">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+	</Cavity_seal>
+	<Cavity_seal id="id_311_1">
+		<Part_number>468108318521C</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_22">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+	</Cavity_seal>
+	<Cavity_seal id="id_311_2">
+		<Part_number>4681083185a1F</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>5</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+		<Mass_information id="id_380_20">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+	</Cavity_seal>
+	<Connector_housing id="id_315_0">
+		<Part_number>2Ka10841944</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>RD-FLACHSTECKERGEHAEUSE 6-POLIG 2,8MM SCHWARZ</Description>
+		<Mass_information id="id_380_27">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>12.0</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_0">
+			<Id>default</Id>
+			<Number_of_cavities>6</Number_of_cavities>
+			<Cavities id="id_370_0">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_1">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_2">
+				<Cavity_number>3</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_3">
+				<Cavity_number>4</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_4">
+				<Cavity_number>5</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_5">
+				<Cavity_number>6</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_7">
+		<Part_number>2Ka10831873</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHSTECKERGEH_2POL_4.8MM_SCHWARZ</Description>
+		<Mass_information id="id_380_4">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>3.0</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_14">
+			<Id>default</Id>
+			<Number_of_cavities>2</Number_of_cavities>
+			<Cavities id="id_370_34">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_35">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_8">
+		<Part_number>a8110821893</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>4</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>GLUEHKERZENANSCHL</Description>
+		<Mass_information id="id_380_26">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>8.9</Value_component>
+		</Mass_information>
+		<Housing_colour>NotDefined</Housing_colour>
+		<Slots id="id_341_16">
+			<Id>default</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_38">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_6">
+		<Part_number>5Ea10a71343</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEHAEUSE_3POL</Description>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_12">
+			<Id>default</Id>
+			<Number_of_cavities>3</Number_of_cavities>
+			<Cavities id="id_370_28">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_29">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_30">
+				<Cavity_number>3</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_3">
+		<Part_number>a48108413a3</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEHAEUSE_2-POLIG-2,8MM</Description>
+		<Mass_information id="id_380_1">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>7.9</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_6">
+			<Id>default</Id>
+			<Number_of_cavities>2</Number_of_cavities>
+			<Cavities id="id_370_16">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_17">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_5">
+		<Part_number>55410a71343</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>BUCHSENGEHAEUSE_SCHWARZ_2POL</Description>
+		<Mass_information id="id_380_14">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>5.0</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_10">
+			<Id>default</Id>
+			<Number_of_cavities>2</Number_of_cavities>
+			<Cavities id="id_370_24">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_25">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_1">
+		<Part_number>O1a2816a714</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH_A6-1.0</Description>
+		<Mass_information id="id_380_16">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Housing_colour>NotDefined</Housing_colour>
+		<Slots id="id_341_2">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_12">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_2">
+		<Part_number>2Ka10841a92</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEHAEUSE_1-POL_1.5MM</Description>
+		<Mass_information id="id_380_17">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>4.0</Value_component>
+		</Mass_information>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_4">
+			<Id>default</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_14">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_4">
+		<Part_number>a4810a7135a</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>5</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEHAEUSE_2-POLIG_3,5MM</Description>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_8">
+			<Id>default</Id>
+			<Number_of_cavities>2</Number_of_cavities>
+			<Cavities id="id_370_20">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_21">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_9">
+		<Part_number>TQMJDF</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Verbinder</Description>
+		<Slots id="id_341_27">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_49">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<General_terminal id="id_326_0">
+		<Part_number>O12a412901a3</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>4</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>-</Description>
+		<Mass_information id="id_380_7">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.61</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_1">
+		<Part_number>O12a4120a1a3</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>4</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>-</Description>
+		<Mass_information id="id_380_5">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.63</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_2">
+		<Part_number>O1a2816a714</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH_A6-1.0</Description>
+		<Mass_information id="id_380_15">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_3">
+		<Part_number>O12a414691a3</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>4</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>sekundaer_verriegelt_TAB003656A</Description>
+		<Mass_information id="id_380_28">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.3</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_4">
+		<Part_number>O10a719551a3</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>-</Description>
+		<Mass_information id="id_380_8">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>0.42</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_5">
+		<Part_number>O10a719551a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKT_2.8-1.0</Description>
+		<Mass_information id="id_380_9">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_6">
+		<Part_number>O10a719561a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKT_28_25</Description>
+		<Mass_information id="id_380_25">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_7">
+		<Part_number>O12a412031a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>-</Description>
+		<Mass_information id="id_380_6">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_8">
+		<Part_number>O12a214701a2</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>-</Description>
+		<Mass_information id="id_380_18">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>1.0</Value_component>
+		</Mass_information>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_wire id="id_327_0">
+		<Part_number>O1a481aa016</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_29">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_0">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_0">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_1">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>bl</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_1">
+		<Part_number>O1a481a5016</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_30">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>26.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>8.7</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_1">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>2.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>2.9</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_2">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_3">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>bl</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_2">
+		<Part_number>O1a481a4710</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_10">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>16.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>6.9</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_2">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>1.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>2.3</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_4">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>gn</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_5">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_3">
+		<Part_number>O1a481aa91a</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_12">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_3">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_6">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>br</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_7">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>ws</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_4">
+		<Part_number>O1a481aa918</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_24">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_4">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_4">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_4">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_8">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>br</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_9">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>gr</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_5">
+		<Part_number>O1a481aa910</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_23">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_5">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_5">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_5">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_10">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>br</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_11">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_6">
+		<Part_number>O12a3158a1a5</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_21">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>15.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_6">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>9</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_6">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>1</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_6">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>3</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_12">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_7">
+		<Part_number>O1a481aa912</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_11">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_7">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_7">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_7">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_13">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>br</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_14">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>ge</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_8">
+		<Part_number>O1a481aa512</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Mass_information id="id_380_13">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>6.0</Value_component>
+		</Mass_information>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_8">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4.8</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_8">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_8">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1.6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_15">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>vi</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_16">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>ge</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<Harness id="id_328_0">
+		<Part_number>000971619</Part_number>
+		<Company_name>GCMC</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>LTGS Movo</Description>
+		<Project_number>VNG</Project_number>
+		<Car_classification_level_2>VW1200</Car_classification_level_2>
+		<Model_year>2018</Model_year>
+		<Content>harness complete set</Content>
+		<Cavity_plug_occurrence id="id_310_0">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_1">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_2">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_3">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_4">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_5">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_6">
+			<Part>id_309_1</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_7">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_8">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_9">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_10">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_seal_occurrence id="id_312_0">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_1">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_2">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_3">
+			<Part>id_311_1</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_4">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_5">
+			<Part>id_311_2</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_6">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_7">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_8">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_9">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Connection id="id_314_0">
+			<Id>V.15.SZS1034.1F251111</Id>
+			<Signal_name>V.15.SZS1034.</Signal_name>
+			<Wire>id_350_0</Wire>
+			<Extremities id="id_377_0">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_2</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_1">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_3</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_1">
+			<Id>V.15.SZS1034.1F251112</Id>
+			<Signal_name>V.15.SZS1034.</Signal_name>
+			<Wire>id_350_1</Wire>
+			<Extremities id="id_377_2">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_2</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_3">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_4</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_2">
+			<Id>V.15.SZS1034.1LMK.2B11411</Id>
+			<Signal_name>V.15.SZS1034.</Signal_name>
+			<Wire>id_350_2</Wire>
+			<Extremities id="id_377_4">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_5</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_5">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_2</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_3">
+			<Id>V.15.SZS1034.1F251113</Id>
+			<Signal_name>V.15.SZS1034.</Signal_name>
+			<Wire>id_350_3</Wire>
+			<Extremities id="id_377_6">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_2</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_7">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_6</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_4">
+			<Id>V.1.SZS1035.1F821111</Id>
+			<Signal_name>V.1.SZS1035.</Signal_name>
+			<Wire>id_350_4</Wire>
+			<Extremities id="id_377_8">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_7</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_9">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_8</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_5">
+			<Id>V.1.SZS1035.1F821112</Id>
+			<Signal_name>V.1.SZS1035.</Signal_name>
+			<Wire>id_350_5</Wire>
+			<Extremities id="id_377_10">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_7</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_11">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_9</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_6">
+			<Id>V.1.SZS1035.1LMK.2B11111</Id>
+			<Signal_name>V.1.SZS1035.</Signal_name>
+			<Wire>id_350_6</Wire>
+			<Extremities id="id_377_12">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_10</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_13">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_7</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_7">
+			<Id>V.1.SZS1035.1F821113</Id>
+			<Signal_name>V.1.SZS1035.</Signal_name>
+			<Wire>id_350_7</Wire>
+			<Extremities id="id_377_14">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_7</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_15">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_11</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_8">
+			<Id>M.31S.SZS1090.41LMK.2B11511</Id>
+			<Signal_name>M.31S.SZS1090.4</Signal_name>
+			<Wire>id_350_8</Wire>
+			<Extremities id="id_377_16">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_12</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_17">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_13</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_9">
+			<Id>M.31.SZS1033.MI18111C11XB.E109.11111</Id>
+			<Signal_name>M.31.SZS1033.MI18111C1</Signal_name>
+			<Wire>id_350_9</Wire>
+			<Extremities id="id_377_18">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_14</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_19">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_0</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_10">
+			<Id>M.31.SZS1033.MI18111B11XB.Q26.11211</Id>
+			<Signal_name>M.31.SZS1033.MI18111B1</Signal_name>
+			<Wire>id_350_10</Wire>
+			<Extremities id="id_377_20">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_15</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_21">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_1</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_11">
+			<Id>V.4.SZS1039.atj111XB.J23.11111</Id>
+			<Signal_name>V.4.SZS1039.atj11</Signal_name>
+			<Wire>id_350_11</Wire>
+			<Extremities id="id_377_22">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_16</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_23">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_17</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_12">
+			<Id>V.4.SZS1039.atj121XB.J24.11111</Id>
+			<Signal_name>V.4.SZS1039.atj12</Signal_name>
+			<Wire>id_350_12</Wire>
+			<Extremities id="id_377_24">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_18</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_25">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_19</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_13">
+			<Id>V.4.SZS1039.atj131XB.J25.11111</Id>
+			<Signal_name>V.4.SZS1039.atj13</Signal_name>
+			<Wire>id_350_13</Wire>
+			<Extremities id="id_377_26">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_20</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_27">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_21</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_14">
+			<Id>V.4.SZS1039.atj141XB.J26.11111</Id>
+			<Signal_name>V.4.SZS1039.atj14</Signal_name>
+			<Wire>id_350_14</Wire>
+			<Extremities id="id_377_28">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_22</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_29">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_23</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_15">
+			<Id>V.4.SZS1039.1XC.G.1IL1111</Id>
+			<Signal_name>V.4.SZS1039.</Signal_name>
+			<Wire>id_350_15</Wire>
+			<Extremities id="id_377_30">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_24</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_31">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_25</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_16">
+			<Id>M.PM.SZS1035.1LMK.2B11211</Id>
+			<Signal_name>M.PM.SZS1035.</Signal_name>
+			<Wire>id_350_16</Wire>
+			<Extremities id="id_377_32">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_26</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_33">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_27</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_17">
+			<Id>S.SDUEBT.SZS1035.1LMK.2B11311</Id>
+			<Signal_name>S.SDUEBT.SZS1035.</Signal_name>
+			<Wire>id_350_17</Wire>
+			<Extremities id="id_377_34">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_28</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_35">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_29</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connector_occurrence id="id_316_0">
+			<Id>TMR.2A1</Id>
+			<Description>Koppelstelle im Motorraum rechts</Description>
+			<Placement id="Placement_1">
+				<U>-0.080963</U>
+				<U>0.026759</U>
+				<U>-0.996358</U>
+				<V>0.996657</V>
+				<V>0.013122</V>
+				<V>-0.080635</V>
+				<Cartesian_point>Cartesian_point_1</Cartesian_point>
+			</Placement>
+			<Part>id_315_0</Part>
+			<Contact_points id="id_372_5">
+				<Id>TMR.2A1-4#3_V.15.SYS_034._TMR.2A1_4_1</Id>
+				<Associated_parts>id_312_3 id_344_3</Associated_parts>
+				<Contacted_cavity>id_370_9</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_10">
+				<Id>TMR.2A1-1#7_V.1.SYS_035._TMR.2A1_1_1</Id>
+				<Associated_parts>id_312_0 id_344_0</Associated_parts>
+				<Contacted_cavity>id_370_6</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_12">
+				<Id>TMR.2A1-5#9_M.31S.SYS_090.4_TMR.2A1_5_1</Id>
+				<Associated_parts>id_312_4 id_344_4</Associated_parts>
+				<Contacted_cavity>id_370_10</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_26">
+				<Id>TMR.2A1-2#17_M.EM.SYS_035._TMR.2A1_2_1</Id>
+				<Associated_parts>id_312_1 id_344_1</Associated_parts>
+				<Contacted_cavity>id_370_7</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_28">
+				<Id>TMR.2A1-3#18_S.SIGNAL.SYS_035._TMR.2A1_3_1</Id>
+				<Associated_parts>id_312_2 id_344_2</Associated_parts>
+				<Contacted_cavity>id_370_8</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_1">
+				<Part>id_341_0</Part>
+				<Cavities id="id_370_6">
+					<Associated_plug>id_310_0</Associated_plug>
+					<Part>id_370_0</Part>
+				</Cavities>
+				<Cavities id="id_370_7">
+					<Associated_plug>id_310_1</Associated_plug>
+					<Part>id_370_1</Part>
+				</Cavities>
+				<Cavities id="id_370_8">
+					<Associated_plug>id_310_2</Associated_plug>
+					<Part>id_370_2</Part>
+				</Cavities>
+				<Cavities id="id_370_9">
+					<Associated_plug>id_310_3</Associated_plug>
+					<Part>id_370_3</Part>
+				</Cavities>
+				<Cavities id="id_370_10">
+					<Associated_plug>id_310_4</Associated_plug>
+					<Part>id_370_4</Part>
+				</Cavities>
+				<Cavities id="id_370_11">
+					<Associated_plug>id_310_5</Associated_plug>
+					<Part>id_370_5</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_7">
+			<Id>XA.O.1PT</Id>
+			<Description>Zündverteiler</Description>
+			<Placement id="Placement_2">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000595</V>
+				<V>-1.000000</V>
+				<Cartesian_point>Cartesian_point_2</Cartesian_point>
+			</Placement>
+			<Part>id_315_7</Part>
+			<Contact_points id="id_372_8">
+				<Id>XA.O.1PT-1#5_V.1.SYS_035._D82_1_1</Id>
+				<Associated_parts>id_344_15</Associated_parts>
+				<Contacted_cavity>id_370_36</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_9">
+				<Id>XA.O.1PT-2#6_V.1.SYS_035._D82_1_2</Id>
+				<Associated_parts>id_344_16</Associated_parts>
+				<Contacted_cavity>id_370_37</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_15">
+				<Part>id_341_14</Part>
+				<Cavities id="id_370_36">
+					<Part>id_370_34</Part>
+				</Cavities>
+				<Cavities id="id_370_37">
+					<Part>id_370_35</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_13">
+			<Id>XB.O.1PT</Id>
+			<Description>Zündverteiler</Description>
+			<Placement id="Placement_3">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000169</V>
+				<V>-1.000000</V>
+				<Cartesian_point>Cartesian_point_3</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_24">
+				<Id>XB.O.1PT-1#16_V.4.SYS_039._XB.O.1PT_1_1</Id>
+				<Associated_parts>id_344_21</Associated_parts>
+				<Contacted_cavity>id_370_44</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_22">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_44">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_14">
+			<Id>XC.O.1PT</Id>
+			<Description>Zündverteiler</Description>
+			<Placement id="Placement_4">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000169</V>
+				<V>-1.000000</V>
+				<Cartesian_point>Cartesian_point_4</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_17">
+				<Id>XC.O.1PT-1#12_V.4.SYS_039.Zyl_1_XA.Q23.1_1_1</Id>
+				<Associated_parts>id_344_22</Associated_parts>
+				<Contacted_cavity>id_370_45</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_23">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_45">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_15">
+			<Id>XD.O.1PT</Id>
+			<Description>Zündverteiler</Description>
+			<Placement id="Placement_5">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000169</V>
+				<V>-1.000000</V>
+				<Cartesian_point>Cartesian_point_5</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_19">
+				<Id>XD.O.1PT-1#13_V.4.SYS_039.Zyl_2_XA.Q24.1_1_1</Id>
+				<Associated_parts>id_344_23</Associated_parts>
+				<Contacted_cavity>id_370_46</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_24">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_46">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_16">
+			<Id>XE.O.1PT</Id>
+			<Description>Zündverteiler</Description>
+			<Placement id="Placement_6">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000169</V>
+				<V>-1.000000</V>
+				<Cartesian_point>Cartesian_point_6</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_21">
+				<Id>XE.O.1PT-1#14_V.4.SYS_039.Zyl_3_XA.Q25.1_1_1</Id>
+				<Associated_parts>id_344_24</Associated_parts>
+				<Contacted_cavity>id_370_47</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_25">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_47">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_17">
+			<Id>XF.O.1PT</Id>
+			<Description>Zündverteiler</Description>
+			<Placement id="Placement_7">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>0.001996</V>
+				<V>-0.999998</V>
+				<Cartesian_point>Cartesian_point_7</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_23">
+				<Id>XF.O.1PT-1#15_V.4.SYS_039.Zyl_4_XA.Q26.1_1_1</Id>
+				<Associated_parts>id_344_25</Associated_parts>
+				<Contacted_cavity>id_370_48</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_26">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_48">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_6">
+			<Id>XA.N.1</Id>
+			<Description>Zündspule 1</Description>
+			<Placement id="Placement_8">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.101952</V>
+				<V>0.994789</V>
+				<Cartesian_point>Cartesian_point_8</Cartesian_point>
+			</Placement>
+			<Part>id_315_6</Part>
+			<Contact_points id="id_372_6">
+				<Id>XA.N.1-3#4_V.15.SYS_034._D25_1_3</Id>
+				<Associated_parts>id_344_14</Associated_parts>
+				<Contacted_cavity>id_370_33</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_11">
+				<Id>XA.N.1-1#8_V.1.SYS_035._D82_1_3</Id>
+				<Associated_parts>id_344_12</Associated_parts>
+				<Contacted_cavity>id_370_31</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_25">
+				<Id>XA.N.1-2#16_V.4.SYS_039._XB.O.1PT_1_1</Id>
+				<Associated_parts>id_344_13</Associated_parts>
+				<Contacted_cavity>id_370_32</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_13">
+				<Part>id_341_12</Part>
+				<Cavities id="id_370_31">
+					<Part>id_370_28</Part>
+				</Cavities>
+				<Cavities id="id_370_32">
+					<Part>id_370_29</Part>
+				</Cavities>
+				<Cavities id="id_370_33">
+					<Part>id_370_30</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_8">
+			<Id>XA.Q23.1</Id>
+			<Description>Zündkerze 1</Description>
+			<Placement id="Placement_9">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.006771</V>
+				<V>-0.999977</V>
+				<Cartesian_point>Cartesian_point_9</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_16">
+				<Id>XA.Q23.1-1#12_V.4.SYS_039.Zyl_1_XA.Q23.1_1_1</Id>
+				<Associated_parts>id_344_17</Associated_parts>
+				<Contacted_cavity>id_370_39</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_17">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_39">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_9">
+			<Id>XA.Q24.1</Id>
+			<Description>Zündkerze 2</Description>
+			<Placement id="Placement_10">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.005945</V>
+				<V>0.999982</V>
+				<Cartesian_point>Cartesian_point_10</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_18">
+				<Id>XA.Q24.1-1#13_V.4.SYS_039.Zyl_2_XA.Q24.1_1_1</Id>
+				<Associated_parts>id_344_18</Associated_parts>
+				<Contacted_cavity>id_370_40</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_18">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_40">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_10">
+			<Id>XA.Q25.1</Id>
+			<Description>Zündkerze 3</Description>
+			<Placement id="Placement_11">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000287</V>
+				<V>-1.000000</V>
+				<Cartesian_point>Cartesian_point_11</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_20">
+				<Id>XA.Q25.1-1#14_V.4.SYS_039.Zyl_3_XA.Q25.1_1_1</Id>
+				<Associated_parts>id_344_19</Associated_parts>
+				<Contacted_cavity>id_370_41</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_19">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_41">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_11">
+			<Id>XA.Q26.1</Id>
+			<Description>Zündkerze 4</Description>
+			<Placement id="Placement_12">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>-0.000989</V>
+				<V>1.000000</V>
+				<Cartesian_point>Cartesian_point_12</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_22">
+				<Id>XA.Q26.1-1#15_V.4.SYS_039.Zyl_4_XA.Q26.1_1_1</Id>
+				<Associated_parts>id_344_20</Associated_parts>
+				<Contacted_cavity>id_370_42</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_20">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_42">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_3">
+			<Id>XA.F26.1</Id>
+			<Description>Thermoschalter für Kaltstarteinrichtung, Startautomatik, Thermozeitschalter</Description>
+			<Placement id="Placement_13">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>0.790825</V>
+				<V>0.612042</V>
+				<Cartesian_point>Cartesian_point_13</Cartesian_point>
+			</Placement>
+			<Part>id_315_3</Part>
+			<Contact_points id="id_372_3">
+				<Id>XA.F26.1-1#1_V.15.SYS_034._D25_1_1</Id>
+				<Associated_parts>id_312_6 id_344_6</Associated_parts>
+				<Contacted_cavity>id_370_18</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_15">
+				<Id>XA.F26.1-2#11_M.31.SYS_033.MP18_1_A1_XA.F26.1_2_1</Id>
+				<Associated_parts>id_312_7 id_344_7</Associated_parts>
+				<Contacted_cavity>id_370_19</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_7">
+				<Part>id_341_6</Part>
+				<Cavities id="id_370_18">
+					<Associated_plug>id_310_7</Associated_plug>
+					<Part>id_370_16</Part>
+				</Cavities>
+				<Cavities id="id_370_19">
+					<Associated_plug>id_310_8</Associated_plug>
+					<Part>id_370_17</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_5">
+			<Id>XA.N109.1</Id>
+			<Description>Kraftstoffabschaltventil</Description>
+			<Placement id="Placement_14">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>0.855588</V>
+				<V>0.517658</V>
+				<Cartesian_point>Cartesian_point_14</Cartesian_point>
+			</Placement>
+			<Part>id_315_5</Part>
+			<Contact_points id="id_372_4">
+				<Id>XA.N109.1-2#2_V.15.SYS_034._D25_1_2</Id>
+				<Associated_parts>id_344_11</Associated_parts>
+				<Contacted_cavity>id_370_27</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_14">
+				<Id>XA.N109.1-1#10_M.31.SYS_033.MP18_1_B1_XA.N109.1_1_1</Id>
+				<Associated_parts>id_344_10</Associated_parts>
+				<Contacted_cavity>id_370_26</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_11">
+				<Part>id_341_10</Part>
+				<Cavities id="id_370_26">
+					<Part>id_370_24</Part>
+				</Cavities>
+				<Cavities id="id_370_27">
+					<Part>id_370_25</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_1">
+			<Id>XA.18.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_1</Part>
+			<Contact_points id="id_372_1">
+				<Id>XA.18.1-1#11_M.31.SYS_033.MP18_1_A1_XA.F26.1_2_1</Id>
+				<Associated_parts>id_342_0</Associated_parts>
+				<Contacted_cavity>id_370_13</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_3">
+				<Part>id_341_2</Part>
+				<Cavities id="id_370_13">
+					<Part>id_370_12</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_12">
+			<Id>XB.18.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_1</Part>
+			<Contact_points id="id_372_0">
+				<Id>XB.18.1-1#10_M.31.SYS_033.MP18_1_B1_XA.N109.1_1_1</Id>
+				<Associated_parts>id_342_1</Associated_parts>
+				<Contacted_cavity>id_370_43</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_21">
+				<Part>id_341_2</Part>
+				<Cavities id="id_370_43">
+					<Part>id_370_12</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_2">
+			<Id>XA.F1.1</Id>
+			<Description>Öldruckschalter</Description>
+			<Placement id="Placement_17">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>0.908835</V>
+				<V>-0.417156</V>
+				<Cartesian_point>Cartesian_point_17</Cartesian_point>
+			</Placement>
+			<Part>id_315_2</Part>
+			<Contact_points id="id_372_13">
+				<Id>XA.F1.1-1#9_M.31S.SYS_090.4_TMR.2A1_5_1</Id>
+				<Associated_parts>id_312_5 id_344_5</Associated_parts>
+				<Contacted_cavity>id_370_15</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_5">
+				<Part>id_341_4</Part>
+				<Cavities id="id_370_15">
+					<Associated_plug>id_310_6</Associated_plug>
+					<Part>id_370_14</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_4">
+			<Id>XA.G7.1</Id>
+			<Description>Geber für oberen Totpunkt</Description>
+			<Placement id="Placement_18">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>0.953729</V>
+				<V>0.300668</V>
+				<Cartesian_point>Cartesian_point_18</Cartesian_point>
+			</Placement>
+			<Part>id_315_4</Part>
+			<Contact_points id="id_372_27">
+				<Id>XA.G7.1-2#17_M.EM.SYS_035._TMR.2A1_2_1</Id>
+				<Associated_parts>id_312_9 id_344_9</Associated_parts>
+				<Contacted_cavity>id_370_23</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_29">
+				<Id>XA.G7.1-1#18_S.SIGNAL.SYS_035._TMR.2A1_3_1</Id>
+				<Associated_parts>id_312_8 id_344_8</Associated_parts>
+				<Contacted_cavity>id_370_22</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_9">
+				<Part>id_341_8</Part>
+				<Cavities id="id_370_22">
+					<Associated_plug>id_310_9</Associated_plug>
+					<Part>id_370_20</Part>
+				</Cavities>
+				<Cavities id="id_370_23">
+					<Associated_plug>id_310_10</Associated_plug>
+					<Part>id_370_21</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_18">
+			<Id>D25</Id>
+			<Description>Plusverbindung (15) im Leitungsstrang Motorvorverkabelung</Description>
+			<Usage>splice</Usage>
+			<Placement id="Placement_19">
+				<U>-0.131356</U>
+				<U>0.991335</U>
+				<U>0.000000</U>
+				<V>-0.991335</V>
+				<V>-0.131356</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_19</Cartesian_point>
+			</Placement>
+			<Part>id_315_9</Part>
+			<Contact_points id="id_372_2">
+				<Id>D25-1#1_V.15.SYS_034._D25_1_1#2_V.15.SYS_034._D25_1_2#3_V.15.SYS_034._TMR.2A1_4_1#4_V.15.SYS_034._D25_1_3</Id>
+				<Contacted_cavity>id_370_50</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_28">
+				<Part>id_341_27</Part>
+				<Cavities id="id_370_50">
+					<Part>id_370_49</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_19">
+			<Id>D82</Id>
+			<Description>Verbindung (Steuer- und Regeleinheit) im Leitungsstrang Motorraum</Description>
+			<Usage>splice</Usage>
+			<Placement id="Placement_20">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_20</Cartesian_point>
+			</Placement>
+			<Part>id_315_9</Part>
+			<Contact_points id="id_372_7">
+				<Id>D82-1#5_V.1.SYS_035._D82_1_1#6_V.1.SYS_035._D82_1_2#7_V.1.SYS_035._TMR.2A1_1_1#8_V.1.SYS_035._D82_1_3</Id>
+				<Contacted_cavity>id_370_51</Contacted_cavity>
+			</Contact_points>
+			<Slots id="id_341_29">
+				<Part>id_341_27</Part>
+				<Cavities id="id_370_51">
+					<Part>id_370_49</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_0">
+			<Part>id_327_0</Part>
+			<Length_information id="id_388_0">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_0">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>455.13</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>1</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_1">
+			<Part>id_327_0</Part>
+			<Length_information id="id_388_1">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_1">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>359.13</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>2</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_2">
+			<Part>id_327_1</Part>
+			<Length_information id="id_388_2">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_2">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>231.86</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>3</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_3">
+			<Part>id_327_1</Part>
+			<Length_information id="id_388_3">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_3">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>145.58</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>4</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_4">
+			<Part>id_327_2</Part>
+			<Length_information id="id_388_4">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_4">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>111.61</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>5</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_5">
+			<Part>id_327_2</Part>
+			<Length_information id="id_388_5">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_5">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>111.61</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>6</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_6">
+			<Part>id_327_2</Part>
+			<Length_information id="id_388_6">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_6">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>134.35</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>7</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_7">
+			<Part>id_327_2</Part>
+			<Length_information id="id_388_7">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_7">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>128.91</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>8</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_8">
+			<Part>id_327_3</Part>
+			<Length_information id="id_388_8">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_8">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>529.39</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>9</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_9">
+			<Part>id_327_4</Part>
+			<Length_information id="id_388_9">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_9">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>355.55</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>10</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_10">
+			<Part>id_327_5</Part>
+			<Length_information id="id_388_10">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_10">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>448.08</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>11</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_11">
+			<Part>id_327_6</Part>
+			<Length_information id="id_388_11">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_11">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>743.51</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>12</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_12">
+			<Part>id_327_6</Part>
+			<Length_information id="id_388_12">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_12">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>979.23</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>13</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_13">
+			<Part>id_327_6</Part>
+			<Length_information id="id_388_13">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_13">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>932.29</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>14</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_14">
+			<Part>id_327_6</Part>
+			<Length_information id="id_388_14">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_14">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1152.69</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>15</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_15">
+			<Part>id_327_6</Part>
+			<Length_information id="id_388_15">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_15">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>645.66</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>16</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_16">
+			<Part>id_327_7</Part>
+			<Length_information id="id_388_16">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_16">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>299.93</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>17</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_17">
+			<Part>id_327_8</Part>
+			<Length_information id="id_388_17">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_17">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>299.93</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>18</Wire_number>
+		</General_wire_occurrence>
+		<Special_terminal_occurrence id="id_342_0">
+			<Id>XA.18.1</Id>
+			<Description>Massepunkt am Motorblock</Description>
+			<Placement id="Placement_15">
+				<U>0.309371</U>
+				<U>0.950942</U>
+				<U>0.000000</U>
+				<V>-0.950942</V>
+				<V>0.309371</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_15</Cartesian_point>
+			</Placement>
+			<Part>id_326_2</Part>
+		</Special_terminal_occurrence>
+		<Special_terminal_occurrence id="id_342_1">
+			<Id>XB.18.1</Id>
+			<Description>Massepunkt am Motorblock</Description>
+			<Placement id="Placement_16">
+				<U>-0.162703</U>
+				<U>0.986675</U>
+				<U>0.000000</U>
+				<V>-0.986675</V>
+				<V>-0.162703</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_16</Cartesian_point>
+			</Placement>
+			<Part>id_326_2</Part>
+		</Special_terminal_occurrence>
+		<Terminal_occurrence id="id_344_0">
+			<Part>id_326_0</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_1">
+			<Part>id_326_0</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_2">
+			<Part>id_326_0</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_3">
+			<Part>id_326_1</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_4">
+			<Part>id_326_0</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_5">
+			<Part>id_326_3</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_6">
+			<Part>id_326_4</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_7">
+			<Part>id_326_4</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_8">
+			<Part>id_326_4</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_9">
+			<Part>id_326_4</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_10">
+			<Part>id_326_5</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_11">
+			<Part>id_326_5</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_12">
+			<Part>id_326_6</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_13">
+			<Part>id_326_5</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_14">
+			<Part>id_326_6</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_15">
+			<Part>id_326_7</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_16">
+			<Part>id_326_7</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_17">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_18">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_19">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_20">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_21">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_22">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_23">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_24">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_25">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Module id="id_331_0">
+			<Part_number>aaa10831720</Part_number>
+			<Company_name>GCMC</Company_name>
+			<Version>/NULL</Version>
+			<Abbreviation>/NULL</Abbreviation>
+			<Description>Variante</Description>
+			<Mass_information id="id_380_0">
+				<Unit_component>id_346_2</Unit_component>
+				<Value_component>2300.0</Value_component>
+			</Mass_information>
+			<Car_classification_level_2>/NULL</Car_classification_level_2>
+			<Model_year>/NULL</Model_year>
+			<Content>variant</Content>
+			<Of_family>id_332_0</Of_family>
+			<Module_configuration id="id_353_0">
+				<Logistic_control_information>L0L</Logistic_control_information>
+				<Configuration_type>option code</Configuration_type>
+				<Controlled_components>id_310_0 id_310_1 id_310_10 id_310_2 id_310_3 id_310_4 id_310_5 id_310_6 id_310_7 id_310_8 id_310_9 id_312_0 id_312_1 id_312_2 id_312_3 id_312_4 id_312_5 id_312_6 id_312_7 id_312_8 id_312_9 id_314_0 id_314_1 id_314_10 id_314_11 id_314_12 id_314_13 id_314_14 id_314_15 id_314_16 id_314_17 id_314_2 id_314_3 id_314_4 id_314_5 id_314_6 id_314_7 id_314_8 id_314_9 id_316_0 id_316_10 id_316_11 id_316_13 id_316_14 id_316_15 id_316_16 id_316_17 id_316_18 id_316_19 id_316_2 id_316_3 id_316_4 id_316_5 id_316_6 id_316_7 id_316_8 id_316_9 id_342_0 id_342_1 id_344_0 id_344_1 id_344_10 id_344_11 id_344_12 id_344_13 id_344_14 id_344_15 id_344_16 id_344_17 id_344_18 id_344_19 id_344_2 id_344_20 id_344_21 id_344_22 id_344_23 id_344_24 id_344_25 id_344_3 id_344_4 id_344_5 id_344_6 id_344_7 id_344_8 id_344_9 id_350_0 id_350_1 id_350_10 id_350_11 id_350_12 id_350_13 id_350_14 id_350_15 id_350_16 id_350_17 id_350_2 id_350_3 id_350_4 id_350_5 id_350_6 id_350_7 id_350_8 id_350_9</Controlled_components>
+			</Module_configuration>
+		</Module>
+		<Module_families id="id_332_0">
+			<Id>VAR</Id>
+			<Description>Varianten</Description>
+		</Module_families>
+	</Harness>
+	<Node id="Node_1">
+		<Id>PNID1</Id>
+		<Cartesian_point>Cartesian_point_231</Cartesian_point>
+		<Referenced_components>id_316_0</Referenced_components>
+	</Node>
+	<Node id="Node_2">
+		<Id>PNID2</Id>
+		<Cartesian_point>Cartesian_point_232</Cartesian_point>
+	</Node>
+	<Node id="Node_3">
+		<Id>PNID3</Id>
+		<Cartesian_point>Cartesian_point_233</Cartesian_point>
+	</Node>
+	<Node id="Node_4">
+		<Id>PNID4</Id>
+		<Cartesian_point>Cartesian_point_234</Cartesian_point>
+		<Referenced_components>id_316_4</Referenced_components>
+	</Node>
+	<Node id="Node_5">
+		<Id>PNID5</Id>
+		<Cartesian_point>Cartesian_point_235</Cartesian_point>
+		<Referenced_components>id_316_6</Referenced_components>
+	</Node>
+	<Node id="Node_6">
+		<Id>PNID6</Id>
+		<Cartesian_point>Cartesian_point_236</Cartesian_point>
+		<Referenced_components>id_316_7</Referenced_components>
+	</Node>
+	<Node id="Node_7">
+		<Id>PNID7</Id>
+		<Cartesian_point>Cartesian_point_237</Cartesian_point>
+	</Node>
+	<Node id="Node_8">
+		<Id>PNID8</Id>
+		<Cartesian_point>Cartesian_point_238</Cartesian_point>
+	</Node>
+	<Node id="Node_9">
+		<Id>PNID9</Id>
+		<Cartesian_point>Cartesian_point_239</Cartesian_point>
+	</Node>
+	<Node id="Node_10">
+		<Id>PNID10</Id>
+		<Cartesian_point>Cartesian_point_240</Cartesian_point>
+	</Node>
+	<Node id="Node_11">
+		<Id>PNID11</Id>
+		<Cartesian_point>Cartesian_point_241</Cartesian_point>
+	</Node>
+	<Node id="Node_12">
+		<Id>PNID12</Id>
+		<Cartesian_point>Cartesian_point_242</Cartesian_point>
+	</Node>
+	<Node id="Node_13">
+		<Id>PNID13</Id>
+		<Cartesian_point>Cartesian_point_243</Cartesian_point>
+		<Referenced_components>id_316_13</Referenced_components>
+	</Node>
+	<Node id="Node_14">
+		<Id>PNID14</Id>
+		<Cartesian_point>Cartesian_point_244</Cartesian_point>
+	</Node>
+	<Node id="Node_15">
+		<Id>PNID15</Id>
+		<Cartesian_point>Cartesian_point_245</Cartesian_point>
+		<Referenced_components>id_316_16</Referenced_components>
+	</Node>
+	<Node id="Node_16">
+		<Id>PNID16</Id>
+		<Cartesian_point>Cartesian_point_246</Cartesian_point>
+		<Referenced_components>id_316_17</Referenced_components>
+	</Node>
+	<Node id="Node_17">
+		<Id>PNID17</Id>
+		<Cartesian_point>Cartesian_point_247</Cartesian_point>
+		<Referenced_components>id_316_14</Referenced_components>
+	</Node>
+	<Node id="Node_18">
+		<Id>PNID18</Id>
+		<Cartesian_point>Cartesian_point_248</Cartesian_point>
+		<Referenced_components>id_316_15</Referenced_components>
+	</Node>
+	<Node id="Node_19">
+		<Id>PNID19</Id>
+		<Cartesian_point>Cartesian_point_249</Cartesian_point>
+		<Referenced_components>id_316_2</Referenced_components>
+	</Node>
+	<Node id="Node_20">
+		<Id>PNID20</Id>
+		<Cartesian_point>Cartesian_point_250</Cartesian_point>
+		<Referenced_components>id_316_19</Referenced_components>
+	</Node>
+	<Node id="Node_21">
+		<Id>PNID21</Id>
+		<Cartesian_point>Cartesian_point_251</Cartesian_point>
+		<Referenced_components>id_316_18</Referenced_components>
+	</Node>
+	<Node id="Node_22">
+		<Id>PNID22</Id>
+		<Cartesian_point>Cartesian_point_252</Cartesian_point>
+		<Referenced_components>id_342_0</Referenced_components>
+	</Node>
+	<Node id="Node_23">
+		<Id>PNID23</Id>
+		<Cartesian_point>Cartesian_point_253</Cartesian_point>
+		<Referenced_components>id_342_1</Referenced_components>
+	</Node>
+	<Node id="Node_24">
+		<Id>PNID24</Id>
+		<Cartesian_point>Cartesian_point_254</Cartesian_point>
+		<Referenced_components>id_316_5</Referenced_components>
+	</Node>
+	<Node id="Node_25">
+		<Id>PNID25</Id>
+		<Cartesian_point>Cartesian_point_255</Cartesian_point>
+		<Referenced_components>id_316_3</Referenced_components>
+	</Node>
+	<Node id="Node_26">
+		<Id>PNID26</Id>
+		<Cartesian_point>Cartesian_point_256</Cartesian_point>
+	</Node>
+	<Node id="Node_27">
+		<Id>PNID27</Id>
+		<Cartesian_point>Cartesian_point_257</Cartesian_point>
+		<Referenced_components>id_316_8</Referenced_components>
+	</Node>
+	<Node id="Node_28">
+		<Id>PNID28</Id>
+		<Cartesian_point>Cartesian_point_258</Cartesian_point>
+		<Referenced_components>id_316_10</Referenced_components>
+	</Node>
+	<Node id="Node_29">
+		<Id>PNID29</Id>
+		<Cartesian_point>Cartesian_point_259</Cartesian_point>
+	</Node>
+	<Node id="Node_30">
+		<Id>PNID30</Id>
+		<Cartesian_point>Cartesian_point_260</Cartesian_point>
+		<Referenced_components>id_316_9</Referenced_components>
+	</Node>
+	<Node id="Node_31">
+		<Id>PNID31</Id>
+		<Cartesian_point>Cartesian_point_261</Cartesian_point>
+		<Referenced_components>id_316_11</Referenced_components>
+	</Node>
+	<Routing id="id_338_0">
+		<Routed_wire>id_314_0</Routed_wire>
+		<Segments>Segment_20 Segment_18 Segment_7 Segment_24</Segments>
+	</Routing>
+	<Routing id="id_338_1">
+		<Routed_wire>id_314_1</Routed_wire>
+		<Segments>Segment_20 Segment_18 Segment_7 Segment_23</Segments>
+	</Routing>
+	<Routing id="id_338_2">
+		<Routed_wire>id_314_2</Routed_wire>
+		<Segments>Segment_1 Segment_2 Segment_6 Segment_20</Segments>
+	</Routing>
+	<Routing id="id_338_3">
+		<Routed_wire>id_314_3</Routed_wire>
+		<Segments>Segment_20 Segment_6 Segment_4</Segments>
+	</Routing>
+	<Routing id="id_338_4">
+		<Routed_wire>id_314_4</Routed_wire>
+		<Segments>Segment_19 Segment_2 Segment_5</Segments>
+	</Routing>
+	<Routing id="id_338_5">
+		<Routed_wire>id_314_5</Routed_wire>
+		<Segments>Segment_19 Segment_2 Segment_5</Segments>
+	</Routing>
+	<Routing id="id_338_6">
+		<Routed_wire>id_314_6</Routed_wire>
+		<Segments>Segment_1 Segment_19</Segments>
+	</Routing>
+	<Routing id="id_338_7">
+		<Routed_wire>id_314_7</Routed_wire>
+		<Segments>Segment_19 Segment_2 Segment_4</Segments>
+	</Routing>
+	<Routing id="id_338_8">
+		<Routed_wire>id_314_8</Routed_wire>
+		<Segments>Segment_1 Segment_2 Segment_6 Segment_18 Segment_9 Segment_10 Segment_17</Segments>
+	</Routing>
+	<Routing id="id_338_9">
+		<Routed_wire>id_314_9</Routed_wire>
+		<Segments>Segment_23 Segment_22</Segments>
+	</Routing>
+	<Routing id="id_338_10">
+		<Routed_wire>id_314_10</Routed_wire>
+		<Segments>Segment_24 Segment_21</Segments>
+	</Routing>
+	<Routing id="id_338_11">
+		<Routed_wire>id_314_11</Routed_wire>
+		<Segments>Segment_26 Segment_25 Segment_10 Segment_16 Segment_14</Segments>
+	</Routing>
+	<Routing id="id_338_12">
+		<Routed_wire>id_314_12</Routed_wire>
+		<Segments>Segment_29 Segment_28 Segment_8 Segment_9 Segment_10 Segment_16 Segment_15</Segments>
+	</Routing>
+	<Routing id="id_338_13">
+		<Routed_wire>id_314_13</Routed_wire>
+		<Segments>Segment_27 Segment_25 Segment_10 Segment_16 Segment_12</Segments>
+	</Routing>
+	<Routing id="id_338_14">
+		<Routed_wire>id_314_14</Routed_wire>
+		<Segments>Segment_30 Segment_28 Segment_8 Segment_9 Segment_10 Segment_16 Segment_13</Segments>
+	</Routing>
+	<Routing id="id_338_15">
+		<Routed_wire>id_314_15</Routed_wire>
+		<Segments>Segment_11 Segment_16 Segment_10 Segment_9 Segment_18 Segment_6 Segment_4</Segments>
+	</Routing>
+	<Routing id="id_338_16">
+		<Routed_wire>id_314_16</Routed_wire>
+		<Segments>Segment_1 Segment_3</Segments>
+	</Routing>
+	<Routing id="id_338_17">
+		<Routed_wire>id_314_17</Routed_wire>
+		<Segments>Segment_1 Segment_3</Segments>
+	</Routing>
+	<Segment id="Segment_1">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>-0.010917</Start_vector>
+		<Start_vector>0.999556</Start_vector>
+		<Start_vector>0.027732</Start_vector>
+		<End_vector>-0.112544</End_vector>
+		<End_vector>0.957751</End_vector>
+		<End_vector>-0.264663</End_vector>
+		<Virtual_length id="Virtual_length_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>99.402666</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_2</End_node>
+		<Start_node>Node_1</Start_node>
+		<Center_curve id="Center_curve_1">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_21 Cartesian_point_22 Cartesian_point_23 Cartesian_point_24 Cartesian_point_25 Cartesian_point_26 Cartesian_point_27</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_1">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_1">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>78.539816</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_2">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>-0.112544</Start_vector>
+		<Start_vector>0.957751</Start_vector>
+		<Start_vector>-0.264663</Start_vector>
+		<End_vector>0.067284</End_vector>
+		<End_vector>0.985107</End_vector>
+		<End_vector>0.158228</End_vector>
+		<Virtual_length id="Virtual_length_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>40.429202</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_3</End_node>
+		<Start_node>Node_2</Start_node>
+		<Center_curve id="Center_curve_2">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_28 Cartesian_point_29 Cartesian_point_30 Cartesian_point_31 Cartesian_point_32 Cartesian_point_33 Cartesian_point_34</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_2">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_2">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>78.539816</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_3">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.3/Flexible Curve.3</Id>
+		<Start_vector>-0.112544</Start_vector>
+		<Start_vector>0.957751</Start_vector>
+		<Start_vector>-0.264663</Start_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>0.300668</End_vector>
+		<End_vector>-0.953729</End_vector>
+		<Virtual_length id="Virtual_length_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>200.537754</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_4</End_node>
+		<Start_node>Node_2</Start_node>
+		<Center_curve id="Center_curve_3">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_35 Cartesian_point_36 Cartesian_point_37 Cartesian_point_38 Cartesian_point_39 Cartesian_point_40 Cartesian_point_41</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_3">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_3">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>50.265482</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_4">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.4/Flexible Curve.4</Id>
+		<Start_vector>0.067284</Start_vector>
+		<Start_vector>0.985107</Start_vector>
+		<Start_vector>0.158228</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>0.994789</End_vector>
+		<End_vector>0.101952</End_vector>
+		<Virtual_length id="Virtual_length_4">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>53.540516</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_5</End_node>
+		<Start_node>Node_3</Start_node>
+		<Center_curve id="Center_curve_4">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_42 Cartesian_point_43 Cartesian_point_44 Cartesian_point_45 Cartesian_point_46 Cartesian_point_47 Cartesian_point_48</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_4">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_4">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>50.265482</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_5">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.5/Flexible Curve.5</Id>
+		<Start_vector>-0.401197</Start_vector>
+		<Start_vector>0.847401</Start_vector>
+		<Start_vector>0.347782</Start_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>1.000000</End_vector>
+		<End_vector>-0.000595</End_vector>
+		<Virtual_length id="Virtual_length_5">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>36.243412</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_6</End_node>
+		<Start_node>Node_3</Start_node>
+		<Center_curve id="Center_curve_5">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_49 Cartesian_point_50 Cartesian_point_51 Cartesian_point_52 Cartesian_point_53 Cartesian_point_54 Cartesian_point_55</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_5">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_5">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>50.265482</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_6">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.6/Split.1</Id>
+		<Start_vector>0.067284</Start_vector>
+		<Start_vector>0.985107</Start_vector>
+		<Start_vector>0.158228</Start_vector>
+		<End_vector>0.919883</End_vector>
+		<End_vector>0.391687</End_vector>
+		<End_vector>-0.019928</End_vector>
+		<Virtual_length id="Virtual_length_6">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>55.867535</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_7</End_node>
+		<Start_node>Node_3</Start_node>
+		<Center_curve id="Center_curve_6">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_56 Cartesian_point_57 Cartesian_point_58 Cartesian_point_59 Cartesian_point_60 Cartesian_point_61 Cartesian_point_62</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_6">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_6">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>50.265482</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_7">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.7/Flexible Curve.7</Id>
+		<Start_vector>0.927249</Start_vector>
+		<Start_vector>0.373700</Start_vector>
+		<Start_vector>-0.023614</Start_vector>
+		<End_vector>0.986862</End_vector>
+		<End_vector>-0.161246</End_vector>
+		<End_vector>0.010189</End_vector>
+		<Virtual_length id="Virtual_length_7">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>81.011460</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_9</End_node>
+		<Start_node>Node_8</Start_node>
+		<Center_curve id="Center_curve_7">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_63 Cartesian_point_64 Cartesian_point_65 Cartesian_point_66 Cartesian_point_67 Cartesian_point_68 Cartesian_point_69</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_7">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_7">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>50.265482</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_8">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.8/Flexible Curve.8</Id>
+		<Start_vector>0.927249</Start_vector>
+		<Start_vector>0.373700</Start_vector>
+		<Start_vector>-0.023614</Start_vector>
+		<End_vector>-0.223157</End_vector>
+		<End_vector>-0.974766</End_vector>
+		<End_vector>0.005684</End_vector>
+		<Virtual_length id="Virtual_length_8">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>170.597044</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_10</End_node>
+		<Start_node>Node_8</Start_node>
+		<Center_curve id="Center_curve_8">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_70 Cartesian_point_71 Cartesian_point_72 Cartesian_point_73 Cartesian_point_74 Cartesian_point_75 Cartesian_point_76</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_8">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_8">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>28.274334</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_9">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.9/Flexible Curve.9</Id>
+		<Start_vector>0.927249</Start_vector>
+		<Start_vector>0.373700</Start_vector>
+		<Start_vector>-0.023614</Start_vector>
+		<End_vector>-0.136654</End_vector>
+		<End_vector>0.990613</End_vector>
+		<End_vector>0.003480</End_vector>
+		<Virtual_length id="Virtual_length_9">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>103.770561</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_11</End_node>
+		<Start_node>Node_8</Start_node>
+		<Center_curve id="Center_curve_9">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_77 Cartesian_point_78 Cartesian_point_79 Cartesian_point_80 Cartesian_point_81 Cartesian_point_82 Cartesian_point_83</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_9">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_9">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>28.274334</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_10">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.10/Flexible Curve.10</Id>
+		<Start_vector>-0.136654</Start_vector>
+		<Start_vector>0.990613</Start_vector>
+		<Start_vector>0.003480</Start_vector>
+		<End_vector>0.217713</End_vector>
+		<End_vector>0.975997</End_vector>
+		<End_vector>-0.005544</End_vector>
+		<Virtual_length id="Virtual_length_10">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>50.509587</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_12</End_node>
+		<Start_node>Node_11</Start_node>
+		<Center_curve id="Center_curve_10">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_84 Cartesian_point_85 Cartesian_point_86 Cartesian_point_87 Cartesian_point_88 Cartesian_point_89 Cartesian_point_90</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_10">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_10">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>28.274334</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_11">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.11/Flexible Curve.11</Id>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>1.000000</Start_vector>
+		<Start_vector>-0.000169</Start_vector>
+		<End_vector>-0.452545</End_vector>
+		<End_vector>0.821526</End_vector>
+		<End_vector>-0.346841</End_vector>
+		<Virtual_length id="Virtual_length_11">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>137.851820</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_14</End_node>
+		<Start_node>Node_13</Start_node>
+		<Center_curve id="Center_curve_11">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_91 Cartesian_point_92 Cartesian_point_93 Cartesian_point_94 Cartesian_point_95 Cartesian_point_96 Cartesian_point_97</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_11">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_11">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_12">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.12/Flexible Curve.12</Id>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>1.000000</Start_vector>
+		<Start_vector>-0.000169</Start_vector>
+		<End_vector>-0.563963</End_vector>
+		<End_vector>0.765913</End_vector>
+		<End_vector>-0.308744</End_vector>
+		<Virtual_length id="Virtual_length_12">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>146.751461</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_14</End_node>
+		<Start_node>Node_15</Start_node>
+		<Center_curve id="Center_curve_12">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_98 Cartesian_point_99 Cartesian_point_100 Cartesian_point_101 Cartesian_point_102 Cartesian_point_103 Cartesian_point_104</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_12">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_12">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_13">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.13/Flexible Curve.13</Id>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>0.999998</Start_vector>
+		<Start_vector>0.001996</Start_vector>
+		<End_vector>-0.528770</End_vector>
+		<End_vector>0.811631</End_vector>
+		<End_vector>-0.248311</End_vector>
+		<Virtual_length id="Virtual_length_13">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>138.754434</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_14</End_node>
+		<Start_node>Node_16</Start_node>
+		<Center_curve id="Center_curve_13">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_105 Cartesian_point_106 Cartesian_point_107 Cartesian_point_108 Cartesian_point_109 Cartesian_point_110 Cartesian_point_111</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_13">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_13">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_14">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.14/Flexible Curve.14</Id>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>1.000000</Start_vector>
+		<Start_vector>-0.000169</Start_vector>
+		<End_vector>-0.452545</End_vector>
+		<End_vector>0.821526</End_vector>
+		<End_vector>-0.346841</End_vector>
+		<Virtual_length id="Virtual_length_14">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>133.543181</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_14</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_14">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_112 Cartesian_point_113 Cartesian_point_114 Cartesian_point_115 Cartesian_point_116 Cartesian_point_117 Cartesian_point_118</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_14">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_14">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_15">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.15/Flexible Curve.15</Id>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>1.000000</Start_vector>
+		<Start_vector>-0.000169</Start_vector>
+		<End_vector>-0.591297</End_vector>
+		<End_vector>0.791464</End_vector>
+		<End_vector>-0.154764</End_vector>
+		<Virtual_length id="Virtual_length_15">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>142.611278</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_14</End_node>
+		<Start_node>Node_18</Start_node>
+		<Center_curve id="Center_curve_15">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_119 Cartesian_point_120 Cartesian_point_121 Cartesian_point_122 Cartesian_point_123 Cartesian_point_124 Cartesian_point_125</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_15">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_15">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_16">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.16/Flexible Curve.16</Id>
+		<Start_vector>0.217713</Start_vector>
+		<Start_vector>0.975997</Start_vector>
+		<Start_vector>-0.005544</Start_vector>
+		<End_vector>-0.217713</End_vector>
+		<End_vector>-0.975997</End_vector>
+		<End_vector>0.005544</End_vector>
+		<Virtual_length id="Virtual_length_16">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>194.151156</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_12</End_node>
+		<Start_node>Node_14</Start_node>
+		<Center_curve id="Center_curve_16">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_126 Cartesian_point_127 Cartesian_point_128 Cartesian_point_129 Cartesian_point_130 Cartesian_point_131 Cartesian_point_132</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_16">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_16">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>63.617251</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_17">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.17/Flexible Curve.17</Id>
+		<Start_vector>-0.217713</Start_vector>
+		<Start_vector>-0.975997</Start_vector>
+		<Start_vector>0.005544</Start_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>-0.417156</End_vector>
+		<End_vector>-0.908835</End_vector>
+		<Virtual_length id="Virtual_length_17">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>129.451500</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_19</End_node>
+		<Start_node>Node_12</Start_node>
+		<Center_curve id="Center_curve_17">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_133 Cartesian_point_134 Cartesian_point_135 Cartesian_point_136 Cartesian_point_137 Cartesian_point_138 Cartesian_point_139</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_17">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_17">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_18">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.6/Split.2</Id>
+		<Start_vector>0.919883</Start_vector>
+		<Start_vector>0.391687</Start_vector>
+		<Start_vector>-0.019928</Start_vector>
+		<End_vector>0.927249</End_vector>
+		<End_vector>0.373700</End_vector>
+		<End_vector>-0.023614</End_vector>
+		<Virtual_length id="Virtual_length_18">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>49.999985</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_8</End_node>
+		<Start_node>Node_7</Start_node>
+		<Center_curve id="Center_curve_18">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_140 Cartesian_point_141 Cartesian_point_142 Cartesian_point_143 Cartesian_point_144 Cartesian_point_145 Cartesian_point_146</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_18">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_18">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>50.265482</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_19">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.18/Flexible Curve.18</Id>
+		<Start_vector>0.112544</Start_vector>
+		<Start_vector>-0.957751</Start_vector>
+		<Start_vector>0.264663</Start_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>-1.000000</End_vector>
+		<End_vector>0.000000</End_vector>
+		<Virtual_length id="Virtual_length_19">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>34.959659</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_20</End_node>
+		<Start_node>Node_2</Start_node>
+		<Center_curve id="Center_curve_19">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_147 Cartesian_point_148 Cartesian_point_149 Cartesian_point_150 Cartesian_point_151 Cartesian_point_152 Cartesian_point_153</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_19">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_19">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_20">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable142/ElecRouteBody.19/Flexible Curve.19</Id>
+		<Start_vector>0.919883</Start_vector>
+		<Start_vector>0.391687</Start_vector>
+		<Start_vector>-0.019928</Start_vector>
+		<End_vector>0.991335</End_vector>
+		<End_vector>0.131356</End_vector>
+		<End_vector>0.000000</End_vector>
+		<Virtual_length id="Virtual_length_20">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>36.185068</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_21</End_node>
+		<Start_node>Node_7</Start_node>
+		<Center_curve id="Center_curve_20">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_154 Cartesian_point_155 Cartesian_point_156 Cartesian_point_157 Cartesian_point_158 Cartesian_point_159 Cartesian_point_160</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_20">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_20">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_21">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>0.986862</Start_vector>
+		<Start_vector>-0.161246</Start_vector>
+		<Start_vector>0.010189</Start_vector>
+		<End_vector>0.950942</End_vector>
+		<End_vector>-0.309371</End_vector>
+		<End_vector>0.000000</End_vector>
+		<Virtual_length id="Virtual_length_21">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>160.135436</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_22</End_node>
+		<Start_node>Node_9</Start_node>
+		<Center_curve id="Center_curve_21">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_161 Cartesian_point_162 Cartesian_point_163 Cartesian_point_164 Cartesian_point_165 Cartesian_point_166 Cartesian_point_167</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_21">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_21">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_22">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>0.986862</Start_vector>
+		<Start_vector>-0.161246</Start_vector>
+		<Start_vector>0.010189</Start_vector>
+		<End_vector>0.986675</End_vector>
+		<End_vector>0.162703</End_vector>
+		<End_vector>-0.000000</End_vector>
+		<Virtual_length id="Virtual_length_22">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>163.601963</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_23</End_node>
+		<Start_node>Node_9</Start_node>
+		<Center_curve id="Center_curve_22">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_168 Cartesian_point_169 Cartesian_point_170 Cartesian_point_171 Cartesian_point_172 Cartesian_point_173 Cartesian_point_174</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_22">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_22">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_23">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.3/Flexible Curve.3</Id>
+		<Start_vector>0.986862</Start_vector>
+		<Start_vector>-0.161246</Start_vector>
+		<Start_vector>0.010189</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>0.517658</End_vector>
+		<End_vector>-0.855588</End_vector>
+		<Virtual_length id="Virtual_length_23">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>191.955917</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_24</End_node>
+		<Start_node>Node_9</Start_node>
+		<Center_curve id="Center_curve_23">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_175 Cartesian_point_176 Cartesian_point_177 Cartesian_point_178 Cartesian_point_179 Cartesian_point_180 Cartesian_point_181</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_23">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_23">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>12.566371</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_24">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.4/Flexible Curve.4</Id>
+		<Start_vector>0.986862</Start_vector>
+		<Start_vector>-0.161246</Start_vector>
+		<Start_vector>0.010189</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>0.612042</End_vector>
+		<End_vector>-0.790825</End_vector>
+		<Virtual_length id="Virtual_length_24">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>287.954920</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_25</End_node>
+		<Start_node>Node_9</Start_node>
+		<Center_curve id="Center_curve_24">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_182 Cartesian_point_183 Cartesian_point_184 Cartesian_point_185 Cartesian_point_186 Cartesian_point_187 Cartesian_point_188</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_24">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_24">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>28.274334</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_25">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.5/Flexible Curve.5</Id>
+		<Start_vector>-0.136654</Start_vector>
+		<Start_vector>0.990613</Start_vector>
+		<Start_vector>0.003480</Start_vector>
+		<End_vector>0.470424</End_vector>
+		<End_vector>0.877967</End_vector>
+		<End_vector>-0.088746</End_vector>
+		<Virtual_length id="Virtual_length_25">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>273.288347</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_26</End_node>
+		<Start_node>Node_11</Start_node>
+		<Center_curve id="Center_curve_25">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_189 Cartesian_point_190 Cartesian_point_191 Cartesian_point_192 Cartesian_point_193 Cartesian_point_194 Cartesian_point_195</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_25">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_25">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_26">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.6/Flexible Curve.6</Id>
+		<Start_vector>0.470424</Start_vector>
+		<Start_vector>0.877967</Start_vector>
+		<Start_vector>-0.088746</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>-0.999977</End_vector>
+		<End_vector>0.006771</End_vector>
+		<Virtual_length id="Virtual_length_26">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>92.046397</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_27</End_node>
+		<Start_node>Node_26</Start_node>
+		<Center_curve id="Center_curve_26">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_196 Cartesian_point_197 Cartesian_point_198 Cartesian_point_199 Cartesian_point_200 Cartesian_point_201 Cartesian_point_202</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_26">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_26">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_27">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.7/Flexible Curve.7</Id>
+		<Start_vector>0.470424</Start_vector>
+		<Start_vector>0.877967</Start_vector>
+		<Start_vector>-0.088746</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>-1.000000</End_vector>
+		<End_vector>0.000287</End_vector>
+		<Virtual_length id="Virtual_length_27">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>267.610633</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_28</End_node>
+		<Start_node>Node_26</Start_node>
+		<Center_curve id="Center_curve_27">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_203 Cartesian_point_204 Cartesian_point_205 Cartesian_point_206 Cartesian_point_207 Cartesian_point_208 Cartesian_point_209</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_27">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_27">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_28">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.8/Flexible Curve.8</Id>
+		<Start_vector>-0.223157</Start_vector>
+		<Start_vector>-0.974766</Start_vector>
+		<Start_vector>0.005684</Start_vector>
+		<End_vector>0.528354</End_vector>
+		<End_vector>-0.843137</End_vector>
+		<End_vector>-0.099816</End_vector>
+		<Virtual_length id="Virtual_length_28">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>227.692986</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_29</End_node>
+		<Start_node>Node_10</Start_node>
+		<Center_curve id="Center_curve_28">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_210 Cartesian_point_211 Cartesian_point_212 Cartesian_point_213 Cartesian_point_214 Cartesian_point_215 Cartesian_point_216</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_28">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_28">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_29">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.9/Flexible Curve.9</Id>
+		<Start_vector>0.528354</Start_vector>
+		<Start_vector>-0.843137</Start_vector>
+		<Start_vector>-0.099816</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>0.999982</End_vector>
+		<End_vector>0.005945</End_vector>
+		<Virtual_length id="Virtual_length_29">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>89.924279</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_30</End_node>
+		<Start_node>Node_29</Start_node>
+		<Center_curve id="Center_curve_29">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_217 Cartesian_point_218 Cartesian_point_219 Cartesian_point_220 Cartesian_point_221 Cartesian_point_222 Cartesian_point_223</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_29">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_29">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_30">
+		<Id>ROUTING_BAUKST_LTGS_MOVO-Multi-branchable143/ElecRouteBody.10/Flexible Curve.10</Id>
+		<Start_vector>0.528354</Start_vector>
+		<Start_vector>-0.843137</Start_vector>
+		<Start_vector>-0.099816</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>1.000000</End_vector>
+		<End_vector>0.000989</End_vector>
+		<Virtual_length id="Virtual_length_30">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>267.244041</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_31</End_node>
+		<Start_node>Node_29</Start_node>
+		<Center_curve id="Center_curve_30">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_224 Cartesian_point_225 Cartesian_point_226 Cartesian_point_227 Cartesian_point_228 Cartesian_point_229 Cartesian_point_230</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_30">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_30">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>38.484510</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Unit id="id_346_2">
+		<Si_unit_name>gram</Si_unit_name>
+	</Unit>
+	<Unit id="id_346_1">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+	</Unit>
+	<Unit id="id_346_0">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+		<Si_dimension>square</Si_dimension>
+	</Unit>
+	<Unit id="id_346_3">
+		<Unit_name>GramPerMetre</Unit_name>
+	</Unit>
+</kbl:KBL_container>

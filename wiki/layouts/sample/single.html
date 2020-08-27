@@ -1,0 +1,90 @@
+{{- define "main" -}}
+
+<article class="article">
+
+  {{ partial "page_header" . }}
+
+  <div class="article-container">
+
+    <table class="w-100">
+        <tbody>
+            {{ if .Params.company }}
+            <tr>
+                <td><b>Company:</b></td>
+                <td class="w-100">{{ .Params.company | plainify | emojify }}</td>
+            </tr>
+            {{ end }}
+            {{ if .Params.system }}
+            <tr>
+                <td><b>System:</b></td>
+                <td class="w-100">{{ .Params.system.name | plainify | emojify }} ({{ .Params.system.version | plainify | emojify }})</td>
+            </tr>
+            {{ end }}
+            {{ if .Params.usecase }}
+            <tr>
+                <td><b>Use Case:</b></td>
+                <td class="w-100">{{ .Params.usecase | plainify | emojify }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+
+
+    </table>
+
+    <div class="article-style">
+      {{ if .Params.notice }}
+      <div class="alert alert-info">
+          <h4 class="alert-heading">Notice:</h4>
+          {{ .Params.notice | markdownify | emojify }}</div>
+      {{ end }}
+
+      {{ .Content }}
+
+
+      {{ with .Resources }}
+      <h2>Files</h2>
+      <table class="w-100">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Version</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range . }}
+            <tr>
+                <td><a href="{{ .RelPermalink}}">{{ .Name }}</a></td>
+                <td>{{ if eq .Name .Title }}-{{ else }}{{ .Title }}{{ end }}</td>
+                <td>
+                    {{ if .Params.specification }}
+                    {{ .Params.specification }}
+                    {{ end }}
+                </td>
+                <td>
+                    {{ if .Params.version }}
+                    {{ .Params.version }}
+                    {{ else }}
+                    -
+                    {{ end }}
+                </td>
+                <td>
+                    {{ if .Params.creation }}
+                    {{ dateFormat site.Params.date_format .Params.creation }}
+                    {{ end }}
+                </td>
+            </tr>
+            {{ end }}
+        </tbody>
+      </table>
+      {{ end }}  
+    </div>
+
+    {{ partial "page_footer" . }}
+
+  </div>
+</article>
+
+{{- end -}}
