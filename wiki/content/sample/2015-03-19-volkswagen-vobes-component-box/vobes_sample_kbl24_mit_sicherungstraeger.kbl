@@ -1,0 +1,4503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?elena version="2.4.0beta" system="Windows 7 6.1" compilation_date="07.01.2015" compilation_time="15:30:00"?>
+<?extraction date="18.03.2015" time="18:15:00"?>
+<kbl:KBL_container id="KBL_container" version_id="2.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kbl="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema" xsi:schemaLocation="http://www.prostep.org/Car_electric_container/KBL2.3/KBLSchema file:///D:/USERS/KYRIAZIS/VDA%20Standards/KBL/KBL2.4/KBL24.xsd">
+	<Assembly_part id="id_304_1">
+		<Part_number>AS0105563</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Alias_id id="id_368_29">
+			<Alias_id>TBL105563</Alias_id>
+			<Scope>VOBES</Scope>
+			<Description>tab_number</Description>
+		</Alias_id>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Multifuse</Description>
+		<Mass_information id="id_380_1">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>47.7</Value_component>
+		</Mass_information>
+		<Processing_information id="id_385_0">
+			<Instruction_type>fusetype</Instruction_type>
+			<Instruction_value>Type_SF30</Instruction_value>
+		</Processing_information>
+		<Processing_information id="id_385_1">
+			<Instruction_type>nominal_current</Instruction_type>
+			<Instruction_value>490</Instruction_value>
+		</Processing_information>
+		<Processing_information id="id_385_2">
+			<Instruction_type>partcolour</Instruction_type>
+			<Instruction_value>zinn</Instruction_value>
+		</Processing_information>
+		<Part_type>multifuse</Part_type>
+		<Component_occurrence id="id_303_1">
+			<Id>MFS_740_C150_1</Id>
+			<Mounting> id_442_0</Mounting>
+			<Part>id_302_0</Part>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_3">
+			<Id>MFS_740_C110_1</Id>
+			<Mounting> id_442_1</Mounting>
+			<Part>id_302_1</Part>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_5">
+			<Id>MFS_740_C80_1</Id>
+			<Mounting> id_442_2</Mounting>
+			<Part>id_302_2</Part>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_7">
+			<Id>MFS_740_C40_1</Id>
+			<Mounting> id_442_3</Mounting>
+			<Part>id_302_3</Part>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_9">
+			<Id>MFS_740_C50_1</Id>
+			<Mounting> id_442_4</Mounting>
+			<Part>id_302_4</Part>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_11">
+			<Id>MFS_740_C60_1</Id>
+			<Mounting> id_442_5</Mounting>
+			<Part>id_302_5</Part>
+		</Component_occurrence>
+	</Assembly_part>
+	<Cartesian_point id="Cartesian_point_1">
+		<Coordinates>-5.503691</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+		<Coordinates>20.318620</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_2">
+		<Coordinates>-22.632465</Coordinates>
+		<Coordinates>200.333199</Coordinates>
+		<Coordinates>0.252248</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_3">
+		<Coordinates>-11.762230</Coordinates>
+		<Coordinates>103.010602</Coordinates>
+		<Coordinates>18.891256</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_4">
+		<Coordinates>0.000000</Coordinates>
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_5">
+		<Coordinates>-10.194799</Coordinates>
+		<Coordinates>400.000000</Coordinates>
+		<Coordinates>18.418188</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_6">
+		<Coordinates>-0.998613</Coordinates>
+		<Coordinates>500.000000</Coordinates>
+		<Coordinates>1.052653</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_7">
+		<Coordinates>-57.788081</Coordinates>
+		<Coordinates>575.978007</Coordinates>
+		<Coordinates>20.921686</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_8">
+		<Coordinates>994.212054</Coordinates>
+		<Coordinates>50.002566</Coordinates>
+		<Coordinates>-96.999250</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_9">
+		<Coordinates>1001.386959</Coordinates>
+		<Coordinates>350.002566</Coordinates>
+		<Coordinates>-99.409406</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_10">
+		<Coordinates>1009.518727</Coordinates>
+		<Coordinates>462.843337</Coordinates>
+		<Coordinates>-96.999250</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_11">
+		<Coordinates>1019.823620</Coordinates>
+		<Coordinates>223.833753</Coordinates>
+		<Coordinates>-96.999250</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_12">
+		<Coordinates>1245.336923</Coordinates>
+		<Coordinates>166.378105</Coordinates>
+		<Coordinates>-30.264113</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_13">
+		<Coordinates>1009.779999</Coordinates>
+		<Coordinates>537.314641</Coordinates>
+		<Coordinates>-97.917767</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_14">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>6.931422</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_15">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>310.795415</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_16">
+		<Coordinates>-451.043813</Coordinates>
+		<Coordinates>21.490557</Coordinates>
+		<Coordinates>88.137970</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_17">
+		<Coordinates>-271.976518</Coordinates>
+		<Coordinates>103.247059</Coordinates>
+		<Coordinates>83.416151</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_18">
+		<Coordinates>-75.193621</Coordinates>
+		<Coordinates>-2.760346</Coordinates>
+		<Coordinates>26.541813</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_19">
+		<Coordinates>112.054815</Coordinates>
+		<Coordinates>-7.714031</Coordinates>
+		<Coordinates>-2.295910</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_20">
+		<Coordinates>287.918573</Coordinates>
+		<Coordinates>107.996077</Coordinates>
+		<Coordinates>2.373602</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_21">
+		<Coordinates>475.367968</Coordinates>
+		<Coordinates>100.912479</Coordinates>
+		<Coordinates>-27.050855</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_22">
+		<Coordinates>670.075322</Coordinates>
+		<Coordinates>16.903319</Coordinates>
+		<Coordinates>-77.863793</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_23">
+		<Coordinates>-3151.290828</Coordinates>
+		<Coordinates>-13682.826897</Coordinates>
+		<Coordinates>-3633.057479</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_24">
+		<Coordinates>-168.598491</Coordinates>
+		<Coordinates>756.701872</Coordinates>
+		<Coordinates>190.669395</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_25">
+		<Coordinates>-112.900530</Coordinates>
+		<Coordinates>-2.351416</Coordinates>
+		<Coordinates>-11.794059</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_26">
+		<Coordinates>128.788010</Coordinates>
+		<Coordinates>204.361791</Coordinates>
+		<Coordinates>41.582542</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_27">
+		<Coordinates>265.703539</Coordinates>
+		<Coordinates>-132.964731</Coordinates>
+		<Coordinates>-49.160123</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_28">
+		<Coordinates>549.098212</Coordinates>
+		<Coordinates>290.309905</Coordinates>
+		<Coordinates>61.588572</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_29">
+		<Coordinates>168.882797</Coordinates>
+		<Coordinates>-2732.247974</Coordinates>
+		<Coordinates>-740.526989</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_30">
+		<Coordinates>-249.507790</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>106.903605</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_31">
+		<Coordinates>67.243935</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-59.939706</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_32">
+		<Coordinates>146.872847</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>55.599642</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_33">
+		<Coordinates>250.000000</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-54.936001</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_34">
+		<Coordinates>353.127153</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>55.599642</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_35">
+		<Coordinates>432.756065</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-59.939706</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_36">
+		<Coordinates>749.507790</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>106.903605</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_37">
+		<Coordinates>-4204.241903</Coordinates>
+		<Coordinates>-3967.641359</Coordinates>
+		<Coordinates>-640.453074</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_38">
+		<Coordinates>316.646665</Coordinates>
+		<Coordinates>118.541643</Coordinates>
+		<Coordinates>2.367001</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_39">
+		<Coordinates>297.237961</Coordinates>
+		<Coordinates>61.425222</Coordinates>
+		<Coordinates>-0.392736</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_40">
+		<Coordinates>320.211130</Coordinates>
+		<Coordinates>53.880129</Coordinates>
+		<Coordinates>2.873797</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_41">
+		<Coordinates>269.182600</Coordinates>
+		<Coordinates>-28.410989</Coordinates>
+		<Coordinates>-4.381892</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_42">
+		<Coordinates>342.348321</Coordinates>
+		<Coordinates>7.978151</Coordinates>
+		<Coordinates>6.021486</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_43">
+		<Coordinates>1230.028863</Coordinates>
+		<Coordinates>424.409470</Coordinates>
+		<Coordinates>132.239011</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_44">
+		<Coordinates>-192.168712</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-221.505482</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_45">
+		<Coordinates>-4.324260</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>122.310985</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_46">
+		<Coordinates>203.964818</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-112.156410</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_47">
+		<Coordinates>396.093425</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>110.512021</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_48">
+		<Coordinates>603.953190</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-111.831601</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_49">
+		<Coordinates>795.730336</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>120.786043</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_50">
+		<Coordinates>1007.622855</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>-215.686911</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_51">
+		<Coordinates>-2497.742095</Coordinates>
+		<Coordinates>14053.622289</Coordinates>
+		<Coordinates>-11961.205211</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_52">
+		<Coordinates>-60.351682</Coordinates>
+		<Coordinates>-497.663521</Coordinates>
+		<Coordinates>739.883597</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_53">
+		<Coordinates>-57.291587</Coordinates>
+		<Coordinates>486.478701</Coordinates>
+		<Coordinates>-119.125935</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_54">
+		<Coordinates>148.021922</Coordinates>
+		<Coordinates>179.878519</Coordinates>
+		<Coordinates>148.490369</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_55">
+		<Coordinates>246.369416</Coordinates>
+		<Coordinates>555.914879</Coordinates>
+		<Coordinates>-179.732863</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_56">
+		<Coordinates>494.170123</Coordinates>
+		<Coordinates>-21.830427</Coordinates>
+		<Coordinates>324.554152</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_57">
+		<Coordinates>52.090874</Coordinates>
+		<Coordinates>3803.105504</Coordinates>
+		<Coordinates>-3014.058716</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_58">
+		<Coordinates>-1920.290413</Coordinates>
+		<Coordinates>-7412.566566</Coordinates>
+		<Coordinates>-2915.556125</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_59">
+		<Coordinates>-210.999621</Coordinates>
+		<Coordinates>644.981139</Coordinates>
+		<Coordinates>111.420332</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_60">
+		<Coordinates>-73.600738</Coordinates>
+		<Coordinates>384.099973</Coordinates>
+		<Coordinates>13.167063</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_61">
+		<Coordinates>122.218038</Coordinates>
+		<Coordinates>432.376021</Coordinates>
+		<Coordinates>31.066888</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_62">
+		<Coordinates>275.469345</Coordinates>
+		<Coordinates>255.385644</Coordinates>
+		<Coordinates>-35.665270</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_63">
+		<Coordinates>488.789529</Coordinates>
+		<Coordinates>396.278885</Coordinates>
+		<Coordinates>17.034122</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_64">
+		<Coordinates>443.648883</Coordinates>
+		<Coordinates>-830.598784</Coordinates>
+		<Coordinates>-444.176580</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_65">
+		<Coordinates>3164.685992</Coordinates>
+		<Coordinates>10948.881967</Coordinates>
+		<Coordinates>4018.479730</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_66">
+		<Coordinates>-120.057848</Coordinates>
+		<Coordinates>-210.684018</Coordinates>
+		<Coordinates>-212.578492</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_67">
+		<Coordinates>197.909978</Coordinates>
+		<Coordinates>507.960127</Coordinates>
+		<Coordinates>59.889254</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_68">
+		<Coordinates>215.870573</Coordinates>
+		<Coordinates>237.474619</Coordinates>
+		<Coordinates>-42.663086</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_69">
+		<Coordinates>392.447129</Coordinates>
+		<Coordinates>489.949005</Coordinates>
+		<Coordinates>53.060475</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_70">
+		<Coordinates>347.398381</Coordinates>
+		<Coordinates>11.720474</Coordinates>
+		<Coordinates>-128.255532</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_71">
+		<Coordinates>1325.535407</Coordinates>
+		<Coordinates>2906.955255</Coordinates>
+		<Coordinates>969.444827</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_72">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>2175.077518</Coordinates>
+		<Coordinates>-107.439614</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_73">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>255.868972</Coordinates>
+		<Coordinates>-21.590942</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_74">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>377.978001</Coordinates>
+		<Coordinates>25.352441</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_75">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>349.760875</Coordinates>
+		<Coordinates>-28.244329</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_76">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>263.414468</Coordinates>
+		<Coordinates>40.424656</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_77">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>448.625864</Coordinates>
+		<Coordinates>-92.731796</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_78">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>-1578.544312</Coordinates>
+		<Coordinates>183.755576</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_79">
+		<Coordinates>-229.520712</Coordinates>
+		<Coordinates>-436.153855</Coordinates>
+		<Coordinates>-297.764522</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_80">
+		<Coordinates>14.578359</Coordinates>
+		<Coordinates>738.230250</Coordinates>
+		<Coordinates>147.123487</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_81">
+		<Coordinates>192.620609</Coordinates>
+		<Coordinates>153.482483</Coordinates>
+		<Coordinates>-74.479863</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_82">
+		<Coordinates>405.724435</Coordinates>
+		<Coordinates>502.445065</Coordinates>
+		<Coordinates>57.779224</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_83">
+		<Coordinates>594.617509</Coordinates>
+		<Coordinates>206.661114</Coordinates>
+		<Coordinates>-54.327878</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_84">
+		<Coordinates>805.152964</Coordinates>
+		<Coordinates>487.226452</Coordinates>
+		<Coordinates>52.007866</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_85">
+		<Coordinates>1009.060797</Coordinates>
+		<Coordinates>591.294340</Coordinates>
+		<Coordinates>91.473951</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_86">
+		<Coordinates>-4361.941767</Coordinates>
+		<Coordinates>-17955.838261</Coordinates>
+		<Coordinates>250.799217</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_87">
+		<Coordinates>-714.571109</Coordinates>
+		<Coordinates>586.163122</Coordinates>
+		<Coordinates>-1.640346</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_88">
+		<Coordinates>-253.971604</Coordinates>
+		<Coordinates>222.022268</Coordinates>
+		<Coordinates>0.987504</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_89">
+		<Coordinates>271.538443</Coordinates>
+		<Coordinates>242.975880</Coordinates>
+		<Coordinates>-1.510802</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_90">
+		<Coordinates>724.406359</Coordinates>
+		<Coordinates>-167.034133</Coordinates>
+		<Coordinates>1.825138</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_91">
+		<Coordinates>1280.598780</Coordinates>
+		<Coordinates>35.948654</Coordinates>
+		<Coordinates>-3.052284</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_92">
+		<Coordinates>1421.491827</Coordinates>
+		<Coordinates>-2224.913205</Coordinates>
+		<Coordinates>24.403528</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_93">
+		<Coordinates>-3962.197690</Coordinates>
+		<Coordinates>-16080.315175</Coordinates>
+		<Coordinates>3011.333209</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_94">
+		<Coordinates>-739.636130</Coordinates>
+		<Coordinates>789.789777</Coordinates>
+		<Coordinates>-8.914308</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_95">
+		<Coordinates>-255.840078</Coordinates>
+		<Coordinates>538.490725</Coordinates>
+		<Coordinates>7.972933</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_96">
+		<Coordinates>266.514664</Coordinates>
+		<Coordinates>528.241489</Coordinates>
+		<Coordinates>-17.826438</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_97">
+		<Coordinates>730.178623</Coordinates>
+		<Coordinates>151.086577</Coordinates>
+		<Coordinates>21.482828</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_98">
+		<Coordinates>1277.550855</Coordinates>
+		<Coordinates>297.234287</Coordinates>
+		<Coordinates>-31.980371</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_99">
+		<Coordinates>1500.749365</Coordinates>
+		<Coordinates>-1583.191386</Coordinates>
+		<Coordinates>273.108657</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_100">
+		<Coordinates>-817.922765</Coordinates>
+		<Coordinates>-81374.573093</Coordinates>
+		<Coordinates>-16399.285468</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_101">
+		<Coordinates>-877.276497</Coordinates>
+		<Coordinates>5780.447782</Coordinates>
+		<Coordinates>923.665666</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_102">
+		<Coordinates>-297.056158</Coordinates>
+		<Coordinates>-681.932926</Coordinates>
+		<Coordinates>-295.565794</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_103">
+		<Coordinates>224.634986</Coordinates>
+		<Coordinates>1422.874071</Coordinates>
+		<Coordinates>182.105818</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_104">
+		<Coordinates>776.984016</Coordinates>
+		<Coordinates>-959.854769</Coordinates>
+		<Coordinates>-229.052786</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_105">
+		<Coordinates>1286.406921</Coordinates>
+		<Coordinates>2940.710791</Coordinates>
+		<Coordinates>604.365727</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_106">
+		<Coordinates>1995.344571</Coordinates>
+		<Coordinates>-22362.615343</Coordinates>
+		<Coordinates>-4347.277709</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_107">
+		<Coordinates>17434.396164</Coordinates>
+		<Coordinates>87944.060541</Coordinates>
+		<Coordinates>14166.001040</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_108">
+		<Coordinates>-1084.808639</Coordinates>
+		<Coordinates>-6679.891278</Coordinates>
+		<Coordinates>-1043.945451</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_109">
+		<Coordinates>781.748232</Coordinates>
+		<Coordinates>1907.763115</Coordinates>
+		<Coordinates>310.182090</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_110">
+		<Coordinates>344.928762</Coordinates>
+		<Coordinates>-1166.406844</Coordinates>
+		<Coordinates>-207.253345</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_111">
+		<Coordinates>1122.235662</Coordinates>
+		<Coordinates>1906.455365</Coordinates>
+		<Coordinates>261.826039</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_112">
+		<Coordinates>175.811174</Coordinates>
+		<Coordinates>-3747.807172</Coordinates>
+		<Coordinates>-669.675690</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_113">
+		<Coordinates>7420.266352</Coordinates>
+		<Coordinates>32067.749276</Coordinates>
+		<Coordinates>5054.127083</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_114">
+		<Coordinates>95.780132</Coordinates>
+		<Coordinates>868.964259</Coordinates>
+		<Coordinates>10.840487</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_115">
+		<Coordinates>181.679074</Coordinates>
+		<Coordinates>547.462363</Coordinates>
+		<Coordinates>-2.107187</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_116">
+		<Coordinates>358.559858</Coordinates>
+		<Coordinates>362.712559</Coordinates>
+		<Coordinates>-4.681039</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_117">
+		<Coordinates>654.975332</Coordinates>
+		<Coordinates>357.631781</Coordinates>
+		<Coordinates>6.219013</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_118">
+		<Coordinates>744.093917</Coordinates>
+		<Coordinates>40.969234</Coordinates>
+		<Coordinates>-6.325964</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_119">
+		<Coordinates>1047.532103</Coordinates>
+		<Coordinates>46.444086</Coordinates>
+		<Coordinates>5.380994</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_120">
+		<Coordinates>1152.166079</Coordinates>
+		<Coordinates>-246.897740</Coordinates>
+		<Coordinates>-5.491128</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_121">
+		<Coordinates>23622.684727</Coordinates>
+		<Coordinates>27571.507391</Coordinates>
+		<Coordinates>324.882781</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_122">
+		<Coordinates>-1070.350895</Coordinates>
+		<Coordinates>-1713.953735</Coordinates>
+		<Coordinates>-22.717260</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_123">
+		<Coordinates>1125.950001</Coordinates>
+		<Coordinates>762.190749</Coordinates>
+		<Coordinates>6.672820</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_124">
+		<Coordinates>430.670093</Coordinates>
+		<Coordinates>-177.191552</Coordinates>
+		<Coordinates>-4.477021</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_125">
+		<Coordinates>1251.887224</Coordinates>
+		<Coordinates>674.708013</Coordinates>
+		<Coordinates>5.634441</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_126">
+		<Coordinates>-69.523979</Coordinates>
+		<Coordinates>-1004.258740</Coordinates>
+		<Coordinates>-14.293515</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_127">
+		<Coordinates>8721.757738</Coordinates>
+		<Coordinates>9261.857790</Coordinates>
+		<Coordinates>107.555869</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_128">
+		<Coordinates>-336.810458</Coordinates>
+		<Coordinates>72.286523</Coordinates>
+		<Coordinates>14.179350</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_129">
+		<Coordinates>187.764465</Coordinates>
+		<Coordinates>335.937002</Coordinates>
+		<Coordinates>220.018955</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_130">
+		<Coordinates>605.489305</Coordinates>
+		<Coordinates>274.428474</Coordinates>
+		<Coordinates>102.273741</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_131">
+		<Coordinates>994.521465</Coordinates>
+		<Coordinates>125.604303</Coordinates>
+		<Coordinates>-102.248871</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_132">
+		<Coordinates>1412.164919</Coordinates>
+		<Coordinates>63.848104</Coordinates>
+		<Coordinates>-220.182449</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_133">
+		<Coordinates>1937.582854</Coordinates>
+		<Coordinates>330.063980</Coordinates>
+		<Coordinates>-12.371088</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_134">
+		<Coordinates>2732.079352</Coordinates>
+		<Coordinates>1415.121699</Coordinates>
+		<Coordinates>1008.238461</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_135">
+		<Coordinates>23482.457227</Coordinates>
+		<Coordinates>-44760.703243</Coordinates>
+		<Coordinates>-11651.277633</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_136">
+		<Coordinates>-759.234218</Coordinates>
+		<Coordinates>1594.701551</Coordinates>
+		<Coordinates>-0.905011</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_137">
+		<Coordinates>976.939501</Coordinates>
+		<Coordinates>411.650286</Coordinates>
+		<Coordinates>315.856608</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_138">
+		<Coordinates>771.423548</Coordinates>
+		<Coordinates>-226.633426</Coordinates>
+		<Coordinates>-346.281844</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_139">
+		<Coordinates>1162.626047</Coordinates>
+		<Coordinates>811.164011</Coordinates>
+		<Coordinates>411.353599</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_140">
+		<Coordinates>1518.567690</Coordinates>
+		<Coordinates>-4248.725582</Coordinates>
+		<Coordinates>-2555.870768</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_141">
+		<Coordinates>-10445.587539</Coordinates>
+		<Coordinates>76592.200754</Coordinates>
+		<Coordinates>38306.466426</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_142">
+		<Coordinates>-1313.546192</Coordinates>
+		<Coordinates>-4907.170400</Coordinates>
+		<Coordinates>12192.722512</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_143">
+		<Coordinates>733.265499</Coordinates>
+		<Coordinates>832.110451</Coordinates>
+		<Coordinates>-1454.197857</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_144">
+		<Coordinates>618.081226</Coordinates>
+		<Coordinates>-80.576785</Coordinates>
+		<Coordinates>680.843363</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_145">
+		<Coordinates>964.339742</Coordinates>
+		<Coordinates>426.490115</Coordinates>
+		<Coordinates>-552.521506</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_146">
+		<Coordinates>982.420744</Coordinates>
+		<Coordinates>-76.170289</Coordinates>
+		<Coordinates>609.721643</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_147">
+		<Coordinates>1628.298053</Coordinates>
+		<Coordinates>1352.755245</Coordinates>
+		<Coordinates>-2810.779238</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_148">
+		<Coordinates>-3969.602573</Coordinates>
+		<Coordinates>-16428.998725</Coordinates>
+		<Coordinates>39346.641212</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_149">
+		<Coordinates>-2981.868001</Coordinates>
+		<Coordinates>-41661.935868</Coordinates>
+		<Coordinates>17195.820536</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_150">
+		<Coordinates>967.201738</Coordinates>
+		<Coordinates>5419.987915</Coordinates>
+		<Coordinates>-2095.684037</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_151">
+		<Coordinates>538.189042</Coordinates>
+		<Coordinates>-2014.080727</Coordinates>
+		<Coordinates>919.346014</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_152">
+		<Coordinates>1025.786937</Coordinates>
+		<Coordinates>1965.508720</Coordinates>
+		<Coordinates>-735.802126</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_153">
+		<Coordinates>870.196589</Coordinates>
+		<Coordinates>-2063.897981</Coordinates>
+		<Coordinates>886.129548</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_154">
+		<Coordinates>1929.417500</Coordinates>
+		<Coordinates>9033.555619</Coordinates>
+		<Coordinates>-3681.468881</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_155">
+		<Coordinates>-7429.398873</Coordinates>
+		<Coordinates>-109594.652668</Coordinates>
+		<Coordinates>44831.432348</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_156">
+		<Coordinates>2598.155122</Coordinates>
+		<Coordinates>-75189.688105</Coordinates>
+		<Coordinates>27757.150286</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_157">
+		<Coordinates>235.231501</Coordinates>
+		<Coordinates>9633.608391</Coordinates>
+		<Coordinates>-3480.807466</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_158">
+		<Coordinates>824.331978</Coordinates>
+		<Coordinates>-3726.046911</Coordinates>
+		<Coordinates>1443.969406</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_159">
+		<Coordinates>800.078623</Coordinates>
+		<Coordinates>3314.161636</Coordinates>
+		<Coordinates>-1144.936203</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_160">
+		<Coordinates>1203.804568</Coordinates>
+		<Coordinates>-3880.022749</Coordinates>
+		<Coordinates>1508.977137</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_161">
+		<Coordinates>804.787305</Coordinates>
+		<Coordinates>15624.659531</Coordinates>
+		<Coordinates>-5670.848896</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_162">
+		<Coordinates>7024.760674</Coordinates>
+		<Coordinates>-185015.215510</Coordinates>
+		<Coordinates>68233.116498</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_163">
+		<Coordinates>10161.676185</Coordinates>
+		<Coordinates>-83380.116052</Coordinates>
+		<Coordinates>28243.765799</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_164">
+		<Coordinates>-761.133736</Coordinates>
+		<Coordinates>10584.830461</Coordinates>
+		<Coordinates>-3543.160639</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_165">
+		<Coordinates>1208.128215</Coordinates>
+		<Coordinates>-4168.436762</Coordinates>
+		<Coordinates>1469.296062</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_166">
+		<Coordinates>498.470631</Coordinates>
+		<Coordinates>3669.493887</Coordinates>
+		<Coordinates>-1165.018702</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_167">
+		<Coordinates>1658.225195</Coordinates>
+		<Coordinates>-4257.236998</Coordinates>
+		<Coordinates>1536.767576</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_168">
+		<Coordinates>-688.740941</Coordinates>
+		<Coordinates>17388.036865</Coordinates>
+		<Coordinates>-5771.123810</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_169">
+		<Coordinates>25893.107591</Coordinates>
+		<Coordinates>-204921.973387</Coordinates>
+		<Coordinates>69496.238550</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_170">
+		<Coordinates>16.757086</Coordinates>
+		<Coordinates>12.500000</Coordinates>
+		<Coordinates>17.046341</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_171">
+		<Coordinates>200.000000</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_172">
+		<Coordinates>10.737242</Coordinates>
+		<Coordinates>115.510602</Coordinates>
+		<Coordinates>18.737058</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_173">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_174">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>16.931422</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_175">
+		<Coordinates>500.000000</Coordinates>
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_176">
+		<Coordinates>50.000000</Coordinates>
+		<Coordinates>303.600000</Coordinates>
+		<Coordinates>40.500000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_177">
+		<Coordinates>200.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_178">
+		<Coordinates>23.507914</Coordinates>
+		<Coordinates>404.000513</Coordinates>
+		<Coordinates>20.525236</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_179">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_180">
+		<Coordinates>300.000000</Coordinates>
+		<Coordinates>320.795415</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_181">
+		<Coordinates>500.000000</Coordinates>
+		<Coordinates>350.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_182">
+		<Coordinates>3.867294</Coordinates>
+		<Coordinates>203.333199</Coordinates>
+		<Coordinates>0.139228</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_183">
+		<Coordinates>0.000000</Coordinates>
+		<Coordinates>500.000000</Coordinates>
+		<Coordinates>1.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_184">
+		<Coordinates>-37.665807</Coordinates>
+		<Coordinates>583.478007</Coordinates>
+		<Coordinates>-14.537359</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_185">
+		<Coordinates>700.000000</Coordinates>
+		<Coordinates>200.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_186">
+		<Coordinates>800.000000</Coordinates>
+		<Coordinates>200.000000</Coordinates>
+		<Coordinates>0.000000</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_187">
+		<Coordinates>1214.853118</Coordinates>
+		<Coordinates>129.752438</Coordinates>
+		<Coordinates>-126.418819</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_188">
+		<Coordinates>993.225091</Coordinates>
+		<Coordinates>50.002566</Coordinates>
+		<Coordinates>-96.838299</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_189">
+		<Coordinates>989.901317</Coordinates>
+		<Coordinates>225.991488</Coordinates>
+		<Coordinates>-91.999250</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_190">
+		<Coordinates>981.636668</Coordinates>
+		<Coordinates>369.752566</Coordinates>
+		<Coordinates>-96.258852</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_191">
+		<Coordinates>979.572938</Coordinates>
+		<Coordinates>461.040634</Coordinates>
+		<Coordinates>-91.999250</Coordinates>
+	</Cartesian_point>
+	<Cartesian_point id="Cartesian_point_192">
+		<Coordinates>980.637761</Coordinates>
+		<Coordinates>530.113394</Coordinates>
+		<Coordinates>-93.031866</Coordinates>
+	</Cartesian_point>
+	<Cavity_plug id="id_309_0">
+		<Part_number>CPL001841</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+	</Cavity_plug>
+	<Cavity_seal id="id_311_0">
+		<Part_number>CSE001742</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+	</Cavity_seal>
+	<Cavity_seal id="id_311_1">
+		<Part_number>CSE001744A</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>/NULL</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Dichtung</Description>
+	</Cavity_seal>
+	<Component id="id_302_0" xsi:type="kbl:Fuse">
+		<Part_number>MFS_740_C150</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_SF30 150A</Description>
+		<Type id="id_393_0" xsi:type="kbl:Fuse_type">
+			<Key>Type_SF30</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_0">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>150</Value_component>
+		</Nominal_current>
+		<Colour>zinn</Colour>
+	</Component>
+	<Component id="id_302_1" xsi:type="kbl:Fuse">
+		<Part_number>MFS_740_C110</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_SF30 110A</Description>
+		<Type id="id_393_1" xsi:type="kbl:Fuse_type">
+			<Key>Type_SF30</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_1">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>110</Value_component>
+		</Nominal_current>
+		<Colour>zinn</Colour>
+	</Component>
+	<Component id="id_302_2" xsi:type="kbl:Fuse">
+		<Part_number>MFS_740_C80</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_SF30 80A</Description>
+		<Type id="id_393_2" xsi:type="kbl:Fuse_type">
+			<Key>Type_SF30</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_2">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>80</Value_component>
+		</Nominal_current>
+		<Colour>zinn</Colour>
+	</Component>
+	<Component id="id_302_3" xsi:type="kbl:Fuse">
+		<Part_number>MFS_740_C40</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_SF30 40A</Description>
+		<Type id="id_393_3" xsi:type="kbl:Fuse_type">
+			<Key>Type_SF30</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_3">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>40</Value_component>
+		</Nominal_current>
+		<Colour>zinn</Colour>
+	</Component>
+	<Component id="id_302_4" xsi:type="kbl:Fuse">
+		<Part_number>MFS_740_C50</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_SF30 50A</Description>
+		<Type id="id_393_4" xsi:type="kbl:Fuse_type">
+			<Key>Type_SF30</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_4">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>50</Value_component>
+		</Nominal_current>
+		<Colour>zinn</Colour>
+	</Component>
+	<Component id="id_302_5" xsi:type="kbl:Fuse">
+		<Part_number>MFS_740_C60</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_SF30 60A</Description>
+		<Type id="id_393_5" xsi:type="kbl:Fuse_type">
+			<Key>Type_SF30</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_5">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>60</Value_component>
+		</Nominal_current>
+		<Colour>zinn</Colour>
+	</Component>
+	<Component id="id_302_6" xsi:type="kbl:Fuse">
+		<Part_number>FUS00113114</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Sicherung Type_C 25A</Description>
+		<Type id="id_393_6" xsi:type="kbl:Fuse_type">
+			<Key>Type_C</Key>
+			<Reference_system>VOBES</Reference_system>
+		</Type>
+		<Nominal_current id="id_392_6">
+			<Unit_component>id_346_3</Unit_component>
+			<Value_component>25</Value_component>
+		</Nominal_current>
+		<Colour>weiss</Colour>
+	</Component>
+	<Component_box id="id_413_0">
+		<Part_number>FBX001546</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>10</Version>
+		<Abbreviation>HSB30V</Abbreviation>
+		<Description>Hauptsicherungsbox</Description>
+		<Mass_information id="id_380_7">
+			<Unit_component>id_346_2</Unit_component>
+			<Value_component>197.0</Value_component>
+		</Mass_information>
+		<External_references>External_reference_10</External_references>
+		<Component_box_connectors id="id_415_0">
+			<Id>A</Id>
+			<Compatible_housings>id_315_5</Compatible_housings>
+			<Integrated_slots id="id_341_50" xsi:type="kbl:Slot">
+				<Id>KL30 Batt+</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_100">
+					<Cavity_number>1</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_1">
+			<Id>B</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_51" xsi:type="kbl:Slot">
+				<Id>B</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_101">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_2">
+			<Id>C</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_52" xsi:type="kbl:Slot">
+				<Id>Reserve</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_102">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_3">
+			<Id>D</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_53" xsi:type="kbl:Slot">
+				<Id>D</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_103">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_4">
+			<Id>E</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_54" xsi:type="kbl:Slot">
+				<Id>E</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_104">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_5">
+			<Id>F</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_55" xsi:type="kbl:Slot">
+				<Id>F</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_105">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_6">
+			<Id>G</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_56" xsi:type="kbl:Slot">
+				<Id>G</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_106">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_7">
+			<Id>H</Id>
+			<Compatible_housings>id_315_1 id_315_4 id_315_7</Compatible_housings>
+			<Integrated_slots id="id_341_57" xsi:type="kbl:Slot">
+				<Id>H</Id>
+				<Number_of_cavities>1</Number_of_cavities>
+				<Cavities id="id_370_107">
+					<Cavity_number>1A</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_box_connectors id="id_415_8">
+			<Id>J</Id>
+			<Integrated_slots id="id_341_58" xsi:type="kbl:Slot">
+				<Id>J</Id>
+				<Number_of_cavities>6</Number_of_cavities>
+				<Cavities id="id_370_108">
+					<Cavity_number>1</Cavity_number>
+				</Cavities>
+				<Cavities id="id_370_109">
+					<Cavity_number>2</Cavity_number>
+				</Cavities>
+				<Cavities id="id_370_110">
+					<Cavity_number>3</Cavity_number>
+				</Cavities>
+				<Cavities id="id_370_111">
+					<Cavity_number>4</Cavity_number>
+				</Cavities>
+				<Cavities id="id_370_112">
+					<Cavity_number>5</Cavity_number>
+				</Cavities>
+				<Cavities id="id_370_113">
+					<Cavity_number>6</Cavity_number>
+				</Cavities>
+			</Integrated_slots>
+		</Component_box_connectors>
+		<Component_slots id="id_441_0">
+			<Id>F1</Id>
+			<Valid_fuse_types id="id_444_0">
+				<Key>Type_SF30</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_0">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>150.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_0">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>150.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_114">
+				<Cavity_number>F1-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_115">
+				<Cavity_number>F1-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_1">
+			<Id>F2</Id>
+			<Valid_fuse_types id="id_444_1">
+				<Key>Type_SF30</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_1">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>110.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_1">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>110.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_116">
+				<Cavity_number>F2-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_117">
+				<Cavity_number>F2-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_2">
+			<Id>F3</Id>
+			<Valid_fuse_types id="id_444_2">
+				<Key>Type_SF30</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_2">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>80.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_2">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>80.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_118">
+				<Cavity_number>F3-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_119">
+				<Cavity_number>F3-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_3">
+			<Id>F4</Id>
+			<Valid_fuse_types id="id_444_3">
+				<Key>Type_SF30</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_3">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>40.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_3">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>40.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_120">
+				<Cavity_number>F4-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_121">
+				<Cavity_number>F4-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_4">
+			<Id>F5</Id>
+			<Valid_fuse_types id="id_444_4">
+				<Key>Type_SF30</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_4">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>50.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_4">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>50.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_122">
+				<Cavity_number>F5-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_123">
+				<Cavity_number>F5-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_5">
+			<Id>F6</Id>
+			<Valid_fuse_types id="id_444_5">
+				<Key>Type_SF30</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_5">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>60.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_5">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>60.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_124">
+				<Cavity_number>F6-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_125">
+				<Cavity_number>F6-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_6">
+			<Id>FS1</Id>
+			<Valid_fuse_types id="id_444_6">
+				<Key>Type_C</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_6">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>30.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_6">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>30.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_126">
+				<Cavity_number>FS1-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_127">
+				<Cavity_number>FS1-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_7">
+			<Id>FS2</Id>
+			<Valid_fuse_types id="id_444_7">
+				<Key>Type_C</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_7">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>5.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_7">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>5.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_128">
+				<Cavity_number>FS2-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_129">
+				<Cavity_number>FS2-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_8">
+			<Id>FS3</Id>
+			<Valid_fuse_types id="id_444_8">
+				<Key>Type_C</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_8">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>5.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_8">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>5.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_130">
+				<Cavity_number>FS3-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_131">
+				<Cavity_number>FS3-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_9">
+			<Id>FS4</Id>
+			<Valid_fuse_types id="id_444_9">
+				<Key>Type_C</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_9">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>25.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_9">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>25.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_132">
+				<Cavity_number>FS4-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_133">
+				<Cavity_number>FS4-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_10">
+			<Id>FS5</Id>
+			<Valid_fuse_types id="id_444_10">
+				<Key>Type_C</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_10">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>5.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_10">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>5.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_134">
+				<Cavity_number>FS5-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_135">
+				<Cavity_number>FS5-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Component_slots id="id_441_11">
+			<Id>FS6</Id>
+			<Valid_fuse_types id="id_444_11">
+				<Key>Type_C</Key>
+				<Reference_system>VOBES</Reference_system>
+			</Valid_fuse_types>
+			<Min_current id="id_390_11">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>1.0</Value_component>
+			</Min_current>
+			<Max_current id="id_391_11">
+				<Unit_component>id_346_3</Unit_component>
+				<Value_component>1.0</Value_component>
+			</Max_current>
+			<Component_cavities id="id_370_136">
+				<Cavity_number>FS6-1</Cavity_number>
+			</Component_cavities>
+			<Component_cavities id="id_370_137">
+				<Cavity_number>FS6-1A</Cavity_number>
+			</Component_cavities>
+		</Component_slots>
+		<Connections id="id_414_0" xsi:type="kbl:Component_box_connection">
+			<Id>A-1_ALL</Id>
+			<Cavities>id_370_100</Cavities>
+			<Component_cavities>id_370_116 id_370_118 id_370_120 id_370_122 id_370_124 id_370_126 id_370_128 id_370_130 id_370_132 id_370_134 id_370_136</Component_cavities>
+		</Connections>
+		<Connections id="id_414_1" xsi:type="kbl:Component_box_connection">
+			<Id>B-1A_F1-1A</Id>
+			<Cavities>id_370_101</Cavities>
+			<Component_cavities>id_370_115</Component_cavities>
+		</Connections>
+		<Connections id="id_414_2" xsi:type="kbl:Component_box_connection">
+			<Id>D-1A_F2-1A</Id>
+			<Cavities>id_370_103</Cavities>
+			<Component_cavities>id_370_117</Component_cavities>
+		</Connections>
+		<Connections id="id_414_3" xsi:type="kbl:Component_box_connection">
+			<Id>E-1A_F3-1A</Id>
+			<Cavities>id_370_104</Cavities>
+			<Component_cavities>id_370_119</Component_cavities>
+		</Connections>
+		<Connections id="id_414_4" xsi:type="kbl:Component_box_connection">
+			<Id>F-1A_F4-1A</Id>
+			<Cavities>id_370_105</Cavities>
+			<Component_cavities>id_370_121</Component_cavities>
+		</Connections>
+		<Connections id="id_414_5" xsi:type="kbl:Component_box_connection">
+			<Id>G-1A_F5-1A</Id>
+			<Cavities>id_370_106</Cavities>
+			<Component_cavities>id_370_123</Component_cavities>
+		</Connections>
+		<Connections id="id_414_6" xsi:type="kbl:Component_box_connection">
+			<Id>H-1A_F6-1A</Id>
+			<Cavities>id_370_107</Cavities>
+			<Component_cavities>id_370_125</Component_cavities>
+		</Connections>
+		<Connections id="id_414_7" xsi:type="kbl:Component_box_connection">
+			<Id>J-1_FS1-1A</Id>
+			<Cavities>id_370_108</Cavities>
+			<Component_cavities>id_370_127</Component_cavities>
+		</Connections>
+		<Connections id="id_414_8" xsi:type="kbl:Component_box_connection">
+			<Id>J-2_FS2-1A</Id>
+			<Cavities>id_370_109</Cavities>
+			<Component_cavities>id_370_129</Component_cavities>
+		</Connections>
+		<Connections id="id_414_9" xsi:type="kbl:Component_box_connection">
+			<Id>J-3_FS3-1A</Id>
+			<Cavities>id_370_110</Cavities>
+			<Component_cavities>id_370_131</Component_cavities>
+		</Connections>
+		<Connections id="id_414_10" xsi:type="kbl:Component_box_connection">
+			<Id>J-4_FS4-1A</Id>
+			<Cavities>id_370_111</Cavities>
+			<Component_cavities>id_370_133</Component_cavities>
+		</Connections>
+		<Connections id="id_414_11" xsi:type="kbl:Component_box_connection">
+			<Id>J-5_FS5-1A</Id>
+			<Cavities>id_370_112</Cavities>
+			<Component_cavities>id_370_135</Component_cavities>
+		</Connections>
+		<Connections id="id_414_12" xsi:type="kbl:Component_box_connection">
+			<Id>J-6_FS6-1A</Id>
+			<Cavities>id_370_113</Cavities>
+			<Component_cavities>id_370_137</Component_cavities>
+		</Connections>
+	</Component_box>
+	<Connector_housing id="id_315_0">
+		<Part_number>ECP001706</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Alias_id id="id_368_27">
+			<Alias_id>TBL001038B</Alias_id>
+			<Scope>VOBES</Scope>
+			<Description>tab_number</Description>
+		</Alias_id>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>BUCHSENGEHAEUSE_6-POL</Description>
+		<External_references>External_reference_1</External_references>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_0">
+			<Id>default</Id>
+			<Number_of_cavities>6</Number_of_cavities>
+			<Cavities id="id_370_0">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_1">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_2">
+				<Cavity_number>3</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_3">
+				<Cavity_number>4</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_4">
+				<Cavity_number>5</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_5">
+				<Cavity_number>6</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_8">
+		<Part_number>ECP001822</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Alias_id id="id_368_28">
+			<Alias_id>TBL001007B</Alias_id>
+			<Scope>VOBES</Scope>
+			<Description>tab_number</Description>
+		</Alias_id>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>RD-FLACHSTECKERGEHAEUSE 2-POLIG 2,8MM SCHWARZ</Description>
+		<External_references>External_reference_2</External_references>
+		<Housing_colour>schwarz</Housing_colour>
+		<Slots id="id_341_18">
+			<Id>default</Id>
+			<Number_of_cavities>2</Number_of_cavities>
+			<Cavities id="id_370_57">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_58">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_2">
+		<Part_number>ECP001982BS</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Steckgehaeuse_5Pol_Klima</Description>
+		<External_references>External_reference_3</External_references>
+		<Housing_colour>orange</Housing_colour>
+		<Slots id="id_341_5">
+			<Id>default</Id>
+			<Number_of_cavities>5</Number_of_cavities>
+			<Cavities id="id_370_20">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_21">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_22">
+				<Cavity_number>3</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_23">
+				<Cavity_number>4</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_24">
+				<Cavity_number>5S</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_3">
+		<Part_number>ECP001743</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>FLACHKONTAKTGEH_4POL</Description>
+		<External_references>External_reference_4</External_references>
+		<Slots id="id_341_7">
+			<Id>default</Id>
+			<Number_of_cavities>4</Number_of_cavities>
+			<Cavities id="id_370_30">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_31">
+				<Cavity_number>2</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_32">
+				<Cavity_number>3</Cavity_number>
+			</Cavities>
+			<Cavities id="id_370_33">
+				<Cavity_number>4</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_5">
+		<Part_number>ECPUNIFCP01</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>DUMMY_BUCHSENGEH_1POL</Description>
+		<External_references>External_reference_5</External_references>
+		<Slots id="id_341_11">
+			<Id>default</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_40">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_9">
+		<Part_number>ECP001135</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>BATTERIEKLEMME_PLUS</Description>
+		<External_references>External_reference_6</External_references>
+		<Slots id="id_341_21">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_62">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_7">
+		<Part_number>ECP001859AG</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH</Description>
+		<External_references>External_reference_7</External_references>
+		<Slots id="id_341_16">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_55">
+				<Cavity_number>1A</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_4">
+		<Part_number>ECP001859F</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH_M6-10MM2</Description>
+		<External_references>External_reference_8</External_references>
+		<Slots id="id_341_9">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_38">
+				<Cavity_number>1A</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_1">
+		<Part_number>ECP001859AT</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>KABELSCHUH</Description>
+		<External_references>External_reference_9</External_references>
+		<Slots id="id_341_3">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_18">
+				<Cavity_number>1A</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<Connector_housing id="id_315_10">
+		<Part_number>ECPSPLICE</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Verbinder</Description>
+		<External_references>External_reference_11</External_references>
+		<Slots id="id_341_23">
+			<Id>none</Id>
+			<Number_of_cavities>1</Number_of_cavities>
+			<Cavities id="id_370_64">
+				<Cavity_number>1</Cavity_number>
+			</Cavities>
+		</Slots>
+	</Connector_housing>
+	<External_reference id="id_322_0">
+		<Document_type>KAB-Projekt</Document_type>
+		<Document_number>LTG0011200</Document_number>
+		<Change_level>270115</Change_level>
+		<File_name>Testdatensatz_Sicherung</File_name>
+		<Data_format>EB-Cable native</Data_format>
+		<Creating_system>EB-Cable 6.3.0 (150)</Creating_system>
+	</External_reference>
+	<External_reference id="id_322_1">
+		<Document_type>SYS-Projekt</Document_type>
+		<Document_number>SYS0011200</Document_number>
+		<Change_level>270115</Change_level>
+		<File_name>Kein SYS</File_name>
+		<Data_format>EB-Cable native</Data_format>
+		<Creating_system>EB-Cable 6.3.0 (150)</Creating_system>
+	</External_reference>
+	<External_reference id="id_322_2">
+		<Document_type>KBL_extension</Document_type>
+		<Document_number>LTG0011200</Document_number>
+		<Change_level>270115</Change_level>
+		<File_name>EBCA_kblxml_Testleitungsstrang_MODCFG.XML</File_name>
+		<Data_format>XML</Data_format>
+		<Creating_system>EB-Cable 6.3.0 (150)</Creating_system>
+	</External_reference>
+	<External_reference id="id_322_3">
+		<Document_type>KBL_container</Document_type>
+		<Document_number/>
+		<Change_level>270115</Change_level>
+		<File_name>EBCA_kblxml_Testleitungsstrang.kbl</File_name>
+		<Data_format>KBL 2.3 SR-1</Data_format>
+		<Creating_system>EB-Cable 6.3.0 (150)</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_1">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001706</Document_number>
+		<Change_level>011112</Change_level>
+		<File_name>ECP001706.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_2">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001822</Document_number>
+		<Change_level>011112</Change_level>
+		<File_name>ECP001822.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_3">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001982BS</Document_number>
+		<Change_level>011112</Change_level>
+		<File_name>ECP001982BS.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_4">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001743</Document_number>
+		<Change_level>011112</Change_level>
+		<File_name>ECP001743.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_5">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECPUNIFCP01</Document_number>
+		<Change_level>011112</Change_level>
+		<File_name>ECPUNIFCP01.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_6">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001135</Document_number>
+		<Change_level>011112</Change_level>
+		<File_name>ECP001135.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_7">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001859AG</Document_number>
+		<Change_level>061212</Change_level>
+		<File_name>ECP001859AG.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_8">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001859F</Document_number>
+		<Change_level>160513</Change_level>
+		<File_name>ECP001859F.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_9">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECP001859AT</Document_number>
+		<Change_level>040413</Change_level>
+		<File_name>ECP001859AT.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_10">
+		<Document_type>EKR</Document_type>
+		<Document_number>FBX001546</Document_number>
+		<Change_level>080813</Change_level>
+		<File_name>FBX001546.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_11">
+		<Document_type>EKR</Document_type>
+		<Document_number>ECPSPLICE</Document_number>
+		<Change_level>071212</Change_level>
+		<File_name>ECPSPLICE.CATPart</File_name>
+		<Data_format>catPart</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="External_reference_12">
+		<Document_type>ELV</Document_type>
+		<Document_number>LTG0011200</Document_number>
+		<Change_level>270115</Change_level>
+		<File_name>TAB_012_004_09_KPR_ELX_001_____TF01_MULTI-FUSE____ELX_IN_CONTEXT.CATProduct</File_name>
+		<Data_format>catProduct</Data_format>
+		<Creating_system>CATIA V5R19 SP9</Creating_system>
+	</External_reference>
+	<External_reference id="id_322_4">
+		<Document_type>KBL-Topo</Document_type>
+		<Document_number>/NULL</Document_number>
+		<Change_level>270115</Change_level>
+		<File_name>KBL_Catia.xml</File_name>
+		<Data_format>Kbl</Data_format>
+		<Creating_system>VWGELENA 2.1</Creating_system>
+	</External_reference>
+	<General_terminal id="id_326_0">
+		<Part_number>TER00156401</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>box</Description>
+		<Plating_material>au</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_1">
+		<Part_number>TER00184401</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>flat</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_2">
+		<Part_number>ECP001859AT</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_3">
+		<Part_number>TER00184901</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_4">
+		<Part_number>TER001859AH</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_5">
+		<Part_number>TER001137B</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_6">
+		<Part_number>ECP001859F</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_7">
+		<Part_number>TERUNISNFLK</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>box</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_8">
+		<Part_number>TER00132602</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>flat</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_9">
+		<Part_number>ECP001859AG</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>4</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_10">
+		<Part_number>TER001137C</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_terminal id="id_326_11">
+		<Part_number>ECP001135</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>cable_shoe</Description>
+		<Terminal_type>special</Terminal_type>
+		<Plating_material>sn</Plating_material>
+	</General_terminal>
+	<General_wire id="id_327_0">
+		<Part_number>WIR0017055</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>6</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_0">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_0">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>2</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_0">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>bl</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_1">
+		<Part_number>WIR0010006</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>3</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_1">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_1">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>ws</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_2">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>gn</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_2">
+		<Part_number>WIR00111701</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>20</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_2">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>12</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>7</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_3">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>rt</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_3">
+		<Part_number>WIR00121103</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>2</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>20</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_3">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>10</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_4">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>br</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_4">
+		<Part_number>WIR0010005</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_4">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>4</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_4">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>0.5</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_4">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>1</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_5">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>ws</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_6">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>bl</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_5">
+		<Part_number>WIR00180202</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>7</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_5">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>21</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_5">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>16</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_5">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>7</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_7">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_6">
+		<Part_number>WIR00162703</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_6">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>19</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_6">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>10</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_6">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>6</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_8">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>rt</Colour_value>
+		</Cover_colour>
+		<Cover_colour id="id_374_9">
+			<Colour_type>Kennfarbe</Colour_type>
+			<Colour_value>sw</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<General_wire id="id_327_7">
+		<Part_number>WIR00198202</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Version>1</Version>
+		<Abbreviation>/NULL</Abbreviation>
+		<Description>Unspezifizierter Draht</Description>
+		<Wire_type>individual wire</Wire_type>
+		<Bend_radius id="id_369_7">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>34</Value_component>
+		</Bend_radius>
+		<Cross_section_area id="id_375_7">
+			<Unit_component>id_346_0</Unit_component>
+			<Value_component>35</Value_component>
+		</Cross_section_area>
+		<Outside_diameter id="id_381_7">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>11</Value_component>
+		</Outside_diameter>
+		<Cover_colour id="id_374_10">
+			<Colour_type>Grundfarbe</Colour_type>
+			<Colour_value>br</Colour_value>
+		</Cover_colour>
+	</General_wire>
+	<Harness id="id_328_0">
+		<Part_number>LTG0011200</Part_number>
+		<Company_name>MaybeAnyCompany</Company_name>
+		<Alias_id id="Alias_id_1">
+			<Alias_id>Testleitungsstrang</Alias_id>
+			<Scope>VOBES</Scope>
+			<Description>Harnessname</Description>
+		</Alias_id>
+		<Version>2.4.0</Version>
+		<Abbreviation>LTGS</Abbreviation>
+		<Description>Leitungsstrang</Description>
+		<Copyright_note>Copyright reserved: Volkswagen AG behält sich alle Rechte vor. 
+Copyright reserved: All rights remain with Volkswagen AG. 
+The English translation is believed to be accurate. In case of discrepancies the German version shall govern.</Copyright_note>
+		<External_references>External_reference_12 id_322_0 id_322_1</External_references>
+		<Change id="Change_1">
+			<Description>KBL 2.4 Sample File</Description>
+			<Change_date>270115</Change_date>
+			<Responsible_designer>Kyriazis</Responsible_designer>
+			<Designer_department>K-SIPE-3</Designer_department>
+		</Change>
+		<Car_classification_level_2>VOBES</Car_classification_level_2>
+		<Model_year>2015</Model_year>
+		<Content>harness complete set</Content>
+		<Assembly_part_occurrence id="id_305_0">
+			<Id>MF1</Id>
+			<Alias_id id="id_368_30">
+				<Alias_id>MF1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Test</Description>
+			<Part>id_304_1</Part>
+		</Assembly_part_occurrence>
+		<Cavity_plug_occurrence id="id_310_0">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_plug_occurrence id="id_310_1">
+			<Part>id_309_0</Part>
+		</Cavity_plug_occurrence>
+		<Cavity_seal_occurrence id="id_312_0">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_1">
+			<Part>id_311_0</Part>
+		</Cavity_seal_occurrence>
+		<Cavity_seal_occurrence id="id_312_2">
+			<Part>id_311_1</Part>
+		</Cavity_seal_occurrence>
+		<Component_box_occurrence id="id_417_0">
+			<Id>XJ.SR1.1</Id>
+			<Alias_id id="id_368_13">
+				<Alias_id>SR1.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_14">
+				<Alias_id>ST_SIDO_1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Relais- und Sicherungsträger</Description>
+			<Placement id="Placement_12">
+				<U>0.128238</U>
+				<U>0.000011</U>
+				<U>0.991743</U>
+				<V>-0.000009</V>
+				<V>1.000000</V>
+				<V>-0.000010</V>
+				<Cartesian_point>Cartesian_point_12</Cartesian_point>
+			</Placement>
+			<Part>id_413_0</Part>
+			<Component_box_connectors id="id_416_0">
+				<Part>id_415_0</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_59">
+					<Mated_slots>id_341_20</Mated_slots>
+					<Part>id_341_50</Part>
+					<Cavities id="id_370_162">
+						<Part>id_370_100</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_1">
+				<Part>id_415_1</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_60">
+					<Part>id_341_51</Part>
+					<Cavities id="id_370_163">
+						<Part>id_370_101</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_2">
+				<Part>id_415_2</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_61">
+					<Part>id_341_52</Part>
+					<Cavities id="id_370_164">
+						<Part>id_370_102</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_3">
+				<Part>id_415_3</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_62">
+					<Mated_slots>id_341_17</Mated_slots>
+					<Part>id_341_53</Part>
+					<Cavities id="id_370_165">
+						<Part>id_370_103</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_4">
+				<Part>id_415_4</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_63">
+					<Part>id_341_54</Part>
+					<Cavities id="id_370_166">
+						<Part>id_370_104</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_5">
+				<Part>id_415_5</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_64">
+					<Mated_slots>id_341_10</Mated_slots>
+					<Part>id_341_55</Part>
+					<Cavities id="id_370_167">
+						<Part>id_370_105</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_6">
+				<Part>id_415_6</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_65">
+					<Mated_slots>id_341_4</Mated_slots>
+					<Part>id_341_56</Part>
+					<Cavities id="id_370_168">
+						<Part>id_370_106</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_7">
+				<Part>id_415_7</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_66">
+					<Mated_slots>id_341_15</Mated_slots>
+					<Part>id_341_57</Part>
+					<Cavities id="id_370_169">
+						<Part>id_370_107</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_box_connectors id="id_416_8">
+				<Part>id_415_8</Part>
+				<Slots xsi:type="kbl:Slot_occurrence" id="id_341_67">
+					<Part>id_341_58</Part>
+					<Cavities id="id_370_170">
+						<Part>id_370_108</Part>
+					</Cavities>
+					<Cavities id="id_370_171">
+						<Part>id_370_109</Part>
+					</Cavities>
+					<Cavities id="id_370_172">
+						<Part>id_370_110</Part>
+					</Cavities>
+					<Cavities id="id_370_173">
+						<Part>id_370_111</Part>
+					</Cavities>
+					<Cavities id="id_370_174">
+						<Part>id_370_112</Part>
+					</Cavities>
+					<Cavities id="id_370_175">
+						<Part>id_370_113</Part>
+					</Cavities>
+				</Slots>
+			</Component_box_connectors>
+			<Component_slots id="id_442_0" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-F1</Id>
+				<Part>id_441_0</Part>
+				<Component_cavities id="id_370_138" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_114</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_139" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_115</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_1" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-F2</Id>
+				<Part>id_441_1</Part>
+				<Component_cavities id="id_370_140" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_116</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_141" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_117</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_2" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-F3</Id>
+				<Part>id_441_2</Part>
+				<Component_cavities id="id_370_142" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_118</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_143" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_119</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_3" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-F4</Id>
+				<Part>id_441_3</Part>
+				<Component_cavities id="id_370_144" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_120</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_145" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_121</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_4" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-F5</Id>
+				<Part>id_441_4</Part>
+				<Component_cavities id="id_370_146" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_122</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_147" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_123</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_5" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-F6</Id>
+				<Part>id_441_5</Part>
+				<Component_cavities id="id_370_148" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_124</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_149" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_125</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_6" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-FS1</Id>
+				<Part>id_441_6</Part>
+				<Component_cavities id="id_370_150" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_126</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_151" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_127</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_7" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-FS2</Id>
+				<Part>id_441_7</Part>
+				<Component_cavities id="id_370_152" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_128</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_153" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_129</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_8" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-FS3</Id>
+				<Part>id_441_8</Part>
+				<Component_cavities id="id_370_154" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_130</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_155" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_131</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_9" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-FS4</Id>
+				<Part>id_441_9</Part>
+				<Component_cavities id="id_370_156" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_132</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_157" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_133</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_10" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-FS5</Id>
+				<Part>id_441_10</Part>
+				<Component_cavities id="id_370_158" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_134</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_159" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_135</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Component_slots id="id_442_11" xsi:type="kbl:Component_slot_occurrence">
+				<Id>SR1.1-FS6</Id>
+				<Part>id_441_11</Part>
+				<Component_cavities id="id_370_160" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_136</Part>
+				</Component_cavities>
+				<Component_cavities id="id_370_161" xsi:type="kbl:Component_cavity_occurrence">
+					<Part>id_370_137</Part>
+				</Component_cavities>
+			</Component_slots>
+			<Contact_points id="id_372_12">
+				<Id>XJ.SR1.1-4#6_1_XJ.SR1.1_4_1</Id>
+				<Associated_parts>id_312_0 id_344_6</Associated_parts>
+				<Contacted_cavity>id_370_173</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_27">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_28">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_29">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_61">
+				<Instruction_type>carrier_type</Instruction_type>
+				<Instruction_value>multi_slot</Instruction_value>
+			</Installation_information>
+		</Component_box_occurrence>
+		<Component_occurrence id="id_303_0" xsi:type="kbl:Specified_component_occurrence">
+			<Id>MF1_F1</Id>
+			<Alias_id id="id_368_31">
+				<Alias_id>MF1_F1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Tetrathrow</Description>
+			<Mounting> id_442_0</Mounting>
+			<Part>id_302_0</Part>
+			<Related_assembly>id_305_0</Related_assembly>
+			<Related_occurrence>id_303_1</Related_occurrence>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_2" xsi:type="kbl:Specified_component_occurrence">
+			<Id>MF1_F2</Id>
+			<Alias_id id="id_368_32">
+				<Alias_id>MF1_F2</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Hydraulikpumpe</Description>
+			<Mounting> id_442_1</Mounting>
+			<Part>id_302_1</Part>
+			<Related_assembly>id_305_0</Related_assembly>
+			<Related_occurrence>id_303_3</Related_occurrence>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_4" xsi:type="kbl:Specified_component_occurrence">
+			<Id>MF1_F3</Id>
+			<Alias_id id="id_368_33">
+				<Alias_id>MF1_F3</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Ölablass</Description>
+			<Mounting>  id_442_2</Mounting>
+			<Part>id_302_2</Part>
+			<Related_assembly>id_305_0</Related_assembly>
+			<Related_occurrence>id_303_5</Related_occurrence>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_6" xsi:type="kbl:Specified_component_occurrence">
+			<Id>MF1_F4</Id>
+			<Alias_id id="id_368_34">
+				<Alias_id>MF1_F4</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Heckscheibenmotor</Description>
+			<Mounting>  id_442_3</Mounting>
+			<Part>id_302_3</Part>
+			<Related_assembly>id_305_0</Related_assembly>
+			<Related_occurrence>id_303_7</Related_occurrence>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_8" xsi:type="kbl:Specified_component_occurrence">
+			<Id>MF1_F5</Id>
+			<Alias_id id="id_368_35">
+				<Alias_id>MF1_F5</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Kompressor</Description>
+			<Mounting>  id_442_4</Mounting>
+			<Part>id_302_4</Part>
+			<Related_assembly>id_305_0</Related_assembly>
+			<Related_occurrence>id_303_9</Related_occurrence>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_10" xsi:type="kbl:Specified_component_occurrence">
+			<Id>MF1_F6</Id>
+			<Alias_id id="id_368_36">
+				<Alias_id>MF1_F6</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Beifahrersitz</Description>
+			<Mounting>  id_442_5</Mounting>
+			<Part>id_302_5</Part>
+			<Related_assembly>id_305_0</Related_assembly>
+			<Related_occurrence>id_303_11</Related_occurrence>
+		</Component_occurrence>
+		<Component_occurrence id="id_303_12">
+			<Id>SR1.1_FS4</Id>
+			<Alias_id id="id_368_37">
+				<Alias_id>SR1.1_FS4</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Plusverbindung (30) Ltgs. Motorraum</Description>
+			<Mounting>  id_442_9</Mounting>
+			<Part>id_302_6</Part>
+		</Component_occurrence>
+		<Connection id="id_314_0">
+			<Id>1_XA.L2.1_6_1</Id>
+			<Signal_name>1</Signal_name>
+			<Wire>id_350_0</Wire>
+			<Extremities id="id_377_0">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_5</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_1">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_6</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_1">
+			<Id>1_D50_1_1</Id>
+			<Signal_name>1</Signal_name>
+			<Wire>id_350_1</Wire>
+			<Extremities id="id_377_2">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_6</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_3">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_7</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_2">
+			<Id>5_XG.SR1.1_1A_1</Id>
+			<Signal_name>5</Signal_name>
+			<Wire>id_350_2</Wire>
+			<Extremities id="id_377_4">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_0</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_5">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_8</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_3">
+			<Id>3_W8_1_1</Id>
+			<Signal_name>3</Signal_name>
+			<Wire>id_350_3</Wire>
+			<Extremities id="id_377_6">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_9</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_7">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_10</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_4">
+			<Id>2_XF.SR1.1_1A_1</Id>
+			<Signal_name>2</Signal_name>
+			<Wire>id_350_4</Wire>
+			<Extremities id="id_377_8">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_1</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_9">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_11</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_5">
+			<Id>1_XJ.SR1.1_4A_1</Id>
+			<Signal_name>1</Signal_name>
+			<Wire>id_350_5</Wire>
+			<Extremities id="id_377_10">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_12</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_11">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_6</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_6">
+			<Id>3_W8_1_2</Id>
+			<Signal_name>3</Signal_name>
+			<Wire>id_350_6</Wire>
+			<Extremities id="id_377_12">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_9</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_13">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_2</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_7">
+			<Id>6_XD.SR1.1_1A_1</Id>
+			<Signal_name>6</Signal_name>
+			<Wire>id_350_7</Wire>
+			<Extremities id="id_377_14">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_3</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_15">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_13</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_8">
+			<Id>3_W8_1_3</Id>
+			<Signal_name>3</Signal_name>
+			<Wire>id_350_8</Wire>
+			<Extremities id="id_377_16">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_9</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_17">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_14</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connection id="id_314_9">
+			<Id>4_XA.SR1.1_1_1</Id>
+			<Signal_name>4</Signal_name>
+			<Wire>id_350_9</Wire>
+			<Extremities id="id_377_18">
+				<Position_on_wire>0</Position_on_wire>
+				<Contact_point>id_372_15</Contact_point>
+			</Extremities>
+			<Extremities id="id_377_19">
+				<Position_on_wire>1</Position_on_wire>
+				<Contact_point>id_372_4</Contact_point>
+			</Extremities>
+		</Connection>
+		<Connector_occurrence id="id_316_0">
+			<Id>XA.L2.1</Id>
+			<Alias_id id="id_368_1">
+				<Alias_id>XA.L2.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_2">
+				<Alias_id>ST_SBBR_1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>2-Faden-Lampe für Scheinwerfer rechts</Description>
+			<Placement id="Placement_1">
+				<U>-0.145435</U>
+				<U>0.000000</U>
+				<U>-0.989368</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_1</Cartesian_point>
+			</Placement>
+			<Part>id_315_0</Part>
+			<Contact_points id="id_372_5">
+				<Id>XA.L2.1-6#1_1_XA.L2.1_6_1</Id>
+				<Associated_parts>id_344_0</Associated_parts>
+				<Contacted_cavity>id_370_11</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_0">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>L2.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_1">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>2-Faden-Lampe für Scheinwerfer rechts</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_2">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['1K8_945_095_C','']</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_54">
+				<Instruction_type>TAB_NUMBER</Instruction_type>
+				<Instruction_value>TAB_016_038_B</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_1">
+				<Part>id_341_0</Part>
+				<Cavities id="id_370_6">
+					<Part>id_370_0</Part>
+				</Cavities>
+				<Cavities id="id_370_7">
+					<Part>id_370_1</Part>
+				</Cavities>
+				<Cavities id="id_370_8">
+					<Part>id_370_2</Part>
+				</Cavities>
+				<Cavities id="id_370_9">
+					<Part>id_370_3</Part>
+				</Cavities>
+				<Cavities id="id_370_10">
+					<Part>id_370_4</Part>
+				</Cavities>
+				<Cavities id="id_370_11">
+					<Part>id_370_5</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_10">
+			<Id>XA.V64.1</Id>
+			<Alias_id id="id_368_18">
+				<Alias_id>XA.V64.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_19">
+				<Alias_id>ST_PUMPE</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Hydraulikpumpe für ABS</Description>
+			<Placement id="Placement_2">
+				<U>0.004265</U>
+				<U>0.000000</U>
+				<U>0.999991</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_2</Cartesian_point>
+			</Placement>
+			<Part>id_315_8</Part>
+			<Contact_points id="id_372_13">
+				<Id>XA.V64.1-2#8_6_XD.SR1.1_1A_1</Id>
+				<Associated_parts>id_344_8 id_312_2</Associated_parts>
+				<Contacted_cavity>id_370_60</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_42">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>V64.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_43">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Hydraulikpumpe für ABS</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_44">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['4Z7_323_169','']</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_56">
+				<Instruction_type>TAB_NUMBER</Instruction_type>
+				<Instruction_value>TAB_016_007_B</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_19">
+				<Part>id_341_18</Part>
+				<Cavities id="id_370_59">
+					<Associated_plug>id_310_0</Associated_plug>
+					<Part>id_370_57</Part>
+				</Cavities>
+				<Cavities id="id_370_60">
+					<Associated_plug>id_310_1</Associated_plug>
+					<Part>id_370_58</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_1">
+			<Id>XA.L1.1</Id>
+			<Alias_id id="id_368_3">
+				<Alias_id>XA.L1.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_4">
+				<Alias_id>ST_SBBR_2</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>2-Faden-Lampe für Scheinwerfer links</Description>
+			<Placement id="Placement_3">
+				<U>-0.006853</U>
+				<U>0.000000</U>
+				<U>-0.999977</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_3</Cartesian_point>
+			</Placement>
+			<Part>id_315_0</Part>
+			<Contact_points id="id_372_7">
+				<Id>XA.L1.1-5#2_1_D50_1_1</Id>
+				<Associated_parts>id_344_1</Associated_parts>
+				<Contacted_cavity>id_370_16</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_3">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>L1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_4">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>2-Faden-Lampe für Scheinwerfer links</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_5">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['1K8_945_095_C','']</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_55">
+				<Instruction_type>TAB_NUMBER</Instruction_type>
+				<Instruction_value>TAB_016_038_B</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_2">
+				<Part>id_341_0</Part>
+				<Cavities id="id_370_12">
+					<Part>id_370_0</Part>
+				</Cavities>
+				<Cavities id="id_370_13">
+					<Part>id_370_1</Part>
+				</Cavities>
+				<Cavities id="id_370_14">
+					<Part>id_370_2</Part>
+				</Cavities>
+				<Cavities id="id_370_15">
+					<Part>id_370_3</Part>
+				</Cavities>
+				<Cavities id="id_370_16">
+					<Part>id_370_4</Part>
+				</Cavities>
+				<Cavities id="id_370_17">
+					<Part>id_370_5</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_3">
+			<Id>XB.V454.1</Id>
+			<Alias_id id="id_368_6">
+				<Alias_id>XB.V454.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_7">
+				<Alias_id>ST_KLIMA_1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Klimakompressor</Description>
+			<Placement id="Placement_4">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_4</Cartesian_point>
+			</Placement>
+			<Part>id_315_2</Part>
+			<Contact_points id="id_372_8">
+				<Id>XB.V454.1-1#3_5_XG.SR1.1_1A_1</Id>
+				<Associated_parts>id_344_2</Associated_parts>
+				<Contacted_cavity>id_370_25</Contacted_cavity>
+			</Contact_points>
+			<Contact_points id="id_372_14">
+				<Id>XB.V454.1-2#9_3_W8_1_3</Id>
+				<Associated_parts>id_344_3</Associated_parts>
+				<Contacted_cavity>id_370_26</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_12">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>V454.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_13">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Klimakompressor</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_14">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['7P0_820_803_B','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_6">
+				<Part>id_341_5</Part>
+				<Cavities id="id_370_25">
+					<Part>id_370_20</Part>
+				</Cavities>
+				<Cavities id="id_370_26">
+					<Part>id_370_21</Part>
+				</Cavities>
+				<Cavities id="id_370_27">
+					<Part>id_370_22</Part>
+				</Cavities>
+				<Cavities id="id_370_28">
+					<Part>id_370_23</Part>
+				</Cavities>
+				<Cavities id="id_370_29">
+					<Part>id_370_24</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_4">
+			<Id>XA.V86.1</Id>
+			<Alias_id id="id_368_8">
+				<Alias_id>XA.V86.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_9">
+				<Alias_id>ST_SCHDACH_1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Motor für Faltschiebedach</Description>
+			<Placement id="Placement_5">
+				<U>-0.001275</U>
+				<U>0.000000</U>
+				<U>-0.999999</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_5</Cartesian_point>
+			</Placement>
+			<Part>id_315_3</Part>
+			<Contact_points id="id_372_10">
+				<Id>XA.V86.1-2#4_3_W8_1_1</Id>
+				<Associated_parts>id_344_4</Associated_parts>
+				<Contacted_cavity>id_370_35</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_15">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>V86.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_16">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Motor für Faltschiebedach</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_17">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['3B0_959_761_AJ','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_8">
+				<Part>id_341_7</Part>
+				<Cavities id="id_370_34">
+					<Part>id_370_30</Part>
+				</Cavities>
+				<Cavities id="id_370_35">
+					<Part>id_370_31</Part>
+				</Cavities>
+				<Cavities id="id_370_36">
+					<Part>id_370_32</Part>
+				</Cavities>
+				<Cavities id="id_370_37">
+					<Part>id_370_33</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_6">
+			<Id>XA.Z1.1</Id>
+			<Alias_id id="id_368_11">
+				<Alias_id>XA.Z1.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_12">
+				<Alias_id>ST_BEHECK_1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>beheizbare Heckscheibe</Description>
+			<Placement id="Placement_6">
+				<U>-0.052653</U>
+				<U>0.000000</U>
+				<U>-0.998613</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_6</Cartesian_point>
+			</Placement>
+			<Part>id_315_5</Part>
+			<Contact_points id="id_372_11">
+				<Id>XA.Z1.1-1#5_2_XF.SR1.1_1A_1</Id>
+				<Associated_parts>id_344_5</Associated_parts>
+				<Contacted_cavity>id_370_41</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_24">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>Z1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_25">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>beheizbare Heckscheibe</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_26">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['5M0_845_051','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_12">
+				<Part>id_341_11</Part>
+				<Cavities id="id_370_41">
+					<Part>id_370_40</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_12">
+			<Id>XA.A.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_9</Part>
+			<Contact_points id="id_372_4">
+				<Id>XA.A.1-1#100_4_XA.SR1.1_1_1</Id>
+				<Associated_parts>id_342_4</Associated_parts>
+				<Contacted_cavity>id_370_63</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_48">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>A.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_49">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Batterie</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_50">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['1J0_915_105_C','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_22">
+				<Part>id_341_21</Part>
+				<Cavities id="id_370_63">
+					<Part>id_370_62</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_11">
+			<Id>XA.SR1.1</Id>
+			<Alias_id id="id_368_20">
+				<Alias_id>XA.SR1.1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_21">
+				<Alias_id>ST_SIDO_1</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Relais- und Sicherungsträger 1</Description>
+			<Placement id="Placement_8">
+				<U>0.160951</U>
+				<U>0.000000</U>
+				<U>0.986962</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_8</Cartesian_point>
+			</Placement>
+			<Part>id_315_5</Part>
+			<Contact_points id="id_372_15">
+				<Id>XA.SR1.1-1#100_4_XA.SR1.1_1_1</Id>
+				<Associated_parts>id_344_9</Associated_parts>
+				<Contacted_cavity>id_370_61</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_45">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_46">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_47">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_20">
+				<Part>id_341_11</Part>
+				<Cavities id="id_370_61">
+					<Part>id_370_40</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_9">
+			<Id>XD.SR1.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_7</Part>
+			<Contact_points id="id_372_3">
+				<Id>XD.SR1.1-1A#8_6_XD.SR1.1_1A_1</Id>
+				<Associated_parts>id_342_3</Associated_parts>
+				<Contacted_cavity>id_370_56</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_36">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_37">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_38">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_17">
+				<Part>id_341_16</Part>
+				<Cavities id="id_370_56">
+					<Part>id_370_55</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_5">
+			<Id>XF.SR1.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_4</Part>
+			<Contact_points id="id_372_1">
+				<Id>XF.SR1.1-1A#5_2_XF.SR1.1_1A_1</Id>
+				<Associated_parts>id_342_1</Associated_parts>
+				<Contacted_cavity>id_370_39</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_18">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_19">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_20">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_10">
+				<Part>id_341_9</Part>
+				<Cavities id="id_370_39">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_2">
+			<Id>XG.SR1.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_1</Part>
+			<Contact_points id="id_372_0">
+				<Id>XG.SR1.1-1A#3_5_XG.SR1.1_1A_1</Id>
+				<Associated_parts>id_342_0</Associated_parts>
+				<Contacted_cavity>id_370_19</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_6">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_7">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_8">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_4">
+				<Part>id_341_3</Part>
+				<Cavities id="id_370_19">
+					<Part>id_370_18</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_8">
+			<Id>XH.SR1.1</Id>
+			<Usage>ring terminal</Usage>
+			<Part>id_315_4</Part>
+			<Contact_points id="id_372_2">
+				<Id>XH.SR1.1-1A#7_3_W8_1_2</Id>
+				<Associated_parts>id_342_2</Associated_parts>
+				<Contacted_cavity>id_370_54</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_30">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_31">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_32">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_15">
+				<Part>id_341_9</Part>
+				<Cavities id="id_370_54">
+					<Part>id_370_38</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_13">
+			<Id>D50</Id>
+			<Alias_id id="id_368_23">
+				<Alias_id>D50</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_24">
+				<Alias_id>SI_SP</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Plusverbindung (30) im Leitungsstrang Motorraum</Description>
+			<Usage>splice</Usage>
+			<Placement id="Placement_14">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_14</Cartesian_point>
+			</Placement>
+			<Part>id_315_10</Part>
+			<Contact_points id="id_372_6">
+				<Id>D50-1#1_1_XA.L2.1_6_1#2_1_D50_1_1#6_1_XJ.SR1.1_4A_1</Id>
+				<Contacted_cavity>id_370_65</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_59">
+				<Instruction_type>ECPSPLICE_type</Instruction_type>
+				<Instruction_value>unspec_ECPSPLICE</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_60">
+				<Instruction_type>seal_state</Instruction_type>
+				<Instruction_value>unsealed</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_24">
+				<Part>id_341_23</Part>
+				<Cavities id="id_370_65">
+					<Part>id_370_64</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<Connector_occurrence id="id_316_14">
+			<Id>W8</Id>
+			<Alias_id id="id_368_25">
+				<Alias_id>W8</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>UL_ID</Description>
+			</Alias_id>
+			<Alias_id id="id_368_26">
+				<Alias_id>SP_SI_X</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Verbindung (15a) im Leitungsstrang hinten</Description>
+			<Usage>splice</Usage>
+			<Placement id="Placement_15">
+				<U>1.000000</U>
+				<U>0.000000</U>
+				<U>0.000000</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_15</Cartesian_point>
+			</Placement>
+			<Part>id_315_10</Part>
+			<Contact_points id="id_372_9">
+				<Id>W8-1#4_3_W8_1_1#7_3_W8_1_2#9_3_W8_1_3</Id>
+				<Contacted_cavity>id_370_66</Contacted_cavity>
+			</Contact_points>
+			<Installation_information id="id_379_57">
+				<Instruction_type>ECPSPLICE_type</Instruction_type>
+				<Instruction_value>unspec_ECPSPLICE</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_58">
+				<Instruction_type>seal_state</Instruction_type>
+				<Instruction_value>unsealed</Instruction_value>
+			</Installation_information>
+			<Slots id="id_341_25">
+				<Part>id_341_23</Part>
+				<Cavities id="id_370_66">
+					<Part>id_370_64</Part>
+				</Cavities>
+			</Slots>
+		</Connector_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_0">
+			<Part>id_327_0</Part>
+			<Length_information id="id_388_0">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_0">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>325.29</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>1</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_1">
+			<Part>id_327_1</Part>
+			<Length_information id="id_388_1">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_1">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>338.74</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>2</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_2">
+			<Part>id_327_2</Part>
+			<Installation_information id="id_379_65">
+				<Instruction_type>Ambient_temperature</Instruction_type>
+				<Instruction_value>70</Instruction_value>
+			</Installation_information>
+			<Length_information id="id_388_2">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_2">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1030.89</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>3</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_3">
+			<Part>id_327_3</Part>
+			<Installation_information id="id_379_66">
+				<Instruction_type>Ambient_temperature</Instruction_type>
+				<Instruction_value>70</Instruction_value>
+			</Installation_information>
+			<Length_information id="id_388_3">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_3">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>316.62</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>4</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_4">
+			<Part>id_327_3</Part>
+			<Installation_information id="id_379_64">
+				<Instruction_type>Ambient_temperature</Instruction_type>
+				<Instruction_value>70</Instruction_value>
+			</Installation_information>
+			<Length_information id="id_388_4">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_4">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1209.79</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>5</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_5">
+			<Part>id_327_4</Part>
+			<Length_information id="id_388_5">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_5">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1031.33</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>6</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_6">
+			<Part>id_327_3</Part>
+			<Installation_information id="id_379_67">
+				<Instruction_type>Ambient_temperature</Instruction_type>
+				<Instruction_value>70</Instruction_value>
+			</Installation_information>
+			<Length_information id="id_388_6">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_6">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>973.12</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>7</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_7">
+			<Part>id_327_5</Part>
+			<Installation_information id="id_379_63">
+				<Instruction_type>Ambient_temperature</Instruction_type>
+				<Instruction_value>70</Instruction_value>
+			</Installation_information>
+			<Length_information id="id_388_7">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_7">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1143.21</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>8</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_8">
+			<Part>id_327_6</Part>
+			<Installation_information id="id_379_68">
+				<Instruction_type>Ambient_temperature</Instruction_type>
+				<Instruction_value>70</Instruction_value>
+			</Installation_information>
+			<Length_information id="id_388_8">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_8">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>292.98</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>9</Wire_number>
+		</General_wire_occurrence>
+		<General_wire_occurrence xsi:type="kbl:Wire_occurrence" id="id_350_9">
+			<Part>id_327_7</Part>
+			<Length_information id="id_388_9">
+				<Length_type>DMU</Length_type>
+				<Length_value id="id_387_9">
+					<Unit_component>id_346_1</Unit_component>
+					<Value_component>1206.89</Value_component>
+				</Length_value>
+			</Length_information>
+			<Wire_number>100</Wire_number>
+		</General_wire_occurrence>
+		<Special_terminal_occurrence id="id_342_0">
+			<Id>XG.SR1.1</Id>
+			<Alias_id id="id_368_5">
+				<Alias_id>ST_SIDO_5</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Relais- und Sicherungsträger 1</Description>
+			<Placement id="Placement_11">
+				<U>0.071925</U>
+				<U>0.997410</U>
+				<U>0.000000</U>
+				<V>-0.997410</V>
+				<V>0.071925</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_11</Cartesian_point>
+			</Placement>
+			<Part>id_326_2</Part>
+			<Installation_information id="id_379_9">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_10">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_11">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+		</Special_terminal_occurrence>
+		<Special_terminal_occurrence id="id_342_1">
+			<Id>XF.SR1.1</Id>
+			<Alias_id id="id_368_10">
+				<Alias_id>ST_SIDO_2</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Relais- und Sicherungsträger 1</Description>
+			<Placement id="Placement_10">
+				<U>-0.060090</U>
+				<U>0.998193</U>
+				<U>0.000000</U>
+				<V>-0.998193</V>
+				<V>-0.060090</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_10</Cartesian_point>
+			</Placement>
+			<Part>id_326_6</Part>
+			<Installation_information id="id_379_21">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_22">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_23">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+		</Special_terminal_occurrence>
+		<Special_terminal_occurrence id="id_342_2">
+			<Id>XH.SR1.1</Id>
+			<Alias_id id="id_368_15">
+				<Alias_id>ST_SIDO_3</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Relais- und Sicherungsträger 1</Description>
+			<Placement id="Placement_13">
+				<U>-0.240040</U>
+				<U>0.970763</U>
+				<U>-0.000940</U>
+				<V>-0.970755</V>
+				<V>-0.240042</V>
+				<V>-0.003802</V>
+				<Cartesian_point>Cartesian_point_13</Cartesian_point>
+			</Placement>
+			<Part>id_326_6</Part>
+			<Installation_information id="id_379_33">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_34">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_35">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+		</Special_terminal_occurrence>
+		<Special_terminal_occurrence id="id_342_3">
+			<Id>XD.SR1.1</Id>
+			<Alias_id id="id_368_16">
+				<Alias_id>ST_SIDO_6</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Relais- und Sicherungsträger 1</Description>
+			<Placement id="Placement_9">
+				<U>0.157528</U>
+				<U>0.000000</U>
+				<U>0.987515</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>-0.000000</V>
+				<Cartesian_point>Cartesian_point_9</Cartesian_point>
+			</Placement>
+			<Part>id_326_9</Part>
+			<Installation_information id="id_379_39">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>SR1.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_40">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Relais- und Sicherungsträger 1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_41">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['FBX001546','']</Instruction_value>
+			</Installation_information>
+		</Special_terminal_occurrence>
+		<Special_terminal_occurrence id="id_342_4">
+			<Id>XA.A.1</Id>
+			<Alias_id id="id_368_22">
+				<Alias_id>ST_BATT</Alias_id>
+				<Scope>VOBES</Scope>
+				<Description>Alias-Ref</Description>
+			</Alias_id>
+			<Description>Batterie</Description>
+			<Placement id="Placement_7">
+				<U>-0.112643</U>
+				<U>0.000000</U>
+				<U>0.993636</U>
+				<V>0.000000</V>
+				<V>1.000000</V>
+				<V>0.000000</V>
+				<Cartesian_point>Cartesian_point_7</Cartesian_point>
+			</Placement>
+			<Part>id_326_11</Part>
+			<Installation_information id="id_379_51">
+				<Instruction_type>eqt_reference_id</Instruction_type>
+				<Instruction_value>A.1</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_52">
+				<Instruction_type>ADD_ON_TEXT_EQT</Instruction_type>
+				<Instruction_value>Batterie</Instruction_value>
+			</Installation_information>
+			<Installation_information id="id_379_53">
+				<Instruction_type>eqt_validity</Instruction_type>
+				<Instruction_value>['CMP001105C','']</Instruction_value>
+			</Installation_information>
+		</Special_terminal_occurrence>
+		<Terminal_occurrence id="id_344_0">
+			<Part>id_326_0</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_1">
+			<Part>id_326_1</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_2">
+			<Part>id_326_3</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_3">
+			<Part>id_326_4</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_4">
+			<Part>id_326_5</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_5">
+			<Part>id_326_7</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_6">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_7">
+			<Part>id_326_8</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_8">
+			<Part>id_326_10</Part>
+		</Terminal_occurrence>
+		<Terminal_occurrence id="id_344_9">
+			<Part>id_326_7</Part>
+		</Terminal_occurrence>
+		<Module id="id_331_0">
+			<Part_number>MDL123456</Part_number>
+			<Company_name>MaybeAnyCompany</Company_name>
+			<Version>1</Version>
+			<Abbreviation>/NULL</Abbreviation>
+			<Description>Modul</Description>
+			<Mass_information id="id_380_0">
+				<Unit_component>id_346_2</Unit_component>
+				<Value_component>250</Value_component>
+			</Mass_information>
+			<Car_classification_level_2>/NULL</Car_classification_level_2>
+			<Model_year>/NULL</Model_year>
+			<Content>module</Content>
+			<Of_family>id_332_0</Of_family>
+			<Module_configuration id="id_353_0">
+				<Logistic_control_information>L0L+ALL</Logistic_control_information>
+				<Configuration_type>option code</Configuration_type>
+				<Controlled_components>id_312_0 id_312_1 id_312_2 id_314_0 id_314_1 id_314_2 id_314_3 id_314_4 id_314_5 id_314_6 id_314_7 id_314_8 id_314_9 id_316_1 id_316_10 id_316_11 id_316_3 id_316_4 id_316_6 id_417_0 id_342_0 id_342_1 id_342_2 id_342_3 id_342_4 id_344_1 id_344_2 id_344_3 id_344_4 id_344_5 id_344_6 id_344_7 id_344_8 id_344_9 id_350_1 id_350_2 id_350_3 id_350_4 id_350_5 id_350_6 id_350_7 id_350_8 id_350_9</Controlled_components>
+			</Module_configuration>
+		</Module>
+		<Module_families id="id_332_0">
+			<Id>000</Id>
+			<Description>LEITUNGSSTRANG</Description>
+		</Module_families>
+	</Harness>
+	<Node id="Node_1">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1 ST_SBBR_1</Id>
+		<Cartesian_point>Cartesian_point_170</Cartesian_point>
+		<Referenced_components>id_316_0</Referenced_components>
+	</Node>
+	<Node id="Node_2">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.2 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.4 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.3/Flexible Curve.3/ElecBundleSegmentExtremity.5</Id>
+		<Cartesian_point>Cartesian_point_171</Cartesian_point>
+	</Node>
+	<Node id="Node_3">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.3 ST_SBBR_2</Id>
+		<Cartesian_point>Cartesian_point_172</Cartesian_point>
+		<Referenced_components>id_316_1</Referenced_components>
+	</Node>
+	<Node id="Node_4">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.3/Flexible Curve.3/ElecBundleSegmentExtremity.6 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.4/Flexible Curve.4/ElecBundleSegmentExtremity.7 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.5/Flexible Curve.5/ElecBundleSegmentExtremity.9</Id>
+		<Cartesian_point>Cartesian_point_173</Cartesian_point>
+	</Node>
+	<Node id="Node_5">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.4/Flexible Curve.4/ElecBundleSegmentExtremity.8 SI_SP</Id>
+		<Cartesian_point>Cartesian_point_174</Cartesian_point>
+		<Referenced_components>id_316_13</Referenced_components>
+	</Node>
+	<Node id="Node_6">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.5/Flexible Curve.5/ElecBundleSegmentExtremity.10 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable3/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.2 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1</Id>
+		<Cartesian_point>Cartesian_point_175</Cartesian_point>
+	</Node>
+	<Node id="Node_7">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1 ST_KLIMA_1</Id>
+		<Cartesian_point>Cartesian_point_176</Cartesian_point>
+		<Referenced_components>id_316_3</Referenced_components>
+	</Node>
+	<Node id="Node_8">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.2 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.4 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.3/Flexible Curve.3/ElecBundleSegmentExtremity.5</Id>
+		<Cartesian_point>Cartesian_point_177</Cartesian_point>
+	</Node>
+	<Node id="Node_9">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.3 ST_SCHDACH_1</Id>
+		<Cartesian_point>Cartesian_point_178</Cartesian_point>
+		<Referenced_components>id_316_4</Referenced_components>
+	</Node>
+	<Node id="Node_10">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.3/Flexible Curve.3/ElecBundleSegmentExtremity.6 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.4/Flexible Curve.4/ElecBundleSegmentExtremity.7 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.5/Flexible Curve.5/ElecBundleSegmentExtremity.9</Id>
+		<Cartesian_point>Cartesian_point_179</Cartesian_point>
+	</Node>
+	<Node id="Node_11">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.4/Flexible Curve.4/ElecBundleSegmentExtremity.8 SP_SI_X</Id>
+		<Cartesian_point>Cartesian_point_180</Cartesian_point>
+		<Referenced_components>id_316_14</Referenced_components>
+	</Node>
+	<Node id="Node_12">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.5/Flexible Curve.5/ElecBundleSegmentExtremity.10 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable4/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.2 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable4/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.4 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.3</Id>
+		<Cartesian_point>Cartesian_point_181</Cartesian_point>
+	</Node>
+	<Node id="Node_13">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable3/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1 ST_PUMPE</Id>
+		<Cartesian_point>Cartesian_point_182</Cartesian_point>
+		<Referenced_components>id_316_10</Referenced_components>
+	</Node>
+	<Node id="Node_14">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable4/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1 ST_BEHECK_1</Id>
+		<Cartesian_point>Cartesian_point_183</Cartesian_point>
+		<Referenced_components>id_316_6</Referenced_components>
+	</Node>
+	<Node id="Node_15">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable4/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.3 ST_BATT</Id>
+		<Cartesian_point>Cartesian_point_184</Cartesian_point>
+		<Referenced_components>id_342_4</Referenced_components>
+	</Node>
+	<Node id="Node_16">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.2 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.2/Flexible Curve.2/ElecBundleSegmentExtremity.4 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.3/Flexible Curve.3/ElecBundleSegmentExtremity.5</Id>
+		<Cartesian_point>Cartesian_point_185</Cartesian_point>
+	</Node>
+	<Node id="Node_17">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.3/Flexible Curve.3/ElecBundleSegmentExtremity.6 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.4/Flexible Curve.4/ElecBundleSegmentExtremity.7 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.5/Flexible Curve.5/ElecBundleSegmentExtremity.9 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.6/Flexible Curve.6/ElecBundleSegmentExtremity.11 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.7/Flexible Curve.7/ElecBundleSegmentExtremity.13 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.8/Flexible Curve.8/ElecBundleSegmentExtremity.15 ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.9/Flexible Curve.9/ElecBundleSegmentExtremity.17</Id>
+		<Cartesian_point>Cartesian_point_186</Cartesian_point>
+	</Node>
+	<Node id="Node_18">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.4/Flexible Curve.4/ElecBundleSegmentExtremity.8 ST_SIDO_4</Id>
+		<Cartesian_point>Cartesian_point_187</Cartesian_point>
+		<Referenced_components>id_417_0</Referenced_components>
+	</Node>
+	<Node id="Node_19">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.5/Flexible Curve.5/ElecBundleSegmentExtremity.10 ST_SIDO_1</Id>
+		<Cartesian_point>Cartesian_point_188</Cartesian_point>
+		<Referenced_components>id_316_11</Referenced_components>
+	</Node>
+	<Node id="Node_20">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.6/Flexible Curve.6/ElecBundleSegmentExtremity.12 ST_SIDO_5</Id>
+		<Cartesian_point>Cartesian_point_189</Cartesian_point>
+		<Referenced_components>id_342_0</Referenced_components>
+	</Node>
+	<Node id="Node_21">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.7/Flexible Curve.7/ElecBundleSegmentExtremity.14 ST_SIDO_6</Id>
+		<Cartesian_point>Cartesian_point_190</Cartesian_point>
+		<Referenced_components>id_342_3</Referenced_components>
+	</Node>
+	<Node id="Node_22">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.8/Flexible Curve.8/ElecBundleSegmentExtremity.16 ST_SIDO_2</Id>
+		<Cartesian_point>Cartesian_point_191</Cartesian_point>
+		<Referenced_components>id_342_1</Referenced_components>
+	</Node>
+	<Node id="Node_23">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.9/Flexible Curve.9/ElecBundleSegmentExtremity.18 ST_SIDO_3</Id>
+		<Cartesian_point>Cartesian_point_192</Cartesian_point>
+		<Referenced_components>id_342_2</Referenced_components>
+	</Node>
+	<Routing id="id_338_0">
+		<Routed_wire>id_314_0</Routed_wire>
+		<Segments>Segment_1 Segment_3 Segment_4</Segments>
+	</Routing>
+	<Routing id="id_338_1">
+		<Routed_wire>id_314_1</Routed_wire>
+		<Segments>Segment_4 Segment_3 Segment_2</Segments>
+	</Routing>
+	<Routing id="id_338_2">
+		<Routed_wire>id_314_2</Routed_wire>
+		<Segments>Segment_19 Segment_16 Segment_15 Segment_10 Segment_8 Segment_6</Segments>
+	</Routing>
+	<Routing id="id_338_3">
+		<Routed_wire>id_314_3</Routed_wire>
+		<Segments>Segment_9 Segment_8 Segment_7</Segments>
+	</Routing>
+	<Routing id="id_338_4">
+		<Routed_wire>id_314_4</Routed_wire>
+		<Segments>Segment_21 Segment_16 Segment_15 Segment_12</Segments>
+	</Routing>
+	<Routing id="id_338_5">
+		<Routed_wire>id_314_5</Routed_wire>
+		<Segments>Segment_17 Segment_16 Segment_14 Segment_5 Segment_4</Segments>
+	</Routing>
+	<Routing id="id_338_6">
+		<Routed_wire>id_314_6</Routed_wire>
+		<Segments>Segment_9 Segment_10 Segment_15 Segment_16 Segment_22</Segments>
+	</Routing>
+	<Routing id="id_338_7">
+		<Routed_wire>id_314_7</Routed_wire>
+		<Segments>Segment_20 Segment_16 Segment_14 Segment_11</Segments>
+	</Routing>
+	<Routing id="id_338_8">
+		<Routed_wire>id_314_8</Routed_wire>
+		<Segments>Segment_9 Segment_8 Segment_6</Segments>
+	</Routing>
+	<Routing id="id_338_9">
+		<Routed_wire>id_314_9</Routed_wire>
+		<Segments>Segment_18 Segment_16 Segment_15 Segment_13</Segments>
+	</Routing>
+	<Segment id="Segment_1">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>0.989368</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>-0.145435</Start_vector>
+		<End_vector>0.948591</End_vector>
+		<End_vector>0.311267</End_vector>
+		<End_vector>-0.057346</End_vector>
+		<Virtual_length id="Virtual_length_1">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>188.788275</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_2</End_node>
+		<Start_node>Node_1</Start_node>
+		<Center_curve id="Center_curve_1">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_16 Cartesian_point_17 Cartesian_point_18 Cartesian_point_19 Cartesian_point_20 Cartesian_point_21 Cartesian_point_22</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_1">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_1">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_2">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>0.999977</Start_vector>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>-0.006853</Start_vector>
+		<End_vector>0.912245</End_vector>
+		<End_vector>-0.394261</End_vector>
+		<End_vector>-0.111209</End_vector>
+		<Virtual_length id="Virtual_length_2">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>202.235831</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_2</End_node>
+		<Start_node>Node_3</Start_node>
+		<Center_curve id="Center_curve_2">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_23 Cartesian_point_24 Cartesian_point_25 Cartesian_point_26 Cartesian_point_27 Cartesian_point_28 Cartesian_point_29</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_2">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_2">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_3">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.3/Flexible Curve.3</Id>
+		<Start_vector>0.990042</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>-0.140773</Start_vector>
+		<End_vector>0.990042</End_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>0.140773</End_vector>
+		<Virtual_length id="Virtual_length_3">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>100.500000</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_4</End_node>
+		<Start_node>Node_2</Start_node>
+		<Center_curve id="Center_curve_3">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_30 Cartesian_point_31 Cartesian_point_32 Cartesian_point_33 Cartesian_point_34 Cartesian_point_35 Cartesian_point_36</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_3">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_3">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_4">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.4/Flexible Curve.4</Id>
+		<Start_vector>0.990042</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>0.140773</Start_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>-1.000000</End_vector>
+		<End_vector>0.000000</End_vector>
+		<Virtual_length id="Virtual_length_4">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>36.016251</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_5</End_node>
+		<Start_node>Node_4</Start_node>
+		<Center_curve id="Center_curve_4">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_37 Cartesian_point_38 Cartesian_point_39 Cartesian_point_40 Cartesian_point_41 Cartesian_point_42 Cartesian_point_43</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_4">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_4">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_5">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.5/Flexible Curve.5</Id>
+		<Start_vector>0.990042</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>0.140773</Start_vector>
+		<End_vector>0.990164</End_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>-0.139909</End_vector>
+		<Virtual_length id="Virtual_length_5">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>201.001417</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_6</End_node>
+		<Start_node>Node_4</Start_node>
+		<Center_curve id="Center_curve_5">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_44 Cartesian_point_45 Cartesian_point_46 Cartesian_point_47 Cartesian_point_48 Cartesian_point_49 Cartesian_point_50</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_5">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_5">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_6">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>1.000000</Start_vector>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>-0.000000</Start_vector>
+		<End_vector>0.896632</End_vector>
+		<End_vector>0.333580</End_vector>
+		<End_vector>-0.291163</End_vector>
+		<Virtual_length id="Virtual_length_6">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>163.057516</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_8</End_node>
+		<Start_node>Node_7</Start_node>
+		<Center_curve id="Center_curve_6">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_51 Cartesian_point_52 Cartesian_point_53 Cartesian_point_54 Cartesian_point_55 Cartesian_point_56 Cartesian_point_57</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_6">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_6">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_7">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>0.999999</Start_vector>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>-0.001275</Start_vector>
+		<End_vector>0.920888</End_vector>
+		<End_vector>-0.364509</End_vector>
+		<End_vector>-0.138201</End_vector>
+		<Virtual_length id="Virtual_length_7">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>186.696448</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_8</End_node>
+		<Start_node>Node_9</Start_node>
+		<Center_curve id="Center_curve_7">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_58 Cartesian_point_59 Cartesian_point_60 Cartesian_point_61 Cartesian_point_62 Cartesian_point_63 Cartesian_point_64</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_7">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_7">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_8">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.3/Flexible Curve.3</Id>
+		<Start_vector>0.920888</Start_vector>
+		<Start_vector>-0.364509</Start_vector>
+		<Start_vector>-0.138201</Start_vector>
+		<End_vector>0.997503</End_vector>
+		<End_vector>0.066030</End_vector>
+		<End_vector>0.025035</End_vector>
+		<Virtual_length id="Virtual_length_8">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>100.587790</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_10</End_node>
+		<Start_node>Node_8</Start_node>
+		<Center_curve id="Center_curve_8">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_65 Cartesian_point_66 Cartesian_point_67 Cartesian_point_68 Cartesian_point_69 Cartesian_point_70 Cartesian_point_71</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_8">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_8">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_9">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.4/Flexible Curve.4</Id>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>-0.977245</Start_vector>
+		<Start_vector>-0.212114</Start_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>-1.000000</End_vector>
+		<End_vector>-0.000000</End_vector>
+		<Virtual_length id="Virtual_length_9">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>29.350609</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_11</End_node>
+		<Start_node>Node_10</Start_node>
+		<Center_curve id="Center_curve_9">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_72 Cartesian_point_73 Cartesian_point_74 Cartesian_point_75 Cartesian_point_76 Cartesian_point_77 Cartesian_point_78</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_9">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_9">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_10">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable2/ElecRouteBody.5/Flexible Curve.5</Id>
+		<Start_vector>0.997503</Start_vector>
+		<Start_vector>0.066030</Start_vector>
+		<Start_vector>0.025035</Start_vector>
+		<End_vector>0.986992</End_vector>
+		<End_vector>-0.150331</End_vector>
+		<End_vector>-0.056983</End_vector>
+		<Virtual_length id="Virtual_length_10">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>201.000175</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_12</End_node>
+		<Start_node>Node_10</Start_node>
+		<Center_curve id="Center_curve_10">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_79 Cartesian_point_80 Cartesian_point_81 Cartesian_point_82 Cartesian_point_83 Cartesian_point_84 Cartesian_point_85</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_10">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_10">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_11">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable3/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>0.999991</Start_vector>
+		<Start_vector>-0.000000</Start_vector>
+		<Start_vector>-0.004265</Start_vector>
+		<End_vector>0.926185</End_vector>
+		<End_vector>-0.377068</End_vector>
+		<End_vector>0.000924</End_vector>
+		<Virtual_length id="Virtual_length_11">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>521.982907</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_6</End_node>
+		<Start_node>Node_13</Start_node>
+		<Center_curve id="Center_curve_11">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_86 Cartesian_point_87 Cartesian_point_88 Cartesian_point_89 Cartesian_point_90 Cartesian_point_91 Cartesian_point_92</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_11">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_11">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_12">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable4/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>0.998613</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>-0.052653</Start_vector>
+		<End_vector>0.929247</End_vector>
+		<End_vector>-0.369214</End_vector>
+		<End_vector>0.013447</End_vector>
+		<Virtual_length id="Virtual_length_12">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>524.722074</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_12</End_node>
+		<Start_node>Node_14</Start_node>
+		<Center_curve id="Center_curve_12">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_93 Cartesian_point_94 Cartesian_point_95 Cartesian_point_96 Cartesian_point_97 Cartesian_point_98 Cartesian_point_99</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_12">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_12">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_13">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable4/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>0.993636</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>0.112643</Start_vector>
+		<End_vector>0.890985</End_vector>
+		<End_vector>-0.453905</End_vector>
+		<End_vector>0.010780</End_vector>
+		<Virtual_length id="Virtual_length_13">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>589.552182</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_12</End_node>
+		<Start_node>Node_15</Start_node>
+		<Center_curve id="Center_curve_13">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_100 Cartesian_point_101 Cartesian_point_102 Cartesian_point_103 Cartesian_point_104 Cartesian_point_105 Cartesian_point_106</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_13">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_13">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_14">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.1/Flexible Curve.1</Id>
+		<Start_vector>0.990164</Start_vector>
+		<Start_vector>0.000000</Start_vector>
+		<Start_vector>-0.139909</Start_vector>
+		<End_vector>0.769736</End_vector>
+		<End_vector>0.638259</End_vector>
+		<End_vector>0.011485</End_vector>
+		<Virtual_length id="Virtual_length_14">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>251.630657</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_16</End_node>
+		<Start_node>Node_6</Start_node>
+		<Center_curve id="Center_curve_14">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_107 Cartesian_point_108 Cartesian_point_109 Cartesian_point_110 Cartesian_point_111 Cartesian_point_112 Cartesian_point_113</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_14">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_14">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_15">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.2/Flexible Curve.2</Id>
+		<Start_vector>0.890985</Start_vector>
+		<Start_vector>-0.453905</Start_vector>
+		<Start_vector>0.010780</Start_vector>
+		<End_vector>0.713479</End_vector>
+		<End_vector>-0.700627</End_vector>
+		<End_vector>-0.008316</End_vector>
+		<Virtual_length id="Virtual_length_15">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>251.301932</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_16</End_node>
+		<Start_node>Node_12</Start_node>
+		<Center_curve id="Center_curve_15">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_114 Cartesian_point_115 Cartesian_point_116 Cartesian_point_117 Cartesian_point_118 Cartesian_point_119 Cartesian_point_120</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_15">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_15">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_16">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.3/Flexible Curve.3</Id>
+		<Start_vector>0.713479</Start_vector>
+		<Start_vector>-0.700627</Start_vector>
+		<Start_vector>-0.008316</Start_vector>
+		<End_vector>0.997571</End_vector>
+		<End_vector>0.069656</End_vector>
+		<End_vector>0.000827</End_vector>
+		<Virtual_length id="Virtual_length_16">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>101.114610</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_17</End_node>
+		<Start_node>Node_16</Start_node>
+		<Center_curve id="Center_curve_16">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_121 Cartesian_point_122 Cartesian_point_123 Cartesian_point_124 Cartesian_point_125 Cartesian_point_126 Cartesian_point_127</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_16">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_16">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_17">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.4/Flexible Curve.4</Id>
+		<Start_vector>0.903943</Start_vector>
+		<Start_vector>-0.233188</Start_vector>
+		<Start_vector>-0.358484</Start_vector>
+		<End_vector>0.991744</End_vector>
+		<End_vector>-0.000003</End_vector>
+		<End_vector>-0.128237</End_vector>
+		<Virtual_length id="Virtual_length_17">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>441.582478</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_18</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_17">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_128 Cartesian_point_129 Cartesian_point_130 Cartesian_point_131 Cartesian_point_132 Cartesian_point_133 Cartesian_point_134</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_17">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_17">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_18">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.5/Flexible Curve.5</Id>
+		<Start_vector>0.903943</Start_vector>
+		<Start_vector>-0.233188</Start_vector>
+		<Start_vector>-0.358484</Start_vector>
+		<End_vector>0.986962</End_vector>
+		<End_vector>-0.000000</End_vector>
+		<End_vector>-0.160951</End_vector>
+		<Virtual_length id="Virtual_length_18">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>264.930770</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_19</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_18">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_135 Cartesian_point_136 Cartesian_point_137 Cartesian_point_138 Cartesian_point_139 Cartesian_point_140 Cartesian_point_141</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_18">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_18">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_19">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.6/Flexible Curve.6</Id>
+		<Start_vector>0.865801</Start_vector>
+		<Start_vector>0.144253</Start_vector>
+		<Start_vector>-0.479144</Start_vector>
+		<End_vector>0.997410</End_vector>
+		<End_vector>-0.071925</End_vector>
+		<End_vector>-0.000000</End_vector>
+		<Virtual_length id="Virtual_length_19">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>213.851609</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_20</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_19">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_142 Cartesian_point_143 Cartesian_point_144 Cartesian_point_145 Cartesian_point_146 Cartesian_point_147 Cartesian_point_148</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_19">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_19">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_20">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.7/Flexible Curve.7</Id>
+		<Start_vector>0.645713</Start_vector>
+		<Start_vector>0.668964</Start_vector>
+		<Start_vector>-0.368160</Start_vector>
+		<End_vector>0.987515</End_vector>
+		<End_vector>0.000000</End_vector>
+		<End_vector>-0.157528</End_vector>
+		<Virtual_length id="Virtual_length_20">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>268.499445</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_21</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_20">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_149 Cartesian_point_150 Cartesian_point_151 Cartesian_point_152 Cartesian_point_153 Cartesian_point_154 Cartesian_point_155</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_20">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_20">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_21">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.8/Flexible Curve.8</Id>
+		<Start_vector>0.504781</Start_vector>
+		<Start_vector>0.813781</Start_vector>
+		<Start_vector>-0.288022</Start_vector>
+		<End_vector>0.998193</End_vector>
+		<End_vector>0.060090</End_vector>
+		<End_vector>-0.000000</End_vector>
+		<Virtual_length id="Virtual_length_21">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>332.666183</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_22</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_21">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_156 Cartesian_point_157 Cartesian_point_158 Cartesian_point_159 Cartesian_point_160 Cartesian_point_161 Cartesian_point_162</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_21">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_21">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Segment id="Segment_22">
+		<Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable5/ElecRouteBody.9/Flexible Curve.9</Id>
+		<Start_vector>0.427164</Start_vector>
+		<Start_vector>0.869189</Start_vector>
+		<Start_vector>-0.249079</Start_vector>
+		<End_vector>0.970755</End_vector>
+		<End_vector>0.240042</End_vector>
+		<End_vector>0.003802</End_vector>
+		<Virtual_length id="Virtual_length_22">
+			<Unit_component>id_346_1</Unit_component>
+			<Value_component>390.366180</Value_component>
+		</Virtual_length>
+		<Form>circular</Form>
+		<End_node>Node_23</End_node>
+		<Start_node>Node_17</Start_node>
+		<Center_curve id="Center_curve_22">
+			<Degree>6</Degree>
+			<Control_points>Cartesian_point_163 Cartesian_point_164 Cartesian_point_165 Cartesian_point_166 Cartesian_point_167 Cartesian_point_168 Cartesian_point_169</Control_points>
+		</Center_curve>
+		<Cross_section_area_information id="Cross_section_area_22">
+			<Value_determination>reserved</Value_determination>
+			<Area id="Area_22">
+				<Unit_component>id_346_0</Unit_component>
+				<Value_component>7.068583</Value_component>
+			</Area>
+		</Cross_section_area_information>
+	</Segment>
+	<Unit id="id_346_3">
+		<Unit_name>ampere</Unit_name>
+	</Unit>
+	<Unit id="id_346_2">
+		<Si_unit_name>gram</Si_unit_name>
+	</Unit>
+	<Unit id="id_346_1">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+	</Unit>
+	<Unit id="id_346_0">
+		<Si_unit_name>metre</Si_unit_name>
+		<Si_prefix>milli</Si_prefix>
+		<Si_dimension>square</Si_dimension>
+	</Unit>
+</kbl:KBL_container>
