@@ -54,8 +54,8 @@ then you are more then welcome. All you need is a *GitLab.com* account, and that
 - After your first contribution, you can request `Developer` access to the project, which makes the "forking" unnecessary.
 - If you have a contribution (a feature request is also a contribution), but can not provide merge request you can drop us an issue on [GitLab.com](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/-/issues). 
 
-{{% alert note %}}
+{{% alert warning %}}
 This is only valid for features of the Wiki itself and content as specified above. Issues and merge requests concerning the specifications itsself will be closed without further comment.
-{{% alert %}}
+{{% /alert %}}
 
 
