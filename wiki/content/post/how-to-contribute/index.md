@@ -40,22 +40,22 @@ The issue management is done in a JIRA instance provided by prostep ivip. To req
 Since the specifications (KBL & VEC) are subject to a strict issue and publishing process, the following only applies to content beyond that (e.g. Implementation Guidelines & Sample Files).
 {{% /alert %}}
 
-*Every contribution counts!*. You can provide your own contribution to the content of the ECAD-WIKI when:
+*Every contribution counts!* You can provide your own contribution to the content of the ECAD-WIKI when:
 
 - You find errors, typos or other room for improvement in the existing documents,
-- You want to contribute a proposal for an implementation guideline, or
-- You have done a review for one the sample files, and to provide your findings
+- You want to contribute a proposal for an Implementation Guideline, or
+- You have done a review for one of the sample files, and want to provide your findings
 
-then you are more then welcome. All you need is a *GitLab.com* account, and that is what you need to know:
+Then you are more than welcome. All you need is a *GitLab.com* account, and that is what you need to know:
 - The ECAD-WIKI is generated with the static website generator [Hugo](https://gohugo.io/). 
-- All content pages are stricly written in markdown and managed in our GitLab.com project [ECAD-WIKI](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io)
+- All content pages are stricly written in markdown and managed in our GitLab.com project [ECAD-WIKI](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io).
 - All pages have a "Edit this page" link on the left bottom. If you click this link, you are brought to GitLab's markdown online editor for this page.
-- If you are not an active member of the project, you have to fork the project and then create a merge request with your changes. No worries, these are just two clicks in the web interface. More details in the [GitLab.com Documentation](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html)
+- If you are not an active member of the project, you have to fork the project and then create a merge request with your changes. No worries, these are just two clicks in the web interface. More details in the [GitLab.com Documentation](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html).
 - After your first contribution, you can request `Developer` access to the project, which makes the "forking" unnecessary.
-- If you have a contribution (a feature request is also a contribution), but can not provide merge request you can drop us an issue on [GitLab.com](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/-/issues). 
+- If you have a contribution (a feature request is also a contribution), but can not provide a merge request you can drop us an issue on [GitLab.com](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/-/issues). 
 
 {{% alert warning %}}
-This is only valid for features of the Wiki itself and content as specified above. Issues and merge requests concerning the specifications itsself will be closed without further comment.
+This is only valid for features of the Wiki itself and content as specified above. Issues and merge requests concerning the specifications itself will be closed without further comment.
 {{% /alert %}}
 
 
