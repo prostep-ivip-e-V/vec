@@ -36,6 +36,11 @@
   name = "Kabelbaumliste (KBL)"
   url = "specifications/kbl"
   weight = 30
+
+[[main]]
+  name = "Sample Files"
+  url = "sample"
+  weight = 40
   
 [[main]]
   name = "ELOG"
