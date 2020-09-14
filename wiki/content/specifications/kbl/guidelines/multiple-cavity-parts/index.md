@@ -26,8 +26,6 @@ menu:
     #parent: Example Topic
     weight: 5000
 ---
-
-{{< review "KBLFRM-950" >}}
 The {{< kbl-class Contact_point >}} in the KBL allows the referencing of an unspecified number of {{< kbl-class Part_usage_select >}}s in the role _Associated_parts_. This implementation guideline clarifies the valid use cases of multiplicities > 1.
 
 For a standard contacting (the "90% case"), the _Associated_parts_ association references a single {{< kbl-class Terminal_occurrence >}} and an (optional) {{< kbl-class Cavity_seal_occurrence >}} for sealed contacting situations.
@@ -46,7 +44,9 @@ In other words, using the _Associated_parts_ to represent a 150% contacting situ
 However, there are still remaining situations, where more components than one {{< kbl-class Terminal_occurrence >}} (and one {{< kbl-class Cavity_seal_occurrence >}})
 participate in a specific contacting situation. The representation of those cases in the KBL depends on the role that the components have in the contacting sitation.
 
-* Multiple {{< kbl-class Terminal_occurrence >}} and/or {{< kbl-class Cavity_seal_occurrence >}} are valid, if all the components of the respective class have a conducting (terminal) or sealing function.
+{{< figure src="terminal-example.svg" lightbox="true" numbered="true" title="Illustration Multiple Terminals & Seals" class="float-right" >}}
+
+* Multiple {{< kbl-class Terminal_occurrence >}} and/or {{< kbl-class Cavity_seal_occurrence >}} are valid, provided all the components of the respective class have a conducting (terminal) or sealing function and they always occur together (100%). Illustrations for such cases can be found on the right.
 * All other components (e.g. wire fixations, damping elements) have to be represented as an {{< kbl-class Accessory_occurrence >}} to the primary terminal component.
 
 The representation is illustrated the following [figure]({{< relref "#figure-schematic-illustration-of-the-contact-point" >}}). Reasons for choosing this representation where:
