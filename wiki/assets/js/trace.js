@@ -52,7 +52,7 @@ function InitializeTraceList(){
         newLi.className = "breadcrumb-item";
         if((index + 1) === history.length){
             newLi.classList.add('active');
-            newLi.innerHTML = newLi.innerHTML + element.title;
+            newLi.innerHTML = newLi.innerHTML + truncateString(element.title,25);
         } else {
             newLi.innerHTML = newLi.innerHTML +  '<a href="' + element.url + '" title="' + element.title + '">'+ truncateString(element.title,25) +'</a>';
         }
