@@ -1,4 +1,4 @@
-{{- $basePath := .Site.Params.VEC.current_base_url -}}
+{{- $basePath := .Site.Params.VEC.current_classes_url -}}
 {{- $pageName := .Get 0 -}}
 {{- $completeUrl := printf "%s/%s.md" $basePath $pageName -}}
 {{- with .Page.GetPage ($completeUrl) -}}

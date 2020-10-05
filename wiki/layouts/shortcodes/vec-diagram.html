@@ -1,0 +1,8 @@
+{{- $basePath := .Site.Params.VEC.current_base_url -}}
+{{- $pageName := .Get 0 -}}
+{{- $completeUrl := printf "%s/%s" $basePath $pageName -}}
+{{- with .Page.GetPage ($completeUrl) -}}
+<a {{ printf "href=%q" .Permalink | safeHTMLAttr }}>{{ .Title }}</a>
+{{- else -}}
+{{- errorf "vec diagram page not found for %s: %s" $pageName .Position -}}
+{{- end -}}

@@ -271,7 +271,8 @@ plugins_js  = ["trace"]
 
 [VEC]
   current_version = "1.2.0"
-  current_base_url = "specifications/vec/V120/classes"
+  current_base_url = "specifications/vec/V120"
+  current_classes_url = "specifications/vec/V120/classes"
 
 [KBL]
   current_version = "2.5.sr1"

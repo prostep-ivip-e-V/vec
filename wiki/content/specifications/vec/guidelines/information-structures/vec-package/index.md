@@ -1,5 +1,5 @@
 ---
-title: "Packaging"
+title: "VEC Package"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.
@@ -14,10 +14,11 @@ draft: false
 menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection
-    weight: 20000
+    parent: information-structures
+    weight: 100
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 20000
+weight: 20100
 ---
 
 {{< figure src="indexing_of_vec_package.jpg" title="Indexing of VEC Packages" numbered="true" lightbox="true">}}
