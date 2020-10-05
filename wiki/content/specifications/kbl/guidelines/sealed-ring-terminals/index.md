@@ -32,6 +32,8 @@ Ring terminals are often installed with a wire protection (e.g. a shrinking tube
 
 The necessity for a separate definition of this situation arises from the fact, that in the KBL wire protections are always placed on segments of the topology. For electrical end points (e.g. connectors or ring terminals) the last segment ends at a defined location, the *segment connection point* (a.k.a. bundle connection point). For ring terminals, the start of the crimp area is defined as segment connection point (the blue marker in the figure on the right). That means, that the wire protection (the yellow tube) is overlapping into an area that is outside of the topology (the red arrow). 
 
+{{< figure src="illustration.svg" lightbox="true" numbered="true" title="Sealed ring terminal with overlapping protection (Sketch)">}}
+
 A regular {{< kbl-class "Protection_area" >}} assigns a {{< kbl-class "Wire_protection_occurrence" >}} onto a {{< kbl-class "Segment" >}}. It starts and ends on locations defined by a value that relates to the curve parameter of the segment (0.0 &le; x &le; 1.0). A representation of the scenario by these means (e.g. a curve parameter x &lt; 0) is not possible without simultaneously creating a representation that is highly open to interpretation, especially for other cases (e.g. "What does a curve parameter less than zero mean for segments that end at an intersection?").
 
 Therefore the defined representation of this scenario is:
