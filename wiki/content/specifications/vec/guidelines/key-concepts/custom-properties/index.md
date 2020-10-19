@@ -87,7 +87,7 @@ If the same data structure (**not** the same data) should appear in different ro
                 <Value>04325</Value>
             </CustomProperty>
         </CustomProperty>
-        <CustomProperty id="id_01_1" xsi:type="vec:ComplexProperty">
+        <CustomProperty id="id_01_2" xsi:type="vec:ComplexProperty">
             <PropertyType>WorkAddress</PropertyType>
             [...]
         </CustomProperty>
