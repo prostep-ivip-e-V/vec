@@ -31,11 +31,21 @@ resources:
   title: Extension xslt file
   params:
     download: true
+
+- src: 'resources/filter-literals.xml'
+  title: Custom filter example file
+  params:
+    download: true
+
+- src: 'resources/VEC.FILTER-OPEN-ENUMS.xsl'
+  title: Extension xslt file
+  params:
+    download: true
 ---
 
 {{< review "KBLFRM-989" >}}
 
-There are two ways to modify the VEC strict schema. With "Open Enumerations" new literals can be added to the scheme and with "XSL Filtering" classes and attributes can be removed.
+There are two ways to modify the VEC strict scheme. With "Open Enumerations" new literals can be added to the scheme and with "XSL Filtering" classes and attributes can be removed.
 
 ## Open Enumerations
 
@@ -45,7 +55,7 @@ Open Enumerations enable users to create company specific schemes by adding cust
 - XSLT2 processor e.g. Saxon HE (External link: <http://saxon.sourceforge.net/>)
 - <a href="documents/VEC.EXTEND-OPEN-ENUMS.xsl" download >VEC.EXTEND-OPEN-ENUMS.xsl</a>
 - <a href="documents/enum-literals.xml" download >enum-literals.xml</a>
-- [VEC strict schema](<https://ecad-wiki.prostep.org/specifications/vec/>)
+- [VEC strict scheme](<https://ecad-wiki.prostep.org/specifications/vec/>)
 
 ### 1. Define new literals in enum-literals.xsl
 
@@ -94,5 +104,19 @@ This command is structured like this:
 - **-s:C:\path\to\vec_1.2.0-strict.xsd** : path to strict vec file
 - **-o:C:\path\to\result.xml** : directory and name of the output file
 
-## Filtered schema
+## Filtered scheme
 
+With XSLT its possible to filter specific classes and properties from the strict VEC scheme as well. However, this is a tedious process. If a class should be removed from the VEC, then the class itself, all types of this class and all IdRefs pointing to this class must be removed.
+
+### Prerequisites
+- XSLT2 processor e.g. Saxon HE (External link: <http://saxon.sourceforge.net/>)
+- <a href="documents/VEC.FILTER-OPEN-ENUMS.xsl" download >VEC.FILTER-OPEN-ENUMS.xsl</a>
+- [VEC strict scheme](<https://ecad-wiki.prostep.org/specifications/vec/>)
+
+### Define literals to remove
+
+The file "VEC.FILTER-OPEN-ENUMS.xsl" contains an example on how to remove "Transformation2D" from the strict VEC scheme.
+
+If a new VEC version is released this file can be used again to create an updated company specific scheme.
+
+To run the conversion see step "2. Run Conversion" from above. 
