@@ -115,8 +115,6 @@ With XSLT its possible to filter specific classes and properties from the strict
 
 ### Define literals to remove
 
-The file "VEC.FILTER-OPEN-ENUMS.xsl" contains an example on how to remove "Transformation2D" from the strict VEC scheme.
-
-If a new VEC version is released this file can be used again to create an updated company specific scheme.
+The file "VEC.FILTER-OPEN-ENUMS.xsl" contains an example on how to remove "Transformation2D" from the strict VEC scheme. Its definition as well as every occurrence is filtered (Note: Only occurrences where *minOccurs* equals 0 can be removed, as otherwise the resulting scheme would not be valid).
 
 To run the conversion see step "2. Run Conversion" from above. 
