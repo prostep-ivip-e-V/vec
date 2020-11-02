@@ -96,7 +96,7 @@ Command when saxon and java are used.
 java -cp C:\path\to\saxon.jar net.sf.saxon.Transform -xsl:C:\path\to\VEC.EXTEND-OPEN-ENUMS.xsl -s:C:\path\to\vec_1.2.0-strict.xsd -o:C:\path\to\result.xml
 ```
 
-This command is structured like this:
+This command is structured as follows:
 - **java** : invokes java
 - **-cp C:\path\to\saxon.jar** : path to saxon jar file
 - **net.sf.saxon.Transform** : tells saxon to use transformation
@@ -106,7 +106,7 @@ This command is structured like this:
 
 ## Filtered scheme
 
-With XSLT its possible to filter specific classes and properties from the strict VEC scheme as well. However, this is a tedious process. If a class should be removed from the VEC, then the class itself, all types of this class and all IdRefs pointing to this class must be removed.
+With XSLT its possible to filter specific classes and properties from the strict VEC scheme. However, this is a tedious process. If a class should be removed from the VEC, then the class itself, all occurrences of this class and all IdRefs pointing to this class must be removed.
 
 ### Prerequisites
 - XSLT2 processor e.g. Saxon HE (External link: <http://saxon.sourceforge.net/>)
