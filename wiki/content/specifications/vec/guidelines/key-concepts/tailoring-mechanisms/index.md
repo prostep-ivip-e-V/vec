@@ -32,10 +32,10 @@ There are two ways to tailor the VEC schema according to your own needs in a com
 
 In order to remain compatible with the VEC, both approaches require that the changes are in a way, so that a file that is validated against the custom Schema must also be valid against the Schema of the Standard.
 
-This Implementation Guideline explains how these modifications can be achieved in an efficient way and is based on XSLT. XSLT is a great technology, when:
+This Implementation Guideline explains how these modifications can be achieved in an efficient way and is based on XSLT. XSLT is a useful technology, when:
 
 - you want to modify XML data, 
-- you can define precise rules for the modification,
+- you can define the modification based on rules,
 - the general structure of your result is close to the input,
 - and performance is not critical.
 
@@ -43,7 +43,7 @@ Therefore it is the perfect solution for this case, where we want to modify the 
 
 ## Open Enumerations
 
-Open Enumerations enable users to create company specific schemes by adding custom enumeration literals to the VEC, while still having the possibility to do schema validation. 
+Open Enumerations enable users to create company specific schemes by adding custom enumeration literals to the VEC, while preserving the possibility to do schema validation. 
 
 #### 1. Prerequisites
 - XSLT2 processor e.g. Saxon HE
@@ -72,7 +72,7 @@ The enum-literals.xml file contains examples on how to add custom enumerations.
 </enum-profile>
 ```
 
-This example adds a literal with the name "MyExampleLiteral" to "WireReceptionType" with a description (Note that its possible to include html tags) and an literal without a description named "MyExampleLiteral2". It also adds "MyExampleLiteral3" to "WireLengthType". 
+This example adds a literal with the name "MyExampleLiteral" to "WireReceptionType" with a description (Note that its possible to include html tags) and a literal without a description named "MyExampleLiteral2". It also adds "MyExampleLiteral3" to "WireLengthType". 
 
 If a new VEC version is released, this file can be used recreate an updated company specific scheme (without having to repeat many manual changes).
 
@@ -80,9 +80,9 @@ If a new VEC version is released, this file can be used recreate an updated comp
 
 {{< figure src="xslt-illustration.svg" >}}
 
-With XSLT2 processing its possible to merge the `enum-literals.xsl` file with the `vec-strict` file by using the logic defined in `vec-open-enum-compiler.xsl`. NOTE: `enum-literals.xsl` and `vec-open-enum-compiler.xsl` must be placed in the same directory. 
+With XSLT2 processing its possible to merge the `enum-literals.xsl` file with the `vec-strict` file by using the logic defined in `vec-open-enum-compiler.xsl`. NOTE: `enum-literals.xml` and `vec-open-enum-compiler.xsl` must be placed in the same directory. 
 
-Command when Saxon with Java is used:
+Run the transformation with Saxon HE for Java:
 
 ```console
 java -cp /path/to/saxon.jar net.sf.saxon.Transform \
@@ -99,11 +99,11 @@ For example, an interface for the exchange of {{<vec-class UsageNode>}}s would o
 
 Since the scenario of _Schema Filtering_ is more complex and less straight forward, than the _Open Enumerations_ scenario, the following section just provides an idea for a possible approach and not a "ready-to-use" solution.
 
-The basic idea here is, that an XSLT script simply removes all unnecessary elements and leaves the rest unchanged. You can use either a positive or negative filter approach. In our example, we use a negative filter list (all elements on the list are removed). When removing a class it is not sufficient to remove the class itself. All usages must be removed as well. A class that is used mandatory by other classes can not be removed unless all usages are removed recursively till an optional point is reached. 
+The basic idea here is, that an XSLT script simply removes all unnecessary elements and leaves the rest unchanged. You can use either a positive or negative filter approach. In our example, we use a negative filter list (all elements on the list are removed). When removing a class it is not sufficient to only remove the class itself. All usages of the class must be removed as well. A class that has mandatory usages by other classes, can not be removed unless all usages are removed recursively till an optional point is reached. 
 
-The file <a href="vec-tailoring-schema.xsl" download >vec-tailor-schema.xsl</a> contains an example on how to remove `Transformation2D` from the strict VEC scheme. The following snippet shows the relevant parts only. The rest of the XSLT script is known known as [identity transformation](https://en.wikipedia.org/wiki/Identity_transform) (copy of the source into the destination without changes). 
+The file <a href="vec-tailoring-schema.xsl" download >vec-tailor-schema.xsl</a> contains an example on how to remove the `Transformation2D` from the VEC scheme. The following snippet shows the relevant parts only. The rest of the XSLT script is known known as [identity transformation](https://en.wikipedia.org/wiki/Identity_transform) (copy of the source into the destination without changes). 
 
-The first line removes the class itself. The second line removes all attributes with the type `Transformation2D` that are optional. If you validate the resulting schema you can easily check if the `Transformation2D` has any mandatory usage that have been overlooked. Unfortunately `IDREF` attributes cannot be handled in this fashion automatically, but have to be checked manually. 
+The first line removes the class itself. The second line removes all optional attributes with the type `Transformation2D`. If you validate the resulting schema you can easily check if the `Transformation2D` has any mandatory usage that have been overlooked (it has not). Unfortunately `IDREF` attributes cannot be handled in this fashion automatically, but have to be checked manually. 
 
 ```xml
     ...
