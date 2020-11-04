@@ -21,43 +21,37 @@ menu:
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1000
-resources:
-- src: 'resources/enum-literals.xml'
-  title: Custom enumerations example file
-  params:
-    download: true
-
-- src: 'resources/VEC.EXTEND-OPEN-ENUMS.xsl'
-  title: Extension xslt file
-  params:
-    download: true
-
-- src: 'resources/filter-literals.xml'
-  title: Custom filter example file
-  params:
-    download: true
-
-- src: 'resources/VEC.FILTER-OPEN-ENUMS.xsl'
-  title: Extension xslt file
-  params:
-    download: true
 ---
 
 {{< review "KBLFRM-989" >}}
 
-There are two ways to modify the VEC strict scheme. With "Open Enumerations" new literals can be added to the scheme and with "XSL Filtering" classes and attributes can be removed.
+There are two ways to tailor the VEC schema according to your own needs in a compatible way and create your own process, tool or company specific VEC schema (which is still a valid VEC): 
+
+1. New literals can be added to open enumerations (see {{<vec-diagram "basic-datatypes/open-and-closed-enumerations">}}) 
+2. With "Schema Filtering" the schema can be made more restrictive (Less allowed classes, attributes etc.).
+
+In order to remain compatible with the VEC, both approaches require that the changes are in a way, so that a file that is validated against the custom Schema must also be valid against the Schema of the Standard.
+
+This Implementation Guideline explains how these modifications can be achieved in an efficient way and is based on XSLT. XSLT is a great technology, when:
+
+- you want to modify XML data, 
+- you can define precise rules for the modification,
+- the general structure of your result is close to the input,
+- and performance is not critical.
+
+Therefore it is the perfect solution for this case, where we want to modify the XML Schema of the VEC at very specific locations while keeping the rest unchanged.
 
 ## Open Enumerations
 
-Open Enumerations enable users to create company specific schemes by adding custom enumeration to the VEC, while still giving the possibility to do schematic checks.
+Open Enumerations enable users to create company specific schemes by adding custom enumeration literals to the VEC, while still having the possibility to do schema validation. 
 
-### Prerequisites
-- XSLT2 processor e.g. Saxon HE (External link: <http://saxon.sourceforge.net/>)
-- <a href="documents/VEC.EXTEND-OPEN-ENUMS.xsl" download >VEC.EXTEND-OPEN-ENUMS.xsl</a>
-- <a href="documents/enum-literals.xml" download >enum-literals.xml</a>
-- [VEC strict scheme](<https://ecad-wiki.prostep.org/specifications/vec/>)
+#### 1. Prerequisites
+- XSLT2 processor e.g. Saxon HE
+- <a href="vec-open-enum-compiler.xsl" download >vec-open-enum-compiler.xsl</a>
+- <a href="enum-literals.xml" download >enum-literals.xml</a>
+- [VEC strict schema](<https://ecad-wiki.prostep.org/specifications/vec/>)
 
-### 1. Define new literals in enum-literals.xsl
+#### 2. Define new literals in enum-literals.xsl
 
 The enum-literals.xml file contains examples on how to add custom enumerations.
 
@@ -80,41 +74,49 @@ The enum-literals.xml file contains examples on how to add custom enumerations.
 
 This example adds a literal with the name "MyExampleLiteral" to "WireReceptionType" with a description (Note that its possible to include html tags) and an literal without a description named "MyExampleLiteral2". It also adds "MyExampleLiteral3" to "WireLengthType". 
 
-If a new VEC version is released this file can be used again to create an updated company specific scheme.
+If a new VEC version is released, this file can be used recreate an updated company specific scheme (without having to repeat many manual changes).
 
-### 2. Run conversion
+#### 3. Run conversion
 
-{{< figure src="xslt_illustration.svg" >}}
+{{< figure src="xslt-illustration.svg" >}}
 
-With XSLT2 processing its possible to merge the **enum-literals.xsl** file with the **vec-strict** file by using the logic defined in **VEC.EXTEND-OPEN-ENUMS.xsl**. NOTE: **enum-literals.xsl** and **VEC.EXTEND-OPEN-ENUMS.xsl** must be placed in the same directory. 
+With XSLT2 processing its possible to merge the `enum-literals.xsl` file with the `vec-strict` file by using the logic defined in `vec-open-enum-compiler.xsl`. NOTE: `enum-literals.xsl` and `vec-open-enum-compiler.xsl` must be placed in the same directory. 
 
-**EXAMPLE:**
-
-Command when saxon and java are used.
+Command when Saxon with Java is used:
 
 ```console
-java -cp C:\path\to\saxon.jar net.sf.saxon.Transform -xsl:C:\path\to\VEC.EXTEND-OPEN-ENUMS.xsl -s:C:\path\to\vec_1.2.0-strict.xsd -o:C:\path\to\result.xml
+java -cp /path/to/saxon.jar net.sf.saxon.Transform \
+    -xsl:/path/to/vec-open-enum-compiler.xsl \
+    -s:/path/to/vec_1.2.0-strict.xsd \
+    -o:/path/to/result.xml
 ```
 
-This command is structured as follows:
-- **java** : invokes java
-- **-cp C:\path\to\saxon.jar** : path to saxon jar file
-- **net.sf.saxon.Transform** : tells saxon to use transformation
-- **-xsl:C:\path\to\VEC.EXTEND-OPEN-ENUMS.xsl** : path to VEC.EXTEND-OPEN-ENUMS.xsl
-- **-s:C:\path\to\vec_1.2.0-strict.xsd** : path to strict vec file
-- **-o:C:\path\to\result.xml** : directory and name of the output file
+## Schema Filtering
 
-## Filtered scheme
+The VEC is a comprehensive model with a variety of classes and attributes. In very few cases all of them are needed at the same time. For this reason it may be desirable to restrict the number of valid schema elements for specific interfaces. _Schema Filtering_ can be useful in these cases. 
 
-With XSLT its possible to filter specific classes and properties from the strict VEC scheme. However, this is a tedious process. If a class should be removed from the VEC, then the class itself, all occurrences of this class and all IdRefs pointing to this class must be removed.
+For example, an interface for the exchange of {{<vec-class UsageNode>}}s would only require a handful of VEC core classes. Another scenario might be that you want to prohibit the use of {{<vec-class CustomProperty >}} in your own process. Many scenarios are conceivable, in the core it always burns down to limiting the power of the VEC purposefully to achieve a better controllability for certain use cases and interfaces. 
 
-### Prerequisites
-- XSLT2 processor e.g. Saxon HE (External link: <http://saxon.sourceforge.net/>)
-- <a href="documents/VEC.FILTER-OPEN-ENUMS.xsl" download >VEC.FILTER-OPEN-ENUMS.xsl</a>
-- [VEC strict scheme](<https://ecad-wiki.prostep.org/specifications/vec/>)
+Since the scenario of _Schema Filtering_ is more complex and less straight forward, than the _Open Enumerations_ scenario, the following section just provides an idea for a possible approach and not a "ready-to-use" solution.
 
-### Define literals to remove
+The basic idea here is, that an XSLT script simply removes all unnecessary elements and leaves the rest unchanged. You can use either a positive or negative filter approach. In our example, we use a negative filter list (all elements on the list are removed). When removing a class it is not sufficient to remove the class itself. All usages must be removed as well. A class that is used mandatory by other classes can not be removed unless all usages are removed recursively till an optional point is reached. 
 
-The file "VEC.FILTER-OPEN-ENUMS.xsl" contains an example on how to remove "Transformation2D" from the strict VEC scheme. Its definition as well as every occurrence is filtered (Note: Only occurrences where *minOccurs* equals 0 can be removed, as otherwise the resulting scheme would not be valid).
+The file <a href="vec-tailoring-schema.xsl" download >vec-tailor-schema.xsl</a> contains an example on how to remove `Transformation2D` from the strict VEC scheme. The following snippet shows the relevant parts only. The rest of the XSLT script is known known as [identity transformation](https://en.wikipedia.org/wiki/Identity_transform) (copy of the source into the destination without changes). 
 
-To run the conversion see step "2. Run Conversion" from above. 
+The first line removes the class itself. The second line removes all attributes with the type `Transformation2D` that are optional. If you validate the resulting schema you can easily check if the `Transformation2D` has any mandatory usage that have been overlooked. Unfortunately `IDREF` attributes cannot be handled in this fashion automatically, but have to be checked manually. 
+
+```xml
+    ...
+    <xsl:template match="xs:complexType[@name='Transformation2D']" />
+
+    <xsl:template match="xs:element[@type='vec:Transformation2D' and @minOccurs=0]" />
+    ...
+```
+
+{{% alert info %}}
+**Note:** 
+* Do not remove elements that are mandatory! 
+* Take extra care of usages via `IDREF` associations. These have to be checked in the model since the XML Schema is typeless for those associations.
+
+Otherwise the resulting scheme would not be compatible with original VEC Schema.
+{{% /alert %}}
