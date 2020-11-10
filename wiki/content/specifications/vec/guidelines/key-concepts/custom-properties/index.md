@@ -27,20 +27,20 @@ weight: 1000
 {{< review "KBLFRM-960" >}}
 This implementation guideline gives more details and examples on the usage and the correct interpretation of the VEC concept: [Extensibility with Custom Properties]({{< relref "specifications/vec/v120/basic-datatypes/extensibility-with-custom-properties/index.md">}}).
 
-{{<vec-class CustomProperty>}} are available in all subclasses of {{<vec-class ExtendableElement>}}. In the following examples the class {{<vec-class Person>}} is used, which intentionally is not a subclass of {{<vec-class ExtendableElement>}}, but for a clear and easy to understand example of custom properties it is well suited.
+{{<vec-class CustomProperty>}} is available in all subclasses of {{<vec-class ExtendableElement>}}. In the following examples the class {{<vec-class Person>}} is used, which intentionally is not a subclass of {{<vec-class ExtendableElement>}}, but for a clear and easy to understand example of custom properties it is well suited.
 
 {{< figure src="person_example.png" >}}
 
-The left side shows the {{<vec-class Person>}} class as defined in the VEC. The right hand side shows an excerpt from the domain of an arbitrary Tool. As you can see in the UML model, the class on the right side contains the attributes `employeeNumber`and different usages of the class `Address`, which are both not represented in the VEC. Despite the lack of explicit modeling concepts with this specific semantic, the extension mechanisms of the VEC still allow the exchange of this information within the VEC. The VEC supports extension of the following type:
+The left side shows the {{<vec-class Person>}} class as defined in the VEC. The right hand side shows an excerpt from the domain of an arbitrary Tool. As you can see in the UML model, the class on the right side contains the attributes `employeeNumber` and different usages of the class `Address`, which are both not represented in the VEC. Despite the lack of explicit modeling concepts with this specific semantic, the extension mechanisms of the VEC still allow the exchange of this information within the VEC. The VEC supports extensions of the following type:
 
 - Additional properties (attributes), either single or multi-valued (All subclasses of {{<vec-class CustomProperty>}}, e.g. {{<vec-class SimpleValueProperty >}} or {{<vec-class BooleanValueProperty >}}).
-- Contained structured, either single or multi-valued (the {{<vec-class ComplexProperty>}}, e.g simple objects like the address).
+- Contained structures, either single or multi-valued (the {{<vec-class ComplexProperty>}}, e.g. simple objects like the address).
 
 These concepts **do not** support the extension of elements with additional relationships (_IDREF_ in XML).
 
 ## XML Examples / Snippets
 
-The following XML snippets illustrate the correct usage of the concepts to support the business model shown in UML diagram above. 
+The following XML snippets illustrate the correct usage of the concepts to support the business model shown in the UML diagram above. 
 
 ### Simple Property
 
