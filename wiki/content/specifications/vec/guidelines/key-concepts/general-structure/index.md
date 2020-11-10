@@ -33,7 +33,7 @@ weight: 20050
 
 The VEC has two major key concepts: {{< vec-class PartVersion >}} and
 {{< vec-class DocumentVersion >}}. Both are {{< vec-class ItemVersion >}}s and
-both are be used to reference / identify a piece of relevant information in a
+both are used to reference / identify a piece of relevant information in a
 PDM context unambigiously.
 
 Whereas the {{< vec-class PartVersion >}} "just" represents a PDM anchor /
@@ -53,7 +53,7 @@ used and how an appropriate distribution of documents can look alike.
 
 On the root level, a VEC contains mainly {{< vec-class PartVersion >}}s and
 {{< vec-class DocumentVersion >}}s and some other unversioned (and constant)
-information, e.g. the definition {{< vec-class Unit >}}s used within the VEC.
+information, e.g. the definition of the {{< vec-class Unit >}}s used within the VEC.
 This is illustrated in figure [Basic
 Structure]({{< relref "#figure-basic-structure">}}).
 
@@ -96,12 +96,12 @@ component from its definition (specification). In this, the
 {{<vec-class PartOrUsageRelatedSpecification>}} plays a major role.
 
 In the VEC a part ({{<vec-class PartVersion>}}) does not contain any information
-about the part, except its PDM Information (PartNumber, PartVersion…). All the
+about the part, except its PDM Information (PartNumber, PartVersion, ...). All the
 information about the technical properties of a part is expressed by a subclass
 of {{<vec-class PartOrUsageRelatedSpecification>}}s (e.g. a
 {{<vec-class WireSpecification >}}). The
-{{<vec-class PartOrUsageRelatedSpecification>}} is contained in
-{{<vec-class DocumentVersion>}} As mentioned above, the distribution of these
+{{<vec-class PartOrUsageRelatedSpecification>}} is contained in a
+{{<vec-class DocumentVersion>}}. As mentioned above, the distribution of these
 specifications into different documents is driven by the process / domain (see
 object diagram [Parts and
 Documents]({{< relref "#figure-parts-and-documents">}})).
@@ -126,10 +126,10 @@ properly:
 {{< figure src="document-version-flow.svg" class="float-right" title="DocumentVersions in the Information Flow" numbered="true" lightbox="true" width="400">}}
 
 Typically, information is flowing through the process. It is created somewhere,
-passed on to someone else and is used there to create other information blockes.
+passed on to someone else and is used there to create other information blocks.
 To make these information flows traceable each peace of information must be
 indentifiable and must have a change indicator. In the VEC this is done by the
-{{< vec-class DocumentVersion >}}. In order to preserve this tracability along
+{{< vec-class DocumentVersion >}}. In order to preserve this traceability along
 the process, the assignment of information pieces to its original
 {{< vec-class DocumentVersion >}} shall remain unchanged.
 
@@ -140,7 +140,7 @@ described in
 "{{< vec-diagram "xml-representation-of-the-model/partitioning-and-sizing-of-vec-files" >}}"
 component master data is best provided with one VEC per component, containing at
 least one {{< vec-class documentversion >}} with the component's specifications
-(VEC A, B, C\_).
+(_VEC A_, _B_, _C_).
 
 If a wiring harness is created with these components, the component master data
 (at least a portion of it) is required in the data set of the harness (_VEC
@@ -159,11 +159,11 @@ VEC (files).{{% /alert %}}
 
 The {{< vec-class documenttype >}} is an {{< vec-class openenumeration >}} that
 defines some document types that are common in the harness development process.
-The following sections describe typical content that can be excpected in the
+The following sections describe typical content that can be expected in the
 {{< vec-class DocumentVersion >}}s of a specific type.
 
 However, as the {{< vec-class DocumentVersion >}} is primary an entity from the
-domain of the creating process, the content and the found
+domain of the creating process, the content and the given
 {{< vec-class specification >}}s may vary.
 
 ### Part Master
@@ -179,16 +179,16 @@ and can be provided. Examples are:
 
 - {{< vec-class GeneralTechnicalPartSpecification>}} for common properties like
   weight or material.
-- {{< vec-class PlaceableElementSpecification >}} for components that have
+- {{< vec-class PlaceableElementSpecification >}} for components that have a
   position in the topology.
 - {{< vec-class LocalGeometrySpecification >}} for information about the
   component's geometry model, e.g. the bounding box, transformations, segment
   connection points.
 
-Besides these general specifications it contains a
+Besides these general specifications a part master document contains a
 {{< vec-class PartOrUsageRelatedSpecification >}} corresonding to the
 {{< vec-class PrimaryPartType >}} (a
-{{< vec-class ConnectorHousingSpecification >}} in the illustration) that
+{{< vec-class ConnectorHousingSpecification >}} in the illustration). That
 {{<vec-class Specification>}} provides the component type specific properties.
 If the component has a secondary component characteristics, more than one
 {{< vec-class PartOrUsageRelatedSpecification >}} can be contained.
@@ -209,7 +209,7 @@ Documents]({{<relref "#combination--reuse-of-documents">}})).
 ### Master Data Definition
 
 It is a common approach to manage certain information centrally and distribute
-the it in development processes. The definition of this information is usually
+it in the development processes. The definition of this information is usually
 independent of specific development projects and ensures the adherence to
 certain conventions and guidelines across (all) development projects. The
 component master data is a very specific aspect of this information as it always
