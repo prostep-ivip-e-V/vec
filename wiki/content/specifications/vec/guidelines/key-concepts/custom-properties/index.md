@@ -25,7 +25,7 @@ weight: 1000
 ---
 
 {{< review "KBLFRM-960" >}}
-This implementation guideline gives more details and examples on the usage and the correct interpretation of the VEC concept: [Extensibility with Custom Properties]({{< relref "specifications/vec/v120/basic-datatypes/extensibility-with-custom-properties/index.md">}}).
+This implementation guideline gives more details and examples on the usage and the correct interpretation of the VEC concept: {{<vec-diagram "basic-datatypes/extensibility-with-custom-properties">}}.
 
 {{<vec-class CustomProperty>}} are available in all subclasses of {{<vec-class ExtendableElement>}}. In the following examples the class {{<vec-class Person>}} is used, which intentionally is not a subclass of {{<vec-class ExtendableElement>}}, but for a clear and easy to understand example of custom properties it is well suited.
 
