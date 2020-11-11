@@ -3,7 +3,7 @@ title: "Tailoring Mechanisms"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.
-authors: ["steinbuechler"]
+authors: ["steinbuechler","becker"]
 tags: ["Review"]
 categories: []
 date: 2020-10-21
