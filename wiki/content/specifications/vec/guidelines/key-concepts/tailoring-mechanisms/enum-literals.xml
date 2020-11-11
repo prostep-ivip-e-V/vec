@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enum-profile>
+    <enum type="WireReceptionType">
+        <literal name="MyExampleLiteral">
+             My example description with html elements <br/>
+        </literal>
+        <literal name="MyExampleLiteral2" />
+    </enum>
+    <enum type="WireLengthType">
+        <literal name="MyExampleLiteral3">
+             My second example description
+        </literal>
+    </enum>
+</enum-profile>
