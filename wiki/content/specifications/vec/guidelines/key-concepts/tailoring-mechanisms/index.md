@@ -76,9 +76,9 @@ This example adds a literal with the name "MyExampleLiteral" to "WireReceptionTy
 
 If a new VEC version is released, this file can be used recreate an updated company specific scheme (without having to repeat many manual changes).
 
-#### 3. Run conversion
+#### 3. Run Generation
 
-{{< figure src="xslt-illustration.svg" >}}
+{{< figure src="xslt-illustration.svg"  title="Generation Process Overview" numbered="true" lightbox="true">}}
 
 With XSLT2 processing its possible to merge the `enum-literals.xsl` file with the `vec-strict` file by using the logic defined in `vec-open-enum-compiler.xsl`. NOTE: `enum-literals.xml` and `vec-open-enum-compiler.xsl` must be placed in the same directory. 
 
@@ -103,7 +103,7 @@ The basic idea here is, that an XSLT script simply removes all unnecessary eleme
 
 The file <a href="vec-tailoring-schema.xsl" download >vec-tailor-schema.xsl</a> contains an example on how to remove the `Transformation2D` from the VEC scheme. The following snippet shows the relevant parts only. The rest of the XSLT script is known known as [identity transformation](https://en.wikipedia.org/wiki/Identity_transform) (copy of the source into the destination without changes). 
 
-The first line removes the class itself. The second line removes all optional attributes with the type `Transformation2D`. If you validate the resulting schema you can easily check if the `Transformation2D` has any mandatory usage that have been overlooked (it has not). Unfortunately `IDREF` attributes cannot be handled in this fashion automatically, but have to be checked manually. 
+The first line removes the class itself. The second line removes all optional attributes with the type `Transformation2D`. If you validate the resulting schema you can easily check if the `Transformation2D` has any mandatory usage that have been overlooked (it has not). 
 
 ```xml
     ...
@@ -113,10 +113,34 @@ The first line removes the class itself. The second line removes all optional at
     ...
 ```
 
-{{% alert info %}}
-**Note:** 
+{{< figure src="model-snippet.png" class="float-right" width="400" title="Illustrating Model Snippet" numbered="true" lightbox="true">}}
+
+Unfortunately `IDREF` attributes cannot be handled in this fashion automatically, but have to be checked manually. The figure on the right side displays the `occurrenceOrUsage` association between {{<vec-class OccurrenceOrUsageViewItem2D>}} and {{<vec-class OccurrenceOrUsage>}}. Associations are translated into `IDREF` or `IDREFS` in the XML Schema, in contrast to aggregations that are translated into contained `xs:element` (compare {{<vec-diagram "xml-representation-of-the-model/mapping-of-the-vec-model-to-xml-schema-definition-xsd">}}). The XML Schema representation of the association is the following:
+
+```xml
+<xs:complexType name="OccurrenceOrUsageViewItem2D">
+    <xs:complexContent>
+        <xs:extension base="vec:ExtendableElement">
+        <xs:sequence>
+            ...
+            <xs:element name="OccurrenceOrUsage" type="xs:IDREFS" minOccurs="0"/>
+            ...
+        </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+```
+That means a filtering rule cannot be formulated based on the target type of the association, as this type unknown in the XSD (in contrast to contained elements). Therefore a filtering rule must be more specific by explicitly addressing each relevant association, like this:
+
+```xml
+    ...
+    <xsl:template match="xs:element[@name='OccurrenceOrUsage' and 
+        ancestor::xs:complexType[@name='OccurrenceOrUsageViewItem2D']]" />
+    ...
+```
+
+{{% alert note %}}
+**Note:** Make sure that the resulting schema remains compatible with the standard (XML Schema **and** Model Specification):
 * Do not remove elements that are mandatory! 
 * Take extra care of usages via `IDREF` associations. These have to be checked in the model since the XML Schema is typeless for those associations.
-
-Otherwise the resulting scheme would not be compatible with original VEC Schema.
 {{% /alert %}}
