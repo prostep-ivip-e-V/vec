@@ -46,6 +46,10 @@ ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "
 [outputFormats.WebAppManifest]
   mediaType = "application/manifest+json"
   rel = "manifest"
+[outputFormats.Printable]
+  mediaType = "text/html"
+  baseName = "printable"
+  isHTML = true
 
 [markup]
   defaultMarkdownHandler = "goldmark"
