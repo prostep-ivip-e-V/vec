@@ -11,6 +11,8 @@
 {{ if and ($asset) (not ($is_svg)) }}
   {{ $asset2 := $asset.Fit "2000x2000" }}
   {{ $image_src = $asset2.RelPermalink }}
+{{ else if $asset }}
+  {{ $image_src = $asset.RelPermalink }}
 {{ else if .Get "library" }}
   {{ $image_src = printf "img/%s" $image_src | relURL }}
 {{ end }}

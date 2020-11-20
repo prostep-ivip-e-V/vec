@@ -23,7 +23,7 @@ weight: 11100
 _**Note:** The following sections will cover the technical background about component boxes. The term "component box" will be used as a general term for all types of fuse and/or relay carrier, power distribution box etc. The detailed mapping of the different aspects on concepts of the VEC will be in [EE-Components]({{< relref "../ee-components" >}}), as the concepts are the same for regular E/E components and component boxes._
 ## Overview 
 
-{{< figure src="../ee-components/component_box.jpg" title="Component Box Photo" numbered="true" lightbox="true" class="float-right w-50" >}}
+{{< figure src="component_box.jpg" title="Component Box Photo" numbered="true" lightbox="true" class="float-right w-50" >}}
 
 The [image on the right side]({{< relref "#figure-component-box-photo" >}}) shows a photo of the front side of a component box. The [drawing]({{< relref "#figure-component-box-drawing" >}}) shows a drawing of a component box. In general, a component box is a component (carrier) that can be equipped with other components (e.g. relays & fuses) and by this, provides fusing and switching functionality to the attached wiring harness.
 
@@ -36,7 +36,7 @@ Basically a component box can be divided into four aspects:
 
 For all of these aspects, different technical solutions and variants exist. In reality, a specific component box can virtually combine and mix up all of these solution variants. To create a concise representation of a component box in the VEC model, a combination of different concepts is necessary. Some of these concepts are not exclusively for component boxes.
 
-{{< figure src="../ee-components/multi_fuse.png" title="Multifuse" numbered="true" lightbox="true" class="float-right w-25" >}}
+{{< figure src="multi_fuse.png" title="Multifuse" numbered="true" lightbox="true" class="float-right w-25" >}}
 
 ## Plugability of E/E components 
 
@@ -56,9 +56,9 @@ A Relais is a component used for switching of loads and has more than 3 pins.
 
 ## Direct and Indirect Contacting 
 
-{{< figure src="../ee-components/direct_contacting.jpg" title="Direct Contacting" numbered="true" lightbox="true" class="float-left w-25">}}
+{{< figure src="direct_contacting.jpg" title="Direct Contacting" numbered="true" lightbox="true" class="float-left w-25">}}
 
-{{< figure src="../ee-components/component_box_drawing.png" title="Component Box Drawing" numbered="true" lightbox="true" class="float-right w-50" >}}
+{{< figure src="component_box_drawing.png" title="Component Box Drawing" numbered="true" lightbox="true" class="float-right w-50" >}}
 
 There are two different ways to create an electrical connection between the end of a wire and a corresponding fuse or relays, direct and indirect contacting. In case of direct contacting (see [direct contacting]({{< relref "#direct-contacting" >}})) a terminal directly attached to the wire is locked into a cavity on ones side of the component box. The cavity goes through the component box and the pins of the fuse are directly plugged into the reception of the wire terminal. In this case, the component box itself does not provide a electrical conductivity.
 
@@ -68,7 +68,7 @@ A combination of both in one component box __is__  possible (and likely), e.g. t
 
 ## Connectivity with the Wiring Harness 
 
-{{< figure src="../ee-components/component_box_schematic.png" title="Component Box Schematic Illustration" numbered="true" lightbox="true" class="float-right">}}
+{{< figure src="component_box_schematic.png" title="Component Box Schematic Illustration" numbered="true" lightbox="true" class="float-right">}}
 
 In case of direct contacting the component box itself serves as end point for the wires. Therefore the last topology segment is attached to the component box. The component box requires / provides segment connection points. From an abstract point of view and out of the perspective of the wiring harness, a component box with direct contacting behaves just like a regular harness connector, see [the schematic illustration]({{< relref "#figure-component-box-schematic-illustration" >}}) (3).
 
@@ -81,7 +81,7 @@ Another variant in case of indirect contacting is the usage of ring terminals. T
 For the calculation of current paths or electrical testing, a component box needs to define an internal connectivity, see [the schematic illustration]({{< relref "#figure-component-box-schematic-illustration" >}}) (2). This is a logical connectivity and it is irrelevant, if it is realized with direct or indirect contacting.
 
 ## Modularity 
-{{< figure src="../ee-components/modular_component_box_detail.jpg" title="Modular Component Box Details" numbered="true" lightbox="true" class="float-right">}}
+{{< figure src="modular_component_box_detail.jpg" title="Modular Component Box Details" numbered="true" lightbox="true" class="float-right">}}
 
 Some component boxes support modular concepts, e.g. the one shown in [the photo]({{< relref "#figure-component-box-photo" >}}). That means the component box can be extended with additional carriers, sockets or smaller component boxes (in a LEGO like way). There are two concepts for modularity: with or without electrical connectivity. If you compare [the photo on top]({{< relref "#figure-component-box-photo" >}}) with [the photo on the right]({{< relref "#figure-modular-component-box-details" >}}) you can see, that the relays socket in the lower left corner is mechanically clipped to main component box, electrically it is independent.
 

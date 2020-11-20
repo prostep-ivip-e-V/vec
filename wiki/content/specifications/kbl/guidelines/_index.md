@@ -5,7 +5,11 @@ toc: false
 type: specs
 date: "2020-06-26T00:01:00+01:00"
 draft: false
-
+outputs:
+  - html
+  - rss
+  - printable
+printable: true
 specs:
   toc: true
   history: true
