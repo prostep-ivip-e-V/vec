@@ -374,3 +374,58 @@ ul.toc-top {
 .specs-overall-toc a {
   color: rgba(0, 0, 0, .65);
 }
+
+/*************************************************
+ *  Printable.
+ **************************************************/
+
+.article-print a:not([href]):hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.print{
+  counter-reset: section;
+}
+
+.print-section > h1 {
+  counter-reset: subsection;
+
+  &:before{
+    counter-increment: section;
+    content: counter(section) " ";
+  }
+}
+
+.print-section > h2, .print-sub-section > h1 {
+  counter-reset: subsubsection;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+
+  &:before{
+    counter-increment: subsection;
+    content: counter(section) "." counter(subsection) " ";
+  }
+}
+
+.print-section > h3, .print-sub-section > h2 {
+  counter-reset: subsubsubsection;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  &:before{
+    counter-increment: subsubsection;
+    content: counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+  }
+}
+
+.print-sub-section > h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  &:before{
+    counter-increment: subsubsubsection;
+    content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(subsubsubsection) " ";
+  }
+}

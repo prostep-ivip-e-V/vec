@@ -12,7 +12,7 @@
   </div>
   {{ end }}
   {{ end }}
-
+  
   <span class="article-date">
     Published on {{ $page.Date.Format site.Params.date_format }}
   </span>
@@ -26,31 +26,39 @@
     {{ i18n "last_updated" }} {{ $page.Lastmod.Format site.Params.date_format }}
   </span>
   {{ end }}
-
+  
   {{ if and (not (or (eq site.Params.reading_time false) (eq $page.Params.reading_time false))) }}
   <span class="middot-divider"></span>
   <span class="article-reading-time">
     {{ $page.ReadingTime }} {{ i18n "minute_read" }}
   </span>
   {{ end }}
-
+  
   {{/* Show Disqus comment count if enabled. */}}
   {{ $disqus_enabled := eq site.Params.comments.engine 1 | and (index site.Params.comments.commentable $page.Type) | and (ne $page.Params.commentable false) | or $page.Params.commentable }}
   {{ if and $disqus_enabled (site.Params.comments.disqus.show_count | default true) }}
   <span class="middot-divider"></span>
   <a href="{{ $page.RelPermalink }}#disqus_thread"><!-- Count will be inserted here --></a>
   {{ end}}
-
+  
   {{ $taxonomy := "categories" }}
   {{ with $page.Param $taxonomy }}
   <span class="middot-divider"></span>
   <span class="article-categories">
     <i class="fas fa-folder mr-1"></i>
     {{- range $index, $value := . -}}
-      {{- if gt $index 0 }}, {{ end -}}
-      <a href="{{ (site.GetPage (printf "/%s/%s" $taxonomy (. | urlize))).RelPermalink }}">{{ . }}</a>
+    {{- if gt $index 0 }}, {{ end -}}
+    <a href="{{ (site.GetPage (printf "/%s/%s" $taxonomy (. | urlize))).RelPermalink }}">{{ . }}</a>
     {{- end -}}
   </span>
   {{ end }}
-
+  {{ if $page.Params.printable }}
+  <span class="middot-divider"></span>
+  <span class="article-print">
+    {{ with  $page.OutputFormats.Get "printable" -}}
+    <i class="fas fa-print mr-1"></i>
+    <a onclick="printInNewWindow('{{ .RelPermalink | urlize }}')">Single Page Printable</a>
+    {{- end }}
+  </span>
+  {{ end }}
 </div>

@@ -5,7 +5,12 @@ toc: false
 type: specs
 date: "2020-05-12"
 draft: false
-
+outputs:
+  - html
+  - rss
+  - printable
+printable: true
+math: true
 specs:
   toc: true
   history: true

@@ -13,9 +13,9 @@ menu:
     weight: 1
 links:
   - icon_pack: fas
-    icon: globe
+    icon: pdf
     name: PSI21 prostep ivip Recommendation VEC
-    url: https://www.prostep.org/en/medialibrary/publications
+    url:  https://www.prostep.org/fileadmin/downloads/PSI_21_vda_4968_VEC_Specification_v1.2_pub_RZ.pdf
   - icon_pack: far
     icon: folder-open
     name: VEC Online Model Description

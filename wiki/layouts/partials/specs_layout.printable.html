@@ -1,0 +1,37 @@
+{{ $current_page := . }}
+
+<div class="container specs">
+  <div class="row flex-xl-nowrap">
+
+    <main class="col-12 specs-content" role="main">
+
+      <article class="article">
+
+        <div class="specs-article-container">
+          <h1>{{ .Title }}</h1>
+
+          <div class="article-style">
+            {{ .Content }}
+          </div>
+
+          {{ if .Params.links }}
+          <h2>Additional Resources</h2>
+          {{ partial "specs_links.html" . }}
+          {{ end }}
+
+          {{ if .Params.specs.history }}
+          <h2>Latest Changes</h2>
+          The following table contains lately changed pages, sorted descending by last change.
+          {{ partial "specs_change_history.html" . }}
+          {{ end }}
+
+          {{ partial "specs_printable_content.html" . }}
+
+        </div>
+      </article>
+
+      {{ partial "site_footer" . }}
+
+    </main>
+  </div>
+</div>
