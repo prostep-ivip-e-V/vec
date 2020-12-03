@@ -33,28 +33,32 @@ weight: 20050
 
 The VEC has two major key concepts: {{< vec-class PartVersion >}} and
 {{< vec-class DocumentVersion >}}. Both are {{< vec-class ItemVersion >}}s and
-both are used to reference / identify a piece of relevant information in a
-PDM context unambigiously.
+both are used to reference / identify a piece of relevant information in a PDM
+context unambigiously.
 
 Whereas the {{< vec-class PartVersion >}} "just" represents a PDM anchor /
-reference for a part or component, the {{< vec-class DocumentVersion >}} plays a
-double role in the VEC. It can serve as a PDM anchor / reference to a document
-with no further content (in KBL this was the
-{{< kbl-class External_reference >}}). More important, however, is that the
-{{<vec-class DocumentVersion >}} is the container for any payload information
-contained in the VEC. From a meta data perspective, the VEC does not
-differentiate between documents that are contained in the VEC itself or in some
-external place somewhere else.
+reference for a part or component plus some Meta-Information, the
+{{< vec-class DocumentVersion >}} has different characters in the VEC (for more
+details see section [Usages of the
+DocumentVersion]({{< relref "#usages-of-the-documentversion">}})):
 
-This guideline is intended to provide guidance on how these concepts are to be
+1. It can serve as a plain PDM anchor / reference to a document, with no further
+   content / information in the VEC, like the {{< vec-class PartVersion >}} for
+   parts (VEC equivalent to the KBL {{< kbl-class External_reference >}}).
+1. However, more important is that the {{<vec-class DocumentVersion >}} is the
+   container for any payload information contained in the VEC.
+
+From a meta data perspective, the VEC does not differentiate between documents
+that are contained in the VEC itself or in some external place somewhere else.
+This guideline is intended to provide guidance on how these concepts should be
 used and how an appropriate distribution of documents can look alike.
 
 ## Fundamentals
 
 On the root level, a VEC contains mainly {{< vec-class PartVersion >}}s and
 {{< vec-class DocumentVersion >}}s and some other unversioned (and constant)
-information, e.g. the definition of the {{< vec-class Unit >}}s used within the VEC.
-This is illustrated in figure [Basic
+information, e.g. the definition of the {{< vec-class Unit >}}s used within the
+VEC. This is illustrated in figure [Basic
 Structure]({{< relref "#figure-basic-structure">}}).
 
 {{< figure src="basic-structure.svg" title="Basic Structure" numbered="true" lightbox="true">}}
@@ -96,9 +100,9 @@ component from its definition (specification). In this, the
 {{<vec-class PartOrUsageRelatedSpecification>}} plays a major role.
 
 In the VEC a part ({{<vec-class PartVersion>}}) does not contain any information
-about the part, except its PDM Information (PartNumber, PartVersion, ...). All the
-information about the technical properties of a part is expressed by a subclass
-of {{<vec-class PartOrUsageRelatedSpecification>}}s (e.g. a
+about the part, except its PDM Information (PartNumber, PartVersion, ...). All
+the information about the technical properties of a part is expressed by a
+subclass of {{<vec-class PartOrUsageRelatedSpecification>}}s (e.g. a
 {{<vec-class WireSpecification >}}). The
 {{<vec-class PartOrUsageRelatedSpecification>}} is contained in a
 {{<vec-class DocumentVersion>}}. As mentioned above, the distribution of these
@@ -119,7 +123,39 @@ properly:
 - A document and the contained specifications are describing more than one part
   (e.g. a drawing for a certain class/family of terminals, seals & plugs). In
   this case it can happen that the document and the specifications are changed,
-  but not all of the described parts have to be changed (rereleased).
+  but not all of the described parts have to be changed (rereleased). E
+
+### Usages of the DocumentVersion
+
+As mentioned in the introduction, the {{< vec-class DocumentVersion >}}s VEC can
+be used in different ways:
+
+- **Plain PDM reference** (a.k.a as external reference): In this case, the
+  {{< vec-class DocumentVersion >}} in the VEC only contains meta-data and no
+  payload-data (no {{< vec-class Specification >}}s). There different
+  possibilities to resolve the original document that is referenced by the
+  {{< vec-class DocumentVersion >}}:
+  1. _**Domain Key**_: Per definition, a document version is unambiguously
+     identified with its _DocumentNumber_, _DocumentVersion_ and _CompanyName_.
+     With context knowledge about the process, the document can be resolved in
+     the corresponding PDM / Document Management System.
+  2. _**FileName**_: If the document is packaged together with VEC (VEC Package)
+     the filename attribute of {{< vec-class DocumentVersion >}} can point to
+     location within the package.
+  3. _**Location**_: Can point to a location (via a URN or URL) where the
+     document can be resolved.
+- **Digital Representation of an external Document**: There are use cases where
+  existing documents can represented in the means of the VEC. In other words the
+  VEC {{< vec-class DocumentVersion >}} is a digital representation of the
+  original document. For example, the information of a component data sheet (as
+  PDF) might be also represented in VEC in a digitally evaluable way
+  ({{< vec-class PartOrUsageRelatedSpecification >}}). In this case the same
+  mechanisms like for the _plain PDM reference_ can be used, plus payload-data
+  in {{< vec-class DocumentVersion >}}.
+- **Native VEC Documents**: The VEC {{< vec-class DocumentVersion >}} itself is
+  the source of information. This case is quite similar to the digital
+  representation scenario. However, external links (if defined) will resolve to
+  the VEC file itself.
 
 ### Combination & Reuse of Documents
 
@@ -152,8 +188,9 @@ would allow such an approach. Instead, copies of the
 are placed beside the _DocumentVersion_ of the harness, within the same VEC.
 
 {{% alert note %}} A _DocumentVersion_ in the VEC and the physical _VEC file_
-shall not be equated with the. A _DocumentVersion_ can be contained in multiple
-VEC (files).{{% /alert %}}
+shall not be equated. A _DocumentVersion_ is a logical entity and can be
+contained in multiple VEC (files). Conversely, a _VEC file_ can contain multiple
+_DocumentVersions_. {{% /alert %}}
 
 ## Types of Documents
 
@@ -208,6 +245,11 @@ Documents]({{<relref "#combination--reuse-of-documents">}})).
 
 ### Master Data Definition
 
+In contrast to _PartMaster_ documents _MasterDataDefintions_ are not related to
+a specific component or a set of components (equivalent to part, part number,
+etc.). _MasterDataDefintions_ are predefined standard information pieces in the
+process declared by some central organizational unit.
+
 It is a common approach to manage certain information centrally and distribute
 it in the development processes. The definition of this information is usually
 independent of specific development projects and ensures the adherence to
@@ -233,13 +275,40 @@ centrally distributed informations are:
 
 A VEC that requires master data definitions of a specific type (e.g. signals,
 usage nodes) can obtain these from different sources (e.g. seperate signal
-catalogs for power & information). A special use case of this is the addition /
-extension of a master data definition with individual information in a specific
-development artifact.
+catalogues for power & information). A special use case of this is the addition
+/ extension of a master data definition with individual information in a
+specific development artifact.
 
-For example, new signals might be required in the system schematic of a new
+**Example:** New signals might be required in the system schematic of a new
 series that are not (yet) included in the master data definition. These
 additions could be contained in a _local_ signal catalog of system schematic,
 while the central master data catalog is used for the other signals. When the
 development process has progressed, these _local_ definitions might be included
 in the master data definition.
+
+{{% alert note %}} The VEC specification makes no assumptions about consistency
+relationships between such multiple sources for the same type of information.
+This is due to the fact that such restrictions are usually the result of process
+specific definitions (see the following examples). {{% /alert %}}
+
+The following bulletins illustrate some examples of different, process specific
+consistency relationships. The examples are from the context of the above
+mentioned "signal catalogues".
+
+- _Different Sources for separate domains (e.g. power signals vs. information
+  signals):_ In this case, there should be no overlaps between the defined
+  entities.
+- _Local / project specific definitions vs. global definitions:_ In this case it
+  depends on the degree of freedom allow for project specific definition. Or,
+  viewed from the other direction, on the binding nature of the global
+  definitions. This determines whether only new information may be added or
+  whether existing elements may be overwritten with other information.
+
+In any case, the order of precedence has to be defined for the different
+sources. However, this is mainly an issue for the business logic of an authoring
+use case (which elements can be defined or selected by the user in a certain
+context). In the data exchange use of the VEC, the elements from the different
+sources are explicitly referenced. So at any time it is unambiguously defined
+which elements have been used / selected, even though the rules why an element
+took precedence over another are not contained in the VEC (compare figure
+[Master Data Extension]({{< relref "#figure-master-data-extension">}}))
