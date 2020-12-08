@@ -3,7 +3,7 @@ title: "Multiple Cavity Parts"
 type: specs
 summary: "The Contact_point in the KBL allows the referencing of an unspecified number of Part_usage_selects in the role Associated_parts. This implementation guideline clarifies the valid use cases of multiplicities > 1."
 authors: [becker]
-tags: ["Review"]
+tags: []
 categories: []
 date: 2020-06-16
 lastmod: 2020-06-16
