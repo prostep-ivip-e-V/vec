@@ -5,7 +5,7 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: false
 authors: [becker, steinbuechler]
-tags: ["Wire", "Single Core", "Multi Core"]
+tags: ["Review", "Wire", "Single Core", "Multi Core"]
 categories: []
 date: 2019-03-07
 lastmod: 2019-11-29T17:30:52+01:00
