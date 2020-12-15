@@ -52,6 +52,15 @@
     {{- end -}}
   </span>
   {{ end }}
+  {{ if $page.Params.history }}
+  <span class="middot-divider"></span>
+  <span class="article-history">
+    <i class="fas fa-history mr-1"></i>
+    <a  data-toggle="collapse" href="#history-collapse" role="button" aria-expanded="false" aria-controls="history-collapse">
+      History
+    </a>  
+  </span>
+  {{ end }}
   {{ if $page.Params.printable }}
   <span class="middot-divider"></span>
   <span class="article-print">
