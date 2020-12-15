@@ -14,6 +14,7 @@ math: true
 specs:
   toc: true
   history: true
+  reviewIndex: true
 
 cascade: 
   specification: VEC

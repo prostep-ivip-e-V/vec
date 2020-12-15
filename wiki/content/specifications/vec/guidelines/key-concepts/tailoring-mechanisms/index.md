@@ -10,6 +10,12 @@ date: 2020-10-21
 lastmod: 2020-10-21T15:11:41+01:00
 draft: false
 toc: true
+review: true 
+
+history:
+  - date: 2020-10-21
+    description: "Created Implementation Guideline for Tailoring Mechanisms"
+    issue: "KBLFRM-989"
 
 classes:
   - OpenEnumeration

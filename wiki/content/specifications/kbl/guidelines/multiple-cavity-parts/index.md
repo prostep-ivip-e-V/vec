@@ -20,6 +20,11 @@ classes:
   - Accessory
   - Accessory_occurrence
 
+history:
+  - date: 2020-09-14
+    description: "Added implementation guideline for multiple parts at a contact point."
+    issue: "KBLFRM-950"
+
 menu:
   kbl-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection

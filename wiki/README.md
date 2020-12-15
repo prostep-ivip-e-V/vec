@@ -16,11 +16,11 @@ https://ecad-wiki.gitlab.io.
 - [Building locally](#building-locally)
   - [Preview your site](#preview-your-site)
 - [Create Content](#create-content)
-  - [Migration Cheat Sheat](#migration-cheat-sheat)
-    - [Replace WikiLinks (in migrated .md)](#replace-wikilinks-in-migrated-md)
   - [Implementation Guidelines](#implementation-guidelines)
     - [Related content](#related-content)
     - [Creating Diagrams](#creating-diagrams)
+  - [Migration Cheat Sheat](#migration-cheat-sheat)
+    - [Replace WikiLinks (in migrated .md)](#replace-wikilinks-in-migrated-md)
 - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -77,41 +77,6 @@ The theme used is adapted from https://sourcethemes.com/academic/.
 
 ## Create Content
 
-### Migration Cheat Sheat
-
-Best Practice is:
-
-1. Create a new guideline page using the hugo cli (see below).
-2. Adjust the metadata in frontmatter. This includes creation and lastmodified date from dokuwiki and the menue position.
-3. Paste the content of the (migrated) dokuiwiki page.
-4. From top down, replace:
-   1. All class references with {{< vec-class >}}.
-   2. All intrawiki links with relref links. If the target does not exist yet, create a dummy page at the 
-   destination and add a:
-```markdown
-{{% alert warning %}}
-This is currently only a dummy to make the links working.
-{{% /alert %}}   
-```
-   3. All images with the {{< figure >}}
-   4. All code sections with ````xml`
-   5. 
-
-#### Replace WikiLinks (in migrated .md)
-
-The DokuWIKI to Hugo conversion gives Guidelines with class links like:
-```
-[HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}})
-```
-In VS Code these can be replaced to correct links with a regex. The search term is:
-```
-\[\w*\]\(\{\{< relref "/models/vec_v1_1_3/classes/(\w*)\.md" >\}\}\)
-```
-the replacement term is:
-```
-{{< vec-class "$1" >}}
-```
-
 ### Implementation Guidelines
 
 Create a new implementation guideline page
@@ -136,6 +101,12 @@ categories: []
 date: 2019-11-27T16:57:42+01:00
 lastmod: 2019-11-27T16:57:42+01:00
 draft: false
+review: true
+
+history:
+  - date: 2020-10-29T00:00:00Z
+    description: "Adapted to structural changes of wires in VEC version 1.2.0"
+    issue: "KBLFRM-953"
 
 menu:
   vec-guidelines:
@@ -155,6 +126,8 @@ Here we can start with the text.
 ```
 Important things to do:
 1.  Customize the menu entry, so the new guideline appears at the correct position.
+1.  Add a `history` to add a more meaningful changelog than commit comments.
+1.  Add `review: true` for guideline changes that require a review.
 1.  If it has a long title (shown on top of the page), give it a short 'linktitle' for the side menu.
 1.  If it is a long page with subsections, give a toc (`toc: true`)
 1.  If want to define the length of the summary add the `<!--more-->` element.
@@ -205,6 +178,41 @@ of the recommendation) and vice versa.
 
 Visio like Diagrams can be created as SVG via [draw.io](https://draw.io). The WEB editor 
 supports gitlab.com as backend for storage, so can load & save directly from a gitlab branch.
+
+### Migration Cheat Sheat
+
+Best Practice is:
+
+1. Create a new guideline page using the hugo cli (see below).
+2. Adjust the metadata in frontmatter. This includes creation and lastmodified date from dokuwiki and the menue position.
+3. Paste the content of the (migrated) dokuiwiki page.
+4. From top down, replace:
+   1. All class references with {{< vec-class >}}.
+   2. All intrawiki links with relref links. If the target does not exist yet, create a dummy page at the 
+   destination and add a:
+```markdown
+{{% alert warning %}}
+This is currently only a dummy to make the links working.
+{{% /alert %}}   
+```
+   3. All images with the {{< figure >}}
+   4. All code sections with ````xml`
+   5. 
+
+#### Replace WikiLinks (in migrated .md)
+
+The DokuWIKI to Hugo conversion gives Guidelines with class links like:
+```
+[HousingComponent]({{< relref "/models/vec_v1_1_3/classes/housingcomponent.md" >}})
+```
+In VS Code these can be replaced to correct links with a regex. The search term is:
+```
+\[\w*\]\(\{\{< relref "/models/vec_v1_1_3/classes/(\w*)\.md" >\}\}\)
+```
+the replacement term is:
+```
+{{< vec-class "$1" >}}
+```
 
 
 ## Troubleshooting

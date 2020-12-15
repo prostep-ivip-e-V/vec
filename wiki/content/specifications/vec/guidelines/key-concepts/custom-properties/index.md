@@ -10,6 +10,13 @@ date: 2020-07-07
 lastmod: 2019-11-28T15:11:41+01:00
 draft: false
 toc: true
+review: true
+
+history:
+  - date: 2020-10-11
+    description: " Improved implementation guideline for custom properties (e.g. ComplexProperty)"
+    issue: "KBLFRM-960"
+
 
 classes:
   - CustomProperty
