@@ -15,7 +15,7 @@
   <thead>
     <tr>
       <td>Title</td>
-      <td>Last Change Comment</td>
+      <td>Latest Content Addition / Commit</td>
       <td>Created</td>
       <td>Changed</td>
     </tr>
@@ -32,12 +32,26 @@
     <tr>
       {{ if .IsDescendant $current_page }}
       <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>      
-      <td>{{ if .GitInfo }}{{ .GitInfo.Subject }}{{ end }}</td>
-      <td>{{ .Date.Format "2006-01-02" }}</td>
-      <td>{{ .Lastmod.Format "2006-01-02" }}</td>
+      <td>
+        {{- if .Params.history -}}
+        {{- range first 1 (sort .Params.history "date" "desc") -}}
+        {{- if .issue -}}
+        {{- $completeUrl := printf "https://track.prostep.com/browse/%s" .issue -}}
+        <a href="{{$completeUrl}}">{{- .issue -}}</a>:&nbsp;
+        {{- end -}}
+        {{- .description -}}      
+        <br/>
+        {{- end -}}    
+        {{- end -}}
+        {{ if .GitInfo }}<small>Latest Commit: {{ .GitInfo.Subject }}</small>{{ end }}
+      </td>
+      <td class="text-nowrap">{{ .Date.Format "2006-01-02" }}</td>
+      <td class="text-nowrap">{{ .Lastmod.Format "2006-01-02" }}</td>
       {{ end }}
     </tr>
   {{ end }}
   </tbody>
 </table>
+
+
 

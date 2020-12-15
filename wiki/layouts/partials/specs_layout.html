@@ -30,6 +30,8 @@
 
           {{ partial "specs_metadata" (dict "page" $current_page "is_list" 0 "share" true) }}
 
+          {{ partial "specs_history" . }}
+
           <div class="article-style">
             {{ .Content }}
           </div>
@@ -42,7 +44,7 @@
           {{ if .Params.specs.history }}
           <h2>Latest Changes</h2>
           The following table contains lately changed pages, sorted descending by last change.
-          {{ partial "specs_change_history.html" . }}
+          {{ partial "specs_change_history_index.html" . }}
           {{ end }}
 
           {{ if .Params.specs.toc }}

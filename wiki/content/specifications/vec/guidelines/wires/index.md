@@ -18,6 +18,11 @@ classes:
   - InsulationSpecification
   - CoreSpecification
 
+history:
+  - date: 2020-10-29T00:00:00Z
+    description: "Adapted to structural changes of wires in VEC version 1.2.0"
+    issue: "KBLFRM-953"
+
 menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection

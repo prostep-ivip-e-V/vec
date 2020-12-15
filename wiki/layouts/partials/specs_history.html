@@ -1,0 +1,40 @@
+{{ $page := . }}
+{{ if $page.Params.history }}
+<div class="collapse" id="history-collapse">
+  <h2>Change History</h2>
+  <div class="card card-body">
+    <table class="w-100">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td style="width: 100%;">Subject</td>
+          <td>Date</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{- if $page.GitInfo -}}
+        <tr>
+          <td class="text-nowrap">Latest Commit</td>
+          <td> {{ $page.GitInfo.Subject }}</td>
+          <td class="text-nowrap">{{ $page.Lastmod.Format "2006-01-02" }}</td>
+        </tr>
+        {{- end -}}
+        {{- range (sort $page.Params.history "date" "desc") -}}
+        <tr>
+          <td class="text-nowrap">
+            {{- if .issue -}}
+            {{- $completeUrl := printf "https://track.prostep.com/browse/%s" .issue -}}
+            <a href="{{$completeUrl}}">{{- .issue -}}</a>&nbsp;
+            {{- end -}}
+          </td>
+          <td>
+            {{- .description -}}      
+          </td>
+          <td class="text-nowrap">{{ dateFormat "2006-01-02" .date }}</td>
+        {{- end -}}    
+      </tr>
+      </tbody>    
+    </table>
+  </div>
+</div>
+{{ end }}
