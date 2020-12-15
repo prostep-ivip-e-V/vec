@@ -14,6 +14,10 @@ math: true
 classes:
   - B_spline_curve
 
+history:
+  - date: 2020-06-26
+    description: "Added clarification for the usage of B-Splines in KBL."
+    issue: "KBLFRM-923"
 menu:
   kbl-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection

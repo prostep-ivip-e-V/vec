@@ -11,12 +11,17 @@ lastmod: 2020-05-29
 draft: false
 math: true
 diagram: true
+review: true
 
 classes:
   - Wire_protection_occurrence
   - Special_terminal_occurrence
   - Protection_area
   - Segment
+history:
+  - date: 2020-10-05
+    description: "Added guideline for ring terminals and overlapping wire protections."
+    issue: "KBLFRM-631"
 
 menu:
   kbl-guidelines:

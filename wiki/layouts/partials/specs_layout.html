@@ -41,6 +41,13 @@
           {{ partial "specs_links.html" . }}
           {{ end }}
 
+          
+          {{ if .Params.specs.reviewIndex }}
+          <h2>Currently Under Review</h2>
+          The following table contains pages currently under review.
+          {{ partial "specs_review_index.html" . }}
+          {{ end }}
+
           {{ if .Params.specs.history }}
           <h2>Latest Changes</h2>
           The following table contains lately changed pages, sorted descending by last change.

@@ -1,0 +1,57 @@
+{{ $current_page := . }}
+
+{{/* Dynamically load menu for this specs page. */}}
+{{/* Attempt to get menu name from `menu_name` param, Hugo's front matter menu config, or the last dir of filepath. */}}
+{{ $menu_name := "" }}
+{{ range $k, $v := .Params.menu }}
+  {{ $menu_name = $k }}
+{{ end }}
+{{ $menu_name = .Params.menu_name | default $menu_name | default (path.Base (path.Split .File).Dir) }}
+{{ if not (index site.Menus $menu_name) }}
+  {{ errorf "Please define menu items named `menu: %s:` in your %s front matter or define `[[menu.%s]]` in `config/default/menus.toml`. See https://sourcethemes.com/academic/docs/managing-content/#menus" $menu_name .Path $menu_name }}
+{{ end }}
+
+<table>
+  <thead>
+    <tr>
+      <td>Title</td>
+      <td>Latest Content Addition / Commit</td>
+      <td>Created</td>
+      <td>Changed</td>
+    </tr>
+  </thead>
+  <tbody>
+  <!-- orders content according to the "lastmod" field in front matter -->
+  {{ $history := slice }}
+  {{ range .Site.Pages.ByLastmod.Reverse }}
+  {{ if and (.IsDescendant $current_page) (.Params.review) }}
+  {{ $history = $history | append (slice .)}}
+  {{ end }}
+  {{ end }}
+  {{ range first 10 $history }}
+    <tr>
+      {{ if .IsDescendant $current_page }}
+      <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>      
+      <td>
+        {{- if .Params.history -}}
+        {{- range first 1 (sort .Params.history "date" "desc") -}}
+        {{- if .issue -}}
+        {{- $completeUrl := printf "https://track.prostep.com/browse/%s" .issue -}}
+        <a href="{{$completeUrl}}">{{- .issue -}}</a>:&nbsp;
+        {{- end -}}
+        {{- .description -}}      
+        <br/>
+        {{- end -}}    
+        {{- end -}}
+        {{ if .GitInfo }}<small>Latest Commit: {{ .GitInfo.Subject }}</small>{{ end }}
+      </td>
+      <td class="text-nowrap">{{ .Date.Format "2006-01-02" }}</td>
+      <td class="text-nowrap">{{ .Lastmod.Format "2006-01-02" }}</td>
+      {{ end }}
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
+
+
+

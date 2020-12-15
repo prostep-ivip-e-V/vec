@@ -10,7 +10,17 @@ categories: []
 date: 2020-06-22
 lastmod: 2019-12-02T12:43:57+01:00
 draft: false
+review: true
 diagram: false
+
+history:
+  - date: 2020-06-22
+    description: "Created Guideline for General Structure of VEC Files"
+    issue: "KBLFRM-996"
+  - date: 2020-11-27
+    description: "Integrated Review Comments for the whole page"
+    issue: "KBLFRM-996"
+
 classes:
   - VecContent
   - DocumentVersion

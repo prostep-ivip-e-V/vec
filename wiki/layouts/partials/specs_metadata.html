@@ -70,4 +70,10 @@
     {{- end }}
   </span>
   {{ end }}
+  {{- if $page.Params.review -}}
+  <span class="middot-divider"></span>
+  <span class="article-under-review">
+    <span class="badge text-light rounded-pill bg-danger">Under Review</span>
+  </span>
+  {{- end -}}
 </div>
