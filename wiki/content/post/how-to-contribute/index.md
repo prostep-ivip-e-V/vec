@@ -31,7 +31,7 @@ If you want to join, please reach out to the contact person listed on the corres
 Continuous development and improvement is crucial, also for standards. An essential factor to achieve this, is feedback from the user and implementer commmunity. Therefore: 
 
 **If you find a bug or an error in the recommendations, the schemas or 
-any of the provided documentation of the standards, please do not hesitate to drop us an issue in our [issue tracking system](https://track.prostep.com/projects/KBLFRM/). The same applies to all kinds of feature requests and questions.**
+any of the provided documentation of the standards, please do not hesitate to drop us an issue in our [issue tracking system](https://prostep-ivip.atlassian.net/projects/KBLFRM/). The same applies to all kinds of feature requests and questions.**
 
 The issue management is done in a JIRA instance provided by prostep ivip. To request access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
 

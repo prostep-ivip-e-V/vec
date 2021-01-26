@@ -113,7 +113,7 @@ appointment_url = ""
 contact_links = [
   {icon = "globe", icon_pack = "fas", name = "www.prostep.org", link = "https://www.prostep.org"},
   {icon = "envelope", icon_pack = "fas", name = "psev(at)prostep.org", link = "#contact"},
-  {icon = "jira", icon_pack = "fab", name = "JIRA Issue Tracker", link = "https://track.prostep.com"}
+  {icon = "jira", icon_pack = "fab", name = "JIRA Issue Tracker", link = "https://prostep-ivip.atlassian.net/"}
   #{icon = "twitter", icon_pack = "fab", name = "DM Me", link = "https://twitter.com/Twitter"},
   #{icon = "skype", icon_pack = "fab", name = "Skype Me", link = "skype:echo123?call"},
   #{icon = "keybase", icon_pack = "fab", name = "Chat on Keybase", link = "https://keybase.io/"},

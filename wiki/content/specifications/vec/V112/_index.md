@@ -36,4 +36,4 @@ links:
     url: 'vec_1.1.2-strict.xsd'
 
 ---
-This version brings features introduced in KBL 2.4 to the VEC. Additionally it also implements feature requests and bug fixes brought up during the first implementations in the area of component descriptions. For detailed release notes see [VEC JIRA Release Notes](https://track.prostep.com/jira/secure/ReleaseNote.jspa?projectId=10550&version=30871). For this version no new specification document will be published.
+This version brings features introduced in KBL 2.4 to the VEC. Additionally it also implements feature requests and bug fixes brought up during the first implementations in the area of component descriptions. For detailed release notes see [VEC JIRA Release Notes](https://prostep-ivip.atlassian.net/projects/KBLFRM/versions/10112). For this version no new specification document will be published.

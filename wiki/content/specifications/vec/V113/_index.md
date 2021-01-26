@@ -47,7 +47,7 @@ weight: 50
 ---
 This version brings features in the area of electrical design (especially new semantics for the 3 layers (Net, Connection, and Wiring Specification). Additionally there are a lot of small improvements, mainly new attributes, for the description of components and new OpenEnumerations.
 <!--more--> 
-For detailed release notes see [VEC JIRA Release Notes](https://track.prostep.com/jira/secure/ReleaseNote.jspa?projectId=10550&version=36170).
+For detailed release notes see [VEC JIRA Release Notes](https://prostep-ivip.atlassian.net/projects/KBLFRM/versions/10114).
 
 On the technical side there have been two improvements as well:
 
