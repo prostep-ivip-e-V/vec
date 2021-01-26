@@ -30,4 +30,4 @@ This version incorporates the results of the harmonization activities and elimin
   * OpenEnumerations (analogous to VEC)
   * New features for requirements currently realized by dialects like Forced Routing or Id‘s for Fixing_assignments
 
-For detailed release notes see [KBL JIRA Release Notes](https://track.prostep.com/secure/ReleaseNote.jspa?version######38370&projectId10550). The schema and the relevant documentation can be found [here]({{< ref "specifications/kbl" >}}).
+For detailed release notes see [KBL JIRA Release Notes](https://prostep-ivip.atlassian.net/secure/ReleaseNote.jspa?projectId=10104&version=10115). The schema and the relevant documentation can be found [here]({{< ref "specifications/kbl" >}}).

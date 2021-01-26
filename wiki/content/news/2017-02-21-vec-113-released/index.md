@@ -28,7 +28,7 @@ projects: []
 This version brings features in the area of electrical design (especially new semantics for the 3 layers (Net, Connection, and Wiring Specification). 
 <!--more-->
 Additionally there are a lot of small improvements, mainly new attributes, for the description of components and new OpenEnumerations. 
-For detailed release notes see [VEC JIRA Release Notes](https://track.prostep.com/jira/secure/ReleaseNote.jspa?projectId######10550&version36170). 
+For detailed release notes see [VEC JIRA Release Notes](https://prostep-ivip.atlassian.net/secure/ReleaseNote.jspa?projectId=10104&version=10114). 
 For this version no new specification document will be published. 
 
 The schema and the relevant documentation can be found [here]({{< ref "specifications/vec/v113" >}}).

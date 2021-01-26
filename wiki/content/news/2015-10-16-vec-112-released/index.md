@@ -27,5 +27,5 @@ projects: []
 ---
 This version brings features introduced in KBL 2.4 to the VEC. Additionally it also implements feature requests and bug fixes brought up during the first implementations in the area of component descriptions.
 <!--more-->
-For detailed release notes see [VEC JIRA Release Notes](https://track.prostep.com/jira/secure/ReleaseNote.jspa?projectId######10550&version25170). For this version no new specification document will be published. 
+For detailed release notes see [VEC JIRA Release Notes](https://prostep-ivip.atlassian.net/secure/ReleaseNote.jspa?projectId=10104&version=10112). For this version no new specification document will be published. 
 The schema and the relevant documentation can be found [here]({{< relref "specifications/vec/v112" >}}).
