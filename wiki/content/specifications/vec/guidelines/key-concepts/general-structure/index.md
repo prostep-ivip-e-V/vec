@@ -38,9 +38,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 20050
 ---
-
-{{< review "KBLFRM-996" >}}
-
 The VEC has two major key concepts: {{< vec-class PartVersion >}} and
 {{< vec-class DocumentVersion >}}. Both are {{< vec-class ItemVersion >}}s and
 both are used to reference / identify a piece of relevant information in a PDM

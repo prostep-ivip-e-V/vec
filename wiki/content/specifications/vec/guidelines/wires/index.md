@@ -32,7 +32,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 5000
 ---
-{{< review "KBLFRM-953" >}}
 ## Single Core Specification
 
 {{< figure src="single_core_specification.jpg" lightbox="true" title="Single Core Specification">}}

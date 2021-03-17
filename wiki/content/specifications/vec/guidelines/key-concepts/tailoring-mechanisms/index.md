@@ -28,9 +28,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1000
 ---
-
-{{< review "KBLFRM-989" >}}
-
 There are two ways to tailor the VEC schema according to your own needs in a
 compatible way to create your own process, tool or company specific VEC schema
 (which is still a valid VEC):
