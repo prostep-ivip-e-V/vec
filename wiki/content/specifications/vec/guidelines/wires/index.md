@@ -20,6 +20,9 @@ classes:
   - CoreSpecification
 
 history:
+  - date: 2021-03-17T00:00:00Z
+    description: "Added an XML example for the structure of a complex wire"
+    issue: "KBLFRM-1032"
   - date: 2020-10-29T00:00:00Z
     description: "Adapted to structural changes of wires in VEC version 1.2.0"
     issue: "KBLFRM-953"
@@ -71,3 +74,60 @@ This illustration show an example of a more complex multi core. The example is a
 {{< figure src="complex_multi_core_specification.jpg" lightbox="true" title="Multi Core with multiple Usage of the same WireElementSpecification">}}
 
 To display the CAT cable and its SubWireElements, the hierarchy of the {{< vec-class WireElementSpecification >}}s (green) must be reflected in the hierarchy of the {{< vec-class WireElement >}}s (yellow). The figure shows the CAT cable itself with its shield (*"SHIELD"*) and the contained cable pairs (*"PAIR-1"* and *"PAIR-2"*). Each cable pair consists of the wires themselves (e.g. *"CORE-1a"* and *"CORE-1b"* for *"PAIR-1"*). As each of the cable pairs has a white wire with the same {{< vec-class WireElementSpecification >}}, they share the this specification. However, there are individual {{< vec-class WireElement >}} in order the keep them distinctive and unambiguously referenceable (e.g. from a {{< vec-class WireElementReference >}}.
+
+The following XML snippet illustrates the structural composition of such a complex wire. 
+All technical attributes and specifications for the detailed properties (e.g. insulation, twisting, conductor) are omitted for the clarity of the example.
+
+```xml
+<Specification id="id_1001_0" xsi:type="vec:WireElementSpecification">
+  <Identification>RDWH-GRWH</Identification>
+  <SubWireElementSpecification>id_2001_1 id_2001_2</SubWireElementSpecification>
+</Specification>
+<Specification id="id_1001_1" xsi:type="vec:WireElementSpecification">
+  <Identification>GRWH</Identification>
+  <SubWireElementSpecification>id_2001_3 id_2001_4</SubWireElementSpecification>
+</Specification>
+<Specification id="id_1001_2" xsi:type="vec:WireElementSpecification">
+  <Identification>RDWH</Identification>
+  <SubWireElementSpecification> id_2001_5 id_2001_4</SubWireElementSpecification>
+</Specification>
+<Specification id="id_1001_3" xsi:type="vec:WireElementSpecification">
+  <Identification>GR</Identification>
+</Specification>
+<Specification id="id_1001_4" xsi:type="vec:WireElementSpecification">
+  <Identification>WH</Identification>
+</Specification>
+<Specification id="id_1001_5" xsi:type="vec:WireElementSpecification">
+  <Identification>RD</Identification>
+</Specification>
+<Specification id="id_1002_0" xsi:type="vec:WireSpecification">
+  <Identification>Cat-Cable</Identification>
+  <SpecialPartType>MultiCoreWire</SpecialPartType>
+  <DescribedPart>id_2000_0</DescribedPart>
+  <WireElementSpecification>id_1001_0</WireElementSpecification>
+  <SubWireElement id="id_1002_1">
+      <Identification>Green-White Twisted Cable</Identification>
+      <WireElementSpecification>id_1001_1</WireElementSpecification>
+      <SubWireElement id="id_1002_2">
+          <Identification>Green Cable</Identification>
+          <WireElementSpecification>id_1001_3</WireElementSpecification>
+      </SubWireElement>
+      <SubWireElement id="id_1002_3">
+          <Identification>White Cable</Identification>
+          <WireElementSpecification>id_1001_4</WireElementSpecification>
+      </SubWireElement>
+  </SubWireElement>
+  <SubWireElement id="id_1002_4">
+      <Identification>Red-White Twisted Cable</Identification>
+      <WireElementSpecification>id_1001_2</WireElementSpecification>
+      <SubWireElement id="id_1002_5">
+          <Identification>Red Cable</Identification>
+          <WireElementSpecification>id_1001_5</WireElementSpecification>
+      </SubWireElement>
+      <SubWireElement id="id_1002_6">
+          <Identification>White Cable</Identification>
+          <WireElementSpecification>id_1001_4</WireElementSpecification>
+      </SubWireElement>
+  </SubWireElement>
+</Specification>
+```
