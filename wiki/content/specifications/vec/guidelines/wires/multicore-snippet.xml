@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vec:VecContent xmlns:vec="http://www.prostep.org/ecad-if/2011/vec"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.prostep.org/ecad-if/2011/vec ../../v120/vec_1.2.0-strict.xsd" id="id_0001">
+    <VecVersion>1.2.0</VecVersion>
+    <DocumentVersion id="id_1">
+        <CompanyName>ACME Inc.</CompanyName>
+        <DocumentNumber>0815</DocumentNumber>
+        <DocumentType>PartMaster</DocumentType>
+        <DocumentVersion>a</DocumentVersion>  
+        <!-- Auxiliary specifications for the multicore -->
+        <Specification id="id_1_1" xsi:type="vec:InsulationSpecification">
+            <Identification>Orange</Identification>
+            <BaseColor id="id_1_1_0001">
+                <Key>#FF8000</Key>
+                <ReferenceSystem>RGB</ReferenceSystem>
+            </BaseColor>
+        </Specification>
+        <Specification id="id_1_2" xsi:type="vec:ShieldSpecification">
+            <Identification>Shielding</Identification>
+            <CrossSectionArea id="id_1_2_0001">
+                <UnitComponent>id_unit_mm2</UnitComponent>
+                <ValueComponent>1.5</ValueComponent>
+            </CrossSectionArea>
+        </Specification>
+        <Specification id="id_1_3" xsi:type="vec:WireGroupSpecification">
+            <Identification>Twisting</Identification>
+            <GroupType>Twisted</GroupType>
+            <LengthOfTwist id="id_1_3_0001">
+                <UnitComponent>id_unit_mm</UnitComponent>
+                <ValueComponent>40</ValueComponent>
+            </LengthOfTwist>
+        </Specification>
+        <!-- Auxiliary specifications for the two single cores -->
+        <Specification id="id_2_1" xsi:type="vec:CoreSpecification">
+            <Identification>Core</Identification>
+            <CrossSectionArea id="id_2_1_0001">
+                <UnitComponent>id_unit_mm2</UnitComponent>
+                <ValueComponent>0.35</ValueComponent>
+            </CrossSectionArea>
+        </Specification>
+        <Specification id="id_2_2" xsi:type="vec:InsulationSpecification">
+            <Identification>Green</Identification>
+            <BaseColor id="id_2_2_0001">
+                <Key>#00CC00</Key>
+                <ReferenceSystem>RGB</ReferenceSystem>
+            </BaseColor>
+        </Specification>
+        <Specification id="id_3_2" xsi:type="vec:InsulationSpecification">
+            <Identification>Blue</Identification>
+            <BaseColor id="id_3_2_0001">
+                <Key>#0050EF</Key>
+                <ReferenceSystem>RGB</ReferenceSystem>
+            </BaseColor>
+        </Specification>
+        <!-- Buttom Up definition of the WireElementSpecification (from single cores to Multicore) -->
+        <Specification id="id_4_1" xsi:type="vec:WireElementSpecification">
+            <Identification>A</Identification>
+            <ConductorSpecification>id_2_1</ConductorSpecification>
+            <InsulationSpecification>id_2_2</InsulationSpecification>
+        </Specification>
+        <Specification id="id_4_2" xsi:type="vec:WireElementSpecification">
+            <Identification>B</Identification>
+            <ConductorSpecification>id_2_1</ConductorSpecification>
+            <InsulationSpecification>id_3_2</InsulationSpecification>
+        </Specification>
+        <Specification id="id_4_3" xsi:type="vec:WireElementSpecification">
+            <Identification>Twisted-Pair</Identification>
+            <SubWireElementSpecification>id_4_1 id_4_2</SubWireElementSpecification>
+            <WireGroupSpecification>id_1_3</WireGroupSpecification>            
+        </Specification>
+        <Specification id="id_4_4" xsi:type="vec:WireElementSpecification">
+            <Identification>Shield</Identification>
+            <ConductorSpecification>id_1_2</ConductorSpecification>
+            <SubWireElementSpecification>id_4_3</SubWireElementSpecification>            
+        </Specification>
+        <Specification id="id_4_5" xsi:type="vec:WireElementSpecification">
+            <Identification>Insulation</Identification>
+            <InsulationSpecification>id_1_1</InsulationSpecification>
+            <SubWireElementSpecification>id_4_4</SubWireElementSpecification>            
+        </Specification>
+        <!-- WireSpecification with WireElemnts -->
+        <Specification id="id_5_0" xsi:type="vec:WireSpecification">
+            <Identification>Multi-Core WireSpecification</Identification>
+            <DescribedPart>id_2</DescribedPart>
+            <WireElementSpecification>id_4_5</WireElementSpecification>
+            <WireElement id="id_5_1">
+                <Identification>Root</Identification>
+                <WireElementSpecification>id_4_5</WireElementSpecification>
+                <SubWireElement id="id_5_2">
+                    <Identification>Insulation</Identification>
+                    <WireElementSpecification>id_4_5</WireElementSpecification>
+                    <SubWireElement id="id_5_3">
+                        <Identification>Shield</Identification>
+                        <WireElementSpecification>id_4_4</WireElementSpecification>
+                        <SubWireElement id="id_5_4">
+                            <Identification>Twisted-Pair</Identification>
+                            <WireElementSpecification>id_4_3</WireElementSpecification>
+                            <SubWireElement id="id_5_5">
+                                <Identification>A</Identification>
+                                <WireElementSpecification>id_4_1</WireElementSpecification>
+                            </SubWireElement>
+                            <SubWireElement id="id_5_6">
+                                <Identification>B</Identification>
+                                <WireElementSpecification>id_4_2</WireElementSpecification>
+                            </SubWireElement>                            
+                        </SubWireElement>
+                    </SubWireElement>
+                </SubWireElement>
+            </WireElement>
+        </Specification>
+    </DocumentVersion>
+    <PartVersion id="id_2">
+        <CompanyName>ACME Inc.</CompanyName>
+        <PartNumber>4711</PartNumber>
+        <PartVersion>a</PartVersion>
+        <PrimaryPartType>Wire</PrimaryPartType>
+    </PartVersion>
+    <Unit id="id_unit_mm2" xsi:type="vec:SIUnit">
+        <Exponent>2</Exponent>
+        <SiUnitName>Metre</SiUnitName>
+        <SiPrefix>Milli</SiPrefix>        
+    </Unit>
+    <Unit id="id_unit_mm" xsi:type="vec:SIUnit">
+        <SiUnitName>Metre</SiUnitName>
+        <SiPrefix>Milli</SiPrefix>        
+    </Unit>
+</vec:VecContent>
