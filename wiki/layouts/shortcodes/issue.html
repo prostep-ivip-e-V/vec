@@ -1,0 +1,3 @@
+{{- $issueNumber := .Get 0 -}}
+{{- $completeUrl := printf "https://prostep-ivip.atlassian.net/browse/%s" $issueNumber -}}
+<a {{ printf "href=%q" $completeUrl | safeHTMLAttr }}>{{ $issueNumber }}</a>
