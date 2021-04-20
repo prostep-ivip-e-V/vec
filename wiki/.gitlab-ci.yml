@@ -3,8 +3,6 @@
 # To update the image, checkout the registry branch.
 image: registry.gitlab.com/pages/hugo/hugo_extended:0.81.0
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
 before_script:
   - apk add --update --no-cache git go
 
@@ -33,6 +31,7 @@ pages:
 deploy-index:
   image: node:latest
   stage: deploy
+  before_script: []
   dependencies:
     - pages
   script:
