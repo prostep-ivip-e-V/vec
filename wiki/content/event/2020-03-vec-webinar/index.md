@@ -2,7 +2,6 @@
 title: VEC – Vehicle Electric Container
 subtitle: A prostep ivip Webinar
 event: prostep ivip Webinar
-type: talk
 
 abstract: "
 The 4-hour webinar offers an introduction to the VEC and its many possibilities.
@@ -35,9 +34,9 @@ url_video: "https://www.youtube.com/watch?v=Eddm3-I7ju0"
 
 math: false
 ---
-{{% alert note %}}
+{{% callout note %}}
 Slides and video are in German language, only!
-{{% /alert %}}
+{{% /callout %}}
 
 ## Part 1
 - Motivation behind the VEC [<span style="font-family:Webdings">&#183;</span>(00:12:47)](https://www.youtube.com/embed/Eddm3-I7ju0?rel=0&start=433&end=1200&autoplay=1)

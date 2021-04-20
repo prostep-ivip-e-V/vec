@@ -62,7 +62,7 @@ The {{< vec-class WireElementSpecification >}} is a generic node in the hierarch
 - {{< vec-class InsulationSpecification >}} if the wire element has insulation properties, or 
 - {{< vec-class ConductorSpecification >}} if the wire element has conducting properties.
 
-{{% alert note %}}The auxiliary specifications can be shared between different {{< vec-class WireElementSpecification >}}. For example, in the real world all FLRY wires with a specific cross section area have the same properties for the core. This *can* (not a must) be expressed in the VEC by sharing the same {{< vec-class CoreSpecification >}}.{{% /alert %}}
+{{% callout note %}}The auxiliary specifications can be shared between different {{< vec-class WireElementSpecification >}}. For example, in the real world all FLRY wires with a specific cross section area have the same properties for the core. This *can* (not a must) be expressed in the VEC by sharing the same {{< vec-class CoreSpecification >}}.{{% /callout %}}
 
 In reality, a specified wire element can be used in different contexts. For example, a white single core can be used as individual single core wire or as part of several different multi core wires. It can even be used multiple times as part of the same multi core (compare CAT7 twisted pair cables that might contain up to 4 similar white cores). To represent this fact, the {{< vec-class WireElementSpecification >}} itself is also designed to be reusable. 
 
@@ -82,9 +82,9 @@ To solve this dilemma, the VEC introduced the {{< vec-class WireSpecification >}
 
 The {{< vec-class WireElement >}} is the context specific handle of a {{< vec-class WireElementSpecification >}} in a specific {{< vec-class WireSpecification >}} (primarily needed for multi cores, but due to a consistent modelling approach also mandatory for single cores). The {{< vec-class WireElement >}}s are used as a target for references.
 
-{{% alert note %}}
+{{% callout note %}}
 Every {{< vec-class WireElementSpecification >}} referenced transitively by the root {{< vec-class WireElementSpecification >}} of a {{< vec-class WireSpecification >}} requires a corresponding {{< vec-class WireElement >}} in the same {{< vec-class WireSpecification >}}. Care must be taken to ensure that the hierarchies defined by the {{< vec-class WireElement >}} and the {{< vec-class WireElementSpecification >}} are consistent with each other.
-{{% /alert %}}
+{{% /callout %}}
 
 The redundant replication of the wire hierarchy within the {{< vec-class WireElement >}}s is necessary, because without this hierarchy wires with multiple occurrences of the same {{< vec-class WireElementSpecification >}} within the wire could not be represented consistently (see {{< issue KBLFRM-949 >}}).  
 
@@ -96,9 +96,9 @@ The figure above illustrates the representation of a single core wire in the VEC
 
 In theory, there are two possible representations for single cores in the VEC (see the figure below). A minimal representation, where the single core is represented by one wire element with conducting and insulating properties at the same time, and a more extensive one, where the single core is represented by two hierarchical wire elements, one for the insulation and one for the actual core. 
 
-{{% alert note %}}
+{{% callout note %}}
  It is recommended for single cores to use always the minimal representation of the {{< vec-class WireElementSpecification >}}. Otherwise the number of objects and structures in the model are inflated without additional information or benefits. 
- {{% /alert %}}
+ {{% /callout %}}
 
 {{< figure src="minimal-representation.jpg" lightbox="true" numbered="true" title="Minimal Representation vs. non-compliant Representation">}}
 
@@ -126,9 +126,9 @@ As discussed earlier: for single cores a _minimized representation_ shall be use
 
 For example, having a {{< vec-class WireElementSpecification >}} with a {{< vec-class ShieldSpecification >}} and an {{< vec-class InsulationSpecification >}}: What is the order of layering? Which one comes first? Another example, a foil shield in combination with a braiding and an insulation. A {{< vec-class WireElementSpecification >}} could only carry one {{< vec-class ConductorSpecification >}}, so one of the two shieldings get individual wire element, whereas the other one is combined with the insulation. Isn't that inconsistent? And these are just two problematic cases and many more are conceivable. To avoid this confusion, the following applies for multicores:
 
-{{% alert note %}}
+{{% callout note %}}
 In contrast to single cores, {{< vec-class WireElementSpecification >}}s of higher levels (not single cores used in a multicore) shall only represent **one** Character / Element / Property in the multicore. {{< vec-class WireElementSpecification >}} that have a grouping, conducting, insulating or similar character at the same time are **not** permitted.
-{{% /alert %}}
+{{% /callout %}}
 
 Another reason for not using a _minimized representations_ for higher level multicore wire elements is, that most manufacturing processes require the individual identification of the different elements (e.g. shield an insulation) and those are often processed in different manufacturing steps.
 

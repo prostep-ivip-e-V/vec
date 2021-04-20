@@ -36,9 +36,9 @@ any of the provided documentation of the standards, please do not hesitate to dr
 The issue management is done in a JIRA instance provided by prostep ivip. To request access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
 
 ## You want to contribute content directly to the ECAD-WIKI?
-{{% alert note %}}
+{{% callout note %}}
 Since the specifications (KBL & VEC) are subject to a strict issue and publishing process, the following only applies to content beyond that (e.g. Implementation Guidelines & Sample Files).
-{{% /alert %}}
+{{% /callout %}}
 
 *Every contribution counts!* You can provide your own contribution to the content of the ECAD-WIKI when:
 
@@ -54,8 +54,8 @@ Then you are more than welcome. All you need is a *GitLab.com* account, and that
 - After your first contribution, you can request `Developer` access to the project, which makes the "forking" unnecessary.
 - If you have a contribution (a feature request is also a contribution), but can not provide a merge request you can drop us an issue on [GitLab.com](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/-/issues). 
 
-{{% alert warning %}}
+{{% callout warning %}}
 This is only valid for features of the Wiki itself and content as specified above. Issues and merge requests concerning the specifications itself will be closed without further comment.
-{{% /alert %}}
+{{% /callout %}}
 
 

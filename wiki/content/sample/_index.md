@@ -14,13 +14,13 @@ header:
 ---
 This area of the ECAD WIKI is supposed to contain sample files of concrete implementations of the VEC and / or the KBL. 
 
-{{% alert warning %}}
+{{% callout warning %}}
 **Disclaimer:** 
 
 THE SAMPLES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SAMPLES OR THE USE OR OTHER DEALINGS IN THE SAMPLES. 
 
 IN PARTICULAR, THE DESIGNS CONTAINED IN THE EXAMPLES DO NOT REPRESENT VALID SPECIFICATIONS FOR ANY TYPE OF WIRING HARNESS OR WIRING SYSTEM COMPONENTS OF THE PAST OR THE FUTURE. 
-{{% /alert %}}
+{{% /callout %}}
 
 If you want to provide a sample file, please contact us via the ways defined [here]({{< ref "post/how-to-contribute">}}). For sample files provided to the ECAD WIKI the following guidelines apply:
 

@@ -191,9 +191,9 @@ Best Practice is:
    2. All intrawiki links with relref links. If the target does not exist yet, create a dummy page at the 
    destination and add a:
 ```markdown
-{{% alert warning %}}
+{{% callout warning %}}
 This is currently only a dummy to make the links working.
-{{% /alert %}}   
+{{% /callout %}}   
 ```
    3. All images with the {{< figure >}}
    4. All code sections with ````xml`

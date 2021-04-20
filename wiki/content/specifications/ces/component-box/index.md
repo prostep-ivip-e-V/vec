@@ -18,7 +18,7 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
 ---
-{{% alert warning %}}
+{{% callout warning %}}
 **Disclaimer**
 
 This material has been developed in the context of the revision of the CES Guidelines. It represents the 
@@ -31,7 +31,7 @@ the contents are currently still in German.
 The documents are made available in the Wiki to allow the participants to continue working on
 the documents in the future. They shall not be used to develop software or services on it or become the 
 subject of agreements between development partners.
-{{% /alert %}}
+{{% /callout %}}
 ## Allgemeine Basis
 ### Component Type
   * Sicherungsträger: Component Type = CONNECTOR

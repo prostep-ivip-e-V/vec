@@ -50,6 +50,6 @@ over 190 individual issues have been addressed. The following section lists the 
 been changed, improved or added. A overview of the main improvements, information about incompatibilities to 
 preceding versions and a complete and detailed change history is available in the [release notes]({{< relref "release-notes.md" >}}).
 
-{{% alert info %}}
+{{% callout info %}}
 The links to the official recommendation documents will be added here as soon as they become available.
-{{% /alert %}}
+{{% /callout %}}

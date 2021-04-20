@@ -1,13 +1,13 @@
 ---
 # Display name
-name: Michael Steinbüchler
+title: Michael Steinbüchler
 
 # Username (this should match the folder name)
 authors:
 - steinbuechler
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position
 role: Service Provider for the VES-WF & ECAD-IF

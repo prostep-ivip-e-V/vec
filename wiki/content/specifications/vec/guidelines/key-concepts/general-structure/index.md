@@ -95,10 +95,10 @@ distinction can be made here between:
   to describe / specify the properties of one or many
   {{< vec-class PartVersion >}}s.
 
-{{% alert note %}} The distribution of information into different documents is
+{{% callout note %}} The distribution of information into different documents is
 mainly driven by the requirements of the process. Nevertheless, certain best
 practices and minimal content can be defined for certain types of documents.
-{{% /alert %}}
+{{% /callout %}}
 
 ### Parts and Documents
 
@@ -194,10 +194,10 @@ would allow such an approach. Instead, copies of the
 {{< vec-class documentversion >}}s containing the component's part master data
 are placed beside the _DocumentVersion_ of the harness, within the same VEC.
 
-{{% alert note %}} A _DocumentVersion_ in the VEC and the physical _VEC file_
+{{% callout note %}} A _DocumentVersion_ in the VEC and the physical _VEC file_
 shall not be equated. A _DocumentVersion_ is a logical entity and can be
 contained in multiple VEC (files). Conversely, a _VEC file_ can contain multiple
-_DocumentVersions_. {{% /alert %}}
+_DocumentVersions_. {{% /callout %}}
 
 ## Types of Documents
 
@@ -293,10 +293,10 @@ while the central master data catalog is used for the other signals. When the
 development process has progressed, these _local_ definitions might be included
 in the master data definition.
 
-{{% alert note %}} The VEC specification makes no assumptions about consistency
+{{% callout note %}} The VEC specification makes no assumptions about consistency
 relationships between such multiple sources for the same type of information.
 This is due to the fact that such restrictions are usually the result of process
-specific definitions (see the following examples). {{% /alert %}}
+specific definitions (see the following examples). {{% /callout %}}
 
 The following bulletins illustrate some examples of different, process specific
 consistency relationships. The examples are from the context of the above

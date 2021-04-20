@@ -78,10 +78,10 @@ includes the values from the standardization board **and** the process specific
 values. This implementation guideline is about creating such an _extended
 strict_ schema.
 
-{{% alert note %}} **Note:** With a little bit more XSLT foo, this concept to
+{{% callout note %}} **Note:** With a little bit more XSLT foo, this concept to
 can also be used to define process specific restrictions for attributes where
 VEC defines no restrictions (e.g. RegEx-Patterns for part numbers).
-{{% /alert %}}
+{{% /callout %}}
 
 [^1]:
     Extension of open enumerations is perfectly valid as long as you adhere to
@@ -225,10 +225,10 @@ addressing each relevant association, like this:
     ...
 ```
 
-{{% alert note %}} **Note:** Make sure that the resulting schema remains
+{{% callout note %}} **Note:** Make sure that the resulting schema remains
 compatible with the standard (XML Schema **and** Model Specification):
 
 - Do not remove elements that are mandatory!
 - Take extra care of usages via `IDREF` associations. These have to be checked
   in the model since the XML Schema is typeless for those associations.
-  {{% /alert %}}
+  {{% /callout %}}
