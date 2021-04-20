@@ -53,7 +53,7 @@ description = "Home of the standards KBL & VEC published by the VES-WF / ECAD-IF
 # Enable source code highlighting? true/false
 # Documentation: https://sourcethemes.com/academic/docs/writing-markdown-latex/#highlighting-options
 highlight = true
-highlight_languages = ["r"]  # Add support for highlighting additional languages
+highlight_languages = ["xml"]  # Add support for highlighting additional languages
 highlight_style = "solarized-dark"  # For supported styles, see https://cdnjs.com/libraries/highlight.js/
 #highlight_style = "github"  # For supported styles, see https://cdnjs.com/libraries/highlight.js/
 
@@ -176,6 +176,14 @@ plugins_js  = ["trace","print"]
   gravatar = true
   # Choose a shape for avatar images. Options: circle, square.
   shape = "circle"
+# Content Management System
+[cms]
+ # Enable the admin panel. See https://wowchemy.com/docs/install/
+ netlify_cms = false
+
+# Icon Pack Extensions
+[icon.pack]
+ ai = true  # Enable the Academicons icon pack https://jpswalsh.github.io/academicons/
 
 # Configuration of publication pages.
 [publications]
@@ -208,11 +216,7 @@ plugins_js  = ["trace","print"]
 ## Comments
 ############################
 [comments]
-  # Comment provider:
-  #   0: Disabled
-  #   1: Disqus (https://disqus.com)
-  #   2: Commento (https://commento.io)
-  engine = 0
+  provider = ""
 
   # Which page types are commentable?
   commentable = {page = true, post = true, docs = true, project = true, publication = true, talk = true}
@@ -226,11 +230,7 @@ plugins_js  = ["trace","print"]
 ## Search
 ############################
 [search]
-  # Search provider:
-  #   0: No search engine
-  #   1: Academic (built-in)
-  #   2: Algolia (https://www.algolia.com)
-  engine = 2
+  provider = "algolia"
 
   # Configuration of Algolia search engine.
   # Paste the values from your Algolia dashboard.
@@ -258,7 +258,7 @@ plugins_js  = ["trace","print"]
   #   1: Google Maps
   #   2: OpenStreetMap (Mapnik)
   #   3: OpenStreetMap (Mapbox)
-  engine = 2
+  provider = "mapnik"
   api_key = ""
   zoom = 15
 

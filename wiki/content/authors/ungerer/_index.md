@@ -1,13 +1,13 @@
 ---
 # Display name
-name: Max Ungerer
+title: Max Ungerer
 
 # Username (this should match the folder name)
 authors:
 - ungerer
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position
 role: Coordinator for the VES-WF & ECAD-IF
