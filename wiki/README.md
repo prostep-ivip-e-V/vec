@@ -57,7 +57,8 @@ All available Hugo versions are listed here: https://gitlab.com/pages/hugo/conta
 To work locally with this project, you'll have to follow the steps below:
 
 1. Clone this project
-1. [Install][] Hugo (Extended). Currently Version 0.59.1 (before update see [^1]).  
+1. [Install Hugo (Extended)](https://gohugo.io/getting-started/installing/). Currently Version 0.81.0. Under Windows this is easy with Chocolatey.
+1. Install GoLang. Also available via Chocolatey `choco install golang` 
 1. Preview your project: `hugo server`
 1. Add content
 1. Generate the website: `hugo` (optional)
