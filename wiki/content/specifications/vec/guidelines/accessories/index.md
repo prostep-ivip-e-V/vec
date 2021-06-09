@@ -3,13 +3,28 @@ title: "Accessories"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.
-toc: false
+toc: true
 authors: [becker]
 tags: []
 categories: []
 date: 2019-03-11
 lastmod: 2019-12-02T12:42:16+01:00
 draft: false
+review: true
+
+classes:
+  - PartRelation
+  - GeneralTechnicalPartSpecification
+  - PartOrUsageRelatedSpecification
+  - OccurrenceOrUsage
+
+history:
+  - date: 2021-06-09T00:00:00Z
+    description: "Added examples for the interpretation of the ReferenceElement association in case of multiple ReferenceElements"
+    issue: "KBLFRM-1095"
+  - date: 2019-03-11T00:00:00Z
+    description: "Initial creation in the ECAD-WIKI"
+
 
 menu:
   vec-guidelines:
@@ -20,14 +35,16 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 7000
 ---
+
+## Part Master Definition
 {{< figure src="accessories.jpg" title="Accessories" numbered="true" lightbox="true">}}
 
 Part *A* being an accessory for Part *B* means, that if Part *B* is used somewhere in a harness, then Part A might (or must) be used as well. These can be for example backshells, connector housing locks, clips, cable ties. In the VEC, any part classification can be an *accessory* to another part. A relation between {{< vec-class PartVersion >}} and its accessories can be established with a {{< vec-class PartRelation >}} in a {{< vec-class GeneralTechnicalPartSpecification >}}
 
-## Unclassified Parts 
+### Unclassified Parts 
 The natural language term "accessory" sums up a vast amount of different part types that are used in a harness, but which are not further specified. Meaning that they are relevant for the bill of material (and some other general properties like weight), but their usage is not defined in detail. If a part has to be used in the VEC, that has no individual specification (like e.g. a {{< vec-class ConnectorHousingSpecification >}}) it is marked with the *{{< vec-class PartVersion >}}.primaryPartType="Other"* and a {{< vec-class PartOrUsageRelatedSpecification >}} that can be used to define which type of "accessory" it is (via the attribute *{{< vec-class PartOrUsageRelatedSpecification >}}.specialPartType*). Common part attributes can be defined with a {{< vec-class GeneralTechnicalPartSpecification >}}.
 
-## Example 
+### Example 
 The following table shows examples for the usage of a {{< vec-class PartRelation >}} and the corresponding semantic meanings.
 
 | # | Example | Meaning | In numbers |
@@ -102,3 +119,27 @@ The following table shows examples for the usage of a {{< vec-class PartRelation
    <AccessoryPart>K</AccessoryPart>
 </PartRelation>
 {{< / highlight >}}  | The part **K** have to be used between **3** and **6** times. |  3..6 x **K** |
+
+## Instantiation
+
+{{< review KBLFRM-1095 >}}
+
+As described in the previous section, definitions can be made the part master data which accessories are required in which combination for a component. In the implementation in the wiring harness, however, there are also degrees of freedom as to which accessories are actually used. Therefore, the master data can only define valid possibilities; which variant is used must be defined at the concrete occurrence.
+
+In the VEC the _accessory occurrence_ &rarr; _parent occurrence_ relationship is represented by the _ReferenceElement_ association, where the _accessory occurrence_ references the {{< vec-class OccurrenceOrUsage >}} it depends on / relates to as _ReferenceElement_(see {{< vec-diagram "instances-of-components/instantiation-of-components">}})
+
+{{< figure src="accessory-instances.jpg" title="Accessory Instances" numbered="true" lightbox="true">}}
+
+The illustration above shows a single accessory that is associated with two reference elements. In cases where the variance control mechanisms are not yet defined[^1] completely, the condition of existence of the reference elements has implications for the accessory. 
+
+{{% callout note %}}
+An accessory can only exist if **all** of its _ReferenceElements_ exist, too. However, the existence of all _ReferenceElements_ does **not** automatically imply the existence of the accessory. Additional constraints may apply, whereby the accessory the can only exist if all _ReferenceElements_ exist and the additional constraints are met.
+{{% /callout %}}
+
+{{< figure src="grommet-example.svg" lightbox="true" title="Grommet with Individual Wire Sealing" numbered="true" class="float-right w-50" >}}
+
+An example for such case are elaborately sealed grommets for improved waterproofing. Each wire passing through the grommet requires a special individual seal. In this case, each seal is an accessory for both the wire and the grommet to the same extent. In concrete variants of the harness, only if a specific wire exists the corresponding seal is required. However, the association to the grommet is equally relevant, as it defines the position of the seal on the wire and without the grommet the seal is also without purpose. 
+
+
+
+[^1]: For example not all elements have a specific {{< vec-class VariantConfiguration >}} or not all {{< vec-class OccurrenceOrUsage >}} are controlled by modules or harness configurations.
