@@ -4,7 +4,7 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: ["Review"]
+tags: []
 categories: []
 date: 2021-05-19
 lastmod: 2021-05-19
