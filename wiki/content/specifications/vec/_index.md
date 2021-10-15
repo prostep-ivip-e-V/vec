@@ -8,6 +8,7 @@ layout: specs
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
 ---
-On this page, the resources and documentations for all VEC versions can be found. 
 
-The publication process, the versioning scheme and the distributed artefacts are described [here]({{< relref publication-process >}}).
+On this page, the resources and documentations for all VEC versions can be found.
+
+The publication process, the versioning scheme and the distributed artifacts are described [here]({{< relref publication-process >}}).
