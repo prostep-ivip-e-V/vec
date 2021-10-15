@@ -1,4 +1,4 @@
-image: registry.gitlab.com/ecad-if/vec/maven:3.6-jdk-11
+image: registry.gitlab.com/ecad-wiki/vec/maven:3.6-jdk-11
 
 cache:
   paths:
