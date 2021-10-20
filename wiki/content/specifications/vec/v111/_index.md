@@ -18,7 +18,7 @@ links:
   - icon_pack: fas
     icon: globe
     name: VDA 4968 - Vehicle Electric Container 2nd Edition (www.vda.de)
-    url: http://www.vda.de/de/publikationen/publikationen_downloads/detail.php?id=1025
+    url: https://www.vda.de/vda/de/aktuelles/publikationen/publication/vehicle-electric-container--vec-
   - icon_pack: far
     icon: folder-open
     name: VEC Online Model Description
