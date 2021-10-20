@@ -42,7 +42,7 @@ links:
 weight: 1
 ---
 
-The version 1.2.1 is a bug fix release for Version 1.2.0
+The version 1.2.1 is a bug fix release for Version 1.2.0.
 
 Between the minor versions (1.2.X) and its predecessor minor versions (Version 1.1.X) over 190 individual issues have
 been addressed. An overview of the main improvements, information about incompatibilities to preceding versions
