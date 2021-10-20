@@ -41,7 +41,7 @@ In application, `API` is equivalent to `schema` or `model`. As a result, schema 
 
 For each version, the following artifacts are published:
 
-1. An updated **Model Description** (Online and/or as PDF): This description is contained in the VDA Recommendation.
+1. An updated **Model Description** (Online and/or as PDF).
 2. **XML Schema** files which are available in different variants:
    - **strict vs. non-strict**: The _non-strict_ schema variant defines _OpenEnumerations_ as `xs:string` values. In the _strict_ schema variant _OpenEnumerations_ are defined as schema restrictions. For more information about the _OpenEnumerations_ see the corresponding chapter in the VDA Recommendation. The _strict_ schema variant carries the suffix `-strict` in the file name of the schema.
    - **documented vs. undocumented** (since VEC 1.1.3): For an improved usability of the schema, the model documentation (description of classes and attributes) is embedded in the schema files. For use cases where the size of the schema file matters, we provide variants of the schema files without embedded documentation. Those are marked with the suffix `-ud` for "undocumented".
@@ -49,7 +49,7 @@ For each version, the following artifacts are published:
 ## prostep ivip & VDA Recommendations
 
 Not every new version of the VEC Model & XML Schema is backed by a new recommendation document. Normally, every few years there is a publication of a new recommendation.
-This usually subsumes all features that have been added since the last release. New recommendations are published in particular when new use cases have been added or certain areas have undergone a fundamental revision.
+This usually subsumes all features that have been added since the last release. New recommendations are published in particular when new use cases have been added or certain areas have undergone a fundamental revision. The Recommendation contains the model description which is effective at the time of publication.
 
 The publication of new recommendations is deliberately decoupled from the versioning scheme of the model or the XML schema. The designation of the version numbers / identifiers of the recommendation is subject to the respective publishing organization.
 
