@@ -42,8 +42,9 @@ links:
 weight: 1
 ---
 
-This version is a bug fix release for Version 1.2.
+The version 1.2.1 is a bug fix release for Version 1.2.0
 
-Between this minor version (1.2) and its predecessor (Version 1.1) over 190 individual issues have
+Between the minor versions (1.2.X) and its predecessor minor versions (Version 1.1.X) over 190 individual issues have
 been addressed. An overview of the main improvements, information about incompatibilities to preceding versions
-and a complete and detailed change history is available in the first [V1.2.0 release notes]({{< relref "../v120/release-notes.md" >}}).
+and a complete and detailed change history is available in the first (V1.2.0)
+[release notes]({{< relref "../v120/release-notes.md" >}}) of the minor VEC version 1.2.X.
