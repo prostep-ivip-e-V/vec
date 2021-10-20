@@ -19,7 +19,7 @@ links:
   - icon_pack: fas
     icon: globe
     name: VDA 4964 - Harness Description List (KBL) 2nd Edition (www.vda.de)
-    url: https://www.vda.de/de/services/Publikationen/Publikation.~1267~.html
+    url: https://www.vda.de/vda/de/aktuelles/publikationen/publication/harness-description-list--kbl--4964-v2
   - icon_pack: fas
     icon: folder-open
     name: KBL 2.4 - Online Model Description
