@@ -10,6 +10,22 @@ categories: []
 date: 2019-03-11
 lastmod: 2019-12-02T12:46:09+01:00
 draft: false
+review: true
+classes:
+  - ComponentNode
+  - ComponentConnector
+  - ComponentPort
+  - Connection
+  - ConnectionEnd
+  - ConnectionSpecification
+
+history:
+  - date: 2021-11-20T00:00:00Z
+    description: "Added Implementation Guideline for inner structure of ComponentNodes"
+    issue: "KBLFRM-790"
+  - date: 2021-11-20T00:00:00Z
+    description: "Added Implementation Guideline for innernal connectivity."
+    issue: "KBLFRM-1142"
 
 menu:
   vec-guidelines:
@@ -36,57 +52,57 @@ Even if the system schematic in this example only shows pins which are connected
 The following XML listing contains the component nodes and connection from the example above.
 
 ```xml
-<Specification xsi:type="vec:ConnectionSpecification" id="id_connect_spec_2506">
+<Specification xsi:type="vec:ConnectionSpecification" id="id_connect_spec_1">
     <Identification>ConSpec_V..58L..</Identification>
-    <ComponentNode id="id_comp_node_2507">
+    <ComponentNode id="id_comp_node_1">
         <Identification>MX1.1</Identification>
-        <ComponentConnector id="id_component_connector_2509">
+        <ComponentConnector id="id_component_connector_1">
             <Identification>A</Identification>
-            <ComponentPort id="id_comp_port_2510">
+            <ComponentPort id="id_comp_port_1">
                 <Identification>1</Identification>
             </ComponentPort>
         </ComponentConnector>
     </ComponentNode>
-    <ComponentNode id="id_comp_node_2513">
+    <ComponentNode id="id_comp_node_2">
         <Identification>MX3.1</Identification>
-        <ComponentConnector id="id_component_connector_2518">
+        <ComponentConnector id="id_component_connector_2">
             <Identification>A</Identification>
-            <ComponentPort id="id_comp_port_2519">
+            <ComponentPort id="id_comp_port_2">
                 <Identification>1</Identification>
             </ComponentPort>
         </ComponentConnector>
     </ComponentNode>
-    <ComponentNode id="id_comp_node_2521">
+    <ComponentNode id="id_comp_node_3">
         <Identification>MX3.2</Identification>
-        <ComponentConnector id="id_component_connector_2523">
+        <ComponentConnector id="id_component_connector_3">
             <Identification>A</Identification>
-            <ComponentPort id="id_comp_port_2524">
+            <ComponentPort id="id_comp_port_3">
                 <Identification>1</Identification>
             </ComponentPort>
         </ComponentConnector>
     </ComponentNode>
-    <ComponentNode id="id_comp_node_2533">
+    <ComponentNode id="id_comp_node_4">
         <Identification>E1.1</Identification>
-        <ComponentConnector id="id_component_connector_2535">
+        <ComponentConnector id="id_component_connector_4">
             <Identification>A</Identification>
-            <ComponentPort id="id_comp_port_2538">
+            <ComponentPort id="id_comp_port_4">
                 <Identification>1</Identification>
             </ComponentPort>
         </ComponentConnector>
     </ComponentNode>
-    <Connection id="id_connection_2784">
+    <Connection id="id_connection_1">
         <Identification>V..58L..</Identification>
-        <ConnectionEnd id="id_conn_end_2785">
+        <ConnectionEnd id="id_conn_end_1">
             <Identification>MX1.1-A1</Identification>
-            <ConnectedComponentPort>id_comp_port_2510</ConnectedComponentPort>
+            <ConnectedComponentPort>id_comp_port_1</ConnectedComponentPort>
         </ConnectionEnd>
-        <ConnectionEnd id="id_conn_end_2786">
+        <ConnectionEnd id="id_conn_end_2">
             <Identification>MX3.1-A1</Identification>
-            <ConnectedComponentPort>id_comp_port_2519</ConnectedComponentPort>
+            <ConnectedComponentPort>id_comp_port_2</ConnectedComponentPort>
         </ConnectionEnd>
-        <ConnectionEnd id="id_conn_end_2787">
+        <ConnectionEnd id="id_conn_end_3">
             <Identification>MX3.2-A1</Identification>
-            <ConnectedComponentPort>id_comp_port_2524</ConnectedComponentPort>
+            <ConnectedComponentPort>id_comp_port_3</ConnectedComponentPort>
         </ConnectionEnd>
     </Connection>
     [...]
@@ -121,54 +137,89 @@ The mapping of this advanced schematic example into the VEC context it is the fo
 
 [This diagram]({{< relref "#figure-advanced-system-schematic-example" >}}) shows the extended version with the {{< vec-class ComponentNode>}} "GROUND". As you can see the {{< vec-class ComponentNode>}} is marked with the node type “OpenLink” (red mark) to clarify that this component is NOT part of the system schematic but components from the plan DO HAVE a connection to it.
 
-****Caution:**** The strategy and algorithm to merge partial systems if individual for the different ECAD systems and development processes. The VEC does not define an algorithm or requires a specific strategy. The VEC only the means to store and exchange the information that is required by those algorithms. When merging the definition of these partial systems together into one vehicle system, it is mandatory to resolve these open links and replace them by determined {{< vec-class ComponentNode>}} elements or {{< vec-class Connection>}}:
+**Caution:** The strategy and algorithm to merge partial systems if individual for the different ECAD systems and development processes. The VEC does not define an algorithm or requires a specific strategy. The VEC only the means to store and exchange the information that is required by those algorithms. When merging the definition of these partial systems together into one vehicle system, it is mandatory to resolve these open links and replace them by determined {{< vec-class ComponentNode>}} elements or {{< vec-class Connection>}}:
 
 - **Case 1:** The open link component node is replaced by a real component with the required connectivity.
 - **Case 2:** If multiple real component nodes have connections to different open link component nodes, the open link nodes can be merged to a single connection among the real component nodes.
 
-****Note:**** It is possible to reference a {{< vec-class ComponentPort>}} from a {{< vec-class Connection>}}.{{< vec-class ConnectionEnd>}} even if they are contained in different {{< vec-class DocumentVersion>}}s.
+**Note:** It is possible to reference a {{< vec-class ComponentPort>}} from a {{< vec-class Connection>}}.{{< vec-class ConnectionEnd>}} even if they are contained in different {{< vec-class DocumentVersion>}}s.
 
 {{< figure src="simple_schematic_connections.png" title="Advanced System Schematic Example" numbered="true" lightbox="true">}}
 
 The following listing shows the additional {{< vec-class ComponentNode>}} as XML.
 
 ```xml
-<Specification xsi:type="vec:ConnectionSpecification" id="id_connect_spec_2506">
+<Specification xsi:type="vec:ConnectionSpecification" id="id_connect_spec_1">
     <Identification>ConSpec_V..58L..</Identification>
     [...]
-    <ComponentNode id="id_comp_node_2533">
+    <ComponentNode id="id_comp_node_4">
         <Identification>E1.1</Identification>
-        <ComponentConnector id="id_component_connector_2535">
+        <ComponentConnector id="id_component_connector_4">
             <Identification>A</Identification>
-            <ComponentPort id="id_comp_port_2538">
+            <ComponentPort id="id_comp_port_4">
                 <Identification>1</Identification>
             </ComponentPort>
         </ComponentConnector>
     </ComponentNode>
-    <ComponentNode id="id_comp_node_2634">
+    <ComponentNode id="id_comp_node_5">
         <Identification>GROUND</Identification>
         <ComponentNodeType>OpenLink</ComponentNodeType>
-        <ComponentConnector id="id_component_connector_2636">
+        <ComponentConnector id="id_component_connector_5">
             <Identification>A</Identification>
-            <ComponentPort id="id_comp_port_2639">
+            <ComponentPort id="id_comp_port_5">
                 <Identification>1</Identification>
             </ComponentPort>
         </ComponentConnector>
     </ComponentNode>
     [...]
-    <Connection id="id_connection_2885">
+    <Connection id="id_connection_1">
         <Identification>GROUND..SYS_055A</Identification>
-        <ConnectionEnd id="id_conn_end_2886">
+        <ConnectionEnd id="id_conn_end_1">
             <Identification>E1.1-A1</Identification>
-            <ConnectedComponentPort>id_comp_port_2538</ConnectedComponentPort>
+            <ConnectedComponentPort>id_comp_port_4</ConnectedComponentPort>
         </ConnectionEnd>
-        <ConnectionEnd id="id_conn_end_2887">
+        <ConnectionEnd id="id_conn_end_2">
             <Identification>GROUND-A1</Identification>
-            <ConnectedComponentPort>id_comp_port_2639</ConnectedComponentPort>
+            <ConnectedComponentPort>id_comp_port_5</ConnectedComponentPort>
         </ConnectionEnd>
     </Connection>
 </Specification>
 ```
+
+### Internal Connectivity
+
+{{< review KBLFRM-1142 >}}
+
+The system schematic layer in the VEC allows not only the mapping of {{< vec-class Connection >}}s between different {{< vec-class ComponentNode >}}s, but also the mapping of internal connections within a {{< vec-class ComponentNode >}}. Examples are fuses, relays, power and potential distributors or fuse or relay carriers.
+
+{{< figure src="power-distributor.svg" title="Example of a power distributor with internal connections" numbered="true" lightbox="true" class="center">}}
+
+In the VEC these connections do not differ in modelling from 'normal' ones in the level of abstraction of the system schematic. The only difference is the value of the flag _isExternalEnd_ for their {{< vec-class ConnectionEnd>}}s. The value of this flag has to be set from the {{< vec-class ComponentPort>}}s point of view and its relation to the {{< vec-class Connection >}}:
+
+- If the {{< vec-class Connection >}} is attached from the **outside** to the {{< vec-class ComponentPort>}}, e.g. it is a connection between two independent {{< vec-class ComponentNode>}}s, then it is `isExternalEnd = true`.
+- If the connection is attached from the **inside**, e.g. it is a internal connection between two {{< vec-class ComponentPort>}}s of the same {{< vec-class ComponentNode>}}, then it is `isExternalEnd = false`.
+
+### Inner Structure of Component Nodes
+
+{{< review KBLFRM-790 >}}
+
+In the system schematic, components are often considered black boxes. However, there scenarios where this is not sufficient and a view on the inner structure is required. Therefore, {{< vec-class ComponentNode>}} can be structured hierarchically. This requirement is also the logical consequence of the concept of subdivided {{< vec-class UsageNode>}}s. Since {{< vec-class ComponentNode>}}s are representatives / realizations of {{< vec-class UsageNode>}}s, at least the same representation options are required here (see [this implementation guideline]({{< relref "../../key-concepts/usage-nodes/" >}}) for more details).
+
+Sub {{< vec-class ComponentNode >}}s are located inside their parent node. Connections to the "outer world" are mostly realized via a {{< vec-class ComponentConnector >}} of the parent node and internal connectivity between the connector of the parent node and its children. The following [graphic]({{< relref "#illustration-of-subnodes" >}}) illustrates this situation. The internal connections are shown as red lines.
+
+{{< figure src="head-light-left-extended.svg" title="Illustration of SubNodes" numbered="true" >}}
+
+The "outer world" (e.g. a system schematic or a wiring harness) interacts only with the parent node (black box). However, there are use cases, e.g. after sales service, where it is relevant to know which element
+of the "outer world" (e.g. a wire or a pin) is connected to which sub node, e.g. "Which wire is the power supply of the direction indicator?". The representation of this information in the VEC is explained in the following paragraphs.
+
+{{< figure src="childnodes.png" title="Object Diagram for Working with SubUsageNodes" numbered="true" >}}
+
+Both, parent node as well as child nodes are represented as {{< vec-class ComponentNode>}}s (highlighted in orange in the diagram above). The child {{< vec-class ComponentNode>}}s (e.g. "Low Light Node") are contained in the parent {{< vec-class ComponentNode>}} ("Head Light Node"). A traceability to the corresponding {{< vec-class UsageNode >}} (highlighted in green) can be created with the _realizedUsageNode_ association.
+
+The parent and the child nodes define their electrical interface with {{< vec-class ComponentConnector>}}s and {{< vec-class ComponentPort >}}s. To represent the illustration, the parent node defines one {{< vec-class ComponentConnector>}} with three {{< vec-class ComponentPort>}}s, the child node defines one {{< vec-class ComponentConnector>}} with one {{< vec-class ComponentPort>}}. The internal connectivity is represented with a {{< vec-class Connection>}} between the {{< vec-class ComponentPort>}}s of the parent and the children (highlighted in red).
+{{% callout info %}}
+Note that the {{< vec-class ConnectionEnd >}}s have different values for `isExternalEnd`. This is due to the fact that the end, that is connected to the port of the parent node, is on the inside (`isExternal=false` from the perspective of the port), the end that is connected to the inner node, is on the outside (`isExternal=true`).
+{{% /callout %}}
 
 ## Coupling Devices
 
