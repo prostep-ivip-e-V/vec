@@ -16,7 +16,7 @@
         {{ else if .Params.abstract }}
         {{ .Params.abstract | plainify | emojify | truncate 250 }}
         {{ else if .Summary }}
-        {{ .Summary | plainify | emojify }}
+        {{ .Summary | markdownify | emojify }}
         {{ end }} <a href="{{.RelPermalink}}">More...</a>
       </p>
       {{ partial "specs_links.html" . }}

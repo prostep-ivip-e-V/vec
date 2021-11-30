@@ -1,0 +1,20 @@
+﻿---
+title: External Mapping
+toc: false
+type: specs
+layout:  package
+date: "2021-11-30"
+draft: false
+specification: VEC
+version: 2.0.0-rc1
+documentType: "Recommendation"
+elementType:  Package
+menu:
+  VEC-2.0.0-rc1:    
+    identifier: external-mapping
+    weight: 1011 
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 1011
+---
+<p> The external mapping in the VEC defines a mechanism to provide a link between the content data of the VEC&#160;and external data sources (e.g. SVG images, JT models, requirements, ...). The only requirement on the external data source for this mapping approach is, that the contained data is in some way structured and that the elements are identifiable with a unique key.      </p>      <p> The reasons for embedding the mapping information in the VEC&#160;are:      </p>      <ul>       <li> The mapping can be easily read and recreated together with VEC and references to VEC elements can be followed in a simple way since the mapping can reference the elements directly within a single file (IDREF).        </li>       <li> No additional format definition is necessary.        </li>     </ul>     <p> &#160;      </p>
