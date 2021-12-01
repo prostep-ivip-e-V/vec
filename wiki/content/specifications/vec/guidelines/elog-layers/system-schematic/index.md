@@ -26,6 +26,9 @@ history:
   - date: 2021-11-20T00:00:00Z
     description: "Added Implementation Guideline for innernal connectivity."
     issue: "KBLFRM-1142"
+  - date: 2021-11-30T00:00:00Z
+    description: "Added Implementation Guideline for explicit potential distributors in the schematic context"
+    issue: "KBLFRM-1135"
 
 menu:
   vec-guidelines:
@@ -115,9 +118,22 @@ The following XML listing contains the component nodes and connection from the e
 
 As mentioned before, the level of abstraction of the system schematic in the VEC (represented by the {{< vec-class ConnectionSpecification>}}) contains only the electrological design and no physical design of the wiring harness. Therefore, the black dots (circled in red) in the [graphical example]({{< relref "#figure-example-of-potential-nodes-on-system-schematics" >}}) have only a layouting purpose and do not represent a technical design decision (e.g. to place a splice on this spot).
 
-The expressed engineering intention is only that the connected pins (all “A1”) have the same potential (are connected in some way). The decision about a technical realization (e.g. splice, multicrimp, single wires) can not be made is most cases at the stage of a system schematic, because a technical realization depends on concrete variant combinations and might be even different for different variants (see section Wiring) or is can be unnecessary, because in a reduced 100% variant, there might be just two of the three components and a realization with a single wire would be possible. As the VEC does not represent the graphical layout of documents these nodes have no representation in VEC.
+The expressed engineering intention is only that the connected pins (all “A1”) have the same potential (are connected in some way). The decision about a technical realization (e.g. splice, multicrimp, single wires) can not be made is most cases at the stage of a system schematic, because a technical realization depends on concrete variant combinations and might be even different for different variants (see section Wiring) or it can be unnecessary, because in a reduced 100% variant, there might be just two of the three components left and a realization with a single wire would be possible. As the VEC does not represent the graphical layout of documents these nodes have no representation in VEC.
 
-If the system schematic should explicitly contain the engineering intention of a star like connection topology (e.g. with a splice or a potential distributor) the center of this "star" must be explicitly represented with an individual {{< vec-class ComponentNode>}}
+{{< review KBLFRM-1135 >}}
+
+If the system schematic should explicitly contain the engineering intention of a specific connection topology (e.g. a star like topology with a splice or a potential distributor) this must be explicitly represented by an individual design of one ore more {{< vec-class ComponentNode>}}s and {{< vec-class Connection>}}s. Such a {{< vec-class ComponentNode>}} should have the `ComponentNodeType = 'PotentialDistributor'`. The illustrations below show the example of a CAN bus system with and without explicit distribution.
+
+{{< figure src="can-bus-without.svg" title="Simple CAN bus example" numbered="true" lightbox="true">}}
+
+-------
+
+{{< figure src="can-bus-with.svg" title="CAN bus example with explicit distributor" numbered="true" lightbox="true">}}
+
+
+As you can see in the illustration of the central distributed CAN bus, the component node of the distributor "CAN" uses internal connections to represent the short-circuited pins. More information about internal conectivity can be found in [this section](#internal-connectivity) below.
+
+
 
 ### Partial Systems
 
@@ -125,7 +141,7 @@ During the development of individual systems or sub systems for a vehicle the co
 
 To create a fully functional system, a partial system must be merged / combined with other partial systems. In this process matching open links are connected (and thus removed) in order to create complete overall system. In [the extended example]({{< relref "#figure-system-schematic-example-with-two-parts" >}}) this is illustrated by adding a second partial system schematic (framed in red) to the original example from [the top]({{< relref "#figure-system-schematic-example" >}}). The resulting overall system schematic of such a merge process would just contain a simple connection between **E.1.1** and **M31**.
 
-{{< figure src="simple_schematic_connections_plan2.png" title="System Schematic Example with two parts" numbered="true" lightbox="true">}}
+{{< figure src="simple_schematic_connections_plan2.png" title="System schematic example with two parts" numbered="true" lightbox="true">}}
 
 {{< figure src="componentnode_types.png" title="Open Enumeration with OpenLink" numbered="true" lightbox="true" class="float-right">}}
 
