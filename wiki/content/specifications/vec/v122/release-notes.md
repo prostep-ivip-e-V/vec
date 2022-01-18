@@ -18,5 +18,6 @@ weight: 60
 
 ## Bug
 
-[KBLFRM-1128](https://prostep-ivip.atlassian.net/browse/KBLFRM-1128) TopologyZoneSpecification is missing the inheritance relationship to Specification
-[KBLFRM-1146](https://prostep-ivip.atlassian.net/browse/KBLFRM-1146) Recursive Self-Reference of ZoneAssignment
+
+- [KBLFRM-1128](https://prostep-ivip.atlassian.net/browse/KBLFRM-1128) TopologyZoneSpecification is missing the inheritance relationship to Specification
+- [KBLFRM-1146](https://prostep-ivip.atlassian.net/browse/KBLFRM-1146) Recursive Self-Reference of ZoneAssignment
