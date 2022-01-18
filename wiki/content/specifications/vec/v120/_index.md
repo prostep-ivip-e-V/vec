@@ -43,7 +43,7 @@ weight: 1
 ---
 
 {{% callout warning %}}
-Due to a schema bug this version has been replaced (schema compatible) with the bug fix release V1.2.1 (for more details see {{< issue "KBLFRM-1128" >}}).
+Due to a schema bug this version has been replaced (schema compatible) with the bug fix release V1.2.2 (for more details see {{< issue "KBLFRM-1128" >}} and {{< issue "KBLFRM-1146" >}}).
 {{% /callout %}}
 
 This version is the 3rd edition of the "Vehicle Electric Container (VEC)" PSI 21 / VDA 4968 Recommendation.
