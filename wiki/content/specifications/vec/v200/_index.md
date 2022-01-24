@@ -63,8 +63,8 @@ Highlights in this version are:
 
 1. **Open Enumerations**: To avoid dialects and to improve the semantic sharpness of the VEC, more than twenty `string`-attributes have been replaced with `OpenEnumerations`. In addition, literals have been added to various `OpenEnumerations`.
 2. **Support for DIN 72036**: as explained above.
-3. **Geometric Properties for Connector Housings**: We added detailed geometric properties for connectors, like cavity positions, locations of segment connection points (see [Geometric Properties of Connector Housings]({{<relref "component-characteristics/geometric-properties-of-connector-housings-definitions">}})). 
-4. **Support for generic labeling properties of components and instances**: See [Labeling]({{<relref "general-component-data\labeling" >}}) and [Instances of Labels]({{<relref "instances-of-components\instances-of-labels">}}).
+3. **Geometric Properties for Connector Housings**: We added detailed geometric properties for connectors, like cavity positions, locations of segment connection points (see [Geometric Properties of Connector Housings]({{< relref "component-characteristics/geometric-properties-of-connector-housings-definitions">}})). 
+4. **Support for generic labeling properties of components and instances**: See [Labeling]({{< relref "general-component-data/labeling" >}}) and [Instances of Labels]({{< relref "instances-of-components/instances-of-labels">}}).
 
 {{% callout info %}}
 This version of the model description and XML schema is published without a new version of the "PSI21 prostep ivip recommendation VEC". The recommendation remains valid, however the content of chapters 5 and 7 can be considered as replaced by the online documentation of this version.
