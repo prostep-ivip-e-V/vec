@@ -14,7 +14,7 @@ toc: true
 review: true
 
 history:
-  - date: 2021-01-31
+  - date: 2022-01-31
     description: "Add description for traceability to System Schematic Connections for directly mated E/E Components"
     issue: "KBLFRM-896"
   - date: 2021-11-24
