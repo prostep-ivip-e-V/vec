@@ -166,7 +166,7 @@ link_authors = true
 
 # Load JS plugins
 #   E.g. To load `/assets/js/custom.js`, set `plugins_js = ["custom"]`.
-plugins_js  = ["trace","print"]
+plugins_js  = ["trace","pageprint"]
 
 # Avatars.
 # An avatar is an image that appears next to a user's name.

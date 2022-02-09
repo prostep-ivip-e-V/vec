@@ -1,4 +1,4 @@
-  function unveilAndPrint(win) {
+function unveilAndPrint(win) {
     var loadTriggered = 0;
     var loaded = 0;
     win.document.querySelectorAll('img.lazyload').forEach(function(v, k, array) {
@@ -12,14 +12,26 @@
       lazySizes.loader.unveil(v);
       loadTriggered++;      
     });
-  }
+}
 
-function printInNewWindow(url)
-  {
+function printInNewWindow(url) {
     var myWindow=window.open(url);
 
     myWindow.addEventListener('load', function () {
         unveilAndPrint(myWindow);
     },true)
-  }
+}
+
+$(window).on('load', function(){
+  let printButtons = document.querySelectorAll('.single-page-print-button');
+  
+  printButtons.forEach((button) =>
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    printInNewWindow(e.target.href);
+
+  }));
+  
+});
 

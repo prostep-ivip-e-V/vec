@@ -66,8 +66,8 @@
   <span class="article-print">
     {{ with  $page.OutputFormats.Get "printable" -}}
     <i class="fas fa-print mr-1"></i>
-    <a onclick="printInNewWindow('{{ .RelPermalink | urlize }}')">Single Page Printable</a>
-    {{- end }}
+    <a class="single-page-print-button" href="{{ .RelPermalink | urlize }}">Single Page Printable</a> 
+   {{- end }}
   </span>
   {{ end }}
   {{- if $page.Params.review -}}
