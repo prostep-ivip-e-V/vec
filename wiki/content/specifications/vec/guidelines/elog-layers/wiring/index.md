@@ -69,7 +69,7 @@ Since the contacting can be used for different levels of abstraction (Product De
 
 ### Standard Contact
 
-{{< figure src="standard_contact.jpg" title="Standard Contact" numbered="true" lightbox="true">}}
+{{< figure src="contacting/standard-contact.jpg" title="Standard Contact" numbered="true" lightbox="true">}}
 
 A standard Contacting is the most common case in a wiring harness. For a standard contact you have one wire end that has one terminal crimped on it, which is placed in one cavity. It exists in two variants, sealed and unsealed. The example displays the sealed variant, for the unsealed variant the {{< vec-class CavitySealRole >}} and the {{< vec-class CavityPlugRole >}} have to be omitted.
 
@@ -81,7 +81,7 @@ The {{< vec-class ContactPoint >}} defines the terminal that is used for the con
 
 ### Multi Crimp Contact
 
-{{< figure src="multi_crimp_contact.jpg" title="Multi Crimp Contact" numbered="true" lightbox="true">}}
+{{< figure src="contacting/multi-crimp-contact.jpg" title="Multi Crimp Contact" numbered="true" lightbox="true">}}
 
 A Multicrimp is quite similar to the standard contact, with the difference that there is more than one wire crimped onto the terminal. Therefore the displayed example is quite the same. The differences are:
 
@@ -92,19 +92,19 @@ For clarification of the example the two {{< vec-class WireElementReference >}}s
 
 ### Ringterminal - Splice
 
-{{< figure src="ringterminal_-_splice.jpg" title="Ringterminal and Splice" numbered="true" lightbox="true">}}
+{{< figure src="contacting/ringterminal-splice.jpg" title="Ringterminal and Splice" numbered="true" lightbox="true">}}
 
 The structure displayed in the example applies to ring terminals and splices as well. On the side of the wire it is the same as a multi crimp. The difference is that no cavity mounting is used, since a ring terminal / splice has no cavities.
 
 ### Bridge Terminal
 
-{{< figure src="bridge_terminal.jpg" title="Bridge Terminal" numbered="true" lightbox="true">}}
+{{< figure src="contacting/bridge-terminal.jpg" title="Bridge Terminal" numbered="true" lightbox="true">}}
 
 A bridge terminal is a terminal that has a wire crimped on it and which occupies more than one cavity (short-circuited). On the side of the wire it is the same as a standard contact. On the side of the cavities it simply references more than one cavity.
 
 ### Coax Contact
 
-{{< figure src="coax_contact.jpg" title="Coax Contact" numbered="true" lightbox="true">}}
+{{< figure src="contacting/coax-contact.jpg" title="Coax Contact" numbered="true" lightbox="true">}}
 
 The diagram displays the proper definition of a coax contacting. In the case of coax contact one single terminal is used, but two different electrical potentials are connected to it. Therefore two ConcactPoints are required, because one {{< vec-class ContactPoint >}} can only be used for one electrical potential (see the definition of a ConcactPoint).
 
@@ -114,7 +114,7 @@ In order to make the example more clearly, the next figure displays the definiti
 
 ### Coax Cavity
 
-{{< figure src="coax_cavity.jpg" title="Coax Cavity" numbered="true" lightbox="true">}}
+{{< figure src="contacting/coax-cavity.jpg" title="Coax Cavity" numbered="true" lightbox="true">}}
 
 The {{< vec-class HousingComponent>}} of an EEComponent defines on one hand the pins (electrological relevant information) in this {{< vec-class HousingComponent>}} and on the other hand a {{< vec-class ConnectorHousingSpecification>}} (the layout and design of the {{< vec-class HousingComponent>}}). The {{< vec-class PinComponent>}}s are then positioned in the cavities. In the case of a coax contact, two {{< vec-class PinComponent>}}s (the different electrical potentials) are placed in one cavity.
 
@@ -253,3 +253,4 @@ To preserve traceability between the wiring layer and the system schematic, the 
     [...]
 </Specification>
 ```
+

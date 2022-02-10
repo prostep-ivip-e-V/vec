@@ -237,23 +237,6 @@ The parent and the child nodes define their electrical interface with {{< vec-cl
 Note that the {{< vec-class ConnectionEnd >}}s have different values for `isExternalEnd`. This is due to the fact that the end, that is connected to the port of the parent node, is on the inside (`isExternal=false` from the perspective of the port), the end that is connected to the inner node, is on the outside (`isExternal=true`).
 {{% /callout %}}
 
-## Coupling Devices
-
-### Basics
-
-{{< figure src="basics.jpg" title="Coupling Device Basics" numbered="true" lightbox="true">}}
-
-The figure above illustrates the model of the smallest appearance of a coupling device (e.g. an inliner) with just one connector with only one pin on each side. The coupling device is represented in the VEC by a {{< vec-class ComponentNode>}} with the componentNodeType ‘_CouplingDevice’_ and contains for each side of the coupling device a {{< vec-class ComponentConnector>}}. These connectors include the {{< vec-class ComponentPort>}}s, which represent the pins of the connector.
-
-To display the connectivity between the two sides connectors and their pins, the VEC also contains a {{< vec-class Connection>}} with two {{< vec-class ConnectionEnd>}}s, which reference the connected {{< vec-class ComponentPort>}}s. The flag _isExternalEnd_ of the Ends is set to false, because the connection represent the internal mapping of the coupling device. The connection to other {{< vec-class ComponentNode>}}s is represented by different {{< vec-class Connection>}}s with {{< vec-class ConnectionEnd>}}s where _isExternal=true._
-
-### Variance
-
-{{< figure src="variance.jpg" title="Example with Variance" numbered="true" lightbox="true">}}
-
-A more complex situation is displayed in this diagram. A coupling device can consist of one or more connectors for each side. Because of variance it is possible, that more than one connector from a side are mapping onto one connector of the other side.
-
-If there is a second connector placed on one of the sides, this connector gets its own {{< vec-class ComponentConnector>}} with the underneath {{< vec-class ComponentPort>}}s.
 
 ## Variant Management For ECUs
 
