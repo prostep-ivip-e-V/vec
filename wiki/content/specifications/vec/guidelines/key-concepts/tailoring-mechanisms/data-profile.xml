@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-profile>
+    <context type="ConductorSpecification">
+        <rule test="CrossSectionArea">
+             All conductors shall specify a cross section area. The cross section area is an 
+             important parameter for numerous design rules (e.g. aggregated cross section area 
+             of splices). 
+        </rule>
+        <rule test="CrossSectionArea/ValueComponent gt 0.0">
+            A conductor with cross section area not greater than 0 is non-existent.
+        </rule>
+    </context>
+    <context type="CavityAddOn">
+        <rule test="WireAddOn/ValueComponent gt 0.0"/>
+    </context>
+</data-profile>

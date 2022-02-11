@@ -5,9 +5,10 @@
     xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:Stereotypes="http://www.magicdraw.com/schemas/Stereotypes.xmi" exclude-result-prefixes="uml xmi Stereotypes" version="3.0">
     
     <xsl:output method="xml" indent="yes"/>
+    <xsl:param name="data-file" required="true" />
     <xsl:strip-space  elements="*"/>
     <xsl:key name="enumKey" match="enum" use="@type"/>
-    <xsl:variable name="enum-literal" select="document('enum-literals.xml')"/>
+    <xsl:variable name="enum-literal" select="document($data-file)"/>
     
     <xsl:template match="*">
         <xsl:copy>
