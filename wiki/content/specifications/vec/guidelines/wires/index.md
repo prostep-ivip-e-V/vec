@@ -10,7 +10,7 @@ categories: []
 date: 2019-03-07
 lastmod: 2019-11-29T17:30:52+01:00
 draft: false
-review: true
+review: false
 
 classes:
   - WireSpecification
@@ -43,7 +43,6 @@ menu:
 weight: 5000
 ---
 
-{{< review "KBLFRM-953" >}}
 
 This Implementation Guideline covers the various aspects of a correct wire representation in the VEC for different scenarios and variants of wires. It covers both multi cores and single cores.
 
