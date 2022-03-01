@@ -10,7 +10,7 @@ categories: []
 date: 2019-03-11
 lastmod: 2019-12-02T12:42:16+01:00
 draft: false
-review: true
+review: false
 
 classes:
   - PartRelation
@@ -122,7 +122,6 @@ The following table shows examples for the usage of a {{< vec-class PartRelation
 
 ## Instantiation
 
-{{< review KBLFRM-1095 >}}
 
 As described in the previous section, definitions can be made the part master data which accessories are required in which combination for a component. In the implementation in the wiring harness, however, there are also degrees of freedom as to which accessories are actually used. Therefore, the master data can only define valid possibilities; which variant is used must be defined at the concrete occurrence.
 
