@@ -9,7 +9,7 @@ categories: []
 date: 2019-11-06
 lastmod: 2021-11-16T10:11:41+01:00
 draft: false
-review: true
+review: false
 classes:
   - UsageNode
   - UsageNodeSpecification
@@ -32,7 +32,6 @@ weight: 1000
 
 The example illustrates the use of *UsageNodes*. A {{<vec-class UsageNode>}} represents a position in an abstract vehicle. For example the Head Light Left. *UsageNodes* belong to the master data and they are defined on some company wide level. They can be used to enforce consistent naming over different projects and different development streams (e.g. between geometry and electrologic).
 
-{{< review KBLFRM-790 >}}
 
 {{< figure src="usage_nodes.jpg" title="Usage Nodes" numbered="true" >}}
 
