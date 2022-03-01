@@ -9,7 +9,7 @@ date: 2021-11-16
 lastmod: 2021-11-16
 draft: false
 toc: true
-review: true
+review: false
 
 history:
   - date: 2021-11-16
@@ -32,7 +32,6 @@ menu:
 weight: 3500
 ---
 
-{{< review KBLFRM-1134 >}}
 {{< figure src="electrological-layers.svg" class="float-right" title="Electrological Layers Overview" numbered="true" lightbox="true" width="400">}}
 
 The VEC offers three layer, each representing a level of abstraction for describing electrologic. This is illustrated in the diagram on the right side (Figure 1).
