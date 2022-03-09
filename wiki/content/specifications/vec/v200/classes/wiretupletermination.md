@@ -2,15 +2,15 @@
 title: WireTupleTermination
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireTupleTermination
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>WireTupleTermination</i> is to define the handling of wire ends in a tuple (group). This is mostly relevant for twisted pairs&#160;/&#160;triple / tuple to define the handling of untwisting.      </p>
 
@@ -39,4 +39,4 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireTupleTerminationSpecification]({{< relref "wiretupleterminationspecification.md" >}}) |  |  |  |  |
+| [WireTupleTerminationSpecification]({{< relref "wiretupleterminationspecification.md" >}}) | 1 | wireTupleTermination | 0..* |  |

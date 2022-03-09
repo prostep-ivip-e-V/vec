@@ -2,15 +2,15 @@
 title: TopologyNode
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TopologyNode
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>A TopologyNode is a point in the Topology where TopologySegments are starting and ending.  </p>
 
@@ -36,8 +36,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [TopologyNode]({{< relref "topologynode.md" >}}) | instantiatedNode | 0..1 | 0..* | <p> If this <i>TopologyNode</i> is an instance of another <i>To</i><i>pologyNode </i>that is defined elsewhere (e.g. the topology of an assembly), then the instantiated may be referenced here.      </p> |
 | [UsageNode]({{< relref "usagenode.md" >}}) | realizedUsageNode | 0..1 | 0..* | <p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p> |
+| [TopologyNode]({{< relref "topologynode.md" >}}) | instantiatedNode | 0..1 | 0..* | <p> If this <i>TopologyNode</i> is an instance of another <i>To</i><i>pologyNode </i>that is defined elsewhere (e.g. the topology of an assembly), then the instantiated may be referenced here.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

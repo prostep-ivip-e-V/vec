@@ -2,15 +2,15 @@
 title: ConductorMaterial
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConductorMaterial
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> <i>ConductorMaterial</i> is a helper class to specify <i>validConductorMaterials. </i>This is necessary, since all attributes of the type <i>Material</i> have a multiplicity of * with the semantics that it always defines <u>one</u> <i>Material</i> with the possibility to define it in different reference systems.     </p>      <p> Since a wire reception can have more than one <i>validConductorMaterial</i> this container class is necessary to keep the semantics clear.      </p>
 

@@ -3,10 +3,10 @@ title: Connection Specification
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -29,7 +29,7 @@ classes:
   - NetSpecification
   - ConnectionSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: connectivity
     identifier: connectivity/connection-specification
     weight: 1010004 

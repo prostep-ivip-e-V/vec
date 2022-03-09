@@ -2,15 +2,15 @@
 title: PartSubstitutionSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PartSubstitutionSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>PartSubstitutionSpecification</i> defines a set of <i>PartVersions</i> that can be used alternatively, due to an incomplete specification for the 150% product description. For a concrete wiring harness only on valid <i>PartVersion</i> remains. The selection logic for valid <i>PartVersions</i> is not included in the VEC.      </p>      <p> A <i>PartSubstitutionSpecification </i>can be used for example tubes or ring terminals, where a part of the specification is known at design time, but not yet the complete specification. For tubes for example the tube diameter is not known at design time, since it depends on the bundle diameter of a specific configuration.       </p>
 

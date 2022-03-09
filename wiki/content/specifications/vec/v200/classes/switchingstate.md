@@ -2,15 +2,15 @@
 title: SwitchingState
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SwitchingState
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>SwitchingState</i> defines a certain static state of an <i>EEComponent</i>. Under which conditions or when such a state applies, should be described in an external description model.     </p>      <p> A <i>SwitchingState</i> references a collection of <i>InternalComponentConnections</i>, with the semantic that these connections exist (and only these connections) when the switching state is active.      </p>
 

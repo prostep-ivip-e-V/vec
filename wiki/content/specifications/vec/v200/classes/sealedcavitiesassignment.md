@@ -2,15 +2,15 @@
 title: SealedCavitiesAssignment
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SealedCavitiesAssignment
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>SealedCavitiesAssignment</i> groups the cavities of ONE connector that are sealed by a MultiCavityPlug. If a MultiCavityPlug fits into more than one connector, than there are as many <i>SealedCavitiesAssignments</i>.      </p>
 

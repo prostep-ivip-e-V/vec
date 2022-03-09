@@ -2,15 +2,15 @@
 title: TerminalReceptionSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TerminalReceptionSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of terminal receptions. A TerminalReception is the area of a terminal where the contacting with another terminal (e.g. between a connector housing and a control unit) takes place. Normally the terminal reception is placed in a cavity of a connector housing.      </p>
 

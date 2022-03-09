@@ -2,15 +2,15 @@
 title: PlaceableElementSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PlaceableElementSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the general aspects of a component that are enabling the component to be placed in a topology. All components that should have the ability to be placed on a certain position in the topology must have a PlaceableElementSpecification      </p>
 
@@ -35,8 +35,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..* | 1 | <p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p> |
 | [MeasurementPoint]({{< relref "measurementpoint.md" >}}) | measurementPoint | 0..* | 1 | <p> Specifies the <i>MeasurementPoints</i> of a <i>PlaceableElement</i>.      </p> |
+| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..* | 1 | <p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -2,15 +2,15 @@
 title: TerminalPairing
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TerminalPairing
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>TerminalPairing</i> is a standard reference setup of exactly two terminals and a defined length of a core contacted to both terminals. The <i>TerminalPairing </i>defines physical properties that apply to this combination.      </p>      <p> &#160;      </p>
 
@@ -35,8 +35,8 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | referencedCoreSpecification | 1 | 0..* | <p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p> |
-| [PartVersion]({{< relref "partversion.md" >}}) | secondTerminal | 1 | 0..* | <p> References the second terminal of the TerminalPairing (first and second does not imply any specific order).      </p> |
 | [PartVersion]({{< relref "partversion.md" >}}) | firstTerminal | 1 | 0..* | <p> References the first terminal of the TerminalPairing.      </p> |
+| [PartVersion]({{< relref "partversion.md" >}}) | secondTerminal | 1 | 0..* | <p> References the second terminal of the TerminalPairing (first and second does not imply any specific order).      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

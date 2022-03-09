@@ -2,15 +2,15 @@
 title: RequirementsConformanceStatement
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - RequirementsConformanceStatement
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>RequirementsConformanceStatement</i> states that the <i>PartVersions</i> referenced by the parent <i>RequirementsConformanceSpecification</i> satisfy or do not satisfy the requirements defined in the associated <i>DocumentVersion</i> (via the <i>requirementsSpecification</i> association)<i>.</i>      </p>
 

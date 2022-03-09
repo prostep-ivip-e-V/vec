@@ -2,15 +2,15 @@
 title: FlatCoreSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - FlatCoreSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines the properties of a flat (rectangular)&#160;conductor which are specific for them.      </p>
 

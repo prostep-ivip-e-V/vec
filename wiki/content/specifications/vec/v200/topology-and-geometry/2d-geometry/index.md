@@ -3,10 +3,10 @@ title: 2D-Geometry
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -30,7 +30,7 @@ classes:
   - TopologySpecification
   - BuildingBlockSpecification2D
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: topology-and-geometry
     identifier: topology-and-geometry/2d-geometry
     weight: 1009005 

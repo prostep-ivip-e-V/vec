@@ -2,15 +2,15 @@
 title: ConductorCurrentInformation
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConductorCurrentInformation
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The <i>ConductorCurrentInformation</i> specifies the maximum current for which a conductor is approved. As the maximum current is dependent from the voltage and the environment temperature it is modelled as a class and not only as an attribute.      </p>
 

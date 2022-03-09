@@ -2,15 +2,15 @@
 title: WireTupleTerminationSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireTupleTerminationSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>WireTupleTerminationSpecification</i> is the container specification for <i>WireTupleTerminations</i>.      </p>
 
@@ -33,4 +33,4 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireTupleTermination]({{< relref "wiretupletermination.md" >}}) |  |  |  |  |
+| [WireTupleTermination]({{< relref "wiretupletermination.md" >}}) | wireTupleTermination | 0..* | 1 |  |

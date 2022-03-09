@@ -2,15 +2,15 @@
 title: OpenWireEndTerminalSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - OpenWireEndTerminalSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of open wire ends. An open wire end is an end of wire located at a specific location in the harness. Open wire ends are not connected to some other component, in contrast to regular connectors or ring terminals. Only one wire is ending at a single open wire end, otherwise it would be a splice.      </p>
 

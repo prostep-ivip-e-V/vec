@@ -2,15 +2,15 @@
 title: BuildingBlockPositioning2D
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - BuildingBlockPositioning2D
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines the position of a BuildingBlock2D on a HarnessDrawing.      </p>
 
@@ -32,8 +32,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | centerPoint | 0..1 | 0..1 | Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing. |
 | [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | referenced2DBuildingBlock | 1 | 0..* | References the building block which is placed on the harness drawing. |
+| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | centerPoint | 0..1 | 0..1 | Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

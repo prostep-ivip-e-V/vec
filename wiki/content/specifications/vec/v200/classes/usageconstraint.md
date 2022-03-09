@@ -2,15 +2,15 @@
 title: UsageConstraint
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - UsageConstraint
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies a constraint of the possible usages for PartVersion or PartUsages. UsageConstraints are of part master data information. UsageConstraints specify general restrictions for the application of a PartVersion or PartUsage (e.g. a certain period of time in which the part is allowed to be used). (see KBLFRM-229)      </p>
 
@@ -39,8 +39,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Project]({{< relref "project.md" >}}) | project | 0..* | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
 | [UsageNode]({{< relref "usagenode.md" >}}) | usageNode | 0..* | 0..* | <p> References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageNode.      </p> |
+| [Project]({{< relref "project.md" >}}) | project | 0..* | 0..* | <p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

@@ -2,15 +2,15 @@
 title: MappingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - MappingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the description of a PinMapping. A PinMapping allows the mapping between the Cavities of two independent ConnectorHousingSpecifications. This is for example needed to determine the Mating for an Inliner or for the Mating between an EE-Component and a ConnectorHousing. The PinMapping is a part master data.      </p>
 

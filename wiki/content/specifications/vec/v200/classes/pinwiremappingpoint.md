@@ -2,15 +2,15 @@
 title: PinWireMappingPoint
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PinWireMappingPoint
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The <i>PinWireMappingPoint </i>creates a single variance free mapping between a <i>ContactPoint</i> and a <i>PinComponentReference </i>within a <i>PinWireMappingSpecification</i> (more details there)<i>.</i>      </p>
 

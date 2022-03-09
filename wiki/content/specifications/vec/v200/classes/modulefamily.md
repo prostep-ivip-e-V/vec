@@ -2,15 +2,15 @@
 title: ModuleFamily
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ModuleFamily
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A ModuleFamily is a mechanism to group mutually exclusive modules. This could be for example something like &quot;audio equipment&quot;, &quot;diesel engine&quot;.     </p>      <p> In other words, a module family groups different variants of the same basic feature. In a real car configuration only one member of the family can participate. For the example module family &quot;audio equipment&quot; the members may be named: &quot;Basic Audio Equipment&quot;, &quot;Standard Audio Equipment&quot;, &quot;Premium / High End Audio Equipment&quot;.     </p>
 

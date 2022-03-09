@@ -2,15 +2,15 @@
 title: CavityAccessorySpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavityAccessorySpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>CavityAccessory</i> is a non-electrical part used in a cavity with no sealing properties (e.g. a wire fixation).      </p>
 

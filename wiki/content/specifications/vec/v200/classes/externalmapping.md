@@ -2,15 +2,15 @@
 title: ExternalMapping
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ExternalMapping
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>ExternalMapping </i>is used to relate an <i>ExtendableElement </i>in the VEC with an element located in an external data source. The element in the VEC&#160;is referenced by the <i>mappedElement</i>, the external element is identified by the attribute <i>externalReference.</i>      </p>
 

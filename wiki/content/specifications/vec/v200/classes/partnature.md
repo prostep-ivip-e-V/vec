@@ -2,15 +2,15 @@
 title: PartNature
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PartNature
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> <i>OpenEnumeration</i> that defines the nature of a <i>PartVersion</i>. The nature specifies how the <i>PartVersion </i>can be used in the different processes or the significance of the <i>PartVersion</i> in the process.       </p>
 

@@ -2,15 +2,15 @@
 title: WireElement
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireElement
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>WireElement </i>specifies a <i>WireElementSpecification</i> in the context of a <i>WireSpecification</i>. This is necessary to define a unique <i>identification</i> of a <i>WireElementSpecification </i>in the context of a <i>WireSpecification. </i>Additionally, the <i>WireElement</i> serves as anchor for the instancing of a wire (<i>WireElementReference</i>) as the <i>WireElementSpecifications </i>are not uniquely related to a <i>WireSpecification</i> for reasons of reusability.      </p>
 

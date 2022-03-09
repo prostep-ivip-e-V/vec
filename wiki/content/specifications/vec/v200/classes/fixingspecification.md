@@ -2,15 +2,15 @@
 title: FixingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - FixingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of fixings. A fixing is used to fix the harness in a certain position (e.g. at the car body, a seat, an ECU etc.). The FixingSpecification describes how the fixing is attached to the &quot;non-harness&quot; element. The attachment to harness is described by a PlaceableElementSpecification.      </p>
 

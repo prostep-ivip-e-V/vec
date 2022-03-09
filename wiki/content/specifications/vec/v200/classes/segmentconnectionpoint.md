@@ -2,15 +2,15 @@
 title: SegmentConnectionPoint
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SegmentConnectionPoint
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Specifies a point where the connector can be attached to the topology (sometimes called bundle position point or insertion point).  </p>
 
@@ -34,8 +34,8 @@ menu_name: vec-2.0.0-rc1
 |----------|----------|-----------|-----------|-----------------|
 | [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..1 | 0..* | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
 | [CavityAddOn]({{< relref "cavityaddon.md" >}}) | cavityAddOns | 0..* | 1 |  |
-| [ModularSlotAddOn]({{< relref "modularslotaddon.md" >}}) | ModularSlotAddOns | 0..* | 1 |  |
 | [Cavity]({{< relref "cavity.md" >}}) | reachableCavities | 0..* | 0..* | <p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p> |
+| [ModularSlotAddOn]({{< relref "modularslotaddon.md" >}}) | ModularSlotAddOns | 0..* | 1 |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

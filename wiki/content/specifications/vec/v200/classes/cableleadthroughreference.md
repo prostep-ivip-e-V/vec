@@ -2,15 +2,15 @@
 title: CableLeadThroughReference
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CableLeadThroughReference
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>CableLeadThroughReference</i> is the instance of a CableLeadThrough. It can define a set of plugs or seals that are used together with it. Plugs are used if no wire is present, seals are used together with a wire.      </p>
 
@@ -32,9 +32,9 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | usedSeals | 0..* | 0..* |  |
 | [CableLeadThrough]({{< relref "cableleadthrough.md" >}}) |  | 0..1 |  |  |
 | [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | usedPlugs | 0..* | 0..* | <p> References the plugs that are used with this CableLeadThroughReference. This association might be a 150% selection.      </p> |
-| [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | usedSeals | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

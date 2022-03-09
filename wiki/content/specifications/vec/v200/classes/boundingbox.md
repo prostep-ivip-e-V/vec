@@ -2,15 +2,15 @@
 title: BoundingBox
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - BoundingBox
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The bounding box is used to define a cuboid&#160;(box) that can contain a described part completely. Therefore, it is a simplified representation of the bounding volume and represents a definition of the maximum volume occupied by the part.      </p>      <p> It is valid to use the <i>BoundingBox</i> to describe the dimensions of a component, even if not all dimensions are known (e.g. only length and width). However, it must be possible to transform such a partial bounding box into a complete bounding box by adding the missing dimensions.      </p>
 

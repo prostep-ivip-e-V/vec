@@ -2,15 +2,15 @@
 title: TerminalCurrentInformation
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TerminalCurrentInformation
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Allows the definition of valid current ranges for a terminal. A current range is always defined for a coreCrossSectionArea and a nominal voltage.  Attributes of the type CurrentRangeInformation normally have the multiplicity [0..*]. This means that such an attribute can have CurrentRangeInformation entries for different coreCrossSectionAreas and nominalVoltages. It must not have multiple entries for the same coreCrossSectionAreas and nominalVoltages.  </p>
 

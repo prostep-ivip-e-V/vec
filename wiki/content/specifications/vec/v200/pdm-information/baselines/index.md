@@ -3,10 +3,10 @@ title: Baselines
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -16,7 +16,7 @@ classes:
   - Specification
   - ItemVersion
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: pdm-information
     identifier: pdm-information/baselines
     weight: 1003002 

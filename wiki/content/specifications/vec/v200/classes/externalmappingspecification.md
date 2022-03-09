@@ -2,15 +2,15 @@
 title: ExternalMappingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ExternalMappingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An<i> ExternalMappingSpecification </i>is used to define a mapping between an external data source (represented by the referenced <i>mappedDocument</i>) and the content of a VEC file.      </p>
 
@@ -33,5 +33,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p> |
 | [ExternalMapping]({{< relref "externalmapping.md" >}}) | mappings | 0..* | 1 | <p> Specifies the mappings of individual element.      </p> |
+| [DocumentVersion]({{< relref "documentversion.md" >}}) | mappedDocument | 1 | 0..* | <p> Reference to the <i>DocumentVersion</i> that represents the external data source that connected to the VEC content by the <i>ExternalMappingSpecification</i>.      </p> |

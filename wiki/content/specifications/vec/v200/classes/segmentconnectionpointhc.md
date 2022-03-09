@@ -2,15 +2,15 @@
 title: SegmentConnectionPointHC
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SegmentConnectionPointHC
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies a point where the <i>HousingComponent</i> can be attached to the topology [if required] (sometimes called bundle position point or insertion point).      </p>      <p> &#160;      </p>      <p> <i>Note: The suffix HC is justified by the fact that class names must be unique within the model and the name SegmentConnectionPoint is already used within the ConnectorHousingSpecification. However, the represented semantics of the two connection points are so similar that the use of actually different names for both would rather have led to confusion. So SegmentConnectionPointHC&#160;actually is short hand for &quot;SegmentConnectionPoint within HousingComponent&quot;.</i>      </p>
 
@@ -33,8 +33,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..1 | 0..* | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | connectorSegmentConnectionPoint | 0..1 | 0..* | References the <i>SegementConnectionPoint </i>of the <i>ConnectorHousingSpecification</i> that is used to &quot;enter&quot; the connector housing. |
+| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 0..1 | 0..* | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

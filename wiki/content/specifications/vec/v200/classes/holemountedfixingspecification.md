@@ -2,15 +2,15 @@
 title: HoleMountedFixingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - HoleMountedFixingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for fixings that are mounted into a hole. This means the fixing has got a bolt which is mounted into a hole of the surrounding.      </p>
 

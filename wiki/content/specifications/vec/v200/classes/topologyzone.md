@@ -2,15 +2,15 @@
 title: TopologyZone
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TopologyZone
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>TopologyZone</i> divides a topology in different sections / design spaces. A <i>TopologyZone</i> may be subdivided in further <i>TopologyZone</i>. There can be multiple reasons for creating an orthogonal sectioning on a <i>Topology</i>. Therefore, <i>TopologyZones</i> can be overlapping.      </p>
 

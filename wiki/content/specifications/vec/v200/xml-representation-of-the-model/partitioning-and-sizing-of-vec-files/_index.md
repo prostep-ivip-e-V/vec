@@ -3,14 +3,14 @@ title: Partitioning and Sizing of VEC Files
 toc: false
 type: specs
 layout:  package
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType:  Package
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: xml-representation-of-the-model
     identifier: xml-representation-of-the-model/partitioning-and-sizing-of-vec-files
     weight: 1012003 

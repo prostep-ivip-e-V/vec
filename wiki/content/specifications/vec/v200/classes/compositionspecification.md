@@ -2,15 +2,15 @@
 title: CompositionSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CompositionSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The CompositionSpecificiation is used to define a set of occurrences required to describe unambiguously the design of a composite part. This does not have to be necessarily the same occurrences which are building the bill of material. Example: A company might want to regard an antenna cable as one part out of a bill of material perspective. However, at the same time it may be useful for the company to be able to describe the contacting of the antenna cable within the VEC. (see also PartStructureSpecification)      </p>
 

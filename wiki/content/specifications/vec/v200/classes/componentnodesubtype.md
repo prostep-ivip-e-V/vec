@@ -2,15 +2,15 @@
 title: ComponentNodeSubType
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ComponentNodeSubType
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines agreed values for <i>ComponentNodeSubTypes</i>. Not all combinations of <i>ComponentNodeSubTypes</i> and <i>ComponentNodeTypes</i> are semantically correct (e.g.&#160;Lamp, Microphone, Speaker, Motor are all Actuators).      </p>
 

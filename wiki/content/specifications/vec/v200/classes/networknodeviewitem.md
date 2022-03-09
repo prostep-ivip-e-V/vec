@@ -2,15 +2,15 @@
 title: NetworkNodeViewItem
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetworkNodeViewItem
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetViewSpecification</i> and defines its position within the layout.
 
@@ -33,9 +33,9 @@ A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetView
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 1 | 0..* | References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i> |
 | [NetworkPortViewItem]({{< relref "networkportviewitem.md" >}}) | displayedPort | 0..* | 1 | <p> Specifies all <i>NetworkPortViewItems</i> that are displayed on this <i>NetworkNodeViewItem.</i> The order of this association defines the clockwise arrangement of the ports on the node. As each <i>NetworkPortViewItem </i>can also define the side on which it is placed, side definitions take precedence over order.      </p>      <p> <i>&#160;</i>      </p>      <p> <b>Caution: </b>This association is <u>ordered</u>!      </p>      <p> <i>&#160;</i>      </p> |
 | [Transformation2D]({{< relref "transformation2d.md" >}}) | orientation | 0..1 | 1 | Specifies the position /&#160;placement of the <i>NetworkNodeViewItem</i> within the layout. |
+| [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 1 | 0..* | References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

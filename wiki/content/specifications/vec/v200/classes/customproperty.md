@@ -2,15 +2,15 @@
 title: CustomProperty
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CustomProperty
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Abstract base class for custom properties. Basically, a custom property is key / value pair. The key (propertyType) defines the meaning of the value. A custom property can either be a simple value (string), a numerical value or a value range.      </p>
 
@@ -32,5 +32,5 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ComplexProperty]({{< relref "complexproperty.md" >}}) | 1 | customProperty | 0..* | <p> The customProperties that represent the individual values of the complex property.      </p> |
 | [ExtendableElement]({{< relref "extendableelement.md" >}}) | 1 | customProperty | 0..* | Specifies the CustomProperties of the ExtendableElement. |
+| [ComplexProperty]({{< relref "complexproperty.md" >}}) | 1 | customProperty | 0..* | <p> The customProperties that represent the individual values of the complex property.      </p> |

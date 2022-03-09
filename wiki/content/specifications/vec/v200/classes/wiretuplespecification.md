@@ -2,15 +2,15 @@
 title: WireTupleSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireTupleSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>Specification</i> to define requirements for the handling of wire / wire element tuples (pairs, triple,...) with the focus on twisting. More precisely, the allowed untwisting at the wire ends and required measures against it.      </p>      <p> This definition is made independent from the <i>WireGroup</i>, as the might be defined for the part master data (the wire on the roller). The specifications for untwisting are based on the concrete usage.      </p>
 

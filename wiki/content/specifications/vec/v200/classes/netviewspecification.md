@@ -2,15 +2,15 @@
 title: NetViewSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetViewSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The <i>NetViewSpecification</i> supports the exchange of a basic layout for a <i>NetSpecification</i>.      </p>
 
@@ -33,5 +33,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>NetViewSpecification.</i> |
 | [NetworkNodeViewItem]({{< relref "networknodeviewitem.md" >}}) | placedViewItems | 0..* | 1 | Specifies all <i>NetworkNodeViewItems</i> that are displayed within a <i>NetViewSpecification</i>. |
+| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>NetViewSpecification.</i> |

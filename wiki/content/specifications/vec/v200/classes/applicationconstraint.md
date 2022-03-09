@@ -2,15 +2,15 @@
 title: ApplicationConstraint
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ApplicationConstraint
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>ApplicationConstraint</i> defines a condition with which it is possible to express the inclusion or exclusion of ConfigurableElements in different variants of a product. The <i>ApplicationConstraint </i>is focused to express validity rules based on time periods or elements of the product hierarchy in a concise way (attributes and relationships). It is complementary to the <i>VariantConfiguration</i> which expresses validity rules based on control strings.      </p>      <p> An <i>ApplicationConstraint </i>can reference another <i>ApplicationConstraint</i> as <i>baseInclusion</i>. In this case, an <i>ApplicationConstraint</i> can only be satisfied if its <i>baseInclusion </i>is also satisfied.      </p>
 
@@ -39,12 +39,12 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | baseInclusion | 0..1 | 0..* | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |
 | [Project]({{< relref "project.md" >}}) | project | 0..* |  | <p> &#160;Defines the projects for which the application constraint applies.      </p> |
+| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | baseInclusion | 0..1 | 0..* | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |  | applicationConstraint | 0..* | <p> References the application constraint that applies to the ConfigurationConstraint.      </p> |
-| [ApplicationConstraintSpecification]({{< relref "applicationconstraintspecification.md" >}}) | 1 | applicationConstraint | 1..* | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. |
 | [ConfigurableElement]({{< relref "configurableelement.md" >}}) |  | applicationConstraint | 0..* | <p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the application constraints that apply to the ConfigurableElement.      </p> |
+| [ApplicationConstraintSpecification]({{< relref "applicationconstraintspecification.md" >}}) | 1 | applicationConstraint | 1..* | Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. |
+| [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |  | applicationConstraint | 0..* | <p> References the application constraint that applies to the ConfigurationConstraint.      </p> |
 | [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | 0..* | baseInclusion | 0..1 | <p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p> |

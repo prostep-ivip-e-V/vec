@@ -2,15 +2,15 @@
 title: SlotReference
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SlotReference
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>SlotReference</i> represents the usage of a <i>Slot</i> in the context of PartUsage or PartOccurrence.      </p>
 
@@ -32,5 +32,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | usedSupplementaryParts | 0..* | 0..* | <p> This is the relationship of the supplementary parts actually used in this <i>SlotReference.</i> This is the actual selection of the potential supplementary parts defined in the corresponding <i>Slot.supplementaryParts</i> association.      </p> |
 | [CavityReference]({{< relref "cavityreference.md" >}}) | cavityReference | 0..* | 1 | Specifies the CavityReferences used in the SlotReference. |
+| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | usedSupplementaryParts | 0..* | 0..* | <p> This is the relationship of the supplementary parts actually used in this <i>SlotReference.</i> This is the actual selection of the potential supplementary parts defined in the corresponding <i>Slot.supplementaryParts</i> association.      </p> |

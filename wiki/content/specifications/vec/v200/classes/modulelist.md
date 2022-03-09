@@ -2,15 +2,15 @@
 title: ModuleList
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ModuleList
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A ModuleList is a mechanism to control additional / completion PartOccurrences. This means for a car configuration, if at least one of the modules in the list participates in the configuration, the &quot;completionComponent&quot; participates, too.      </p>
 

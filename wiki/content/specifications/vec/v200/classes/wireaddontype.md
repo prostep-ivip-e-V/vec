@@ -2,15 +2,15 @@
 title: WireAddOnType
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireAddOnType
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies possible values for the t<i>ype </i>of wire add-ons (e.g. <i>CavityAddOn</i>).&#160;      </p>
 

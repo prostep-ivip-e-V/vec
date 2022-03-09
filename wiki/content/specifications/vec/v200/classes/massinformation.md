@@ -2,15 +2,15 @@
 title: MassInformation
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - MassInformation
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Allows the definition of mass information. Attributes of the type MassInformation normally have the multiplicity [0..*]. This means that such an attribute can have mass values for different determinationTypes and valueSources. It must not have multiple values for the same determinationType and valueSource.      </p>
 

@@ -3,10 +3,10 @@ title: Cavity Seals and Cavity Plugs
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -24,7 +24,7 @@ classes:
   - CavitySpecification
   - PartOrUsageRelatedSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: component-characteristics
     identifier: component-characteristics/cavity-seals-and-cavity-plugs
     weight: 1005011 

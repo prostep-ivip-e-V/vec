@@ -2,15 +2,15 @@
 title: ExtensionSlot
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ExtensionSlot
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>ExtensionSlot </i>defines a slot within an EE-Component where other EE-Components can be plugged into (modular extension). This is necessary for example for modular power distributions.      </p>
 

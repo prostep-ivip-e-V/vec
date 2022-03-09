@@ -2,15 +2,15 @@
 title: NetType
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetType
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>NetType</i> defines the different types of Nets used in the <i>NetSpecification</i>. The level of detail of the <i>NetTypes</i> for the can be process dependent.      </p>      <p> A NetType could be just used to differentiate between conventional (analogue) communication and bus communication (digital), it can also already define the different types of digital communication (e.g. CAN, MOST, Ethernet).      </p>
 
@@ -37,7 +37,7 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
+| [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
 | [Net]({{< relref "net.md" >}}) |  | netType | 0..1 |  |
 | [NetworkPort]({{< relref "networkport.md" >}}) | 0..* | netType | 0..1 |  |
-| [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netType | 0..* |  |

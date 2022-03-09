@@ -2,15 +2,15 @@
 title: InternalComponentConnection
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - InternalComponentConnection
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>InternalComponentConnection</i> defines a conductive connection between <i>PinComponents </i>within an <i>EEComponent</i>. Such a connection can be statically permanent or dynamically switch (e.g. by a relais). This behaviour can be defined with a <i>SwitchingState</i>.      </p>      <p> The electrical behaviour of an <i>InternalComponentConnection </i>can be further specified by a referenced <i>ConductorSpecification.</i>      </p>
 
@@ -32,8 +32,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PinComponent]({{< relref "pincomponent.md" >}}) | pins | 2..* | 0..* |  |
 | [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | conductorSpecification | 0..1 | 0..* |  |
+| [PinComponent]({{< relref "pincomponent.md" >}}) | pins | 2..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

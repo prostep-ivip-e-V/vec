@@ -2,15 +2,15 @@
 title: SegmentCrossSectionArea
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SegmentCrossSectionArea
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies the cross-section area of a segment. For the data exchange the cross-section area is used and not the diameter, because the diameter is only a valid measure for circular segments. For circular segments, the diameter and the cross-section area can be translated into each other without the loss of information. Attributes of the type SegmentCrossSectionArea normally have the multiplicity [0..*]. This means that such an attribute can have SegmentCrossSectionArea entries for different crossSectionAreaTypes and valueDeterminations. It must not have multiple entries with the same crossSectionAreaType and valueDetermination.      </p>
 

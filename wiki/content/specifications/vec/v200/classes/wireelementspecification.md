@@ -2,15 +2,15 @@
 title: WireElementSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireElementSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A WireElementSpecification is the basic element to describe a wire in the VEC. A WireElementSpecification can be atomic or composed recursively out of other WireElementSpecifications. A WireElementSpecification can reference an InsulationSpecification, if it has an insulation, a CoreSpecification, if it has a core or a WireGroupSpecification if it is a grouping of other WireElementSpecifications in the Wire (e.g. a multi-core wire with twisted pairs).      </p>
 
@@ -46,12 +46,12 @@ menu_name: vec-2.0.0-rc1
 |----------|----------|-----------|-----------|-----------------|
 | [InsulationSpecification]({{< relref "insulationspecification.md" >}}) | insulationSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> has an insulation then the specification of the insulation is referenced here.      </p> |
 | [ConductorSpecification]({{< relref "conductorspecification.md" >}}) | conductorSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p> |
+| [FillerSpecification]({{< relref "fillerspecification.md" >}}) | fillerSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> is a filler then the specification of the filler is referenced here.      </p> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | subWireElementSpecification | 0..* | 0..* | <p> Specifies the contained subWireElements if the WireElement has sub elements. If a <i>WireElementSpecification </i>contains the same <i>WireElementSpecification </i>multiple times, then it shall be referenced as often as it occurs in the reality. Otherwise the <i>WireElementSpecification </i>wouldn't specify a wire element unambiguously, because the representation in the model would be the same, regardless of the number of sub elements. Therefore, this association must not be realized with a &quot;set&quot; semantic.      </p>      <p> &#160;      </p> |
 | [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p> |
-| [FillerSpecification]({{< relref "fillerspecification.md" >}}) | fillerSpecification | 0..1 | 0..* | <p> If the <i>WireElement</i> is a filler then the specification of the filler is referenced here.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | 0..* | subWireElementSpecification | 0..* | <p> Specifies the contained subWireElements if the WireElement has sub elements. If a <i>WireElementSpecification </i>contains the same <i>WireElementSpecification </i>multiple times, then it shall be referenced as often as it occurs in the reality. Otherwise the <i>WireElementSpecification </i>wouldn't specify a wire element unambiguously, because the representation in the model would be the same, regardless of the number of sub elements. Therefore, this association must not be realized with a &quot;set&quot; semantic.      </p>      <p> &#160;      </p> |
-| [WireSpecification]({{< relref "wirespecification.md" >}}) | 0..* | wireElementSpecification | 1 | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
 | [WireElement]({{< relref "wireelement.md" >}}) | 0..* | wireElementSpecification | 1 | <p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p> |
+| [WireSpecification]({{< relref "wirespecification.md" >}}) | 0..* | wireElementSpecification | 1 | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |

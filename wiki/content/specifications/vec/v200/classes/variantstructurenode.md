@@ -2,15 +2,15 @@
 title: VariantStructureNode
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - VariantStructureNode
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> <i>VariantStructureNodes</i> can be used to define a hierarchical structure on <i>VariantGroups</i>. Every <i>VariantStructureNodes</i> can reference <i>VariantGroups</i> and <i>VariantStructureNodes</i> as children.      </p>
 
@@ -35,8 +35,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) | childNodes | 0..* |  |  |
 | [VariantGroup]({{< relref "variantgroup.md" >}}) | containedGroups | 0..* | 0..* |  |
+| [VariantStructureNode]({{< relref "variantstructurenode.md" >}}) | childNodes | 0..* |  |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

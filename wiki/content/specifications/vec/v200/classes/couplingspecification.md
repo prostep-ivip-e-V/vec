@@ -2,15 +2,15 @@
 title: CouplingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CouplingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the description of a Coupling. A coupling allows the mapping between independent harness sections or EEComponents of the electrical system. This is done by the mapping of either-or both, ConnectorHousingRoles &amp;&#160;TerminalRoles of one side to the other.      </p>
 

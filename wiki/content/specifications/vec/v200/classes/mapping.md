@@ -2,15 +2,15 @@
 title: Mapping
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Mapping
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>The Mapping defines the concrete mapping two parts aliased as A &amp; B. For performance reasons the roles PartSideA and PartSideB are abbreviated to A &amp; B. </p>
 
@@ -32,8 +32,8 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [SlotMapping]({{< relref "slotmapping.md" >}}) | slotMapping | 0..* | 1 |  |
-| [PartVersion]({{< relref "partversion.md" >}}) | B | 1 | 0..* |  |
 | [PartVersion]({{< relref "partversion.md" >}}) | A | 1 | 0..* |  |
+| [PartVersion]({{< relref "partversion.md" >}}) | B | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

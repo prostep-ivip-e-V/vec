@@ -2,15 +2,15 @@
 title: PlacementPoint
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PlacementPoint
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Defines a point on the component which can be placed explicitly in the topology (e.g. opening in a grommet, the entry point of a connector housing).  If a PlacementPoint requires further specification for a certain component type (e.g. the entry point of a connector housing), this is done by an element specific for the component type, which related to the placement point.  </p>
 
@@ -37,12 +37,12 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | placementPoint | 0..* | <p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p> |
-| [CableLeadThroughOutlet]({{< relref "cableleadthroughoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableLeadThroughOutlet</i> in a PlaceableElementSpecification.      </p> |
-| [WireReception]({{< relref "wirereception.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p> |
-| [PlacementPointPosition]({{< relref "placementpointposition.md" >}}) | 0..* | placementPoint | 1 |  |
-| [SegmentConnectionPointHC]({{< relref "segmentconnectionpointhc.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
-| [CableDuctOutlet]({{< relref "cableductoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p> |
 | [SegmentConnectionPoint]({{< relref "segmentconnectionpoint.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
-| [FittingOutlet]({{< relref "fittingoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>FittingOutlet</i> in a PlaceableElementSpecification.      </p> |
+| [CableDuctOutlet]({{< relref "cableductoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p> |
+| [WireReception]({{< relref "wirereception.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p> |
+| [SegmentConnectionPointHC]({{< relref "segmentconnectionpointhc.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p> |
 | [PlacementPointReference]({{< relref "placementpointreference.md" >}}) | 0..* | placementPoint | 1 | <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p> |
+| [PlacementPointPosition]({{< relref "placementpointposition.md" >}}) | 0..* | placementPoint | 1 |  |
+| [CableLeadThroughOutlet]({{< relref "cableleadthroughoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>CableLeadThroughOutlet</i> in a PlaceableElementSpecification.      </p> |
+| [FittingOutlet]({{< relref "fittingoutlet.md" >}}) | 0..* | placementPoint | 0..1 | <p> Specifies the <i>PlacementPoint</i> that represents this <i>FittingOutlet</i> in a PlaceableElementSpecification.      </p> |
+| [PlaceableElementSpecification]({{< relref "placeableelementspecification.md" >}}) | 1 | placementPoint | 0..* | <p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p> |

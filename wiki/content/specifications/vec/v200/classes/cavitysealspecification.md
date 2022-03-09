@@ -2,15 +2,15 @@
 title: CavitySealSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavitySealSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of cavity seals. A <i>CavitySeal</i> is a watertight non-electrical object to fill a populated Cavity.      </p>
 

@@ -2,15 +2,15 @@
 title: BoltMountedFixingBoltType
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - BoltMountedFixingBoltType
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> OpenEnumeration for the types of the bolts on which the fixing can be mounted.      </p>
 

@@ -2,15 +2,15 @@
 title: BridgeTerminalSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - BridgeTerminalSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A bridge terminal is a part that behaves like terminal but has no <i>WireReceptions.</i> It is used to create short circuit between different pins in a connector. In its use, it can realize a schematic connection on its own and independently of other components.      </p>
 

@@ -2,15 +2,15 @@
 title: VariantGroup
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - VariantGroup
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> With a VariantGroup it is possible to group VariantCodes. The semantic of this grouping should be defined with the groupType (e.g. composition, choice, etc.).      </p>
 

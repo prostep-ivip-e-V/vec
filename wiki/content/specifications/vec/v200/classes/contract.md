@@ -2,15 +2,15 @@
 title: Contract
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Contract
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A Contract-instance describes the relationship between an ItemVersion-instance and a Company-instance additionally defining the role the company takes in reference to the ItemVersion.      </p>
 
@@ -33,5 +33,5 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [VecContent]({{< relref "veccontent.md" >}}) | 1 | contract | 0..* | Specifies the contracts used in the VEC-file. |
 | [ItemVersion]({{< relref "itemversion.md" >}}) | 0..* | contract | 0..* | References the contracts that apply to an ItemVersion. |
+| [VecContent]({{< relref "veccontent.md" >}}) | 1 | contract | 0..* | Specifies the contracts used in the VEC-file. |

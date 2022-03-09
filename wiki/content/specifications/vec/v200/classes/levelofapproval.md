@@ -2,15 +2,15 @@
 title: LevelOfApproval
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - LevelOfApproval
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The&#160;LevelOfApproval standardizes the approval levels most engineering processes have in common. See <i>Approval.levelOfApproval </i>for more details.      </p>
 

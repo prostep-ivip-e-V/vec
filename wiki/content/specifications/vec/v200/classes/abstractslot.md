@@ -2,15 +2,15 @@
 title: AbstractSlot
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - AbstractSlot
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>AbstractSlot</i> is a geometrical place in a connector housing, which can contain / group cavities. This can be either direct, if it is <i>Slot</i> and indirect if it is a <i>ModularSlot</i>.      </p>      <p> If it is a <i>Slot</i>, then it is an inseparable part of the connector housing, which means it is created during the manufacturing process of the connector housing.      </p>      <p> If it is a <i>ModularSlot</i> it is a place where one or more other connector housing can be place during the assembly.      </p>
 

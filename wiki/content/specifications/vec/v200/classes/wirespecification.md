@@ -2,15 +2,15 @@
 title: WireSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of a wire. This can either be a complex multicore wire or a normal single core. In the VEC a wire is defined by one WireElement, which may be composed from other WireElements.      </p>
 
@@ -34,8 +34,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1 | 0..1 | <p> Specifies the <i>WireElement</i> that represents the root of the <i>WireSpecification</i>.      </p> |
 | [WireElementSpecification]({{< relref "wireelementspecification.md" >}}) | wireElementSpecification | 1 | 0..* | <p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p> |
+| [WireElement]({{< relref "wireelement.md" >}}) | wireElement | 1 | 0..1 | <p> Specifies the <i>WireElement</i> that represents the root of the <i>WireSpecification</i>.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

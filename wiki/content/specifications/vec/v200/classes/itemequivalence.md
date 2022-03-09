@@ -2,17 +2,17 @@
 title: ItemEquivalence
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ItemEquivalence
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
-<p> Defines two or more ItemVersions to be equivalent out of the view of a certain company. The ItemEquivalence class will most likely be used by a company to express which PartNumber a certain PartVersion has in the context of other companies (same applies to <i>DocumentVersions</i>). However, for every other company separate ItemVersion-instances are needed as the statement of equivalence can be very subjective.      </p>
+<p> Defines two or more ItemVersions to be equivalent out of the view of a certain company. The ItemEquivalence class will most likely be used by a company to express which PartNumber a certain PartVersion has in the context of other companies (same applies to <i>DocumentVersions</i>). However, for every other company separate ItemEquivalences are needed as the statement of equivalence can be very subjective.      </p>
 
 ## General Information
 

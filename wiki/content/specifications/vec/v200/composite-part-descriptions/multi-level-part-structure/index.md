@@ -3,15 +3,15 @@ title: Multi-level Part Structure
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: composite-part-descriptions
     identifier: composite-part-descriptions/multi-level-part-structure
     weight: 1008001 

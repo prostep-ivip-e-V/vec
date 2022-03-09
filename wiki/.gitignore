@@ -7,3 +7,4 @@ public/
 /assets/jsconfig.json
 
 .idea
+/.hugo_build.lock

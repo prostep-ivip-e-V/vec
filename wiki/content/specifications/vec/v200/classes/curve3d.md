@@ -2,15 +2,15 @@
 title: Curve3D
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Curve3D
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The <i>Curve3D</i> is an abstract representation of a curve, that defines the three-dimensional appearance of the centreline of a segment. The concrete type of the curve (e.g. NURBSCurve) defines the mathematical function that applies to curve and stores the required parameter set for this function in the VEC.      </p>
 

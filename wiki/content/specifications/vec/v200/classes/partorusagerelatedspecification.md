@@ -2,15 +2,15 @@
 title: PartOrUsageRelatedSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PartOrUsageRelatedSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Base class for all specifications which are describing a <i>PartVersion</i> or a <i>PartUsage</i>. A <i>PartOrUsageRelatedSpecification</i> specifies a certain aspect of the described part or usage (e.g. general technical part information, connector housing aspects or wire aspects).      </p>
 

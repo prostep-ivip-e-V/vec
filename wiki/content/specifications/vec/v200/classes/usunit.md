@@ -2,15 +2,15 @@
 title: USUnit
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - USUnit
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The USUnit class can define quantities in the terms of the US-Unit-System by specifying the corresponding US unit name. The US Unit System is quite similar to the imperial unit system; however, some units are defined slightly different.      </p>
 

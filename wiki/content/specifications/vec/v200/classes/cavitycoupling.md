@@ -2,15 +2,15 @@
 title: CavityCoupling
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavityCoupling
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>CavityCoupling</i> defines the mapping between two cavities of the <i>ConnectorHousingRoles</i> associated with the <i>CouplingPoint</i>.      </p>
 
@@ -32,8 +32,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityReference]({{< relref "cavityreference.md" >}}) | secondCavity | 1 | 0..* |  |
 | [CavityReference]({{< relref "cavityreference.md" >}}) | firstCavity | 1 | 0..* |  |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | secondCavity | 1 | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

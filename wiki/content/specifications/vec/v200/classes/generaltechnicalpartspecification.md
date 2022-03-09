@@ -2,15 +2,15 @@
 title: GeneralTechnicalPartSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - GeneralTechnicalPartSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Specification for the definition of common properties for technical parts.  </p>
 
@@ -41,5 +41,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [PartRelation]({{< relref "partrelation.md" >}}) | partRelation | 0..* | 1 | Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips). |
 | [BoundingBox]({{< relref "boundingbox.md" >}}) | boundingBox | 0..1 |  | <p> Defines the bounding box of the part.      </p> |
+| [PartRelation]({{< relref "partrelation.md" >}}) | partRelation | 0..* | 1 | Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips). |

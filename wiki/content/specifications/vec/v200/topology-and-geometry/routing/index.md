@@ -3,10 +3,10 @@ title: Routing
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -19,7 +19,7 @@ classes:
   - Routing
   - RoutingSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: topology-and-geometry
     identifier: topology-and-geometry/routing
     weight: 1009011 
@@ -27,9 +27,9 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1009011
 ---
-{{< svgfigure src="routing.png" width="841" height="474" caption="Routing" numbered="true" >}}
+{{< svgfigure src="routing.png" width="841" height="530" caption="Routing" numbered="true" >}}
   {{< svglink relref="../../classes/path.md" x="20.0" y="239.0" width="89.0" height="43.0" >}}
-  {{< svglink relref="../../classes/wirerole.md" x="590.0" y="417.0" width="169.0" height="43.0" >}}
+  {{< svglink relref="../../classes/wirerole.md" x="590.0" y="473.0" width="169.0" height="43.0" >}}
   {{< svglink relref="../../classes/connection.md" x="265.0" y="298.0" width="217.0" height="79.0" >}}
   {{< svglink relref="../../classes/topologysegment.md" x="15.0" y="351.0" width="226.0" height="91.0" >}}
   {{< svglink relref="../../classes/wireelementreference.md" x="589.0" y="295.0" width="238.0" height="115.0" >}}

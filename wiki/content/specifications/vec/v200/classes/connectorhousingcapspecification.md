@@ -2,15 +2,15 @@
 title: ConnectorHousingCapSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConnectorHousingCapSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of caps (backshells) of connectors. Different caps can add additional wire length addons to a connector housing.      </p>      <p> A 'cap' which already defines the number of cavities, coding etc. is in the&#160;VEC&#160;defined by <i>ConnectorHousingSpecification</i> with <i>ModularSlots</i> and not by a <i>ConnectorHousingCapSpecification</i>.      </p>
 

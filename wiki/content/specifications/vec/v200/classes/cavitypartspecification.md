@@ -2,15 +2,15 @@
 title: CavityPartSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavityPartSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The <i>CavityPartSpecification</i> is an abstract class for common properties of non-electrical parts that are used in <i>Cavities</i>.      </p>
 

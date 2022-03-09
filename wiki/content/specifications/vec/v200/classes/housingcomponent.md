@@ -2,15 +2,15 @@
 title: HousingComponent
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - HousingComponent
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A HousingComponent describes the interface of an EEComponent with which it can be connected to another EEComponent or a harness. The characteristics of the interface can be described with a referenced ConnectorHousingSpecification. (see KBLFRM-300)      </p>
 
@@ -34,9 +34,9 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | housingSpecification | 0..1 | 0..* | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |
 | [PinComponent]({{< relref "pincomponent.md" >}}) | pinComponent | 0..* | 1 | Specifies the PinComponents of HousingComponent.   (see KBLFRM-300) |
 | [SegmentConnectionPointHC]({{< relref "segmentconnectionpointhc.md" >}}) | segmentConnectionPoint | 0..* | 1 | <p> Specifies the <i>SegmentConnectionPoints </i>the <i>HousingComponent</i>.      </p> |
-| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | housingSpecification | 0..1 | 0..* | References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding). |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

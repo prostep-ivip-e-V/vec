@@ -2,15 +2,15 @@
 title: NURBSControlPoint
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NURBSControlPoint
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Represents a control point of a <i>NURBSCurve. </i>It consists of a referenced <i>CartesianPoint3D</i> for the position and a <i>weight</i>.      </p>
 

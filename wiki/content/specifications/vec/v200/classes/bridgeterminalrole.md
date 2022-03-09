@@ -2,15 +2,15 @@
 title: BridgeTerminalRole
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - BridgeTerminalRole
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>BridgeTerminalRole</i> defines the instance specific properties and relationships of a bridge terminal (see BridgeTerminalSpecification).      </p>      <p> A bridge terminal is a part that behaves like terminal but has no <i>WireReceptions.</i> It is used to create short circuit between different pins in a connector. In its use, it can realize a schematic connection on its own and independently of other components.      </p>
 
@@ -33,4 +33,4 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Connection]({{< relref "connection.md" >}}) | connection | 0..1 | 0..* | <p> References the <i>Connection</i> that is realized by this <i>BridgeTerminalRole.</i>      </p> |
+| [Connection]({{< relref "connection.md" >}}) | connection | 0..* | 0..* | <p> References the <i>Connection</i> that is realized by this <i>BridgeTerminalRole.</i>      </p> |

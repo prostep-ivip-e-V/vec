@@ -2,15 +2,15 @@
 title: DocumentRelatedAssignmentGroup
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - DocumentRelatedAssignmentGroup
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A DocumentRelatedAssignmentGroup allows the creation of traceability links to elements in a <i>DocumentVersion</i> for a set of VEC&#160;objects. The semantic of the traceability link is defined by the <i>DocumentRelationType.</i>      </p>
 

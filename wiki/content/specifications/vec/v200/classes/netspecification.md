@@ -2,15 +2,15 @@
 title: NetSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Specification for the description of electrological nets.  </p>
 
@@ -34,6 +34,6 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [Net]({{< relref "net.md" >}}) | net | 0..* | 1 | Specifies the Nets defined in the NetSpecification. |
-| [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification. |
 | [NetworkNode]({{< relref "networknode.md" >}}) | networkNode | 0..* | 1 | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |
 | [NetType]({{< relref "nettype.md" >}}) | netType | 0..* | 1 |  |
+| [NetGroup]({{< relref "netgroup.md" >}}) | netGroup | 0..* | 1 | Specifies the NetGroup defined in the NetSpecification. |

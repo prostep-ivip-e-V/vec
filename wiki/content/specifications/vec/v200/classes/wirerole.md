@@ -2,15 +2,15 @@
 title: WireRole
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireRole
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A WireRole defines the instance specific properties and relationships of a wire.      </p>
 
@@ -32,5 +32,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [WireSpecification]({{< relref "wirespecification.md" >}}) | wireSpecification | 1 | 0..* | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |
 | [WireElementReference]({{< relref "wireelementreference.md" >}}) | wireElementReference | 0..* | 1 | Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed. |
+| [WireSpecification]({{< relref "wirespecification.md" >}}) | wireSpecification | 1 | 0..* | <p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p> |

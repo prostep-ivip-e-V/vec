@@ -3,10 +3,10 @@ title: Labeling
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -15,7 +15,7 @@ classes:
   - PartOrUsageRelatedSpecification
   - LabelingSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: general-component-data
     identifier: general-component-data/labeling
     weight: 1004008 
@@ -29,4 +29,4 @@ weight: 1004008
   {{< svglink relref="../../classes/partorusagerelatedspecification.md" x="22.0" y="36.0" width="253.0" height="57.0" >}}
   {{< svglink relref="../../classes/labelingspecification.md" x="15.0" y="148.0" width="278.0" height="91.0" >}}
 {{< / svgfigure >}}
-A component (of any type) can labeled in many ways either during the manufacturing process, for example a label that is imprinted on the component during the general manufacturing process&#160;(e.g. the part number), or in its concrete use (e.g. with wire number or a usage node id). The <i>LabelingSpecification</i> defines general labeling properties of the component. Labeling properties in its concrete use are defined with the correspoding role.
+A component (of any type) can be labeled in many ways either during the manufacturing process, for example a label that is imprinted on the component during the general manufacturing process&#160;(e.g. the part number), or in its concrete use (e.g. with wire number or a usage node id). The <i>LabelingSpecification</i> defines general labeling properties of the component. Labeling properties in its concrete use are defined with the correspoding role.

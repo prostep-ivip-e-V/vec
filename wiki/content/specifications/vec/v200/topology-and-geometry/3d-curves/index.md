@@ -3,10 +3,10 @@ title: 3D Curves
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -17,7 +17,7 @@ classes:
   - GeometrySegment3D
   - BuildingBlockSpecification3D
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: topology-and-geometry
     identifier: topology-and-geometry/3d-curves
     weight: 1009007 

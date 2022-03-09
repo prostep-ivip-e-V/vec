@@ -2,15 +2,15 @@
 title: SegmentCrossSectionAreaType
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SegmentCrossSectionAreaType
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines valid values the type of the cross-section area of a <i>TopologySegment</i>, since a <i>TopologySegment</i> can have different cross section areas with different meanings in the process.      </p>
 

@@ -2,15 +2,15 @@
 title: NetworkPort
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetworkPort
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> NetworkPort is the source or the receiver of a of a Net.      </p>
 
@@ -38,7 +38,7 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
+| [NetworkPortViewItem]({{< relref "networkportviewitem.md" >}}) | 0..* | networkPort | 1 | References the <i>NetworkPort</i> that is represented by this <i>NetworkPortViewItem.</i> |
 | [Net]({{< relref "net.md" >}}) | 1 | networkPort | 1..* | References the NetworkPorts that are connected by the Net. |
 | [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | networkPort | 0..1 | References the NetworkPort that is realized by the ComponentPort. |
-| [NetworkPortViewItem]({{< relref "networkportviewitem.md" >}}) | 0..* | networkPort | 1 | References the <i>NetworkPort</i> that is represented by this <i>NetworkPortViewItem.</i> |
 | [NetworkNode]({{< relref "networknode.md" >}}) | 1 | port | 0..* | Specifies the NetworkPorts of a NetworkNode. |

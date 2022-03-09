@@ -2,15 +2,15 @@
 title: AssignmentGroup
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - AssignmentGroup
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>AssignmentGroup</i> is a concept that allows the clustering of arbitrary elements in ways that are orthogonal to hierarchical and semantic structure of the VEC.      </p>
 

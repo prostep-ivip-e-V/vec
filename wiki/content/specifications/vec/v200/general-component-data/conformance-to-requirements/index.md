@@ -3,10 +3,10 @@ title: Conformance to Requirements
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -18,7 +18,7 @@ classes:
   - PartUsage
   - RequirementsConformanceSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: general-component-data
     identifier: general-component-data/conformance-to-requirements
     weight: 1004007 

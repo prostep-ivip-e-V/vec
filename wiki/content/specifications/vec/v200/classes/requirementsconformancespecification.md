@@ -2,15 +2,15 @@
 title: RequirementsConformanceSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - RequirementsConformanceSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>RequirementsConformanceSpecification </i>can be used to express the conformance of a <i>PartVersion </i>(or a group of <i>PartVersions</i>). The <i>PartVersions</i> to which this <i>RequirementsConformanceSpecification</i> applies are expressed through the <i>describedPart </i>reference.      </p>
 

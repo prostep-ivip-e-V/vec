@@ -2,15 +2,15 @@
 title: WireEndAccessorySpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireEndAccessorySpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> <i>WireEndAccessorySpecifications </i>are describing parts that are used for a treatment of a wire end before the actual terminal is attached to the <i>WireEnd</i> (e.g. a ferrule).     </p>      <p> The actual specification is done by the referenced <i>WireReceptionSpecification</i> since a <i>WireEndAccessory </i>is basically just a single <i>WireReception</i>.      </p>
 

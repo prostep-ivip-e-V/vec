@@ -2,15 +2,15 @@
 title: LabelingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - LabelingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 A component (of any type) can labeled in many ways either during the manufacturing process, for example a label that is imprinted on the component during the general manufacturing process&#160;(e.g. the part number), or in its concrete use (e.g. with wire number or a usage node id). The <i>LabelingSpecification</i> defines general labeling properties of the component. Labeling properties in its concrete use are defined with the correspoding role.
 

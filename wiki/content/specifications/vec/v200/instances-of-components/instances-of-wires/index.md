@@ -3,10 +3,10 @@ title: Instances of Wires
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -22,7 +22,7 @@ classes:
   - WireSpecification
   - WireElementSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: instances-of-components
     identifier: instances-of-components/instances-of-wires
     weight: 1007002 

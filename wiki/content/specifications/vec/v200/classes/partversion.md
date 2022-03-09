@@ -2,15 +2,15 @@
 title: PartVersion
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PartVersion
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The PartVersion is one of the two anchors for PDM information in the VEC. All technical information about a PartVersion is contained in one or more documents. These describing elements are normally referencing to the PartVersion.      </p>
 
@@ -55,6 +55,6 @@ menu_name: vec-2.0.0-rc1
 | [TerminalPairing]({{< relref "terminalpairing.md" >}}) | 0..* | firstTerminal | 1 | <p> References the first terminal of the TerminalPairing.      </p> |
 | [PartOccurrence]({{< relref "partoccurrence.md" >}}) | 0..* | part | 0..1 | <p> References the PartVersion that is instantiated by this PartOccurrence.      </p> |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | partVersion | 0..* | Specifies the PartVersions contained in the VEC-file. |
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..* | referencedPart | 0..* | The association is an informative link which PartVersions are described by the SheetOrChapter. |
 | [DocumentVersion]({{< relref "documentversion.md" >}}) | 0..* | referencedPart | 0..* | The association is an informative link which PartVersions are described by the DocumentVersion. |
+| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..* | referencedPart | 0..* | The association is an informative link which PartVersions are described by the SheetOrChapter. |
 | [TerminalPairing]({{< relref "terminalpairing.md" >}}) | 0..* | secondTerminal | 1 | <p> References the second terminal of the TerminalPairing (first and second does not imply any specific order).      </p> |

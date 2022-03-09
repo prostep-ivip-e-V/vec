@@ -2,15 +2,15 @@
 title: PartOccurrence
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PartOccurrence
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>A PartOccurrence is an instance of a component with a specified part number (PartVersion). </p>
 
@@ -37,9 +37,9 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [PartVersion]({{< relref "partversion.md" >}}) | part | 0..1 | 0..* | <p> References the PartVersion that is instantiated by this PartOccurrence.      </p> |
-| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | alternativeOccurrence | 0..* | 0..* | <p> References the PartOccurrences that are an alternative for this PartOccurrence.      </p> |
-| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | instanciatedOccurrence | 0..* | 0..* | <p> References the PartOccurrence which is instantiated by the PartOccurrence. This reference is for example needed in the case of usage of assemblies.      </p> |
 | [PartUsage]({{< relref "partusage.md" >}}) | realizedPartUsage | 0..* | 0..* | References the PartUsages that are realized by the PartOccurrence. |
+| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | instanciatedOccurrence | 0..* | 0..* | <p> References the PartOccurrence which is instantiated by the PartOccurrence. This reference is for example needed in the case of usage of assemblies.      </p> |
+| [PartOccurrence]({{< relref "partoccurrence.md" >}}) | alternativeOccurrence | 0..* | 0..* | <p> References the PartOccurrences that are an alternative for this PartOccurrence.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

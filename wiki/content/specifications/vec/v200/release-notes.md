@@ -36,6 +36,8 @@ The following issues required schema incompatible changes and forced a major ver
 
 ## Improvement
 
+- [KBLFRM-1151](https://prostep-ivip.atlassian.net/browse/KBLFRM-1151) Clarified Description of ItemEquivalence
+- [KBLFRM-1149](https://prostep-ivip.atlassian.net/browse/KBLFRM-1149) Open Multiplicity (m:n) for Traceability Relations between Wiring and Schematic Layer
 - [KBLFRM-1138](https://prostep-ivip.atlassian.net/browse/KBLFRM-1138) Improved CavityAddOn documentation
 - [KBLFRM-1113](https://prostep-ivip.atlassian.net/browse/KBLFRM-1113) Differentiation of different signal transmission media of wires \(electrical, optical, ...\)
 - [KBLFRM-1112](https://prostep-ivip.atlassian.net/browse/KBLFRM-1112) Switch to semantic versioning
@@ -48,6 +50,7 @@ The following issues required schema incompatible changes and forced a major ver
 - [KBLFRM-1047](https://prostep-ivip.atlassian.net/browse/KBLFRM-1047) Redefinition WireProtectionRole.ProtectionLength and added MaterialLength
 - [KBLFRM-1044](https://prostep-ivip.atlassian.net/browse/KBLFRM-1044) Clarified Documentation for "Transformation3D" \(and "Transformation2D"\)
 - [KBLFRM-1022](https://prostep-ivip.atlassian.net/browse/KBLFRM-1022) Added "AbrasionResistance" to OpenEnumeration "RobustnessClass"
+- [KBLFRM-1020](https://prostep-ivip.atlassian.net/browse/KBLFRM-1020) Same physical Realization for Different Logical Connections 
 - [KBLFRM-1018](https://prostep-ivip.atlassian.net/browse/KBLFRM-1018) Clarified documentation of PartVersion.isPreferredPart.
 - [KBLFRM-1009](https://prostep-ivip.atlassian.net/browse/KBLFRM-1009) Add identification to BuildingBlockPositioning\[2D/3D\]
 - [KBLFRM-1008](https://prostep-ivip.atlassian.net/browse/KBLFRM-1008) Add EffectivityControlKey Ranges to ApplicationConstraint / UsageConstraint

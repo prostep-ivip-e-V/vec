@@ -3,10 +3,10 @@ title: Connection View Specification
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
@@ -22,7 +22,7 @@ classes:
   - ConnectionViewSpecification
   - ConnectionSpecification
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: connectivity
     identifier: connectivity/connection-view-specification
     weight: 1010005 
@@ -43,4 +43,4 @@ weight: 1010005
   {{< svglink relref="../../classes/connectionviewspecification.md" x="37.0" y="120.0" width="715.0" height="34.0" >}}
   {{< svglink relref="../../classes/connectionspecification.md" x="279.0" y="635.0" width="750.0" height="43.0" >}}
 {{< / svgfigure >}}
-<p> The <i>ConnectionViewSpecification</i> supports the exchange of a basic layout for a <i>ConnectionSpecification</i>. The objective is not a pixel perfect representation of a network /&#160;architecture diagram in the VEC (with label positions, font sizes etc.) Such use cases are supported via the external mapping with other standards like SVG. However, a reasonable arrangement of the <i>ComponentNodes</i> on a diagram sheet greatly improves the understanding and can not (easily) be found by an automatic algorithm.&#160;Therefore, a basic layout has value in the context of data exchange and is in scope of the VEC.      </p>      <p> A <i>ConnectionViewSpecification</i> represents the layout of a network diagram /&#160;sheet. The layout is defined with <i>ComponentNodeViewItems</i>, each representing a <i>Component</i><i>Node.</i> A <i>ConnectionViewSpecification</i> does not have to represent the complete content of a <i>ConnectionSpecification.</i> It is perfectly valid to split the layout of a <i>ConnectionSpecification </i>into multiple <i>ConnectionViewSpecification</i>, one for each view (e.g. sheet) and each layouting a subset of a <i>ConnectionSpecification.</i> It is also valid to have multiple <i>Component</i><i>NodeViewItems</i> for a <i>Component</i><i>Node</i>.      </p>      <p> The <i>Component</i><i>NodeViewItem</i> contains <i>Component</i><i>PortViewItems</i> for each <i>Component</i><i>Port</i> displayed on this <i>Component</i><i>NodeViewItem.&#160;</i>This can be a subset of all <i>Component</i><i>Ports </i>of the corresponding <i>Component</i><i>Node. </i>      </p>      <p> For <i>Connections</i> there are no explicit view items defined. The representation and routing path of a <i>Connection</i><i> </i>is not conisidered as basic layout information. All <i>Connections</i> that are connected to a displayed <i>Component</i><i>Port</i> are considered to be display on the diagram represented by <i>ConnectionViewSpecification</i><i>.</i>      </p>      <p> <i>&#160;</i>      </p>      <p> &#160;      </p>
+<p> The <i>ConnectionViewSpecification</i> supports the exchange of a basic layout for a <i>ConnectionSpecification</i>. The objective is not a pixel perfect representation of a schematic diagram in the VEC (with label positions, font sizes etc.) Such use cases are supported via the external mapping with other standards like SVG. However, a reasonable arrangement of the <i>ComponentNodes</i> on a diagram sheet greatly improves the understanding and can not (easily) be found by an automatic algorithm.&#160;Therefore, a basic layout has value in the context of data exchange and is in scope of the VEC.      </p>      <p> A <i>ConnectionViewSpecification</i> represents the layout of a schematic diagram /&#160;sheet. The layout is defined with <i>ComponentNodeViewItems</i>, each representing a <i>Component</i><i>Node.</i> A <i>ConnectionViewSpecification</i> does not have to represent the complete content of a <i>ConnectionSpecification.</i> It is perfectly valid to split the layout of a <i>ConnectionSpecification </i>into multiple <i>ConnectionViewSpecifications</i>, one for each view (e.g. sheet) and each layouting a subset of a <i>ConnectionSpecification.</i> It is also valid to have multiple <i>Component</i><i>NodeViewItems</i> for a <i>Component</i><i>Node</i>.      </p>      <p> The <i>Component</i><i>NodeViewItem</i> contains <i>Component</i><i>PortViewItems</i> for each <i>Component</i><i>Port</i> displayed on this <i>Component</i><i>NodeViewItem.&#160;</i>This can be a subset of all <i>Component</i><i>Ports </i>of the corresponding <i>Component</i><i>Node. </i>      </p>      <p> For <i>Connections</i> there are no explicit view items defined. The representation and routing path of a <i>Connection</i><i> </i>is not conisidered as basic layout information. All <i>Connections</i> that are connected to a displayed <i>Component</i><i>Port</i> are considered to be display on the diagram represented by <i>ConnectionViewSpecification</i><i>.</i>      </p>      <p> <i>&#160;</i>      </p>      <p> &#160;      </p>

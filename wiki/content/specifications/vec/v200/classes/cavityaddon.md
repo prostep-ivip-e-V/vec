@@ -2,15 +2,15 @@
 title: CavityAddOn
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavityAddOn
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies the wire addon needed to reach a <i>Cavity</i> from a specific <i>SegmentConnectionPoint</i>. More specifically, it is the addon required to calculate the cutting length of a wire. It is not a measured distance between the segment connection point and the insertion point of the cavity. For each <i>SegmentConnectionPoint</i> there shall be no more than one add-on value per cavity and type.      </p>
 

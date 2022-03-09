@@ -2,15 +2,15 @@
 title: Unit
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Unit
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>A precisely specified quantity in terms of which the magnitudes of other quantities of the same kind can be stated. The different systems to define units are represented by the subclasses of this class (e.g. SIUnit, ImperialUnit). </p>
 
@@ -32,10 +32,10 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | 0..* | baseUnit | 1 |  |
 | [CavityPositionDetail]({{< relref "cavitypositiondetail.md" >}}) | 0..* | baseUnit | 1 | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points) of this <i>CavityPositionDetail&#160;</i>are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
-| [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 0..* | baseUnit | 1 |  |
 | [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}) |  | baseUnit | 1 | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
+| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | 0..* | baseUnit | 1 |  |
+| [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 0..* | baseUnit | 1 |  |
 | [CompositeUnit]({{< relref "compositeunit.md" >}}) |  | factors | 1..* | <p> References the <i>Units</i> that are used as factors to create the <i>CompositeUnit.</i>      </p> |
 | [VecContent]({{< relref "veccontent.md" >}}) | 1 | unit | 0..* | Specifies the Units used in the VEC-file. |
 | [ValueWithUnit]({{< relref "valuewithunit.md" >}}) | 0..* | unitComponent | 1 | References the unit of the value. |

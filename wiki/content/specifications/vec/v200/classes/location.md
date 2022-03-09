@@ -2,15 +2,15 @@
 title: Location
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Location
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>A Location specifies a distinct position on a topology. Locations can be used for the placement of components or for the definition of Dimensions.  </p>
 

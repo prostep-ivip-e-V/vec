@@ -2,15 +2,15 @@
 title: PartStructureSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PartStructureSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the description of a part structure. This specification defines the PartOccurrences that are in the bill of material of the described PartOrUsage. This is necessary, because it is possible, that for a definite description a Part more PartOccurrences are needed than the ones that are in the bill of material (see CompositionSpecification).      </p>
 

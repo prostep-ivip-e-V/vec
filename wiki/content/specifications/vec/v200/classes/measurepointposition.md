@@ -2,15 +2,15 @@
 title: MeasurePointPosition
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - MeasurePointPosition
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines the position of a MeasurementPoint within the coordinate system of the component. MeasurementPoint onto which dimension can be defined<i>.</i>      </p>
 

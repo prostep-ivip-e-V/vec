@@ -2,15 +2,15 @@
 title: SpecificRole
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SpecificRole
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A SpecificRole is the possibility to define instance specific properties with custom properties (see ExtendableElement). This is necessary, if the part is described by custom properties of a PartOrUsageRelatedSpecification.      </p>
 

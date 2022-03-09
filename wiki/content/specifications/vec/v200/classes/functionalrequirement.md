@@ -2,15 +2,15 @@
 title: FunctionalRequirement
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - FunctionalRequirement
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Allows the definition of functional requirements in an enumerable way (e.g. conformance to a certain ASIL&#160;level). Attributes of this type have the multiplicity of [0..*].&#160;The following restrictions apply:      </p>      <ul>       <li> For a combination of type &amp;&#160;referenceSystem only a single value is allowed. For single type        </li>       <li> For a specific type and different references systems, multiple values are allowed.&#160;However, they must express the same semantic value.        </li>       <li> For different types multiple values are allowed.        </li>     </ul>     <p> &#160;      </p>
 

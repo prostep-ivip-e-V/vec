@@ -2,15 +2,15 @@
 title: ConnectionSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConnectionSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A ConnectionSpecification is used to define electrological connectivity.      </p>
 
@@ -34,5 +34,5 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
 | [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..* | 0..1 | Specifies the ConnectionGroup defined by the ConnectionSpecification. |
-| [Connection]({{< relref "connection.md" >}}) | connection | 0..* | 1 | Specifies the Connection defined by the ConnectionSpecification. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 0..* | 0..1 | Specifies the ComponentNodes defined by the ConnectionSpecification. |
+| [Connection]({{< relref "connection.md" >}}) | connection | 0..* | 1 | Specifies the Connection defined by the ConnectionSpecification. |

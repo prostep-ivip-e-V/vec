@@ -2,15 +2,15 @@
 title: OpenCavitiesAssignment
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - OpenCavitiesAssignment
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An OpenCavitiesAssignment groups the cavities of ONE connector that are open in a MultiCavitySeal. If a MultiCavitySeal fits into more than one connector, than there are as many OpenCavitiesAssignments.      </p>
 

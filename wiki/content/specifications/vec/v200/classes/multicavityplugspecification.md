@@ -2,15 +2,15 @@
 title: MultiCavityPlugSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - MultiCavityPlugSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the definition of cavity plugs that apply to more than one cavity. A cavity plug is a watertight non-electrical object to fill an empty cavity. MultiCavityPlugs are formed to fit into one connector / slot and to seal more than one cavity at once. Normally there are different variants of these MultiCavityPlugs that can seal a connector in different pinning scenarios. The cavities that are plugged by a MultiCavityPlug are defined with a SealedCavitiesAssignment.      </p>
 

@@ -2,15 +2,15 @@
 title: UsageNodeSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - UsageNodeSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>UsageNodeSpecification </i>is a container for the specification of <i>UsageNodes.</i>      </p>
 

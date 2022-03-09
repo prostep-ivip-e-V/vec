@@ -2,15 +2,15 @@
 title: FittingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - FittingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Specification for the definition of fittings. A fitting is a part that is used to connect pipes or tube. A fitting has a specific form (e.g. Y,T)  </p>
 

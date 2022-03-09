@@ -2,15 +2,15 @@
 title: VariantConfiguration
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - VariantConfiguration
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A variant configuration defines a condition with which it is possible to express the inclusion or exclusion of ConfigurableElements in different variants of a product.      </p>      <p> A <i>VariantConfiguration </i>can reference another <i>VariantConfiguration</i> as <i>baseInclusion</i>. In this case, a <i>VariantConfiguration</i> can only be satisfied if its <i>baseInclusion </i>is also satisfied.      </p>
 
@@ -41,6 +41,6 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |  | baseInclusion | 0..1 | <p> A <i>VariantConfiguration </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.      </p> |
-| [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |  | configInfo | 0..1 | <p> References the configuration information that applies to the ConfigurationConstraint.      </p> |
 | [ConfigurableElement]({{< relref "configurableelement.md" >}}) | 0..* | configInfo | 0..1 | <p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p> |
+| [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |  | configInfo | 0..1 | <p> References the configuration information that applies to the ConfigurationConstraint.      </p> |
 | [VariantConfigurationSpecification]({{< relref "variantconfigurationspecification.md" >}}) | 1 | variantConfiguration | 0..* | Specifies the individual VariantConfigurations defined in the VariantConfigurationSpecification. |

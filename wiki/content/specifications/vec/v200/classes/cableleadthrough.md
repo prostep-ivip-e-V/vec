@@ -2,15 +2,15 @@
 title: CableLeadThrough
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CableLeadThrough
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>CableLeadThrough</i> specifies a hole in the grommet through which wires can pass through the grommet. There can be different technical realizations of a lead through, e.g. it can be realized with a shrinking material or an additional seal. The properties of a <i>CableLeadThrough</i> are defined in the referenced <i>CableLeadThroughSpecification</i>.      </p>      <p> For a precise placement in topology, a <i>CableLeadThrough</i> specifies outlets.      </p>
 

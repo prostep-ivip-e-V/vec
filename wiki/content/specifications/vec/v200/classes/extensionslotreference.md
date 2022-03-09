@@ -2,15 +2,15 @@
 title: ExtensionSlotReference
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ExtensionSlotReference
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An ExtensionSlotReference represents the usage of an ExtensionSlot in the context of a PartUsage or PartOccurrence.      </p>
 

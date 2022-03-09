@@ -2,15 +2,15 @@
 title: TopologyMappingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TopologyMappingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A&#160;<i>TopologyMappingSpecification</i> allows the definition of hierarchical topologies. It relates an outer topology with an enclosed inner topology.      </p>
 
@@ -33,7 +33,7 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | 0..* |  |  |
-| [TopologySpecification]({{< relref "topologyspecification.md" >}}) | innerTopolgy | 1 |  |  |
 | [NodeMapping]({{< relref "nodemapping.md" >}}) |  | 0..* | 1 |  |
+| [TopologySpecification]({{< relref "topologyspecification.md" >}}) | innerTopolgy | 1 |  |  |
+| [SegmentMapping]({{< relref "segmentmapping.md" >}}) |  | 0..* |  |  |
 | [TopologySpecification]({{< relref "topologyspecification.md" >}}) | outerTopology | 1 |  |  |

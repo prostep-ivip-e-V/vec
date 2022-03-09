@@ -2,15 +2,15 @@
 title: BuildingBlockSpecification2D
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - BuildingBlockSpecification2D
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specification for the description of a two-dimensional building block. A building block is a reusable section of a geometry.      </p>
 
@@ -33,12 +33,12 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
 | [GeometrySegment2D]({{< relref "geometrysegment2d.md" >}}) | geometrySegment | 0..* | 1 | Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D. |
-| [CartesianDimension]({{< relref "cartesiandimension.md" >}}) | boundingBox | 1 | 0..1 | Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions. |
+| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
 | [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D. |
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | <p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p> |
 | [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | placedElementViewItem | 0..* | 1 | Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D. |
+| [CartesianDimension]({{< relref "cartesiandimension.md" >}}) | boundingBox | 1 | 0..1 | Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions. |
+| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | <p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

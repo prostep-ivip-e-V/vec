@@ -2,15 +2,15 @@
 title: WireProtectionRole
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireProtectionRole
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A WireProtectionRole defines the instance specific properties and relationships of a wire protection. This is a general-purpose role for instances of all types of <i>WireProtectionSpecifications</i> that do not have specific instance attributes. For <i>TapeSpecifications</i> the more specific <i>TapeRole</i> shall be used.      </p>
 
@@ -33,5 +33,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ProtectionMaterialLength]({{< relref "protectionmateriallength.md" >}}) | materialLength | 0..* | 1 |  |
 | [WireProtectionSpecification]({{< relref "wireprotectionspecification.md" >}}) | wireProtectionSpecification | 1 | 0..* | <p> References the <i>WireProtectionSpecification</i> that is instanced by this <i>WireProtectionRole.</i>      </p> |
+| [ProtectionMaterialLength]({{< relref "protectionmateriallength.md" >}}) | materialLength | 0..* | 1 |  |

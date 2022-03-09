@@ -2,15 +2,15 @@
 title: StripeSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - StripeSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies a stripe which has fixed length and width. A stripe is a textile, foam or similar piece with fixed length &amp;&#160;width that is wrapped around the harness.      </p>
 

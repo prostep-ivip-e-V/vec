@@ -2,15 +2,15 @@
 title: SiUnitName
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SiUnitName
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>Enumeration for the definition of SI unit names. In difference to the SI-System gram is used as literal for the measurement of mass, instead of kilogram. Since a unit is formed with prefix and unit name gram would have to be defined as milli kilogram otherwise. </p>
 

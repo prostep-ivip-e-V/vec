@@ -2,15 +2,15 @@
 title: ModularSlotAddOn
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ModularSlotAddOn
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies the wire addon needed to reach a <i>ModularSlot</i> from a specific <i>SegmentConnectionPoint</i>. The addon needed to reach the cavities of the insert(s) from this point is defined by the <i>ConnectorHousingSpecification </i>of the insert.      </p>
 

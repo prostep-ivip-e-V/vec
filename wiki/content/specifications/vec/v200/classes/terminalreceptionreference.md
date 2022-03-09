@@ -2,15 +2,15 @@
 title: TerminalReceptionReference
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TerminalReceptionReference
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>TerminalReceptionReference</i> is an instance of a <i>TerminalReception</i>.      </p>
 
@@ -38,5 +38,5 @@ menu_name: vec-2.0.0-rc1
 |----------|----------|-----------|-----------|----------------|
 | [MatingDetail]({{< relref "matingdetail.md" >}}) | 0..* | firstTerminalReception | 1 | References the first terminal reception that is mated. |
 | [MatingDetail]({{< relref "matingdetail.md" >}}) | 0..* | secondTerminalReception | 1 | References the second terminal reception that is mated. |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 1 | terminalReceptionReference | 0..* | <p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |
 | [CavityMountingDetail]({{< relref "cavitymountingdetail.md" >}}) | 0..* | terminalReceptionReference | 1 | References the TerminalReception that is used for the detailed description of the cavity mounting. |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | 1 | terminalReceptionReference | 0..* | <p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p> |

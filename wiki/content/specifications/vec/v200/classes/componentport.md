@@ -2,15 +2,15 @@
 title: ComponentPort
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ComponentPort
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines a port of ComponentNode. A ComponentPort is usually the realization of a NetworkPort. Electrological connections are defined between two or more ComponentPorts.      </p>
 
@@ -34,13 +34,13 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 0..1 | 0..* | References the NetworkPort that is realized by the ComponentPort. |
 | [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p> |
+| [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 0..1 | 0..* | References the NetworkPort that is realized by the ComponentPort. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..1 | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
-| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..1 | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
+| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..* | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
 | [ComponentConnector]({{< relref "componentconnector.md" >}}) | 1 | componentPort | 0..* | Specifies the ComponentPorts of the ComponentConnector. |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..* | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
 | [ComponentPortViewItem]({{< relref "componentportviewitem.md" >}}) | 0..* | componentPort | 1 | References the <i>ComponentPort</i> that is represented by this <i>ComponentPortViewItem</i><i>.</i> |
 | [ConnectionEnd]({{< relref "connectionend.md" >}}) | 0..* | connectedComponentPort | 1 | References the ComponentPort that is connected by the ConnectionEnd. |

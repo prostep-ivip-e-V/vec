@@ -2,15 +2,15 @@
 title: LocalGeometrySpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - LocalGeometrySpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>LocalGeometrySpecification </i>is responsible to create a relationship between the 3D model of a component (e.g. a connector, a cable duct or a fixing)&#160;and entities of the VEC. The 'Local' in the name refers to the fact that all definitions within this specification are 'local' to the 3D model of a specific component (a component in a library, not in a specific usage).      </p>      <p> Specifically, it defines a transformation to transform the <i>BoundingBox</i> of a component into to coordinate system of the component and it defines the positions of <i>Placement-</i> and <i>MeasurementPoints</i> in this coordinate system.      </p>
 
@@ -34,7 +34,7 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 |  | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
 | [Transformation3D]({{< relref "transformation3d.md" >}}) | boundingBoxPositioning | 0..1 | 0..1 | <p> The transformation that defines the positioning of the bounding box in coordinate system of the component.      </p> |
 | [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 0..1 | <p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p> |
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 |  | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
 | [LocalPosition]({{< relref "localposition.md" >}}) | positions | 0..* | 1 | <p> All position defined by this <i>LocalGeometrySpecification.</i>      </p> |

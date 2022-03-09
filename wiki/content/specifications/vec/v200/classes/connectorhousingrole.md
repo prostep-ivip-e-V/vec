@@ -2,15 +2,15 @@
 title: ConnectorHousingRole
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConnectorHousingRole
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A ConnectorHousingRole defines the instance specific properties and relationships of a connector housing.      </p>
 
@@ -33,8 +33,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
+| [ComponentConnector]({{< relref "componentconnector.md" >}}) | componentConnector | 0..* | 0..* | <p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p> |
 | [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | slotReference | 0..* | 1 | Specifies the SlotReferences used in the ConnectorHousingRole. |
-| [ComponentConnector]({{< relref "componentconnector.md" >}}) | componentConnector | 0..1 | 0..* | <p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p> |
 | [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | connectorHousingSpecification | 1 | 0..* | <p> References the <i>ConnectorHousingSpecification </i>that is instanced by this <i>ConnectorHousingRole.</i>      </p> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

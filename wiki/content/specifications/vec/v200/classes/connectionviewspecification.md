@@ -2,15 +2,15 @@
 title: ConnectionViewSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConnectionViewSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> The <i>ConnectionViewSpecification</i> supports the exchange of a basic layout for a <i>ConnectionSpecification</i>.      </p>
 
@@ -33,5 +33,5 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i> |
 | [ConnectionNodeViewItem]({{< relref "connectionnodeviewitem.md" >}}) | placedViewItems | 0..* | 1 | Specifies all <i>ComponentNodeViewItems</i> that are displayed within a <i>ConnectionViewSpecification</i>. |
+| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i> |

@@ -2,15 +2,15 @@
 title: CompositeUnit
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CompositeUnit
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines a unit as a composition of other units. The composition is done by multiplying the different other units. By this way combined units like kg/m can be formed.      </p>
 

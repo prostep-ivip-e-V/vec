@@ -2,15 +2,15 @@
 title: TerminalBoltNominalSize
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TerminalBoltNominalSize
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines the nominal sizes for threaded bolts as &quot;ISO metric screw thread&quot; or as &quot;Unified Thread Standard&quot; (Imperial).      </p>      <p> See also <i>TerminalBoltType.MetricThread /&#160;ImperialThread. </i>      </p>      <p> <i>&#160;</i>      </p>      <p> For the definition of the values see <a href="https://en.wikipedia.org/wiki/ISO_metric_screw_thread">https://en.wikipedia.org/wiki/ISO_metric_screw_thread</a> and <a href="https://de.wikipedia.org/wiki/Unified_Thread_Standard">https://de.wikipedia.org/wiki/Unified_Thread_Standard</a>.      </p>
 

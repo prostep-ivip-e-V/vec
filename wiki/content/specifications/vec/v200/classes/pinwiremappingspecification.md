@@ -2,15 +2,15 @@
 title: PinWireMappingSpecification
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - PinWireMappingSpecification
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>PinWireMappingSpecification</i> can be used create <b>variance free </b>mappings between a wire (represented by the contact point) and the pin of an E/E component. This is a possibility to create a shortcut in the model between a wire and its connected E/E-component (e.g. a fuse) that might be only indirectly connected to a wire (e.g. via a fuse and relay carrier). This is a relevant information for e.g. the validation of fusing. See the Pin Wire Mapping Diagram for more details.      </p>
 

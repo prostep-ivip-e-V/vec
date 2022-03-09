@@ -2,15 +2,15 @@
 title: CavityMountingDetail
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavityMountingDetail
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> With a CavityMountingDetail it is possible to describe a detailed cavity mounting.     </p>      <p> This is needed if the information which terminal reception is mounted into which cavity is important. There are cases where this information can be relevant (e.g. bridge contacts with an asymmetric wire mounting).      </p>
 
@@ -31,8 +31,8 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1 | 0..* | References the cavity that is used for the detailed description of the cavity mounting. |
 | [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | terminalReceptionReference | 1 | 0..* | References the TerminalReception that is used for the detailed description of the cavity mounting. |
+| [CavityReference]({{< relref "cavityreference.md" >}}) | equippedCavityRef | 1 | 0..* | References the cavity that is used for the detailed description of the cavity mounting. |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

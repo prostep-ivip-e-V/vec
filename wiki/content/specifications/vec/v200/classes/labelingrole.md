@@ -2,17 +2,17 @@
 title: LabelingRole
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - LabelingRole
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
-If a component is labeled in its concrete usage, label informations are defined with the <i>LabelRole.</i>
+If a component is labeled in its concrete usage, label informations are defined with the <i>LabelingRole.</i>
 
 ## General Information
 

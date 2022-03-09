@@ -2,15 +2,15 @@
 title: CavityMapping
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CavityMapping
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines the mapping of two cavities contained Slot A &amp; B of the containing SlotMapping-object.      </p>
 

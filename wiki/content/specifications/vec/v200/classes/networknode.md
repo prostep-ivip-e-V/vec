@@ -2,15 +2,15 @@
 title: NetworkNode
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetworkNode
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A NetworkNode is a representative for an actor in the electric system, e.g. an actuator, a sensor, an ECU      </p>
 
@@ -41,6 +41,6 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [NetworkNodeViewItem]({{< relref "networknodeviewitem.md" >}}) | 0..* | networkNode | 1 | References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i> |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 0..* | networkNode | 0..1 | References the NetworkNode that is realized by the ComponentNode. |
+| [NetworkNodeViewItem]({{< relref "networknodeviewitem.md" >}}) | 0..* | networkNode | 1 | References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i> |
 | [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | networkNode | 0..* | <p> Specifies the NetworkNodes defined in the NetSpecification.      </p> |

@@ -2,15 +2,15 @@
 title: ComponentPortViewItem
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ComponentPortViewItem
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 A <i>ComponentPortViewItem</i><i> </i>represents a <i>ComponentPort</i> within a <i>ComponentNodeViewItem</i> and defines its position on the node.
 

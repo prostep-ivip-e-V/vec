@@ -2,15 +2,15 @@
 title: Permission
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Permission
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Describes an act of acceptance together with information about the responsible person, department and company who directly provoked the approval level and status as described in the referenced Approval-instance. (see KBLFRM-229)      </p>
 

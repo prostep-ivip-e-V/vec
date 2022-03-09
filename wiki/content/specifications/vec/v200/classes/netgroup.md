@@ -2,15 +2,15 @@
 title: NetGroup
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetGroup
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Defines a logical grouping of specific <i>Nets</i>. For example, it can be used to identify all <i>Nets</i> of specific CAN domain, a function, a requirement level (e.g. Safety&#160;&amp;&#160;Security).      </p>
 

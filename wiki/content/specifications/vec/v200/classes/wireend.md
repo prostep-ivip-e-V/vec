@@ -2,15 +2,15 @@
 title: WireEnd
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - WireEnd
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A WireEnd is the end of a wire. This class mainly needed for the definition of a contacting. As a wire can be contacted on more than two ends (e.g. IDC) the WireEnd has a position on the wire.      </p>
 
@@ -33,7 +33,7 @@ menu_name: vec-2.0.0-rc1
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [ConnectionEnd]({{< relref "connectionend.md" >}}) | connectionEnd | 0..1 | 0..* |  |
+| [ConnectionEnd]({{< relref "connectionend.md" >}}) | connectionEnd | 0..* | 0..* |  |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|

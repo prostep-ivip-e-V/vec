@@ -2,15 +2,15 @@
 title: AbstractSlotReference
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - AbstractSlotReference
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> An <i>AbstractSlotReference</i> represents the usage of an AbstractSlot in the context of PartUsage or PartOccurrence.      </p>
 

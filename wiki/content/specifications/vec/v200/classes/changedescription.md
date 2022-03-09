@@ -2,15 +2,15 @@
 title: ChangeDescription
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ChangeDescription
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A ChangeDescription describes the implemented issues that are reason for the aggregating ItemVersion to be either an initial or successor version. A ChangeDescription can optionally define the person who has approved the change.      </p>
 
@@ -38,5 +38,5 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | 0..1 | changeDescription | 0..* | Specifies the change history of the ItemVersion. |
 | [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..1 | changeDescription | 0..* | Specifies the change history of the SheetOrChapter. |
+| [ItemVersion]({{< relref "itemversion.md" >}}) | 0..1 | changeDescription | 0..* | Specifies the change history of the ItemVersion. |

@@ -2,15 +2,15 @@
 title: SegmentLength
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - SegmentLength
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Specifies the length of a <i>TopologySegment</i>. The length of a <i>TopologySegment </i>is defined as the length of the centerline of the segment.      </p>      <p> Attributes of the type SegmentLength normally have the multiplicity [0..*]. This means that such an attribute can have SegmentLength-entries for different classifications. It must not have multiple entries with the same classification.      </p>
 

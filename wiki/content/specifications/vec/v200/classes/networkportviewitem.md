@@ -2,15 +2,15 @@
 title: NetworkPortViewItem
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - NetworkPortViewItem
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 A <i>NetworkPortViewItem </i>represents a <i>NetworkPort</i> within a <i>NetworkNodeViewItem</i> and defines its position on the node.
 

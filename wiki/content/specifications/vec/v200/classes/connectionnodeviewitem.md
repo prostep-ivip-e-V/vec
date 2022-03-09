@@ -2,15 +2,15 @@
 title: ConnectionNodeViewItem
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConnectionNodeViewItem
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 A <i>ComponentNodeViewItem </i>represents a <i>ComponentNode</i> within a <i>ConnectionViewSpecification</i> and defines its position within the layout.
 
@@ -33,8 +33,8 @@ A <i>ComponentNodeViewItem </i>represents a <i>ComponentNode</i> within a <i>Con
 ## Outgoing Relations
 |    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
 |----------|----------|-----------|-----------|-----------------|
-| [Transformation2D]({{< relref "transformation2d.md" >}}) | orientation | 0..1 | 1 | Specifies the position /&#160;placement of the <i>ConnectionNodeViewItem</i> within the layout. |
 | [ComponentPortViewItem]({{< relref "componentportviewitem.md" >}}) | displayedPort | 0..* | 1 | <p> Specifies all <i>ComponentPortViewItems</i> that are displayed on this <i>ComponentNodeViewItem</i><i>.</i> The order of this association defines the clockwise arrangement of the ports on the node. As each <i>ComponentPortViewItem </i>can also define the side on which it is placed, side definitions take precedence over order.      </p>      <p> <i>&#160;</i>      </p>      <p> <b>Caution: </b>This association is <u>ordered</u>!      </p>      <p> <i>&#160;</i>      </p> |
+| [Transformation2D]({{< relref "transformation2d.md" >}}) | orientation | 0..1 | 1 | Specifies the position /&#160;placement of the <i>ConnectionNodeViewItem</i> within the layout. |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | componentNode | 1 | 0..* | References the<i> ComponentNode</i> that is represented by this <i>ComponentNodeViewItem</i><i>.</i> |
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |

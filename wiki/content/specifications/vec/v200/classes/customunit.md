@@ -2,15 +2,15 @@
 title: CustomUnit
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - CustomUnit
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p>A CustomUnit can be used to define "FreeText"-Units. Custom units must not be used for units that can be expressed by any of the other subclasses of Unit. Custom units are only allowed if a unit  is needed that cannot be handled by any of the other classes.  </p>
 

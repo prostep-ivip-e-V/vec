@@ -2,15 +2,15 @@
 title: TerminalReception
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - TerminalReception
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A TerminalReception is the area of a terminal where the contacting with another terminal (e.g. between a connector housing and a control unit) takes place. Normally the terminal reception is placed in a cavity of a connector housing.     </p>      <p> This class represents such an area on the terminal.      </p>
 
@@ -37,6 +37,6 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | 0..* | terminalReception | 1 | <p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p> |
 | [TerminalSpecification]({{< relref "terminalspecification.md" >}}) | 1 | terminalReception | 0..* | Specifies the TerminalReceptions of the terminal described by the TerminalSpecification. |
 | [InternalTerminalConnection]({{< relref "internalterminalconnection.md" >}}) | 0..1 | terminalReception | 0..* | References the TerminalReceptions that participate in the InternalTerminalConnection. |
+| [TerminalReceptionReference]({{< relref "terminalreceptionreference.md" >}}) | 0..* | terminalReception | 1 | <p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p> |

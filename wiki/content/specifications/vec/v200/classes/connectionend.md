@@ -2,15 +2,15 @@
 title: ConnectionEnd
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ConnectionEnd
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A connection end is the end of a Connection at a ComponentPort.      </p>
 
@@ -39,5 +39,5 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [WireEnd]({{< relref "wireend.md" >}}) | 0..* | connectionEnd | 0..1 |  |
+| [WireEnd]({{< relref "wireend.md" >}}) | 0..* | connectionEnd | 0..* |  |
 | [Connection]({{< relref "connection.md" >}}) | 1 | connectionEnd | 2..* | Specifies the ConnectionEnds of the Connection. |

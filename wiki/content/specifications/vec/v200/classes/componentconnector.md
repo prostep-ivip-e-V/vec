@@ -2,15 +2,15 @@
 title: ComponentConnector
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - ComponentConnector
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> A <i>ComponentConnector</i> is a grouping of <i>ComponentPorts</i> and represents a logical abstraction of a connector of an <i>EEComponent</i>. When the <i>ComponentNode</i> is realized by an <i>EEComponentRole</i> the <i>ComponentConnector</i> will result in a <i>HousingComponent.</i>      </p>      <p> It is permitted that a <i>ComponentConnector</i> is a 150% definition of connector.      </p>
 
@@ -37,6 +37,6 @@ menu_name: vec-2.0.0-rc1
 ##  Incoming Relations
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
-| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | 0..* | componentConnector | 0..1 | <p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p> |
 | [ComponentNode]({{< relref "componentnode.md" >}}) | 1 | componentConnector | 0..* | Specifies the ComponentConnectors of a ComponentNode. |
-| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 0..* | componentConnector | 0..1 | References the ComponentConnector that is realized by the referenced HousingComponentReference. |
+| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | 0..* | componentConnector | 0..* | <p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p> |
+| [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) | 0..* | componentConnector | 0..* | References the ComponentConnector that is realized by the referenced HousingComponentReference. |

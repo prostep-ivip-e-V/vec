@@ -3,16 +3,16 @@ title: VEC-Root
 toc: false
 type: specs
 layout: diagram
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Diagram
 classes:
-  - VecVersion
   - Unit
   - ItemHistoryEntry
+  - VecVersion
   - Contract
   - CopyrightInformation
   - DocumentVersion
@@ -20,7 +20,7 @@ classes:
   - Project
   - VecContent
 menu:
-  VEC-2.0.0-rc1:    
+  VEC-2.0.0:    
     parent: xml-representation-of-the-model
     identifier: xml-representation-of-the-model/vec-root
     weight: 1012001 
@@ -28,10 +28,10 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1012001
 ---
-{{< svgfigure src="vec-root.png" width="943" height="656" caption="VEC-Root" numbered="true" >}}
-  {{< svglink relref="../../classes/vecversion.md" x="14.0" y="512.0" width="112.0" height="130.0" >}}
+{{< svgfigure src="vec-root.png" width="943" height="668" caption="VEC-Root" numbered="true" >}}
   {{< svglink relref="../../classes/unit.md" x="595.0" y="386.0" width="139.0" height="70.0" >}}
   {{< svglink relref="../../classes/itemhistoryentry.md" x="369.0" y="385.0" width="142.0" height="70.0" >}}
+  {{< svglink relref="../../classes/vecversion.md" x="14.0" y="512.0" width="112.0" height="142.0" >}}
   {{< svglink relref="../../classes/contract.md" x="756.0" y="190.0" width="161.0" height="82.0" >}}
   {{< svglink relref="../../classes/copyrightinformation.md" x="483.0" y="190.0" width="189.0" height="70.0" >}}
   {{< svglink relref="../../classes/documentversion.md" x="24.0" y="188.0" width="204.0" height="151.0" >}}

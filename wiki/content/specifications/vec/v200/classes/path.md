@@ -2,15 +2,15 @@
 title: Path
 toc: false
 type: specs
-date: "2021-11-30"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 documentType: "Recommendation"
 elementType: Class
 classes:
   - Path
-menu_name: vec-2.0.0-rc1
+menu_name: vec-2.0.0
 ---
 <p> Describes a path in the topology. A <i>Path</i> is a continuous way through a topology without interruptions, defined by an ordered list of <i>TopologySegments</i>.      </p>
 
@@ -36,7 +36,7 @@ menu_name: vec-2.0.0-rc1
 |    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
 |----------|----------|-----------|-----------|----------------|
 | [SegmentMapping]({{< relref "segmentmapping.md" >}}) | 0..1 | mappedPosition | 1 |  |
-| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | path | 0..1 | Specifies a path in the topology along which the dimension is defined. |
 | [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | path | 0..1 | Specifies the topology path defining the way the OnWayPlacement takes in the topology. |
 | [Routing]({{< relref "routing.md" >}}) | 0..1 | path | 1 | Specifies a Path on the topology that is used for the routing. |
+| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | path | 0..1 | Specifies a path in the topology along which the dimension is defined. |
 | [TopologyBendingRestriction]({{< relref "topologybendingrestriction.md" >}}) | 0..1 | restrictedPath | 1 | <p> The path that defines the restricted way in the topology.      </p> |
