@@ -1,16 +1,16 @@
 ---
-title: Release Notes - Version 2.0.0-RC1
+title: Release Notes - Version 2.0.0
 linktitle: Release Notes
 toc: true
 type: specs
-date: "2021-11-29"
+date: "2022-03-09"
 draft: false
 specification: VEC
-version: 2.0.0-rc1
+version: 2.0.0
 category: Release Notes
 documentType: "Release Notes"
 menu:
-  vec-2.0.0-rc1:
+  vec-2.0.0:
     weight: 2
     identifier: release-notes
 weight: 60
