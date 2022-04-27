@@ -40,7 +40,7 @@ weight: 17000
 Before reading these implementation guidelines, it is highly recommended to read the "{{< vec-diagram "composite-part-descriptions" >}}" section and its subsections in the VEC Online Model Description first.
 {{% /callout %}}
 
-Whereas the model description defines the general concepts of multilevel composite parts and 100% and 150% variance for those parts, this implementation guideline follows a use case oriented approach and explains the correct usage of the different aspects of a VEC implementation (e.g. BOM, document structure, variance, instantiation) for different composite part scenarios. The most common ones are defined in the {{< vec-class PartStructureContentType >}}) open enumeration. The `PartStructureSpecification.Content` attribute defines, which kind of part, that has a bill of material, is described by a {{<vec-class PartStructureSpecification >}} and how the described bill of material has to be interpreted in regard of variance (10%, 100%, 150%).
+Whereas the model description defines the general concepts of multilevel composite parts and 100% and 150% variance for those parts, this implementation guideline follows a use case oriented approach and explains the correct usage of the different aspects of a VEC implementation (e.g. BOM, document structure, variance, instantiation) for different composite part scenarios. The most common ones are defined in the {{< vec-class PartStructureContentType >}} open enumeration. The `PartStructureSpecification.Content` attribute defines, which kind of part, that has a bill of material, is described by a {{<vec-class PartStructureSpecification >}} and how the described bill of material has to be interpreted in regard of variance (10%, 100%, 150%).
 
 
 ## Assemblies
