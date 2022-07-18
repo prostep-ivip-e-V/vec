@@ -5,12 +5,11 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: ["Review"]
 categories: []
 date: 2020-06-22
 lastmod: 2019-12-02T12:43:57+01:00
 draft: false
-review: false
+review: true
 diagram: false
 
 history:
@@ -20,6 +19,9 @@ history:
   - date: 2020-11-27
     description: "Integrated Review Comments for the whole page"
     issue: "KBLFRM-996"
+  - date: 2022-07-06
+    description: "Added section for Import- / Export-Behaviour"
+    issue: "KBLFRM-946"
 
 classes:
   - VecContent
@@ -146,7 +148,7 @@ be used in different ways:
      identified with its _DocumentNumber_, _DocumentVersion_ and _CompanyName_.
      With context knowledge about the process, the document can be resolved in
      the corresponding PDM / Document Management System.
-  2. _**FileName**_: If the document is packaged together with VEC (VEC Package)
+  2. _**FileName**_: If the document is packaged together with VEC ([VEC Package]({{< relref "../../information-structures/vec-package">}}))
      the filename attribute of {{< vec-class DocumentVersion >}} can point to
      location within the package.
   3. _**Location**_: Can point to a location (via a URN or URL) where the
@@ -164,14 +166,14 @@ be used in different ways:
   representation scenario. However, external links (if defined) will resolve to
   the VEC file itself.
 
-### Combination & Reuse of Documents
+### Combination and Reuse of Documents
 
 {{< figure src="document-version-flow.svg" class="float-right" title="DocumentVersions in the Information Flow" numbered="true" lightbox="true" width="400">}}
 
 Typically, information is flowing through the process. It is created somewhere,
 passed on to someone else and is used there to create other information blocks.
-To make these information flows traceable each peace of information must be
-indentifiable and must have a change indicator. In the VEC this is done by the
+To make these information flows traceable each piece of information must be
+identifiable and must have a change indicator. In the VEC this is done by the
 {{< vec-class DocumentVersion >}}. In order to preserve this traceability along
 the process, the assignment of information pieces to its original
 {{< vec-class DocumentVersion >}} shall remain unchanged.
@@ -198,6 +200,42 @@ are placed beside the _DocumentVersion_ of the harness, within the same VEC.
 shall not be equated. A _DocumentVersion_ is a logical entity and can be
 contained in multiple VEC (files). Conversely, a _VEC file_ can contain multiple
 _DocumentVersions_. {{% /callout %}}
+
+### Expected Interface Behaviour of Systems
+
+{{< review "KBLFRM-946" >}}
+
+A wide range of different systems, supporting different use cases, are used in the process of wiring harness development. All of them might have a _VEC-Interface_ for input & output, so sooner or later the question arises "What are the expectations for the behavior of those interfaces?". This section will discuss this question.
+
+In a document based data exchange scenario (e.g. working with a word processor) the intuitive expectation is, that a document (file) is "opened", changes are preformed by the user and then, the document is "saved" again, with the document containing the original content plus the modifications. 
+
+However, this simple and intuitive approach is not feasible in a model based data exchange scenario like the one for the VEC. The VEC is not intended to be a file-based database that contains all information about a vehicle network, which grows continuously over the time (like a Word or ODT file of a book). The basic idea of the VEC is, to provide a consistent language (model) for data exchange in the process of wiring harness development and to allow the exchange of use case specific slices of information within the process between systems and organizations. 
+
+This fundamental concept means that there is no such thing as "the one VEC interface". The important question is, which use cases (or slices) of the VEC data model are supported or required for a specific interface.
+
+Let's assume that in our system landscape one component is responsible for the synthesis of electrology and geometry, and the derivation of a wiring harness from it. Such a system would potentially have 4 interfaces requiring different sections of the VEC model:
+ 
+ - Topology (IN)
+ - System or Wiring Schematic (IN)
+ - Part Master / Component Data (IN)
+ - Harness Definition (OUT)
+
+In addition, the scope and validity of the different information slices may vary.  For example, component data could be updated daily, with only the changed components at a time, but with a global validity, while a wiring harness definition is only valid for a specific vehicle context.
+
+Even when considering only these examples, it is already obvious that it does not make any sense to formulate requirements on cross-relationships between imported and generated VEC data, like "a system has to be able write all VEC data it has imported in an unchanged matter". 
+
+#### Content of a VEC
+
+A VEC can contain any scope, amount and combination of information that is valid, with respect to the VEC Model and the Implementation Guidelines. There shall be no requirement to create VECs with restricted content specifically for importing / receiving systems. 
+
+A receiving system shall be able to accept any valid VEC. If the VEC contains more than the required information of the system, the system is free to ignore the pieces of information irrelevant for its purpose. It does not have to store the ignored pieces for a later reexport. However, it shall not refuse the import of a VEC because of "too much" information.
+
+On the other hand, it is up to the system to verify that a VEC contains enough information for the use case of the system. If that is not the case, the system can reject the import because of "too little" information.
+
+#### Traceability Scenarios
+
+Even though it is not possible to define general relationship requirements between imported and exported data, there are use cases in which a traceability between imported and exported data is required. In such cases, slices of imported data might be embedded into the exported data. This scenario is described in section "[Combination and Reuse of Documents]({{< relref "#combination-and-reuse-of-documents">}})"
+
 
 ## Types of Documents
 
