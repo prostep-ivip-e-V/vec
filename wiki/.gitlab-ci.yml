@@ -4,6 +4,7 @@
 image: registry.gitlab.com/pages/hugo/hugo_extended:0.89.4
 
 before_script:
+  - apk add --allow-untrusted -X https://dl-cdn.alpinelinux.org/alpine/v3.16/main -u alpine-keys
   - apk add --update --no-cache git go
 
 stages:
