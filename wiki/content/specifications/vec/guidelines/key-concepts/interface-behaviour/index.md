@@ -37,7 +37,7 @@ weight: 20050
 
 A wide range of different systems, supporting different use cases, are used in the process of wiring harness development. All of them might have a _VEC-Interface_ for input & output, so sooner or later the question arises "What are the expectations for the behavior of those interfaces?". This section will discuss this question.
 
-In a document based data exchange scenario (e.g. working with a word processor) the intuitive expectation is, that a document (file) is "opened", changes are preformed by the user and then, the document is "saved" again, with the document containing the original content plus the modifications. 
+In a document based data exchange scenario (e.g. working with a word processor) the intuitive expectation is, that a document (file) is "opened", changes are performed by the user and then, the document is "saved" again, with the document containing the original content plus the modifications. 
 
 However, this simple and intuitive approach is not feasible in a model based data exchange scenario like the one for the VEC. The VEC is not intended to be a file-based database that contains all information about a vehicle network, which grows continuously over the time (like a Word or ODT file of a book). The basic idea of the VEC is, to provide a consistent language (model) for data exchange in the process of wiring harness development and to allow the exchange of use case specific slices of information within the process between systems and organizations. 
 

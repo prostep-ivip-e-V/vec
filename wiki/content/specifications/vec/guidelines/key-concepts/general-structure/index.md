@@ -196,7 +196,14 @@ are placed beside the _DocumentVersion_ of the harness, within the same VEC.
 {{% callout note %}} A _DocumentVersion_ in the VEC and the physical _VEC file_
 shall not be equated. A _DocumentVersion_ is a logical entity and can be
 contained in multiple VEC (files). Conversely, a _VEC file_ can contain multiple
-_DocumentVersions_. {{% /callout %}}
+_DocumentVersions_. 
+
+Even though the logical content (the represented object graph) of a self contained 
+_DocumentVersion_ might be copied from one VEC file to another without problem, 
+the actual XML snippet might require adaption. At least the XML `ID`-attributes must 
+be checked for uniqueness and, in case of a conflict, changed. Referencing `IDREF(S)` 
+also have to be changed accordingly.
+{{% /callout %}}
 
 ## Types of Documents
 
