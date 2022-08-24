@@ -62,6 +62,12 @@ In all scenarios, the content of the {{< vec-class "DocumentVersion" >}} in a VE
 
 {{< figure src="partial-vec-export.svg" title="VEC files with partial content" numbered="true" lightbox="true" width="400">}}
 
+{{% callout note %}}
+An indication of change with _DigitalRepresentationIndex_ is mandatory only if the **payload data content** of a {{< vec-class "DocumentVersion" >}} has changed (e.g. changed, added or removed attributes or contained objects). It **does not require** that the resulting XML serialization is binary identical. 
+
+Changes related to the technical aspects of XML representation do not require a _DigitalRepresentationIndex_. This includes, but is not limited to changes of XML `ID` & `IDREF` elements (assuming the referenced objects are the same), ordering of XML elements and XML Meta elements like XML Comments ("`<!-- ... -->`") or XML Processing Instruction (`<?target instructions?>`)
+{{% /callout %}}
+
 ### How to Create
 
 The VEC does not define any specifications for the construction of the _DigitalRepresentationIndex_ (e.g. syntax, order). The only requirement is, that two values can be checked of equality. If the values are equal, the payload data can be assumed unchanged, if the values are different, the payload data might be different as well.  
