@@ -138,18 +138,7 @@ be used in different ways:
 
 - **Plain PDM reference** (a.k.a as external reference): In this case, the
   {{< vec-class DocumentVersion >}} in the VEC only contains meta-data and no
-  payload-data (no {{< vec-class Specification >}}s). There different
-  possibilities to resolve the original document that is referenced by the
-  {{< vec-class DocumentVersion >}}:
-  1. _**Domain Key**_: Per definition, a document version is unambiguously
-     identified with its _DocumentNumber_, _DocumentVersion_ and _CompanyName_.
-     With context knowledge about the process, the document can be resolved in
-     the corresponding PDM / Document Management System.
-  2. _**FileName**_: If the document is packaged together with VEC ([VEC Package]({{< relref "../../information-structures/vec-package">}}))
-     the filename attribute of {{< vec-class DocumentVersion >}} can point to
-     location within the package.
-  3. _**Location**_: Can point to a location (via a URN or URL) where the
-     document can be resolved.
+  payload-data (no {{< vec-class Specification >}}s). This is described in detail [here]({{< relref "../../information-structures/external-references">}}).
 - **Digital Representation of an external Document**: There are use cases where
   existing documents can represented in the means of the VEC. In other words the
   VEC {{< vec-class DocumentVersion >}} is a digital representation of the
