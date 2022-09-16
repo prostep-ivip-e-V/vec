@@ -152,6 +152,8 @@ be used in different ways:
   representation scenario. However, external links (if defined) will resolve to
   the VEC file itself.
 
+However, regardless of the use of the {{< vec-class DocumentVersion >}}, it always represents the meta-data of the entity in the process, which does not change depending on its VEC representation. Meaning, if for example a system schematic is referenced as external document in one place (VEC file) and is used as a native document / digital representation in another place, it is still a system schematic (_DocumentType_) with the same _DocumentNumber_ & _Version_.
+
 ### Combination and Reuse of Documents
 
 {{< figure src="document-version-flow.svg" class="float-right" title="DocumentVersions in the Information Flow" numbered="true" lightbox="true" width="400">}}
@@ -199,7 +201,7 @@ also have to be changed accordingly.
 The {{< vec-class documenttype >}} is an {{< vec-class openenumeration >}} that
 defines some document types that are common in the harness development process.
 The following sections describe typical content that can be expected in the
-{{< vec-class DocumentVersion >}}s of a specific type.
+{{< vec-class DocumentVersion >}}s of a specific type, if the content is represented in the VEC.
 
 However, as the {{< vec-class DocumentVersion >}} is primary an entity from the
 domain of the creating process, the content and the given

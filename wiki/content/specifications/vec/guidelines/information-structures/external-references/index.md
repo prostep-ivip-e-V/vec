@@ -36,7 +36,11 @@ For reasons of traceability (e.g. requirements) or because certain information i
 
 ## Referencing an external Document
 
-As described in the Implementation Guideline "[General Structure]({{< relref "../../key-concepts/general-structure#usages-of-the-documentversion">}})" the {{< vec-class "DocumentVersion">}} serves several purposes, one of which is the referencing of external Documents. So, whenever a connection between a VEC element and an external document should be created, a {{< vec-class "DocumentVersion">}} is required to address the document. Such a {{< vec-class "DocumentVersion">}} should contain no payload data ({{< vec-class "Specification">}})
+As described in the Implementation Guideline "[General Structure]({{< relref "../../key-concepts/general-structure#usages-of-the-documentversion">}})" the {{< vec-class "DocumentVersion">}} serves several purposes, one of which is the referencing of external Documents. So, whenever a connection between a VEC element and an external document should be created, a {{< vec-class "DocumentVersion">}} is required to address the document. Such a {{< vec-class "DocumentVersion">}} should contain no payload data ({{< vec-class "Specification">}}). However, it contains the same meta-data as it would, when included as a full featured document (e.g. _DocumentType_).
+
+{{% callout note %}}
+A `index.vec` file consists practically only of such external references, as described in the recommendation Chapter "VEC-Packgage" and in the corresponding [Implementation Guideline]({{< relref "../vec-package" >}}).
+{{% /callout %}}
 
 There are different possibilities to resolve such a reference and retrieve the actual document:
 
