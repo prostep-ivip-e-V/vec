@@ -276,4 +276,5 @@ plugins_js  = ["trace","pageprint"]
 
 [KBL]
   current_version = "2.5.sr1"
-  current_base_url = "specifications/kbl/v25-sr1/classes"
+  current_base_url = "specifications/kbl/v25-sr1"
+  current_classes_url = "specifications/kbl/v25-sr1/classes"

@@ -1,0 +1,12 @@
+{{ if and .Params.specification .Params.version }}
+{{- $current_version := (.Site.Params.Get .Params.specification).current_version -}}          
+{{ if ne .Params.version $current_version }}
+<div class="alert alert-warning">
+  <div>
+      {{- $base_url := (.Site.Params.Get .Params.specification).current_base_url -}}
+      {{- $completeUrl := printf "/%s" $base_url -}}
+      <p><strong>Note:</strong> There is a newer version of this specification see <a {{ printf "href=%q" $completeUrl | safeHTMLAttr }}>{{ .Params.specification }} {{ $current_version }}</a></p>
+  </div>
+</div>
+{{ end }}
+{{ end }}
