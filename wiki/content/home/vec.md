@@ -37,7 +37,7 @@ title = "VEC"
 #   Display link(s) by specifying a URL and label below. Icon is optional for `[cta]`.
 #   Remove a link/note by deleting a cta/note block.
 [cta]
-  url = "specifications/vec/v200"
+  url = "specifications/vec/v201"
   label = "Documentation"
   icon_pack = "fas"
   icon = "book"
@@ -48,7 +48,7 @@ title = "VEC"
 
 # Note. An optional note to show underneath the links.
 [cta_note]
-  label = 'Latest Release v2.0.0'
+  label = 'Latest Release v2.0.1'
 +++
 
 **The Vehicle Electric Container** - Foundation for the Digitalization of your E/E Processes.

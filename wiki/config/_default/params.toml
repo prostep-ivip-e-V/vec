@@ -270,9 +270,9 @@ plugins_js  = ["trace","pageprint"]
   google_tag_manager = ""
 
 [VEC]
-  current_version = "2.0.0"
-  current_base_url = "specifications/vec/v200"
-  current_classes_url = "specifications/vec/v200/classes"
+  current_version = "2.0.1"
+  current_base_url = "specifications/vec/v201"
+  current_classes_url = "specifications/vec/v201/classes"
 
 [KBL]
   current_version = "2.5.sr1"
