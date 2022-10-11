@@ -41,9 +41,9 @@ links:
     url: "vec_2.0.1-ud-strict.xsd"
 weight: 1
 ---
-The version 2.0.1 is a schema compatible bug fix release for Version 2.0.1 (schema compatible except for areas affected by bugs).
+The version 2.0.1 is a schema compatible bug fix release for Version 2.0.0 (schema compatible except for areas affected by bugs).
 
-This release was necessary due to a model / schema generator bug that resulted in some XML elements that should had a primitive value having no explicit `xs:type` set. Additionally some multiplicities and roles names were undefined result in a too restrictive schema in some elements. 
+This release was necessary due to a model / schema generator bug that resulted in some XML elements that should had a primitive value having no explicit `xs:type` set. Additionally some multiplicities and role names were undefined resulting in a too restrictive schema in some elements. 
 
 Having the necessity of a publication of this release we took the opportunity to improve the documentation of some elements and to extend some _OpenEnumerations_ with new values. Detailed release notes can be found [here]({{< relref release-notes >}}).
 
