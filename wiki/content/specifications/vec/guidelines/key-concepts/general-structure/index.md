@@ -209,43 +209,12 @@ domain of the creating process, the content and the given
 
 ### Part Master
 
-{{< figure src="part-master-document.svg" class="float-right" title="Part Master Documents" numbered="true" lightbox="true" width="400">}}
-
 A part master document describes the properties of a component or a group of
 components (a {{< vec-class partversion >}} or a set of
 {{< vec-class partversion >}}). It contains some general purpose specifications
-that provide information for any component type. Those specifications are not
-mandatory and only necessary if the corresponding information aspect is relevant
-and can be provided. Examples are:
-
-- {{< vec-class GeneralTechnicalPartSpecification>}} for common properties like
-  weight or material.
-- {{< vec-class PlaceableElementSpecification >}} for components that have a
-  position in the topology.
-- {{< vec-class LocalGeometrySpecification >}} for information about the
-  component's geometry model, e.g. the bounding box, transformations, segment
-  connection points.
-
-Besides these general specifications a part master document contains a
-{{< vec-class PartOrUsageRelatedSpecification >}} corresonding to the
-{{< vec-class PrimaryPartType >}} (a
-{{< vec-class ConnectorHousingSpecification >}} in the illustration). That
-{{<vec-class Specification>}} provides the component type specific properties.
-If the component has a secondary component characteristics, more than one
-{{< vec-class PartOrUsageRelatedSpecification >}} can be contained.
-
-Additionally, the document _could_ contain auxillary specifications that are
-required for the complete component description (the
-{{< vec-class CavitySpecification >}} and {{< vec-class SlotSpecification >}} in
-the illustration). The emphasis here is on "could", as this is a common case,
-but a process-specific interpretation. If for example the cavity system is
-described and released together with the connector (in the same document), it
-makes sense that the corresponding specification is included in the same
-{{< vec-class DocumentVersion >}}. If the cavity system is defined and released
-independently, i.e. in a separate document, and used by multiple connectors, it
-would be appropriate to place it in its own {{< vec-class DocumentVersion >}}
-and reuse the information in the document of the connector (see [Reuse of
-Documents]({{<relref "#combination--reuse-of-documents">}})).
+that provide information for any component type. A detailed description can be
+found in the "[Component Description]({{< relref "../../product-definition/component-description">}})"
+Guideline.
 
 ### Master Data Definition
 

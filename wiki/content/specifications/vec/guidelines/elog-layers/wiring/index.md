@@ -59,7 +59,7 @@ Basically, there are three main modeling concepts:
 
 In contrast to the _Network Architecture_ and the _System Schematic_ the _Wiring Layer_ does not define its own level of abstraction, instead it utilizes the existing modeling concepts in the VEC to describe the physical properties of the electrologically relevant components. 
 
-It is possible to use concrete {{<vec-class PartVersion >}}s in the _Wiring Layer_, but typically not all relevant properties are defined in the _Wiring Layer_, so mainly {{<vec-class PartUsage>}}s will be used (detailed description can be found [here]({{< relref "../../component-description" >}})).
+It is possible to use concrete {{<vec-class PartVersion >}}s in the _Wiring Layer_, but typically not all relevant properties are defined in the _Wiring Layer_, so mainly {{<vec-class PartUsage>}}s will be used (detailed description can be found [here]({{< relref "../../product-definition/component-description" >}})).
 
 ## Contacting
 
