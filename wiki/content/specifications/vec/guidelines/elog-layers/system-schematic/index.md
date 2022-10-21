@@ -10,7 +10,6 @@ categories: []
 date: 2019-03-11
 lastmod: 2019-12-02T12:46:09+01:00
 draft: false
-review: true
 classes:
   - ComponentNode
   - ComponentConnector
@@ -120,7 +119,6 @@ As mentioned before, the level of abstraction of the system schematic in the VEC
 
 The expressed engineering intention is only that the connected pins (all “A1”) have the same potential (are connected in some way). The decision about a technical realization (e.g. splice, multicrimp, single wires) can not be made is most cases at the stage of a system schematic, because a technical realization depends on concrete variant combinations and might be even different for different variants (see section Wiring) or it can be unnecessary, because in a reduced 100% variant, there might be just two of the three components left and a realization with a single wire would be possible. As the VEC does not represent the graphical layout of documents these nodes have no representation in VEC.
 
-{{< review KBLFRM-1135 >}}
 
 If the system schematic should explicitly contain the engineering intention of a specific connection topology (e.g. a star like topology with a splice or a potential distributor) this must be explicitly represented by an individual design of one ore more {{< vec-class ComponentNode>}}s and {{< vec-class Connection>}}s. Such a {{< vec-class ComponentNode>}} should have the `ComponentNodeType = 'PotentialDistributor'`. The illustrations below show the example of a CAN bus system with and without explicit distribution.
 
@@ -203,8 +201,6 @@ The following listing shows the additional {{< vec-class ComponentNode>}} as XML
 ```
 
 ### Internal Connectivity
-
-{{< review KBLFRM-1142 >}}
 
 The system schematic layer in the VEC allows not only the mapping of {{< vec-class Connection >}}s between different {{< vec-class ComponentNode >}}s, but also the mapping of internal connections within a {{< vec-class ComponentNode >}}. Examples are fuses, relays, power and potential distributors or fuse or relay carriers.
 

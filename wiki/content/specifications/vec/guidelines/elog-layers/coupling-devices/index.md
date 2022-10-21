@@ -10,7 +10,6 @@ categories: []
 date: 2022-02-09
 lastmod: 2019-12-02T12:46:09+01:00
 draft: false
-review: true
 classes:
   - ComponentNode
   - ComponentConnector
@@ -32,8 +31,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 3000
 ---
-
-{{< review KBLFRM-600 >}}
 
 {{< figure src="coupling-schematic.jpg" title="Coupling Device Example" class="float-right" width="400px" numbered="true" lightbox="true">}}
 

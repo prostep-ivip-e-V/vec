@@ -11,7 +11,6 @@ date: 	2019-03-07
 lastmod: 2021-11-24T12:43:28+01:00
 draft: false
 toc: true
-review: true
 
 history:
   - date: 2022-01-31
@@ -41,9 +40,6 @@ weight: 2000
 ---
 
 {{< figure src="overview.svg" numbered="true" lightbox="true"  title="Wiring Overview">}}
-
-
-{{< review KBLFRM-896 >}}
 
 The _Wiring Layer_ in the VEC provides modeling concepts to define the physical realization of electrological connections from the [System Schematic Layer]({{< relref "../system-schematic" >}}). In the VEC, the same modeling concepts are use for this layer as for the mapping of a concrete wiring harness in the model. 
 
@@ -129,8 +125,6 @@ In the VEC the coupling / mating can be used to connect the harness side to ano
 For this reason this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
 
 ## Direct Connectivity
-
-{{< review KBLFRM-896 >}}
 
 {{< figure src="direct-contacting/direct_screwing_illustration.png" lightbox="true"  title="Illustration of a Direct Screw Connection" class="float-right" numbered="true">}} 
 

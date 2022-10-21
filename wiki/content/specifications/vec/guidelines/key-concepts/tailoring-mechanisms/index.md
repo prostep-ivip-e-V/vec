@@ -4,13 +4,11 @@ title: "Tailoring Mechanisms"
 type: specs
 # Table of Content on the right side. Only useful for large pages.
 authors: ["steinbuechler", "becker"]
-tags: ["Review"]
 categories: []
 date: 2020-10-21
 lastmod: 2020-10-21T15:11:41+01:00
 draft: false
 toc: true
-review: true
 
 history:
   - date: 2020-10-21
@@ -33,8 +31,6 @@ weight: 1000
 ---
 
 ## Motivation and Objective
-
-{{< review KBLFRM-1057 >}}
 
 The VEC provides a comprehensive model for the digital description of a wide variety of information and their relationships to each other in the context of the electrical system development process. Despite the striving for the greatest possible semantic precision, the demand for general applicability of the standard means that, at various points restrictions cannot be formulated to the same extent as it would be possible in the context of a very specific use case or a company context. This applies to the following examples, among others: 
 
