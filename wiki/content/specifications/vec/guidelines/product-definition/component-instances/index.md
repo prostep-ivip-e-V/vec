@@ -45,7 +45,7 @@ weight: 200
 Before reading these implementation guidelines, it is highly recommended to read the "{{< vec-diagram "instances-of-components/instantiation-of-components" >}}" section in the VEC Online Model Description.
 {{% /callout %}}
 
-This Implementation Guideline complements the Specification Chapter {{< vec-diagram "instances-of-components/instantiation-of-components" >}} with concrete examples and detailed definitions for specific use cases. 
+This Implementation Guideline complements the Specification Chapter {{< vec-diagram "instances-of-components/instantiation-of-components" >}} with concrete examples and detailed definitions for specific use cases. _Component instantiation_ in the context of the VEC means the specific usage of a component in a defined function, location or place. _Instantiation_ implies that there is something to be instantiated, which is the type definition. This type definition is often referred to as _part master data_ or _component specification_. For example a "black connector with 12 pins" is a type definition, where as the "connector of the left head light (black with 12 pins)" is an instance.
 
 The figure below gives a brief overview of how instantiation of components fit into the overall picture of the VEC and how this different for {{< vec-class "PartOccurrence" >}}s and {{< vec-class "PartUsage" >}}s. 
 
@@ -55,17 +55,32 @@ On the left hand side is a part master definition (as described in [Component De
 
 The two instantiation approaches of the VEC are illustrated with one representative for each. The {{< vec-class PartUsage >}} "A120" and the {{< vec-class PartOccurrence >}} "A121". {{< vec-class "PartUsage" >}}s and {{< vec-class "PartOccurrence" >}}s are defined in different containers ({{< vec-class "CompositionSpecification" >}} vs. {{< vec-class "PartUsageSpecification" >}}). Both can coexist and be used at the same time in the same containing {{< vec-class DocumentVersion >}}.
 
+On the far right hand side can be seen, that other areas in the VEC (indicated in orange on the right side) can use these instances regardless of the instantiation concept used.
+
+## Relationship to Part Master Data
+
 {{< review "KBLFRM-994" >}}
 
-The {{< vec-class "PartOccurrence" >}} references its part master data specifications indirectly via a {{< vec-class PartVersion >}}, in contrast  to the {{< vec-class "PartUsage" >}}, which references the specifications directly without the detour over the {{< vec-class PartVersion >}}. 
+The information related to a component instance is in the VEC **always** logically divided in type definition and instance specific properties. In the VEC Type definitions are contained in {{< vec-class "Specification">}}s, instance specific properties are contained in {{< vec-class Role >}}s. 
 
-In this example, the {{< vec-class PartUsage >}} references the specifications from a _PartMaster_ {{< vec-class DocumentVersion >}}. However, this approach is not mandatory and the only reason here is to keep the example as simple as possible. Depending on the context, different approaches to provide a {{< vec-class "PartUsage" >}} with specifications are possible. Reusing existing part master data (as shown in the example) is one. Putting the specifications in an independent {{< vec-class DocumentVersion >}} (e.g. a company standard or a type definition) is another one and last but not least, the specifications could also be defined in the same context as the {{< vec-class PartUsage >}}s.
+The one major difference between the {{< vec-class "PartOccurrence" >}} and the {{< vec-class "PartUsage" >}} is the way how both are referring to their respective type definition. The {{< vec-class "PartOccurrence" >}} references its part master data specifications indirectly via a {{< vec-class PartVersion >}}. It is described by {{< vec-class PartOrUsageRelatedSpecification >}}s) and can be reused for multiple  {{< vec-class "PartOccurrence" >}}s. In contrast to this, {{< vec-class "PartUsage" >}}, references the specifications directly itself without the detour over the {{< vec-class PartVersion >}}. The {{< vec-class "PartUsage" >}} can be interpreted as a hybrid of {{< vec-class PartVersion >}} and {{< vec-class "PartOccurrence" >}} in a single entity. 
 
-{{< vec-class "PartOccurrence" >}}s and {{< vec-class "PartUsage" >}}s are containing the {{< vec-class Role >}}s corresponding to their {{< vec-class "PartOrUsageRelatedSpecification" >}}s (references between the roles & specifications are omitted in the figure for reasons of readability). Only {{< vec-class Role >}}s shall be used, that have {{< vec-class "PartOrUsageRelatedSpecification">}}s defined in the corresponding part master data. Following the principle of optionality in the VEC, it is not required to create {{< vec-class Role >}}s, for all the {{< vec-class "PartOrUsageRelatedSpecification">}}s defined in the part master data, if the corresponding aspect is not relevant in the individual context. 
+One notable difference is, the direction of the relationship with {{< vec-class PartOrUsageRelatedSpecification >}}s. The direction for the  {{< vec-class "PartUsage" >}} is inverse direction compared to {{< vec-class PartVersion >}}. A {{< vec-class PartVersion >}} is described by specifications, wheres a {{< vec-class "PartUsage" >}} references the relevant specifications. This has logical reasons in the assumed information lifecycle of the corresponding entities. A {{< vec-class PartVersion >}} is a pointer to a "real" component. Over the time, this component can be described with more information (adding specification) without changing the component itself. On the other hand, a {{< vec-class "PartUsage" >}} is defined in place by associating appropriate specifications, those specifications can be created for this individual {{< vec-class "PartUsage" >}} or being reused for multiple {{< vec-class "PartUsage" >}}. Therefore, specification could be referenced over the time by more {{< vec-class "PartUsage" >}}s without being changed.
 
-A {{< vec-class "PartUsage" >}} shall reference all specifications that provide relevant information about it. The contained {{< vec-class "Role" >}}s and their referenced {{< vec-class "PartOrUsageRelatedSpecification" >}} do not have to be exactly the same. They can be subset of those, but not a superset.
+A {{< vec-class "PartUsage" >}} shall reference all {{< vec-class PartOrUsageRelatedSpecification >}}s that provide relevant information about **itself**. This includes _general component data_ and _component characteristics_ that are relevant in the context (compare to "[Component Description]({{< relref "../component-description" >}})"). This does **not include** any specifications that are used transitively by other specifications (e.g. not the {{< vec-class ConnectorHousingSpecification >}} that defines the {{< vec-class HousingComponent >}} of an {{< vec-class EEComponentSpecification >}}, which is used for the {{< vec-class PartUsage >}}). This is illustrated in the Figure below (references between _Specifications_ & _Roles_ are omitted). 
 
-On the right hand side can be seen, that other areas in the VEC (indicated in orange on the right side) can use these instances regardless of the instantiation concept used.
+{{< figure src="part-usage-specifications.svg" title="_PartUsage_ with its _Specifications_ and _Roles_" numbered="true" lightbox="true">}}
+
+In the example from the beginning (figure "Comparison of PartUsages and PartOccurrences"), the {{< vec-class PartUsage >}} references the specifications from a _PartMaster_ {{< vec-class DocumentVersion >}}. However, this approach is not mandatory and the only reason here, is to keep the example as simple as possible. Depending on the context, different approaches to provide a {{< vec-class "PartUsage" >}} with specifications are possible. Reusing existing part master data (as shown in the example) is one. Putting the specifications in an independent {{< vec-class DocumentVersion >}} (e.g. a company standard or a type definition) is another one and last but not least, the specifications could also be defined in the same context as the {{< vec-class PartUsage >}}s.
+
+## Instantiation with Roles
+
+{{< vec-class "PartOccurrence" >}}s and {{< vec-class "PartUsage" >}}s are containing the {{< vec-class Role >}}s corresponding to their {{< vec-class "PartOrUsageRelatedSpecification" >}}s (see both figures above, references between the roles & specifications are omitted in the figures for reasons of readability). Directly under {{< vec-class "PartOccurrence" >}} or {{< vec-class "PartUsage" >}} only {{< vec-class Role >}}s shall be used, that have {{< vec-class "PartOrUsageRelatedSpecification">}}s defined directly in the corresponding part master data. Transitive dependencies (e.g. ConnectorHousingSpecification & Role in the figure above) are created in the appropriate subcontext, as defined by the VEC Model. 
+
+Following the principle of optionality in the VEC, it is not required to create {{< vec-class Role >}}s, for all the {{< vec-class "PartOrUsageRelatedSpecification">}}s referenced in the part master data, if the corresponding aspect is not relevant in the individual context. 
+
+ The contained {{< vec-class "Role" >}}s and their referenced {{< vec-class "PartOrUsageRelatedSpecification" >}} do not have to be exactly the same. They can be subset of those, but not a superset.
+
 
 ## Shared Specifications 
 
@@ -80,7 +95,7 @@ The {{< vec-class PartUsage >}} is not required to reference all the specificati
 - The {{< vec-class PartUsage >}} could reference only the {{< vec-class ConnectorHousingSpecification >}}, if the other properties are not a strict requirement. 
 - The {{< vec-class PartUsage >}} could reference the {{< vec-class ConnectorHousingSpecification >}} of the {{< vec-class PartVersion >}}, but a different {{< vec-class GeneralTechnicalPartSpecification >}}, if for example the requirements for weight, color or robustness are different. 
 
-The {{< vec-class PartOrUsageRelatedSpecification >}} for the {{< vec-class PartUsage >}} can describe a {{< vec-class PartVersion >}} at the same time, but they are **not required** to. That means, a a {{< vec-class PartUsage >}} is free to define its own specifications, for example in its own context ({{< vec-class DocumentVersion >}}) are in a separate {{< vec-class DocumentVersion >}}.
+The {{< vec-class PartOrUsageRelatedSpecification >}} for the {{< vec-class PartUsage >}} can describe a {{< vec-class PartVersion >}} at the same time, but they are **not required** to. That means, a {{< vec-class PartUsage >}} is free to define its own specifications, for example in its own context ({{< vec-class DocumentVersion >}}) or in a separate {{< vec-class DocumentVersion >}}.
   
 
 <!-- TODO KBLFRM-931, KBLFRM-984, KBLFRM-945, KBLFRM-994, Done: KBLFRM-1038 -->
