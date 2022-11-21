@@ -39,15 +39,12 @@ Both parts of the modular connector (the housing and the insert) have their own 
 
 **Note:** As a wiring harness is often described in a 150% scope, it is possible that a {{< vec-class ModularSlotReference >}} references more than one {{< vec-class ConnectorHousingRole >}} as *usedInserts*. In these cases the variant management mechanisms have to ensure, that in a concrete case only one insert is used. This can be either done explicitly with {{< vec-class PartStructureSpecification >}}s or implicitly with a {{< vec-class VariantConfiguration >}}.
 
-## Segment Connection Points 
-{{< figure src="connector_with_multiple_segment_connection_points.jpg" title="Example of Multiple Segment Connection Pints" numbered="true" lightbox="true">}}
+## Wire Addons
 
-The picture above shows an example of connector with multiple segment connection points (sometimes also called bundle postion / connection points). The segment connection points are marked with red circles. Such connectors have multiple entry points for wires, that can be used alternatively or at the simultaniously. The geometric position of the segment connection points is different, that they have to be treated individually, so each segment connection point is accessed via an individual {{< vec-class SegmentConnectionPoint >}} 
+{{% callout note %}}
+Before reading this section, it is recommended to read [this implementation guideline]({{< ref "../../topology/segment-connection-points" >}}) regarding segment connection points.
+{{% /callout %}}
 
-{{< figure src="instancing.jpg" title="Instanciating Segment Connection Points" numbered="true" lightbox="true">}}
-
-The example shows a connector that has two cavity, that are only reachable through different segment connection points. By associating these {{< vec-class SegmentConnectionPoint >}}s with corresponding {{< vec-class PlacementPoint >}}s the *SegmentConnectionPoint* become 'placeable' on nodes in the topology of a harness.
-## Wire Addons 
 ### Cavities 
 {{< figure src="addons_for_cavities.jpg" title="Cavity Add-Ons" numbered="true" lightbox="true">}}
 

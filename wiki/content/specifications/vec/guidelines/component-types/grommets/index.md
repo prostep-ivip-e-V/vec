@@ -23,4 +23,7 @@ weight: 8000
 ---
 {{< figure src="grommets_with_placement.jpg" title="Grommets And Their Placement" numbered="true" lightbox="true">}}
 
-Grommets have certain points (the {{< vec-class CableLeadThrough >}}) that are relevant for the placement of a grommet. Since currently the {{< vec-class CableLeadThrough >}} only specifies relevant information on the component side and not on the instance side, there is no corresponding subelement of the {{< vec-class GrommetRole >}}. The ability to place a {{< vec-class CableLeadThrough >}} on a specific point in the topology is covered by the generic mechanism of {{< vec-class PlacementPoint >}} & {{< vec-class PlacementPointReference >}}.
+Grommets have certain points (the {{< vec-class CableLeadThrough >}}) that are relevant for the placement of a grommet. But there are differnet types of grommets e.g. grommets with a y-shape (1 in, 2 outgoings) or those which are thicker and reaches throug more than one metal planes. So it is not sufficient to use the lead trough itself for placing the grommet on the topology.
+
+The ability to place a {{< vec-class CableLeadThrough >}} on a specific point in the topology is covered by the generic mechanism of {{< vec-class PlacementPoint >}} & {{< vec-class PlacementPointReference >}}.
+
