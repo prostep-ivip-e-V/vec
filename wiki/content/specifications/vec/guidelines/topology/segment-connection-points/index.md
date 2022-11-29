@@ -26,4 +26,4 @@ The picture above shows an example of a connector with multiple segment connecti
 
 {{< figure src="instancing.jpg" title="Instanciating Segment Connection Points" numbered="true" lightbox="true">}}
 
-The example shows a connector that has two cavity, that are only reachable through different segment connection points. By associating these {{< vec-class SegmentConnectionPoint >}}s with corresponding {{< vec-class PlacementPoint >}}s the *SegmentConnectionPoint* become 'placeable' on nodes in the topology of a harness.
+The example shows a connector that has two cavities, that are only reachable through different segment connection points. By associating these {{< vec-class SegmentConnectionPoint >}}s with corresponding {{< vec-class PlacementPoint >}}s the *SegmentConnectionPoint* become 'placeable' on nodes in the topology of a harness.

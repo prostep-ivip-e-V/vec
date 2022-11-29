@@ -39,23 +39,14 @@ Both parts of the modular connector (the housing and the insert) have their own 
 
 **Note:** As a wiring harness is often described in a 150% scope, it is possible that a {{< vec-class ModularSlotReference >}} references more than one {{< vec-class ConnectorHousingRole >}} as *usedInserts*. In these cases the variant management mechanisms have to ensure, that in a concrete case only one insert is used. This can be either done explicitly with {{< vec-class PartStructureSpecification >}}s or implicitly with a {{< vec-class VariantConfiguration >}}.
 
-## Wire Addons
+## Wire-Addons
 
 {{% callout note %}}
-Before reading this section, it is recommended to read [this implementation guideline]({{< ref "../../topology/segment-connection-points" >}}) regarding segment connection points.
+* To define wire add-ons, specified {{< vec-class SegmentConnectionPoint >}}s in the part master definition are required. How it is done can be found in [this implementation guideline]({{< ref "../../topology/segment-connection-points" >}}).
+* The definition of wire add-ons for cavities and modular slots is a general mechanism in the VEC and can be found in [this implementation guideline]({{< ref "../../topology/wire-addons" >}})
 {{% /callout %}}
-
-### Cavities 
-{{< figure src="addons_for_cavities.jpg" title="Cavity Add-Ons" numbered="true" lightbox="true">}}
-
-This example shows how add-ons for cavities in a connector could be defined. In this example, the {{< vec-class ConnectorHousingSpecification >}} has two different {{< vec-class SegmentConnectionPoint >}}s. Each of them is defining it's own {{< vec-class CavityAddOn >}}. So depending on the {{< vec-class SegmentConnectionPoint >}} used, a {{< vec-class Cavity >}} can have for example 50mm as well as 150mm as Add-On.
-
-### Modular Slots 
-{{< figure src="addons_for_modular_slots.jpg" title="Add-Ons for Modular Slots" numbered="true" lightbox="true">}}
-
-If a {{< vec-class ConnectorHousingSpecification >}} has {{< vec-class ModularSlot >}}s, the Add-ons are not defined individually for all cavities for all possible inserts, but **only per {{< vec-class ModularSlot >}}. The Add-On defined in the {{< vec-class ModularSlotAddOn >}}, is the Add-On need to reach the {{< vec-class ModularSlot >}} from the corresponding {{< vec-class SegmentConnectionPoint >}}. The add-on needed to reach a certain cavity in an used insert, can be obtain from {{< vec-class ConnectorHousingSpecification >}} of the used insert.
 
 ### ConnectorHousingCap 
 {{< figure src="simple_connectorhousingcap_wireaddon.jpg" title="Wire Add-Ons for the Usage of Caps" numbered="true" lightbox="true">}}
 
-Wire add-ons caused by cap's are defined in the {{< vec-class ConnectorHousingCapSpecification >}}. The specified value is the add-on required to reach the {{< vec-class SegmentConnectionPoint >}} of the ConnectorHousing from the entry point of the cap.
+Wire add-ons caused by cap's are not defined by a segment connection point. In this case the definition is done in the {{< vec-class ConnectorHousingCapSpecification >}}. The specified value is the add-on required to reach the {{< vec-class SegmentConnectionPoint >}} of the ConnectorHousing from the entry point of the cap. So in the example above the total add-on to the length of the wire which contacted the given cavity has to be 250mm.
