@@ -162,6 +162,12 @@ The listing below shows the general xml structure for such a component box. Omit
   </Slot>
 </Specification>
 ```
+
+### Wire-Addons
+
+Depending on the geometrical conditions of the E/E component it can be necessary to define an additional length for the connected wires (or the wires which are connected to a harness connector), because otherwise it is not connectable anyway. In this cases wire-addons can be defined for single cavities or whole modular slots How this its done can be found in [this implementation guideline]({{< ref "../../topology/segment-connection-points" >}}).
+
+
 ## Internal Connectivity 
 ### Connections 
 {{< figure src="component_box_schematic.png" lightbox="true"  title="Component Box Schematic Illustration" width="400px" class="float-right" >}} 
