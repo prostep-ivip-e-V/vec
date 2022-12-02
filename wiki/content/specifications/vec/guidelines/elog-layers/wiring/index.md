@@ -120,9 +120,15 @@ The {{< vec-class HousingComponent>}} of an EEComponent defines on one hand the 
 
 {{< figure src="mating_specification.jpg" title="Mating Specification" numbered="true" lightbox="true">}}
 
-In the VEC the coupling / mating can be used to connect the harness side to another harness (in the case of an inliner) or to an ECU. The figure above shows a simplified example of the connection between an ECU (highlighted in orange) and a wiring connection (highlighted in blue). The {{< vec-class MatingPoint >}} simply connects the two {{< vec-class TerminalRole >}}s on each side. This method is used for example in a wiring definition, where the concrete connector is not yet known.
+In the VEC the coupling / mating can be used to connect the harness side to another harness (in the case of an inliner) or to an ECU. The figure above shows a simplified example of the connection between an ECU (highlighted in orange) and a wiring connection (highlighted in blue). The {{< vec-class MatingPoint >}} simply connects the two {{< vec-class TerminalRole >}}s on each side. This method is used for example in a wiring definition, where the concrete connector is not yet known. For this reason this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
 
-For this reason this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
+
+### Coupling with given geometrical information
+
+{{< figure src="coupling_specification.jpg" title="Coupling Specification" numbered="true" lightbox="true">}}
+
+When information about the geometrical circumstances are given or at least the final part number is known, the coupling of a connector to another connector or an EEComponent can be done by simply using the {{< vec-class CouplingPoint >}} w/o any underlying constructions (like in the example above). The reference of the first and second connector is sufficient to specify the coupling. This requires that both sides have matching physical properties e.g. size, shape or a coding and the process defines surrounding conditions like the numbering of cavities. If not, the {{< vec-class CouplingPoint >}} has to be extended by a {{< vec-class SlotCoupling >}} and (if necessary) a {{< vec-class CavityCoupling >}}, too.
+
 
 ## Direct Connectivity
 
