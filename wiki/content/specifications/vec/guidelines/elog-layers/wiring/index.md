@@ -127,7 +127,13 @@ In the VEC the coupling / mating can be used to connect the harness side to ano
 
 {{< figure src="coupling_specification.jpg" title="Coupling Specification" numbered="true" lightbox="true">}}
 
-When information about the geometrical circumstances are given or at least the final part number is known, the coupling of a connector to another connector or an EEComponent can be done by simply using the {{< vec-class CouplingPoint >}} w/o any underlying constructions (like in the example above). The reference of the first and second connector is sufficient to specify the coupling. This requires that both sides have matching physical properties e.g. size, shape or a coding and the process defines surrounding conditions like the numbering of cavities. If not, the {{< vec-class CouplingPoint >}} has to be extended by a {{< vec-class SlotCoupling >}} and (if necessary) a {{< vec-class CavityCoupling >}}, too.
+When information about the geometrical circumstances are given or at least the final part number is known, the coupling of a connector to another connector or an EEComponent can be done by simply using the {{< vec-class CouplingPoint >}} w/o any underlying constructions (like in the example above). The reference of the first and second connector is sufficient to specify the coupling. This requires that both sides have matching physical properties e.g. size, shape or a coding and the process defines surrounding conditions like the numbering of cavities. 
+
+{{% callout note %}}
+Becaus the usage of {{< vec-class SlotCoupling >}} and {{< vec-class CavityCoupling >}} is optional, the information about the facing cavities must be given by the process. For examlpe the counting starts at the top left cavity and goes down row by row to the bottom rigth one.
+{{% /callout %}}
+
+If this is not given, the {{< vec-class CouplingPoint >}} has the ability to define a {{< vec-class SlotCoupling >}} to name the slot from the one and the other side. And (if necessary) a {{< vec-class CavityCoupling >}} can be used to couple cavities if the numbering is not matching at all.
 
 
 ## Direct Connectivity
