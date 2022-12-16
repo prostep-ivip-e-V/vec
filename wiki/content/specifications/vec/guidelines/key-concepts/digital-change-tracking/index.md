@@ -10,7 +10,7 @@ categories: []
 date: 2022-07-29
 lastmod: 2021-11-05T10:30:04+01:00
 draft: false
-review: true
+review: false
 
 history:
   - date: 2022-07-29
@@ -26,8 +26,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
 ---
-{{< review "KBLFRM-1007" >}}
-
 As described in detail in the Implementation Guideline "[General Structure / Usages of the DocumentVersion]({{< relref "../general-structure#usages-of-the-documentversion">}})" one use case of the {{< vec-class "DocumentVersion" >}} is to serve as a payload data container within the VEC, either for the digital representation of an external document or for native digital data. This Implementation Guide is about the possibilities to track changes and modifications of this payload data within the VEC. Be sure to read {{< vec-diagram "key-concepts/parts-and-documents" >}} before, as it also contains important information about this topic.
 
 In the VEC, data is organized in {{< vec-class DocumentVersion >}}s and those are unambiguously identified by _CompanyName_, _DocumentNumber_ and _Version_. Those attributes are identifying an entity relevant for the process as the single source of truth for this information, for example a drawing, a data sheet or even an entity in a database. The handling of those attributes and the corresponding change procedures are driven by the process and not by technical requirements. In many cases the VEC only contains a digitally readable representation (an export) of that information. 

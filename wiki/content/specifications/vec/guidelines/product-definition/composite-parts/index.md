@@ -9,7 +9,7 @@ categories: []
 date: 2021-03-01
 lastmod: 2019-11-28T15:11:41+01:00
 draft: false
-review: true
+review: false
 
 classes:
   - PartStructureSpecification
@@ -34,8 +34,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 300
 ---
-{{< review "KBLFRM-952" >}}
-
 {{% callout note %}}
 Before reading these implementation guidelines, it is highly recommended to read the "{{< vec-diagram "composite-part-descriptions" >}}" section and its subsections in the VEC Online Model Description first.
 {{% /callout %}}
