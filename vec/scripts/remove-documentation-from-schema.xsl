@@ -7,7 +7,9 @@
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space  elements="*"/>
     
-    <xsl:template match="xs:annotation"/>
+    <xsl:template match="xs:documentation"/>
+    
+    <xsl:template match="xs:annotation[not(xs:appinfo)]"/>
         
     <xsl:template match="node()">
         <xsl:copy>
