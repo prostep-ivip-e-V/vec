@@ -27,10 +27,42 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|frequency | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> The frequency of the optical signal.      </p> | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
-|attenuation | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 0..1 | <p> The attenuation of the optical pin at the defined frequency.       </p> | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
+|frequency| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> The frequency of the optical signal.      </p> | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
+|attenuation| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 0..1 | <p> The attenuation of the optical pin at the defined frequency.       </p> | [PinOpticalInformation]({{< relref "pinopticalinformation.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 1 | opticalInformation | 0..* | <p> Specifies the optical information of the pin, if it has the type optical.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>opticalInformation</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "pincomponentbehavior.md" >}}">PinComponentBehavior</a></td>
+        <td>1</td>
+        <td><p> Specifies the optical information of the pin, if it has the type optical.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

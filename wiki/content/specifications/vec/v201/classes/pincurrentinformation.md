@@ -27,14 +27,74 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|type | [PinCurrentType]({{< relref "pincurrenttype.md" >}}) | 1 | <p>Defines the type of the current. </p> | [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) |
-|current | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p>The current of the pin. </p> | [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) |
+|type| [PinCurrentType]({{< relref "pincurrenttype.md" >}}) | 1 | <p>Defines the type of the current. </p> | [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) |
+|current| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p>The current of the pin. </p> | [PinCurrentInformation]({{< relref "pincurrentinformation.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [PinTiming]({{< relref "pintiming.md" >}}) | timing | 0..* | 0..1 | <p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>timing</td>
+        <td><a href="{{< relref "pintiming.md" >}}">PinTiming</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [PinComponentBehavior]({{< relref "pincomponentbehavior.md" >}}) | 1 | currentInformation | 0..* | <p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>currentInformation</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "pincomponentbehavior.md" >}}">PinComponentBehavior</a></td>
+        <td>1</td>
+        <td><p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

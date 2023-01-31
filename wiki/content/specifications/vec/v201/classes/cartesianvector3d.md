@@ -27,11 +27,43 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|x | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the x-coordinate in 3D space.      </p> | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
-|y | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the y-coordinate in 3D space.      </p> | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
-|z | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the z-coordinate in 3D space.      </p> | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
+|x| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the x-coordinate in 3D space.      </p> | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
+|y| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the y-coordinate in 3D space.      </p> | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
+|z| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the z-coordinate in 3D space.      </p> | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [CavityPositionDetail]({{< relref "cavitypositiondetail.md" >}}) |  | insertionVector | 0..1 | The direction in which a terminal is inserted from the <i>InsertionPosition</i> into the connector. The amount of the vector defines the length auf the cavity&#160;(The distance the terminal must travel from the <i>InsertionPostion </i>to its final position. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>insertionVector</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "cavitypositiondetail.md" >}}">CavityPositionDetail</a></td>
+        <td></td>
+        <td>The direction in which a terminal is inserted from the <i>InsertionPosition</i> into the connector. The amount of the vector defines the length auf the cavity&#160;(The distance the terminal must travel from the <i>InsertionPostion </i>to its final position.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

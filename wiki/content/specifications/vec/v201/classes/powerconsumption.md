@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|type | [PowerConsumptionType]({{< relref "powerconsumptiontype.md" >}}) | 1 | <p> The type of a <i>PowerConsumption</i>. This should be an enumeration of values defined in a conformance class.      </p> | [PowerConsumption]({{< relref "powerconsumption.md" >}}) |
-|value | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> Specifies the power consumption for this type of <i>PowerConsumption</i>.      </p> | [PowerConsumption]({{< relref "powerconsumption.md" >}}) |
+|type| [PowerConsumptionType]({{< relref "powerconsumptiontype.md" >}}) | 1 | <p> The type of a <i>PowerConsumption</i>. This should be an enumeration of values defined in a conformance class.      </p> | [PowerConsumption]({{< relref "powerconsumption.md" >}}) |
+|value| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> Specifies the power consumption for this type of <i>PowerConsumption</i>.      </p> | [PowerConsumption]({{< relref "powerconsumption.md" >}}) |
+
+
+
+
 

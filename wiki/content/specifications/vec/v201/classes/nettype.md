@@ -27,17 +27,76 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the NetType. The identification is guaranteed to be unique within the NetSpecification.      </p> | [NetType]({{< relref "nettype.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Room for additional, human readable information about the <i>NetType</i>.      </p> | [NetType]({{< relref "nettype.md" >}}) |
-|signalType | [SignalType]({{< relref "signaltype.md" >}}) | 0..1 |  | [NetType]({{< relref "nettype.md" >}}) |
-|signalSubType | [SignalSubType]({{< relref "signalsubtype.md" >}}) | 0..1 |  | [NetType]({{< relref "nettype.md" >}}) |
-|signalInformationType | [SignalInformationType]({{< relref "signalinformationtype.md" >}}) | 0..1 |  | [NetType]({{< relref "nettype.md" >}}) |
-|signalTransmissionMediumType | [SignalTransmissionMediumType]({{< relref "signaltransmissionmediumtype.md" >}}) | 0..1 | <p> Specifies the type of the transmission medium for signals of this type.      </p> | [NetType]({{< relref "nettype.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the NetType. The identification is guaranteed to be unique within the NetSpecification.      </p> | [NetType]({{< relref "nettype.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Room for additional, human readable information about the <i>NetType</i>.      </p> | [NetType]({{< relref "nettype.md" >}}) |
+|signalType| [SignalType]({{< relref "signaltype.md" >}}) | 0..1 |  | [NetType]({{< relref "nettype.md" >}}) |
+|signalSubType| [SignalSubType]({{< relref "signalsubtype.md" >}}) | 0..1 |  | [NetType]({{< relref "nettype.md" >}}) |
+|signalInformationType| [SignalInformationType]({{< relref "signalinformationtype.md" >}}) | 0..1 |  | [NetType]({{< relref "nettype.md" >}}) |
+|signalTransmissionMediumType| [SignalTransmissionMediumType]({{< relref "signaltransmissionmediumtype.md" >}}) | 0..1 | <p> Specifies the type of the transmission medium for signals of this type.      </p> | [NetType]({{< relref "nettype.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [Net]({{< relref "net.md" >}}) |  | netType | 0..1 |  |
-| [NetworkPort]({{< relref "networkport.md" >}}) | 0..* | netType | 0..1 |  |
-| [NetSpecification]({{< relref "netspecification.md" >}}) | 1 | netType | 0..* |  |
-| [Signal]({{< relref "signal.md" >}}) |  | netType | 0..1 |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>netType</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>netType</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "netspecification.md" >}}">NetSpecification</a></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>netType</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "net.md" >}}">Net</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>netType</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "networkport.md" >}}">NetworkPort</a></td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

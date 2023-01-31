@@ -29,14 +29,110 @@ menu_name: vec-2.0.1
 |--------|--------|---------|---------------|--------------|
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [TopologySegment]({{< relref "topologysegment.md" >}}) | segment | 0..* | 0..* | Specifies an ordered list of TopologySegments the routing goes through. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>segment</td>
+        <td><a href="{{< relref "topologysegment.md" >}}">TopologySegment</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>0..*</td>
+        <td>Specifies an ordered list of TopologySegments the routing goes through.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [SegmentMapping]({{< relref "segmentmapping.md" >}}) | 0..1 | mappedPosition | 1 |  |
-| [Dimension]({{< relref "dimension.md" >}}) | 0..1 | path | 0..1 | Specifies a path in the topology along which the dimension is defined. |
-| [Routing]({{< relref "routing.md" >}}) | 0..1 | path | 1 | Specifies a Path on the topology that is used for the routing. |
-| [OnWayPlacement]({{< relref "onwayplacement.md" >}}) | 0..1 | path | 0..1 | Specifies the topology path defining the way the OnWayPlacement takes in the topology. |
-| [TopologyBendingRestriction]({{< relref "topologybendingrestriction.md" >}}) | 0..1 | restrictedPath | 1 | <p> The path that defines the restricted way in the topology.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>mappedPosition</td>
+        <td>1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "segmentmapping.md" >}}">SegmentMapping</a></td>
+        <td>0..1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "onwayplacement.md" >}}">OnWayPlacement</a></td>
+        <td>0..1</td>
+        <td>Specifies the topology path defining the way the OnWayPlacement takes in the topology.</td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
+        <td>0..1</td>
+        <td>Specifies a path in the topology along which the dimension is defined.</td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td>1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "routing.md" >}}">Routing</a></td>
+        <td>0..1</td>
+        <td>Specifies a Path on the topology that is used for the routing.</td>
+    </tr>
+    <tr>
+        <td>restrictedPath</td>
+        <td>1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "topologybendingrestriction.md" >}}">TopologyBendingRestriction</a></td>
+        <td>0..1</td>
+        <td><p> The path that defines the restricted way in the topology.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

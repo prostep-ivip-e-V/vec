@@ -27,14 +27,74 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identificationA | [String]({{< relref "string.md" >}}) | 1 | <p>The identification of the Slot on side A </p> | [SlotMapping]({{< relref "slotmapping.md" >}}) |
-|identificationB | [String]({{< relref "string.md" >}}) | 1 | <p>The identification of the Slot on side B </p> | [SlotMapping]({{< relref "slotmapping.md" >}}) |
+|identificationA| [String]({{< relref "string.md" >}}) | 1 | <p>The identification of the Slot on side A </p> | [SlotMapping]({{< relref "slotmapping.md" >}}) |
+|identificationB| [String]({{< relref "string.md" >}}) | 1 | <p>The identification of the Slot on side B </p> | [SlotMapping]({{< relref "slotmapping.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [CavityMapping]({{< relref "cavitymapping.md" >}}) | cavityMapping | 0..* | 1 |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>cavityMapping</td>
+        <td><a href="{{< relref "cavitymapping.md" >}}">CavityMapping</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [Mapping]({{< relref "mapping.md" >}}) | 1 | slotMapping | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>slotMapping</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "mapping.md" >}}">Mapping</a></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

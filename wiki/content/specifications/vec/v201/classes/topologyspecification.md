@@ -27,17 +27,104 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [TopologyNode]({{< relref "topologynode.md" >}}) | topologyNode | 0..* | 1 | Specifies the TopologyNodes defined by the TopologySpecification. |
-| [TopologySegment]({{< relref "topologysegment.md" >}}) | topologySegment | 0..* | 1 | Specifies the TopologySegments defined by the TopologySpecification. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>topologySegment</td>
+        <td><a href="{{< relref "topologysegment.md" >}}">TopologySegment</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the TopologySegments defined by the TopologySpecification.</td>
+    </tr>
+    <tr>
+        <td>topologyNode</td>
+        <td><a href="{{< relref "topologynode.md" >}}">TopologyNode</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the TopologyNodes defined by the TopologySpecification.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [TopologyMappingSpecification]({{< relref "topologymappingspecification.md" >}}) |  | innerTopolgy | 1 |  |
-| [TopologyMappingSpecification]({{< relref "topologymappingspecification.md" >}}) |  | outerTopology | 1 |  |
-| [TopologyGroupSpecification]({{< relref "topologygroupspecification.md" >}}) | 0..* | topologySpecification | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>innerTopolgy</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "topologymappingspecification.md" >}}">TopologyMappingSpecification</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>outerTopology</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "topologymappingspecification.md" >}}">TopologyMappingSpecification</a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>topologySpecification</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "topologygroupspecification.md" >}}">TopologyGroupSpecification</a></td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

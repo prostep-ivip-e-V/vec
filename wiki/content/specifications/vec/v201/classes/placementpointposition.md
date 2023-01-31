@@ -27,9 +27,41 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|tangent | [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) | 0..1 | <p> A vector in the direction of the tangent on the <i>TopologySegment</i> that is attached to the <i>PlacementPoint</i> represented by this instance. The vector is defined in the coordinate system of the 3D model of the component.      </p> | [PlacementPointPosition]({{< relref "placementpointposition.md" >}}) |
+|tangent| [CartesianVector3D]({{< relref "cartesianvector3d.md" >}}) | 0..1 | <p> A vector in the direction of the tangent on the <i>TopologySegment</i> that is attached to the <i>PlacementPoint</i> represented by this instance. The vector is defined in the coordinate system of the 3D model of the component.      </p> | [PlacementPointPosition]({{< relref "placementpointposition.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 1 | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>placementPoint</td>
+        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

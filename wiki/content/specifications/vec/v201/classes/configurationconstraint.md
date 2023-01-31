@@ -27,14 +27,83 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the <i>ConfigurationConstraint</i>. The identification is guaranteed to be unique within the <i>ConfigurableElement</i> and does not change over the time.      </p> | [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the <i>ConfigurationConstraint</i>. The identification is guaranteed to be unique within the <i>ConfigurableElement</i> and does not change over the time.      </p> | [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) | configInfo | 0..1 |  | <p> References the configuration information that applies to the ConfigurationConstraint.      </p> |
-| [ApplicationConstraint]({{< relref "applicationconstraint.md" >}}) | applicationConstraint | 0..* |  | <p> References the application constraint that applies to the ConfigurationConstraint.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>applicationConstraint</td>
+        <td><a href="{{< relref "applicationconstraint.md" >}}">ApplicationConstraint</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> References the application constraint that applies to the ConfigurationConstraint.      </p></td>
+    </tr>
+    <tr>
+        <td>configInfo</td>
+        <td><a href="{{< relref "variantconfiguration.md" >}}">VariantConfiguration</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> References the configuration information that applies to the ConfigurationConstraint.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [ConfigurableElement]({{< relref "configurableelement.md" >}}) | 1 | configurationConstraint | 0..* | <p> Contains or more <i>ConfigurationContraints</i> that apply to this <i>ConfigurableElement.</i> This is explained in more details in the recommendation chapter / model diagram &quot;Variants&quot;.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>configurationConstraint</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
+        <td>1</td>
+        <td><p> Contains or more <i>ConfigurationContraints</i> that apply to this <i>ConfigurableElement.</i> This is explained in more details in the recommendation chapter / model diagram &quot;Variants&quot;.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

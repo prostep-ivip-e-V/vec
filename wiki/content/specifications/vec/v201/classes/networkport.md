@@ -27,18 +27,105 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the NetworkPort. The identification is guaranteed to be unique within the NetSpecification.      </p> | [NetworkPort]({{< relref "networkport.md" >}}) |
-|signalDirection | [SignalDirection]({{< relref "signaldirection.md" >}}) | 0..1 | <p>Specifies the direction of the signal on this NetworkPort.  </p> | [NetworkPort]({{< relref "networkport.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>Room for additional, human readable information about the NetworkPort. </p> | [NetworkPort]({{< relref "networkport.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the NetworkPort. The identification is guaranteed to be unique within the NetSpecification.      </p> | [NetworkPort]({{< relref "networkport.md" >}}) |
+|signalDirection| [SignalDirection]({{< relref "signaldirection.md" >}}) | 0..1 | <p>Specifies the direction of the signal on this NetworkPort.  </p> | [NetworkPort]({{< relref "networkport.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>Room for additional, human readable information about the NetworkPort. </p> | [NetworkPort]({{< relref "networkport.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [NetType]({{< relref "nettype.md" >}}) | netType | 0..1 | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>netType</td>
+        <td><a href="{{< relref "nettype.md" >}}">NetType</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [Net]({{< relref "net.md" >}}) | 1 | networkPort | 1..* | References the NetworkPorts that are connected by the Net. |
-| [ComponentPort]({{< relref "componentport.md" >}}) | 0..* | networkPort | 0..1 | References the NetworkPort that is realized by the ComponentPort. |
-| [NetworkPortViewItem]({{< relref "networkportviewitem.md" >}}) | 0..* | networkPort | 1 | References the <i>NetworkPort</i> that is represented by this <i>NetworkPortViewItem.</i> |
-| [NetworkNode]({{< relref "networknode.md" >}}) | 1 | port | 0..* | Specifies the NetworkPorts of a NetworkNode. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>networkPort</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "componentport.md" >}}">ComponentPort</a></td>
+        <td>0..*</td>
+        <td>References the NetworkPort that is realized by the ComponentPort.</td>
+    </tr>
+    <tr>
+        <td>networkPort</td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "net.md" >}}">Net</a></td>
+        <td>1</td>
+        <td>References the NetworkPorts that are connected by the Net.</td>
+    </tr>
+    <tr>
+        <td>networkPort</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "networkportviewitem.md" >}}">NetworkPortViewItem</a></td>
+        <td>0..*</td>
+        <td>References the <i>NetworkPort</i> that is represented by this <i>NetworkPortViewItem.</i></td>
+    </tr>
+    <tr>
+        <td>port</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
+        <td>1</td>
+        <td>Specifies the NetworkPorts of a NetworkNode.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

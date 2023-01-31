@@ -27,10 +27,42 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|name | [String]({{< relref "string.md" >}}) | 1 | <p>Specifies the type of the cavity (e.g. MQS, DFK, ...). </p> | [TerminalType]({{< relref "terminaltype.md" >}}) |
-|nominalSize | [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the nominal size of terminals that fit into the cavity. (e.g. 2x4).  </p> | [TerminalType]({{< relref "terminaltype.md" >}}) |
+|name| [String]({{< relref "string.md" >}}) | 1 | <p>Specifies the type of the cavity (e.g. MQS, DFK, ...). </p> | [TerminalType]({{< relref "terminaltype.md" >}}) |
+|nominalSize| [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the nominal size of terminals that fit into the cavity. (e.g. 2x4).  </p> | [TerminalType]({{< relref "terminaltype.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [TerminalReceptionSpecification]({{< relref "terminalreceptionspecification.md" >}}) | 0..1 | terminalType | 0..1 | <p> Specifies the terminal type that is associated with the terminal reception.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>terminalType</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "terminalreceptionspecification.md" >}}">TerminalReceptionSpecification</a></td>
+        <td>0..1</td>
+        <td><p> Specifies the terminal type that is associated with the terminal reception.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

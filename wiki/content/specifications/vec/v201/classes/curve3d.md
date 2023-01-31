@@ -28,7 +28,39 @@ menu_name: vec-2.0.1
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
 
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [GeometrySegment3D]({{< relref "geometrysegment3d.md" >}}) |  | curve | 0..* | <p> Specifies an ordered list of curves which describe the centerline of the segment. If a segment is described by more than one curve, the centrelines of the individual curves are aligned in the order of this association.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>curve</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td><a href="{{< relref "geometrysegment3d.md" >}}">GeometrySegment3D</a></td>
+        <td></td>
+        <td><p> Specifies an ordered list of curves which describe the centerline of the segment. If a segment is described by more than one curve, the centrelines of the individual curves are aligned in the order of this association.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

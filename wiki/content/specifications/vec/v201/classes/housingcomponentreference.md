@@ -27,16 +27,103 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the HousingComponentReference. The identification is guaranteed to be unique within the EEComponentRole.      </p> | [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the HousingComponentReference. The identification is guaranteed to be unique within the EEComponentRole.      </p> | [HousingComponentReference]({{< relref "housingcomponentreference.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [ConnectorHousingRole]({{< relref "connectorhousingrole.md" >}}) | connectorHousingRole | 0..1 | 0..1 |  |
-| [HousingComponent]({{< relref "housingcomponent.md" >}}) | housingComponent | 1 | 0..* | Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401) |
-| [ComponentConnector]({{< relref "componentconnector.md" >}}) | componentConnector | 0..* | 0..* | References the ComponentConnector that is realized by the referenced HousingComponentReference. |
-| [PinComponentReference]({{< relref "pincomponentreference.md" >}}) | pinComponentRef | 0..* | 1 | Specifies the PinComponentReferences used in the HousingComponentReference.  (KBLFRM-401) |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>pinComponentRef</td>
+        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the PinComponentReferences used in the HousingComponentReference.  (KBLFRM-401)</td>
+    </tr>
+    <tr>
+        <td>componentConnector</td>
+        <td><a href="{{< relref "componentconnector.md" >}}">ComponentConnector</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the ComponentConnector that is realized by the referenced HousingComponentReference.</td>
+    </tr>
+    <tr>
+        <td>connectorHousingRole</td>
+        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>housingComponent</td>
+        <td><a href="{{< relref "housingcomponent.md" >}}">HousingComponent</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401)</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [EEComponentRole]({{< relref "eecomponentrole.md" >}}) | 1 | housingComponentRef | 0..* | Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401) |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>housingComponentRef</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "eecomponentrole.md" >}}">EEComponentRole</a></td>
+        <td>1</td>
+        <td>Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401)</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

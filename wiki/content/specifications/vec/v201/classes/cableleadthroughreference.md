@@ -27,15 +27,93 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the CableLeadThroughReference. The identification is guaranteed to be unique within the GrommetRole.      </p> | [CableLeadThroughReference]({{< relref "cableleadthroughreference.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the CableLeadThroughReference. The identification is guaranteed to be unique within the GrommetRole.      </p> | [CableLeadThroughReference]({{< relref "cableleadthroughreference.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [CavityPlugRole]({{< relref "cavityplugrole.md" >}}) | usedPlugs | 0..* | 0..* | <p> References the plugs that are used with this CableLeadThroughReference. This association might be a 150% selection.      </p> |
-| [CavitySealRole]({{< relref "cavitysealrole.md" >}}) | usedSeals | 0..* | 0..* |  |
-| [CableLeadThrough]({{< relref "cableleadthrough.md" >}}) | cableLeadThrough | 0..1 |  |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>usedPlugs</td>
+        <td><a href="{{< relref "cavityplugrole.md" >}}">CavityPlugRole</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the plugs that are used with this CableLeadThroughReference. This association might be a 150% selection.      </p></td>
+    </tr>
+    <tr>
+        <td>usedSeals</td>
+        <td><a href="{{< relref "cavitysealrole.md" >}}">CavitySealRole</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>cableLeadThrough</td>
+        <td><a href="{{< relref "cableleadthrough.md" >}}">CableLeadThrough</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [GrommetRole]({{< relref "grommetrole.md" >}}) | 1 | cableLeadThroughReference | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>cableLeadThroughReference</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "grommetrole.md" >}}">GrommetRole</a></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

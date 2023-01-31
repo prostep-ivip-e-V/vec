@@ -27,9 +27,13 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|class | [RobustnessClass]({{< relref "robustnessclass.md" >}}) | 1 | <p> Specifies the identifier of a robustness class defined by the robustness class reference system. Robustness classes are for example: oil, petrol, UV, water. Specific known and used classes are defined in an open enumeration.      </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
-|classKey | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a key for the robustness level defined in the specified robustness class (e.g. A, B, C). The classKey is the key as specified in the reference system and no additional syntax or prefixes, e.g. for ISO&#160;20653 (Ingress Protection)&#160;it is <i>&quot;9K&quot;</i> and not <i>&quot;IPX9K&quot;.</i>      </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
-|classReferenceSystem | [RobustnessClassReferenceSystem]({{< relref "robustnessclassreferencesystem.md" >}}) | 1 | <p> The identification of the robustness class reference system, which is defining possible values and the semantic of robustness classes and robustness class keys. Specific known and used reference systems are defined in an open enumeration.     </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
-|hasRobustness | [Boolean]({{< relref "boolean.md" >}}) | 1 | <p>Specifies if the described element has a robustness in the specified robustness class. (see KBLFRM-260) </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
-|description | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p> On optional human readable description of the robustness (e.g. the name).      </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
+|class| [RobustnessClass]({{< relref "robustnessclass.md" >}}) | 1 | <p> Specifies the identifier of a robustness class defined by the robustness class reference system. Robustness classes are for example: oil, petrol, UV, water. Specific known and used classes are defined in an open enumeration.      </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
+|classKey| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a key for the robustness level defined in the specified robustness class (e.g. A, B, C). The classKey is the key as specified in the reference system and no additional syntax or prefixes, e.g. for ISO&#160;20653 (Ingress Protection)&#160;it is <i>&quot;9K&quot;</i> and not <i>&quot;IPX9K&quot;.</i>      </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
+|classReferenceSystem| [RobustnessClassReferenceSystem]({{< relref "robustnessclassreferencesystem.md" >}}) | 1 | <p> The identification of the robustness class reference system, which is defining possible values and the semantic of robustness classes and robustness class keys. Specific known and used reference systems are defined in an open enumeration.     </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
+|hasRobustness| [Boolean]({{< relref "boolean.md" >}}) | 1 | <p>Specifies if the described element has a robustness in the specified robustness class. (see KBLFRM-260) </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
+|description| [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p> On optional human readable description of the robustness (e.g. the name).      </p> | [RobustnessProperties]({{< relref "robustnessproperties.md" >}}) |
+
+
+
+
 

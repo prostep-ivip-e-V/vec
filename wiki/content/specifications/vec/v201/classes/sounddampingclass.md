@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|classKey | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a key for the level defined in the sound damping class (e.g. A, B, C).      </p> | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
-|referenceSystem | [String]({{< relref "string.md" >}}) | 1 | <p> The identification of the sound damping class reference system, which is defining possible values and the semantic of sound damping keys.      </p> | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
+|classKey| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a key for the level defined in the sound damping class (e.g. A, B, C).      </p> | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
+|referenceSystem| [String]({{< relref "string.md" >}}) | 1 | <p> The identification of the sound damping class reference system, which is defining possible values and the semantic of sound damping keys.      </p> | [SoundDampingClass]({{< relref "sounddampingclass.md" >}}) |
+
+
+
+
 

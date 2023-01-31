@@ -27,20 +27,107 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the variant configuration. The identification is guaranteed to be unique within the specification and does not change over the time.      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>On optional human readable description of the variant configuration. </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
-|logisticControlString | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a logisticControlString which can be used if the variant management is not done by boolean logic.      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
-|logisticControlExpression | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a logisticControlExpression expressed as boolean term.      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
-|configurationType | [VariantConfigurationType]({{< relref "variantconfigurationtype.md" >}}) | 0..1 | <p> Allows the classification of a VariantConfiguration.     </p>      <p> (see KBLFRM-250, KBLFRM-314, KBLFRM-290)      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the variant configuration. The identification is guaranteed to be unique within the specification and does not change over the time.      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>On optional human readable description of the variant configuration. </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
+|logisticControlString| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a logisticControlString which can be used if the variant management is not done by boolean logic.      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
+|logisticControlExpression| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a logisticControlExpression expressed as boolean term.      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
+|configurationType| [VariantConfigurationType]({{< relref "variantconfigurationtype.md" >}}) | 0..1 | <p> Allows the classification of a VariantConfiguration.     </p>      <p> (see KBLFRM-250, KBLFRM-314, KBLFRM-290)      </p> | [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) | baseInclusion | 0..1 |  | <p> A <i>VariantConfiguration </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>baseInclusion</td>
+        <td><a href="{{< relref "variantconfiguration.md" >}}">VariantConfiguration</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> A <i>VariantConfiguration </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [VariantConfiguration]({{< relref "variantconfiguration.md" >}}) |  | baseInclusion | 0..1 | <p> A <i>VariantConfiguration </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.      </p> |
-| [ConfigurationConstraint]({{< relref "configurationconstraint.md" >}}) |  | configInfo | 0..1 | <p> References the configuration information that applies to the ConfigurationConstraint.      </p> |
-| [ConfigurableElement]({{< relref "configurableelement.md" >}}) | 0..* | configInfo | 0..1 | <p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p> |
-| [VariantConfigurationSpecification]({{< relref "variantconfigurationspecification.md" >}}) | 1 | variantConfiguration | 0..* | Specifies the individual VariantConfigurations defined in the VariantConfigurationSpecification. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>baseInclusion</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "variantconfiguration.md" >}}">VariantConfiguration</a></td>
+        <td></td>
+        <td><p> A <i>VariantConfiguration </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.      </p></td>
+    </tr>
+    <tr>
+        <td>{{< deprecated since="[]" reason="[]">}}configInfo</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
+        <td>0..*</td>
+        <td><p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
+    </tr>
+    <tr>
+        <td>configInfo</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "configurationconstraint.md" >}}">ConfigurationConstraint</a></td>
+        <td></td>
+        <td><p> References the configuration information that applies to the ConfigurationConstraint.      </p></td>
+    </tr>
+    <tr>
+        <td>variantConfiguration</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "variantconfigurationspecification.md" >}}">VariantConfigurationSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the individual VariantConfigurations defined in the VariantConfigurationSpecification.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

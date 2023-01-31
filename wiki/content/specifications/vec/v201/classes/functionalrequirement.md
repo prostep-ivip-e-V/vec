@@ -27,7 +27,11 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|type | [FunctionalRequirementType]({{< relref "functionalrequirementtype.md" >}}) | 0..1 | <p> The type defines to which category a requirement belongs (e.g. &#160;Functional&#160;Safety).      </p> | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) |
-|referenceSystem | [String]({{< relref "string.md" >}}) | 1 | <p> The reference system identifies the system in which the values are defined (e.g. ISO26262)      </p> | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) |
-|value | [String]({{< relref "string.md" >}}) | 1 | <p> The value that represents the functional requirement (e.g. ASIL&#160;D).      </p>      <p> &#160;      </p> | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) |
+|type| [FunctionalRequirementType]({{< relref "functionalrequirementtype.md" >}}) | 0..1 | <p> The type defines to which category a requirement belongs (e.g. &#160;Functional&#160;Safety).      </p> | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) |
+|referenceSystem| [String]({{< relref "string.md" >}}) | 1 | <p> The reference system identifies the system in which the values are defined (e.g. ISO26262)      </p> | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) |
+|value| [String]({{< relref "string.md" >}}) | 1 | <p> The value that represents the functional requirement (e.g. ASIL&#160;D).      </p>      <p> &#160;      </p> | [FunctionalRequirement]({{< relref "functionalrequirement.md" >}}) |
+
+
+
+
 

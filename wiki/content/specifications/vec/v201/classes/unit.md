@@ -27,16 +27,111 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|exponent | [Integer]({{< relref "integer.md" >}}) | 0..1 | <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p> | [Unit]({{< relref "unit.md" >}}) |
+|exponent| [Integer]({{< relref "integer.md" >}}) | 0..1 | <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p> | [Unit]({{< relref "unit.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | 0..* | baseUnit | 1 |  |
-| [LocalGeometrySpecification]({{< relref "localgeometryspecification.md" >}}) |  | baseUnit | 1 | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
-| [CavityPositionDetail]({{< relref "cavitypositiondetail.md" >}}) | 0..* | baseUnit | 1 | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points) of this <i>CavityPositionDetail&#160;</i>are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
-| [BuildingBlockSpecification3D]({{< relref "buildingblockspecification3d.md" >}}) | 0..* | baseUnit | 1 |  |
-| [CompositeUnit]({{< relref "compositeunit.md" >}}) |  | factors | 1..* | <p> References the <i>Units</i> that are used as factors to create the <i>CompositeUnit.</i>      </p> |
-| [VecContent]({{< relref "veccontent.md" >}}) | 1 | unit | 0..* | Specifies the Units used in the VEC-file. |
-| [Dimension]({{< relref "dimension.md" >}}) | 0..* | unitComponent | 1 |  |
-| [ValueWithUnit]({{< relref "valuewithunit.md" >}}) | 0..* | unitComponent | 1 | References the unit of the value. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>baseUnit</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "buildingblockspecification3d.md" >}}">BuildingBlockSpecification3D</a></td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>baseUnit</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "cavitypositiondetail.md" >}}">CavityPositionDetail</a></td>
+        <td>0..*</td>
+        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points) of this <i>CavityPositionDetail&#160;</i>are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+    </tr>
+    <tr>
+        <td>baseUnit</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "buildingblockspecification2d.md" >}}">BuildingBlockSpecification2D</a></td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>baseUnit</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "localgeometryspecification.md" >}}">LocalGeometrySpecification</a></td>
+        <td></td>
+        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+    </tr>
+    <tr>
+        <td>factors</td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "compositeunit.md" >}}">CompositeUnit</a></td>
+        <td></td>
+        <td><p> References the <i>Units</i> that are used as factors to create the <i>CompositeUnit.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>unit</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
+        <td>1</td>
+        <td>Specifies the Units used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>unitComponent</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "valuewithunit.md" >}}">ValueWithUnit</a></td>
+        <td>0..*</td>
+        <td>References the unit of the value.</td>
+    </tr>
+    <tr>
+        <td>unitComponent</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

@@ -27,13 +27,54 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|slotNumber | [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the number of the slot. This must be unique within a ConnectorHousingSpecification.  </p> | [AbstractSlot]({{< relref "abstractslot.md" >}}) |
-|colorInformation | [Color]({{< relref "color.md" >}}) | 0..* | <p> Specifies the color of the slot.      </p> | [Slot]({{< relref "slot.md" >}}) |
-|sealingType | [SlotSealingType]({{< relref "slotsealingtype.md" >}}) | 0..1 | <p> Specifies the type of the sealing of the slot, if sealed. The values are defined in an <i>OpenEnumeration</i>.      </p> | [Slot]({{< relref "slot.md" >}}) |
-|permittedTerminalSupplierCompanyNames | [String]({{< relref "string.md" >}}) | 0..* | <p> If this attribute is defined, it is only permitted to use terminals of one of the listed terminal suppliers.      </p>      <p> The used company name shall be same as the one used as <i>PartVersion.companyName</i> for part numbers of this supplier.      </p> | [Slot]({{< relref "slot.md" >}}) |
+|slotNumber| [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the number of the slot. This must be unique within a ConnectorHousingSpecification.  </p> | [AbstractSlot]({{< relref "abstractslot.md" >}}) |
+|colorInformation| [Color]({{< relref "color.md" >}}) | 0..* | <p> Specifies the color of the slot.      </p> | [Slot]({{< relref "slot.md" >}}) |
+|sealingType| [SlotSealingType]({{< relref "slotsealingtype.md" >}}) | 0..1 | <p> Specifies the type of the sealing of the slot, if sealed. The values are defined in an <i>OpenEnumeration</i>.      </p> | [Slot]({{< relref "slot.md" >}}) |
+|permittedTerminalSupplierCompanyNames| [String]({{< relref "string.md" >}}) | 0..* | <p> If this attribute is defined, it is only permitted to use terminals of one of the listed terminal suppliers.      </p>      <p> The used company name shall be same as the one used as <i>PartVersion.companyName</i> for part numbers of this supplier.      </p> | [Slot]({{< relref "slot.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [Cavity]({{< relref "cavity.md" >}}) | cavity | 1..* | 1 | <p> Specifies the Cavities forming the Slot.      </p> |
-| [PartRelation]({{< relref "partrelation.md" >}}) | supplementaryParts | 0..* | 0..* | <p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>supplementaryParts</td>
+        <td><a href="{{< relref "partrelation.md" >}}">PartRelation</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p></td>
+    </tr>
+    <tr>
+        <td>cavity</td>
+        <td><a href="{{< relref "cavity.md" >}}">Cavity</a></td>
+        <td>1..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the Cavities forming the Slot.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

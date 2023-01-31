@@ -27,10 +27,42 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|degree | [Integer]({{< relref "integer.md" >}}) | 1 | <p> Defines the degree of the NURBS (for details see the class description of <i>NURBSCurve).</i>      </p> | [NURBSCurve]({{< relref "nurbscurve.md" >}}) |
-|knots | [Double]({{< relref "double.md" >}}) | 0..* | <p> Defines the knot-vector of the NURBS(for details see the class description of <i>NURBSCurve).</i>      </p> | [NURBSCurve]({{< relref "nurbscurve.md" >}}) |
+|degree| [Integer]({{< relref "integer.md" >}}) | 1 | <p> Defines the degree of the NURBS (for details see the class description of <i>NURBSCurve).</i>      </p> | [NURBSCurve]({{< relref "nurbscurve.md" >}}) |
+|knots| [Double]({{< relref "double.md" >}}) | 0..* | <p> Defines the knot-vector of the NURBS(for details see the class description of <i>NURBSCurve).</i>      </p> | [NURBSCurve]({{< relref "nurbscurve.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [NURBSControlPoint]({{< relref "nurbscontrolpoint.md" >}}) | controlPoint | 0..* |  | <p> Defines the control points of the NURBS curve (for details see the class description of <i>NURBSCurve)</i>      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>controlPoint</td>
+        <td><a href="{{< relref "nurbscontrolpoint.md" >}}">NURBSControlPoint</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td></td>
+        <td><p> Defines the control points of the NURBS curve (for details see the class description of <i>NURBSCurve)</i>      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

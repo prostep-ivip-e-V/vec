@@ -27,15 +27,93 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the PlacementPointReference. The identification is guaranteed to be unique within the containing PlaceableElementRole.      </p> | [PlacementPointReference]({{< relref "placementpointreference.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the PlacementPointReference. The identification is guaranteed to be unique within the containing PlaceableElementRole.      </p> | [PlacementPointReference]({{< relref "placementpointreference.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [OccurrenceOrUsage]({{< relref "occurrenceorusage.md" >}}) | usedSupplementaryParts | 0..* | 0..* |  |
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) | placementPoint | 1 | 0..* | <p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>usedSupplementaryParts</td>
+        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>placementPoint</td>
+        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [Location]({{< relref "location.md" >}}) | 0..* | placedPlacementPoints | 0..* | <p> References the <i>PlacementPointReference </i>that is placed by this location.      </p> |
-| [PlaceableElementRole]({{< relref "placeableelementrole.md" >}}) | 1 | placementPointReference | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>placedPlacementPoints</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "location.md" >}}">Location</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>PlacementPointReference </i>that is placed by this location.      </p></td>
+    </tr>
+    <tr>
+        <td>placementPointReference</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "placeableelementrole.md" >}}">PlaceableElementRole</a></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

@@ -27,16 +27,103 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the <i>MatingPoint</i>. The identification is guaranteed to be unique within a <i>CouplingPoint</i>.      </p> | [MatingPoint]({{< relref "matingpoint.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the <i>MatingPoint</i>. The identification is guaranteed to be unique within a <i>CouplingPoint</i>.      </p> | [MatingPoint]({{< relref "matingpoint.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [Connection]({{< relref "connection.md" >}}) | connection | 0..* | 0..* | <p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p> |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | firstTerminalRole | 1 | 0..* | References the first terminal that is mated. |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | secondTerminalRole | 1 | 0..* | References the second terminal that is mated. |
-| [MatingDetail]({{< relref "matingdetail.md" >}}) | matingDetail | 0..* | 1 | Specifies the MatingDetails, if a detailed description of the relationships between TerminalReceptions and TerminalReceptions is needed. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>secondTerminalRole</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the second terminal that is mated.</td>
+    </tr>
+    <tr>
+        <td>matingDetail</td>
+        <td><a href="{{< relref "matingdetail.md" >}}">MatingDetail</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the MatingDetails, if a detailed description of the relationships between TerminalReceptions and TerminalReceptions is needed.</td>
+    </tr>
+    <tr>
+        <td>firstTerminalRole</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the first terminal that is mated.</td>
+    </tr>
+    <tr>
+        <td>connection</td>
+        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [CouplingPoint]({{< relref "couplingpoint.md" >}}) | 1 | matingPoint | 0..* | <p> Specifies the <i>MatingPoints</i> defined within the <i>CouplingPoint</i>.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.</th>
+           <th>Unique</th>
+           <th>Ordered</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>matingPoint</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "couplingpoint.md" >}}">CouplingPoint</a></td>
+        <td>1</td>
+        <td><p> Specifies the <i>MatingPoints</i> defined within the <i>CouplingPoint</i>.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
