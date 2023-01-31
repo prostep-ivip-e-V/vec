@@ -1,10 +1,10 @@
 {{- $since := .Get "since" -}}
 {{- $reason := .Get "reason" -}}
 {{- $tooltip := "" -}}
-{{- if gt (len $since) 0 -}}
+{{- if (gt (len ($since | default "")) 0) -}}
 {{-   $tooltip =  printf "<em>Since: </em>%s<br>" $since -}}
 {{- end -}}
-{{- if gt (len $reason) 0 -}}
+{{- if (gt (len ($reason | default "")) 0) -}}
 {{-   $tooltip = printf "%s%s" $tooltip $reason -}}
 {{- end -}}
 <span class="badge text-light bg-warning" data-toggle="tooltip" data-html="true" title="{{$tooltip}}">Deprecated</span><br>
