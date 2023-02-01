@@ -53,6 +53,26 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>cartesianPoint</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
+        <td>0..*</td>
+        <td>References the CartesianPoint2D where the GeometryNode2D is located.</td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectionviewspecification.md" >}}">ConnectionViewSpecification</a></td>
+        <td>0..1</td>
+        <td>Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i></td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
@@ -70,26 +90,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "buildingblockspecification2d.md" >}}">BuildingBlockSpecification2D</a></td>
         <td>0..1</td>
         <td><p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p></td>
-    </tr>
-    <tr>
-        <td>cartesianPoint</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connectionviewspecification.md" >}}">ConnectionViewSpecification</a></td>
-        <td>0..1</td>
-        <td>Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i></td>
-    </tr>
-    <tr>
-        <td>cartesianPoint</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
-        <td>0..*</td>
-        <td>References the CartesianPoint2D where the GeometryNode2D is located.</td>
     </tr>
     <tr>
         <td>centerPoint</td>

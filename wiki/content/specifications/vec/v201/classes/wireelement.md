@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>subWireElement</td>
-        <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td><p> Defines the <i>subWireElements </i>of this <i>WireElement</i>. The <i>subWireElements </i>shall be consistent with the <i>subWireElementSpecifications</i> of the <i>WireElementSpecification </i>referenced by this <i>WireElement </i>and shall resemble that hierarchy.      </p></td>
-    </tr>
-    <tr>
         <td>wireElementSpecification</td>
         <td><a href="{{< relref "wireelementspecification.md" >}}">WireElementSpecification</a></td>
         <td>1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>subWireElement</td>
+        <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> Defines the <i>subWireElements </i>of this <i>WireElement</i>. The <i>subWireElements </i>shall be consistent with the <i>subWireElementSpecifications</i> of the <i>WireElementSpecification </i>referenced by this <i>WireElement </i>and shall resemble that hierarchy.      </p></td>
     </tr>
     </tbody>
 </table>

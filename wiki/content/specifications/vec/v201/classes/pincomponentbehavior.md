@@ -54,6 +54,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>signal</td>
+        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p></td>
+    </tr>
+    <tr>
         <td>currentInformation</td>
         <td><a href="{{< relref "pincurrentinformation.md" >}}">PinCurrentInformation</a></td>
         <td>0..*</td>
@@ -62,16 +72,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td><p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p></td>
-    </tr>
-    <tr>
-        <td>voltageInformation</td>
-        <td><a href="{{< relref "pinvoltageinformation.md" >}}">PinVoltageInformation</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p></td>
     </tr>
     <tr>
         <td>opticalInformation</td>
@@ -84,14 +84,14 @@ menu_name: vec-2.0.1
         <td><p> Specifies the optical information of the pin, if it has the type optical.      </p></td>
     </tr>
     <tr>
-        <td>signal</td>
-        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
-        <td>0..1</td>
-        <td>N</td>
+        <td>voltageInformation</td>
+        <td><a href="{{< relref "pinvoltageinformation.md" >}}">PinVoltageInformation</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..*</td>
-        <td><p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p></td>
+        <td>1</td>
+        <td><p> Specifies the voltage information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the voltage values of a pin can be defined for different types and times it is possible to define multiple <i>PinVoltageInformations</i> for a <i>PinComponentBehavior</i>.      </p></td>
     </tr>
     </tbody>
 </table>

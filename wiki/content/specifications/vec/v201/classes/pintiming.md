@@ -57,9 +57,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "pinvoltageinformation.md" >}}">PinVoltageInformation</a></td>
+        <td><a href="{{< relref "pincurrentinformation.md" >}}">PinCurrentInformation</a></td>
         <td>0..1</td>
-        <td><p> Specifies the timing of the <i>PinVoltageInformation</i>.      </p></td>
+        <td><p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p></td>
     </tr>
     <tr>
         <td>timing</td>
@@ -67,9 +67,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "pincurrentinformation.md" >}}">PinCurrentInformation</a></td>
+        <td><a href="{{< relref "pinvoltageinformation.md" >}}">PinVoltageInformation</a></td>
         <td>0..1</td>
-        <td><p> Specifies the timing of the <i>PinCurrentInformation.</i>      </p></td>
+        <td><p> Specifies the timing of the <i>PinVoltageInformation</i>.      </p></td>
     </tr>
     </tbody>
 </table>

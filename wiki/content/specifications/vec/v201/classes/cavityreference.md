@@ -50,6 +50,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>componentPort</td>
+        <td><a href="{{< relref "componentport.md" >}}">ComponentPort</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p></td>
+    </tr>
+    <tr>
         <td>integratedTerminalRole</td>
         <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
         <td>0..1</td>
@@ -68,16 +78,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Points to the cavity referenced by the cavity reference.</td>
-    </tr>
-    <tr>
-        <td>componentPort</td>
-        <td><a href="{{< relref "componentport.md" >}}">ComponentPort</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p></td>
     </tr>
     </tbody>
 </table>

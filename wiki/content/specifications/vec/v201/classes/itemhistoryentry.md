@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>predecessorVersion</td>
-        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the ItemVersion that is the predecessor in the ItemHistoryEntry.</td>
-    </tr>
-    <tr>
         <td>successorVersion</td>
         <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
         <td>1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the ItemVersion that is the successor in the ItemHistoryEntry.</td>
+    </tr>
+    <tr>
+        <td>predecessorVersion</td>
+        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the ItemVersion that is the predecessor in the ItemHistoryEntry.</td>
     </tr>
     </tbody>
 </table>

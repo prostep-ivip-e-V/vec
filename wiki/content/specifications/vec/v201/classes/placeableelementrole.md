@@ -50,14 +50,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>placeableElementSpecification</td>
-        <td><a href="{{< relref "placeableelementspecification.md" >}}">PlaceableElementSpecification</a></td>
-        <td>1</td>
-        <td>N</td>
+        <td>measurementPointReference</td>
+        <td><a href="{{< relref "measurementpointreference.md" >}}">MeasurementPointReference</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>PlaceableElementSpecification</i> that is instanced by this <i>PlaceableElementRole.</i>      </p></td>
+        <td>1</td>
+        <td></td>
     </tr>
     <tr>
         <td>placementPointReference</td>
@@ -70,14 +70,14 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>measurementPointReference</td>
-        <td><a href="{{< relref "measurementpointreference.md" >}}">MeasurementPointReference</a></td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>placeableElementSpecification</td>
+        <td><a href="{{< relref "placeableelementspecification.md" >}}">PlaceableElementSpecification</a></td>
+        <td>1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
-        <td></td>
+        <td>0..*</td>
+        <td><p> References the <i>PlaceableElementSpecification</i> that is instanced by this <i>PlaceableElementRole.</i>      </p></td>
     </tr>
     </tbody>
 </table>

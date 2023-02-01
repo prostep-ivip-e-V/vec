@@ -51,16 +51,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>insertionPosition</td>
-        <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> The position of the center of the cavity in the entrance surface of the connector during the insertion process.      </p></td>
-    </tr>
-    <tr>
         <td>insertionVector</td>
         <td><a href="{{< relref "cartesianvector3d.md" >}}">CartesianVector3D</a></td>
         <td>0..1</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td></td>
         <td>The direction in which a terminal is inserted from the <i>InsertionPosition</i> into the connector. The amount of the vector defines the length auf the cavity&#160;(The distance the terminal must travel from the <i>InsertionPostion </i>to its final position.</td>
+    </tr>
+    <tr>
+        <td>insertionPosition</td>
+        <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> The position of the center of the cavity in the entrance surface of the connector during the insertion process.      </p></td>
     </tr>
     <tr>
         <td>baseUnit</td>

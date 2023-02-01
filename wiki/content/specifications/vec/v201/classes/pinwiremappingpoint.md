@@ -49,8 +49,8 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>contactPoint</td>
-        <td><a href="{{< relref "contactpoint.md" >}}">ContactPoint</a></td>
+        <td>pinComponentReference</td>
+        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -59,8 +59,8 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>pinComponentReference</td>
-        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
+        <td>contactPoint</td>
+        <td><a href="{{< relref "contactpoint.md" >}}">ContactPoint</a></td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>

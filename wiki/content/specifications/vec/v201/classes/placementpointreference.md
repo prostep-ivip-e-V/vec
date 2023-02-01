@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>usedSupplementaryParts</td>
-        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td></td>
-    </tr>
-    <tr>
         <td>placementPoint</td>
         <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
         <td>1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>usedSupplementaryParts</td>
+        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
     </tr>
     </tbody>
 </table>

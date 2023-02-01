@@ -50,26 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>housingComponentRef</td>
-        <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401)</td>
-    </tr>
-    <tr>
-        <td>componentNode</td>
-        <td><a href="{{< relref "componentnode.md" >}}">ComponentNode</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341</td>
-    </tr>
-    <tr>
         <td>EEComponentSpecification</td>
         <td><a href="{{< relref "eecomponentspecification.md" >}}">EEComponentSpecification</a></td>
         <td>1</td>
@@ -88,6 +68,26 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the ExtensionSlotReferences used in the EEComponentRole.</td>
+    </tr>
+    <tr>
+        <td>componentNode</td>
+        <td><a href="{{< relref "componentnode.md" >}}">ComponentNode</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341</td>
+    </tr>
+    <tr>
+        <td>housingComponentRef</td>
+        <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401)</td>
     </tr>
     </tbody>
 </table>

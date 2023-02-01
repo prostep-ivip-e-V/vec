@@ -65,6 +65,16 @@ menu_name: vec-2.0.1
         <td>Specifies the ends of the WireElementReference for contacting purposes.</td>
     </tr>
     <tr>
+        <td>signal</td>
+        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the signal that is transmitted by the WireElementReference.</td>
+    </tr>
+    <tr>
         <td>wireLength</td>
         <td><a href="{{< relref "wirelength.md" >}}">WireLength</a></td>
         <td>0..*</td>
@@ -73,6 +83,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the different length of a wire.</td>
+    </tr>
+    <tr>
+        <td>referencedWireElement</td>
+        <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the WireElement that is represented by the WireElementReference.      </p></td>
     </tr>
     <tr>
         <td>connectionGroup</td>
@@ -93,26 +113,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341</td>
-    </tr>
-    <tr>
-        <td>signal</td>
-        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the signal that is transmitted by the WireElementReference.</td>
-    </tr>
-    <tr>
-        <td>referencedWireElement</td>
-        <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the WireElement that is represented by the WireElementReference.      </p></td>
     </tr>
     </tbody>
 </table>

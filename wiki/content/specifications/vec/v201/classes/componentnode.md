@@ -54,16 +54,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>childNode</td>
-        <td><a href="{{< relref "componentnode.md" >}}">ComponentNode</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td>Specifies the ComponentNodes that are a child of this ComponentNode.</td>
-    </tr>
-    <tr>
         <td>realizedUsageNode</td>
         <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
         <td>0..1</td>
@@ -82,6 +72,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the NetworkNode that is realized by the ComponentNode.</td>
+    </tr>
+    <tr>
+        <td>childNode</td>
+        <td><a href="{{< relref "componentnode.md" >}}">ComponentNode</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Specifies the ComponentNodes that are a child of this ComponentNode.</td>
     </tr>
     <tr>
         <td>componentConnector</td>
@@ -128,6 +128,16 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>componentNode</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
+        <td>0..1</td>
+        <td>Specifies the ComponentNodes defined by the ConnectionSpecification.</td>
+    </tr>
+    <tr>
+        <td>componentNode</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -145,16 +155,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "eecomponentrole.md" >}}">EEComponentRole</a></td>
         <td>0..*</td>
         <td>References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341</td>
-    </tr>
-    <tr>
-        <td>componentNode</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
-        <td>0..1</td>
-        <td>Specifies the ComponentNodes defined by the ConnectionSpecification.</td>
     </tr>
     </tbody>
 </table>

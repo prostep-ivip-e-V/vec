@@ -61,16 +61,6 @@ menu_name: vec-2.0.1
         <td>Specifies the topology path defining the way the OnWayPlacement takes in the topology.</td>
     </tr>
     <tr>
-        <td>startLocation</td>
-        <td><a href="{{< relref "location.md" >}}">Location</a></td>
-        <td>1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td>References the Location where OnWayPlacement starts.</td>
-    </tr>
-    <tr>
         <td>endLocation</td>
         <td><a href="{{< relref "location.md" >}}">Location</a></td>
         <td>1</td>
@@ -79,6 +69,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td>References the Location where OnWayPlacement ends.</td>
+    </tr>
+    <tr>
+        <td>startLocation</td>
+        <td><a href="{{< relref "location.md" >}}">Location</a></td>
+        <td>1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>References the Location where OnWayPlacement starts.</td>
     </tr>
     </tbody>
 </table>

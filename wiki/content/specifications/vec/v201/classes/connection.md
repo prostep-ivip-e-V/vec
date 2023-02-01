@@ -62,16 +62,6 @@ menu_name: vec-2.0.1
         <td>Specifies the ConnectionEnds of the Connection.</td>
     </tr>
     <tr>
-        <td>signal</td>
-        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the signal that is transmitted by the connection.</td>
-    </tr>
-    <tr>
         <td>net</td>
         <td><a href="{{< relref "net.md" >}}">Net</a></td>
         <td>0..1</td>
@@ -80,6 +70,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the Net that is realized by the Connection.</td>
+    </tr>
+    <tr>
+        <td>signal</td>
+        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the signal that is transmitted by the connection.</td>
     </tr>
     </tbody>
 </table>
@@ -110,29 +110,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wireelementreference.md" >}}">WireElementReference</a></td>
+        <td><a href="{{< relref "matingpoint.md" >}}">MatingPoint</a></td>
         <td>0..*</td>
-        <td>References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341</td>
-    </tr>
-    <tr>
-        <td>connection</td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "bridgeterminalrole.md" >}}">BridgeTerminalRole</a></td>
-        <td>0..*</td>
-        <td><p> References the <i>Connection</i> that is realized by this <i>BridgeTerminalRole.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>connection</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
-        <td>1</td>
-        <td>Specifies the Connection defined by the ConnectionSpecification.</td>
+        <td><p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p></td>
     </tr>
     <tr>
         <td>connection</td>
@@ -160,9 +140,29 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "matingpoint.md" >}}">MatingPoint</a></td>
+        <td><a href="{{< relref "wireelementreference.md" >}}">WireElementReference</a></td>
         <td>0..*</td>
-        <td><p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p></td>
+        <td>References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341</td>
+    </tr>
+    <tr>
+        <td>connection</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "bridgeterminalrole.md" >}}">BridgeTerminalRole</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>Connection</i> that is realized by this <i>BridgeTerminalRole.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>connection</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the Connection defined by the ConnectionSpecification.</td>
     </tr>
     </tbody>
 </table>

@@ -101,9 +101,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "topologynode.md" >}}">TopologyNode</a></td>
+        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
         <td>0..*</td>
-        <td><p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p></td>
+        <td><p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p></td>
     </tr>
     <tr>
         <td>realizedUsageNode</td>
@@ -111,9 +111,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
+        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
         <td>0..*</td>
-        <td><p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p></td>
+        <td><p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p></td>
     </tr>
     <tr>
         <td>realizedUsageNode</td>
@@ -131,9 +131,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
+        <td><a href="{{< relref "topologynode.md" >}}">TopologyNode</a></td>
         <td>0..*</td>
-        <td><p> References the <i>UsageNode</i> that is realized by this <i>NetworkNode</i>.      </p></td>
+        <td><p> References the <i>UsageNode</i> that is realized by this <i>TopologyNode</i>.      </p></td>
     </tr>
     <tr>
         <td>subUsageNodes</td>

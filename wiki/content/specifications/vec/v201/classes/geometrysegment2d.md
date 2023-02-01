@@ -53,6 +53,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>endNode</td>
+        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the GeometryNode2D where the GeometrySegment2D ends.</td>
+    </tr>
+    <tr>
         <td>startNode</td>
         <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
         <td>1</td>
@@ -71,16 +81,6 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>1</td>
         <td>Specifies an ordered list of PathSegments that describe the appearance of the GeometrySegment2D. The appearance is described by the concatenation of the PathSegments beginning at the startNode of the GeometrySegment2D.</td>
-    </tr>
-    <tr>
-        <td>endNode</td>
-        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the GeometryNode2D where the GeometrySegment2D ends.</td>
     </tr>
     </tbody>
 </table>

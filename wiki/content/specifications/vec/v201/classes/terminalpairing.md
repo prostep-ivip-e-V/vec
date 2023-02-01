@@ -52,16 +52,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>firstTerminal</td>
-        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the first terminal of the TerminalPairing.      </p></td>
-    </tr>
-    <tr>
         <td>secondTerminal</td>
         <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>1</td>
@@ -80,6 +70,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the CoreSpecification that is used on both sides of the ContactSystem.      </p></td>
+    </tr>
+    <tr>
+        <td>firstTerminal</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the first terminal of the TerminalPairing.      </p></td>
     </tr>
     </tbody>
 </table>

@@ -51,16 +51,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>moduleInList</td>
-        <td><a href="{{< relref "partwithsubcomponentsrole.md" >}}">PartWithSubComponentsRole</a></td>
-        <td>1..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the Modules that belong to the ModuleList. If any of the referenced Modules participates in a configuration the completion components participate, too.</td>
-    </tr>
-    <tr>
         <td>completionComponents</td>
         <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
         <td>1..*</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the components that are used as completion, if any of the Modules in the ModuleList appears in a configuration.</td>
+    </tr>
+    <tr>
+        <td>moduleInList</td>
+        <td><a href="{{< relref "partwithsubcomponentsrole.md" >}}">PartWithSubComponentsRole</a></td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the Modules that belong to the ModuleList. If any of the referenced Modules participates in a configuration the completion components participate, too.</td>
     </tr>
     </tbody>
 </table>

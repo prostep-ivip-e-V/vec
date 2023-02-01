@@ -49,16 +49,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>equippedCavityRef</td>
-        <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
-        <td>1..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the cavities that are used for the cavity mounting.</td>
-    </tr>
-    <tr>
         <td>replacedPlug</td>
         <td><a href="{{< relref "cavityplugrole.md" >}}">CavityPlugRole</a></td>
         <td>0..*</td>
@@ -87,6 +77,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td></td>
+    </tr>
+    <tr>
+        <td>equippedCavityRef</td>
+        <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the cavities that are used for the cavity mounting.</td>
     </tr>
     </tbody>
 </table>

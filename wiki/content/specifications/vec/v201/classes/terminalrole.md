@@ -51,24 +51,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>wireReceptionReference</td>
-        <td><a href="{{< relref "wirereceptionreference.md" >}}">WireReceptionReference</a></td>
+        <td>terminalReceptionReference</td>
+        <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td><p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>terminalSpecification</td>
-        <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> &#160;References the <i>TerminalSpecification</i> that is instanced by this <i>TerminalRole.</i>      </p></td>
+        <td><p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p></td>
     </tr>
     <tr>
         <td>componentPort</td>
@@ -81,14 +71,24 @@ menu_name: vec-2.0.1
         <td>References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341</td>
     </tr>
     <tr>
-        <td>terminalReceptionReference</td>
-        <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
+        <td>terminalSpecification</td>
+        <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> &#160;References the <i>TerminalSpecification</i> that is instanced by this <i>TerminalRole.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>wireReceptionReference</td>
+        <td><a href="{{< relref "wirereceptionreference.md" >}}">WireReceptionReference</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td><p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p></td>
+        <td><p> Specifies the <i>WireReceptionReferences </i>of this <i>TerminalRole.</i>      </p></td>
     </tr>
     </tbody>
 </table>

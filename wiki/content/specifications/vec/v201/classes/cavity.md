@@ -52,6 +52,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>cavitySpecification</td>
+        <td><a href="{{< relref "cavityspecification.md" >}}">CavitySpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the CavitySpecification that is satisfied by the cavity.</td>
+    </tr>
+    <tr>
         <td>integratedTerminalSpecification</td>
         <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
         <td>0..1</td>
@@ -70,16 +80,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Optional details for geometric properties of the cavity in the connector.</td>
-    </tr>
-    <tr>
-        <td>cavitySpecification</td>
-        <td><a href="{{< relref "cavityspecification.md" >}}">CavitySpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the CavitySpecification that is satisfied by the cavity.</td>
     </tr>
     </tbody>
 </table>
@@ -106,16 +106,6 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>cavity</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "cavityaddon.md" >}}">CavityAddOn</a></td>
-        <td>0..*</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>cavity</td>
         <td>1..*</td>
         <td>Y</td>
         <td>Y</td>
@@ -123,6 +113,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "slot.md" >}}">Slot</a></td>
         <td>1</td>
         <td><p> Specifies the Cavities forming the Slot.      </p></td>
+    </tr>
+    <tr>
+        <td>cavity</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "cavityaddon.md" >}}">CavityAddOn</a></td>
+        <td>0..*</td>
+        <td></td>
     </tr>
     <tr>
         <td>openCavities</td>

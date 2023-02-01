@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>connectedPins</td>
-        <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
-        <td>0..2</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td></td>
-    </tr>
-    <tr>
         <td>fuseSpecification</td>
         <td><a href="{{< relref "fusespecification.md" >}}">FuseSpecification</a></td>
         <td>0..1</td>
@@ -67,6 +57,16 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>N</td>
         <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>connectedPins</td>
+        <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
+        <td>0..2</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
         <td></td>
     </tr>
     </tbody>

@@ -53,16 +53,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>housingComponent</td>
-        <td><a href="{{< relref "housingcomponent.md" >}}">HousingComponent</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the available connector interfaces of the EEComponent.</td>
-    </tr>
-    <tr>
         <td>connections</td>
         <td><a href="{{< relref "internalcomponentconnection.md" >}}">InternalComponentConnection</a></td>
         <td>0..*</td>
@@ -73,16 +63,6 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>extensionSlots</td>
-        <td><a href="{{< relref "extensionslot.md" >}}">ExtensionSlot</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the available ExtensionSlots of the EEComponent.</td>
-    </tr>
-    <tr>
         <td>states</td>
         <td><a href="{{< relref "switchingstate.md" >}}">SwitchingState</a></td>
         <td>0..*</td>
@@ -91,6 +71,26 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td><p> Specifies the available <i>SwitchingStates</i> of the EEComponent.      </p></td>
+    </tr>
+    <tr>
+        <td>housingComponent</td>
+        <td><a href="{{< relref "housingcomponent.md" >}}">HousingComponent</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the available connector interfaces of the EEComponent.</td>
+    </tr>
+    <tr>
+        <td>extensionSlots</td>
+        <td><a href="{{< relref "extensionslot.md" >}}">ExtensionSlot</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the available ExtensionSlots of the EEComponent.</td>
     </tr>
     </tbody>
 </table>

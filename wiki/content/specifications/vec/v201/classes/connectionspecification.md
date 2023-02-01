@@ -51,16 +51,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>connectionGroup</td>
-        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td>Specifies the ConnectionGroup defined by the ConnectionSpecification.</td>
-    </tr>
-    <tr>
         <td>componentNode</td>
         <td><a href="{{< relref "componentnode.md" >}}">ComponentNode</a></td>
         <td>0..*</td>
@@ -79,6 +69,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the Connection defined by the ConnectionSpecification.</td>
+    </tr>
+    <tr>
+        <td>connectionGroup</td>
+        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Specifies the ConnectionGroup defined by the ConnectionSpecification.</td>
     </tr>
     </tbody>
 </table>

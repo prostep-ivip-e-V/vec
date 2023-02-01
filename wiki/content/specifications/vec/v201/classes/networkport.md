@@ -96,16 +96,6 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>networkPort</td>
-        <td>1..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "net.md" >}}">Net</a></td>
-        <td>1</td>
-        <td>References the NetworkPorts that are connected by the Net.</td>
-    </tr>
-    <tr>
-        <td>networkPort</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -113,6 +103,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "networkportviewitem.md" >}}">NetworkPortViewItem</a></td>
         <td>0..*</td>
         <td>References the <i>NetworkPort</i> that is represented by this <i>NetworkPortViewItem.</i></td>
+    </tr>
+    <tr>
+        <td>networkPort</td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "net.md" >}}">Net</a></td>
+        <td>1</td>
+        <td>References the NetworkPorts that are connected by the Net.</td>
     </tr>
     <tr>
         <td>port</td>

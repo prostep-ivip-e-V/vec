@@ -113,9 +113,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wirereception.md" >}}">WireReception</a></td>
-        <td>0..*</td>
-        <td>References the WireReceptionSpecification that specifies the WireReception.</td>
+        <td><a href="{{< relref "wireendaccessoryspecification.md" >}}">WireEndAccessorySpecification</a></td>
+        <td></td>
+        <td><p> References the single <i>WireReceptionSpecification</i> that is specifying the properties of the <i>WireEndAccessory</i> that are related to wire.      </p></td>
     </tr>
     <tr>
         <td>wireReceptionSpecification</td>
@@ -123,9 +123,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wireendaccessoryspecification.md" >}}">WireEndAccessorySpecification</a></td>
-        <td></td>
-        <td><p> References the single <i>WireReceptionSpecification</i> that is specifying the properties of the <i>WireEndAccessory</i> that are related to wire.      </p></td>
+        <td><a href="{{< relref "wirereception.md" >}}">WireReception</a></td>
+        <td>0..*</td>
+        <td>References the WireReceptionSpecification that specifies the WireReception.</td>
     </tr>
     </tbody>
 </table>

@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>pluggedCavityRef</td>
-        <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>Defines which cavity / cavities in a connector instance is sealed by the plug.</td>
-    </tr>
-    <tr>
         <td>cavityPlugSpecification</td>
         <td><a href="{{< relref "cavityplugspecification.md" >}}">CavityPlugSpecification</a></td>
         <td>1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the <i>CavityPlugSpecification </i>that is instanced by this <i>CavityPlugRole.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>pluggedCavityRef</td>
+        <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>Defines which cavity / cavities in a connector instance is sealed by the plug.</td>
     </tr>
     </tbody>
 </table>

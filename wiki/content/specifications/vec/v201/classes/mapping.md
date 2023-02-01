@@ -49,7 +49,7 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>B</td>
+        <td>A</td>
         <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>1</td>
         <td>N</td>
@@ -69,7 +69,7 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>A</td>
+        <td>B</td>
         <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>1</td>
         <td>N</td>

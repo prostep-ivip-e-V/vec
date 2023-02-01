@@ -96,26 +96,6 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>componentPort</td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
-        <td>0..*</td>
-        <td>References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341</td>
-    </tr>
-    <tr>
-        <td>componentPort</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "componentconnector.md" >}}">ComponentConnector</a></td>
-        <td>1</td>
-        <td>Specifies the ComponentPorts of the ComponentConnector.</td>
-    </tr>
-    <tr>
-        <td>componentPort</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -130,9 +110,29 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>0..*</td>
+        <td>References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341</td>
+    </tr>
+    <tr>
+        <td>componentPort</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
         <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
         <td>0..*</td>
         <td><p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>componentPort</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "componentconnector.md" >}}">ComponentConnector</a></td>
+        <td>1</td>
+        <td>Specifies the ComponentPorts of the ComponentConnector.</td>
     </tr>
     <tr>
         <td>connectedComponentPort</td>

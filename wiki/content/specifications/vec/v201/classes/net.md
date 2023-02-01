@@ -95,6 +95,16 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>net</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
+        <td>0..*</td>
+        <td>References the Net that is realized by the Connection.</td>
+    </tr>
+    <tr>
+        <td>net</td>
         <td>2..*</td>
         <td>N</td>
         <td>Y</td>
@@ -112,16 +122,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "netspecification.md" >}}">NetSpecification</a></td>
         <td>1</td>
         <td>Specifies the Nets defined in the NetSpecification.</td>
-    </tr>
-    <tr>
-        <td>net</td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
-        <td>0..*</td>
-        <td>References the Net that is realized by the Connection.</td>
     </tr>
     </tbody>
 </table>

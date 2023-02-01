@@ -62,6 +62,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>insulationSpecification</td>
+        <td><a href="{{< relref "insulationspecification.md" >}}">InsulationSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> If the <i>WireElement</i> has an insulation then the specification of the insulation is referenced here.      </p></td>
+    </tr>
+    <tr>
         <td>subWireElementSpecification</td>
         <td><a href="{{< relref "wireelementspecification.md" >}}">WireElementSpecification</a></td>
         <td>0..*</td>
@@ -70,6 +80,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> Specifies the contained subWireElements if the WireElement has sub elements. If a <i>WireElementSpecification </i>contains the same <i>WireElementSpecification </i>multiple times, then it shall be referenced as often as it occurs in the reality. Otherwise the <i>WireElementSpecification </i>wouldn't specify a wire element unambiguously, because the representation in the model would be the same, regardless of the number of sub elements. Therefore, this association must not be realized with a &quot;set&quot; semantic.      </p>      <p> &#160;      </p></td>
+    </tr>
+    <tr>
+        <td>wireGroupSpecification</td>
+        <td><a href="{{< relref "wiregroupspecification.md" >}}">WireGroupSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p></td>
     </tr>
     <tr>
         <td>fillerSpecification</td>
@@ -82,16 +102,6 @@ menu_name: vec-2.0.1
         <td><p> If the <i>WireElement</i> is a filler then the specification of the filler is referenced here.      </p></td>
     </tr>
     <tr>
-        <td>insulationSpecification</td>
-        <td><a href="{{< relref "insulationspecification.md" >}}">InsulationSpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> If the <i>WireElement</i> has an insulation then the specification of the insulation is referenced here.      </p></td>
-    </tr>
-    <tr>
         <td>conductorSpecification</td>
         <td><a href="{{< relref "conductorspecification.md" >}}">ConductorSpecification</a></td>
         <td>0..1</td>
@@ -100,16 +110,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p></td>
-    </tr>
-    <tr>
-        <td>wireGroupSpecification</td>
-        <td><a href="{{< relref "wiregroupspecification.md" >}}">WireGroupSpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -150,9 +150,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wirespecification.md" >}}">WireSpecification</a></td>
+        <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
         <td>0..*</td>
-        <td><p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p></td>
+        <td><p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p></td>
     </tr>
     <tr>
         <td>wireElementSpecification</td>
@@ -160,9 +160,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
+        <td><a href="{{< relref "wirespecification.md" >}}">WireSpecification</a></td>
         <td>0..*</td>
-        <td><p> Reference the <i>WireElementSpecification </i>that is represented by the <i>WireElement.</i>      </p></td>
+        <td><p> References the <i>WireElementSpecification </i>that defines the properties of the top-most <i>WireElement.</i>      </p></td>
     </tr>
     </tbody>
 </table>

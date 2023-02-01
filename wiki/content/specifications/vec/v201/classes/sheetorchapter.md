@@ -55,16 +55,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>referencedPart</td>
-        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>The association is an informative link which PartVersions are described by the SheetOrChapter.</td>
-    </tr>
-    <tr>
         <td>specification</td>
         <td><a href="{{< relref "specification.md" >}}">Specification</a></td>
         <td>0..*</td>
@@ -73,6 +63,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td>Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications.</td>
+    </tr>
+    <tr>
+        <td>referencedPart</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>The association is an informative link which PartVersions are described by the SheetOrChapter.</td>
     </tr>
     <tr>
         <td>changeDescription</td>

@@ -52,16 +52,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>associatedWireEnds</td>
-        <td><a href="{{< relref "wireend.md" >}}">WireEnd</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td></td>
-    </tr>
-    <tr>
         <td>wireTupleSpecification</td>
         <td><a href="{{< relref "wiretuplespecification.md" >}}">WireTupleSpecification</a></td>
         <td>0..1</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>N</td>
         <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>associatedWireEnds</td>
+        <td><a href="{{< relref "wireend.md" >}}">WireEnd</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
         <td></td>
     </tr>
     </tbody>

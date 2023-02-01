@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>cableLeadThroughReference</td>
-        <td><a href="{{< relref "cableleadthroughreference.md" >}}">CableLeadThroughReference</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td></td>
-    </tr>
-    <tr>
         <td>grommetSpecification</td>
         <td><a href="{{< relref "grommetspecification.md" >}}">GrommetSpecification</a></td>
         <td>1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the <i>GrommetSpecification</i> that is instanced by this <i>GrommetRole.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>cableLeadThroughReference</td>
+        <td><a href="{{< relref "cableleadthroughreference.md" >}}">CableLeadThroughReference</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
     </tr>
     </tbody>
 </table>

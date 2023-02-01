@@ -63,16 +63,6 @@ menu_name: vec-2.0.1
         <td><p> Specifies the different roles of the OccurrenceOrUsage.      </p></td>
     </tr>
     <tr>
-        <td>realizedUsageNode</td>
-        <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p></td>
-    </tr>
-    <tr>
         <td>installationInstruction</td>
         <td><a href="{{< relref "instruction.md" >}}">Instruction</a></td>
         <td>0..*</td>
@@ -91,6 +81,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the <i>OccurrenceOrUsage</i> for which this <i>OccurrenceOrUsage</i> is an accessory /&#160;supplementary component. If an <i>OccurrenceOrUsage</i> defines more than one <i>referenceElement</i>, the semantic is that it is related to the combination all &quot;reference elements&quot; and not to each individually. In other words, in a variable product definition the <i>OccurrenceOrUsage</i> only exists if all <i>referenceElements</i> exist.      </p></td>
+    </tr>
+    <tr>
+        <td>realizedUsageNode</td>
+        <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -181,9 +181,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "placementpointreference.md" >}}">PlacementPointReference</a></td>
+        <td><a href="{{< relref "slotreference.md" >}}">SlotReference</a></td>
         <td>0..*</td>
-        <td></td>
+        <td><p> This is the relationship of the supplementary parts actually used in this <i>SlotReference.</i> This is the actual selection of the potential supplementary parts defined in the corresponding <i>Slot.supplementaryParts</i> association.      </p></td>
     </tr>
     <tr>
         <td>usedSupplementaryParts</td>
@@ -191,9 +191,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "slotreference.md" >}}">SlotReference</a></td>
+        <td><a href="{{< relref "placementpointreference.md" >}}">PlacementPointReference</a></td>
         <td>0..*</td>
-        <td><p> This is the relationship of the supplementary parts actually used in this <i>SlotReference.</i> This is the actual selection of the potential supplementary parts defined in the corresponding <i>Slot.supplementaryParts</i> association.      </p></td>
+        <td></td>
     </tr>
     </tbody>
 </table>

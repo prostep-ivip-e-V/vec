@@ -52,6 +52,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>routedElement</td>
+        <td><a href="{{< relref "routableelement.md" >}}">RoutableElement</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>Specifies the Element that is routed.</td>
+    </tr>
+    <tr>
         <td>path</td>
         <td><a href="{{< relref "path.md" >}}">Path</a></td>
         <td>1</td>
@@ -70,16 +80,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Specifies some constraints for the routing. If the path of the routing is recalculated the referenced segments must be visited.</td>
-    </tr>
-    <tr>
-        <td>routedElement</td>
-        <td><a href="{{< relref "routableelement.md" >}}">RoutableElement</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>Specifies the Element that is routed.</td>
     </tr>
     </tbody>
 </table>

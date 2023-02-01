@@ -49,26 +49,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>wireMountingDetail</td>
-        <td><a href="{{< relref "wiremountingdetail.md" >}}">WireMountingDetail</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the WireMoutingDetails, if a detailed description of the relationships between WireEnds and WireReceptions is needed.      </p></td>
-    </tr>
-    <tr>
-        <td>mountedCavitySeal</td>
-        <td><a href="{{< relref "cavitysealrole.md" >}}">CavitySealRole</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the cavity seal that is used for the wire mounting.      </p></td>
-    </tr>
-    <tr>
         <td>wireEndAccessory</td>
         <td><a href="{{< relref "wireendaccessoryrole.md" >}}">WireEndAccessoryRole</a></td>
         <td>0..*</td>
@@ -79,6 +59,16 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
+        <td>wireMountingDetail</td>
+        <td><a href="{{< relref "wiremountingdetail.md" >}}">WireMountingDetail</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the WireMoutingDetails, if a detailed description of the relationships between WireEnds and WireReceptions is needed.      </p></td>
+    </tr>
+    <tr>
         <td>referencedWireEnd</td>
         <td><a href="{{< relref "wireend.md" >}}">WireEnd</a></td>
         <td>1..*</td>
@@ -87,6 +77,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the wire ends that are used for the wire mounting. The minimum cardinality is one, because a wire mounting without wire end makes no sense.     </p>      <p> The maximum cardinality is * in order to support multi crimps.      </p></td>
+    </tr>
+    <tr>
+        <td>mountedCavitySeal</td>
+        <td><a href="{{< relref "cavitysealrole.md" >}}">CavitySealRole</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the cavity seal that is used for the wire mounting.      </p></td>
     </tr>
     </tbody>
 </table>

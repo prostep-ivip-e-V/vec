@@ -51,14 +51,14 @@ A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetView
     <thead>
     <tbody>
     <tr>
-        <td>displayedPort</td>
-        <td><a href="{{< relref "networkportviewitem.md" >}}">NetworkPortViewItem</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
+        <td>networkNode</td>
+        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
         <td>1</td>
-        <td><p> Specifies all <i>NetworkPortViewItems</i> that are displayed on this <i>NetworkNodeViewItem.</i> The order of this association defines the clockwise arrangement of the ports on the node. As each <i>NetworkPortViewItem </i>can also define the side on which it is placed, side definitions take precedence over order.      </p>      <p> <i>&#160;</i>      </p>      <p> <b>Caution: </b>This association is <u>ordered</u>!      </p>      <p> <i>&#160;</i>      </p></td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i></td>
     </tr>
     <tr>
         <td>orientation</td>
@@ -71,14 +71,14 @@ A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetView
         <td>Specifies the position /&#160;placement of the <i>NetworkNodeViewItem</i> within the layout.</td>
     </tr>
     <tr>
-        <td>networkNode</td>
-        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
+        <td>displayedPort</td>
+        <td><a href="{{< relref "networkportviewitem.md" >}}">NetworkPortViewItem</a></td>
         <td>0..*</td>
-        <td>References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i></td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>1</td>
+        <td><p> Specifies all <i>NetworkPortViewItems</i> that are displayed on this <i>NetworkNodeViewItem.</i> The order of this association defines the clockwise arrangement of the ports on the node. As each <i>NetworkPortViewItem </i>can also define the side on which it is placed, side definitions take precedence over order.      </p>      <p> <i>&#160;</i>      </p>      <p> <b>Caution: </b>This association is <u>ordered</u>!      </p>      <p> <i>&#160;</i>      </p></td>
     </tr>
     </tbody>
 </table>

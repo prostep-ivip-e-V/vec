@@ -51,16 +51,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>placedViewItems</td>
-        <td><a href="{{< relref "connectionnodeviewitem.md" >}}">ConnectionNodeViewItem</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies all <i>ComponentNodeViewItems</i> that are displayed within a <i>ConnectionViewSpecification</i>.</td>
-    </tr>
-    <tr>
         <td>cartesianPoint</td>
         <td><a href="{{< relref "cartesianpoint2d.md" >}}">CartesianPoint2D</a></td>
         <td>0..*</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td>Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i></td>
+    </tr>
+    <tr>
+        <td>placedViewItems</td>
+        <td><a href="{{< relref "connectionnodeviewitem.md" >}}">ConnectionNodeViewItem</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies all <i>ComponentNodeViewItems</i> that are displayed within a <i>ConnectionViewSpecification</i>.</td>
     </tr>
     </tbody>
 </table>

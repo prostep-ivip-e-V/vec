@@ -81,16 +81,6 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>geometrySegment</td>
-        <td><a href="{{< relref "geometrysegment3d.md" >}}">GeometrySegment3D</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p></td>
-    </tr>
-    <tr>
         <td>placedElementViewItem3D</td>
         <td><a href="{{< relref "occurrenceorusageviewitem3d.md" >}}">OccurrenceOrUsageViewItem3D</a></td>
         <td>0..*</td>
@@ -99,6 +89,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D.</td>
+    </tr>
+    <tr>
+        <td>geometrySegment</td>
+        <td><a href="{{< relref "geometrysegment3d.md" >}}">GeometrySegment3D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p></td>
     </tr>
     <tr>
         <td>topologyZone</td>

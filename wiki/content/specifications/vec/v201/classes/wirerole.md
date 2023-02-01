@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>wireSpecification</td>
-        <td><a href="{{< relref "wirespecification.md" >}}">WireSpecification</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p></td>
-    </tr>
-    <tr>
         <td>wireElementReference</td>
         <td><a href="{{< relref "wireelementreference.md" >}}">WireElementReference</a></td>
         <td>0..*</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the WireElementReferences used in the WireRole. For multi core wires more than one WireElementReference is needed.</td>
+    </tr>
+    <tr>
+        <td>wireSpecification</td>
+        <td><a href="{{< relref "wirespecification.md" >}}">WireSpecification</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>WireSpecification</i> that is instanced by this <i>WireRole.</i>      </p></td>
     </tr>
     </tbody>
 </table>

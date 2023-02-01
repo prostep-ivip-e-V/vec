@@ -51,24 +51,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>geometrySegment</td>
-        <td><a href="{{< relref "geometrysegment2d.md" >}}">GeometrySegment2D</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
+        <td>boundingBox</td>
+        <td><a href="{{< relref "cartesiandimension.md" >}}">CartesianDimension</a></td>
         <td>1</td>
-        <td>Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D.</td>
-    </tr>
-    <tr>
-        <td>cartesianPoint</td>
-        <td><a href="{{< relref "cartesianpoint2d.md" >}}">CartesianPoint2D</a></td>
-        <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>0..1</td>
-        <td><p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p></td>
+        <td>Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions.</td>
     </tr>
     <tr>
         <td>placedElementViewItem</td>
@@ -81,14 +71,14 @@ menu_name: vec-2.0.1
         <td>Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D.</td>
     </tr>
     <tr>
-        <td>boundingBox</td>
-        <td><a href="{{< relref "cartesiandimension.md" >}}">CartesianDimension</a></td>
-        <td>1</td>
+        <td>cartesianPoint</td>
+        <td><a href="{{< relref "cartesianpoint2d.md" >}}">CartesianPoint2D</a></td>
+        <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>0..1</td>
-        <td>Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions.</td>
+        <td><p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p></td>
     </tr>
     <tr>
         <td>baseUnit</td>
@@ -109,6 +99,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D.</td>
+    </tr>
+    <tr>
+        <td>geometrySegment</td>
+        <td><a href="{{< relref "geometrysegment2d.md" >}}">GeometrySegment2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D.</td>
     </tr>
     </tbody>
 </table>

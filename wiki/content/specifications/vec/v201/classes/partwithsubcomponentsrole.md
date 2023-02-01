@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>partStructureSpecification</td>
-        <td><a href="{{< relref "partstructurespecification.md" >}}">PartStructureSpecification</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>PartStructureSpecification </i>that is instantiated by this <i>PartWithSubComponentsRole</i>.      </p></td>
-    </tr>
-    <tr>
         <td>subComponent</td>
         <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
         <td>0..*</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the subcomponents that belong to this instance of a PartWithSubComponents.      </p></td>
+    </tr>
+    <tr>
+        <td>partStructureSpecification</td>
+        <td><a href="{{< relref "partstructurespecification.md" >}}">PartStructureSpecification</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>PartStructureSpecification </i>that is instantiated by this <i>PartWithSubComponentsRole</i>.      </p></td>
     </tr>
     </tbody>
 </table>

@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>wireMounting</td>
-        <td><a href="{{< relref "wiremounting.md" >}}">WireMounting</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the WireMouting defined by ContactPoint. More than one WireMounting is allowed in order to support variance. In concrete configuration the WireMounting with all referenced elements present is used.</td>
-    </tr>
-    <tr>
         <td>mountedTerminal</td>
         <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
         <td>0..1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the terminal that is used for contacting defined by the ContactPoint.</td>
+    </tr>
+    <tr>
+        <td>wireMounting</td>
+        <td><a href="{{< relref "wiremounting.md" >}}">WireMounting</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the WireMouting defined by ContactPoint. More than one WireMounting is allowed in order to support variance. In concrete configuration the WireMounting with all referenced elements present is used.</td>
     </tr>
     <tr>
         <td>cavityMounting</td>

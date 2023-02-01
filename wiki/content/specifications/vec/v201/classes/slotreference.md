@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>usedSupplementaryParts</td>
-        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> This is the relationship of the supplementary parts actually used in this <i>SlotReference.</i> This is the actual selection of the potential supplementary parts defined in the corresponding <i>Slot.supplementaryParts</i> association.      </p></td>
-    </tr>
-    <tr>
         <td>cavityReference</td>
         <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
         <td>0..*</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the CavityReferences used in the SlotReference.</td>
+    </tr>
+    <tr>
+        <td>usedSupplementaryParts</td>
+        <td><a href="{{< relref "occurrenceorusage.md" >}}">OccurrenceOrUsage</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> This is the relationship of the supplementary parts actually used in this <i>SlotReference.</i> This is the actual selection of the potential supplementary parts defined in the corresponding <i>Slot.supplementaryParts</i> association.      </p></td>
     </tr>
     </tbody>
 </table>

@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>positioning</td>
-        <td><a href="{{< relref "transformation3d.md" >}}">Transformation3D</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td><p> Specifies the positioning of the building block in the harness geometry.      </p></td>
-    </tr>
-    <tr>
         <td>referenced3DBuildingBlock</td>
         <td><a href="{{< relref "buildingblockspecification3d.md" >}}">BuildingBlockSpecification3D</a></td>
         <td>1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the building block that is positioned.      </p></td>
+    </tr>
+    <tr>
+        <td>positioning</td>
+        <td><a href="{{< relref "transformation3d.md" >}}">Transformation3D</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> Specifies the positioning of the building block in the harness geometry.      </p></td>
     </tr>
     </tbody>
 </table>

@@ -64,16 +64,6 @@ menu_name: vec-2.0.1
         <td>References the PartOrUsageRelatedSpecification(s) that describe the PartOrUsageRelatedSpecification.  KBLFRM-399</td>
     </tr>
     <tr>
-        <td>partSubstitution</td>
-        <td><a href="{{< relref "partsubstitutionspecification.md" >}}">PartSubstitutionSpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
         <td>instanciatedUsage</td>
         <td><a href="{{< relref "partusage.md" >}}">PartUsage</a></td>
         <td>0..*</td>
@@ -81,6 +71,16 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>partSubstitution</td>
+        <td><a href="{{< relref "partsubstitutionspecification.md" >}}">PartSubstitutionSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
         <td></td>
     </tr>
     </tbody>

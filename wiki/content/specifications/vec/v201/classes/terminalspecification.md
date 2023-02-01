@@ -56,26 +56,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>currentInformation</td>
-        <td><a href="{{< relref "terminalcurrentinformation.md" >}}">TerminalCurrentInformation</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the <i>TerminalCurrentInformation</i> that is applicable for the terminal.      </p></td>
-    </tr>
-    <tr>
-        <td>internalTerminalConnection</td>
-        <td><a href="{{< relref "internalterminalconnection.md" >}}">InternalTerminalConnection</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the InternalTerminalConnections of the terminal.</td>
-    </tr>
-    <tr>
         <td>terminalReception</td>
         <td><a href="{{< relref "terminalreception.md" >}}">TerminalReception</a></td>
         <td>0..*</td>
@@ -94,6 +74,26 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the WireReceptions of the terminal described by the TerminalSpecification.</td>
+    </tr>
+    <tr>
+        <td>currentInformation</td>
+        <td><a href="{{< relref "terminalcurrentinformation.md" >}}">TerminalCurrentInformation</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the <i>TerminalCurrentInformation</i> that is applicable for the terminal.      </p></td>
+    </tr>
+    <tr>
+        <td>internalTerminalConnection</td>
+        <td><a href="{{< relref "internalterminalconnection.md" >}}">InternalTerminalConnection</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the InternalTerminalConnections of the terminal.</td>
     </tr>
     </tbody>
 </table>

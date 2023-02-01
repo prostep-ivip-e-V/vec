@@ -61,14 +61,14 @@ menu_name: vec-2.0.1
         <td>Specifies the NetGroup defined in the NetSpecification.</td>
     </tr>
     <tr>
-        <td>networkNode</td>
-        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
+        <td>net</td>
+        <td><a href="{{< relref "net.md" >}}">Net</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td><p> Specifies the NetworkNodes defined in the NetSpecification.      </p></td>
+        <td>Specifies the Nets defined in the NetSpecification.</td>
     </tr>
     <tr>
         <td>netType</td>
@@ -81,14 +81,14 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>net</td>
-        <td><a href="{{< relref "net.md" >}}">Net</a></td>
+        <td>networkNode</td>
+        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td>Specifies the Nets defined in the NetSpecification.</td>
+        <td><p> Specifies the NetworkNodes defined in the NetSpecification.      </p></td>
     </tr>
     </tbody>
 </table>

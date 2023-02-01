@@ -57,9 +57,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
         <td>0..1</td>
-        <td>Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.</td>
+        <td>Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications.</td>
     </tr>
     <tr>
         <td>specification</td>
@@ -67,9 +67,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
         <td>0..1</td>
-        <td>Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications.</td>
+        <td>Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.</td>
     </tr>
     </tbody>
 </table>

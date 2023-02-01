@@ -99,9 +99,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wiremounting.md" >}}">WireMounting</a></td>
+        <td><a href="{{< relref "wiremountingdetail.md" >}}">WireMountingDetail</a></td>
         <td>0..*</td>
-        <td><p> References the wire ends that are used for the wire mounting. The minimum cardinality is one, because a wire mounting without wire end makes no sense.     </p>      <p> The maximum cardinality is * in order to support multi crimps.      </p></td>
+        <td>References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception).</td>
     </tr>
     <tr>
         <td>referencedWireEnd</td>
@@ -109,9 +109,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wiremountingdetail.md" >}}">WireMountingDetail</a></td>
+        <td><a href="{{< relref "wiremounting.md" >}}">WireMounting</a></td>
         <td>0..*</td>
-        <td>References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception).</td>
+        <td><p> References the wire ends that are used for the wire mounting. The minimum cardinality is one, because a wire mounting without wire end makes no sense.     </p>      <p> The maximum cardinality is * in order to support multi crimps.      </p></td>
     </tr>
     <tr>
         <td>wireEnd</td>

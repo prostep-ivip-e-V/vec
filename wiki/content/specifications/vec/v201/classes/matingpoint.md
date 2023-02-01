@@ -50,24 +50,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>secondTerminalRole</td>
-        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
-        <td>1</td>
+        <td>connection</td>
+        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
+        <td>0..*</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td>References the second terminal that is mated.</td>
-    </tr>
-    <tr>
-        <td>matingDetail</td>
-        <td><a href="{{< relref "matingdetail.md" >}}">MatingDetail</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the MatingDetails, if a detailed description of the relationships between TerminalReceptions and TerminalReceptions is needed.</td>
+        <td><p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p></td>
     </tr>
     <tr>
         <td>firstTerminalRole</td>
@@ -80,14 +70,24 @@ menu_name: vec-2.0.1
         <td>References the first terminal that is mated.</td>
     </tr>
     <tr>
-        <td>connection</td>
-        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
+        <td>matingDetail</td>
+        <td><a href="{{< relref "matingdetail.md" >}}">MatingDetail</a></td>
         <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the MatingDetails, if a detailed description of the relationships between TerminalReceptions and TerminalReceptions is needed.</td>
+    </tr>
+    <tr>
+        <td>secondTerminalRole</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>1</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td><p> References the <i>Connection</i> that is realized by this <i>MatingPoint</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p></td>
+        <td>References the second terminal that is mated.</td>
     </tr>
     </tbody>
 </table>

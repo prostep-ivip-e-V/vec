@@ -91,16 +91,6 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
-        <td>1</td>
-        <td>Specifies the orientation of the view item.</td>
-    </tr>
-    <tr>
-        <td>orientation</td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
         <td><a href="{{< relref "connectionnodeviewitem.md" >}}">ConnectionNodeViewItem</a></td>
         <td>1</td>
         <td>Specifies the position /&#160;placement of the <i>ConnectionNodeViewItem</i> within the layout.</td>
@@ -114,6 +104,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "networknodeviewitem.md" >}}">NetworkNodeViewItem</a></td>
         <td>1</td>
         <td>Specifies the position /&#160;placement of the <i>NetworkNodeViewItem</i> within the layout.</td>
+    </tr>
+    <tr>
+        <td>orientation</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
+        <td>1</td>
+        <td>Specifies the orientation of the view item.</td>
     </tr>
     </tbody>
 </table>

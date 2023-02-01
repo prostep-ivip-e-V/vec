@@ -54,6 +54,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>part</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the PartVersion that is instantiated by this PartOccurrence.      </p></td>
+    </tr>
+    <tr>
         <td>instanciatedOccurrence</td>
         <td><a href="{{< relref "partoccurrence.md" >}}">PartOccurrence</a></td>
         <td>0..*</td>
@@ -72,16 +82,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the PartUsages that are realized by the PartOccurrence.</td>
-    </tr>
-    <tr>
-        <td>part</td>
-        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the PartVersion that is instantiated by this PartOccurrence.      </p></td>
     </tr>
     <tr>
         <td>alternativeOccurrence</td>

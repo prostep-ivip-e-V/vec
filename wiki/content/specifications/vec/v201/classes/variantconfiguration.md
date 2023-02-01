@@ -97,16 +97,6 @@ menu_name: vec-2.0.1
         <td><p> A <i>VariantConfiguration </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.      </p></td>
     </tr>
     <tr>
-        <td>{{< deprecated since="[]" reason="[]">}}configInfo</td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
-        <td>0..*</td>
-        <td><p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
-    </tr>
-    <tr>
         <td>configInfo</td>
         <td>0..1</td>
         <td>N</td>
@@ -115,6 +105,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "configurationconstraint.md" >}}">ConfigurationConstraint</a></td>
         <td></td>
         <td><p> References the configuration information that applies to the ConfigurationConstraint.      </p></td>
+    </tr>
+    <tr>
+        <td>configInfo</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
+        <td>0..*</td>
+        <td>{{< deprecated >}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
     </tr>
     <tr>
         <td>variantConfiguration</td>

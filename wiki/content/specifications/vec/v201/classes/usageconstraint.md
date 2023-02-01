@@ -57,16 +57,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>usageNode</td>
-        <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageNode.      </p></td>
-    </tr>
-    <tr>
         <td>project</td>
         <td><a href="{{< relref "project.md" >}}">Project</a></td>
         <td>0..*</td>
@@ -75,6 +65,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the <i>Projects</i> to which the <i>UsageConstraint</i> applies. This means the described PartVersion is allowed / denied in the referenced UsageConstraint.      </p></td>
+    </tr>
+    <tr>
+        <td>usageNode</td>
+        <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>UsageNode</i> to which the <i>UsageConstraint</i> applies. This means the described <i>PartVersion</i> is allowed / denied in the referenced UsageNode.      </p></td>
     </tr>
     </tbody>
 </table>

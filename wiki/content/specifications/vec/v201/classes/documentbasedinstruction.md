@@ -49,16 +49,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>referencedSheetOrChapter</td>
-        <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the SheetOrChapter that is used as an Instruction.</td>
-    </tr>
-    <tr>
         <td>referencedDocument</td>
         <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
         <td>1</td>
@@ -67,6 +57,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the DocumentVersion that is used as an Instruction.</td>
+    </tr>
+    <tr>
+        <td>referencedSheetOrChapter</td>
+        <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the SheetOrChapter that is used as an Instruction.</td>
     </tr>
     </tbody>
 </table>

@@ -62,24 +62,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>relatedDocument</td>
-        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model).</td>
-    </tr>
-    <tr>
-        <td>itemEquivalence</td>
-        <td><a href="{{< relref "itemequivalence.md" >}}">ItemEquivalence</a></td>
+        <td>specification</td>
+        <td><a href="{{< relref "specification.md" >}}">Specification</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
-        <td>Specifies ItemEquivalances defined by the DocumentVersion.</td>
+        <td>0..1</td>
+        <td>Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.</td>
     </tr>
     <tr>
         <td>referencedPart</td>
@@ -102,14 +92,24 @@ menu_name: vec-2.0.1
         <td>Specifies SheetOrChapters defined in this DocumentVersion. These are especially useful if the DocumentVersion represents an external reference.</td>
     </tr>
     <tr>
-        <td>specification</td>
-        <td><a href="{{< relref "specification.md" >}}">Specification</a></td>
+        <td>relatedDocument</td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model).</td>
+    </tr>
+    <tr>
+        <td>itemEquivalence</td>
+        <td><a href="{{< relref "itemequivalence.md" >}}">ItemEquivalence</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..1</td>
-        <td>Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.</td>
+        <td>1</td>
+        <td>Specifies ItemEquivalances defined by the DocumentVersion.</td>
     </tr>
     </tbody>
 </table>
@@ -136,16 +136,6 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>documentVersion</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "requirementsconformancestatement.md" >}}">RequirementsConformanceStatement</a></td>
-        <td></td>
-        <td><p> References the <i>DocumentVersion</i> that contains the requirements to which a conformance statement shall be expressed.      </p></td>
-    </tr>
-    <tr>
-        <td>documentVersion</td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
@@ -153,6 +143,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
         <td>1</td>
         <td>Specifies the DocumentVersions contained in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>documentVersion</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "requirementsconformancestatement.md" >}}">RequirementsConformanceStatement</a></td>
+        <td></td>
+        <td><p> References the <i>DocumentVersion</i> that contains the requirements to which a conformance statement shall be expressed.      </p></td>
     </tr>
     <tr>
         <td>mappedDocument</td>

@@ -50,16 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>coding</td>
-        <td><a href="{{< relref "coding.md" >}}">Coding</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td>Defines coding of the slot that is satisfied by the Slot.</td>
-    </tr>
-    <tr>
         <td>slotSpecification</td>
         <td><a href="{{< relref "slotspecification.md" >}}">SlotSpecification</a></td>
         <td>0..1</td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the SlotSpecification that is satisfied by the slot.</td>
+    </tr>
+    <tr>
+        <td>coding</td>
+        <td><a href="{{< relref "coding.md" >}}">Coding</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Defines coding of the slot that is satisfied by the Slot.</td>
     </tr>
     </tbody>
 </table>

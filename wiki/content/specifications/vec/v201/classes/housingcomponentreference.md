@@ -50,26 +50,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>pinComponentRef</td>
-        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the PinComponentReferences used in the HousingComponentReference.  (KBLFRM-401)</td>
-    </tr>
-    <tr>
-        <td>componentConnector</td>
-        <td><a href="{{< relref "componentconnector.md" >}}">ComponentConnector</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the ComponentConnector that is realized by the referenced HousingComponentReference.</td>
-    </tr>
-    <tr>
         <td>connectorHousingRole</td>
         <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
         <td>0..1</td>
@@ -88,6 +68,26 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401)</td>
+    </tr>
+    <tr>
+        <td>componentConnector</td>
+        <td><a href="{{< relref "componentconnector.md" >}}">ComponentConnector</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the ComponentConnector that is realized by the referenced HousingComponentReference.</td>
+    </tr>
+    <tr>
+        <td>pinComponentRef</td>
+        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the PinComponentReferences used in the HousingComponentReference.  (KBLFRM-401)</td>
     </tr>
     </tbody>
 </table>

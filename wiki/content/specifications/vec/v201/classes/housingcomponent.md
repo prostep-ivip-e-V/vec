@@ -52,6 +52,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>segmentConnectionPoint</td>
+        <td><a href="{{< relref "segmentconnectionpointhc.md" >}}">SegmentConnectionPointHC</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the <i>SegmentConnectionPoints </i>the <i>HousingComponent</i>.      </p></td>
+    </tr>
+    <tr>
         <td>pinComponent</td>
         <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
         <td>0..*</td>
@@ -70,16 +80,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the ConnectorHousingSpecification that is describing the connector interface of the HousingComponent (e.g. Slots, Cavities, Design, Coding).</td>
-    </tr>
-    <tr>
-        <td>segmentConnectionPoint</td>
-        <td><a href="{{< relref "segmentconnectionpointhc.md" >}}">SegmentConnectionPointHC</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the <i>SegmentConnectionPoints </i>the <i>HousingComponent</i>.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -106,16 +106,6 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>housingComponent</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "eecomponentspecification.md" >}}">EEComponentSpecification</a></td>
-        <td>1</td>
-        <td>Specifies the available connector interfaces of the EEComponent.</td>
-    </tr>
-    <tr>
-        <td>housingComponent</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -123,6 +113,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
         <td>0..*</td>
         <td>Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401)</td>
+    </tr>
+    <tr>
+        <td>housingComponent</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "eecomponentspecification.md" >}}">EEComponentSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the available connector interfaces of the EEComponent.</td>
     </tr>
     </tbody>
 </table>

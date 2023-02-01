@@ -56,7 +56,7 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>cathode</td>
+        <td>anode</td>
         <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
         <td>0..1</td>
         <td>N</td>
@@ -66,7 +66,7 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>anode</td>
+        <td>cathode</td>
         <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
         <td>0..1</td>
         <td>N</td>

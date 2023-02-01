@@ -59,16 +59,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>partRelation</td>
-        <td><a href="{{< relref "partrelation.md" >}}">PartRelation</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips).</td>
-    </tr>
-    <tr>
         <td>boundingBox</td>
         <td><a href="{{< relref "boundingbox.md" >}}">BoundingBox</a></td>
         <td>0..1</td>
@@ -77,6 +67,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td></td>
         <td><p> Defines the bounding box of the part.      </p></td>
+    </tr>
+    <tr>
+        <td>partRelation</td>
+        <td><a href="{{< relref "partrelation.md" >}}">PartRelation</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips).</td>
     </tr>
     </tbody>
 </table>

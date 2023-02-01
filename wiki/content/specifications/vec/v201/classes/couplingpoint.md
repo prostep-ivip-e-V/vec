@@ -50,6 +50,16 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
+        <td>slotCoupling</td>
+        <td><a href="{{< relref "slotcoupling.md" >}}">SlotCoupling</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
         <td>firstConnector</td>
         <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
         <td>0..1</td>
@@ -77,16 +87,6 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>slotCoupling</td>
-        <td><a href="{{< relref "slotcoupling.md" >}}">SlotCoupling</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
         <td></td>
     </tr>
     </tbody>

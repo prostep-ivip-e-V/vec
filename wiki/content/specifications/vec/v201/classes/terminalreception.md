@@ -85,16 +85,6 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>terminalReception</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
-        <td>0..*</td>
-        <td><p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>terminalReception</td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
@@ -112,6 +102,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "internalterminalconnection.md" >}}">InternalTerminalConnection</a></td>
         <td>0..1</td>
         <td>References the TerminalReceptions that participate in the InternalTerminalConnection.</td>
+    </tr>
+    <tr>
+        <td>terminalReception</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p></td>
     </tr>
     </tbody>
 </table>

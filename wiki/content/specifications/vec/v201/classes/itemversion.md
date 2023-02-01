@@ -53,24 +53,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>contract</td>
-        <td><a href="{{< relref "contract.md" >}}">Contract</a></td>
+        <td>approval</td>
+        <td><a href="{{< relref "approval.md" >}}">Approval</a></td>
         <td>0..*</td>
-        <td>N</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..*</td>
-        <td>References the contracts that apply to an ItemVersion.</td>
-    </tr>
-    <tr>
-        <td>copyrightInformation</td>
-        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>CopyrightInformation</i> that is in effect for this <i>ItemVersion. </i>If no <i>CopyrightInformation</i> is referenced by the <i>ItemVersion</i>, the <i>CopyrightInformation </i>that is referenced by the <i>VecContent</i> (if defined) shall be considered as in effect for this <i>ItemVersion.</i>      </p></td>
+        <td>1</td>
+        <td>Specifies the approval information of the ItemVersion.</td>
     </tr>
     <tr>
         <td>creation</td>
@@ -83,6 +73,16 @@ menu_name: vec-2.0.1
         <td>Specifies the information about the creation of the ItemVersion.</td>
     </tr>
     <tr>
+        <td>contract</td>
+        <td><a href="{{< relref "contract.md" >}}">Contract</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the contracts that apply to an ItemVersion.</td>
+    </tr>
+    <tr>
         <td>changeDescription</td>
         <td><a href="{{< relref "changedescription.md" >}}">ChangeDescription</a></td>
         <td>0..*</td>
@@ -93,14 +93,14 @@ menu_name: vec-2.0.1
         <td>Specifies the change history of the ItemVersion.</td>
     </tr>
     <tr>
-        <td>approval</td>
-        <td><a href="{{< relref "approval.md" >}}">Approval</a></td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>copyrightInformation</td>
+        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
+        <td>0..1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
-        <td>Specifies the approval information of the ItemVersion.</td>
+        <td>0..*</td>
+        <td><p> References the <i>CopyrightInformation</i> that is in effect for this <i>ItemVersion. </i>If no <i>CopyrightInformation</i> is referenced by the <i>ItemVersion</i>, the <i>CopyrightInformation </i>that is referenced by the <i>VecContent</i> (if defined) shall be considered as in effect for this <i>ItemVersion.</i>      </p></td>
     </tr>
     </tbody>
 </table>

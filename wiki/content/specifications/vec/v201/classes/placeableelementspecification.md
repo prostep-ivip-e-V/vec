@@ -53,16 +53,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>measurementPoint</td>
-        <td><a href="{{< relref "measurementpoint.md" >}}">MeasurementPoint</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the <i>MeasurementPoints</i> of a <i>PlaceableElement</i>.      </p></td>
-    </tr>
-    <tr>
         <td>placementPoint</td>
         <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
         <td>0..*</td>
@@ -71,6 +61,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td><p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>measurementPoint</td>
+        <td><a href="{{< relref "measurementpoint.md" >}}">MeasurementPoint</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the <i>MeasurementPoints</i> of a <i>PlaceableElement</i>.      </p></td>
     </tr>
     </tbody>
 </table>

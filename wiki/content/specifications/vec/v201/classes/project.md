@@ -67,16 +67,6 @@ menu_name: vec-2.0.1
     <tr>
         <td>project</td>
         <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
-        <td>1</td>
-        <td>Specifies the Projects used in the VEC-file.</td>
-    </tr>
-    <tr>
-        <td>project</td>
-        <td>0..*</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
@@ -93,6 +83,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>0..*</td>
         <td>References the project that develops the PartVersion.</td>
+    </tr>
+    <tr>
+        <td>project</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
+        <td>1</td>
+        <td>Specifies the Projects used in the VEC-file.</td>
     </tr>
     <tr>
         <td>usedInProject</td>

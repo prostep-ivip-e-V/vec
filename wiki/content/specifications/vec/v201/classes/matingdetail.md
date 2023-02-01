@@ -50,14 +50,14 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>secondTerminalReception</td>
+        <td>firstTerminalReception</td>
         <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td>References the second terminal reception that is mated.</td>
+        <td>References the first terminal reception that is mated.</td>
     </tr>
     <tr>
         <td>connection</td>
@@ -70,14 +70,14 @@ menu_name: vec-2.0.1
         <td><p> References the <i>Connection</i> that is realized by this <i>MatingPointDetail</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p>      <p> The definition at level of the <i>MatingDetail </i>might be required if the <i>TerminalRole </i>of the MatingPoint carries multiple different potentials (e.g. Coax).      </p></td>
     </tr>
     <tr>
-        <td>firstTerminalReception</td>
+        <td>secondTerminalReception</td>
         <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td>References the first terminal reception that is mated.</td>
+        <td>References the second terminal reception that is mated.</td>
     </tr>
     </tbody>
 </table>

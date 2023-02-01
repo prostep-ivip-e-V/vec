@@ -57,16 +57,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>project</td>
-        <td><a href="{{< relref "project.md" >}}">Project</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td></td>
-        <td><p> &#160;Defines the projects for which the application constraint applies.      </p></td>
-    </tr>
-    <tr>
         <td>baseInclusion</td>
         <td><a href="{{< relref "applicationconstraint.md" >}}">ApplicationConstraint</a></td>
         <td>0..1</td>
@@ -75,6 +65,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> An <i>ApplicationConstraint </i>can only be satisfied if its <i>baseInclusion </i>is satisfied as well.&#160;      </p></td>
+    </tr>
+    <tr>
+        <td>project</td>
+        <td><a href="{{< relref "project.md" >}}">Project</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> &#160;Defines the projects for which the application constraint applies.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -110,16 +110,6 @@ menu_name: vec-2.0.1
         <td><p> References the application constraint that applies to the ConfigurationConstraint.      </p></td>
     </tr>
     <tr>
-        <td>{{< deprecated since="[]" reason="[]">}}applicationConstraint</td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
-        <td></td>
-        <td><p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the application constraints that apply to the ConfigurableElement.      </p></td>
-    </tr>
-    <tr>
         <td>applicationConstraint</td>
         <td>1..*</td>
         <td>Y</td>
@@ -128,6 +118,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "applicationconstraintspecification.md" >}}">ApplicationConstraintSpecification</a></td>
         <td>1</td>
         <td>Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification.</td>
+    </tr>
+    <tr>
+        <td>applicationConstraint</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
+        <td></td>
+        <td>{{< deprecated >}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the application constraints that apply to the ConfigurableElement.      </p></td>
     </tr>
     <tr>
         <td>baseInclusion</td>

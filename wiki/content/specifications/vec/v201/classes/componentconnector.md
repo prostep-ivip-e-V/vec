@@ -96,22 +96,22 @@ menu_name: vec-2.0.1
     <tr>
         <td>componentConnector</td>
         <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
-        <td>0..*</td>
-        <td><p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p></td>
-    </tr>
-    <tr>
-        <td>componentConnector</td>
-        <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td><a href="{{< relref "componentnode.md" >}}">ComponentNode</a></td>
         <td>1</td>
         <td>Specifies the ComponentConnectors of a ComponentNode.</td>
+    </tr>
+    <tr>
+        <td>componentConnector</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
+        <td>0..*</td>
+        <td><p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p></td>
     </tr>
     </tbody>
 </table>

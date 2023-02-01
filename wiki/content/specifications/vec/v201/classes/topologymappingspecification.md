@@ -51,20 +51,20 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>segmentMapping</td>
-        <td><a href="{{< relref "segmentmapping.md" >}}">SegmentMapping</a></td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>outerTopology</td>
+        <td><a href="{{< relref "topologyspecification.md" >}}">TopologySpecification</a></td>
+        <td>1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td></td>
         <td></td>
     </tr>
     <tr>
-        <td>outerTopology</td>
-        <td><a href="{{< relref "topologyspecification.md" >}}">TopologySpecification</a></td>
-        <td>1</td>
-        <td>N</td>
+        <td>segmentMapping</td>
+        <td><a href="{{< relref "segmentmapping.md" >}}">SegmentMapping</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td></td>

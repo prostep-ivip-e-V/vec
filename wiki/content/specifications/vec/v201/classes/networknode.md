@@ -98,13 +98,13 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>networkNode</td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "netspecification.md" >}}">NetSpecification</a></td>
-        <td>1</td>
-        <td><p> Specifies the NetworkNodes defined in the NetSpecification.      </p></td>
+        <td><a href="{{< relref "networknodeviewitem.md" >}}">NetworkNodeViewItem</a></td>
+        <td>0..*</td>
+        <td>References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i></td>
     </tr>
     <tr>
         <td>networkNode</td>
@@ -118,13 +118,13 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>networkNode</td>
-        <td>1</td>
-        <td>N</td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "networknodeviewitem.md" >}}">NetworkNodeViewItem</a></td>
-        <td>0..*</td>
-        <td>References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i></td>
+        <td><a href="{{< relref "netspecification.md" >}}">NetSpecification</a></td>
+        <td>1</td>
+        <td><p> Specifies the NetworkNodes defined in the NetSpecification.      </p></td>
     </tr>
     </tbody>
 </table>

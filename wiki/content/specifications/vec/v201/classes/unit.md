@@ -66,6 +66,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
+        <td><a href="{{< relref "localgeometryspecification.md" >}}">LocalGeometrySpecification</a></td>
+        <td></td>
+        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+    </tr>
+    <tr>
+        <td>baseUnit</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
         <td><a href="{{< relref "cavitypositiondetail.md" >}}">CavityPositionDetail</a></td>
         <td>0..*</td>
         <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points) of this <i>CavityPositionDetail&#160;</i>are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
@@ -79,16 +89,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "buildingblockspecification2d.md" >}}">BuildingBlockSpecification2D</a></td>
         <td>0..*</td>
         <td></td>
-    </tr>
-    <tr>
-        <td>baseUnit</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "localgeometryspecification.md" >}}">LocalGeometrySpecification</a></td>
-        <td></td>
-        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
     </tr>
     <tr>
         <td>factors</td>
@@ -116,9 +116,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "valuewithunit.md" >}}">ValueWithUnit</a></td>
+        <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
         <td>0..*</td>
-        <td>References the unit of the value.</td>
+        <td></td>
     </tr>
     <tr>
         <td>unitComponent</td>
@@ -126,9 +126,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
+        <td><a href="{{< relref "valuewithunit.md" >}}">ValueWithUnit</a></td>
         <td>0..*</td>
-        <td></td>
+        <td>References the unit of the value.</td>
     </tr>
     </tbody>
 </table>

@@ -52,16 +52,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>definedLocations</td>
-        <td><a href="{{< relref "location.md" >}}">Location</a></td>
-        <td>0..2</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td></td>
-    </tr>
-    <tr>
         <td>path</td>
         <td><a href="{{< relref "path.md" >}}">Path</a></td>
         <td>0..1</td>
@@ -70,26 +60,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td>Specifies a path in the topology along which the dimension is defined.</td>
-    </tr>
-    <tr>
-        <td>unitComponent</td>
-        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>tolerance</td>
-        <td><a href="{{< relref "tolerance.md" >}}">Tolerance</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td></td>
     </tr>
     <tr>
         <td>referenceAnchor</td>
@@ -102,6 +72,26 @@ menu_name: vec-2.0.1
         <td><p> References the location that is used as reference point for the dimensioning (e.g. the location of a fixing as this relates to a fixpoint of the body in white).     </p>      <p> See KBLFRM-329 and KBLFRM-391.      </p></td>
     </tr>
     <tr>
+        <td>definedLocations</td>
+        <td><a href="{{< relref "location.md" >}}">Location</a></td>
+        <td>0..2</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>unitComponent</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
         <td>dimensionAnchor</td>
         <td><a href="{{< relref "dimensionanchor.md" >}}">DimensionAnchor</a></td>
         <td>1</td>
@@ -110,6 +100,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the location that is used as dimension point for the dimensioning (e.g. the entry point of a bundle into a connector housing).     </p>      <p> See KBLFRM-329 and KBLFRM-391.      </p></td>
+    </tr>
+    <tr>
+        <td>tolerance</td>
+        <td><a href="{{< relref "tolerance.md" >}}">Tolerance</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td></td>
     </tr>
     </tbody>
 </table>

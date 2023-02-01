@@ -53,16 +53,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>supplementaryParts</td>
-        <td><a href="{{< relref "partrelation.md" >}}">PartRelation</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p></td>
-    </tr>
-    <tr>
         <td>cavity</td>
         <td><a href="{{< relref "cavity.md" >}}">Cavity</a></td>
         <td>1..*</td>
@@ -71,6 +61,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td><p> Specifies the Cavities forming the Slot.      </p></td>
+    </tr>
+    <tr>
+        <td>supplementaryParts</td>
+        <td><a href="{{< relref "partrelation.md" >}}">PartRelation</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p></td>
     </tr>
     </tbody>
 </table>

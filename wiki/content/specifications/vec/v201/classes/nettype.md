@@ -61,6 +61,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
+        <td><a href="{{< relref "networkport.md" >}}">NetworkPort</a></td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>netType</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
         <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
         <td></td>
         <td></td>
@@ -83,16 +93,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td><a href="{{< relref "net.md" >}}">Net</a></td>
         <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>netType</td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "networkport.md" >}}">NetworkPort</a></td>
-        <td>0..*</td>
         <td></td>
     </tr>
     </tbody>

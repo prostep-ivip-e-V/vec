@@ -50,7 +50,7 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>secondCavity</td>
+        <td>firstCavity</td>
         <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
         <td>1</td>
         <td>N</td>
@@ -60,7 +60,7 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>firstCavity</td>
+        <td>secondCavity</td>
         <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
         <td>1</td>
         <td>N</td>

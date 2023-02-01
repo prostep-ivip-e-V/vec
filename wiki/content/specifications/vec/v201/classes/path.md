@@ -97,16 +97,6 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "onwayplacement.md" >}}">OnWayPlacement</a></td>
-        <td>0..1</td>
-        <td>Specifies the topology path defining the way the OnWayPlacement takes in the topology.</td>
-    </tr>
-    <tr>
-        <td>path</td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
         <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
         <td>0..1</td>
         <td>Specifies a path in the topology along which the dimension is defined.</td>
@@ -120,6 +110,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "routing.md" >}}">Routing</a></td>
         <td>0..1</td>
         <td>Specifies a Path on the topology that is used for the routing.</td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "onwayplacement.md" >}}">OnWayPlacement</a></td>
+        <td>0..1</td>
+        <td>Specifies the topology path defining the way the OnWayPlacement takes in the topology.</td>
     </tr>
     <tr>
         <td>restrictedPath</td>

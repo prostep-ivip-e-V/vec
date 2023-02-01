@@ -99,9 +99,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "internalcomponentconnection.md" >}}">InternalComponentConnection</a></td>
+        <td><a href="{{< relref "wireelementspecification.md" >}}">WireElementSpecification</a></td>
         <td>0..*</td>
-        <td></td>
+        <td><p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p></td>
     </tr>
     <tr>
         <td>conductorSpecification</td>
@@ -109,9 +109,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wireelementspecification.md" >}}">WireElementSpecification</a></td>
+        <td><a href="{{< relref "internalcomponentconnection.md" >}}">InternalComponentConnection</a></td>
         <td>0..*</td>
-        <td><p> If the <i>WireElement</i> has a core then the specification of the core is referenced here.      </p></td>
+        <td></td>
     </tr>
     <tr>
         <td>recommendedConductorSpecification</td>

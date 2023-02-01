@@ -51,16 +51,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>wireReceptionSpecification</td>
-        <td><a href="{{< relref "wirereceptionspecification.md" >}}">WireReceptionSpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the WireReceptionSpecification that specifies the WireReception.</td>
-    </tr>
-    <tr>
         <td>placementPoint</td>
         <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
         <td>0..1</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p></td>
+    </tr>
+    <tr>
+        <td>wireReceptionSpecification</td>
+        <td><a href="{{< relref "wirereceptionspecification.md" >}}">WireReceptionSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the WireReceptionSpecification that specifies the WireReception.</td>
     </tr>
     </tbody>
 </table>

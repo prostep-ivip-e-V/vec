@@ -52,16 +52,6 @@ menu_name: vec-2.0.1
     <thead>
     <tbody>
     <tr>
-        <td>positions</td>
-        <td><a href="{{< relref "localposition.md" >}}">LocalPosition</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> All position defined by this <i>LocalGeometrySpecification.</i>      </p></td>
-    </tr>
-    <tr>
         <td>cartesianPoint</td>
         <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
         <td>0..*</td>
@@ -90,6 +80,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td></td>
         <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+    </tr>
+    <tr>
+        <td>positions</td>
+        <td><a href="{{< relref "localposition.md" >}}">LocalPosition</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> All position defined by this <i>LocalGeometrySpecification.</i>      </p></td>
     </tr>
     </tbody>
 </table>

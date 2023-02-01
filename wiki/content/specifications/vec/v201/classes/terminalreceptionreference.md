@@ -104,16 +104,6 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>terminalReceptionReference</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
-        <td>1</td>
-        <td><p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>terminalReceptionReference</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -121,6 +111,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "cavitymountingdetail.md" >}}">CavityMountingDetail</a></td>
         <td>0..*</td>
         <td>References the TerminalReception that is used for the detailed description of the cavity mounting.</td>
+    </tr>
+    <tr>
+        <td>terminalReceptionReference</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>1</td>
+        <td><p> Specifies the <i>TerminalReceptionReferences </i>of this <i>TerminalRole.</i>      </p></td>
     </tr>
     </tbody>
 </table>
