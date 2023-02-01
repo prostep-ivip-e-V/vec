@@ -41,24 +41,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>connectorHousingRole</td>
-        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td></td>
-    </tr>
     <tr>
         <td>housingComponent</td>
         <td><a href="{{< relref "housingcomponent.md" >}}">HousingComponent</a></td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Points to the HousingComponent referenced by the HousingComponent reference.  (KBLFRM-401)</td>
+    </tr>
+    <tr>
+        <td>connectorHousingRole</td>
+        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td></td>
     </tr>
     <tr>
         <td>componentConnector</td>
@@ -103,9 +103,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

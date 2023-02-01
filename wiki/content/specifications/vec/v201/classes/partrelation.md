@@ -42,9 +42,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -74,9 +74,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -89,9 +89,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "modularslot.md" >}}">ModularSlot</a></td>
+        <td><a href="{{< relref "extensionslot.md" >}}">ExtensionSlot</a></td>
         <td>0..*</td>
-        <td><p> References the <i>PartRelations</i> that are valid inserts for this <i>ModularSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ModularSlot</i> are always ConnectorHousings by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;ConnectorHousing</i>      </p></td>
+        <td><p> References the <i>PartRelations</i> that are valid inserts for this <i>ExtensionSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for an <i>ExtensionSlot</i> are always <i>EEComponents</i> by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;EEComponent.</i>      </p></td>
     </tr>
     <tr>
         <td>allowedInserts</td>
@@ -99,9 +99,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "extensionslot.md" >}}">ExtensionSlot</a></td>
+        <td><a href="{{< relref "modularslot.md" >}}">ModularSlot</a></td>
         <td>0..*</td>
-        <td><p> References the <i>PartRelations</i> that are valid inserts for this <i>ExtensionSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for an <i>ExtensionSlot</i> are always <i>EEComponents</i> by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;EEComponent.</i>      </p></td>
+        <td><p> References the <i>PartRelations</i> that are valid inserts for this <i>ModularSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ModularSlot</i> are always ConnectorHousings by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;ConnectorHousing</i>      </p></td>
     </tr>
     <tr>
         <td>fixationAccessory</td>
@@ -129,9 +129,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
-        <td></td>
-        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this <i>PlacementPoint</i>, e.g. cable ties for attaching the component on the harness.      </p></td>
+        <td><a href="{{< relref "slot.md" >}}">Slot</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p></td>
     </tr>
     <tr>
         <td>supplementaryParts</td>
@@ -139,9 +139,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "slot.md" >}}">Slot</a></td>
-        <td>0..*</td>
-        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p></td>
+        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
+        <td></td>
+        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this <i>PlacementPoint</i>, e.g. cable ties for attaching the component on the harness.      </p></td>
     </tr>
     </tbody>
 </table>

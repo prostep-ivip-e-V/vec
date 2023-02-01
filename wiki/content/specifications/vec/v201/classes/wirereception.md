@@ -42,24 +42,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>placementPoint</td>
-        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p></td>
-    </tr>
     <tr>
         <td>wireReceptionSpecification</td>
         <td><a href="{{< relref "wirereceptionspecification.md" >}}">WireReceptionSpecification</a></td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the WireReceptionSpecification that specifies the WireReception.</td>
+    </tr>
+    <tr>
+        <td>placementPoint</td>
+        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>WireReception</i> in a PlaceableElementSpecification.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -84,15 +84,25 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
+    <tr>
+        <td>wireReception</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the WireReceptions of the terminal described by the TerminalSpecification.</td>
+    </tr>
     <tr>
         <td>wireReception</td>
         <td>0..*</td>
@@ -112,16 +122,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "wirereceptionreference.md" >}}">WireReceptionReference</a></td>
         <td>0..*</td>
         <td><p> References the <i>WireReception</i> that is instanced by this <i>WireReceptionReference.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>wireReception</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
-        <td>1</td>
-        <td>Specifies the WireReceptions of the terminal described by the TerminalSpecification.</td>
     </tr>
     </tbody>
 </table>

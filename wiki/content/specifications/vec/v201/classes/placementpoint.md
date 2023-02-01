@@ -42,9 +42,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -74,9 +74,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -85,13 +85,13 @@ menu_name: vec-2.0.1
     <tbody>
     <tr>
         <td>placementPoint</td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "placeableelementspecification.md" >}}">PlaceableElementSpecification</a></td>
-        <td>1</td>
-        <td><p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p></td>
+        <td><a href="{{< relref "placementpointreference.md" >}}">PlacementPointReference</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p></td>
     </tr>
     <tr>
         <td>placementPoint</td>
@@ -115,13 +115,13 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>placementPoint</td>
-        <td>1</td>
+        <td>0..1</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "placementpointreference.md" >}}">PlacementPointReference</a></td>
+        <td><a href="{{< relref "cableductoutlet.md" >}}">CableDuctOutlet</a></td>
         <td>0..*</td>
-        <td><p> References the <i>PlacementPoint</i> that is instanced by this <i>PlacementPointReference.</i>      </p></td>
+        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p></td>
     </tr>
     <tr>
         <td>placementPoint</td>
@@ -129,9 +129,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "fittingoutlet.md" >}}">FittingOutlet</a></td>
+        <td><a href="{{< relref "segmentconnectionpoint.md" >}}">SegmentConnectionPoint</a></td>
         <td>0..*</td>
-        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>FittingOutlet</i> in a PlaceableElementSpecification.      </p></td>
+        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p></td>
     </tr>
     <tr>
         <td>placementPoint</td>
@@ -155,13 +155,13 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>placementPoint</td>
-        <td>0..1</td>
-        <td>N</td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "segmentconnectionpoint.md" >}}">SegmentConnectionPoint</a></td>
-        <td>0..*</td>
-        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>SegmentConnectionPoint </i>in a <i>PlaceableElementSpecification.</i>      </p></td>
+        <td><a href="{{< relref "placeableelementspecification.md" >}}">PlaceableElementSpecification</a></td>
+        <td>1</td>
+        <td><p> Specifies the <i>PlacementPoints</i> of a <i>PlaceableElementSpecification</i>.      </p></td>
     </tr>
     <tr>
         <td>placementPoint</td>
@@ -169,9 +169,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "cableductoutlet.md" >}}">CableDuctOutlet</a></td>
+        <td><a href="{{< relref "fittingoutlet.md" >}}">FittingOutlet</a></td>
         <td>0..*</td>
-        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>CableDuctOutlet</i> in a PlaceableElementSpecification.      </p></td>
+        <td><p> Specifies the <i>PlacementPoint</i> that represents this <i>FittingOutlet</i> in a PlaceableElementSpecification.      </p></td>
     </tr>
     </tbody>
 </table>

@@ -42,14 +42,24 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
+    <tr>
+        <td>baseUnit</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points) of this <i>CavityPositionDetail&#160;</i>are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+    </tr>
     <tr>
         <td>insertionVector</td>
         <td><a href="{{< relref "cartesianvector3d.md" >}}">CartesianVector3D</a></td>
@@ -70,16 +80,6 @@ menu_name: vec-2.0.1
         <td>1</td>
         <td><p> The position of the center of the cavity in the entrance surface of the connector during the insertion process.      </p></td>
     </tr>
-    <tr>
-        <td>baseUnit</td>
-        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points) of this <i>CavityPositionDetail&#160;</i>are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
-    </tr>
     </tbody>
 </table>
 
@@ -94,9 +94,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

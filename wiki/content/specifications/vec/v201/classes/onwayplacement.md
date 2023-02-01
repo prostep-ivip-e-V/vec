@@ -42,23 +42,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>path</td>
-        <td><a href="{{< relref "path.md" >}}">Path</a></td>
-        <td>0..1</td>
+        <td>startLocation</td>
+        <td><a href="{{< relref "location.md" >}}">Location</a></td>
+        <td>1</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>0..1</td>
-        <td>Specifies the topology path defining the way the OnWayPlacement takes in the topology.</td>
+        <td>References the Location where OnWayPlacement starts.</td>
     </tr>
     <tr>
         <td>endLocation</td>
@@ -71,14 +71,14 @@ menu_name: vec-2.0.1
         <td>References the Location where OnWayPlacement ends.</td>
     </tr>
     <tr>
-        <td>startLocation</td>
-        <td><a href="{{< relref "location.md" >}}">Location</a></td>
-        <td>1</td>
+        <td>path</td>
+        <td><a href="{{< relref "path.md" >}}">Path</a></td>
+        <td>0..1</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>0..1</td>
-        <td>References the Location where OnWayPlacement starts.</td>
+        <td>Specifies the topology path defining the way the OnWayPlacement takes in the topology.</td>
     </tr>
     </tbody>
 </table>

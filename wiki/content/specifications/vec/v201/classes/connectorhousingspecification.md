@@ -48,23 +48,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>segmentConnectionPoint</td>
-        <td><a href="{{< relref "segmentconnectionpoint.md" >}}">SegmentConnectionPoint</a></td>
+        <td>slot</td>
+        <td><a href="{{< relref "abstractslot.md" >}}">AbstractSlot</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td><p> Specifies the <i>SegmentConnectionPoints </i>the connector housing.      </p></td>
+        <td>Specifies the slots forming the ConnectorHousing.</td>
     </tr>
     <tr>
         <td>coding</td>
@@ -77,14 +77,14 @@ menu_name: vec-2.0.1
         <td>Defines coding of the connector housing that is satisfied by the connector housing.</td>
     </tr>
     <tr>
-        <td>slot</td>
-        <td><a href="{{< relref "abstractslot.md" >}}">AbstractSlot</a></td>
+        <td>segmentConnectionPoint</td>
+        <td><a href="{{< relref "segmentconnectionpoint.md" >}}">SegmentConnectionPoint</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td>Specifies the slots forming the ConnectorHousing.</td>
+        <td><p> Specifies the <i>SegmentConnectionPoints </i>the connector housing.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -100,9 +100,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

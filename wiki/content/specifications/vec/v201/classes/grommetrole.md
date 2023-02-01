@@ -41,24 +41,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>grommetSpecification</td>
-        <td><a href="{{< relref "grommetspecification.md" >}}">GrommetSpecification</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>GrommetSpecification</i> that is instanced by this <i>GrommetRole.</i>      </p></td>
-    </tr>
     <tr>
         <td>cableLeadThroughReference</td>
         <td><a href="{{< relref "cableleadthroughreference.md" >}}">CableLeadThroughReference</a></td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td></td>
+    </tr>
+    <tr>
+        <td>grommetSpecification</td>
+        <td><a href="{{< relref "grommetspecification.md" >}}">GrommetSpecification</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>GrommetSpecification</i> that is instanced by this <i>GrommetRole.</i>      </p></td>
     </tr>
     </tbody>
 </table>

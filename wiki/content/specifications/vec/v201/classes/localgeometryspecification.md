@@ -43,23 +43,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>cartesianPoint</td>
-        <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>baseUnit</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..1</td>
-        <td><p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p></td>
+        <td></td>
+        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
     </tr>
     <tr>
         <td>boundingBoxPositioning</td>
@@ -72,14 +72,14 @@ menu_name: vec-2.0.1
         <td><p> The transformation that defines the positioning of the bounding box in coordinate system of the component.      </p></td>
     </tr>
     <tr>
-        <td>baseUnit</td>
-        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
-        <td>1</td>
-        <td>N</td>
+        <td>cartesianPoint</td>
+        <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td></td>
-        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+        <td>0..1</td>
+        <td><p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p></td>
     </tr>
     <tr>
         <td>positions</td>

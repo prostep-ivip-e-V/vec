@@ -44,24 +44,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>connection</td>
-        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
-        <td>2..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the Connections that are grouped by the ConnectionGroup.</td>
-    </tr>
     <tr>
         <td>subGroup</td>
         <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
@@ -71,6 +61,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td>Specifies the ConnectionGroups that are a subgroup of this ConnectionGroup.</td>
+    </tr>
+    <tr>
+        <td>connection</td>
+        <td><a href="{{< relref "connection.md" >}}">Connection</a></td>
+        <td>2..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the Connections that are grouped by the ConnectionGroup.</td>
     </tr>
     </tbody>
 </table>
@@ -86,15 +86,25 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
+    <tr>
+        <td>connectionGroup</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
+        <td>0..1</td>
+        <td>Specifies the ConnectionGroup defined by the ConnectionSpecification.</td>
+    </tr>
     <tr>
         <td>connectionGroup</td>
         <td>0..*</td>
@@ -114,16 +124,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "wiregrouping.md" >}}">WireGrouping</a></td>
         <td></td>
         <td><p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>connectionGroup</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
-        <td>0..1</td>
-        <td>Specifies the ConnectionGroup defined by the ConnectionSpecification.</td>
     </tr>
     <tr>
         <td>subGroup</td>

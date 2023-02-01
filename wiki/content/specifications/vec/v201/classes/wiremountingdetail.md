@@ -40,24 +40,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>contactedWireReception</td>
-        <td><a href="{{< relref "wirereceptionreference.md" >}}">WireReceptionReference</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the WireReception that is used for the WireMounting.</td>
-    </tr>
     <tr>
         <td>referencedWireEnd</td>
         <td><a href="{{< relref "wireend.md" >}}">WireEnd</a></td>
@@ -67,6 +57,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the WireEnds that are mounted to referenced WireReception. A cardinality of more than one is allowed in order support parallel connectors, where multiple wire ends are placed on one side of the connector (one wire reception) and the other wire ends are placed on the other side of the connector (the other wire reception).</td>
+    </tr>
+    <tr>
+        <td>contactedWireReception</td>
+        <td><a href="{{< relref "wirereceptionreference.md" >}}">WireReceptionReference</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the WireReception that is used for the WireMounting.</td>
     </tr>
     </tbody>
 </table>
@@ -82,9 +82,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

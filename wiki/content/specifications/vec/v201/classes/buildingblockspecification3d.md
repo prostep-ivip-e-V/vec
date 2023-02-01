@@ -42,14 +42,24 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
+    <tr>
+        <td>placedElementViewItem3D</td>
+        <td><a href="{{< relref "occurrenceorusageviewitem3d.md" >}}">OccurrenceOrUsageViewItem3D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D.</td>
+    </tr>
     <tr>
         <td>cartesianPoint</td>
         <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
@@ -59,6 +69,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td>Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.</td>
+    </tr>
+    <tr>
+        <td>geometrySegment</td>
+        <td><a href="{{< relref "geometrysegment3d.md" >}}">GeometrySegment3D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p></td>
     </tr>
     <tr>
         <td>geometryNode</td>
@@ -79,26 +99,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td></td>
-    </tr>
-    <tr>
-        <td>placedElementViewItem3D</td>
-        <td><a href="{{< relref "occurrenceorusageviewitem3d.md" >}}">OccurrenceOrUsageViewItem3D</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the view items for OccurrenceOrUsages in a BuildingBlockSpecification3D.</td>
-    </tr>
-    <tr>
-        <td>geometrySegment</td>
-        <td><a href="{{< relref "geometrysegment3d.md" >}}">GeometrySegment3D</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the GeometrySegment3Ds defined by the BuildingBlockSpecification3D.      </p></td>
     </tr>
     <tr>
         <td>topologyZone</td>
@@ -124,9 +124,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

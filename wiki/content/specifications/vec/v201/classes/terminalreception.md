@@ -42,9 +42,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -74,25 +74,15 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>terminalReception</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
-        <td>1</td>
-        <td>Specifies the TerminalReceptions of the terminal described by the TerminalSpecification.</td>
-    </tr>
     <tr>
         <td>terminalReception</td>
         <td>0..*</td>
@@ -112,6 +102,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
         <td>0..*</td>
         <td><p> References the <i>TerminalReception</i> that is instanced by this <i>TerminalReceptionReference.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>terminalReception</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "terminalspecification.md" >}}">TerminalSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the TerminalReceptions of the terminal described by the TerminalSpecification.</td>
     </tr>
     </tbody>
 </table>

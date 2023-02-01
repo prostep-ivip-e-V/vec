@@ -42,24 +42,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>placedElement</td>
-        <td><a href="{{< relref "placeableelementrole.md" >}}">PlaceableElementRole</a></td>
-        <td>1..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the PlaceableElementRoles placed by the Placement.</td>
-    </tr>
     <tr>
         <td>isOnTopOf</td>
         <td><a href="{{< relref "placement.md" >}}">Placement</a></td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Specifies constraints on ordering of Placements. All referenced Placements must be below (nearer to the center of the Segment) this Placement.  (see KBLFRM-171)</td>
+    </tr>
+    <tr>
+        <td>placedElement</td>
+        <td><a href="{{< relref "placeableelementrole.md" >}}">PlaceableElementRole</a></td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the PlaceableElementRoles placed by the Placement.</td>
     </tr>
     </tbody>
 </table>
@@ -84,9 +84,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

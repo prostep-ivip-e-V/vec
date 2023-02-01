@@ -42,9 +42,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -74,9 +74,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -89,9 +89,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
+        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
         <td>0..*</td>
-        <td>References the ComponentConnector that is realized by the referenced HousingComponentReference.</td>
+        <td><p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p></td>
     </tr>
     <tr>
         <td>componentConnector</td>
@@ -109,9 +109,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
+        <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
         <td>0..*</td>
-        <td><p> References the ComponentConnector that is realized by the referenced ConnectorHousing (OccurrenceOrUsage with ConnectorHousingRole). This can especially be relevant for inliners. KBLFRM-341.      </p></td>
+        <td>References the ComponentConnector that is realized by the referenced HousingComponentReference.</td>
     </tr>
     </tbody>
 </table>

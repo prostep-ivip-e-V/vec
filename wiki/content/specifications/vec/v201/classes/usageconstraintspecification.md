@@ -42,24 +42,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>partUsageConstraint</td>
-        <td><a href="{{< relref "usageconstraint.md" >}}">UsageConstraint</a></td>
-        <td>1..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>1</td>
-        <td><p> Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. The ordering of this association is relevant. The elements shall arranged in the order of ascending priority.&#160;That means, elements further back in the collection have a higher priority.      </p></td>
-    </tr>
     <tr>
         <td>constrainedParts</td>
         <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> References the <i>PartVersions</i> to which this <i>UsageConstraintSpecification</i> applies.      </p></td>
+    </tr>
+    <tr>
+        <td>partUsageConstraint</td>
+        <td><a href="{{< relref "usageconstraint.md" >}}">UsageConstraint</a></td>
+        <td>1..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>1</td>
+        <td><p> Specifies the UsageConstraints that apply to the PartVersion or PartUsages described by the UsageConstraintSpecification. The ordering of this association is relevant. The elements shall arranged in the order of ascending priority.&#160;That means, elements further back in the collection have a higher priority.      </p></td>
     </tr>
     </tbody>
 </table>

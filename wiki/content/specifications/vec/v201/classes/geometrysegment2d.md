@@ -44,24 +44,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>endNode</td>
-        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the GeometryNode2D where the GeometrySegment2D ends.</td>
-    </tr>
     <tr>
         <td>startNode</td>
         <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
@@ -71,6 +61,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the GeometryNode2D where the GeometrySegment2D starts.</td>
+    </tr>
+    <tr>
+        <td>endNode</td>
+        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the GeometryNode2D where the GeometrySegment2D ends.</td>
     </tr>
     <tr>
         <td>pathSegment</td>
@@ -96,9 +96,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

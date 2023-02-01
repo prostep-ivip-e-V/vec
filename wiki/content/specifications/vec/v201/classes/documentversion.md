@@ -53,9 +53,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -72,16 +72,6 @@ menu_name: vec-2.0.1
         <td>Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.</td>
     </tr>
     <tr>
-        <td>referencedPart</td>
-        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>The association is an informative link which PartVersions are described by the DocumentVersion.</td>
-    </tr>
-    <tr>
         <td>sheetOrChapter</td>
         <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
         <td>0..*</td>
@@ -92,14 +82,14 @@ menu_name: vec-2.0.1
         <td>Specifies SheetOrChapters defined in this DocumentVersion. These are especially useful if the DocumentVersion represents an external reference.</td>
     </tr>
     <tr>
-        <td>relatedDocument</td>
-        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>referencedPart</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>0..*</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td>The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model).</td>
+        <td>The association is an informative link which PartVersions are described by the DocumentVersion.</td>
     </tr>
     <tr>
         <td>itemEquivalence</td>
@@ -110,6 +100,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies ItemEquivalances defined by the DocumentVersion.</td>
+    </tr>
+    <tr>
+        <td>relatedDocument</td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>The association is an informative link which DocumentVersion are related to each other (e.g. by derivation, A Harness-Drawing is related to a 3D-Model).</td>
     </tr>
     </tbody>
 </table>
@@ -125,9 +125,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

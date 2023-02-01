@@ -41,9 +41,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -60,14 +60,14 @@ menu_name: vec-2.0.1
         <td><p> References the <i>EEComponentSpecification </i>that is instanced by this <i>EEComponentRole.</i>      </p></td>
     </tr>
     <tr>
-        <td>extensionSlotRef</td>
-        <td><a href="{{< relref "extensionslotreference.md" >}}">ExtensionSlotReference</a></td>
+        <td>housingComponentRef</td>
+        <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td>Specifies the ExtensionSlotReferences used in the EEComponentRole.</td>
+        <td>Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401)</td>
     </tr>
     <tr>
         <td>componentNode</td>
@@ -80,14 +80,14 @@ menu_name: vec-2.0.1
         <td>References the ComponentNode that is realized by the referenced EEComponent (OccurrenceOrUsage with EEComponentRole). KBLFRM-341</td>
     </tr>
     <tr>
-        <td>housingComponentRef</td>
-        <td><a href="{{< relref "housingcomponentreference.md" >}}">HousingComponentReference</a></td>
+        <td>extensionSlotRef</td>
+        <td><a href="{{< relref "extensionslotreference.md" >}}">ExtensionSlotReference</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td>Specifies the HousingComponentReferences used in the EEComponentRole.  (KBLFRM-401)</td>
+        <td>Specifies the ExtensionSlotReferences used in the EEComponentRole.</td>
     </tr>
     </tbody>
 </table>
@@ -103,9 +103,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

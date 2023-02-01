@@ -40,24 +40,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>configInfo</td>
-        <td><a href="{{< relref "variantconfiguration.md" >}}">VariantConfiguration</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>{{< deprecated >}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
-    </tr>
     <tr>
         <td>configurationConstraint</td>
         <td><a href="{{< relref "configurationconstraint.md" >}}">ConfigurationConstraint</a></td>
@@ -69,16 +59,6 @@ menu_name: vec-2.0.1
         <td><p> Contains or more <i>ConfigurationContraints</i> that apply to this <i>ConfigurableElement.</i> This is explained in more details in the recommendation chapter / model diagram &quot;Variants&quot;.      </p></td>
     </tr>
     <tr>
-        <td>applicationConstraint</td>
-        <td><a href="{{< relref "applicationconstraint.md" >}}">ApplicationConstraint</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td></td>
-        <td>{{< deprecated >}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the application constraints that apply to the ConfigurableElement.      </p></td>
-    </tr>
-    <tr>
         <td>associatedAssignmentGroups</td>
         <td><a href="{{< relref "assignmentgroup.md" >}}">AssignmentGroup</a></td>
         <td>0..*</td>
@@ -87,6 +67,26 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td></td>
+    </tr>
+    <tr>
+        <td>applicationConstraint</td>
+        <td><a href="{{< relref "applicationconstraint.md" >}}">ApplicationConstraint</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td>{{< deprecated since="[]" reason="[]">}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the application constraints that apply to the ConfigurableElement.      </p></td>
+    </tr>
+    <tr>
+        <td>configInfo</td>
+        <td><a href="{{< relref "variantconfiguration.md" >}}">VariantConfiguration</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>{{< deprecated since="[]" reason="[]">}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
     </tr>
     </tbody>
 </table>

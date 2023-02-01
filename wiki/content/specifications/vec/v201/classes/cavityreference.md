@@ -41,9 +41,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -60,16 +60,6 @@ menu_name: vec-2.0.1
         <td><p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p></td>
     </tr>
     <tr>
-        <td>integratedTerminalRole</td>
-        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td><p> Contains the terminal role if the cavity has an integrated terminal (e.g. an IDC).      </p></td>
-    </tr>
-    <tr>
         <td>referencedCavity</td>
         <td><a href="{{< relref "cavity.md" >}}">Cavity</a></td>
         <td>1</td>
@@ -78,6 +68,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Points to the cavity referenced by the cavity reference.</td>
+    </tr>
+    <tr>
+        <td>integratedTerminalRole</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> Contains the terminal role if the cavity has an integrated terminal (e.g. an IDC).      </p></td>
     </tr>
     </tbody>
 </table>
@@ -93,9 +93,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -114,16 +114,6 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>equippedCavityRef</td>
-        <td>1..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "cavitymounting.md" >}}">CavityMounting</a></td>
-        <td>0..*</td>
-        <td>References the cavities that are used for the cavity mounting.</td>
-    </tr>
-    <tr>
-        <td>equippedCavityRef</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -131,6 +121,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "cavitymountingdetail.md" >}}">CavityMountingDetail</a></td>
         <td>0..*</td>
         <td>References the cavity that is used for the detailed description of the cavity mounting.</td>
+    </tr>
+    <tr>
+        <td>equippedCavityRef</td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "cavitymounting.md" >}}">CavityMounting</a></td>
+        <td>0..*</td>
+        <td>References the cavities that are used for the cavity mounting.</td>
     </tr>
     <tr>
         <td>firstCavity</td>

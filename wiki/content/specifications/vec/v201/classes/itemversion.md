@@ -44,24 +44,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>approval</td>
-        <td><a href="{{< relref "approval.md" >}}">Approval</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the approval information of the ItemVersion.</td>
-    </tr>
     <tr>
         <td>creation</td>
         <td><a href="{{< relref "creation.md" >}}">Creation</a></td>
@@ -71,6 +61,26 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the information about the creation of the ItemVersion.</td>
+    </tr>
+    <tr>
+        <td>copyrightInformation</td>
+        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>CopyrightInformation</i> that is in effect for this <i>ItemVersion. </i>If no <i>CopyrightInformation</i> is referenced by the <i>ItemVersion</i>, the <i>CopyrightInformation </i>that is referenced by the <i>VecContent</i> (if defined) shall be considered as in effect for this <i>ItemVersion.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>approval</td>
+        <td><a href="{{< relref "approval.md" >}}">Approval</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the approval information of the ItemVersion.</td>
     </tr>
     <tr>
         <td>contract</td>
@@ -92,16 +102,6 @@ menu_name: vec-2.0.1
         <td>0..1</td>
         <td>Specifies the change history of the ItemVersion.</td>
     </tr>
-    <tr>
-        <td>copyrightInformation</td>
-        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>CopyrightInformation</i> that is in effect for this <i>ItemVersion. </i>If no <i>CopyrightInformation</i> is referenced by the <i>ItemVersion</i>, the <i>CopyrightInformation </i>that is referenced by the <i>VecContent</i> (if defined) shall be considered as in effect for this <i>ItemVersion.</i>      </p></td>
-    </tr>
     </tbody>
 </table>
 
@@ -116,9 +116,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

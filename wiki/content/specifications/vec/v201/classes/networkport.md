@@ -43,9 +43,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -75,25 +75,15 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>networkPort</td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "componentport.md" >}}">ComponentPort</a></td>
-        <td>0..*</td>
-        <td>References the NetworkPort that is realized by the ComponentPort.</td>
-    </tr>
     <tr>
         <td>networkPort</td>
         <td>1</td>
@@ -113,6 +103,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "net.md" >}}">Net</a></td>
         <td>1</td>
         <td>References the NetworkPorts that are connected by the Net.</td>
+    </tr>
+    <tr>
+        <td>networkPort</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "componentport.md" >}}">ComponentPort</a></td>
+        <td>0..*</td>
+        <td>References the NetworkPort that is realized by the ComponentPort.</td>
     </tr>
     <tr>
         <td>port</td>

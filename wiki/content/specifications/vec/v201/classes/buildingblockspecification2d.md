@@ -42,33 +42,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>boundingBox</td>
-        <td><a href="{{< relref "cartesiandimension.md" >}}">CartesianDimension</a></td>
+        <td>baseUnit</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
         <td>1</td>
-        <td>Y</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..1</td>
-        <td>Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions.</td>
-    </tr>
-    <tr>
-        <td>placedElementViewItem</td>
-        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
         <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D.</td>
+        <td></td>
     </tr>
     <tr>
         <td>cartesianPoint</td>
@@ -81,24 +71,24 @@ menu_name: vec-2.0.1
         <td><p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p></td>
     </tr>
     <tr>
-        <td>baseUnit</td>
-        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
-        <td>1</td>
-        <td>N</td>
+        <td>placedElementViewItem</td>
+        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..*</td>
-        <td></td>
+        <td>1</td>
+        <td>Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D.</td>
     </tr>
     <tr>
-        <td>geometryNode</td>
-        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
-        <td>0..*</td>
+        <td>boundingBox</td>
+        <td><a href="{{< relref "cartesiandimension.md" >}}">CartesianDimension</a></td>
+        <td>1</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
-        <td>Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D.</td>
+        <td>0..1</td>
+        <td>Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions.</td>
     </tr>
     <tr>
         <td>geometrySegment</td>
@@ -109,6 +99,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D.</td>
+    </tr>
+    <tr>
+        <td>geometryNode</td>
+        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D.</td>
     </tr>
     </tbody>
 </table>
@@ -124,9 +124,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

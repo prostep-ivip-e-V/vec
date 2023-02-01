@@ -41,34 +41,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>wireGroupSpecification</td>
-        <td><a href="{{< relref "wiregroupspecification.md" >}}">WireGroupSpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p></td>
-    </tr>
-    <tr>
-        <td>connectionGroup</td>
-        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td></td>
-        <td><p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p></td>
-    </tr>
     <tr>
         <td>containedWireGroupings</td>
         <td><a href="{{< relref "wiregrouping.md" >}}">WireGrouping</a></td>
@@ -89,6 +69,26 @@ menu_name: vec-2.0.1
         <td>0..*</td>
         <td><p> References the concrete wire elements (<i>WireElementReference</i>) that are grouped by the WireGrouping.      </p></td>
     </tr>
+    <tr>
+        <td>connectionGroup</td>
+        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>wireGroupSpecification</td>
+        <td><a href="{{< relref "wiregroupspecification.md" >}}">WireGroupSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p></td>
+    </tr>
     </tbody>
 </table>
 
@@ -103,9 +103,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

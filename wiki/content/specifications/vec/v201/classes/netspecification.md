@@ -42,14 +42,34 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
+    <tr>
+        <td>networkNode</td>
+        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the NetworkNodes defined in the NetSpecification.      </p></td>
+    </tr>
+    <tr>
+        <td>netType</td>
+        <td><a href="{{< relref "nettype.md" >}}">NetType</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
     <tr>
         <td>netGroup</td>
         <td><a href="{{< relref "netgroup.md" >}}">NetGroup</a></td>
@@ -69,26 +89,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the Nets defined in the NetSpecification.</td>
-    </tr>
-    <tr>
-        <td>netType</td>
-        <td><a href="{{< relref "nettype.md" >}}">NetType</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>networkNode</td>
-        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the NetworkNodes defined in the NetSpecification.      </p></td>
     </tr>
     </tbody>
 </table>

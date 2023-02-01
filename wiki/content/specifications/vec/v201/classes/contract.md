@@ -42,9 +42,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -54,22 +54,22 @@ menu_name: vec-2.0.1
     <tr>
         <td>contract</td>
         <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
-        <td>0..*</td>
-        <td>References the contracts that apply to an ItemVersion.</td>
-    </tr>
-    <tr>
-        <td>contract</td>
-        <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
         <td>1</td>
         <td>Specifies the contracts used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>contract</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
+        <td>0..*</td>
+        <td>References the contracts that apply to an ItemVersion.</td>
     </tr>
     </tbody>
 </table>

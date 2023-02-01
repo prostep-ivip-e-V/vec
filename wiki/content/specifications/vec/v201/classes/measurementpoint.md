@@ -41,25 +41,15 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>measurementPoint</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "measurementpointreference.md" >}}">MeasurementPointReference</a></td>
-        <td>0..*</td>
-        <td><p> References the <i>MeasurementPoint</i> that is instanced by this <i>MeasurementPointReference.</i>      </p></td>
-    </tr>
     <tr>
         <td>measurementPoint</td>
         <td>0..*</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "placeableelementspecification.md" >}}">PlaceableElementSpecification</a></td>
         <td>1</td>
         <td><p> Specifies the <i>MeasurementPoints</i> of a <i>PlaceableElement</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>measurementPoint</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "measurementpointreference.md" >}}">MeasurementPointReference</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>MeasurementPoint</i> that is instanced by this <i>MeasurementPointReference.</i>      </p></td>
     </tr>
     <tr>
         <td>measurementPoint</td>

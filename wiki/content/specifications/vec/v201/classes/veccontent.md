@@ -44,23 +44,33 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>copyrightInformation</td>
+        <td>standardCopyrightInformation</td>
         <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>CopyrightInformation</i> that is in effect for the complete content of this <i>VecContent</i>. It is applied to all <i>ItemVersions</i> that do not references their own individual <i>CopyrightInformation.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>project</td>
+        <td><a href="{{< relref "project.md" >}}">Project</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td>Specifies the CopyrightInformation used in the VEC-file.</td>
+        <td>Specifies the Projects used in the VEC-file.</td>
     </tr>
     <tr>
         <td>documentVersion</td>
@@ -71,26 +81,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the DocumentVersions contained in the VEC-file.</td>
-    </tr>
-    <tr>
-        <td>itemHistoryEntry</td>
-        <td><a href="{{< relref "itemhistoryentry.md" >}}">ItemHistoryEntry</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file.</td>
-    </tr>
-    <tr>
-        <td>partVersion</td>
-        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the PartVersions contained in the VEC-file.</td>
     </tr>
     <tr>
         <td>contract</td>
@@ -113,24 +103,34 @@ menu_name: vec-2.0.1
         <td>Specifies the Units used in the VEC-file.</td>
     </tr>
     <tr>
-        <td>project</td>
-        <td><a href="{{< relref "project.md" >}}">Project</a></td>
+        <td>itemHistoryEntry</td>
+        <td><a href="{{< relref "itemhistoryentry.md" >}}">ItemHistoryEntry</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td>Specifies the Projects used in the VEC-file.</td>
+        <td>Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file.</td>
     </tr>
     <tr>
-        <td>standardCopyrightInformation</td>
+        <td>copyrightInformation</td>
         <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
-        <td>0..1</td>
-        <td>N</td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
+        <td>1</td>
+        <td>Specifies the CopyrightInformation used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>partVersion</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>0..*</td>
-        <td><p> References the <i>CopyrightInformation</i> that is in effect for the complete content of this <i>VecContent</i>. It is applied to all <i>ItemVersions</i> that do not references their own individual <i>CopyrightInformation.</i>      </p></td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the PartVersions contained in the VEC-file.</td>
     </tr>
     </tbody>
 </table>

@@ -43,9 +43,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -68,9 +68,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "buildingblockspecification3d.md" >}}">BuildingBlockSpecification3D</a></td>
+        <td><a href="{{< relref "localgeometryspecification.md" >}}">LocalGeometrySpecification</a></td>
         <td>0..1</td>
-        <td>Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.</td>
+        <td><p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p></td>
     </tr>
     <tr>
         <td>cartesianPoint</td>
@@ -78,9 +78,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "localgeometryspecification.md" >}}">LocalGeometrySpecification</a></td>
+        <td><a href="{{< relref "buildingblockspecification3d.md" >}}">BuildingBlockSpecification3D</a></td>
         <td>0..1</td>
-        <td><p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p></td>
+        <td>Specifies the CartesianPoint3Ds that are used in the BuildingBlockSpecification3D.</td>
     </tr>
     <tr>
         <td>cartesianPoint</td>

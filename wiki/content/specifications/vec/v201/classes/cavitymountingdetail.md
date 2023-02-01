@@ -40,24 +40,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>terminalReceptionReference</td>
-        <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the TerminalReception that is used for the detailed description of the cavity mounting.</td>
-    </tr>
     <tr>
         <td>equippedCavityRef</td>
         <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
@@ -67,6 +57,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the cavity that is used for the detailed description of the cavity mounting.</td>
+    </tr>
+    <tr>
+        <td>terminalReceptionReference</td>
+        <td><a href="{{< relref "terminalreceptionreference.md" >}}">TerminalReceptionReference</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the TerminalReception that is used for the detailed description of the cavity mounting.</td>
     </tr>
     </tbody>
 </table>
@@ -82,9 +82,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

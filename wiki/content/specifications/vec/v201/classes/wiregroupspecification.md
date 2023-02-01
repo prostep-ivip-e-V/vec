@@ -44,9 +44,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -59,9 +59,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wiregrouping.md" >}}">WireGrouping</a></td>
+        <td><a href="{{< relref "wireelementspecification.md" >}}">WireElementSpecification</a></td>
         <td>0..*</td>
-        <td><p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p></td>
+        <td><p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p></td>
     </tr>
     <tr>
         <td>wireGroupSpecification</td>
@@ -69,9 +69,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wireelementspecification.md" >}}">WireElementSpecification</a></td>
+        <td><a href="{{< relref "wiregrouping.md" >}}">WireGrouping</a></td>
         <td>0..*</td>
-        <td><p> If the <i>WireElementSpecification</i> is representing a wire group, then the specification of the wire group is referenced here. That means as well, that the <i>WireElementSpecification</i> shall have <i>subWireElementSpecifications</i>.      </p></td>
+        <td><p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p></td>
     </tr>
     </tbody>
 </table>

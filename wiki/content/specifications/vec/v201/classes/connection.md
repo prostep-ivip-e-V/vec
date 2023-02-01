@@ -43,24 +43,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>connectionEnd</td>
-        <td><a href="{{< relref "connectionend.md" >}}">ConnectionEnd</a></td>
-        <td>2..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the ConnectionEnds of the Connection.</td>
-    </tr>
     <tr>
         <td>net</td>
         <td><a href="{{< relref "net.md" >}}">Net</a></td>
@@ -70,6 +60,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the Net that is realized by the Connection.</td>
+    </tr>
+    <tr>
+        <td>connectionEnd</td>
+        <td><a href="{{< relref "connectionend.md" >}}">ConnectionEnd</a></td>
+        <td>2..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the ConnectionEnds of the Connection.</td>
     </tr>
     <tr>
         <td>signal</td>
@@ -95,9 +95,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -116,16 +116,6 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>connection</td>
-        <td>2..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
-        <td>0..*</td>
-        <td>References the Connections that are grouped by the ConnectionGroup.</td>
-    </tr>
-    <tr>
-        <td>connection</td>
         <td>0..*</td>
         <td>N</td>
         <td>Y</td>
@@ -133,16 +123,6 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "matingdetail.md" >}}">MatingDetail</a></td>
         <td>0..*</td>
         <td><p> References the <i>Connection</i> that is realized by this <i>MatingPointDetail</i><i>.</i> For example, when a connection is realized by directly plugging or screwing two E/E components together.      </p>      <p> The definition at level of the <i>MatingDetail </i>might be required if the <i>TerminalRole </i>of the MatingPoint carries multiple different potentials (e.g. Coax).      </p></td>
-    </tr>
-    <tr>
-        <td>connection</td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "wireelementreference.md" >}}">WireElementReference</a></td>
-        <td>0..*</td>
-        <td>References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341</td>
     </tr>
     <tr>
         <td>connection</td>
@@ -163,6 +143,26 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "connectionspecification.md" >}}">ConnectionSpecification</a></td>
         <td>1</td>
         <td>Specifies the Connection defined by the ConnectionSpecification.</td>
+    </tr>
+    <tr>
+        <td>connection</td>
+        <td>2..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
+        <td>0..*</td>
+        <td>References the Connections that are grouped by the ConnectionGroup.</td>
+    </tr>
+    <tr>
+        <td>connection</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "wireelementreference.md" >}}">WireElementReference</a></td>
+        <td>0..*</td>
+        <td>References the Connection that is realized by the referenced WireElement (WireElementReference). KBLFRM-341</td>
     </tr>
     </tbody>
 </table>

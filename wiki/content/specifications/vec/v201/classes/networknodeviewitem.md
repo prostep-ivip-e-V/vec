@@ -42,24 +42,14 @@ A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetView
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>networkNode</td>
-        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i></td>
-    </tr>
     <tr>
         <td>orientation</td>
         <td><a href="{{< relref "transformation2d.md" >}}">Transformation2D</a></td>
@@ -69,6 +59,16 @@ A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetView
         <td>N</td>
         <td>1</td>
         <td>Specifies the position /&#160;placement of the <i>NetworkNodeViewItem</i> within the layout.</td>
+    </tr>
+    <tr>
+        <td>networkNode</td>
+        <td><a href="{{< relref "networknode.md" >}}">NetworkNode</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the<i> NetworkNode</i>  that is represented by this <i>NetworkNodeViewItem.</i></td>
     </tr>
     <tr>
         <td>displayedPort</td>
@@ -94,9 +94,9 @@ A <i>NetworkNodeViewItem </i>represents a <i>NetworkNode</i> within a <i>NetView
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

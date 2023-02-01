@@ -42,22 +42,22 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>outerTopology</td>
-        <td><a href="{{< relref "topologyspecification.md" >}}">TopologySpecification</a></td>
-        <td>1</td>
-        <td>N</td>
+        <td>nodeMapping</td>
+        <td><a href="{{< relref "nodemapping.md" >}}">NodeMapping</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td></td>
+        <td>1</td>
         <td></td>
     </tr>
     <tr>
@@ -81,13 +81,13 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>nodeMapping</td>
-        <td><a href="{{< relref "nodemapping.md" >}}">NodeMapping</a></td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>outerTopology</td>
+        <td><a href="{{< relref "topologyspecification.md" >}}">TopologySpecification</a></td>
+        <td>1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
+        <td></td>
         <td></td>
     </tr>
     </tbody>

@@ -46,23 +46,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>wireEnd</td>
-        <td><a href="{{< relref "wireend.md" >}}">WireEnd</a></td>
+        <td>connectionGroup</td>
+        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
         <td>0..*</td>
-        <td>Y</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
-        <td>Specifies the ends of the WireElementReference for contacting purposes.</td>
+        <td></td>
+        <td><p> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.      </p></td>
     </tr>
     <tr>
         <td>signal</td>
@@ -75,16 +75,6 @@ menu_name: vec-2.0.1
         <td>References the signal that is transmitted by the WireElementReference.</td>
     </tr>
     <tr>
-        <td>wireLength</td>
-        <td><a href="{{< relref "wirelength.md" >}}">WireLength</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the different length of a wire.</td>
-    </tr>
-    <tr>
         <td>referencedWireElement</td>
         <td><a href="{{< relref "wireelement.md" >}}">WireElement</a></td>
         <td>1</td>
@@ -95,14 +85,24 @@ menu_name: vec-2.0.1
         <td><p> References the WireElement that is represented by the WireElementReference.      </p></td>
     </tr>
     <tr>
-        <td>connectionGroup</td>
-        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
+        <td>wireEnd</td>
+        <td><a href="{{< relref "wireend.md" >}}">WireEnd</a></td>
         <td>0..*</td>
-        <td>N</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td></td>
-        <td><p> References the <i>ConnectionGroup</i> that is realized by this <i>WireElementReference.</i> This applies normally to <i>WireElementReference </i>that have <i>subWireElements</i>.      </p></td>
+        <td>1</td>
+        <td>Specifies the ends of the WireElementReference for contacting purposes.</td>
+    </tr>
+    <tr>
+        <td>wireLength</td>
+        <td><a href="{{< relref "wirelength.md" >}}">WireLength</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the different length of a wire.</td>
     </tr>
     <tr>
         <td>connection</td>
@@ -128,9 +128,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

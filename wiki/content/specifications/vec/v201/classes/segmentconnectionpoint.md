@@ -41,9 +41,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -58,16 +58,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td><p> Specifies the <i>Cavities</i> that are reachable with wires through this <i>SegmentConnectionPoint.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>ModularSlotAddOns</td>
-        <td><a href="{{< relref "modularslotaddon.md" >}}">ModularSlotAddOn</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td></td>
     </tr>
     <tr>
         <td>placementPoint</td>
@@ -89,6 +79,16 @@ menu_name: vec-2.0.1
         <td>1</td>
         <td></td>
     </tr>
+    <tr>
+        <td>ModularSlotAddOns</td>
+        <td><a href="{{< relref "modularslotaddon.md" >}}">ModularSlotAddOn</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
     </tbody>
 </table>
 
@@ -103,9 +103,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

@@ -41,24 +41,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>usedInserts</td>
-        <td><a href="{{< relref "eecomponentrole.md" >}}">EEComponentRole</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>Defines the inserts used for extension slot in a defined instance. These can be more than one EEComponentRole, because of variance in a 150% specification.</td>
-    </tr>
     <tr>
         <td>extensionSlot</td>
         <td><a href="{{< relref "extensionslot.md" >}}">ExtensionSlot</a></td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td></td>
         <td></td>
+    </tr>
+    <tr>
+        <td>usedInserts</td>
+        <td><a href="{{< relref "eecomponentrole.md" >}}">EEComponentRole</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>Defines the inserts used for extension slot in a defined instance. These can be more than one EEComponentRole, because of variance in a 150% specification.</td>
     </tr>
     </tbody>
 </table>
@@ -83,9 +83,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

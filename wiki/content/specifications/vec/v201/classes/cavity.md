@@ -43,14 +43,24 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
+    <tr>
+        <td>positionDetail</td>
+        <td><a href="{{< relref "cavitypositiondetail.md" >}}">CavityPositionDetail</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Optional details for geometric properties of the cavity in the connector.</td>
+    </tr>
     <tr>
         <td>cavitySpecification</td>
         <td><a href="{{< relref "cavityspecification.md" >}}">CavitySpecification</a></td>
@@ -71,16 +81,6 @@ menu_name: vec-2.0.1
         <td></td>
         <td><p> Specifies the terminal, if the cavity has an integrated terminal (e.g. an IDC).      </p></td>
     </tr>
-    <tr>
-        <td>positionDetail</td>
-        <td><a href="{{< relref "cavitypositiondetail.md" >}}">CavityPositionDetail</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Optional details for geometric properties of the cavity in the connector.</td>
-    </tr>
     </tbody>
 </table>
 
@@ -95,25 +95,15 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>cavity</td>
-        <td>1..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "slot.md" >}}">Slot</a></td>
-        <td>1</td>
-        <td><p> Specifies the Cavities forming the Slot.      </p></td>
-    </tr>
     <tr>
         <td>cavity</td>
         <td>1</td>
@@ -123,6 +113,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "cavityaddon.md" >}}">CavityAddOn</a></td>
         <td>0..*</td>
         <td></td>
+    </tr>
+    <tr>
+        <td>cavity</td>
+        <td>1..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "slot.md" >}}">Slot</a></td>
+        <td>1</td>
+        <td><p> Specifies the Cavities forming the Slot.      </p></td>
     </tr>
     <tr>
         <td>openCavities</td>
@@ -146,16 +146,6 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>referencedCavity</td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
-        <td>0..*</td>
-        <td>Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300)</td>
-    </tr>
-    <tr>
-        <td>referencedCavity</td>
         <td>1</td>
         <td>N</td>
         <td>Y</td>
@@ -163,6 +153,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
         <td>0..*</td>
         <td>Points to the cavity referenced by the cavity reference.</td>
+    </tr>
+    <tr>
+        <td>referencedCavity</td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
+        <td>0..*</td>
+        <td>Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300)</td>
     </tr>
     <tr>
         <td>sealedCavities</td>

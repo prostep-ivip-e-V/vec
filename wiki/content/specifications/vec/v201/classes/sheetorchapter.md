@@ -46,23 +46,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>specification</td>
-        <td><a href="{{< relref "specification.md" >}}">Specification</a></td>
+        <td>changeDescription</td>
+        <td><a href="{{< relref "changedescription.md" >}}">ChangeDescription</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>0..1</td>
-        <td>Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications.</td>
+        <td>Specifies the change history of the SheetOrChapter.</td>
     </tr>
     <tr>
         <td>referencedPart</td>
@@ -75,14 +75,14 @@ menu_name: vec-2.0.1
         <td>The association is an informative link which PartVersions are described by the SheetOrChapter.</td>
     </tr>
     <tr>
-        <td>changeDescription</td>
-        <td><a href="{{< relref "changedescription.md" >}}">ChangeDescription</a></td>
+        <td>specification</td>
+        <td><a href="{{< relref "specification.md" >}}">Specification</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>0..1</td>
-        <td>Specifies the change history of the SheetOrChapter.</td>
+        <td>Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications.</td>
     </tr>
     </tbody>
 </table>
@@ -98,9 +98,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

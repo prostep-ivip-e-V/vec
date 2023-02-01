@@ -41,24 +41,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>fuseSpecification</td>
-        <td><a href="{{< relref "fusespecification.md" >}}">FuseSpecification</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td></td>
-        <td></td>
-    </tr>
     <tr>
         <td>connectedPins</td>
         <td><a href="{{< relref "pincomponent.md" >}}">PinComponent</a></td>
@@ -67,6 +57,16 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>fuseSpecification</td>
+        <td><a href="{{< relref "fusespecification.md" >}}">FuseSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
         <td></td>
     </tr>
     </tbody>
@@ -83,9 +83,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

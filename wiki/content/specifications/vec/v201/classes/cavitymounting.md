@@ -40,24 +40,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>replacedPlug</td>
-        <td><a href="{{< relref "cavityplugrole.md" >}}">CavityPlugRole</a></td>
-        <td>0..*</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td>References the cavity plugs that are obsolete if the cavity mounting is realized.</td>
-    </tr>
     <tr>
         <td>cavityMountingDetail</td>
         <td><a href="{{< relref "cavitymountingdetail.md" >}}">CavityMountingDetail</a></td>
@@ -69,14 +59,14 @@ menu_name: vec-2.0.1
         <td><p> Specifies the CavityMoutingDetails, if a detailed description of the relationships between Cavities and TerminalReceptions is needed.      </p></td>
     </tr>
     <tr>
-        <td>cavityAccessory</td>
-        <td><a href="{{< relref "cavityaccessoryrole.md" >}}">CavityAccessoryRole</a></td>
+        <td>replacedPlug</td>
+        <td><a href="{{< relref "cavityplugrole.md" >}}">CavityPlugRole</a></td>
         <td>0..*</td>
         <td>N</td>
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
-        <td></td>
+        <td>References the cavity plugs that are obsolete if the cavity mounting is realized.</td>
     </tr>
     <tr>
         <td>equippedCavityRef</td>
@@ -87,6 +77,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the cavities that are used for the cavity mounting.</td>
+    </tr>
+    <tr>
+        <td>cavityAccessory</td>
+        <td><a href="{{< relref "cavityaccessoryrole.md" >}}">CavityAccessoryRole</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
     </tr>
     </tbody>
 </table>
@@ -102,9 +102,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

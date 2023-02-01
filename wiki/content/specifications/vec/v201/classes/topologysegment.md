@@ -44,9 +44,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -63,14 +63,14 @@ menu_name: vec-2.0.1
         <td><p> If this <i>TopologySegment</i> is an instance of another <i>To</i><i>pologySegment </i>that is defined elsewhere (e.g. the topology of an assembly), then the instantiated may be referenced here.      </p></td>
     </tr>
     <tr>
-        <td>endNode</td>
-        <td><a href="{{< relref "topologynode.md" >}}">TopologyNode</a></td>
-        <td>1</td>
-        <td>N</td>
+        <td>crossSectionAreaInformation</td>
+        <td><a href="{{< relref "segmentcrosssectionarea.md" >}}">SegmentCrossSectionArea</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..*</td>
-        <td>References the TopologyNode where the TopologySegment ends.</td>
+        <td>1</td>
+        <td>Specifies the different SegmentCrossSectionAreas of the TopologySegment.</td>
     </tr>
     <tr>
         <td>startNode</td>
@@ -83,6 +83,16 @@ menu_name: vec-2.0.1
         <td>References the TopologyNode where the TopologySegment starts.</td>
     </tr>
     <tr>
+        <td>endNode</td>
+        <td><a href="{{< relref "topologynode.md" >}}">TopologyNode</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the TopologyNode where the TopologySegment ends.</td>
+    </tr>
+    <tr>
         <td>lengthInformation</td>
         <td><a href="{{< relref "segmentlength.md" >}}">SegmentLength</a></td>
         <td>0..*</td>
@@ -91,16 +101,6 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td>Specifies the different SegmentLengths of the TopologySegment.</td>
-    </tr>
-    <tr>
-        <td>crossSectionAreaInformation</td>
-        <td><a href="{{< relref "segmentcrosssectionarea.md" >}}">SegmentCrossSectionArea</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the different SegmentCrossSectionAreas of the TopologySegment.</td>
     </tr>
     </tbody>
 </table>
@@ -116,9 +116,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

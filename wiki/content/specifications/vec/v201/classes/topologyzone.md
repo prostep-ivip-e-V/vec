@@ -45,24 +45,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>subZone</td>
-        <td><a href="{{< relref "topologyzone.md" >}}">TopologyZone</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td><p> Specifies the sub <i>TopologyZones</i> that are part the <i>TopologyZone</i>. All <i>ZoneAssignments </i>defined for subZones are automatically inherited by the parent zone.      </p></td>
-    </tr>
     <tr>
         <td>assignment</td>
         <td><a href="{{< relref "zoneassignment.md" >}}">ZoneAssignment</a></td>
@@ -72,6 +62,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td></td>
         <td><p> The assignments of specific topology elements to this zone.      </p></td>
+    </tr>
+    <tr>
+        <td>subZone</td>
+        <td><a href="{{< relref "topologyzone.md" >}}">TopologyZone</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> Specifies the sub <i>TopologyZones</i> that are part the <i>TopologyZone</i>. All <i>ZoneAssignments </i>defined for subZones are automatically inherited by the parent zone.      </p></td>
     </tr>
     </tbody>
 </table>
@@ -87,9 +87,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

@@ -41,24 +41,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>centerPoint</td>
-        <td><a href="{{< relref "cartesianpoint2d.md" >}}">CartesianPoint2D</a></td>
-        <td>0..1</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..1</td>
-        <td>Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing.</td>
-    </tr>
     <tr>
         <td>referenced2DBuildingBlock</td>
         <td><a href="{{< relref "buildingblockspecification2d.md" >}}">BuildingBlockSpecification2D</a></td>
@@ -68,6 +58,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>References the building block which is placed on the harness drawing.</td>
+    </tr>
+    <tr>
+        <td>centerPoint</td>
+        <td><a href="{{< relref "cartesianpoint2d.md" >}}">CartesianPoint2D</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing.</td>
     </tr>
     </tbody>
 </table>
@@ -83,9 +83,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

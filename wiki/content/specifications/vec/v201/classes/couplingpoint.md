@@ -41,23 +41,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>slotCoupling</td>
-        <td><a href="{{< relref "slotcoupling.md" >}}">SlotCoupling</a></td>
+        <td>matingPoint</td>
+        <td><a href="{{< relref "matingpoint.md" >}}">MatingPoint</a></td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
         <td>1</td>
-        <td></td>
+        <td><p> Specifies the <i>MatingPoints</i> defined within the <i>CouplingPoint</i>.      </p></td>
     </tr>
     <tr>
         <td>firstConnector</td>
@@ -70,16 +70,6 @@ menu_name: vec-2.0.1
         <td></td>
     </tr>
     <tr>
-        <td>matingPoint</td>
-        <td><a href="{{< relref "matingpoint.md" >}}">MatingPoint</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the <i>MatingPoints</i> defined within the <i>CouplingPoint</i>.      </p></td>
-    </tr>
-    <tr>
         <td>secondConnector</td>
         <td><a href="{{< relref "connectorhousingrole.md" >}}">ConnectorHousingRole</a></td>
         <td>0..1</td>
@@ -87,6 +77,16 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>N</td>
         <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>slotCoupling</td>
+        <td><a href="{{< relref "slotcoupling.md" >}}">SlotCoupling</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
         <td></td>
     </tr>
     </tbody>
@@ -103,9 +103,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

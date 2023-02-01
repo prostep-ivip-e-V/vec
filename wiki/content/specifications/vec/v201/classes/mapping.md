@@ -40,24 +40,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>A</td>
-        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td></td>
-    </tr>
     <tr>
         <td>slotMapping</td>
         <td><a href="{{< relref "slotmapping.md" >}}">SlotMapping</a></td>
@@ -70,6 +60,16 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>B</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>A</td>
         <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
         <td>1</td>
         <td>N</td>
@@ -92,9 +92,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

@@ -44,9 +44,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -61,6 +61,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..1</td>
         <td><p> Specifies the different roles of the OccurrenceOrUsage.      </p></td>
+    </tr>
+    <tr>
+        <td>realizedUsageNode</td>
+        <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p></td>
     </tr>
     <tr>
         <td>installationInstruction</td>
@@ -82,16 +92,6 @@ menu_name: vec-2.0.1
         <td>0..*</td>
         <td><p> References the <i>OccurrenceOrUsage</i> for which this <i>OccurrenceOrUsage</i> is an accessory /&#160;supplementary component. If an <i>OccurrenceOrUsage</i> defines more than one <i>referenceElement</i>, the semantic is that it is related to the combination all &quot;reference elements&quot; and not to each individually. In other words, in a variable product definition the <i>OccurrenceOrUsage</i> only exists if all <i>referenceElements</i> exist.      </p></td>
     </tr>
-    <tr>
-        <td>realizedUsageNode</td>
-        <td><a href="{{< relref "usagenode.md" >}}">UsageNode</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>UsageNode</i> that is realized by this <i>OccurrenceOrUsage</i>.      </p></td>
-    </tr>
     </tbody>
 </table>
 
@@ -106,9 +106,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -141,7 +141,7 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
+        <td><a href="{{< relref "occurrenceorusageviewitem3d.md" >}}">OccurrenceOrUsageViewItem3D</a></td>
         <td>0..*</td>
         <td><p> Specifies the <i>OccurrenceOrUsages</i> which are represented by the view item.      </p>      <p> <b>Important: </b>To use one <i>OccurenceOrUsageViewItem</i> for multiple <i>OccurrenceOrUsages </i>is only valid, if the referenced items are true alternatives to each other. That means, they must have an identical placement, the geometrical models used for each item must be substitutable and the item must be mutually exclusive to each other.      </p></td>
     </tr>
@@ -151,7 +151,7 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "occurrenceorusageviewitem3d.md" >}}">OccurrenceOrUsageViewItem3D</a></td>
+        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
         <td>0..*</td>
         <td><p> Specifies the <i>OccurrenceOrUsages</i> which are represented by the view item.      </p>      <p> <b>Important: </b>To use one <i>OccurenceOrUsageViewItem</i> for multiple <i>OccurrenceOrUsages </i>is only valid, if the referenced items are true alternatives to each other. That means, they must have an identical placement, the geometrical models used for each item must be substitutable and the item must be mutually exclusive to each other.      </p></td>
     </tr>

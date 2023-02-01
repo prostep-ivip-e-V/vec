@@ -45,23 +45,23 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
     <tr>
-        <td>signal</td>
-        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
-        <td>0..1</td>
-        <td>N</td>
+        <td>opticalInformation</td>
+        <td><a href="{{< relref "pinopticalinformation.md" >}}">PinOpticalInformation</a></td>
+        <td>0..*</td>
+        <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td>0..*</td>
-        <td><p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p></td>
+        <td>1</td>
+        <td><p> Specifies the optical information of the pin, if it has the type optical.      </p></td>
     </tr>
     <tr>
         <td>currentInformation</td>
@@ -74,14 +74,14 @@ menu_name: vec-2.0.1
         <td><p> Specifies the current information of the <i>PinComponent</i> in this <i>PinComponentBehavior</i>. Since the current values of a pin can be defined for different types and times it is possible to define multiple <i>PinCurrentInformations</i> for a <i>PinComponentBehavior</i>.      </p></td>
     </tr>
     <tr>
-        <td>opticalInformation</td>
-        <td><a href="{{< relref "pinopticalinformation.md" >}}">PinOpticalInformation</a></td>
-        <td>0..*</td>
-        <td>Y</td>
+        <td>signal</td>
+        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
+        <td>0..1</td>
+        <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the optical information of the pin, if it has the type optical.      </p></td>
+        <td>0..*</td>
+        <td><p> Specifies the <i>Signal </i>associated with the pin in this behavior.      </p></td>
     </tr>
     <tr>
         <td>voltageInformation</td>
@@ -107,9 +107,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>

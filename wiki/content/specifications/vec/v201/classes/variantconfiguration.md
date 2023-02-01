@@ -45,9 +45,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -77,9 +77,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -102,9 +102,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "configurationconstraint.md" >}}">ConfigurationConstraint</a></td>
-        <td></td>
-        <td><p> References the configuration information that applies to the ConfigurationConstraint.      </p></td>
+        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
+        <td>0..*</td>
+        <td>{{< deprecated since="[]" reason="[]">}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
     </tr>
     <tr>
         <td>configInfo</td>
@@ -112,9 +112,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "configurableelement.md" >}}">ConfigurableElement</a></td>
-        <td>0..*</td>
-        <td>{{< deprecated >}}<p> <i>Deprecated since VEC&#160;V2.0.0. Use ConfigurationConstraints instead.</i>      </p>      <p> References the configuration information that applies to the ConfigurableElement.      </p></td>
+        <td><a href="{{< relref "configurationconstraint.md" >}}">ConfigurationConstraint</a></td>
+        <td></td>
+        <td><p> References the configuration information that applies to the ConfigurationConstraint.      </p></td>
     </tr>
     <tr>
         <td>variantConfiguration</td>

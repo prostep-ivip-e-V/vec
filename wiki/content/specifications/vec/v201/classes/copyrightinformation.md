@@ -41,25 +41,15 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>copyrightInformation</td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
-        <td>1</td>
-        <td>Specifies the CopyrightInformation used in the VEC-file.</td>
-    </tr>
     <tr>
         <td>copyrightInformation</td>
         <td>0..1</td>
@@ -69,6 +59,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
         <td>0..*</td>
         <td><p> References the <i>CopyrightInformation</i> that is in effect for this <i>ItemVersion. </i>If no <i>CopyrightInformation</i> is referenced by the <i>ItemVersion</i>, the <i>CopyrightInformation </i>that is referenced by the <i>VecContent</i> (if defined) shall be considered as in effect for this <i>ItemVersion.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>copyrightInformation</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
+        <td>1</td>
+        <td>Specifies the CopyrightInformation used in the VEC-file.</td>
     </tr>
     <tr>
         <td>standardCopyrightInformation</td>

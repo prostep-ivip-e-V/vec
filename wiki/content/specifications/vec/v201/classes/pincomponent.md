@@ -43,9 +43,9 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
@@ -62,16 +62,6 @@ menu_name: vec-2.0.1
         <td>References the TerminalSpecification describing the electrical connectivity aspect of the PinComponent.  (see KBLFRM-300)</td>
     </tr>
     <tr>
-        <td>behaviour</td>
-        <td><a href="{{< relref "pincomponentbehavior.md" >}}">PinComponentBehavior</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td><p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p></td>
-    </tr>
-    <tr>
         <td>referencedCavity</td>
         <td><a href="{{< relref "cavity.md" >}}">Cavity</a></td>
         <td>0..1</td>
@@ -80,6 +70,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>0..*</td>
         <td>Defines the cavity in the corresponding ConnectorHousingSpecification of the HousingComponent where the PinComponent is located.  (see KBLFRM-300)</td>
+    </tr>
+    <tr>
+        <td>behaviour</td>
+        <td><a href="{{< relref "pincomponentbehavior.md" >}}">PinComponentBehavior</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> Specifies the configuration dependent electrical behavior of the<i> PinComponent.</i>      </p></td>
     </tr>
     </tbody>
 </table>
@@ -95,9 +95,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -136,16 +136,6 @@ menu_name: vec-2.0.1
     </tr>
     <tr>
         <td>pinComponent</td>
-        <td>1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
-        <td>0..*</td>
-        <td>Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401)</td>
-    </tr>
-    <tr>
-        <td>pinComponent</td>
         <td>0..*</td>
         <td>Y</td>
         <td>Y</td>
@@ -153,6 +143,16 @@ menu_name: vec-2.0.1
         <td><a href="{{< relref "housingcomponent.md" >}}">HousingComponent</a></td>
         <td>1</td>
         <td>Specifies the PinComponents of HousingComponent.   (see KBLFRM-300)</td>
+    </tr>
+    <tr>
+        <td>pinComponent</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "pincomponentreference.md" >}}">PinComponentReference</a></td>
+        <td>0..*</td>
+        <td>Points to the PinComponent referenced by the PinComponent reference.  (KBLFRM-401)</td>
     </tr>
     <tr>
         <td>pins</td>

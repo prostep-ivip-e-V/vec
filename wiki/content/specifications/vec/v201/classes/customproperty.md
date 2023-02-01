@@ -41,9 +41,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -56,9 +56,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "extendableelement.md" >}}">ExtendableElement</a></td>
+        <td><a href="{{< relref "complexproperty.md" >}}">ComplexProperty</a></td>
         <td>1</td>
-        <td>Specifies the CustomProperties of the ExtendableElement.</td>
+        <td><p> The customProperties that represent the individual values of the complex property.      </p></td>
     </tr>
     <tr>
         <td>customProperty</td>
@@ -66,9 +66,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "complexproperty.md" >}}">ComplexProperty</a></td>
+        <td><a href="{{< relref "extendableelement.md" >}}">ExtendableElement</a></td>
         <td>1</td>
-        <td><p> The customProperties that represent the individual values of the complex property.      </p></td>
+        <td>Specifies the CustomProperties of the ExtendableElement.</td>
     </tr>
     </tbody>
 </table>

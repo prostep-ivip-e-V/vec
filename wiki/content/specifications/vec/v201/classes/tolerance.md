@@ -42,9 +42,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -57,9 +57,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "numericalvalue.md" >}}">NumericalValue</a></td>
+        <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
         <td>0..1</td>
-        <td>Specifies the tolerance for the dimension.</td>
+        <td></td>
     </tr>
     <tr>
         <td>tolerance</td>
@@ -67,9 +67,9 @@ menu_name: vec-2.0.1
         <td>Y</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "dimension.md" >}}">Dimension</a></td>
+        <td><a href="{{< relref "numericalvalue.md" >}}">NumericalValue</a></td>
         <td>0..1</td>
-        <td></td>
+        <td>Specifies the tolerance for the dimension.</td>
     </tr>
     <tr>
         <td>toleranceIndication</td>

@@ -56,24 +56,14 @@ menu_name: vec-2.0.1
            <th>Role</th>
            <th>Type</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Mult.</th>
            <th>Description</th>
         </tr>
     <thead>
     <tbody>
-    <tr>
-        <td>addOns</td>
-        <td><a href="{{< relref "wirereceptionaddon.md" >}}">WireReceptionAddOn</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td></td>
-    </tr>
     <tr>
         <td>validConductorMaterials</td>
         <td><a href="{{< relref "conductormaterial.md" >}}">ConductorMaterial</a></td>
@@ -83,6 +73,16 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>1</td>
         <td><p> Specifies the materials of a conductor, that are valid to use with this <i>WireReceptionSpecification</i>. This material shall be matched against the <i>ConductorSpecification.material.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>addOns</td>
+        <td><a href="{{< relref "wirereceptionaddon.md" >}}">WireReceptionAddOn</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
     </tr>
     </tbody>
 </table>
@@ -98,9 +98,9 @@ menu_name: vec-2.0.1
         <tr>
            <th>Role</th>
            <th>Mult.</th>
-           <th>Agg.</th>
-           <th>Unique</th>
-           <th>Ordered</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
            <th>Type</th>
            <th>Mult.</th>
            <th>Description</th>
@@ -113,9 +113,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wireendaccessoryspecification.md" >}}">WireEndAccessorySpecification</a></td>
-        <td></td>
-        <td><p> References the single <i>WireReceptionSpecification</i> that is specifying the properties of the <i>WireEndAccessory</i> that are related to wire.      </p></td>
+        <td><a href="{{< relref "wirereception.md" >}}">WireReception</a></td>
+        <td>0..*</td>
+        <td>References the WireReceptionSpecification that specifies the WireReception.</td>
     </tr>
     <tr>
         <td>wireReceptionSpecification</td>
@@ -123,9 +123,9 @@ menu_name: vec-2.0.1
         <td>N</td>
         <td>Y</td>
         <td>N</td>
-        <td><a href="{{< relref "wirereception.md" >}}">WireReception</a></td>
-        <td>0..*</td>
-        <td>References the WireReceptionSpecification that specifies the WireReception.</td>
+        <td><a href="{{< relref "wireendaccessoryspecification.md" >}}">WireEndAccessorySpecification</a></td>
+        <td></td>
+        <td><p> References the single <i>WireReceptionSpecification</i> that is specifying the properties of the <i>WireEndAccessory</i> that are related to wire.      </p></td>
     </tr>
     </tbody>
 </table>
