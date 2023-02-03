@@ -38,9 +38,10 @@
         <xs:attribute name="unique" type="xs:boolean" default="true">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Defines the collection semantic for elements
-                    referencing more than one element. "non-unique=true" means that the model allows
+                    referencing more than one element. "unique=false" means that the model allows
                     duplication for this reference. In other words, the same object can be
-                    referenced multiple times (bag semantic). vs. "non-unique=false" that
+                    referenced multiple times (bag semantic). vs. "unique=true" when an element 
+                    should only be referenced once (set semantic).
                 </xs:documentation>
             </xs:annotation>            
         </xs:attribute>
