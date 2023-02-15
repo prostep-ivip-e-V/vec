@@ -88,7 +88,7 @@
     
     <xsl:template match="*" mode="package"/>
     
-    <xsl:template match="packagedElement[@xmi:type='uml:Class']" mode="package">
+    <xsl:template match="packagedElement[@xmi:type='uml:Class' or @xmi:type='uml:Enumeration']" mode="package">
         <xsl:element name="mt:package">
             <xsl:attribute name="name" select="../@name"/>
         </xsl:element>
@@ -323,7 +323,7 @@
     <xsl:template match="packagedElement[@xmi:type='uml:Enumeration']" mode="create-type">
         <xs:simpleType>
             <xsl:apply-templates select="." mode="create-name"/>
-            <xsl:apply-templates select="ownedComment" mode="meta-information"/>           
+            <xsl:apply-templates select="." mode="meta-information"/>
             <xs:restriction base="xs:string">                
             	<!-- Only if close enum -->
 				<xsl:if test="$strict='true' or @xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration">
@@ -339,7 +339,7 @@
     <xsl:template match="packagedElement[@xmi:type='uml:PrimitiveType']" mode="create-type">
         <xs:simpleType>
             <xsl:apply-templates select="." mode="create-name"/>
-            <xsl:apply-templates select="ownedComment" mode="meta-information"/>           
+            <xsl:apply-templates select="." mode="meta-information"/>
             <xs:restriction base="xs:string">                
                 <!-- Only for pattern restrictions -->
                 <xsl:if test="($strict='true' and @xmi:id=//Stereotypes:OpenPatternRestriction/@base_PrimitiveType) 
