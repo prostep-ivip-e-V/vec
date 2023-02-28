@@ -79,7 +79,7 @@
         <xs:annotation>
             <xsl:apply-templates select="." mode="documentation"/>
             <xsl:element name="xs:appinfo">
-                <xsl:apply-templates select="." mode="collection-meta"/>
+                <xsl:apply-templates select="." mode="relationship-meta"/>
                 <xsl:apply-templates select="." mode="deprecation"/>
                 <xsl:apply-templates select="." mode="package"/>
             </xsl:element>
@@ -88,7 +88,7 @@
     
     <xsl:template match="*" mode="package"/>
     
-    <xsl:template match="packagedElement[@xmi:type='uml:Class' or @xmi:type='uml:Enumeration']" mode="package">
+    <xsl:template match="packagedElement[@xmi:type='uml:Class' or @xmi:type='uml:Enumeration' or @xmi:type='uml:PrimitiveType']" mode="package">
         <xsl:element name="mt:package">
             <xsl:attribute name="name" select="../@name"/>
         </xsl:element>
@@ -113,27 +113,33 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="*" mode="collection-meta"/>
+    <xsl:template match="*" mode="relationship-meta"/>
     
-    <xsl:template match="ownedAttribute[@xmi:type='uml:Property' and exists(@association)]" mode="collection-meta">
-            <xsl:element name="mt:collection">
-                <xsl:variable name="type" select="key('idlookup',@type)"/>
-                <xsl:variable name="upper">
-                    <xsl:apply-templates select=".//upperValue" mode="create-cardinality-value"/>                    
-                </xsl:variable>
-                
+    <xsl:template match="ownedAttribute[@xmi:type='uml:Property']" mode="relationship-meta">
+        <xsl:element name="mt:relationship">
+            <xsl:variable name="type" select="key('idlookup',@type)"/>
+            <xsl:variable name="upper">
+                <xsl:apply-templates select=".//upperValue" mode="create-cardinality-value"/>                    
+            </xsl:variable>           
+            <xsl:if test="exists(@association) and not(@aggregation='composite')">
+                <xsl:apply-templates select="$type" mode="create-type-ref">
+                    <xsl:with-param name="attribute-name" select="'element-type'"></xsl:with-param>
+                </xsl:apply-templates>
+            </xsl:if>
+            <xsl:attribute name="relationship-type">
+                <xsl:choose>
+                    <xsl:when test="exists(@association) and not(@aggregation='composite')">Association</xsl:when>
+                    <xsl:when test="exists(@association)">Composition</xsl:when>
+                    <xsl:otherwise>Attribute</xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>            
+            <xsl:if test="$upper!='1'">
                 <xsl:if test="not(@aggregation='composite')">
-                    <xsl:apply-templates select="$type" mode="create-type-ref">
-                        <xsl:with-param name="attribute-name" select="'element-type'"></xsl:with-param>
-                    </xsl:apply-templates>
+                    <xsl:attribute name="unique" select="if (@isUnique = 'false') then false() else true()"/>
                 </xsl:if>
-                <xsl:if test="$upper!='1'">
-                    <xsl:if test="not(@aggregation='composite')">
-                        <xsl:attribute name="unique" select="if (@isUnique = 'false') then false() else true()"/>
-                    </xsl:if>
-                    <xsl:attribute name="ordered" select="if (@isOrdered = 'true') then true() else false()"/>
-                </xsl:if>                
-            </xsl:element>       
+                <xsl:attribute name="ordered" select="if (@isOrdered = 'true') then true() else false()"/>
+            </xsl:if>                
+        </xsl:element>       
     </xsl:template>
     
     <xsl:template match="*" mode="documentation">
@@ -258,32 +264,6 @@
         
                 <xsl:apply-templates select="." mode="meta-information"/>
                 
-
-                
-        
-                <!-- Referenced elements as annotation -->
-                <!-- 
-                <xsl:element name="xs:annotation">
-                    <xsl:element name="xs:documentation">
-                        <xsl:text>ref to </xsl:text>
-                        <xsl:for-each select="$type">
-                            <xsl:sort select="@name" order="ascending" data-type="text"/>
-                            
-                            <xsl:value-of select="@name"/>
-                            <xsl:if test="position()!=last()">
-                                <xsl:text>, </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each>
-                    </xsl:element>
-                    <xsl:if test="$lower>'1'">
-                    <xsl:element name="xs:appinfo">
-						<xsl:text>There shall be at least </xsl:text>
-							<xsl:value-of select="$lower"/>
-						<xsl:text> elements referenced.</xsl:text>
-					</xsl:element>									
-                    </xsl:if>
-                </xsl:element>
-                 -->
             </xsl:element>
         </xsl:if>		
     </xsl:template>
