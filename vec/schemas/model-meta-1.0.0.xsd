@@ -7,7 +7,7 @@
     >
     
     <xs:element name="deprecated" type="meta:Deprecation"/>
-    <xs:element name="collection" type="meta:Collection"/>
+    <xs:element name="relationship" type="meta:Relationship"/>
     <xs:element name="package" type="meta:Package"/>
     
     <xs:complexType name="Deprecation">
@@ -24,9 +24,16 @@
         <xs:attribute name="name" type="xs:string"/>
     </xs:complexType>    
     
+    <xs:simpleType name="RelationshipType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Attribute"/>
+            <xs:enumeration value="Association"/>
+            <xs:enumeration value="Composition"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     
-    <xs:complexType name="Collection">
+    <xs:complexType name="Relationship">
        <xs:attribute name="element-type" type="xs:QName" >
            <xs:annotation>
                 <xs:documentation xml:lang="en"> The schema type of elements referenced by an
@@ -35,6 +42,11 @@
                     IDREF / IDREFS elements. </xs:documentation>
            </xs:annotation>
        </xs:attribute>
+        <xs:attribute name="relationship-type" type="meta:RelationshipType" >
+            <xs:annotation>
+                <xs:documentation xml:lang="en">Defines the type of relationship in the UML Model.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="unique" type="xs:boolean" default="true">
             <xs:annotation>
                 <xs:documentation xml:lang="en">Defines the collection semantic for elements
