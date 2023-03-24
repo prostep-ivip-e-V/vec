@@ -4,6 +4,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns:xmi="http://www.omg.org/spec/XMI/20131001" 
     xmlns:uml="http://www.omg.org/spec/UML/20131001"
+    xmlns:mt="http://www.prostep.org/ecad-if/2022/model-meta"
     xmlns:Stereotypes="http://www.magicdraw.com/schemas/Stereotypes.xmi"
     xmlns:MagicDraw_Profile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile"
     exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile" version="2.0">
@@ -16,8 +17,8 @@
     <xsl:variable name="VEC_PREFIX">vec</xsl:variable>
     <xsl:variable name="VEC_URL" select="'http://www.prostep.org/ecad-if/2011/vec'"/>
      
-     <xsl:param name="VEC_VERSION">1.1.3</xsl:param>
-     <xsl:param name="strict">false</xsl:param>
+     <xsl:param name="VEC_VERSION">2.1.0</xsl:param>
+     <xsl:param name="strict">true</xsl:param>
      <xsl:param name="revision">not-set</xsl:param>
      <xsl:param name="timestamp">not-set</xsl:param>
      
@@ -46,6 +47,7 @@
             <xsl:attribute name="targetNamespace" select="$VEC_URL" />
             <xsl:attribute name="version" select="$VEC_VERSION"/>
             <xsl:namespace name="{$VEC_PREFIX}" select="$VEC_URL"/>
+            <xsl:namespace name="mt" select="'http://www.prostep.org/ecad-if/2022/model-meta'"></xsl:namespace>
             <xsl:namespace name="xsi" select="'http://www.w3.org/2001/XMLSchema-instance'"/>
 
             <xsl:apply-templates select="key('idlookup',//*:xml_root/@base_Class)" mode="create-element"/>
@@ -67,18 +69,87 @@
                 <xsl:attribute name="abstract" select="'true'"/>
             </xsl:if>
             
-            <xsl:apply-templates select="ownedComment" mode="documentation"/>
+            <xsl:apply-templates select="." mode="meta-information"/>
 
             <xsl:apply-templates select="." mode="create-content-header"></xsl:apply-templates>
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="*" mode="meta-information">
+        <xs:annotation>
+            <xsl:apply-templates select="." mode="documentation"/>
+            <xsl:element name="xs:appinfo">
+                <xsl:apply-templates select="." mode="relationship-meta"/>
+                <xsl:apply-templates select="." mode="deprecation"/>
+                <xsl:apply-templates select="." mode="package"/>
+            </xsl:element>
+        </xs:annotation>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="package"/>
+    
+    <xsl:template match="packagedElement[@xmi:type='uml:Class' or @xmi:type='uml:Enumeration' or @xmi:type='uml:PrimitiveType']" mode="package">
+        <xsl:element name="mt:package">
+            <xsl:attribute name="name" select="../@name"/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="deprecation"/>
+    
+    <xsl:template match="ownedAttribute[@xmi:type='uml:Property' and exists(@association)]" mode="deprecation">
+        <xsl:apply-templates select="key('idlookup',@association)" mode="deprecation"/>            
+    </xsl:template>
+    
+    <xsl:template match="*[@xmi:id=//Stereotypes:Deprecated/@*]" mode="deprecation">
+        <xsl:variable name="id" select="@xmi:id"/>
+        <xsl:variable name="deprecation" select="//Stereotypes:Deprecated[@*=$id]"/>            
+        <xsl:element name="mt:deprecated">
+            <xsl:if test="$deprecation/@reason">
+                <xsl:attribute name="reason"><xsl:value-of select="$deprecation/@reason"/></xsl:attribute>
+            </xsl:if>
+            <xsl:if test="$deprecation/@since">
+                <xsl:attribute name="since"><xsl:value-of select="$deprecation/@since"/></xsl:attribute>
+            </xsl:if>            
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="relationship-meta"/>
+    
+    <xsl:template match="ownedAttribute[@xmi:type='uml:Property']" mode="relationship-meta">
+        <xsl:element name="mt:relationship">
+            <xsl:variable name="type" select="key('idlookup',@type)"/>
+            <xsl:variable name="upper">
+                <xsl:apply-templates select=".//upperValue" mode="create-cardinality-value"/>                    
+            </xsl:variable>           
+            <xsl:if test="exists(@association) and not(@aggregation='composite')">
+                <xsl:apply-templates select="$type" mode="create-type-ref">
+                    <xsl:with-param name="attribute-name" select="'element-type'"></xsl:with-param>
+                </xsl:apply-templates>
+            </xsl:if>
+            <xsl:attribute name="relationship-type">
+                <xsl:choose>
+                    <xsl:when test="exists(@association) and not(@aggregation='composite')">Association</xsl:when>
+                    <xsl:when test="exists(@association)">Composition</xsl:when>
+                    <xsl:otherwise>Attribute</xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>            
+            <xsl:if test="$upper!='1'">
+                <xsl:if test="not(@aggregation='composite')">
+                    <xsl:attribute name="unique" select="if (@isUnique = 'false') then false() else true()"/>
+                </xsl:if>
+                <xsl:attribute name="ordered" select="if (@isOrdered = 'true') then true() else false()"/>
+            </xsl:if>                
+        </xsl:element>       
+    </xsl:template>
+    
+    <xsl:template match="*" mode="documentation">
+        <xsl:apply-templates select="ownedComment" mode="documentation"/>
+    </xsl:template>
+    
     <xsl:template match="ownedComment[@xmi:type='uml:Comment']" mode="documentation">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    <xsl:apply-templates select="@body" mode="documentation"/>
-                </xs:documentation>
-            </xs:annotation>
+        <xs:documentation xml:lang="en">
+            <xsl:apply-templates select="@body" mode="documentation"/>
+        </xs:documentation>
     </xsl:template>
     
     <xsl:template match="@body" mode="documentation">
@@ -153,7 +224,7 @@
 			<xsl:apply-templates select=".//lowerValue" mode="create-cardinalities"/>
             <xsl:apply-templates select=".//upperValue" mode="create-cardinalities"/>
 
-            <xsl:apply-templates select="." mode="documentation"/>
+            <xsl:apply-templates select="." mode="meta-information"/>
             
         </xsl:element>
     </xsl:template>
@@ -191,32 +262,8 @@
 					<xsl:attribute name="maxOccurs">1</xsl:attribute>
 				</xsl:if>
         
-                <xsl:apply-templates select="." mode="documentation"/>
+                <xsl:apply-templates select="." mode="meta-information"/>
                 
-        
-                <!-- Referenced elements as annotation -->
-                <!-- 
-                <xsl:element name="xs:annotation">
-                    <xsl:element name="xs:documentation">
-                        <xsl:text>ref to </xsl:text>
-                        <xsl:for-each select="$type">
-                            <xsl:sort select="@name" order="ascending" data-type="text"/>
-                            
-                            <xsl:value-of select="@name"/>
-                            <xsl:if test="position()!=last()">
-                                <xsl:text>, </xsl:text>
-                            </xsl:if>
-                        </xsl:for-each>
-                    </xsl:element>
-                    <xsl:if test="$lower>'1'">
-                    <xsl:element name="xs:appinfo">
-						<xsl:text>There shall be at least </xsl:text>
-							<xsl:value-of select="$lower"/>
-						<xsl:text> elements referenced.</xsl:text>
-					</xsl:element>									
-                    </xsl:if>
-                </xsl:element>
-                 -->
             </xsl:element>
         </xsl:if>		
     </xsl:template>
@@ -256,7 +303,7 @@
     <xsl:template match="packagedElement[@xmi:type='uml:Enumeration']" mode="create-type">
         <xs:simpleType>
             <xsl:apply-templates select="." mode="create-name"/>
-            <xsl:apply-templates select="ownedComment" mode="documentation"/>           
+            <xsl:apply-templates select="." mode="meta-information"/>
             <xs:restriction base="xs:string">                
             	<!-- Only if close enum -->
 				<xsl:if test="$strict='true' or @xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration">
@@ -272,7 +319,7 @@
     <xsl:template match="packagedElement[@xmi:type='uml:PrimitiveType']" mode="create-type">
         <xs:simpleType>
             <xsl:apply-templates select="." mode="create-name"/>
-            <xsl:apply-templates select="ownedComment" mode="documentation"/>           
+            <xsl:apply-templates select="." mode="meta-information"/>
             <xs:restriction base="xs:string">                
                 <!-- Only for pattern restrictions -->
                 <xsl:if test="($strict='true' and @xmi:id=//Stereotypes:OpenPatternRestriction/@base_PrimitiveType) 
@@ -290,7 +337,7 @@
             <xsl:attribute name="value">
                 <xsl:apply-templates select="@name" mode="format-name"/>
             </xsl:attribute>
-            <xsl:apply-templates select="ownedComment" mode="documentation"/>           
+            <xsl:apply-templates select="." mode="meta-information"/>           
         </xs:enumeration>		
     </xsl:template>    
   

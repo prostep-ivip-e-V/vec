@@ -7,6 +7,10 @@
     <xsl:output method="xml" indent="yes"/>
     <xsl:strip-space  elements="*"/>
     
+    <xsl:template match="xs:appinfo[not(*)]"/>
+    
+    <xsl:template match="xs:annotation[not(xs:appinfo/*) and not(xs:documentation)]"/>
+    
     <xsl:template match="html">
         <xsl:apply-templates select="body/*" />
     </xsl:template>
