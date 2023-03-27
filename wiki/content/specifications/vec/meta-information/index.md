@@ -32,7 +32,7 @@ Due to the nature of XML Schema and XML files it is not possible to express all 
 * Assignment of model elements to packages / namespaces in the model, and
 * Deprecation of model elements.
 
-To overcome this gap, additional meta information, embedded in the XML Schema will be provided for future versions (Version > 2.0.1). The extension is done with the annotation concept n provided by XSD (`xs:annotation` / `xs:appinfo` see [W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures / 3.15.1 The Annotation Schema Component](https://www.w3.org/TR/xmlschema11-1/#Annotation_details)).
+To overcome this gap, additional meta information, embedded in the XML Schema will be provided for future versions (Version > 2.0.1). The extension is done with the annotation concept provided by XSD (`xs:annotation` / `xs:appinfo` see [W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures / 3.15.1 The Annotation Schema Component](https://www.w3.org/TR/xmlschema11-1/#Annotation_details)).
 
 The XSD schema for the content of the `xs:appinfo` can be downloaded here: {{% staticref "specifications/vec/meta-information/model-meta-1.0.0.xsd" "newtab" %}}model-meta-1.0.0.xsd{{% /staticref %}}. The XML target namespace of the meta information is: `http://www.prostep.org/ecad-if/2022/model-meta` .
 
@@ -92,7 +92,7 @@ The attribute representation is used for primitive types and structured value ty
 
 * `element-type`: The schema type of elements referenced by the association as defined in the UML model, to preserve type info for `IDREF(S)`, which will be lost otherwise in native XML schema. Only allowed on `IDREF(S)` elements.
 *  `relationship-type`: The type of the relationship as defined in the UML model. 
-* `unique`: Defines the collection semantics for elements referencing more than one element. `unique=false` means that the model allows duplication for this reference. In other words, the same object can be referenced multiple times (bag semantics). `unique=true` applies when an element should only be referenced once (set semantics). Composite associations can only be `unique=true`
+* `unique`: Defines the collection semantics for elements referencing more than one element. `unique=false` means that the model allows duplication for this reference. In other words, the same object can be referenced multiple times (bag semantics). `unique=true` applies when an element should only be referenced once (set semantics). Composite associations can only be `unique=true`.
 * `ordered`: Defines that the order of the collection has a semantic meaning and is not just given, because XML is an ordered format by definition.
 
 The attributes of the `relationship` element are only present if the attribute has a reasonable, non-redundant meaning in the context. `ordered` or `unique` for a `0..1` association has questionable value, `unique` for composites can only be `true` and `element-type` is only relevant for `IDREF(S)` associations, because for composites the information is already contained in the regular schema definition.
