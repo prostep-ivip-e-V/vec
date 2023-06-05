@@ -1,5 +1,5 @@
 ---
-title: "Segment Connection Points"
+title: "Wire AddOns"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.

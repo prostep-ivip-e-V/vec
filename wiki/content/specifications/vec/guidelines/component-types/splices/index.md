@@ -71,7 +71,7 @@ The different types of splices are defined with the inner structure of the speci
 
 ### Placeability
 
-To allow the placement of a splice in the topology it requires a {{< vec-class PlaceableElementSpecification>}} (compare [Placement and Dimensions]({{< relref "../../placement-and-dimensions">}})). 
+To allow the placement of a splice in the topology it requires a {{< vec-class PlaceableElementSpecification>}} (compare [Placement and Dimensions]({{< relref "../../topology/placement-and-dimensions">}})). 
 
 |             |             |
 |:----------- |:----------- |
@@ -102,11 +102,11 @@ Different predefined contacting variants (100%) of the splice are expressed by o
 
 If different configurations require different terminal / contacting material (e.g. crimp sleeves) the corresponding material needs to be expressed by a new splice instance (part master data + instance + contact points for all variants with new material). This is the same situation when a certain position can be realized with connector housing with different number of cavities. If different configurations require (different) additional material (e.g. sealings) it is also referenced from the {{< vec-class ContactPoint>}}s as _WireEndAccessory_.
 
-For _inline splices_ (more than one  {{< vec-class WireReception >}}) there are situations where the allocation of wires to sides / wire receptions is free or is not explicitly defined. However, if it necessary to defines this assignment explicitly {{< vec-class WireMountingDetail>}}s are added to the {{< vec-class WireMounting>}} in the {{< vec-class ContactPoint>}}. The {{< vec-class WireMountingDetail>}} defines which {{< vec-class WireEnd >}}s are related to which {{< vec-class WireReceptionReference >}}. 
+For _inline splices_ (more than one  {{< vec-class WireReception>}}) there are situations where the allocation of wires to sides / wire receptions is free or is not explicitly defined. However, if it necessary to defines this assignment explicitly {{< vec-class WireMountingDetail>}}s are added to the {{< vec-class WireMounting>}} in the {{< vec-class ContactPoint>}}. The {{< vec-class WireMountingDetail>}} defines which {{< vec-class WireEnd >}}s are related to which {{< vec-class WireReceptionReference >}}. 
 
 ### Placement
 
-The splice terminal is placed in the topology with a {{< vec-class Placement >}} contained in a {{< vec-class PlacementSpecification>}} and a {{< vec-class PlaceableElementRole>}} contained in the {{< vec-class OccurrenceOrUsage>}}. A detailed description can be found in the specification "{{< vec-diagram "topology-and-geometry/placement-and-dimensions" >}}" and corresponding [implementation guideline]({{< relref "../../placement-and-dimensions">}}).
+The splice terminal is placed in the topology with a {{< vec-class Placement>}} contained in a {{< vec-class PlacementSpecification>}} and a {{< vec-class PlaceableElementRole>}} contained in the {{< vec-class OccurrenceOrUsage>}}. A detailed description can be found in the specification "{{< vec-diagram "topology-and-geometry/placement-and-dimensions" >}}" and corresponding [implementation guideline]({{< relref "../../topology/placement-and-dimensions">}}).
 
 If a splice has more than one {{< vec-class WireReception >}} and if it is required to define the exact orientation of the splice in the topology, or the splice has such a size that the exact positioning makes a geometrical difference (e.g. high voltage splices), then such a definition is possible in the VEC. 
 
