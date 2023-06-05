@@ -27,10 +27,51 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the Role. The identification is guaranteed to be unique within the OccurrenceOrUsage.      </p> | [Role]({{< relref "role.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 0..1 | <p> Specifies a unique identification of the Role. The identification is guaranteed to be unique within the OccurrenceOrUsage.      </p> | [Role]({{< relref "role.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [GrommetSpecification]({{< relref "grommetspecification.md" >}}) | grommetSpecification | 1 | 0..* | <p> References the <i>GrommetSpecification</i> that is instanced by this <i>GrommetRole.</i>      </p> |
-| [CableLeadThroughReference]({{< relref "cableleadthroughreference.md" >}}) | cableLeadThroughReference | 0..* | 1 |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>cableLeadThroughReference</td>
+        <td><a href="{{< relref "cableleadthroughreference.md" >}}">CableLeadThroughReference</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>grommetSpecification</td>
+        <td><a href="{{< relref "grommetspecification.md" >}}">GrommetSpecification</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>GrommetSpecification</i> that is instanced by this <i>GrommetRole.</i>      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

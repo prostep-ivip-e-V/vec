@@ -27,7 +27,11 @@ Allows the internationalization of text contents in a typed way. Attributes of t
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|languageCode | [LanguageCode]({{< relref "languagecode.md" >}}) | 1 | <p>References the corresponding languageCode of the value.  </p> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
-|value | [String]({{< relref "string.md" >}}) | 1 | <p>The value of the LocalizedString in language defined by the languageCode. </p> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
-|type | [LocalizedTypedStringType]({{< relref "localizedtypedstringtype.md" >}}) | 1 | <p> Defines the <i>type</i> of the <i>LocalizedTypedString</i>. This allows the definition of a more detailed semantic than the semantic of the attribute itself with the type <i>LocalizedTypedString. </i>Agreed type values are defined in an OpenEnumeration.      </p> | [LocalizedTypedString]({{< relref "localizedtypedstring.md" >}}) |
+|languageCode| [LanguageCode]({{< relref "languagecode.md" >}}) | 1 | <p>References the corresponding languageCode of the value.  </p> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
+|value| [String]({{< relref "string.md" >}}) | 1 | <p>The value of the LocalizedString in language defined by the languageCode. </p> | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) |
+|type| [LocalizedTypedStringType]({{< relref "localizedtypedstringtype.md" >}}) | 1 | <p> Defines the <i>type</i> of the <i>LocalizedTypedString</i>. This allows the definition of a more detailed semantic than the semantic of the attribute itself with the type <i>LocalizedTypedString. </i>Agreed type values are defined in an OpenEnumeration.      </p> | [LocalizedTypedString]({{< relref "localizedtypedstring.md" >}}) |
+
+
+
+
 

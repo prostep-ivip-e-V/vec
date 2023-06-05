@@ -27,20 +27,125 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the Dimension. The identification is guaranteed to be unique within the containing PlacementSpecification.      </p> | [Dimension]({{< relref "dimension.md" >}}) |
-|valueComponent | [Double]({{< relref "double.md" >}}) | 0..1 | <p> Defines the value of the dimension. This value can be null, if it shall be calculated and only a tolerance shall be defined.       </p> | [Dimension]({{< relref "dimension.md" >}}) |
-|valueCalculated | [Boolean]({{< relref "boolean.md" >}}) | 0..1 | <p> Defines if the value of the <i>Dimension</i> was calculated (e.g. the sum of segment lengths in the topology) or if it was defined manually.       </p> | [Dimension]({{< relref "dimension.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the Dimension. The identification is guaranteed to be unique within the containing PlacementSpecification.      </p> | [Dimension]({{< relref "dimension.md" >}}) |
+|valueComponent| [Double]({{< relref "double.md" >}}) | 0..1 | <p> Defines the value of the dimension. This value can be null, if it shall be calculated and only a tolerance shall be defined.       </p> | [Dimension]({{< relref "dimension.md" >}}) |
+|valueCalculated| [Boolean]({{< relref "boolean.md" >}}) | 0..1 | <p> Defines if the value of the <i>Dimension</i> was calculated (e.g. the sum of segment lengths in the topology) or if it was defined manually.       </p> | [Dimension]({{< relref "dimension.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [DimensionAnchor]({{< relref "dimensionanchor.md" >}}) | dimensionAnchor | 1 | 0..* | <p> References the location that is used as dimension point for the dimensioning (e.g. the entry point of a bundle into a connector housing).     </p>      <p> See KBLFRM-329 and KBLFRM-391.      </p> |
-| [Path]({{< relref "path.md" >}}) | path | 0..1 | 0..1 | Specifies a path in the topology along which the dimension is defined. |
-| [Unit]({{< relref "unit.md" >}}) | unitComponent | 1 | 0..* |  |
-| [Location]({{< relref "location.md" >}}) | definedLocations | 0..2 | 1 |  |
-| [DimensionAnchor]({{< relref "dimensionanchor.md" >}}) | referenceAnchor | 1 | 0..* | <p> References the location that is used as reference point for the dimensioning (e.g. the location of a fixing as this relates to a fixpoint of the body in white).     </p>      <p> See KBLFRM-329 and KBLFRM-391.      </p> |
-| [Tolerance]({{< relref "tolerance.md" >}}) | tolerance | 0..1 | 0..1 |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>dimensionAnchor</td>
+        <td><a href="{{< relref "dimensionanchor.md" >}}">DimensionAnchor</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the location that is used as dimension point for the dimensioning (e.g. the entry point of a bundle into a connector housing).     </p>      <p> See KBLFRM-329 and KBLFRM-391.      </p></td>
+    </tr>
+    <tr>
+        <td>definedLocations</td>
+        <td><a href="{{< relref "location.md" >}}">Location</a></td>
+        <td>0..2</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>path</td>
+        <td><a href="{{< relref "path.md" >}}">Path</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Specifies a path in the topology along which the dimension is defined.</td>
+    </tr>
+    <tr>
+        <td>tolerance</td>
+        <td><a href="{{< relref "tolerance.md" >}}">Tolerance</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>referenceAnchor</td>
+        <td><a href="{{< relref "dimensionanchor.md" >}}">DimensionAnchor</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the location that is used as reference point for the dimensioning (e.g. the location of a fixing as this relates to a fixpoint of the body in white).     </p>      <p> See KBLFRM-329 and KBLFRM-391.      </p></td>
+    </tr>
+    <tr>
+        <td>unitComponent</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [PlacementSpecification]({{< relref "placementspecification.md" >}}) | 1 | dimension | 0..* | Specifies the Dimensions defined by the PlacementSpecification. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>dimension</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "placementspecification.md" >}}">PlacementSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the Dimensions defined by the PlacementSpecification.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

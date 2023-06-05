@@ -9,7 +9,7 @@ tags: []
 categories: []
 date: 2022-10-07
 draft: false
-review: true
+review: false
 classes:
   - PartUsage
   - PartOccurrence
@@ -39,8 +39,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 200
 ---
-{{< review "KBLFRM-945">}}
-
 {{% callout note %}}
 Before reading these implementation guidelines, it is highly recommended to read the "{{< vec-diagram "instances-of-components/instantiation-of-components" >}}" section in the VEC Online Model Description.
 {{% /callout %}}
@@ -58,8 +56,6 @@ The two instantiation approaches of the VEC are illustrated with one representat
 On the far right hand side can be seen, that other areas in the VEC (indicated in orange on the right side) can use these instances regardless of the instantiation concept used.
 
 ## Relationship to Part Master Data
-
-{{< review "KBLFRM-994" >}}
 
 The information related to a component instance is in the VEC **always** logically divided in type definition and instance specific properties. In the VEC Type definitions are contained in {{< vec-class "Specification">}}s, instance specific properties are contained in {{< vec-class Role >}}s. 
 
@@ -83,8 +79,6 @@ Following the principle of optionality in the VEC, it is not required to create 
 
 
 ## Shared Specifications 
-
-{{< review "KBLFRM-1038">}}
 
 In the example above, the {{< vec-class "PartUsage">}} and the {{< vec-class "PartVersion">}} are using the **same** {{< vec-class "PartOrUsageRelatedSpecification">}}s. Such a reuse (or sharing) of information pieces is perfectly valid. However, it does **not** implicate, that the _PartUsage_ is an instance of the {{< vec-class PartVersion >}}. The precise meaning is, that in the final product a selected component, which is taking the place of the _PartUsage_, is required to satisfy the requirements expressed by the referenced specifications. In the example above, those requirements could be satisfied by this particular {{< vec-class PartVersion >}}, however, this might not be the only valid choice. 
 

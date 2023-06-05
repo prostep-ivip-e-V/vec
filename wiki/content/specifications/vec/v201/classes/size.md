@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|width | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> The width of the element.      </p> | [Size]({{< relref "size.md" >}}) |
-|height | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p>The height of the element. </p> | [Size]({{< relref "size.md" >}}) |
+|width| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p> The width of the element.      </p> | [Size]({{< relref "size.md" >}}) |
+|height| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p>The height of the element. </p> | [Size]({{< relref "size.md" >}}) |
+
+
+
+
 

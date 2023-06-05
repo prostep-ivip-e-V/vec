@@ -32,9 +32,9 @@ menu_name: vec-2.0.1
 | Generator | <p> A device that can generate energy.      </p> |
 | PowerDistribution | <p> A device that distributes power to other devices (e.g. a fuse box).      </p> |
 | Switch | <p> A &quot;Switch&quot; is a device that can change its internal connectivity in reaction to some external action (e.g. connect /&#160;disconnect&#160;some pins). A switch has no &quot;active&quot; logic (in contrast to an ECU).      </p> |
-| Lamp | <p> <i>Deprecated since VEC V1.2. </i>Use ComponentNodeType &quot;Actuator&quot; instead and ComponentSubType <i>Lamp</i>.      </p> |
-| Relay | <p> <i>Deprecated since VEC V1.2. </i>Use instead ComponentSubType Relay.&#160;      </p> |
-| Fuse | <p> <i>Deprecated since VEC V1.2. </i>Use instead ComponentSubType Fuse.&#160;      </p> |
+| Lamp | {{< deprecated since="[]" reason="[]">}}<p> <i>Deprecated since VEC V1.2. </i>Use ComponentNodeType &quot;Actuator&quot; instead and ComponentSubType <i>Lamp</i>.      </p> |
+| Relay | {{< deprecated since="[]" reason="[]">}}<p> <i>Deprecated since VEC V1.2. </i>Use instead ComponentSubType Relay.&#160;      </p> |
+| Fuse | {{< deprecated since="[]" reason="[]">}}<p> <i>Deprecated since VEC V1.2. </i>Use instead ComponentSubType Fuse.&#160;      </p> |
 | Ground | <p> Defines that this ComponentNode is a grounding point.      </p> |
 | OpenEnd | <p> Defines that this ComponentNode is the end point for some unconnected connections that require wires and routings in the resulting harness (e.g. an antenna). A component node of this type is used whenever connections shall not be connected (on one side), regardless if it is an individual wire or a core of a multi core wire.      </p> |
 | OpenLink | <p> Defines that this ComponentNode is an OpenLink. In the description of partial systems, it can be necessary to reference a ComponentNode that is not defined in the scope of the partial system (e.g. vehicle infrastructure like power, ground, bus systems). OpenLinks must be resolved and replaced by a determined ComponentNode when a partial system is integrated into a vehicle system.      </p> |

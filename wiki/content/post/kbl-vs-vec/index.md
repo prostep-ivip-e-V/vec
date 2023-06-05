@@ -21,6 +21,12 @@ image:
   placement: 2
   focal_point: "Center"
   preview_only: false
+
+links:
+  - icon_pack: fas
+    icon: file-pdf
+    name: PDF
+    url: 'whitepaper-kbl-vs-vec.pdf'
     
 
 ---

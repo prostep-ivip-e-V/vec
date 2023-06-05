@@ -27,20 +27,125 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the ComponentPort. The identification is guaranteed to be unique within the ComponentConnector.      </p> | [ComponentPort]({{< relref "componentport.md" >}}) |
-|signalDirection | [SignalDirection]({{< relref "signaldirection.md" >}}) | 0..1 | <p>Specifies the direction of the signal on this ComponentPort.  </p> | [ComponentPort]({{< relref "componentport.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>Room for additional, human readable information about the ComponentPort. </p> | [ComponentPort]({{< relref "componentport.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the ComponentPort. The identification is guaranteed to be unique within the ComponentConnector.      </p> | [ComponentPort]({{< relref "componentport.md" >}}) |
+|signalDirection| [SignalDirection]({{< relref "signaldirection.md" >}}) | 0..1 | <p>Specifies the direction of the signal on this ComponentPort.  </p> | [ComponentPort]({{< relref "componentport.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p>Room for additional, human readable information about the ComponentPort. </p> | [ComponentPort]({{< relref "componentport.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [Signal]({{< relref "signal.md" >}}) | signal | 0..1 | 0..* | <p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p> |
-| [NetworkPort]({{< relref "networkport.md" >}}) | networkPort | 0..1 | 0..* | References the NetworkPort that is realized by the ComponentPort. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>signal</td>
+        <td><a href="{{< relref "signal.md" >}}">Signal</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>Signal</i> that is associated with the <i>ComponentPort</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>networkPort</td>
+        <td><a href="{{< relref "networkport.md" >}}">NetworkPort</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the NetworkPort that is realized by the ComponentPort.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [ComponentPortViewItem]({{< relref "componentportviewitem.md" >}}) | 0..* | componentPort | 1 | References the <i>ComponentPort</i> that is represented by this <i>ComponentPortViewItem</i><i>.</i> |
-| [TerminalRole]({{< relref "terminalrole.md" >}}) | 0..* | componentPort | 0..* | References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341 |
-| [CavityReference]({{< relref "cavityreference.md" >}}) | 0..* | componentPort | 0..* | <p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p> |
-| [ComponentConnector]({{< relref "componentconnector.md" >}}) | 1 | componentPort | 0..* | Specifies the ComponentPorts of the ComponentConnector. |
-| [ConnectionEnd]({{< relref "connectionend.md" >}}) | 0..* | connectedComponentPort | 1 | References the ComponentPort that is connected by the ConnectionEnd. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>componentPort</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "cavityreference.md" >}}">CavityReference</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>ComponentPort</i> that is implemented by this <i>CavityReference</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>componentPort</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "componentconnector.md" >}}">ComponentConnector</a></td>
+        <td>1</td>
+        <td>Specifies the ComponentPorts of the ComponentConnector.</td>
+    </tr>
+    <tr>
+        <td>componentPort</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "componentportviewitem.md" >}}">ComponentPortViewItem</a></td>
+        <td>0..*</td>
+        <td>References the <i>ComponentPort</i> that is represented by this <i>ComponentPortViewItem</i><i>.</i></td>
+    </tr>
+    <tr>
+        <td>componentPort</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "terminalrole.md" >}}">TerminalRole</a></td>
+        <td>0..*</td>
+        <td>References the ComponentPort that is realized by the referenced Terminal (OccurrenceOrUsage with TerminalRole). KBLFRM-341</td>
+    </tr>
+    <tr>
+        <td>connectedComponentPort</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectionend.md" >}}">ConnectionEnd</a></td>
+        <td>0..*</td>
+        <td>References the ComponentPort that is connected by the ConnectionEnd.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

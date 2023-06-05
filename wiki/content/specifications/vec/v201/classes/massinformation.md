@@ -27,7 +27,11 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|determinationType | [ValueDetermination]({{< relref "valuedetermination.md" >}}) | 0..1 | <p>Specifies the determination type of the mass information.  </p> | [MassInformation]({{< relref "massinformation.md" >}}) |
-|value | [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p>Specifies the mass as numerical value.  </p> | [MassInformation]({{< relref "massinformation.md" >}}) |
-|valueSource | [MassInformationSource]({{< relref "massinformationsource.md" >}}) | 0..1 | <p> The <i>valueSource</i> defines in an OpenEnumeration the source from which the <i>MassInformation</i> has been retrieved. This information, in combination with the <i>ValueDetermination</i> gives a hint about the reliability of the <i>MassInformation</i>      </p> | [MassInformation]({{< relref "massinformation.md" >}}) |
+|determinationType| [ValueDetermination]({{< relref "valuedetermination.md" >}}) | 0..1 | <p>Specifies the determination type of the mass information.  </p> | [MassInformation]({{< relref "massinformation.md" >}}) |
+|value| [NumericalValue]({{< relref "numericalvalue.md" >}}) | 1 | <p>Specifies the mass as numerical value.  </p> | [MassInformation]({{< relref "massinformation.md" >}}) |
+|valueSource| [MassInformationSource]({{< relref "massinformationsource.md" >}}) | 0..1 | <p> The <i>valueSource</i> defines in an OpenEnumeration the source from which the <i>MassInformation</i> has been retrieved. This information, in combination with the <i>ValueDetermination</i> gives a hint about the reliability of the <i>MassInformation</i>      </p> | [MassInformation]({{< relref "massinformation.md" >}}) |
+
+
+
+
 

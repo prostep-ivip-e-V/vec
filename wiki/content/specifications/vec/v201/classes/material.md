@@ -27,7 +27,11 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|key | [String]({{< relref "string.md" >}}) | 1 | <p>The key of the material in the corresponding material reference system. </p> | [Material]({{< relref "material.md" >}}) |
-|referenceSystem | [String]({{< relref "string.md" >}}) | 1 | <p> The identification of the material reference system, which is defining possible values and the semantic of material keys.      </p> | [Material]({{< relref "material.md" >}}) |
-|description | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p>On optional human readable description of the material (e.g. the name).  </p> | [Material]({{< relref "material.md" >}}) |
+|key| [String]({{< relref "string.md" >}}) | 1 | <p>The key of the material in the corresponding material reference system. </p> | [Material]({{< relref "material.md" >}}) |
+|referenceSystem| [String]({{< relref "string.md" >}}) | 1 | <p> The identification of the material reference system, which is defining possible values and the semantic of material keys.      </p> | [Material]({{< relref "material.md" >}}) |
+|description| [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p>On optional human readable description of the material (e.g. the name).  </p> | [Material]({{< relref "material.md" >}}) |
+
+
+
+
 

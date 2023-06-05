@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|exponent | [Integer]({{< relref "integer.md" >}}) | 0..1 | <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p> | [Unit]({{< relref "unit.md" >}}) |
-|otherUnitName | [OtherUnitName]({{< relref "otherunitname.md" >}}) | 1 | <p> Specifies the name of the unit.      </p> | [OtherUnit]({{< relref "otherunit.md" >}}) |
+|exponent| [Integer]({{< relref "integer.md" >}}) | 0..1 | <p> Defines the exponent with which this unit instance should be used. In order to define square meters for example, the SIUnit &quot;metre&quot; with an exponent of 2 will be used. If no exponent is defined it is equivalent to the value 1.      </p> | [Unit]({{< relref "unit.md" >}}) |
+|otherUnitName| [OtherUnitName]({{< relref "otherunitname.md" >}}) | 1 | <p> Specifies the name of the unit.      </p> | [OtherUnit]({{< relref "otherunit.md" >}}) |
+
+
+
+
 

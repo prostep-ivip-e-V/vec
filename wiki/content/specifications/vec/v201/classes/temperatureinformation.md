@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|temperatureRange | [ValueRange]({{< relref "valuerange.md" >}}) | 0..1 | <p>Specifies the allowed temperature range for this type of temperature.  </p> | [TemperatureInformation]({{< relref "temperatureinformation.md" >}}) |
-|temperatureType | [TemperatureType]({{< relref "temperaturetype.md" >}}) | 0..1 | <p> The type of a TemperatureInformation.      </p> | [TemperatureInformation]({{< relref "temperatureinformation.md" >}}) |
+|temperatureRange| [ValueRange]({{< relref "valuerange.md" >}}) | 0..1 | <p>Specifies the allowed temperature range for this type of temperature.  </p> | [TemperatureInformation]({{< relref "temperatureinformation.md" >}}) |
+|temperatureType| [TemperatureType]({{< relref "temperaturetype.md" >}}) | 0..1 | <p> The type of a TemperatureInformation.      </p> | [TemperatureInformation]({{< relref "temperatureinformation.md" >}}) |
+
+
+
+
 

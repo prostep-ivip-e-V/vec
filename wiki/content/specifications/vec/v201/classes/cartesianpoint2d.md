@@ -27,16 +27,102 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|x | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the value of x-coordinate of the Cartesian point. The unit of this value is the baseUnit of containing BuildingBlockSpecification2D.      </p> | [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) |
-|y | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the value of y-coordinate of the Cartesian point. The unit of this value is the baseUnit of containing BuildingBlockSpecification2D.      </p> | [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) |
+|x| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the value of x-coordinate of the Cartesian point. The unit of this value is the baseUnit of containing BuildingBlockSpecification2D.      </p> | [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) |
+|y| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the value of y-coordinate of the Cartesian point. The unit of this value is the baseUnit of containing BuildingBlockSpecification2D.      </p> | [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | 0..* | cartesianPoint | 1 | References the CartesianPoint2D where the GeometryNode2D is located. |
-| [BuildingBlockSpecification2D]({{< relref "buildingblockspecification2d.md" >}}) | 0..1 | cartesianPoint | 0..* | <p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p> |
-| [ConnectionViewSpecification]({{< relref "connectionviewspecification.md" >}}) | 0..1 | cartesianPoint | 0..* | Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i> |
-| [NetViewSpecification]({{< relref "netviewspecification.md" >}}) | 0..1 | cartesianPoint | 0..* | Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>NetViewSpecification.</i> |
-| [BuildingBlockPositioning2D]({{< relref "buildingblockpositioning2d.md" >}}) | 0..1 | centerPoint | 0..1 | Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing. |
-| [PathSegment]({{< relref "pathsegment.md" >}}) | 0..* | controlPoint | 0..* | The ordered list of control points through which the PathSegment goes. |
-| [Transformation2D]({{< relref "transformation2d.md" >}}) | 0..* | origin | 1 | References the CartesianPoint2D that is the origin of the Transformation2D. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>cartesianPoint</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "buildingblockspecification2d.md" >}}">BuildingBlockSpecification2D</a></td>
+        <td>0..1</td>
+        <td><p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p></td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectionviewspecification.md" >}}">ConnectionViewSpecification</a></td>
+        <td>0..1</td>
+        <td>Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>ConnectionViewSpecification</i><i>.</i></td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
+        <td>0..*</td>
+        <td>References the CartesianPoint2D where the GeometryNode2D is located.</td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "netviewspecification.md" >}}">NetViewSpecification</a></td>
+        <td>0..1</td>
+        <td>Specifies all the <i>CartesianPoint2Ds</i> that are used within the <i>NetViewSpecification.</i></td>
+    </tr>
+    <tr>
+        <td>centerPoint</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "buildingblockpositioning2d.md" >}}">BuildingBlockPositioning2D</a></td>
+        <td>0..1</td>
+        <td>Specifies the center point of the BuildingBlock in the coordinate system of the harness drawing.</td>
+    </tr>
+    <tr>
+        <td>controlPoint</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td><a href="{{< relref "pathsegment.md" >}}">PathSegment</a></td>
+        <td>0..*</td>
+        <td>The ordered list of control points through which the PathSegment goes.</td>
+    </tr>
+    <tr>
+        <td>origin</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "transformation2d.md" >}}">Transformation2D</a></td>
+        <td>0..*</td>
+        <td>References the CartesianPoint2D that is the origin of the Transformation2D.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

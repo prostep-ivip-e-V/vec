@@ -9,7 +9,7 @@ tags: []
 categories: []
 date: 2022-09-12
 draft: false
-review: true
+review: false
 classes:
   - PrimaryPartType
   - PartOrUsageRelatedSpecification
@@ -29,8 +29,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
 ---
-{{< review "multiple issues, see history for the relevant issue numbers">}}
-
 {{% callout note %}}
 Before reading these implementation guidelines, it is highly recommended to read the "{{< vec-diagram "general-component-data/description-of-parts" >}}" section in the VEC Online Model Description.
 {{% /callout %}}
