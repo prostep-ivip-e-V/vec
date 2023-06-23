@@ -13,6 +13,9 @@ draft: false
 toc: true
 
 history:
+  - date: 2023-06-23
+    description: "Move coupling to the section 'product definition'"
+    issue: "KBLFRM-609"
   - date: 2022-01-31
     description: "Add description for traceability to System Schematic Connections for directly mated E/E Components"
     issue: "KBLFRM-896"
@@ -22,8 +25,6 @@ history:
 
 
 classes:
-  - ContactingSpecification
-  - ContactPoint
   - WireEnd
   - CavityReference
   - CavitySealRole
@@ -115,26 +116,6 @@ In order to make the example more clearly, the next figure displays the definiti
 The {{< vec-class HousingComponent>}} of an EEComponent defines on one hand the pins (electrological relevant information) in this {{< vec-class HousingComponent>}} and on the other hand a {{< vec-class ConnectorHousingSpecification>}} (the layout and design of the {{< vec-class HousingComponent>}}). The {{< vec-class PinComponent>}}s are then positioned in the cavities. In the case of a coax contact, two {{< vec-class PinComponent>}}s (the different electrical potentials) are placed in one cavity.
 
 The {{< vec-class HousingComponent>}} of an EEComponent defines on one hand the pins (electrological relevant information) in this {{< vec-class HousingComponent>}} and on the other hand a ConnectorHousingSpecification (the layout and design of the {{< vec-class HousingComponent>}}). The {{< vec-class PinComponent>}}s are then positioned in the cavities. In the case of a coax contact, two {{< vec-class PinComponent>}}s (the different electrical potentials) are placed in one cavity.
-
-## Coupling Point
-
-{{< figure src="mating_specification.jpg" title="Mating Specification" numbered="true" lightbox="true">}}
-
-In the VEC the coupling / mating can be used to connect the harness side to another harness (in the case of an inliner) or to an ECU. The figure above shows a simplified example of the connection between an ECU (highlighted in orange) and a wiring connection (highlighted in blue). The {{< vec-class MatingPoint >}} simply connects the two {{< vec-class TerminalRole >}}s on each side. This method is used for example in a wiring definition, where the concrete connector is not yet known. For this reason this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
-
-
-### Coupling with given geometrical information
-
-{{< figure src="coupling_specification.jpg" title="Coupling Specification" numbered="true" lightbox="true">}}
-
-When information about the geometrical circumstances are given or at least the final part number is known, the coupling of a connector to another connector or an EEComponent can be done by simply using the {{< vec-class CouplingPoint >}} w/o any underlying constructions (like in the example above). The reference of the first and second connector is sufficient to specify the coupling. This requires that both sides have matching physical properties e.g. size, shape or a coding and the process defines surrounding conditions like the numbering of cavities. 
-
-{{% callout note %}}
-Becaus the usage of {{< vec-class SlotCoupling >}} and {{< vec-class CavityCoupling >}} is optional, the information about the facing cavities must be given by the process. For examlpe the counting starts at the top left cavity and goes down row by row to the bottom rigth one.
-{{% /callout %}}
-
-If this is not given, the {{< vec-class CouplingPoint >}} has the ability to define a {{< vec-class SlotCoupling >}} to name the slot from the one and the other side. And (if necessary) a {{< vec-class CavityCoupling >}} can be used to couple cavities if the numbering is not matching at all.
-
 
 ## Direct Connectivity
 
