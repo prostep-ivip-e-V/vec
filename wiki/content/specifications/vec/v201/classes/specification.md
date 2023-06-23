@@ -27,11 +27,52 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications. |
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | 0..1 | specification | 0..* | Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>specification</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
+        <td>0..1</td>
+        <td>Specifies the Specifications contained in the SheetOrChapter. All structured, technical information in the VEC is described by such Specifications.</td>
+    </tr>
+    <tr>
+        <td>specification</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>0..1</td>
+        <td>Specifies the Specifications contained in the DocumentVersion. All structured, technical information in the VEC is described by such Specifications.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

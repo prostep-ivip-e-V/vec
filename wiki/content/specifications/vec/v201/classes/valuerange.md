@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|minimum | [Double]({{< relref "double.md" >}}) | 1 | <p>Lower bound of the value range. </p> | [ValueRange]({{< relref "valuerange.md" >}}) |
-|maximum | [Double]({{< relref "double.md" >}}) | 1 | <p>Upper bound of the value range. </p> | [ValueRange]({{< relref "valuerange.md" >}}) |
+|minimum| [Double]({{< relref "double.md" >}}) | 1 | <p>Lower bound of the value range. </p> | [ValueRange]({{< relref "valuerange.md" >}}) |
+|maximum| [Double]({{< relref "double.md" >}}) | 1 | <p>Upper bound of the value range. </p> | [ValueRange]({{< relref "valuerange.md" >}}) |
+
+
+
+
 

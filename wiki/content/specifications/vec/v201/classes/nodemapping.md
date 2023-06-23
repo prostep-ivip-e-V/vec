@@ -29,11 +29,80 @@ menu_name: vec-2.0.1
 |--------|--------|---------|---------------|--------------|
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [Location]({{< relref "location.md" >}}) | mappedPosition | 1 | 0..1 |  |
-| [TopologyNode]({{< relref "topologynode.md" >}}) | innerNode | 1 |  |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>mappedPosition</td>
+        <td><a href="{{< relref "location.md" >}}">Location</a></td>
+        <td>1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>innerNode</td>
+        <td><a href="{{< relref "topologynode.md" >}}">TopologyNode</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [TopologyMappingSpecification]({{< relref "topologymappingspecification.md" >}}) | 1 | nodeMapping | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>nodeMapping</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "topologymappingspecification.md" >}}">TopologyMappingSpecification</a></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

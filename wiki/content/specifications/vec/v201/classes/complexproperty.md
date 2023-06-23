@@ -27,9 +27,41 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|propertyType | [String]({{< relref "string.md" >}}) | 1 |  | [CustomProperty]({{< relref "customproperty.md" >}}) |
+|propertyType| [String]({{< relref "string.md" >}}) | 1 |  | [CustomProperty]({{< relref "customproperty.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [CustomProperty]({{< relref "customproperty.md" >}}) | customProperty | 0..* | 1 | <p> The customProperties that represent the individual values of the complex property.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>customProperty</td>
+        <td><a href="{{< relref "customproperty.md" >}}">CustomProperty</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> The customProperties that represent the individual values of the complex property.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

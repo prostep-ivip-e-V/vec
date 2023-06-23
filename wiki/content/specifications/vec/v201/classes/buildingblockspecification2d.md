@@ -27,19 +27,124 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 | 0..* |  |
-| [CartesianPoint2D]({{< relref "cartesianpoint2d.md" >}}) | cartesianPoint | 0..* | 0..1 | <p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p> |
-| [GeometrySegment2D]({{< relref "geometrysegment2d.md" >}}) | geometrySegment | 0..* | 1 | Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D. |
-| [CartesianDimension]({{< relref "cartesiandimension.md" >}}) | boundingBox | 1 | 0..1 | Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions. |
-| [OccurrenceOrUsageViewItem2D]({{< relref "occurrenceorusageviewitem2d.md" >}}) | placedElementViewItem | 0..* | 1 | Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D. |
-| [GeometryNode2D]({{< relref "geometrynode2d.md" >}}) | geometryNode | 0..* | 1 | Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>baseUnit</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
+        <td><a href="{{< relref "cartesianpoint2d.md" >}}">CartesianPoint2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> Specifies the CartesianPoint2Ds that are used in the BuildingBlockSpecification2D.      </p></td>
+    </tr>
+    <tr>
+        <td>placedElementViewItem</td>
+        <td><a href="{{< relref "occurrenceorusageviewitem2d.md" >}}">OccurrenceOrUsageViewItem2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the view items for OccurrenceOrUsages on a BuildingBlockSpecification2D.</td>
+    </tr>
+    <tr>
+        <td>boundingBox</td>
+        <td><a href="{{< relref "cartesiandimension.md" >}}">CartesianDimension</a></td>
+        <td>1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Specifies the size of the area described by the BuildingBlockSpecification2D in Cartesian dimensions.</td>
+    </tr>
+    <tr>
+        <td>geometrySegment</td>
+        <td><a href="{{< relref "geometrysegment2d.md" >}}">GeometrySegment2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the GeometrySegment2Ds defined by the BuildingBlockSpecification2D.</td>
+    </tr>
+    <tr>
+        <td>geometryNode</td>
+        <td><a href="{{< relref "geometrynode2d.md" >}}">GeometryNode2D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the GeometryNode2Ds defined by the BuildingBlockSpecification2D.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [BuildingBlockPositioning2D]({{< relref "buildingblockpositioning2d.md" >}}) | 0..* | referenced2DBuildingBlock | 1 | References the building block which is placed on the harness drawing. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>referenced2DBuildingBlock</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "buildingblockpositioning2d.md" >}}">BuildingBlockPositioning2D</a></td>
+        <td>0..*</td>
+        <td>References the building block which is placed on the harness drawing.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

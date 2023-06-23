@@ -27,19 +27,124 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|relationType | [PartRelationType]({{< relref "partrelationtype.md" >}}) | 1 | <p>Specifies the type of the relation. </p> | [PartRelation]({{< relref "partrelation.md" >}}) |
-|customRelationExpression | [String]({{< relref "string.md" >}}) | 0..1 | <p> Defines the relationship between the accessory parts in a proprietary expression language. This attribute shall only be used, if the <i>relationType =&#160;'Custom'.</i>      </p> | [PartRelation]({{< relref "partrelation.md" >}}) |
+|relationType| [PartRelationType]({{< relref "partrelationtype.md" >}}) | 1 | <p>Specifies the type of the relation. </p> | [PartRelation]({{< relref "partrelation.md" >}}) |
+|customRelationExpression| [String]({{< relref "string.md" >}}) | 0..1 | <p> Defines the relationship between the accessory parts in a proprietary expression language. This attribute shall only be used, if the <i>relationType =&#160;'Custom'.</i>      </p> | [PartRelation]({{< relref "partrelation.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [PartVersion]({{< relref "partversion.md" >}}) | accessoryPart | 1..* | 0..* | References the PartVersions that are related by the PartRelation. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>accessoryPart</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>1..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the PartVersions that are related by the PartRelation.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [ModularSlot]({{< relref "modularslot.md" >}}) | 0..* | allowedInserts | 0..* | <p> References the <i>PartRelations</i> that are valid inserts for this <i>ModularSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ModularSlot</i> are always ConnectorHousings by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;ConnectorHousing</i>      </p> |
-| [ExtensionSlot]({{< relref "extensionslot.md" >}}) | 0..* | allowedInserts | 0..* | <p> References the <i>PartRelations</i> that are valid inserts for this <i>ExtensionSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for an <i>ExtensionSlot</i> are always <i>EEComponents</i> by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;EEComponent.</i>      </p> |
-| [WireTupleSpecification]({{< relref "wiretuplespecification.md" >}}) | 1 | fixationAccessory | 0..* | Specifies <i>PartRelations</i> that can / have to be used for the fixation. |
-| [GeneralTechnicalPartSpecification]({{< relref "generaltechnicalpartspecification.md" >}}) | 1 | partRelation | 0..* | Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips). |
-| [Slot]({{< relref "slot.md" >}}) | 0..* | supplementaryParts | 0..* | <p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p> |
-| [PlacementPoint]({{< relref "placementpoint.md" >}}) |  | supplementaryParts | 0..* | <p> References the <i>PartRelations</i> that specify supplementary parts for this <i>PlacementPoint</i>, e.g. cable ties for attaching the component on the harness.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>allowedInserts</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "extensionslot.md" >}}">ExtensionSlot</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>PartRelations</i> that are valid inserts for this <i>ExtensionSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for an <i>ExtensionSlot</i> are always <i>EEComponents</i> by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;EEComponent.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>allowedInserts</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "modularslot.md" >}}">ModularSlot</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>PartRelations</i> that are valid inserts for this <i>ModularSlot.</i>      </p>      <p> This reference points to <i>PartRelations</i> in order to allow referencing indirectly a <i>PartVersion </i>if the description of individual <i>PartVersions</i> is done with one physical VEC file per <i>PartVersion </i>and to allow the expression of optional inserts, choices etc. However, inserts for a <i>ModularSlot</i> are always ConnectorHousings by itself. Therefore, the referenced <i>PartVersion</i> shall have a <i>PrimaryPartType =&#160;ConnectorHousing</i>      </p></td>
+    </tr>
+    <tr>
+        <td>fixationAccessory</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "wiretuplespecification.md" >}}">WireTupleSpecification</a></td>
+        <td>1</td>
+        <td>Specifies <i>PartRelations</i> that can / have to be used for the fixation.</td>
+    </tr>
+    <tr>
+        <td>partRelation</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "generaltechnicalpartspecification.md" >}}">GeneralTechnicalPartSpecification</a></td>
+        <td>1</td>
+        <td>Specifies possible relations (accessories) of the specified part with other PartVersion (e.g. caps, clips).</td>
+    </tr>
+    <tr>
+        <td>supplementaryParts</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "slot.md" >}}">Slot</a></td>
+        <td>0..*</td>
+        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this slot.      </p></td>
+    </tr>
+    <tr>
+        <td>supplementaryParts</td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "placementpoint.md" >}}">PlacementPoint</a></td>
+        <td></td>
+        <td><p> References the <i>PartRelations</i> that specify supplementary parts for this <i>PlacementPoint</i>, e.g. cable ties for attaching the component on the harness.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

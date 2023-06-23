@@ -3,7 +3,7 @@ title: VEC Implementation Guidelines
 linktitle: Overview
 toc: false
 type: specs
-date: "2022-10-03"
+date: "2023-03-27"
 draft: false
 outputs:
   - html
@@ -23,6 +23,10 @@ menu:
   vec-guidelines:
     identifier: index
     weight: 1
+links:
+  - icon_pack: far
+    icon: folder-open
+    name: VEC Implementation Guidelines
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1

@@ -29,12 +29,90 @@ menu_name: vec-2.0.1
 |--------|--------|---------|---------------|--------------|
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [SlotMapping]({{< relref "slotmapping.md" >}}) | slotMapping | 0..* | 1 |  |
-| [PartVersion]({{< relref "partversion.md" >}}) | B | 1 | 0..* |  |
-| [PartVersion]({{< relref "partversion.md" >}}) | A | 1 | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>slotMapping</td>
+        <td><a href="{{< relref "slotmapping.md" >}}">SlotMapping</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td><a href="{{< relref "partversion.md" >}}">PartVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [MappingSpecification]({{< relref "mappingspecification.md" >}}) | 1 | mapping | 0..* |  |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>mapping</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "mappingspecification.md" >}}">MappingSpecification</a></td>
+        <td>1</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+
+

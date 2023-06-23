@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|x | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the x-coordinate in 2D space.      </p> | [CartesianVector2D]({{< relref "cartesianvector2d.md" >}}) |
-|y | [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the y-coordinate in 2D space.      </p> | [CartesianVector2D]({{< relref "cartesianvector2d.md" >}}) |
+|x| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the x-coordinate in 2D space.      </p> | [CartesianVector2D]({{< relref "cartesianvector2d.md" >}}) |
+|y| [Double]({{< relref "double.md" >}}) | 1 | <p> Specifies the y-coordinate in 2D space.      </p> | [CartesianVector2D]({{< relref "cartesianvector2d.md" >}}) |
+
+
+
+
 

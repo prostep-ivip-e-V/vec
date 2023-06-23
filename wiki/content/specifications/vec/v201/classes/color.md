@@ -27,7 +27,11 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|key | [String]({{< relref "string.md" >}}) | 1 | <p>The key of the color in the corresponding color reference system. </p> | [Color]({{< relref "color.md" >}}) |
-|referenceSystem | [ColorReferenceSystem]({{< relref "colorreferencesystem.md" >}}) | 1 | <p> The identification of the color reference system, which is defining possible values and the semantic of color keys. (see KBLFRM-315). For common color reference systems the literals defined in the open enumeration <i>ColorReferenceSystem </i>shall be used.      </p> | [Color]({{< relref "color.md" >}}) |
-|description | [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p>On optional human readable description of the color (e.g. the name).  </p> | [Color]({{< relref "color.md" >}}) |
+|key| [String]({{< relref "string.md" >}}) | 1 | <p>The key of the color in the corresponding color reference system. </p> | [Color]({{< relref "color.md" >}}) |
+|referenceSystem| [ColorReferenceSystem]({{< relref "colorreferencesystem.md" >}}) | 1 | <p> The identification of the color reference system, which is defining possible values and the semantic of color keys. (see KBLFRM-315). For common color reference systems the literals defined in the open enumeration <i>ColorReferenceSystem </i>shall be used.      </p> | [Color]({{< relref "color.md" >}}) |
+|description| [LocalizedString]({{< relref "localizedstring.md" >}}) | 0..* | <p>On optional human readable description of the color (e.g. the name).  </p> | [Color]({{< relref "color.md" >}}) |
+
+
+
+
 

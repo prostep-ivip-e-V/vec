@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:meta="http://www.prostep.org/ecad-if/2022/model-meta"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.prostep.org/ecad-if/2022/model-meta" version="1.0.0">
+
+    <xs:element name="deprecated" type="meta:Deprecation" />
+    <xs:element name="relationship" type="meta:Relationship" />
+    <xs:element name="package" type="meta:Package" />
+
+    <xs:complexType name="Deprecation">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">A model element (xml schema type, attribute, element
+                etc.) annotated with "deprecated" is supposed to be removed in the next major
+                release.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="reason" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">The reason for the deprecation and an explanation
+                    what should be used instead.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="since" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">The VEC version in which the deprecation was
+                    introduced.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="Package">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Defines the structural package in which the type is
+                placed in the VEC model.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+
+    <xs:simpleType name="RelationshipType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Attribute" />
+            <xs:enumeration value="Association" />
+            <xs:enumeration value="Composition" />
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="Relationship">
+        <xs:attribute name="element-type" type="xs:QName">
+            <xs:annotation>
+                <xs:documentation xml:lang="en"> The schema type of elements referenced by an
+                    association as defined in the UML model, to preserve type info for IDREF /
+                    IDREFS elements which will be lost otherwise in native XML schema. Only allowed
+                    for IDREF / IDREFS elements. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="relationship-type" type="meta:RelationshipType" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">Defines the type of relationship in the UML Model.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="unique" type="xs:boolean" default="true">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">Defines the collection semantic for elements
+                    referencing more than one element. "unique=false" means that the model allows
+                    duplication for this reference. In other words, the same object can be
+                    referenced multiple times (bag semantics). "unique=true" applies when an element
+                    should only be referenced once (set semantics). Composite associatiations can
+                    only be "unique=true".</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ordered" type="xs:boolean" default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">Defines that the order of collection has a semantic
+                    meaning and is not just given, because XML is an ordered format. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>

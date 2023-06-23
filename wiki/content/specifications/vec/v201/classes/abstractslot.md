@@ -27,15 +27,93 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|slotNumber | [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the number of the slot. This must be unique within a ConnectorHousingSpecification.  </p> | [AbstractSlot]({{< relref "abstractslot.md" >}}) |
+|slotNumber| [String]({{< relref "string.md" >}}) | 0..1 | <p>Specifies the number of the slot. This must be unique within a ConnectorHousingSpecification.  </p> | [AbstractSlot]({{< relref "abstractslot.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [SlotSpecification]({{< relref "slotspecification.md" >}}) | slotSpecification | 0..1 | 0..* | References the SlotSpecification that is satisfied by the slot. |
-| [Coding]({{< relref "coding.md" >}}) | coding | 0..1 | 0..1 | Defines coding of the slot that is satisfied by the Slot. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>coding</td>
+        <td><a href="{{< relref "coding.md" >}}">Coding</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td>Defines coding of the slot that is satisfied by the Slot.</td>
+    </tr>
+    <tr>
+        <td>slotSpecification</td>
+        <td><a href="{{< relref "slotspecification.md" >}}">SlotSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the SlotSpecification that is satisfied by the slot.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [AbstractSlotReference]({{< relref "abstractslotreference.md" >}}) | 0..* | referencedSlot | 1 | Points to the slot referenced by the slot reference. |
-| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | 1 | slot | 0..* | Specifies the slots forming the ConnectorHousing. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>referencedSlot</td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "abstractslotreference.md" >}}">AbstractSlotReference</a></td>
+        <td>0..*</td>
+        <td>Points to the slot referenced by the slot reference.</td>
+    </tr>
+    <tr>
+        <td>slot</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectorhousingspecification.md" >}}">ConnectorHousingSpecification</a></td>
+        <td>1</td>
+        <td>Specifies the slots forming the ConnectorHousing.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

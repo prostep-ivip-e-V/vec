@@ -27,13 +27,73 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|companyName | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies the company which states the ItemEquivalence.      </p> | [ItemEquivalence]({{< relref "itemequivalence.md" >}}) |
+|companyName| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies the company which states the ItemEquivalence.      </p> | [ItemEquivalence]({{< relref "itemequivalence.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | item | 2..* | 0..* | <p> References all ItemVersion that are considered to be equivalent by the ItemEquivalence. A single <i>ItemEquivalence</i> shall only reference <i>ItemVersions</i> of the same class (either <i>DocumentVersions</i> or <i>PartVersions</i>).      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>item</td>
+        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
+        <td>2..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References all ItemVersion that are considered to be equivalent by the ItemEquivalence. A single <i>ItemEquivalence</i> shall only reference <i>ItemVersions</i> of the same class (either <i>DocumentVersions</i> or <i>PartVersions</i>).      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | 1 | itemEquivalence | 0..* | Specifies ItemEquivalances defined by the DocumentVersion. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>itemEquivalence</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>1</td>
+        <td>Specifies ItemEquivalances defined by the DocumentVersion.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

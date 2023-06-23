@@ -27,14 +27,73 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
-|description | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
-|specialPartType | [String]({{< relref "string.md" >}}) | 0..1 | <p>The specialPartType allows the specification of subclassifications for a PartOrUsageRelatedSpecification (e.g. different types of connector housings).  </p> | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the specification. The identification is guaranteed to be unique within the document containing the specification. For all VEC-documents a Specification-instance can be trusted to be identical if the DocumentVersion-instance is the same (see DocumentVersion) and the identification of the Specification is the same.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|description| [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}}) | 0..* | <p> Specifies additional, human readable information about the specification.      </p> | [Specification]({{< relref "specification.md" >}}) |
+|specialPartType| [String]({{< relref "string.md" >}}) | 0..1 | <p>The specialPartType allows the specification of subclassifications for a PartOrUsageRelatedSpecification (e.g. different types of connector housings).  </p> | [PartOrUsageRelatedSpecification]({{< relref "partorusagerelatedspecification.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [Transformation3D]({{< relref "transformation3d.md" >}}) | boundingBoxPositioning | 0..1 | 0..1 | <p> The transformation that defines the positioning of the bounding box in coordinate system of the component.      </p> |
-| [CartesianPoint3D]({{< relref "cartesianpoint3d.md" >}}) | cartesianPoint | 0..* | 0..1 | <p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p> |
-| [LocalPosition]({{< relref "localposition.md" >}}) | positions | 0..* | 1 | <p> All position defined by this <i>LocalGeometrySpecification.</i>      </p> |
-| [Unit]({{< relref "unit.md" >}}) | baseUnit | 1 |  | <p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>baseUnit</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> The <i>Unit</i> in which all coordinates (e.g. cartesian points)&#160;are defined. Shall be a unit of length&#160;(e.g. millimetre).      </p></td>
+    </tr>
+    <tr>
+        <td>boundingBoxPositioning</td>
+        <td><a href="{{< relref "transformation3d.md" >}}">Transformation3D</a></td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> The transformation that defines the positioning of the bounding box in coordinate system of the component.      </p></td>
+    </tr>
+    <tr>
+        <td>cartesianPoint</td>
+        <td><a href="{{< relref "cartesianpoint3d.md" >}}">CartesianPoint3D</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> All <i>CartesianPoint3Ds</i> that are used in this <i>LocalGeometrySpecification.</i> All <i>CartesianPoint3Ds</i> are defined in relation to the coordinate system of the component.      </p></td>
+    </tr>
+    <tr>
+        <td>positions</td>
+        <td><a href="{{< relref "localposition.md" >}}">LocalPosition</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td><p> All position defined by this <i>LocalGeometrySpecification.</i>      </p></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

@@ -27,6 +27,10 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|type | [String]({{< relref "string.md" >}}) | 1 | <p>Specifies the type of the wire (e.g. FLRY, NYFAZw). Valid values are defined by the wireTypeReferenceSystem.  </p> | [WireType]({{< relref "wiretype.md" >}}) |
-|referenceSystem | [String]({{< relref "string.md" >}}) | 1 | <p>Specifies the reference system for the wire type.  </p> | [WireType]({{< relref "wiretype.md" >}}) |
+|type| [String]({{< relref "string.md" >}}) | 1 | <p>Specifies the type of the wire (e.g. FLRY, NYFAZw). Valid values are defined by the wireTypeReferenceSystem.  </p> | [WireType]({{< relref "wiretype.md" >}}) |
+|referenceSystem| [String]({{< relref "string.md" >}}) | 1 | <p>Specifies the reference system for the wire type.  </p> | [WireType]({{< relref "wiretype.md" >}}) |
+
+
+
+
 

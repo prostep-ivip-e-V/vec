@@ -29,7 +29,48 @@ menu_name: vec-2.0.1
 |--------|--------|---------|---------------|--------------|
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [DocumentVersion]({{< relref "documentversion.md" >}}) | referencedDocument | 1 | 0..* | References the DocumentVersion that is used as an Instruction. |
-| [SheetOrChapter]({{< relref "sheetorchapter.md" >}}) | referencedSheetOrChapter | 0..1 | 0..* | References the SheetOrChapter that is used as an Instruction. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>referencedDocument</td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the DocumentVersion that is used as an Instruction.</td>
+    </tr>
+    <tr>
+        <td>referencedSheetOrChapter</td>
+        <td><a href="{{< relref "sheetorchapter.md" >}}">SheetOrChapter</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the SheetOrChapter that is used as an Instruction.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+

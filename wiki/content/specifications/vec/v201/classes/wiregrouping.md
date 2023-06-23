@@ -27,17 +27,113 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|identification | [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the WireGrouping. The identification is guaranteed to be unique within the WireGroupingSpecification.      </p> | [WireGrouping]({{< relref "wiregrouping.md" >}}) |
+|identification| [String]({{< relref "string.md" >}}) | 1 | <p> Specifies a unique identification of the WireGrouping. The identification is guaranteed to be unique within the WireGroupingSpecification.      </p> | [WireGrouping]({{< relref "wiregrouping.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [WireElementReference]({{< relref "wireelementreference.md" >}}) | relatedWireElementReference | 0..* | 0..* | <p> References the concrete wire elements (<i>WireElementReference</i>) that are grouped by the WireGrouping.      </p> |
-| [WireGroupSpecification]({{< relref "wiregroupspecification.md" >}}) | wireGroupSpecification | 0..1 | 0..* | <p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p> |
-| [ConnectionGroup]({{< relref "connectiongroup.md" >}}) | connectionGroup | 0..* |  | <p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p> |
-| [WireGrouping]({{< relref "wiregrouping.md" >}}) | containedWireGroupings | 0..* | 0..1 | <p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p> |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>containedWireGroupings</td>
+        <td><a href="{{< relref "wiregrouping.md" >}}">WireGrouping</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..1</td>
+        <td><p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>relatedWireElementReference</td>
+        <td><a href="{{< relref "wireelementreference.md" >}}">WireElementReference</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the concrete wire elements (<i>WireElementReference</i>) that are grouped by the WireGrouping.      </p></td>
+    </tr>
+    <tr>
+        <td>connectionGroup</td>
+        <td><a href="{{< relref "connectiongroup.md" >}}">ConnectionGroup</a></td>
+        <td>0..*</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td></td>
+        <td><p> References the <i>ConnectionGroup</i> that is realized by this <i>WireGrouping.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>wireGroupSpecification</td>
+        <td><a href="{{< relref "wiregroupspecification.md" >}}">WireGroupSpecification</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>WireGroupSpecification</i> that applies to the <i>WireGrouping</i>.      </p></td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [WireGrouping]({{< relref "wiregrouping.md" >}}) | 0..1 | containedWireGroupings | 0..* | <p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p> |
-| [WireGroupingSpecification]({{< relref "wiregroupingspecification.md" >}}) | 0..1 | wireGrouping | 1..* | Specifies the WireGroupings described by the WireGroupingSpecification. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>containedWireGroupings</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "wiregrouping.md" >}}">WireGrouping</a></td>
+        <td>0..1</td>
+        <td><p> References the <i>WireGroupings</i> that are contained in this <i>WireGrouping</i>.      </p></td>
+    </tr>
+    <tr>
+        <td>wireGrouping</td>
+        <td>1..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "wiregroupingspecification.md" >}}">WireGroupingSpecification</a></td>
+        <td>0..1</td>
+        <td>Specifies the WireGroupings described by the WireGroupingSpecification.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

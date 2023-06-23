@@ -1,0 +1,10 @@
+{{- $tag := .Get 0 -}}
+{{- $text := "" -}}
+{{- if(eq $tag "agg") -}}
+{{- $text = "Aggregation: If (Y)es The association is an aggregation in the direction of navigation. That means the target class is contained in originating class (e.g. a sub element in the XML tree of a XML representation of the VEC.)." -}}
+{{- else if(eq $tag "unique") -}}
+{{- $text = "Unique: The association has a unique constraint in the direction of navigation. That means that the same element shall only be referenced once. For aggregations this is always (Y)es by nature." -}}
+{{- else if(eq $tag "ordered") -}}
+{{- $text = "Ordered: The association is ordered in the direction of navigation. The order of the elements in the association is intentional. If an association is not marked as ordered the order of elements is only created by the nature of specific format (e.g. XML) and can be ignored." -}}
+{{- end -}}
+<i class="fas fa-info-circle" data-toggle="tooltip" title="{{$text}}"></i>

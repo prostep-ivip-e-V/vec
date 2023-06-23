@@ -27,7 +27,11 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|fileName | [String]({{< relref "string.md" >}}) | 1 | <p> The name of the file as it appears in the package, including the folder structure (fully qualified name).      </p> | [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}) |
-|lastModified | [Date]({{< relref "date.md" >}}) | 0..1 | <p>The last modified timestamp of the file.  </p> | [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}) |
-|dataFormat | [String]({{< relref "string.md" >}}) | 0..1 | <p> The dataFormat specifies the format of the FileReference. The dataFormat has to be a valid &quot;Internet Media Type&quot; (see <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">https://www.iana.org/assignments/media-types/media-types.xhtml</a>).      </p> | [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}) |
+|fileName| [String]({{< relref "string.md" >}}) | 1 | <p> The name of the file as it appears in the package, including the folder structure (fully qualified name).      </p> | [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}) |
+|lastModified| [Date]({{< relref "date.md" >}}) | 0..1 | <p>The last modified timestamp of the file.  </p> | [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}) |
+|dataFormat| [String]({{< relref "string.md" >}}) | 0..1 | <p> The dataFormat specifies the format of the FileReference. The dataFormat has to be a valid &quot;Internet Media Type&quot; (see <a href="https://www.iana.org/assignments/media-types/media-types.xhtml">https://www.iana.org/assignments/media-types/media-types.xhtml</a>).      </p> | [FileBasedInstruction]({{< relref "filebasedinstruction.md" >}}) |
+
+
+
+
 

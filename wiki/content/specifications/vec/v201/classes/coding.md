@@ -27,10 +27,51 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|coding | [CodingName]({{< relref "codingname.md" >}}) | 1 | <p> Specifies the name of the coding.      </p> | [Coding]({{< relref "coding.md" >}}) |
+|coding| [CodingName]({{< relref "codingname.md" >}}) | 1 | <p> Specifies the name of the coding.      </p> | [Coding]({{< relref "coding.md" >}}) |
+
 
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [ConnectorHousingSpecification]({{< relref "connectorhousingspecification.md" >}}) | 0..1 | coding | 0..1 | Defines coding of the connector housing that is satisfied by the connector housing. |
-| [AbstractSlot]({{< relref "abstractslot.md" >}}) | 0..1 | coding | 0..1 | Defines coding of the slot that is satisfied by the Slot. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>coding</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "abstractslot.md" >}}">AbstractSlot</a></td>
+        <td>0..1</td>
+        <td>Defines coding of the slot that is satisfied by the Slot.</td>
+    </tr>
+    <tr>
+        <td>coding</td>
+        <td>0..1</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "connectorhousingspecification.md" >}}">ConnectorHousingSpecification</a></td>
+        <td>0..1</td>
+        <td>Defines coding of the connector housing that is satisfied by the connector housing.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

@@ -27,14 +27,83 @@ menu_name: vec-2.0.1
 ## Attributes
 |  Name  |  Type  |  Mult.  |  Description  |  Owning Classifier  |
 |--------|--------|---------|---------------|--------------|
-|type | [HistoryEntryType]({{< relref "historyentrytype.md" >}}) | 1 | <p>Specifies the type of relationship between the ItemVersions. </p> | [ItemHistoryEntry]({{< relref "itemhistoryentry.md" >}}) |
+|type| [HistoryEntryType]({{< relref "historyentrytype.md" >}}) | 1 | <p>Specifies the type of relationship between the ItemVersions. </p> | [ItemHistoryEntry]({{< relref "itemhistoryentry.md" >}}) |
 
 ## Outgoing Relations
-|    Type  |   Role   |   Mult.   |   Mult.   |   Description   |
-|----------|----------|-----------|-----------|-----------------|
-| [ItemVersion]({{< relref "itemversion.md" >}}) | successorVersion | 1 | 0..* | References the ItemVersion that is the successor in the ItemHistoryEntry. |
-| [ItemVersion]({{< relref "itemversion.md" >}}) | predecessorVersion | 1 | 0..* | References the ItemVersion that is the predecessor in the ItemHistoryEntry. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="6">Other End</th>
+           <th colspan="1">This End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>successorVersion</td>
+        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the ItemVersion that is the successor in the ItemHistoryEntry.</td>
+    </tr>
+    <tr>
+        <td>predecessorVersion</td>
+        <td><a href="{{< relref "itemversion.md" >}}">ItemVersion</a></td>
+        <td>1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td>References the ItemVersion that is the predecessor in the ItemHistoryEntry.</td>
+    </tr>
+    </tbody>
+</table>
+
 ##  Incoming Relations
-|    Type  |   Mult.  |   Role    |   Mult.   |   Description  |
-|----------|----------|-----------|-----------|----------------|
-| [VecContent]({{< relref "veccontent.md" >}}) | 1 | itemHistoryEntry | 0..* | Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file. |
+<table>
+    <thead>
+        <tr>
+           <th colspan="5">This End</th>
+           <th colspan="2">Other End</th>
+           <th colspan="1">General</th>
+        </tr>
+        <tr>
+           <th>Role</th>
+           <th>Mult.</th>
+           <th>Agg.{{< info agg >}}</th>
+           <th>Unique{{< info unique >}}</th>
+           <th>Ordered{{< info ordered >}}</th>
+           <th>Type</th>
+           <th>Mult.</th>
+           <th>Description</th>
+        </tr>
+    <thead>
+    <tbody>
+    <tr>
+        <td>itemHistoryEntry</td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td><a href="{{< relref "veccontent.md" >}}">VecContent</a></td>
+        <td>1</td>
+        <td>Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file.</td>
+    </tr>
+    </tbody>
+</table>
+
+
+

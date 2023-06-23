@@ -9,7 +9,7 @@ categories: []
 date: 2022-07-29
 lastmod: 2022-07-29
 draft: false
-review: true
+review: false
 diagram: false
 
 history:
@@ -31,9 +31,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 20050
 ---
-
-### 
-{{< review "KBLFRM-946" >}}
 
 A wide range of different systems, supporting different use cases, are used in the process of wiring harness development. All of them might have a _VEC-Interface_ for input & output, so sooner or later the question arises "What are the expectations for the behavior of those interfaces?". This section will discuss this question.
 

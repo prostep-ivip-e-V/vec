@@ -10,7 +10,7 @@ categories: []
 date: 2022-08-25
 lastmod: 2019-12-02T12:43:57+01:00
 draft: false
-review: true
+review: false
 
 
 history:
@@ -30,8 +30,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 20100
 ---
-{{< review "KBLFRM-1046" >}}
-
 For reasons of traceability (e.g. requirements) or because certain information is better represented in other standards than in the VEC format (e.g. 3D models for components), it is necessary to be able to reference external documents from VEC elements. This guideline describes how these external documents can be addressed and what concepts exist to connect those documents with VEC model elements (and when to use which).
 
 ## Referencing an external Document
