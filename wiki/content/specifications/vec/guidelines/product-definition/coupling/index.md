@@ -4,7 +4,7 @@ title: "Coupling"
 type: specs
 toc: true
 authors: ["fehlmann"]
-tags: ["Harness", "Module", "Assembly"]
+tags: ["Coupling", "Mating"]
 categories: []
 date: 2021-03-01
 lastmod: 2023-06-23T15:11:41+01:00
@@ -14,6 +14,9 @@ review: false
 classes:
   - ContactingSpecification
   - ContactPoint
+  - MatingPoint
+  - SlotCoupling
+  - CavityCoupling
 
 history:
   - date: 2023-06-23
