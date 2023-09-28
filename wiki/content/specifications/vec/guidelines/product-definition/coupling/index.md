@@ -31,28 +31,26 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 400
 ---
+
 {{% callout note %}}
-Before reading this implementation guideline, it is recommended to read the guideline about the [wiring]({{< relref "../../elog-layers/wiring" >}}) first.
+Before reading this implementation guideline, it is recommended to read the guideline about [wiring](../../elog-layers/wiring) first.
 {{% /callout %}}
 
 ## Coupling
 
 {{< figure src="mating_specification.jpg" title="Mating Specification" numbered="true" lightbox="true">}}
 
-In the VEC the coupling / mating can be used to connect the harness side to another harness (in the case of an inliner) or to an ECU. The figure above shows a simplified example of the connection between an ECU (highlighted in orange) and a wiring connection (highlighted in blue). The {{< vec-class MatingPoint >}} simply connects the two {{< vec-class TerminalRole >}}s on each side. This method is used for example in a wiring definition, where the concrete connector is not yet known. For this reason this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
+In the VEC, coupling/mating can be used to connect the harness side to another harness (in the case of an inliner) or to an ECU. The figure above shows a simplified example of the connection between an ECU (highlighted in orange) and a wiring connection (highlighted in blue). The {{< vec-class MatingPoint >}} class simply connects the two {{< vec-class TerminalRole >}}s on each side. This method is used, for example, in a wiring definition where the concrete connector is not yet known. For this reason, this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
 
-
-### Coupling with given geometrical information
+### Coupling with Provided Geometrical Information
 
 {{< figure src="coupling_specification.jpg" title="Coupling Specification" numbered="true" lightbox="true">}}
 
-When information about the geometrical circumstances are given or at least the final part number is known, the coupling of a connector to another connector or an EEComponent can be done by simply using the {{< vec-class CouplingPoint >}} w/o any underlying constructions (like in the example above). The reference of the first and second connector is sufficient to specify the coupling. This requires that both sides have matching physical properties e.g. size, shape or a coding and the process defines surrounding conditions like the numbering of cavities. And of course, this gemetrical way of coupling can be combined with the electrical one explained the section above.
+When information about the geometrical circumstances is given or at least the final part number is known, the geometric coupling of a connector to another connector or an EEComponent can be done by using the {{< vec-class CouplingPoint >}} class with its underlying constructions. Specifying the reference of the first and second connector is sufficient to define the coupling. This requires that both sides have matching physical properties, such as size, shape, or coding. One level below the {{< vec-class CouplingPoint >}} class, you have the ability to define a {{< vec-class SlotCoupling >}} to name the slot on one side and the other. Additionally, a {{< vec-class CavityCoupling >}} can be used to couple cavities. A complete example can be found in the listing below.
 
 {{% callout note %}}
-Becaus the usage of {{< vec-class SlotCoupling >}} and {{< vec-class CavityCoupling >}} is optional, the information about the facing cavities must be given by the process. For examlpe the counting starts at the top left cavity and goes down row by row to the bottom rigth one.
+Since the usage of {{< vec-class SlotCoupling >}} and {{< vec-class CavityCoupling >}} is optional, it is allowed to define coupling points without any underlying constructions. This can be done when this information is not yet known or when the implementation of the VEC needs to be minimized. In this case, the information about the facing slots and cavities must be provided by the process, such as the numbering of cavities (cavity '1' in the top-left corner).
 {{% /callout %}}
-
-If this is not given, the {{< vec-class CouplingPoint >}} has the ability to define a {{< vec-class SlotCoupling >}} to name the slot from the one and the other side. And (if necessary) a {{< vec-class CavityCoupling >}} can be used to couple cavities if the numbering is not matching at all. A full example can be found in the listing below:
 
 ```xml
 <Specification xsi:type="vec:CompositionSpecification" id="id_composition_1">
