@@ -14,14 +14,14 @@ draft: false
 menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection
-    parent: Topology
+    parent: placement-and-dimension
     weight: 18002
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 18002
 ---
 {{% callout note %}} 
-Before reading this section, it is recommended to read [this implementation guideline]({{< ref "../../topology/segment-connection-points" >}}) regarding segment connection points. 
+Before reading this section, it is recommended to read [this implementation guideline]({{< ref "../../placement-and-dimension/segment-connection-points" >}}) regarding segment connection points. 
 {{% /callout %}}
 
 ### Cavities 

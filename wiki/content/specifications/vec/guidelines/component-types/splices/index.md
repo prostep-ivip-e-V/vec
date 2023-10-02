@@ -71,7 +71,7 @@ The different types of splices are defined with the inner structure of the speci
 
 ### Placeability
 
-To allow the placement of a splice in the topology it requires a {{< vec-class PlaceableElementSpecification>}} (compare [Placement and Dimensions]({{< relref "../../topology/placement-and-dimensions">}})). 
+To allow the placement of a splice in the topology it requires a {{< vec-class PlaceableElementSpecification>}} (compare [Placement and Dimensions]({{< relref "../../placement-and-dimension">}})). 
 
 |             |             |
 |:----------- |:----------- |
@@ -106,7 +106,7 @@ For _inline splices_ (more than one  {{< vec-class WireReception>}}) there are s
 
 ### Placement
 
-The splice terminal is placed in the topology with a {{< vec-class Placement>}} contained in a {{< vec-class PlacementSpecification>}} and a {{< vec-class PlaceableElementRole>}} contained in the {{< vec-class OccurrenceOrUsage>}}. A detailed description can be found in the specification "{{< vec-diagram "topology-and-geometry/placement-and-dimensions" >}}" and corresponding [implementation guideline]({{< relref "../../topology/placement-and-dimensions">}}).
+The splice terminal is placed in the topology with a {{< vec-class Placement>}} contained in a {{< vec-class PlacementSpecification>}} and a {{< vec-class PlaceableElementRole>}} contained in the {{< vec-class OccurrenceOrUsage>}}. A detailed description can be found in the specification "{{< vec-diagram "topology-and-geometry/placement-and-dimensions" >}}" and the corresponding [implementation guidelines]({{< relref "../../placement-and-dimension">}}).
 
 If a splice has more than one {{< vec-class WireReception >}} and if it is required to define the exact orientation of the splice in the topology, or the splice has such a size that the exact positioning makes a geometrical difference (e.g. high voltage splices), then such a definition is possible in the VEC. 
 

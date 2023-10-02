@@ -42,8 +42,8 @@ Both parts of the modular connector (the housing and the insert) have their own 
 ## Wire-Addons
 
 {{% callout note %}}
-* To define wire add-ons, specified {{< vec-class SegmentConnectionPoint >}}s in the part master definition are required. How it is done can be found in [this implementation guideline]({{< ref "../../topology/segment-connection-points" >}}).
-* The definition of wire add-ons for cavities and modular slots is a general mechanism in the VEC and can be found in [this implementation guideline]({{< ref "../../topology/wire-addons" >}})
+* To define wire add-ons, specified {{< vec-class SegmentConnectionPoint >}}s in the part master definition are required. How it is done can be found in [this implementation guideline]({{< ref "../../placement-and-dimension/segment-connection-points" >}}).
+* The definition of wire add-ons for cavities and modular slots is a general mechanism in the VEC and can be found in [this implementation guideline]({{< ref "../../placement-and-dimension/wire-addons" >}})
 {{% /callout %}}
 
 ### ConnectorHousingCap 

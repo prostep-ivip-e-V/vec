@@ -1,5 +1,5 @@
 ---
-title: "Placements and Dimensions"
+title: "Dimensions"
 #linktitle: Link in Sidemenu
 type: specs
 # Table of Content on the right side. Only useful for large pages.
@@ -14,11 +14,11 @@ draft: false
 menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection
-    parent: Topology
+    parent: placement-and-dimension
     weight: 18001
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 18001
+weight: 18003
 ---
 A Placement defines the way how a component is associated to the topology. The following sections contain examples about the different types of placements.
 

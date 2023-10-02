@@ -14,11 +14,11 @@ draft: false
 menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection
-    parent: Topology
-    weight: 18002
+    parent: placement-and-dimension
+    weight: 18004
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-weight: 18002
+weight: 18004
 ---
 {{< figure src="connector_with_multiple_segment_connection_points.jpg" title="Example of Multiple Segment Connection Pints" numbered="true" lightbox="true">}}
 
