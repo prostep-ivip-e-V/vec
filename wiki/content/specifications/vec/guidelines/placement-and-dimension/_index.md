@@ -21,3 +21,4 @@ menu:
 weight: 18000
 ---
 {{< figure src="placement-and-dimension.svg" title="Building Blocks of topology and geometry topics" numbered="true" lightbox="true">}}
+

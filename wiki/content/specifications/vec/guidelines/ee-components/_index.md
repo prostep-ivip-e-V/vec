@@ -165,7 +165,7 @@ The listing below shows the general xml structure for such a component box. Omit
 
 ### Wire-Addons
 
-Depending on the geometrical conditions of the E/E component it can be necessary to define an additional length for the connected wires (or the wires which are connected to a harness connector), because otherwise it is not connectable anyway. In this cases wire-addons can be defined for single cavities or whole modular slots How this its done can be found in [this implementation guideline]({{< ref "../placement-and-dimension/segment-connection-points" >}}).
+Depending on the geometrical conditions of the E/E component it can be necessary to define an additional length for the connected wires, e.g. wires connected to a harness connector. In this cases wire-addons can be defined for single cavities or whole modular slots. A detailed description of this mechanism can be found in the [implementation guideline for connectors]({{< ref "../component-types/connectors" >}}), because the {{< vec-class "connectorhousingspecification" >}} exists to describe the geometrical / mechanical properties of a connector (of an E/E component).
 
 
 ## Internal Connectivity 
