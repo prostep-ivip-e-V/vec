@@ -1,0 +1,21 @@
+﻿---
+title: Partitioning and Sizing of VEC Files
+toc: false
+type: specs
+layout:  package
+date: "2023-10-12"
+draft: false
+specification: VEC
+version: 2.1.0
+documentType: "Recommendation"
+elementType:  Package
+menu:
+  VEC-2.1.0:    
+    parent: xml-representation-of-the-model
+    identifier: xml-representation-of-the-model/partitioning-and-sizing-of-vec-files
+    weight: 1012003 
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 1012003
+---
+<p> In theory it is possible to export all data of a company that relates to the vehicle network in a single VEC&#160;file. However, this is not a very reasonable approach for several reasons. Amongst those are:      </p>      <ul>       <li> <i>Intellectual Property Protection: </i>For everything that is contained in a single VEC&#160;file, the &quot;All or Nothing&#160;Principle&quot; applies and it is hard or impossible to enforce a &quot;Need to Know&quot;. A recipient of a file, who requires only a single detail, always receives the complete information.        </li>       <li> <i>Partial Changes:</i> Even if only a single content element is changed, the complete file must be created and read, because only after reading the complete file the recipient knows which elements have changed.        </li>       <li> <i>Tool Support:</i> Tools must support large areas of the VEC&#160;in their Import- /&#160;Export interfaces, even if the areas do not belong to their use case.        </li>       <li> <i>Technical Feasibility:</i> If all information is contained in a single VEC&#160;file, the file itself can become huge, which places new requirements on the creating and reading tools (e.g. required memory).        </li>     </ul>     <p> Therefore, the general recommendation is to make a VEC files <b>as small as possible and as large as necessary</b>. The correct scoping of a generated VEC&#160;file depends on the use case of the information and the intended interface. Scoping means in this context the process of defining which information shall be bundled together in a single file for data exchange.      </p>      <p> The following paragraphs contain some guidelines if information shall be packaged together or not.      </p>      <ol>       <li> If the elements specified with the VEC&#160;are described, published and changed independently from each other regarding time and content, then they shall be placed in separate files (unit of publication). For example, this is the case for the description of harness components (connectors, wires etc.), represented by a part number. This rule applies only for the publication as master information from the original source of information. If the information is used to create other information, it can be embedded in a single file. For example, the description (complete or partial) of the used harness components will be embedded in the VEC describing a harness.        </li>       <li> If elements specified with the VEC&#160;have no relationships between each other (except reference base on <i>PartVersions </i>and <i>DocumentVersions</i>), then they shall be placed in separate files. For example, the specifications of a connector housing and a wire have no reference.        </li>       <li> If the relationship between two elements is indirectly over shared information, then this is <b>no</b> reason for the elements themselves to be placed in a single file (e.g. two connectors share the same <i>CavitySpecification</i> or two wires share the same <i>CoreSpecification</i>). If this piece of shared information is defined centrally, then it would have its own unit of publication, probably in its own <i>DocumentVersion</i>. In this case rule #1 can be applied. This means that, if the specification (e.g. a <i>CoreSpecification</i>) shall be exchanged, it shall be placed in its own VEC file. If the specification is used to describe another element (e.g. a wire) it shall be embedded in the VEC file of the described element. However, this is no reason to place all elements using this information in the same VEC&#160;file.        </li>     </ol>     <p> &#160;      </p>
