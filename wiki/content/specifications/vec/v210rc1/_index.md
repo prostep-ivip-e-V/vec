@@ -26,7 +26,7 @@ links:
   - icon_pack: far
     icon: file-code
     name: vec_2.1.0-RC1.xsd
-    url: "vec_2.1.0.xsd-RC1"
+    url: "vec_2.1.0-RC1.xsd"
   - icon_pack: far
     icon: file-code
     name: vec_2.1.0-strict-RC1.xsd
