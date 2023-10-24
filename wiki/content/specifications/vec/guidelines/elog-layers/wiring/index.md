@@ -13,6 +13,9 @@ draft: false
 toc: true
 
 history:
+  - date: 2023-06-23
+    description: "Move coupling to the section 'product definition'"
+    issue: "KBLFRM-609"
   - date: 2022-01-31
     description: "Add description for traceability to System Schematic Connections for directly mated E/E Components"
     issue: "KBLFRM-896"
@@ -48,7 +51,7 @@ However, in _Wiring Layer_ representation the degree of freedom and number of un
 Basically, there are three main modeling concepts:
 1. The description and instantiation of parts (e.g. connectors, wires, terminals).
 2. The contacting (marked with green dashed lines). It defines the relationship between terminals, wire ends and cavities.
-3. The coupling (marked with red dashed lines). This is for connecting connectors with E/E components or with each other, or even to connect E/E components with each other.
+3. The coupling (marked with red dashed lines). This is for connecting connectors with E/E components or with each other, or even to connect E/E components with each other. It is explained in more detail in the guideline "["Coupling"]({{< relref "../../product-definition/coupling" >}})"
 
 
 ## Description and Instantiation of Parts
@@ -115,14 +118,6 @@ In order to make the example more clearly, the next figure displays the definiti
 The {{< vec-class HousingComponent>}} of an EEComponent defines on one hand the pins (electrological relevant information) in this {{< vec-class HousingComponent>}} and on the other hand a {{< vec-class ConnectorHousingSpecification>}} (the layout and design of the {{< vec-class HousingComponent>}}). The {{< vec-class PinComponent>}}s are then positioned in the cavities. In the case of a coax contact, two {{< vec-class PinComponent>}}s (the different electrical potentials) are placed in one cavity.
 
 The {{< vec-class HousingComponent>}} of an EEComponent defines on one hand the pins (electrological relevant information) in this {{< vec-class HousingComponent>}} and on the other hand a ConnectorHousingSpecification (the layout and design of the {{< vec-class HousingComponent>}}). The {{< vec-class PinComponent>}}s are then positioned in the cavities. In the case of a coax contact, two {{< vec-class PinComponent>}}s (the different electrical potentials) are placed in one cavity.
-
-## Coupling Point
-
-{{< figure src="mating_specification.jpg" title="Mating Specification" numbered="true" lightbox="true">}}
-
-In the VEC the coupling / mating can be used to connect the harness side to another harness (in the case of an inliner) or to an ECU. The figure above shows a simplified example of the connection between an ECU (highlighted in orange) and a wiring connection (highlighted in blue). The {{< vec-class MatingPoint >}} simply connects the two {{< vec-class TerminalRole >}}s on each side. This method is used for example in a wiring definition, where the concrete connector is not yet known.
-
-For this reason this example omits the geometric aspects of a coupling (connector housing, slots, cavities).
 
 ## Direct Connectivity
 
