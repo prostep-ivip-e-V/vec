@@ -10,7 +10,7 @@ categories: []
 date: 2022-11-09
 lastmod: 2022-11-09T12:45:07+01:00
 draft: false
-review: true
+review: false
 classes:
   - SpliceTerminalSpecification
   - SpliceTerminalRole
