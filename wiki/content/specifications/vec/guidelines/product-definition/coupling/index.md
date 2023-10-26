@@ -3,7 +3,7 @@ title: "Coupling"
 #linktitle: Link in Sidemenu
 type: specs
 toc: true
-authors: ["fehlmann"]
+authors: ["becker"]
 tags: ["Coupling", "Mating"]
 categories: []
 date: 2021-03-01
