@@ -10,7 +10,7 @@ categories: []
 date: 2019-03-07
 lastmod: 2019-11-29T17:30:52+01:00
 draft: false
-review: false
+review: true
 
 classes:
   - WireSpecification
@@ -22,8 +22,13 @@ classes:
   - ShieldSpecification
   - WireGroupSpecification
   - FillerSpecification
+  - WireEnd
+  - WireElementReference
 
 history:
+  - date: 2023-11-06T00:00:00Z
+    description: "Added a section about wire length, wire ends, stripping and cutting."
+    issue: "KBLFRM-1214"
   - date: 2021-04-14T00:00:00Z
     description: "Complete restructuring of the guideline according to comments in the review of KBLFRM-953. Clarification of the guideline for layering of wire elements in multicore. Integration of additional samples."
     issue: "KBLFRM-953"
@@ -300,3 +305,45 @@ The figure below displays the structural representation of the example in terms 
 {{< figure src="cat7-specification.svg" lightbox="true" numbered="true" title="Specification of a CAT7 S/FTP Cable in the VEC">}}
 
 Again, on the left side is the {{< vec-class WireSpecification >}} with its contained {{< vec-class WireElement >}}, on the right side the {{< vec-class WireElementSpecification >}}s. It is worth noting that the white cores are represented by a single {{< vec-class WireElementSpecification >}}, whereas each is represented by an individual {{< vec-class WireElement >}}s.
+
+## WireLength, WireEnds and Cutting & Stripping (especially for multi cores)
+
+{{< review "KBLFRM-1214" >}}
+
+{{% callout note %}}
+This section applies primarily to VEC 2.1 and later. The attributes _cutBackLength_ & _strippingLength_ in the {{< vec-class WireEnd >}}, required to create a detailed definition of the different lengths at the end of a wire and the displacement of the {{<vec-class WireElement>}}s to each other, were first introduced with version 2.1.
+{{% /callout %}}
+
+The VEC always allowed the definition of specific {{<vec-class WireLength>}} values for the individual {{<vec-class WireElementReference>}}s of a wire. However, this does not define how the {{<vec-class WireElementReference>}}s relate to each other, i.e. what the displacement of each is, since the cutting and stripping of a multi-core does not necessarily has to be symmetric. With VEC 2.1 concepts for this have been introduced and this section of this implementation guideline gives a detailed explanation of their usage. The complete section is based on the figure "WireLength, WireEnds and Cutting & Stripping" below.
+
+{{< figure numbering="true" src="cutting-stripping.svg" lightbox="true" title="WireLength, WireEnds and Cutting & Stripping" >}}
+
+On the right hand side of the figure is a sectional view of the multi-core that should serve as an example throughout this explanation. There are also names (_SHIELD_, _INSULATION_, _CORE1_, ...) defined for the {{< vec-class WireElementReference>}}s which will be used in the following to reference those elements in the figure. On the left hand side are two illustrations of longitudinal cuts through the same multi-core. The upper one shows the multi-core after it has been cut to its length "overall length", the lower one is after cutting and stripping of the individual wire elements. See the "S/FTP CAT7" picture in the previous section for a "real world" example.
+
+The _DMU_ length (upper illustration _WireLength[type="y"]_) is often calculated from the sum of all length values of all {{< vec-class TopologySegment >}}s through which the wire is routed. This is the length between the {{< vec-class SegmentConnectionPoint >}}s of the corresponding connectors. During production (upper illustration _WireLength[type="x"]_), additional length is required (e.g. in the connectors indicated as &Delta;A & &Delta;B or for other length discrepancies like the position in a curved segment, not illustrated in the picture). However, the VEC is not keeping track of the individual contributions of the different factors to the overall &Delta; (there is no definition of &Delta;A or &Delta;B in the VEC).
+
+In the case of a multi core, each {{<vec-class WireElementReference>}} can have an individual length (see _INSULATION.WireLength_, _SHIELD.WireLength_, _CORE1.WireLength_,... in the lower left area of the figure). This information alone lacks a definition of the displacement of the {{<vec-class WireElementReference>}}s to each other. This is sufficient for some use cases (e.g. weight calculation), but it can not serve as a "product definition" for the stripped multi-core. To fully define the situation illustrated above, the attributes of the  {{<vec-class WireEnd >}}, especially _CutBackLength_ & _StrippingLength_, are required.
+
+The _PositionOnWire_-Attributes in the {{<vec-class WireEnd >}}s define an order on the {{<vec-class WireEnd >}}s of a {{<vec-class WireElementReference>}}. The values _"0.0"_ and _"1.0"_ are reserved for the two genuine ends of the wire. The values between are used for {{<vec-class WireEnd >}}s between them (e.g. <u>I</u>nsulation <u>D</u>isplacement <u>C</u>onnectors abbr. IDC). These are not considered in detail in this example, as they are rather unlikely in the case of such a multicore. 
+
+{{% callout note %}}
+The following definitions apply to the {{<vec-class WireEnd >}} (see class documentation):
+* For a multi-core it is defined, that all {{<vec-class WireEnd >}}s with the same _PositionOnWire_ are on the same side of the multi-core  (in the illustration _0.0_ on the left side and _1.0_ on the right side).
+* The _CutBackLength_ of a {{<vec-class WireEnd >}} is defined relative to the outermost {{<vec-class WireElementReference>}} of the {{<vec-class WireRole >}} (_INSULATION_ in our case).
+* The _StrippingLength_ is defined relative to the {{<vec-class WireEnd >}}, whose position is defined by the _CutBackLength_ (see previous bullet point).
+{{% /callout %}}
+
+The consequences of this can be seen in the illustration. The reference for the definition on the left and right hand side is the overall length of the wire. On the right side the _CORE3_ (yellow) is cut back by the length "_a_" and then stripped from its insulation with the length "_b_". On the left side, the same core is not cut back at all, but stripped with the length _c_. Since _CORE3_ is a "single-core wire element" (no sub-wire elements, see [definition above](#definition-of-a-single-core)) it defines per {{<vec-class WireEnd >}}  a _CutBackLength_ (cutting of the core & the insulation) and a _StrippingLength_ (stripping the insulation from the remaining core). 
+
+The _SHIELD_ on the left hand side only defines a _CutBackLength="d"_ since it is a wire element without insulation (see how to represent a multi-core in the previous sections). Consequently the _INSULATION_ does not define a _CutBackLength_, as there is no conductor to cut and the sub wire elements carry their own definitions. The length _"e"_ is the _StrippingLength_ of the _INSULATION_.
+{{% callout note %}}
+**Remarks:** 
+1. This definition of the cutting & stripping is independent from any specific wire length type.
+2. This is a definition of the final result of a "cut & strip" process, it does not imply any order or steps how to achieve this result.
+{{% /callout %}}
+
+
+
+
+
+
