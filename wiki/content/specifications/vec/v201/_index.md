@@ -15,7 +15,7 @@ links:
   - icon_pack: fas
     icon: file-pdf
     name: PSI21 prostep ivip Recommendation VEC V1.2 (last published June 2020 with VEC Schema Version 1.2.0)
-    url: https://www.prostep.org/fileadmin/downloads/PSI_21_vda_4968_VEC_Specification_v1.2_pub_RZ.pdf
+    url: https://www.ps-ent-2023.de/fileadmin/prod-download/PSI_21_vda_4968_VEC_Specification_v1.2_pub_RZ.pdf
   - icon_pack: far
     icon: folder-open
     name: VEC Online Model Description

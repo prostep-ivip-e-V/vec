@@ -19,7 +19,7 @@ links:
   - icon_pack: fas
     icon: file-pdf
     name: PSI19 prostep ivip Recommendation KBL
-    url: https://www.prostep.org/fileadmin/downloads/PSI_VDA_Recommendation_4964_KBL_EN_0819.pdf
+    url: https://www.ps-ent-2023.de/fileadmin/prod-download/PSI_VDA_Recommendation_4964_KBL_EN_0819.pdf
   - icon_pack: fas
     icon: folder-open
     name: KBL 2.5 - Online Model Description
