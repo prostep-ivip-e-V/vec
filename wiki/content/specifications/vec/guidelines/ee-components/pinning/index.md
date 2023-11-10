@@ -37,10 +37,11 @@ The following section contains examples for the definition of Pinning informatio
 
 ## PinComponentBehaviors
 
-{{< review KBLFRM-586 >}}
 To define the electrical behavior of a {{< vec-class PinComponent >}} the {{< vec-class PinComponentBehavior >}} is used. It is possible, that a {{< vec-class PinComponent >}} has more has multiple behaviors, which are configuration dependent (e.g. software defined pins on an ECU). Therefore, the {{< vec-class PinComponentBehavior >}} is a {{< vec-class ConfigurableElement >}}. With a {{< vec-class PinComponentBehavior >}} various electrical characteristics of the pin can be described. The next sections contain examples for that.
 
-## _PinComponentType_ and _SignalDirection_
+### _PinComponentType_ and _SignalDirection_
+
+{{< review KBLFRM-586 >}}
 
 The figure below illustrates three E/E-components in a power distribution scenario and the logical correlations between them. Please note that the illustration is an excerpt from the master data. Actual relationships would only be established during the use / instantiation e.g. in a wiring. This is taken into account in that the logical relationships are only indicated by dependencies (dashed arrows).
 
