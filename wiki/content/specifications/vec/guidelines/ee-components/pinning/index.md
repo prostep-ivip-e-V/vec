@@ -19,6 +19,11 @@ classes:
   - PinCurrentInformation
   - PinTiming
 
+history:
+  - date: 2023-11-10T00:00:00Z
+    description: "Added explanations for PinComponentBehavior and SignalDirections & PinComponentTypes."
+    issue: "KBLFRM-586"
+
 menu:
   vec-guidelines:
     parent: ee-components
