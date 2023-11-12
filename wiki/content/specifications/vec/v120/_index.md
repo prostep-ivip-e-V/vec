@@ -40,6 +40,8 @@ links:
     name: vec_1.2.0-ud-strict.xsd (undocumented version)
     url: "vec_1.2.0-ud-strict.xsd"
 weight: 1
+cascade:
+  - search_index_ignore: true
 ---
 
 {{% callout warning %}}

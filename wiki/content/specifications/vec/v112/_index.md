@@ -34,6 +34,7 @@ links:
     icon: file-code
     name: vec_1.1.2-strict.xsd
     url: 'vec_1.1.2-strict.xsd'
-
+cascade:
+  - search_index_ignore: true
 ---
 This version brings features introduced in KBL 2.4 to the VEC. Additionally it also implements feature requests and bug fixes brought up during the first implementations in the area of component descriptions. For detailed release notes see [VEC JIRA Release Notes](https://prostep-ivip.atlassian.net/projects/KBLFRM/versions/10112). For this version no new specification document will be published.

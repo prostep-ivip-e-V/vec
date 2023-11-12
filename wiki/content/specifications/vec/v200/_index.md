@@ -40,6 +40,9 @@ links:
     name: vec_2.0.0-ud-strict.xsd (undocumented version)
     url: "vec_2.0.0-ud-strict.xsd"
 weight: 1
+
+cascade:
+  - search_index_ignore: true
 ---
 
 With this version the VEC switched to a [semantic versioning scheme]({{< relref "../publication-process/" >}}). As this version contains schema incompatible changes it is published as a new major version. A new recommendation is not published at this point. This version addresses about 60 Bugs and Features Requests. 

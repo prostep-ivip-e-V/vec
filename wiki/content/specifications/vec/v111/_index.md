@@ -42,6 +42,8 @@ links:
     icon: file-archive
     name: Modules VEC 1.1.1.zip
     url: 'modules_vec_1.1.1.zip'
+cascade:
+  - search_index_ignore: true
 ---
 This version fixes a technical bug in the namespace declaration, only. The 1.1.0 model description and the associated tutorials are still valid.
 <!--more-->

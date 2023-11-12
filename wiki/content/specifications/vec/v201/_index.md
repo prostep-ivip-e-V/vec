@@ -40,6 +40,8 @@ links:
     name: vec_2.0.1-ud-strict.xsd (undocumented version)
     url: "vec_2.0.1-ud-strict.xsd"
 weight: 1
+cascade:
+  - search_index_ignore: true
 ---
 The version 2.0.1 is a schema compatible bug fix release for Version 2.0.0 (schema compatible except for areas affected by bugs).
 
