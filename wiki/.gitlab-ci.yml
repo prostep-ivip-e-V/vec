@@ -1,7 +1,7 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
 # Using specific images, cause the community image does support git. 
 # To update the image, checkout the registry branch.
-image: registry.gitlab.com/pages/hugo/hugo_extended:0.89.4
+image: registry.gitlab.com/pages/hugo/hugo_extended:0.120.3
 
 before_script:
   - apk add --allow-untrusted -X https://dl-cdn.alpinelinux.org/alpine/v3.16/main -u alpine-keys

@@ -1,0 +1,67 @@
+{{ $current_page := . }}
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script>
+    
+function RecordCurrentPage(title){
+    var history = readHistory();
+    var entry = {
+        title: title,
+        url:  document.URL
+    }
+
+    history = history.filter(e => e.url !== document.URL);
+
+    history.push(entry);
+
+    while(history.length > 7){
+        history.shift();
+    }
+
+    storeHistory(history);
+}
+
+function truncateString(str, num) {
+    if (str.length <= num) {
+      return str
+    }
+    return str.slice(0, num) + '&hellip;'
+}
+
+function readHistory(){
+    var content = Cookies.get('trace');
+    if(content === undefined) {
+        return new Array();
+    }
+    return JSON.parse(content);
+}
+
+function storeHistory(links){
+   Cookies.set('trace', JSON.stringify(Array.from(links)));
+}
+
+function InitializeTraceList(){
+    var history = readHistory();
+
+    var breadcrumbList = document.getElementById("navbar-trace-list")
+
+    if(!breadcrumbList){
+        return;
+    }
+    var tracePageTitle = "{{ $current_page.Title }}";
+    RecordCurrentPage(tracePageTitle);
+    var currentPage = breadcrumbList.firstChild;
+    history.forEach( (element, index) => {
+        var newLi = document.createElement("li");
+
+        newLi.className = "breadcrumb-item";
+        newLi.innerHTML = newLi.innerHTML +  '<a href="' + element.url + '" title="' + element.title + '">'+ truncateString(element.title,25) +'</a>';
+        
+        breadcrumbList.insertBefore(newLi,currentPage);             
+    });
+}
+
+
+
+InitializeTraceList();
+
+</script>

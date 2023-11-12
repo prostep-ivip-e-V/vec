@@ -1,0 +1,9 @@
+{{ if not .IsHome }}
+  <nav class="d-none d-md-flex" aria-label="breadcrumb" id="navbar-trace">
+    <ol class="breadcrumb" id="navbar-trace-list">
+        <li class="breadcrumb-item active" aria-current="page">
+            {{ .LinkTitle | emojify }}
+        </li>
+    </ol>
+  </nav>
+{{ end }}

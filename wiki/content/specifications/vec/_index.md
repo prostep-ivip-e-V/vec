@@ -7,6 +7,9 @@ layout: specs
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1
+show_breadcrumb: true
+cascade:
+  - show_breadcrumb: true
 ---
 
 On this page, the resources and documentations for all VEC versions can be found.

@@ -72,7 +72,7 @@
                 </td>
                 <td>
                     {{ if .Params.creation }}
-                    {{ dateFormat site.Params.date_format .Params.creation }}
+                    {{ dateFormat site.Params.locale.date_format .Params.creation }}
                     {{ end }}
                 </td>
             </tr>

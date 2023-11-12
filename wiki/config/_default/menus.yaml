@@ -1,0 +1,47 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: Home
+    url: '#vec'
+    weight: 10
+  - name: News
+    url: '#news'
+    weight: 15
+  - name: Events
+    url: '#featured'
+    weight: 17
+  - name: Project Groups
+    url: '#groups'
+    weight: 19
+  - name: Archive
+    weight: 100
+  - name: "Vehicle Electric Container (VEC)"
+    url: 'specifications/vec'
+    weight: 20
+  - name: "Kabelbaumliste (KBL)"
+    url: 'specifications/kbl'
+    weight: 30
+  - name: "Sample Files"
+    url: 'sample'
+    weight: 40
+  - name: "ELOG"
+    url: 'specifications/elog'
+    weight: 70
+    parent: "Archive"
+  - name: "GEO"
+    url: 'specifications/geo'
+    weight: 80
+    parent: "Archive"
+  - name: "KOMP"
+    url: 'specifications/komp'
+    weight: 90
+    parent: "Archive"
+
+# Link to a PDF of your resume/CV from the menu.
+# To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
+#  - name: CV
+#    url: uploads/resume.pdf
+#    weight: 70

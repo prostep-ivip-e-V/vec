@@ -1,0 +1,125 @@
+# SITE SETUP
+# Guide: https://wowchemy.com/docs/getting-started/
+# Documentation: https://wowchemy.com/docs/
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+# Appearance
+
+appearance:
+  theme_day: minimal
+  theme_night: minimal
+  font: minimal
+  font_size: M
+
+# SEO
+
+marketing:
+  seo:
+    site_type: Project
+    local_business_type: ''
+    org_name: 'prostep ivip'
+    description: 'Home of the standards KBL & VEC published by the VES-WF / ECAD-IF.'
+    twitter: 'vec'
+  analytics:
+    google_analytics: ''
+    baidu_tongji: ''
+  verification:
+    google: ''
+    baidu: ''
+
+# Site header
+
+header:
+  navbar:
+    enable: true
+    align: l
+    show_logo: true
+    show_language: false
+    show_day_night: false
+    show_search: true
+    highlight_active_link: true
+
+# Site footer
+
+footer:
+  widget: prostep
+  copyright:
+    notice: '© {year} prostep ivip association. This work is licensed under {license}'
+    license:
+      enable: true
+      allow_derivatives: true
+      share_alike: false
+      allow_commercial: true
+
+# Localization
+
+locale:
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
+  address_format: en-us
+
+# Site features
+
+features: 
+  syntax_highlighter:
+    theme_light: github-dark
+    enable: true
+    extra_languages:
+      - xml
+  math:
+    enable: false
+  privacy_pack:
+    enable: true
+  repository:
+    url: 'https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io'
+    content_dir: content
+    branch: master
+  avatar:
+    gravatar: true
+    shape: circle
+  comment:
+    provider: ''
+    disqus:
+      shortname: ''
+      show_count: true
+    commento:
+      url: ''
+  search:
+    provider: algolia
+    algolia:
+      app_id: 'U5U8H9UB2D'
+      api_key: '755d51e315f6045ee6e1174de5087731'
+      index_name: 'ecadwiki'
+      show_logo: true
+  map:
+    provider: ''
+    api_key: ''
+    zoom: 15
+
+# Extensions
+
+extensions:
+  cms:
+    branch: master
+    local_backend: false
+  isotope:
+    enable: true
+  academicons:
+    enable: true
+
+reading_time: true
+section_pager: true
+docs_section_pager: true
+sharing: true
+link_authors: true
+projects:
+  post_view: 2
+  publication_view: 2
+  talk_view: 2
+VEC:
+  current_version: "2.0.2"
+  current_base_url: "specifications/vec/v202"
+  current_classes_url: "specifications/vec/v202/classes"
+KBL:
+  current_version: "2.5.sr1"
+  current_base_url: "specifications/kbl/25-sr1"
+  current_classes_url: "specifications/kbl/v25-sr1/classes"
