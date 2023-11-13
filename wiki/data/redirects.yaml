@@ -1,0 +1,3 @@
+redirects:
+  - "/old/file.html /new/file.html 301"
+  - "/2023/11/vec /specifications/vec/v202/vec_2.0.2.xsd 302"

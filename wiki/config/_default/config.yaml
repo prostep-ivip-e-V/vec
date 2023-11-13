@@ -21,8 +21,8 @@ removePathAccents: true
 
 module:
   imports:
-    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify-cms
-    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify
+#    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify-cms
+#    - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-reveal
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-bootstrap/v5
 
@@ -44,7 +44,7 @@ permalinks:
   publication_types: '/publication-type/:slug/'
 disableAliases: true
 outputs:
-  home: [HTML, RSS, JSON, WebAppManifest, headers, redirects]
+  home: [HTML, RSS, JSON, WebAppManifest, redirects]
   section: [HTML, RSS]
 imaging:
   resampleFilter: lanczos
@@ -74,9 +74,18 @@ security:
   _merge: deep
 sitemap:
   _merge: deep
+mediaTypes:
+  text/netlify:
+    delimiter: ''
+    suffixes: ['']  
 outputFormats:
   Printable:
     mediaType: "text/html"
     baseName: "printable"
     isHTML: true
+  redirects:
+    baseName: _redirects
+    isPlainText: true
+    mediatype: text/netlify
+    notAlternative: true    
 

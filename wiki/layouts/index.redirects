@@ -1,0 +1,3 @@
+{{- range site.Data.redirects.redirects -}}
+{{ . }}
+{{ end -}}
