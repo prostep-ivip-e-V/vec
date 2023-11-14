@@ -215,9 +215,11 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <xsl:apply-templates select="." mode="label"/>
             <xsl:apply-templates select="." mode="comment"/>
             <xsl:apply-templates select="." mode="deprecation"/>
+            <!--
             <rdfs:range>
                 <xsl:apply-templates select="$type" mode="resource"/>
             </rdfs:range>
+            -->
         </owl:DatatypeProperty>
     </xsl:template>
     
@@ -234,13 +236,13 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <xsl:apply-templates select="." mode="comment"/>
             <xsl:apply-templates select="." mode="deprecation"/>
             
-            
+            <!--
             <rdfs:range>
                 <xsl:apply-templates select="$type" mode="resource"/>
             </rdfs:range>
             <rdfs:domain>
                 <xsl:apply-templates select=".." mode="resource"/>
-            </rdfs:domain>
+            </rdfs:domain> -->
             <xsl:if test="not(exists(@association)) or (@aggregation='composite')">
             <rdfs:subPropertyOf rdf:resource="#contains"/>
             </xsl:if>

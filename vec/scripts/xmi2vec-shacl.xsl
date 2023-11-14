@@ -169,7 +169,7 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                         <sh:path>
                             <xsl:apply-templates select="." mode="resource"/>
                         </sh:path>
-                        <sh:severity rdf:resource="sh:Info"/>                    
+                        <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Info"></sh:severity>                    
                         <xsl:apply-templates select="$type" mode="enum-constraint"/>
                     </rdf:Description>
                 </sh:property>               
