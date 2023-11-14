@@ -35,6 +35,7 @@
     </xsl:template>
 
     <xsl:template match="ownedAttribute" mode="resource-name">
+        <xsl:if test="not(@name)"><xsl:message select="concat(../@name, ' has property with no name.')" /></xsl:if>
         <xsl:value-of select="ext:first-lower(../@name)"/>
         <xsl:value-of select="ext:first-upper(@name)"/>
     </xsl:template>
@@ -78,7 +79,7 @@
     </xsl:template>
 
     <xsl:function name="ext:first-lower">
-        <xsl:param name="value" as="xs:string"/>
+        <xsl:param name="value" as="xs:string"  />
         <xsl:variable name="tempValue" select="ext:prep-name($value)"/>
         <xsl:value-of select="concat(translate(substring($tempValue,1,1),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),substring($tempValue,2,string-length($tempValue)))"/>
     </xsl:function>

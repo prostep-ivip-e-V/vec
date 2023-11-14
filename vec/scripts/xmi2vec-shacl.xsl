@@ -145,6 +145,7 @@ Timestamp: <xsl:value-of select="$timestamp"/>
     
     <xsl:template match="ownedAttribute" mode="properties">        
         <xsl:variable name="type" select="key('idlookup',@type)"/>
+        <xsl:if test="not(.//upperValue) or not(.//lowerValue)"><xsl:message select="concat(../@name,'.',@name, ' has missing cardinalities.')"></xsl:message></xsl:if>
         <sh:property>
             <rdf:Description>
                 <sh:path>
