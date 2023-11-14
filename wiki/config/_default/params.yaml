@@ -41,7 +41,7 @@ header:
 # Site footer
 
 footer:
-  widget: prostep
+  block: prostep
   copyright:
     notice: '© {year} prostep ivip association. This work is licensed under {license}'
     license:
@@ -67,7 +67,7 @@ features:
       - xml
   math:
     enable: false
-  privacy_pack:
+  privacy_pack: 
     enable: true
   repository:
     url: 'https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io'
@@ -84,7 +84,12 @@ features:
     commento:
       url: ''
   search:
-    provider: algolia
+    provider: docsearch
+    docsearch:
+      app_id: 'UQNVZS8DFX'
+      api_key: 'd0ad2f9038dcb6caaf423ea55ee6e530'
+      index_name: 'ecad-prostep'
+#    provider: algolia
     algolia:
       app_id: 'U5U8H9UB2D'
       api_key: '755d51e315f6045ee6e1174de5087731'

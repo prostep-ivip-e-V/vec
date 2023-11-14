@@ -24,24 +24,23 @@ pages:
   script:
     - hugo
     # Build the public/ directory first
-    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
-    #- find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec brotli -f -k {} \;
+    - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;    
   artifacts:
     paths:
     - public
   only:
     - master
   
-deploy-index:
-  image: node:latest
-  stage: deploy
-  before_script: []
-  dependencies:
-    - pages
-  script:
-    - npm install --save  atomic-algolia
-    - node deploy-algolia-index.js
-  only:
-    - master
+# deploy-index:
+#   image: node:latest
+#   stage: deploy
+#   before_script: []
+#   dependencies:
+#     - pages
+#   script:
+#     - npm install --save  atomic-algolia
+#     - node deploy-algolia-index.js
+#   only:
+#     - master
    
 
