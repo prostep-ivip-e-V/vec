@@ -182,11 +182,8 @@
 
     <xsl:template match="packagedElement[@xmi:type='uml:Class' and not(exists(generalization))]" mode="create-content-header">
         <xsl:apply-templates select="." mode="create-content"/>
-        <xsl:element name="xs:attribute">
-            <xsl:attribute name="name">id</xsl:attribute>
-            <xsl:attribute name="type">xs:ID</xsl:attribute>
-            <xsl:attribute name="use">required</xsl:attribute>
-        </xsl:element>
+        <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
+        <xs:attribute name="immutable-global-iri" type="xs:anyURI"></xs:attribute>
     </xsl:template>
     
     
