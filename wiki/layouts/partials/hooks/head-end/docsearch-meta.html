@@ -1,0 +1,15 @@
+<meta name="docsearch:language" content="en">
+<meta name="docsearch:date" content="{{ .Date.UTC.Unix | safeHTML }}">
+<meta name="docsearch:lastmod" content="{{ .Lastmod.UTC.Unix | safeHTML }}">
+{{- if .Params.specification -}}
+    {{- $version := "latest" -}}
+    {{- if .Params.version -}}
+        {{- $current_version := (index .Site.Params .Params.specification).current_version -}}          
+        {{- if eq .Params.version $current_version -}}
+            {{- $version = printf "%s,latest"  .Params.version -}}
+        {{- else -}}
+            {{- $version = .Params.version -}}
+        {{- end -}}
+    {{- end -}}
+<meta name="docsearch:version" content="{{$version}}">
+{{- end -}}
