@@ -89,6 +89,10 @@ features:
       app_id: 'UQNVZS8DFX'
       api_key: 'd0ad2f9038dcb6caaf423ea55ee6e530'
       index_name: 'ecad-prostep'
+      search_parameters:
+        facetFilters: 
+          - 'lang:en-us'
+          - 'version:latest'
 #    provider: algolia
     algolia:
       app_id: 'U5U8H9UB2D'
