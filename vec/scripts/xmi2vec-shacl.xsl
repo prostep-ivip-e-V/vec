@@ -77,7 +77,24 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 </rdfs:comment>
             </owl:Ontology>
             
+            <sh:NodeShape rdf:about="{$VEC-SH-NS-IRI}EnumerationShape">
+                <sh:targetClass rdf:resource="#Enumeration"/>
+                <sh:property>
+                    <rdf:Description>
+                        <sh:path rdf:resource="#enumLiteral"/>
+                        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                        <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+                        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+                    </rdf:Description>
+                </sh:property>
+            </sh:NodeShape>
+            
             <xsl:variable name="classes" select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Class' and not(@xmi:id=//MagicDraw_Profile:Legend/@base_Class)]"/>
+            <xsl:variable name="enums" select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Enumeration']"/>
+            
+            <xsl:apply-templates select="$enums" mode="create-enums">
+                <xsl:sort select="@name"/>
+            </xsl:apply-templates>
             
             <xsl:apply-templates select="$classes" mode="create-class">
                 <xsl:sort select="@name"/>
@@ -123,6 +140,12 @@ Timestamp: <xsl:value-of select="$timestamp"/>
         <xsl:text>InverseShape</xsl:text>
     </xsl:template>
     
+    <xsl:template match="*" mode="enum-shape-name">
+        <xsl:value-of select="$VEC-SH-NS-IRI"/>
+        <xsl:apply-templates select="." mode="resource-name"></xsl:apply-templates>
+        <xsl:text>EnumShape</xsl:text>
+    </xsl:template>
+    
     <xsl:template match="packagedElement[@xmi:type='uml:Class' and exists(generalization)]" mode="subclass-of-inv">
         <rdfs:subClassOf >
             <xsl:attribute name="rdf:resource">
@@ -137,6 +160,30 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 <xsl:apply-templates select="key('idlookup',generalization/@general)" mode="shape-name"></xsl:apply-templates>
             </xsl:attribute>
         </rdfs:subClassOf>
+    </xsl:template>
+    
+    <xsl:template match="*[@xmi:type='uml:Enumeration']" mode="create-enums">
+        <xsl:variable name="closedEnum" select="@xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration"/>
+        <xsl:if test="$strict or $closedEnum">
+            <sh:NodeShape>
+                <xsl:attribute name="rdf:about">
+                    <xsl:apply-templates select="." mode="enum-shape-name"></xsl:apply-templates>
+                </xsl:attribute>
+                <sh:targetClass><xsl:apply-templates select="." mode="resource"></xsl:apply-templates></sh:targetClass>
+                <xsl:if test="not($closedEnum)">
+                    <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Info"></sh:severity>
+                </xsl:if>
+                <sh:in rdf:parseType="Collection">
+                    <xsl:apply-templates select="ownedLiteral" mode="enum-constraint"></xsl:apply-templates>
+                </sh:in> 
+            </sh:NodeShape>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="ownedLiteral" mode="enum-constraint">
+        <rdf:Description>
+            <xsl:apply-templates select="." mode="about"></xsl:apply-templates>
+        </rdf:Description>
     </xsl:template>
     
     <!-- ######################################################################################### -->
@@ -159,35 +206,11 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 <xsl:if test="not($upper = '*')">
                     <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"><xsl:value-of select="$upper"/></sh:maxCount>
                 </xsl:if>
-                <xsl:apply-templates select="$type[@xmi:type='uml:Enumeration' and @xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration]" mode="enum-constraint"/>
             </rdf:Description>
-        </sh:property>   
-        <xsl:if test="$strict='true'">
-            <xsl:if test="$type[@xmi:type='uml:Enumeration' and not(@xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration)]">
-                <sh:property>
-                    <rdf:Description>
-                        <sh:path>
-                            <xsl:apply-templates select="." mode="resource"/>
-                        </sh:path>
-                        <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Info"></sh:severity>                    
-                        <xsl:apply-templates select="$type" mode="enum-constraint"/>
-                    </rdf:Description>
-                </sh:property>               
-            </xsl:if>
-        </xsl:if>
+        </sh:property>           
     </xsl:template>
     
-    <xsl:template match="*[@xmi:type='uml:Enumeration']" mode="enum-constraint">
-        <sh:in rdf:parseType="Collection">
-            <xsl:apply-templates select="ownedLiteral" mode="enum-constraint"></xsl:apply-templates>
-        </sh:in>        
-    </xsl:template>
-    
-    <xsl:template match="ownedLiteral" mode="enum-constraint">
-        <rdf:Description>
-            <xsl:apply-templates select="." mode="about"></xsl:apply-templates>
-        </rdf:Description>
-    </xsl:template>
+
     
     <!-- ######################################################################################### -->
     <!-- ####      Inverse Properties                                                          ### -->

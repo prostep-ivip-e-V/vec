@@ -59,19 +59,27 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             </owl:Ontology>
             
             <owl:Class rdf:about="#Enumeration">
-                <rdfs:label xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xml:lang="en">Enumeration</rdfs:label>
-                <rdfs:comment xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xml:lang="en">Classes in the model that can be enumerated, either closed or open (see VEC Specicification)</rdfs:comment>                
+                <rdfs:label xml:lang="en">Enumeration</rdfs:label>
+                <rdfs:comment xml:lang="en">Classes in the model that can be enumerated, either closed or open (see VEC Specicification)</rdfs:comment>                
             </owl:Class>
+            
+            <owl:DatatypeProperty rdf:about="#enumLiteral">
+                <rdfs:label xml:lang="en">enumLiteral</rdfs:label>
+                <rdfs:comment xml:lang="en">Defines the literal value of an enumeration as represented in the model.</rdfs:comment>
+                <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>                
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:DatatypeProperty>
+            
 
             <owl:Class rdf:about="#OpenEnumeration">
-                <rdfs:label xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xml:lang="en">OpenEnumeration</rdfs:label>
-                <rdfs:comment xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xml:lang="en">Classes in the model where some value can be enumerated, but not all values are known (Open).</rdfs:comment>
+                <rdfs:label  xml:lang="en">OpenEnumeration</rdfs:label>
+                <rdfs:comment xml:lang="en">Classes in the model where some value can be enumerated, but not all values are known (Open).</rdfs:comment>
                 <rdfs:subClassOf rdf:resource="#Enumeration"/>
             </owl:Class>
             
             <owl:Class rdf:about="#ClosedEnumeration">
-                <rdfs:label xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xml:lang="en">ClosedEnumeration</rdfs:label>
-                <rdfs:comment xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xml:lang="en">Classes in the model that can be enumerated and where all values are known (closed).</rdfs:comment>
+                <rdfs:label xml:lang="en">ClosedEnumeration</rdfs:label>
+                <rdfs:comment xml:lang="en">Classes in the model that can be enumerated and where all values are known (closed).</rdfs:comment>
                 <rdfs:subClassOf rdf:resource="#Enumeration"/>
             </owl:Class>
             
@@ -188,7 +196,9 @@ Timestamp: <xsl:value-of select="$timestamp"/>
     <xsl:template match="ownedLiteral" mode="literals">
         <owl:NamedIndividiual>
             <xsl:apply-templates select="." mode="about"/>
-            <xsl:apply-templates select="." mode="label"/>
+            <xsl:element name="enumLiteral" namespace="{$VEC-NS-IRI}">
+                <xsl:value-of select="@name"/>
+            </xsl:element>
             <xsl:apply-templates select="." mode="comment"/>
             <rdf:type>
                 <xsl:apply-templates select=".." mode="resource"></xsl:apply-templates>
