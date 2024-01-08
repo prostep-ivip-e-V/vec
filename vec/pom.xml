@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.prostep.ecadif</groupId>
 	<artifactId>vec</artifactId>
-	<version>2.1.0-RC1</version>
+	<version>2.1.0</version>
 	<packaging>pom</packaging>
 	
 	<prerequisites>
@@ -196,6 +196,68 @@
 										<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
 											<pattern>^([^-]*)(-.*)?\.xsd</pattern>
 											<replacement>$1-ud$2.xsd</replacement>
+										</fileMapper>
+									</fileMappers>
+								</transformationSet>
+								<!-- Make OWL -->
+								<transformationSet>
+									<dir>target/model</dir>
+									<includes>*.mdxml</includes>
+									<outputDir>target/rdf</outputDir>
+									<stylesheet>scripts/xmi2vec-owl.xsl</stylesheet>
+									<parameters>
+										<parameter>
+											<name>strict</name>
+											<value>false</value>
+										</parameter>
+										<parameter>
+											<name>VEC_VERSION</name>
+											<value>${project.version}</value>
+										</parameter>
+										<parameter>
+											<name>revision</name>
+											<value>${buildNumber}</value>												
+										</parameter>
+										<parameter>
+											<name>timestamp</name>
+											<value>${timestamp}</value>												
+										</parameter>										
+									</parameters>
+									<fileMappers>
+										<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+											<pattern>^([^-]*)(-.*)?\.mdxml$</pattern>
+											<replacement>$1-onto$2.rdf</replacement>
+										</fileMapper>
+									</fileMappers>
+								</transformationSet>	
+								<!-- Make SHACL -->
+								<transformationSet>
+									<dir>target/model</dir>
+									<includes>*.mdxml</includes>
+									<outputDir>target/rdf</outputDir>
+									<stylesheet>scripts/xmi2vec-shacl.xsl</stylesheet>
+									<parameters>
+										<parameter>
+											<name>strict</name>
+											<value>false</value>
+										</parameter>
+										<parameter>
+											<name>VEC_VERSION</name>
+											<value>${project.version}</value>
+										</parameter>
+										<parameter>
+											<name>revision</name>
+											<value>${buildNumber}</value>												
+										</parameter>
+										<parameter>
+											<name>timestamp</name>
+											<value>${timestamp}</value>												
+										</parameter>										
+									</parameters>
+									<fileMappers>
+										<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.RegExpFileMapper">
+											<pattern>^([^-]*)(-.*)?\.mdxml$</pattern>
+											<replacement>$1-shacl$2.rdf</replacement>
 										</fileMapper>
 									</fileMappers>
 								</transformationSet>								
