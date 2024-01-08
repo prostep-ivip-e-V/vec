@@ -1,0 +1,21 @@
+﻿---
+title: Global Unique Identifiers (IRI)
+toc: false
+type: specs
+layout:  package
+date: "2024-01-08"
+draft: false
+specification: VEC
+version: 2.1.0
+documentType: "Recommendation"
+elementType:  Package
+menu:
+  VEC-2.1.0:    
+    parent: xml-representation-of-the-model
+    identifier: xml-representation-of-the-model/global-unique-identifiers-iri
+    weight: 1012004 
+
+# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+weight: 1012004
+---
+<p> As defined in the section <i>&quot;Mapping of the VEC Model to XML&#160;schema definition&#160;(XSD)&quot;</i> each <i>xs:complexType</i> defines a XML-Attribute <i>id</i> with the type <i>xs:ID</i>, either by itself or by inheritance from a superclass. By nature, those <i>ids</i> are volatile and have a purpose only within a specific XML file.      </p>      <p> However, there are requirements in advanced use cases where it is necessary to be able to identify objects in the VEC globally and in a temporally stable manner. Such use cases are for example, but not limited to:      </p>      <ul>       <li> Change Management &amp;&#160;Synchronization        </li>       <li> Integration with other Standards, e.g. the Asset Administration Shell (AAS)        </li>       <li> Provision of VEC objects via modular APIs (e.g. REST)        </li>       <li> Compliance with other serialization formats like RDF.        </li>     </ul>     <p> Therefore, each <i>xs:complexType</i> that defines an <i>id</i>-attribute also defines an <i>immutable-global-iri </i>attribute with the type <i>xs:anyURI</i>. Despite its name <i>xs:anyURI</i> is in fact the type for an <i>Internationalized Resource Identifier (IRI)</i>, see &quot;W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes&quot;. If two VEC&#160;objects, regardless of their context or their affiliation to a specific file, have the same <i>immutable-global-iri</i>, they are in fact a representation of the same (real world) object&#160;(potentially in a different state).      </p>      <p> The concept of <i>IRIs</i> allows the definition of global unique identifiers in various ways and with different strategies. For example, using <i>http-IRIs</i> allows the dereferencing (finding) of objects identified by such <i>IRIs</i>. However, the chosen strategy has a strong influence on the circumstances under which two objects in the VEC can be identified as the same. Both effects (same /&#160;not the same) can be desired effects in a specific use case&#160;/&#160;process / scenario. Therefore, this recommendation does not define a specific strategy for minting <i>IRIs</i> of VEC&#160;objects. It is also beyond the scope of this recommendation to describe or define valid strategies for minting <i>IRIs</i>.      </p>      <p> However, two examples shall illustrate the influence of a choosen strategy. The examples are for illustrative purposes only and their description does not claim to be complete:      </p>      <ul>       <li> <i>UUIDs</i>: IRIs can be created from UUIDs. UUIDs are generated random values that guarantee universal uniqueness. To satisfy the requirement of temporal stability, a source system has to maintain (store) those UUIDs for every object. Objects that are created distributed at the same time in different to locations are hard to handle. Objects deleted from a system (and then recreated) are always handled as different objects.        </li>       <li> <i>Calculated IDs</i>: IDs could be calculated from object keys in the domain (e.g. the identifying attributes of a <i>PartVersion</i>). Such IDs could be calculated on the fly and do not have the requirement to be stored along with the object. If the same object (same identifying attributes) is created in different locations, both variants can still be recognized as identical. On the downside, an ID generation algorithm has to be defined, that generates those unique IDs for every possible object type. The algorithm has to guarantee that the generated IDs fulfill uniqueness requirement, which depends on the naming /&#160;identification strategy of the process. And yet, there are still cases where objects can not be recognized as the same (e.g. renaming of &quot;key&quot;-attributes).        </li>     </ul>

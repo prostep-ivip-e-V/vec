@@ -125,9 +125,9 @@ projects:
   publication_view: 2
   talk_view: 2
 VEC:
-  current_version: "2.0.2"
-  current_base_url: "specifications/vec/v202"
-  current_classes_url: "specifications/vec/v202/classes"
+  current_version: "2.1.0"
+  current_base_url: "specifications/vec/v210"
+  current_classes_url: "specifications/vec/v210/classes"
 KBL:
   current_version: "2.5.sr1"
   current_base_url: "specifications/kbl/25-sr1"
