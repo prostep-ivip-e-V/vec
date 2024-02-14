@@ -27,6 +27,10 @@ links:
   - icon_pack: far
     icon: folder-open
     name: VEC Implementation Guidelines
+  - icon_pack: fas
+    icon: file-pdf
+    name: VEC Implementation Guidelines (PDF-Version)
+    url: https://ecad-wiki.prostep.org/specifications/vec/guidelines/vec-guidelines.pdf
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1

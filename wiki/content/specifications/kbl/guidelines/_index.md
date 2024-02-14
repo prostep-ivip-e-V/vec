@@ -21,7 +21,12 @@ cascade:
 menu:
   kbl-guidelines:
     identifier: index    
-    weight: 1 
+    weight: 1
+links:
+  - icon_pack: fas
+    icon: file-pdf
+    name: KBL Implementation Guidelines (PDF-Version)
+    url: https://ecad-wiki.prostep.org/specifications/kbl/guidelines/kbl-guidelines.pdf 
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 1

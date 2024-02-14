@@ -1,46 +1,49 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
-# Using specific images, cause the community image does support git. 
-# To update the image, checkout the registry branch.
-image: registry.gitlab.com/pages/hugo/hugo_extended:0.120.3
-
-before_script:
-  - apk add --allow-untrusted -X https://dl-cdn.alpinelinux.org/alpine/v3.16/main -u alpine-keys
-  - apk add --update --no-cache git go
-
 stages:
   - build
   - deploy
 
-
-test:
+hugo:
   stage: build
+  image: registry.gitlab.com/pages/hugo/hugo_extended:0.120.3
+  before_script:
+    - apk add --allow-untrusted -X https://dl-cdn.alpinelinux.org/alpine/v3.16/main -u alpine-keys
+    - apk add --update --no-cache git go
   script:
-  - hugo
-  except:
-    - master
+    - hugo -d hugo-out
+  artifacts:   
+    expire_in: "5 days"
+    paths:
+      - hugo-out
+
+pdf:
+  stage: build
+  needs: ["hugo"]
+  image: ghcr.io/puppeteer/puppeteer:latest
+  script:
+    - npm i http-server
+    - npx http-server hugo-out &
+    - HUGO_SERVER_PID=$!
+    - 'echo "Running Static content with PID: $HUGO_SERVER_PID"'
+    - npm install puppeteer
+    - node ./generate-pdf.js
+    - kill $HUGO_SERVER_PID
+  artifacts:   
+    expire_in: "5 days"
+    paths:
+      - pdf
 
 pages:
-  stage: build
+  stage: deploy
+  needs: ["hugo","pdf"]
+  image: alpine:latest
   script:
-    - hugo
-    # Build the public/ directory first
+    - mkdir public
+    - cp -r hugo-out/* public
+    - cp -r pdf/* public
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;    
   artifacts:
-    paths:
-    - public
-  only:
+    paths: 
+      - public
+  only: 
     - master
-  
-# deploy-index:
-#   image: node:latest
-#   stage: deploy
-#   before_script: []
-#   dependencies:
-#     - pages
-#   script:
-#     - npm install --save  atomic-algolia
-#     - node deploy-algolia-index.js
-#   only:
-#     - master
-   
-

@@ -10,7 +10,6 @@
 {{ if not (index site.Menus $menu_name) }}
   {{ errorf "Please define menu items named `menu: %s:` in your %s front matter or define `[[menu.%s]]` in `config/default/menus.toml`. See https://sourcethemes.com/academic/docs/managing-content/#menus" $menu_name .Path $menu_name }}
 {{ end }}
-<h4>test</h4>
 <div class="print"></div>
 {{ with (index site.Menus $menu_name) }}
 {{ $menu := (index site.Menus $menu_name).ByWeight }}
