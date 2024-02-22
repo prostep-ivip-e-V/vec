@@ -3,6 +3,7 @@
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:xmi="http://www.omg.org/spec/XMI/20131001" 
     xmlns:uml="http://www.omg.org/spec/UML/20131001"
+    xmlns:ext="https://ecad.propstep.org/2023/xslt/extensions"    
     xmlns:Stereotypes="http://www.magicdraw.com/schemas/Stereotypes.xmi"
     xmlns:MagicDraw_Profile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -10,7 +11,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema#" 
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile owl" version="2.0">
+    exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile owl ext" version="2.0">
     
     <xsl:import href="rdf-tools.xsl"/>
     
@@ -89,6 +90,18 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 </sh:property>
             </sh:NodeShape>
             
+            <sh:NodeShape rdf:about="{$VEC-SH-NS-IRI}OrderedShape">
+                <sh:targetClass rdf:resource="#Ordered"/>
+                <sh:property>
+                    <rdf:Description>
+                        <sh:path rdf:resource="#orderedIndex"/>
+                        <sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+                        <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+                        <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+                    </rdf:Description>
+                </sh:property>
+            </sh:NodeShape>
+            
             <xsl:variable name="classes" select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Class' and not(@xmi:id=//MagicDraw_Profile:Legend/@base_Class)]"/>
             <xsl:variable name="enums" select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Enumeration']"/>
             
@@ -117,6 +130,8 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <xsl:apply-templates select="." mode="subclass-of"/> 
             <xsl:apply-templates mode="properties"></xsl:apply-templates>
         </sh:NodeShape>
+        
+        <xsl:apply-templates mode="wrappers"></xsl:apply-templates>
         
         <sh:NodeShape>
             <xsl:attribute name="rdf:about">
@@ -193,12 +208,26 @@ Timestamp: <xsl:value-of select="$timestamp"/>
     <xsl:template match="ownedAttribute" mode="properties">        
         <xsl:variable name="type" select="key('idlookup',@type)"/>
         <xsl:if test="not(.//upperValue) or not(.//lowerValue)"><xsl:message select="concat(../@name,'.',@name, ' has missing cardinalities.')"></xsl:message></xsl:if>
+        <xsl:variable name="isNonUniqueOrOrdered" select="ext:isNonUniqueOrOrdered(.)"/>
+        <xsl:variable name="isAssociation" select="ext:isAssociation(.)"/>
+        <xsl:variable name="isNonUniqueOrOrderedAssociation" select="($isNonUniqueOrOrdered and $isAssociation)"/>  
         <sh:property>
             <rdf:Description>
                 <sh:path>
                     <xsl:apply-templates select="." mode="resource"/>
                 </sh:path>
-                <xsl:apply-templates select="$type" mode="type-restriction"></xsl:apply-templates>
+                <xsl:choose>
+                    <xsl:when test="$isNonUniqueOrOrderedAssociation">
+                        <xsl:apply-templates select="$type" mode="wrapper-type-restriction"></xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:otherwise>                
+                        <xsl:apply-templates select="$type" mode="type-restriction"></xsl:apply-templates>
+                    </xsl:otherwise>
+                </xsl:choose>
+
+                <xsl:if test="@isOrdered='true'">
+                    <sh:class rdf:resource="#Ordered"/>
+                </xsl:if>
                 <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"><xsl:apply-templates select=".//lowerValue" mode="create-cardinality-value"/></sh:minCount>                
                 <xsl:variable name="upper">
                     <xsl:apply-templates select=".//upperValue" mode="create-cardinality-value"/>                    
@@ -208,6 +237,23 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 </xsl:if>
             </rdf:Description>
         </sh:property>           
+    </xsl:template>
+    
+    <xsl:template match="ownedAttribute[ext:isNonUniqueOrOrdered(.) and ext:isAssociation(.)]" mode="wrappers">
+        <xsl:variable name="type" select="key('idlookup',@type)"/>
+        <xsl:variable name="bucketClassName" select="ext:bucketClassName($type)"/>
+        
+        <sh:NodeShape rdf:about="{$VEC-SH-NS-IRI}{$bucketClassName}Shape">
+            <sh:targetClass rdf:resource="#{$bucketClassName}"></sh:targetClass>
+            <sh:property>
+                <rdf:Description>
+                    <sh:path rdf:resource="#{ext:first-lower($bucketClassName)}Item"></sh:path>
+                    <xsl:apply-templates select="$type" mode="type-restriction"></xsl:apply-templates>
+                    <sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
+                    <sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
+                </rdf:Description>
+            </sh:property>
+        </sh:NodeShape>            
     </xsl:template>
     
 
@@ -249,6 +295,14 @@ Timestamp: <xsl:value-of select="$timestamp"/>
     
     <xsl:template match="*" mode="type-restriction">
         <xsl:message select="concat('Unhandled type:',@xmi:type)"></xsl:message>
+    </xsl:template>
+    
+    <xsl:template match="*[@xmi:type='uml:Class']" mode="wrapper-type-restriction">
+        <sh:class rdf:resource="#{ext:bucketClassName(.)}"></sh:class>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="wrapper-type-restriction">
+        <xsl:message terminate="yes" select="concat('Ordered/Non-Non-Unique for non-class elements:',@xmi:type)"></xsl:message>
     </xsl:template>
     
     

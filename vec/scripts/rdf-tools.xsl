@@ -135,6 +135,29 @@
         <xsl:value-of select="normalize-space(.)" />
     </xsl:template>
     
+    <!-- UniqueNess & Order -->
+    
+    <xsl:function name="ext:isAssociation" as="xs:boolean">
+        <xsl:param name="ownedAttribute"/>
+        <xsl:sequence select="exists($ownedAttribute/@association) and not(($ownedAttribute/@aggregation='composite'))"></xsl:sequence>        
+    </xsl:function>
+    
+    <xsl:function name="ext:isNonUniqueOrOrdered" as="xs:boolean">
+        <xsl:param name="ownedAttribute"/>
+        <xsl:variable name="upper">
+            <xsl:apply-templates select="$ownedAttribute//upperValue" mode="create-cardinality-value"/>                    
+        </xsl:variable>   
+        <xsl:sequence select="($upper != '1') and (($ownedAttribute/@isUnique='false') or ($ownedAttribute/@isOrdered='true'))"/>
+    </xsl:function>
+    
+    <xsl:function name="ext:bucketClassName" as="xs:string">
+        <xsl:param name="type"></xsl:param>
+        <xsl:variable name="name">
+            <xsl:apply-templates select="$type" mode="resource-name"/>
+        </xsl:variable>
+        <xsl:sequence select="concat($name,'Wrapper')"></xsl:sequence>
+    </xsl:function>
+    
     <!-- Overriding default templates -->
     <xsl:template match="*"/>
     
