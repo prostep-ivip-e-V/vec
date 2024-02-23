@@ -299,10 +299,7 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                     <xsl:text>Container class for </xsl:text>
                     <xsl:apply-templates select="$type" mode="resource-name"></xsl:apply-templates> 
                     <xsl:text> to participate in non-unique and/or ordered associations.</xsl:text>
-                </rdfs:comment>
-                <xsl:if test="@isOrdered='true'">
-                    <rdfs:subClassOf rdf:resource="#Ordered"></rdfs:subClassOf>
-                </xsl:if>                
+                </rdfs:comment>            
             </owl:Class>
             
             <owl:ObjectProperty rdf:about="#{ext:first-lower($bucketClassName)}Item">
