@@ -68,7 +68,8 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <owl:DatatypeProperty rdf:about="#enumLiteral">
                 <rdfs:label xml:lang="en">enumLiteral</rdfs:label>
                 <rdfs:comment xml:lang="en">Defines the literal value of an enumeration as represented in the model.</rdfs:comment>
-                <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>                
+                <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+                <rdfs:domain rdf:resource="#Enumeration"></rdfs:domain>                
                 <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:DatatypeProperty>
             
@@ -267,13 +268,20 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 <rdfs:subPropertyOf rdf:resource="#contains"/>
             </xsl:if>
             <xsl:apply-templates select="." mode="deprecation"/>
-            <xsl:if test="$isNonUniqueOrOrdered and not($isAssociation)">
+            <xsl:if test="@isOrdered='true'">
                 <rdfs:range rdf:resource="#Ordered"></rdfs:range>
             </xsl:if>
             
-            <rdfs:range>
-                <xsl:apply-templates select="$type" mode="resource"/>
-            </rdfs:range>
+            <xsl:choose>
+                <xsl:when test="$isNonUniqueOrOrderedAssociation">
+                    <rdfs:range rdf:resource="#{ext:bucketClassName($type)}"></rdfs:range>
+                </xsl:when>
+                <xsl:otherwise>
+                    <rdfs:range>
+                        <xsl:apply-templates select="$type" mode="resource"/>
+                    </rdfs:range>
+                </xsl:otherwise>
+            </xsl:choose>                
             <rdfs:domain>
                 <xsl:apply-templates select=".." mode="resource"/>
             </rdfs:domain>
@@ -297,12 +305,11 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 </xsl:if>                
             </owl:Class>
             
-            <owl:ObjectProperty>
-                <xsl:attribute name="rdf:about">
-                    <xsl:text>#</xsl:text>
-                    <xsl:value-of select="ext:first-lower($bucketClassName)"/>
-                    <xsl:text>Item</xsl:text>
-                </xsl:attribute>
+            <owl:ObjectProperty rdf:about="#{ext:first-lower($bucketClassName)}Item">
+                <rdfs:domain rdf:resource="#{ext:bucketClassName($type)}"></rdfs:domain>
+                <rdfs:range>
+                    <xsl:apply-templates select="$type" mode="resource"/>
+                </rdfs:range>
                 <rdfs:comment>
                     <xsl:text>References the actual item for a Wrapper.</xsl:text>
                 </rdfs:comment>
