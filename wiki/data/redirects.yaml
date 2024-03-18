@@ -1,3 +1,5 @@
 redirects:
-  - "/old/file.html /new/file.html 301"
-  - "/2023/11/vec /specifications/vec/v202/vec_2.0.2.xsd 200"
+  - "/ontologies/2024/03/vec /specifications/vec/v210/vec-2.1.0-ontology.ttl 200"
+  - "/ontologies/2024/03/vec-shacl /specifications/vec/v210/vec-2.1.0-shacl.ttl 200"
+  - "/ontologies/2024/03/vec/2.1.0 /specifications/vec/v210/vec-2.1.0-ontology.ttl 200"  
+  - "/ontologies/2024/03/vec-shacl/2.1.0 /specifications/vec/v210/vec-2.1.0-shacl.ttl 200"

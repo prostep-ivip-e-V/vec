@@ -39,6 +39,18 @@ links:
     icon: file-code
     name: vec_1.2.2-ud-strict.xsd (undocumented version)
     url: "vec_1.2.2-ud-strict.xsd"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.2.2-ontology.ttl
+    url: "vec-1.2.2-ontology.ttl"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.2.2-shacl.ttl
+    url: "vec-1.2.2-shacl.ttl"    
+  - icon_pack: fas
+    icon: object-group
+    name: vec-1.2.2.mdxml
+    url: "vec-1.2.2.mdxml"         
 weight: 1
 ---
 

@@ -36,7 +36,7 @@ links:
 weight: 1
 ---
 
-The VDA recommendation 4968 “Vehicle Electric Container (VEC)” defines an information model, a data dictionary, and an XML schema derived from and compliant to the model.The intention of the model was to cover a wide range of use cases and application scenarios. For this reason the specification had to be kept generic in some degree and in some aspects. However, for specific scenarios and / or use cases a more detailed description on "how the different pieces fit together" is possible.
+The VDA recommendation 4968 / prostep ivip recommendation PSI21 “Vehicle Electric Container (VEC)” defines an information model, a data dictionary, a XML schema and a RDF onthology derived from and compliant to the model.The intention of the model was to cover a wide range of use cases and application scenarios. For this reason the specification had to be kept generic in some degree and in some aspects. However, for specific scenarios and / or use cases a more detailed description on "how the different pieces fit together" is possible.
 
 <!--more-->
 

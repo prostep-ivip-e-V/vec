@@ -41,6 +41,18 @@ links:
     icon: file-code
     name: vec_1.1.3.sch (Schematron Schema)
     url: 'vec_1.1.3.sch'
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.1.3-ontology.ttl
+    url: "vec-1.1.3-ontology.ttl"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.1.3-shacl.ttl
+    url: "vec-1.1.3-shacl.ttl"    
+  - icon_pack: fas
+    icon: object-group
+    name: vec-1.1.3.mdxml
+    url: "vec-1.1.3.mdxml"         
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 50

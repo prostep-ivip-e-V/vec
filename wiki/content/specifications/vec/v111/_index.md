@@ -42,6 +42,18 @@ links:
     icon: file-archive
     name: Modules VEC 1.1.1.zip
     url: 'modules_vec_1.1.1.zip'
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.1.1-ontology.ttl
+    url: "vec-1.1.1-ontology.ttl"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.1.1-shacl.ttl
+    url: "vec-1.1.1-shacl.ttl"    
+  - icon_pack: fas
+    icon: object-group
+    name: vec-1.1.1.mdxml
+    url: "vec-1.1.1.mdxml"         
 cascade:
   - search_index_ignore: true
 ---

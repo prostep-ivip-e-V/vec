@@ -18,16 +18,17 @@ weight: 50
 The information described here applies to all future publications of the VEC (Schema & Model Version > 1.2.0 and Recommendation Document > 3rd Edition).
 {{% /callout %}}
 
-Two information packages are provided for the VEC, both of them have a slightly different publication and release process:
+Three bundles of information are provided for the VEC, both of them have a slightly different publication and release process:
 
-- VEC Model & XML Schemas
+- VEC Model and derived Artifacts
+- Implementation Guidelines
 - prostep ivip and / or VDA Recommendation
 
 ## VEC Model & XML Schemas
 
-The aim is to be able to provide changes, bug fixes and extensions for the VEC as quickly as possible and at the same time to ensure the stability of the standard.
-Therefore, as of version 1.2.1, _semantic versioning_ is applied to the VEC Model and the XML Schemas as far as possible and reasonable.
-The basic concept of semantic versioning should be explained in the following quote from the [semantic versioning specification](https://semver.org):
+The aim is to be able to provide features, improvements, bug fixes and extensions for the VEC as quickly as possible and at the same time ensure the stability of the standard.
+Therefore, as of version 1.2.1, _semantic versioning_ is applied to the VEC Model and derivced artifacts as far as possible and reasonable.
+The basic concept of semantic versioning is explained in the quote from the [Semantic Versioning Specification](https://semver.org):
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
 >
@@ -37,14 +38,43 @@ The basic concept of semantic versioning should be explained in the following qu
 >
 > Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-In application, `API` is equivalent to `schema` or `model`. As a result, schema compatibility should be directly apparent from the version number.
+In the application to VEC, `API` is equivalent to `schema` or `model`. As a result, schema compatibility should be directly apparent from the version number.
 
 For each version, the following artifacts are published:
 
-1. An updated **Model Description** (Online and/or as PDF).
-2. **XML Schema** files which are available in different variants:
-   - **strict vs. non-strict**: The _non-strict_ schema variant defines _OpenEnumerations_ as `xs:string` values. In the _strict_ schema variant _OpenEnumerations_ are defined as schema restrictions. For more information about the _OpenEnumerations_ see the corresponding chapter in the VDA Recommendation. The _strict_ schema variant carries the suffix `-strict` in the file name of the schema.
-   - **documented vs. undocumented** (since VEC 1.1.3): For an improved usability of the schema, the model documentation (description of classes and attributes) is embedded in the schema files. For use cases where the size of the schema file matters, we provide variants of the schema files without embedded documentation. Those are marked with the suffix `-ud` for "undocumented".
+### Model Documentation
+
+An updated documentation of the model provided as Online Documentation in the ECAD-WIKI.
+
+### XML Schema
+
+XML Schema files which are available in different variants:
+
+- **strict vs. non-strict**: The _non-strict_ schema variant defines _OpenEnumerations_ as `xs:string` values. In the _strict_ schema variant _OpenEnumerations_ are defined as schema restrictions. For more information about the _OpenEnumerations_ see the corresponding chapter in the VDA Recommendation. The _strict_ schema variant carries the suffix `-strict` in the file name of the schema.
+- **documented vs. undocumented** (since VEC 1.1.3): For an improved usability of the schema, the model documentation (description of classes and attributes) is embedded in the schema files. For use cases where the size of the schema file matters, we provide variants of the schema files without embedded documentation. Those are marked with the suffix `-ud` for "undocumented".
+
+The mapping of the model to XML Schema is described in "{{<vec-diagram "xml-representation-of-the-model/mapping-of-the-vec-model-to-xml-schema-definition-xsd" >}}".
+
+### RDF Data Model / Ontology
+
+A [RDF](https://www.w3.org/TR/rdf11-primer/) representation of the model consisting of a [RDFS](https://www.w3.org/TR/rdf-schema/) / [OWL2](https://www.w3.org/TR/owl2-overview/) ontology and [SHACL](https://www.w3.org/TR/shacl/) Shapes Graph. 
+
+The mapping of the model to RDF is described [here]({{< relref "../guidelines/information-structures/rdf-owl/">}}).
+
+### XMI
+
+The XMI file for the UML metamodel of the VEC. The XML Metadata Interchange (XMI) is an Object Management Group (OMG) standard for exchanging metadata information via Extensible Markup Language (XML)
+
+The most common use of XMI is as an interchange format for UML models, although it can also be used for serialization of models of other languages (metamodels) [^1].
+
+[^1]: See [XML Metadata Interchange](https://en.wikipedia.org/wiki/XML_Metadata_Interchange)
+
+Magic Draw 2022x was used to generate the XMI files, which is XMI V2.4.
+
+
+## Implementation Guidelines 
+
+The Implementation Guidelines are defining the application of the information model for specific use cases. They are independant from a specific VEC version and are published continiously [here]({{<relref "../guidelines">}}).
 
 ## prostep ivip & VDA Recommendations
 

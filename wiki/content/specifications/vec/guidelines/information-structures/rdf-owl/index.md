@@ -45,11 +45,11 @@ The first version of the VEC ontologies has been published in March 2024. Curren
 The following sections contain snippets of the transformation results. All excerpts are defined in [RDF Turtle](https://www.w3.org/TR/turtle/). The following namespace definitions are used:
 
 ```Turtle
-@prefix :     <https://ecad.prostep.org/2023/vec#> .
+@prefix :     <http://www.prostep.org/ontologies/ecad/2024/03/vec#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vec:  <https://ecad.prostep.org/2023/vec#> .
+@prefix vec:  <http://www.prostep.org/ontologies/ecad/2024/03/vec#> .
 @prefix xs:   <http://www.w3.org/2001/XMLSchema#> .
 ```
 
@@ -59,7 +59,7 @@ The following sections contain snippets of the transformation results. All excer
 
 ### VEC Namespace
 
-The namespace of the VEC ontology is: `https://ecad.prostep.org/2023/vec#`. The recommended namespace prefix is `vec` (used in the ECAD-WIKI for any example). The `owl:versionIRI` is `https://ecad.prostep.org/2023/vec/<version>#`, e.g. `https://ecad.prostep.org/2023/vec/2.1.0#` for every VEC version.
+The namespace of the VEC ontology is: `http://www.prostep.org/ontologies/ecad/2024/03/vec#`. The recommended namespace prefix is `vec` (used in the ECAD-WIKI for any example). The `owl:versionIRI` is `http://www.prostep.org/ontologies/ecad/2024/03/vec/<version>#`, e.g. `http://www.prostep.org/ontologies/ecad/2024/03/vec/2.1.0#` for every VEC version.
 
 ### General
 
@@ -288,7 +288,7 @@ In addition to the ontology, a [SHACL](https://www.w3.org/TR/shacl/) schema is d
 
 ### Namespace
 
-The namespace of the SHACL Shapes is `https://ecad.prostep.org/2023/vec-shacl#` the recommended prefix is `vecsh`.
+The namespace of the SHACL Shapes is `http://www.prostep.org/ontologies/ecad/2024/03/vec-shacl#` the recommended prefix is `vecsh`.
 
 
 ### Classes 

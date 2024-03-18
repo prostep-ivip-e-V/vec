@@ -34,6 +34,18 @@ links:
     icon: file-code
     name: vec_1.1.2-strict.xsd
     url: 'vec_1.1.2-strict.xsd'
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.1.2-ontology.ttl
+    url: "vec-1.1.2-ontology.ttl"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-1.1.2-shacl.ttl
+    url: "vec-1.1.2-shacl.ttl"    
+  - icon_pack: fas
+    icon: object-group
+    name: vec-1.1.2.mdxml
+    url: "vec-1.1.2.mdxml"         
 cascade:
   - search_index_ignore: true
 ---

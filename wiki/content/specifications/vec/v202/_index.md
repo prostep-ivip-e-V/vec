@@ -39,6 +39,18 @@ links:
     icon: file-code
     name: vec_2.0.2-ud-strict.xsd (undocumented version)
     url: "vec_2.0.2-ud-strict.xsd"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-2.0.2-ontology.ttl
+    url: "vec-2.0.2-ontology.ttl"
+  - icon_pack: fas
+    icon: circle-nodes
+    name: vec-2.0.2-shacl.ttl
+    url: "vec-2.0.2-shacl.ttl"    
+  - icon_pack: fas
+    icon: object-group
+    name: vec-2.0.2.mdxml
+    url: "vec-2.0.2.mdxml"    
 weight: 1
 ---
 The version 2.0.2 is a schema compatible bug fix release for Version 2.0.1 (schema compatible except for areas affected by bugs). The changes were:
