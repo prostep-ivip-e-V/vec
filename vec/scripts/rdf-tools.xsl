@@ -8,6 +8,13 @@
     exclude-result-prefixes="xs xmi ext"
     version="2.0">
     
+    <xsl:variable name="VEC-PREFIX">vec</xsl:variable>
+    <xsl:variable name="VEC-BASE-IRI" select="'http://www.prostep.org/ontologies/ecad/2024/03/vec'"/>
+    <xsl:variable name="VEC-NS-IRI" select=" concat($VEC-BASE-IRI,'#')"/>
+    <xsl:variable name="VEC-SH-PREFIX">vecsh</xsl:variable>
+    <xsl:variable name="VEC-SH-NS-IRI" select=" concat($VEC-BASE-IRI,'-shacl','#')"/>
+    
+    
     <!-- ######################################################################################### -->
     <!-- ####       Utilities                                                                  ### -->
     <!-- ######################################################################################### -->      

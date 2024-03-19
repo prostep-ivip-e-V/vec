@@ -20,19 +20,11 @@
     
     <xsl:key name="idlookup" match="*" use="@xmi:id"/>
     
-    
     <xsl:param name="VEC_VERSION">2.1.0</xsl:param>
     <xsl:param name="strict">false</xsl:param>
     <xsl:param name="revision">not-set</xsl:param>
     <xsl:param name="timestamp">not-set</xsl:param>
-    
-    <xsl:variable name="VEC-PREFIX">vec</xsl:variable>
-    <xsl:variable name="VEC-BASE-IRI" select="'https://ecad.prostep.org/2023/vec'"/>
-    <xsl:variable name="VEC-NS-IRI" select=" concat($VEC-BASE-IRI,'#')"/>
-    <xsl:variable name="VEC-SH-PREFIX">vecsh</xsl:variable>
-    <xsl:variable name="VEC-SH-NS-IRI" select=" concat($VEC-BASE-IRI,'-shacl','#')"/>
-    <xsl:variable name="VEC-VERSION-NS-IRI" select=" concat($VEC-BASE-IRI,'/',$VEC_VERSION,'#')"/>
-    
+        
     <xsl:template match="/">
         <rdf:RDF>
             <xsl:namespace name="{$VEC-PREFIX}" select="$VEC-NS-IRI"></xsl:namespace>
