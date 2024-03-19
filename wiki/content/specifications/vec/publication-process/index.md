@@ -59,7 +59,7 @@ The mapping of the model to XML Schema is described in "{{<vec-diagram "xml-repr
 
 A [RDF](https://www.w3.org/TR/rdf11-primer/) representation of the model consisting of a [RDFS](https://www.w3.org/TR/rdf-schema/) / [OWL2](https://www.w3.org/TR/owl2-overview/) ontology and [SHACL](https://www.w3.org/TR/shacl/) Shapes Graph. 
 
-The mapping of the model to RDF is described [here]({{< relref "../guidelines/information-structures/rdf-owl/">}}).
+The mapping of the model to RDF is described [here]({{< relref "../guidelines/general/rdf-owl/">}}).
 
 ### XMI
 
