@@ -1,5 +1,5 @@
 ---
-title: Extension Mechanisms 
+title: Extension Rules 
 type: specs
 toc: true
 authors: [becker]

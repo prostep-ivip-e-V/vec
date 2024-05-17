@@ -57,7 +57,7 @@ The version 2.0.2 is a schema compatible bug fix release for Version 2.0.1 (sche
 
 1. Renaming of the wrongly named class `ConnectionNodeViewItem`-> `ComponentNodeViewItem`. This was done schema compatible by deprecating the `ConnectionNodeViewItem`.
 2. V2.0.0 introduced the {{<vec-class ConfigurationConstraint >}} as subelement to the {{<vec-class ConfigurableElement>}}. This turned out to a unfavorable design decision. With this release, the `ConfigurationConstraint` was moved into its own specification allowing external configuration (from within other documents) of {{<vec-class ConfigurableElement>}}s.
-3. We added meta-information from the model to XML Schema with `<xs:annotation>`, for details see [here]({{< relref "../meta-information" >}}). 
+3. We added meta-information from the model to XML Schema with `<xs:annotation>`, for details see [here]({{< relref "../guidelines/general/xml-xsd/#meta-model-annotations-embedded-in-xml-schema" >}}). 
 
 Detailed release notes can be found [here]({{< relref release-notes >}}).
 

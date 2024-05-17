@@ -58,11 +58,12 @@ variants)
 All `xs:complexType` define an `id`-Attribute with the type `xs:ID`. These are technical ids
 that are necessary for the referencing mechanism of the VEC within a single XML file.
 The semantics, constraints and requirements are defined by the XML Standard and
-XML Schema itself. These ids do not have any significance outside a VEC file.
+XML Schema itself. These ids do not have any significance outside a VEC file. 
+See the Section [id-Attibutes]({{< relref  "../xml-xsd/#id-attributes">}}).
 
 ## `immutable-global-id`-Attributes (XML Repesentation)
 
-See the Section {{< vec-diagram "xml-representation-of-the-model/global-unique-identifiers-iri" >}}.
+See the Section [`immutable-global-id`-Attributes]({{< relref "../xml-xsd/#immutable-global-id-attributes">}}).
 
 ## `IRI`s (RDF Representation)
 

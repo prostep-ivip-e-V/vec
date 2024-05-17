@@ -137,7 +137,7 @@ vec:SegmentCrossSectionAreaType_Real
         rdf:type         vec:SegmentCrossSectionAreaType , owl:NamedIndividiual;
         vec:enumLiteral  "Real" .        
 ```
-For `OpenEnumeration`s the extension with new custom literals is straight forward. They can be easily defined as new individuals of the corresponding enum class. However, the should be defined in an appropriate namespace and not in VEC-namespace. The enumeration above could be extended for example like this:
+For `OpenEnumeration`s the extension with new custom literals is straight forward. They can be easily defined as new individuals of the corresponding enum class. However, they should be defined in an appropriate namespace and not in VEC-namespace. The enumeration above could be extended for example like this:
 
 ```Turtle
 acme:SegmentCrossSectionAreaType_MyCustomLiteral

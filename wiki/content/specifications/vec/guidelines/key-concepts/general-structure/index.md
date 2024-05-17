@@ -138,7 +138,7 @@ be used in different ways:
 
 - **Plain PDM reference** (a.k.a as external reference): In this case, the
   {{< vec-class DocumentVersion >}} in the VEC only contains meta-data and no
-  payload-data (no {{< vec-class Specification >}}s). This is described in detail [here]({{< relref "../../general/external-references">}}).
+  payload-data (no {{< vec-class Specification >}}s). This is described in detail [here]({{< relref "../../key-concepts/external-references">}}).
 - **Digital Representation of an external Document**: There are use cases where
   existing documents can represented in the means of the VEC. In other words the
   VEC {{< vec-class DocumentVersion >}} is a digital representation of the

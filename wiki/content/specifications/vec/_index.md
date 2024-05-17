@@ -18,5 +18,5 @@ The publication process, the versioning scheme and the distributed artifacts are
 
 {{% callout info %}}
 **News:** From version V2.0.2 onwards, the schema is published with additional meta information in `<xs:annotation>`-elements. 
-The description of these elements can be found here: [Model Meta Information]({{< relref "meta-information" >}}).
+The description of these elements can be found here: [Model Meta Information]({{< relref "guidelines/general/xml-xsd/#meta-model-annotations-embedded-in-xml-schema" >}}).
 {{% /callout %}}

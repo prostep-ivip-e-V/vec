@@ -23,7 +23,7 @@ classes:
   - PartVersion
 
 
-menu: {vec-guidelines: {parent: general, weight: 700}}
+menu: {vec-guidelines: {parent: key-concepts, weight: 700}}
 weight: 5600
 ---
 For reasons of traceability (e.g. requirements) or because certain information is better represented in other standards than in the VEC format (e.g. 3D models for components), it is necessary to be able to reference external documents from VEC elements. This guideline describes how these external documents can be addressed and what concepts exist to connect those documents with VEC model elements (and when to use which).
@@ -33,13 +33,13 @@ For reasons of traceability (e.g. requirements) or because certain information i
 As described in the Implementation Guideline "[General Structure]({{< relref "../../key-concepts/general-structure#usages-of-the-documentversion">}})" the {{< vec-class "DocumentVersion">}} serves several purposes, one of which is the referencing of external Documents. So, whenever a connection between a VEC element and an external document should be created, a {{< vec-class "DocumentVersion">}} is required to address the document. Such a {{< vec-class "DocumentVersion">}} should contain no payload data ({{< vec-class "Specification">}}). However, it contains the same meta-data as it would, when included as a full featured document (e.g. _DocumentType_).
 
 {{% callout note %}}
-A `index.vec` file consists practically only of such external references, as described in the recommendation Chapter "VEC-Packgage" and in the corresponding [Implementation Guideline]({{< relref "../../general/vec-package" >}}).
+A `index.vec` file consists practically only of such external references, as described in the recommendation Chapter "VEC-Packgage" and in the corresponding [Implementation Guideline]({{< relref "../../general/partitioning-sizing-packaging" >}}).
 {{% /callout %}}
 
 There are different possibilities to resolve such a reference and retrieve the actual document:
 
 1. **PDM reference with Domain Key**: Per definition, a document version is unambiguously identified with its _DocumentNumber_, _DocumentVersion_ and _CompanyName_. With context knowledge about the process, the document can be resolved in the corresponding PDM / Document Management System.
-2. **FileName**: If the document is packaged together with VEC file ([VEC Package]({{< relref "../../general/vec-package">}})) the filename attribute of {{< vec-class DocumentVersion >}} can point to a location within the VEC Package. If the document is not part of the VEC Package, the _FileName_-Attribute shall be omitted.
+2. **FileName**: If the document is packaged together with VEC file ([VEC Package]({{< relref "../../general/partitioning-sizing-packaging">}})) the filename attribute of {{< vec-class DocumentVersion >}} can point to a location within the VEC Package. If the document is not part of the VEC Package, the _FileName_-Attribute shall be omitted.
 3. **Location**: If the document can be resolved outside the VEC package, the _Location_-Attribute can point to a location (via an _URN_ or _URL_) where the document can be resolved. For files that are stored following a specific procedure or systematics (e.g. in PDM System) the usage of _URNs_ should be the preferred way. This decouples the referencing from a concrete physical location, which might be different in different contexts or might be changed over the time.
 
 ## Connecting VEC Model Elements

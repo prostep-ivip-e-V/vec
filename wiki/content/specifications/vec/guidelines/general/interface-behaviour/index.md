@@ -25,7 +25,7 @@ classes:
 menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection
-    parent: key-concepts
+    parent: general
     weight: 850
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
@@ -63,7 +63,7 @@ On the other hand, it is up to the system to verify that a VEC contains enough i
 
 ### Traceability Scenarios
 
-Even though it is not possible to define general relationship requirements between imported and exported data, there are use cases in which a traceability between imported and exported data is required. In such cases, slices of imported data might be embedded into the exported data. This scenario is described in section "[Combination and Reuse of Documents]({{< relref "../general-structure/index.md#combination-and-reuse-of-documents">}})"
+Even though it is not possible to define general relationship requirements between imported and exported data, there are use cases in which a traceability between imported and exported data is required. In such cases, slices of imported data might be embedded into the exported data. This scenario is described in section "[Combination and Reuse of Documents]({{< relref "../../key-concepts/general-structure/index.md#combination-and-reuse-of-documents">}})"
 
 ## Summary of the Requirements
 
