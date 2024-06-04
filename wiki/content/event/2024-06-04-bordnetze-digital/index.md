@@ -4,11 +4,6 @@ subtitle: The new annual congress in the field of digitalisation of vehicle elec
 event: Conference
 
 #abstract: "
-#The 4-hour webinar offers an introduction to the VEC and its many possibilities.
-#
-#
-#In the first part, the motivation and the business case of the VEC as an open standard will be discussed. This is followed by the definition of the scope and an overview of the core concepts and fundamental principles of the VEC.
-#The webinar is rounded off by a deep dive on the subject of component boxes / fuse & relay carriers and last but not least with an insight into the innovations introduced with VEC 1.2.
 #"
 
 # Talk start and end times.
