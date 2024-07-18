@@ -34,7 +34,7 @@
         <def:name>Int</def:name>
         <def:name>Date</def:name>
         <def:name>Boolean</def:name>
-        <def:name>AbstractLocalizedString</def:name>
+<!--        <def:name>AbstractLocalizedString</def:name> -->
         <def:name checked="true">AbstractSlot</def:name>
         <def:name>AbstractSlotReference</def:name>
         <!--       <def:name>AliasIdentification</def:name>-->
@@ -154,14 +154,14 @@
         <!--       <def:name>Supplier</def:name>-->
         <!--       <def:name>Manufacturer</def:name>-->
         <!--       <def:name>CopyrightInformation</def:name>-->
-        <def:name>CoreCrimpDetail</def:name>
+<!--        <def:name>CoreCrimpDetail</def:name>-->
         <def:name checked="true">CoreSpecification</def:name>
         <!--        <def:name>CorrugatedPipeRole</def:name>-->
         <!--        <def:name>CorrugatedPipeSpecification</def:name>-->
         <!--       <def:name>CouplingPoint</def:name>-->
         <!--       <def:name>CouplingSpecification</def:name>-->
         <!--       <def:name>Creation</def:name>-->
-        <def:name>CrimpDetail</def:name>
+<!--        <def:name>CrimpDetail</def:name>-->
         <def:name>CrimpShape</def:name>
         <!--       <def:name>CurrentType</def:name>-->
         <!--       <def:name>Curve3D</def:name>-->
@@ -236,7 +236,7 @@
         <!--       <def:name>HousingComponentReference</def:name>-->
         <!--       <def:name>HousingComponentType</def:name>-->
         <!--       <def:name>Instruction</def:name>-->
-        <def:name>InsulationCrimpDetail</def:name>
+<!--        <def:name>InsulationCrimpDetail</def:name>-->
         <def:name checked="true">InsulationSpecification</def:name>
 <!--        <def:name>InsulationState</def:name>-->
         <!--       <def:name>IntegerValueProperty</def:name>-->
@@ -250,15 +250,15 @@
         <!--        <def:name>LabelingRole</def:name>-->
         <!--        <def:name>LabelingSpecification</def:name>-->
         <!--        <def:name>LabelingTechnology</def:name>-->
-        <def:name>LanguageCode</def:name>
+<!--        <def:name>LanguageCode</def:name>-->
         <!--       <def:name>LengthClassification</def:name>-->
         <!--       <def:name>LevelOfApproval</def:name>-->
         <!--       <def:name>LocalGeometrySpecification</def:name>-->
         <!--       <def:name>LocalPosition</def:name>-->
-        <def:name>LocalizedString</def:name>
+        <!--<def:name>LocalizedString</def:name>-->
         <!--       <def:name>LocalizedStringProperty</def:name>-->
-        <def:name>LocalizedTypedString</def:name>
-        <def:name>LocalizedTypedStringType</def:name>
+        <!--<def:name>LocalizedTypedString</def:name>-->
+        <!--<def:name>LocalizedTypedStringType</def:name>-->
         <!--       <def:name>Location</def:name>-->
         <!--       <def:name>Mapping</def:name>-->
         <!--       <def:name>MappingSpecification</def:name>-->
@@ -359,7 +359,7 @@
         <!--       <def:name>PotentialDistributorSpecification</def:name>-->
         <!--       <def:name>PowerConsumption</def:name>-->
         <!--       <def:name>PowerConsumptionType</def:name>-->
-        <def:name>PrimaryLockingType</def:name>
+<!--        <def:name>PrimaryLockingType</def:name>-->
         <def:name checked="true">PrimaryPartType</def:name>
         <!--       <def:name>PrimaryResourceType</def:name>-->
         <!--       <def:name>Project</def:name>-->
@@ -383,7 +383,7 @@
 <!--        <def:name>SealState</def:name>-->
 <!--        <def:name>SealedCavitiesAssignment</def:name>-->
 <!--        <def:name>SealingGeometry</def:name>-->
-        <def:name>SecondaryLockingType</def:name>
+<!--        <def:name>SecondaryLockingType</def:name>-->
 <!--        <def:name>SegmentConnectionPoint</def:name>-->
         <!--       <def:name>SegmentConnectionPointHC</def:name>-->
         <!--       <def:name>SegmentCrossSectionArea</def:name>-->
@@ -414,8 +414,8 @@
         <def:name>Size</def:name>
         <def:name checked="true">Slot</def:name>
         <!--       <def:name>SlotCoupling</def:name>-->
-        <def:name>SlotGender</def:name>
-        <def:name>SlotLayout</def:name>
+<!--        <def:name>SlotGender</def:name>-->
+<!--        <def:name>SlotLayout</def:name>-->
 <!--        <def:name>SlotLayoutType</def:name>-->
         <!--       <def:name>SlotMapping</def:name>-->
         <def:name>SlotReference</def:name>
@@ -443,13 +443,13 @@
 <!--        <def:name>TerminalDistanceType</def:name>-->
         <!--       <def:name>TerminalPairing</def:name>-->
         <!--       <def:name>TerminalPairingSpecification</def:name>-->
-        <def:name>TerminalPositionAssuranceState</def:name>
+<!--        <def:name>TerminalPositionAssuranceState</def:name>-->
         <def:name checked="true">TerminalReception</def:name>
-        <def:name>TerminalReceptionGender</def:name>
+<!--        <def:name>TerminalReceptionGender</def:name>-->
         <def:name checked="true">TerminalReceptionReference</def:name>
         <def:name checked="true">TerminalReceptionSpecification</def:name>
         <def:name checked="true">TerminalRole</def:name>
-        <def:name>TerminalSealingType</def:name>
+<!--        <def:name>TerminalSealingType</def:name>-->
         <def:name checked="true">TerminalSpecification</def:name>
         <def:name>TerminalType</def:name>
         <!--       <def:name>TextBasedInstruction</def:name>-->
@@ -476,7 +476,7 @@
         <!--       <def:name>UsageNode</def:name>-->
         <!--       <def:name>UsageNodeSpecification</def:name>-->
         <!--       <def:name>UsageNodeType</def:name>-->
-        <def:name>ValueDetermination</def:name>
+<!--        <def:name>ValueDetermination</def:name>-->
         <def:name>ValueRange</def:name>
         <!--       <def:name>ValueRangeProperty</def:name>-->
         <def:name checked="true">ValueWithUnit</def:name>
@@ -498,7 +498,7 @@
 <!--        <def:name>WireAddOnType</def:name>-->
         <def:name>WireElement</def:name>
         <def:name checked="true">WireElementReference</def:name>
-        <def:name>WireElementShape</def:name>
+<!--        <def:name>WireElementShape</def:name>-->
         <def:name checked="true">WireElementSpecification</def:name>
         <def:name checked="true">WireEnd</def:name>
         <def:name>WireEndAccessoryRole</def:name>
@@ -516,7 +516,7 @@
         <!--        <def:name>WireProtectionRole</def:name>-->
         <!--        <def:name>WireProtectionSpecification</def:name>-->
         <def:name checked="true">WireReception</def:name>
-        <def:name>WireReceptionAddOn</def:name>
+<!--        <def:name>WireReceptionAddOn</def:name>-->
         <def:name checked="true">WireReceptionReference</def:name>
         <def:name checked="true">WireReceptionSpecification</def:name>
         <def:name>WireReceptionType</def:name>
@@ -582,7 +582,15 @@
                 <Alias Alias="NumericRange">i=291</Alias>
                 <Alias Alias="Range">i=884</Alias>
                 <Alias Alias="EUInformation">i=887</Alias>
+                <Alias Alias="OpenEnum">ns=1;i=1000</Alias>
             </Aliases>
+            <UAObjectType NodeId="ns=1;i=1000" BrowseName="1:OpenEnum">
+                <DisplayName>OpenEnum</DisplayName>
+                <Documentation><![CDATA[Base class for all open enums.]]></Documentation>
+                <References>
+                    <Reference ReferenceType="HasSubType" IsForward="false">i=58</Reference>
+                </References>
+            </UAObjectType>            
             <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[(@xmi:type='uml:Class' or @xmi:type='uml:Enumeration')and not(@xmi:id=//MagicDraw_Profile:Legend/@base_Class)]" mode="create-type">
                 <xsl:sort select="@name"/>
             </xsl:apply-templates>         
@@ -650,6 +658,10 @@
             <xsl:apply-templates select="$compositionEnds" mode="create-element">
                 <xsl:sort select="@name" order="ascending" data-type="text"/>
             </xsl:apply-templates>
+        </xsl:if>
+        
+        <xsl:if test="not(exists(generalization))">
+            <Field DataType="String" Name="id"/>
         </xsl:if>
     </xsl:template>
 
@@ -873,7 +885,7 @@
             <DisplayName><xsl:apply-templates select="@name" mode="format-name"/></DisplayName>
             <Documentation><xsl:apply-templates select="." mode="documentation"/></Documentation>
             <References>
-                <Reference ReferenceType="HasSubType" IsForward="false">i=58</Reference>
+                <Reference ReferenceType="HasSubType" IsForward="false">ns=1;i=1000</Reference>
             </References>
         </UAObjectType>
         <xsl:apply-templates

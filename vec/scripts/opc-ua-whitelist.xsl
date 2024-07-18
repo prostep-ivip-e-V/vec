@@ -16,7 +16,13 @@
     </xsl:template>
     
     <xsl:template match="ua:UADataType|ua:UAObjectType">
-        <name><xsl:value-of select="ua:DisplayName"/></name>
+        <class><xsl:attribute name="name" select="ua:DisplayName"/>
+            <xsl:apply-templates select="ua:Definition/ua:Field"/>
+        </class>
+    </xsl:template>
+    
+    <xsl:template match="ua:Field">
+        <attribute><xsl:value-of select="@Name"/></attribute>
     </xsl:template>
 
 
