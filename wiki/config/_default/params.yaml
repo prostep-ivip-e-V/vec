@@ -5,8 +5,9 @@
 # Appearance
 
 appearance:
+  mode: light
   theme_day: minimal
-  theme_night: minimal
+#  theme_night: minimal
   font: minimal
   font_size: M
 
