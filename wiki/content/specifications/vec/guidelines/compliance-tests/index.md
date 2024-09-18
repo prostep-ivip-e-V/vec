@@ -24,6 +24,10 @@ links:
     name: VEC Compliance Test Suite    
     url: "compliance-suite.zip"
 ---
+{{% callout note %}}
+The definition of the compliance test suite can be downloaded here: [compliance-suite.zip](./compliance-suite.zip)
+{{% /callout %}}
+
 A key objective of data exchange standards in general, and the VEC (Vehicle Electric Container) 
 standard in particular, is to ensure system interoperability and guarantee the accurate 
 interpretation of information. To achieve this, specifications must be as precise as possible, 
