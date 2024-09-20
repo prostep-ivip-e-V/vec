@@ -114,7 +114,7 @@ There are two main ways to execute the Compliance Test Suite:
 
 1. All elements (Ontology Extension, Semantic Rules, and Queries) can be used in any RDF environment that supports the relevant technologies. 
 However, this requires the VEC data to be available in an RDF format to validate it within that environment.
-2. For easier validation of VEC `XML` data, you can use 4Soft's _VEC RDF Toolkit_, available for free download [here](). 
+2. For easier validation of VEC `XML` data, you can use 4Soft's _VEC RDF Toolkit_, available for free download [here](https://www.4soft.de/downloads/vec-rdf/). 
 This tool uses the suite definition provided below, runs it on a set of VEC XML files, and generates an Excel report with the results.
 
 
