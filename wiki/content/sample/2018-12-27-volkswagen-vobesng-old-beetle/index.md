@@ -73,3 +73,9 @@ resources:
 
 ---
 Example for full Vehicle Network as VEC-File and additional KBL-Files which describe the included harnesses, plus a JT File, which shows the geometry of the full Vehicle Network.
+
+{{% callout info %}}
+**License**
+
+All files provided for download below are provided under [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/)
+{{% /callout %}}
