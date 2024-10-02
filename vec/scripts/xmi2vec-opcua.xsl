@@ -28,506 +28,310 @@
 
     
     <xsl:variable name="whitelist">
-        <def:name>String</def:name>
-        <def:name>Double</def:name>
-        <def:name>Integer</def:name>
-        <def:name>Int</def:name>
-        <def:name>Date</def:name>
-        <def:name>Boolean</def:name>
-<!--        <def:name>AbstractLocalizedString</def:name> -->
-        <def:name checked="true">AbstractSlot</def:name>
-        <def:name>AbstractSlotReference</def:name>
-        <!--       <def:name>AliasIdentification</def:name>-->
-        <!--       <def:name>AliasIdentificationType</def:name>-->
-        <!--       <def:name>AnchorType</def:name>-->
-        <!--       <def:name>AntennaRole</def:name>-->
-        <!--       <def:name>AntennaSpecification</def:name>-->
-        <!--       <def:name>ApplicationConstraint</def:name>-->
-        <!--       <def:name>ApplicationConstraintSpecification</def:name>-->
-        <!--       <def:name>ApplicationConstraintType</def:name>-->
-        <!--       <def:name>Approval</def:name>-->
-        <!--       <def:name>AssignmentGroup</def:name>-->
-        <!--       <def:name>AssignmentGroupSpecification</def:name>-->
-        <!--       <def:name>BaselineContent</def:name>-->
-        <!--       <def:name>BaselineSpecification</def:name>-->
-        <!--       <def:name>BaselineState</def:name>-->
-        <!--       <def:name>BatteryRole</def:name>-->
-        <!--       <def:name>BatterySpecification</def:name>-->
-        <!--        <def:name>BoltMountedFixingBoltShape</def:name>-->
-        <!--        <def:name>BoltMountedFixingBoltType</def:name>-->
-        <!--        <def:name>BoltMountedFixingRole</def:name>-->
-        <!--        <def:name>BoltMountedFixingSpecification</def:name>-->
-<!--        <def:name>BoltTerminalRole</def:name>-->
-<!--        <def:name>BoltTerminalSpecification</def:name>-->
-        <!--       <def:name>BooleanValueProperty</def:name>-->
-        <def:name checked="true">BoundingBox</def:name>
-<!--        <def:name>BridgeTerminalRole</def:name>-->
-<!--        <def:name>BridgeTerminalSpecification</def:name>-->
-        <!--       <def:name>BuildingBlockPositioning2D</def:name>-->
-        <!--       <def:name>BuildingBlockPositioning3D</def:name>-->
-        <!--       <def:name>BuildingBlockSpecification2D</def:name>-->
-        <!--       <def:name>BuildingBlockSpecification3D</def:name>-->
-        <!--        <def:name>CableDuctOutlet</def:name>-->
-        <!--        <def:name>CableDuctRole</def:name>-->
-        <!--        <def:name>CableDuctSpecification</def:name>-->
-        <!--        <def:name>CableLeadThrough</def:name>-->
-        <!--        <def:name>CableLeadThroughGeometry</def:name>-->
-        <!--        <def:name>CableLeadThroughOutlet</def:name>-->
-        <!--        <def:name>CableLeadThroughReference</def:name>-->
-        <!--        <def:name>CableLeadThroughSpecification</def:name>-->
-        <!--        <def:name>CableLeadThroughType</def:name>-->
-        <!--        <def:name>CableTieRole</def:name>-->
-        <!--        <def:name>CableTieSpecification</def:name>-->
-        <!--       <def:name>CapacitorRole</def:name>-->
-        <!--       <def:name>CapacitorSpecification</def:name>-->
-        <def:name>CartesianDimension</def:name>
-        <!--        <def:name>CartesianPoint2D</def:name>-->
-        <def:name checked="true">CartesianPoint3D</def:name>
-        <def:name>CartesianVector</def:name>
-        <!--<def:name>CartesianVector2D</def:name>-->
-        <def:name checked="true">CartesianVector3D</def:name>
-        <def:name checked="true">Cavity</def:name>
-        <def:name>CavityAccessoryRole</def:name>
-        <def:name>CavityAccessorySpecification</def:name>
-<!--        <def:name>CavityAddOn</def:name>-->
-        <!--       <def:name>CavityCoupling</def:name>-->
-<!--        <def:name>CavityGeometry</def:name>-->
-        <!--       <def:name>CavityMapping</def:name>-->
-        <def:name>CavityMounting</def:name>
-        <def:name>CavityMountingDetail</def:name>
-        <def:name>CavityPartRole</def:name>
-        <def:name>CavityPartSpecification</def:name>
-        <def:name>CavityPlugRole</def:name>
-        <def:name>CavityPlugSpecification</def:name>
-        <def:name checked="true">CavityPositionDetail</def:name>
-        <def:name>CavityReference</def:name>
-        <def:name checked="true">CavitySealRole</def:name>
-        <def:name checked="true">CavitySealSpecification</def:name>
-        <def:name checked="true">CavitySpecification</def:name>
-        <!--       <def:name>ChangeDescription</def:name>-->
-        <def:name>Coding</def:name>
-        <def:name checked="true">Color</def:name>
-        <def:name checked="true">ColorReferenceSystem</def:name>
-        <!--       <def:name>ComplexProperty</def:name>-->
-        <!--       <def:name>ComponentConnector</def:name>-->
-        <!--       <def:name>ComponentNode</def:name>-->
-        <!--       <def:name>ComponentNodeSubType</def:name>-->
-        <!--       <def:name>ComponentNodeType</def:name>-->
-        <!--       <def:name>ComponentNodeViewItem</def:name>-->
-        <!--       <def:name>ComponentPort</def:name>-->
-        <!--       <def:name>ComponentPortViewItem</def:name>-->
-        <!--       <def:name>ComponentPortViewItemSide</def:name>-->
-        <def:name checked="true">CompositionSpecification</def:name>
-        <def:name>ConductorCurrentInformation</def:name>
-        <def:name>ConductorMaterial</def:name>
-        <def:name checked="true">ConductorSpecification</def:name>
-        <def:name>ConductorStructure</def:name>
-        <def:name>ConductorType</def:name>
-        <!--       <def:name>ConfidentialityLevel</def:name>-->
-        <def:name>ConfigurableElement</def:name>
-        <!--       <def:name>ConfigurationConstraint</def:name>-->
-        <!--       <def:name>ConfigurationConstraintSpecification</def:name>-->
-        <!--       <def:name>Connection</def:name>-->
-        <!--       <def:name>ConnectionEnd</def:name>-->
-        <!--       <def:name>ConnectionEndGender</def:name>-->
-        <!--       <def:name>ConnectionGroup</def:name>-->
-        <!--       <def:name>ConnectionGroupType</def:name>-->
-        <!--       <def:name>ConnectionNodeViewItem</def:name>-->
-        <!--       <def:name>ConnectionSpecification</def:name>-->
-        <!--       <def:name>ConnectionViewSpecification</def:name>-->
-        <!--        <def:name>ConnectorHousingCapRole</def:name>-->
-        <!--        <def:name>ConnectorHousingCapSpecification</def:name>-->
-        <!--        <def:name>ConnectorHousingCoverRole</def:name>-->
-        <!--        <def:name>ConnectorHousingCoverSpecification</def:name>-->
-        <def:name>ConnectorHousingRole</def:name>
-        <def:name checked="true">ConnectorHousingSpecification</def:name>
-        <def:name>ConnectorLockingState</def:name>
-        <def:name>ConnectorLockingType</def:name>
-        <def:name>ConnectorOutletDirection</def:name>
-        <def:name>ConnectorPositionAssuranceState</def:name>
-        <def:name>ConnectorPositionAssuranceType</def:name>
-        <def:name checked="true">ContactPoint</def:name>
-        <def:name checked="true">ContactingSpecification</def:name>
-        <!--       <def:name>Contract</def:name>-->
-        <!--       <def:name>ContractRole</def:name>-->
-        <!--       <def:name>Oem</def:name>-->
-        <!--       <def:name>Supplier</def:name>-->
-        <!--       <def:name>Manufacturer</def:name>-->
-        <!--       <def:name>CopyrightInformation</def:name>-->
-<!--        <def:name>CoreCrimpDetail</def:name>-->
-        <def:name checked="true">CoreSpecification</def:name>
-        <!--        <def:name>CorrugatedPipeRole</def:name>-->
-        <!--        <def:name>CorrugatedPipeSpecification</def:name>-->
-        <!--       <def:name>CouplingPoint</def:name>-->
-        <!--       <def:name>CouplingSpecification</def:name>-->
-        <!--       <def:name>Creation</def:name>-->
-<!--        <def:name>CrimpDetail</def:name>-->
-        <def:name>CrimpShape</def:name>
-        <!--       <def:name>CurrentType</def:name>-->
-        <!--       <def:name>Curve3D</def:name>-->
-        <!--       <def:name>CustomProperty</def:name>-->
-        <!--       <def:name>DateValueProperty</def:name>-->
-        <!--       <def:name>DefaultDimension</def:name>-->
-        <!--       <def:name>DefaultDimensionSpecification</def:name>-->
-        <!--       <def:name>DefaultDimensionType</def:name>-->
-        <!--       <def:name>Dimension</def:name>-->
-        <!--       <def:name>DimensionAnchor</def:name>-->
-        <!--       <def:name>DiodeRole</def:name>-->
-        <!--       <def:name>DiodeSpecification</def:name>-->
-        <!--       <def:name>DocumentBasedInstruction</def:name>-->
-        <!--       <def:name>DocumentClassification</def:name>-->
-        <!--       <def:name>DocumentRelatedAssignmentGroup</def:name>-->
-        <!--       <def:name>DocumentRelationType</def:name>-->
-        <def:name>DocumentType</def:name>
-        <def:name>DocumentVersion</def:name>
-        <!--       <def:name>DoubleValueProperty</def:name>-->
-        <!--       <def:name>EEComponentRole</def:name>-->
-        <!--       <def:name>EEComponentSpecification</def:name>-->
-        <!--        <def:name>EdgeMountedFixingRole</def:name>-->
-        <!--        <def:name>EdgeMountedFixingSpecification</def:name>-->
-        <def:name>ExtendableElement</def:name>
-        <!--       <def:name>ExtensionSlot</def:name>-->
-        <!--       <def:name>ExtensionSlotReference</def:name>-->
-        <!--       <def:name>ExternalMapping</def:name>-->
-        <!--       <def:name>ExternalMappingSpecification</def:name>-->
-        <!--        <def:name>FerriteRole</def:name>-->
-        <!--        <def:name>FerriteSpecification</def:name>-->
-        <!--       <def:name>FileBasedInstruction</def:name>-->
-        <!--        <def:name>FillerSpecification</def:name>-->
-        <!--        <def:name>FittingForm</def:name>-->
-        <!--        <def:name>FittingOutlet</def:name>-->
-        <!--        <def:name>FittingRole</def:name>-->
-        <!--        <def:name>FittingSpecification</def:name>-->
-        <!--        <def:name>FixingRole</def:name>-->
-        <!--        <def:name>FixingSpecification</def:name>-->
-<!--        <def:name>FlatCoreSpecification</def:name>-->
-<!--        <def:name>FoilShieldWindingType</def:name>-->
-        <!--       <def:name>FunctionalAssignmentGroup</def:name>-->
-        <!--       <def:name>FunctionalRequirement</def:name>-->
-        <!--       <def:name>FunctionalRequirementType</def:name>-->
-        <!--       <def:name>FunctionalStructureNode</def:name>-->
-        <!--       <def:name>FunctionalStructureSpecification</def:name>-->
-        <!--       <def:name>FuseComponent</def:name>-->
-        <!--       <def:name>FuseRole</def:name>-->
-        <!--       <def:name>FuseSpecification</def:name>-->
-        <!--       <def:name>FuseType</def:name>-->
-        <def:name checked="true">GeneralTechnicalPartSpecification</def:name>
-        <!--       <def:name>GeometryNode</def:name>-->
-        <!--       <def:name>GeometryNode2D</def:name>-->
-        <!--       <def:name>GeometryNode3D</def:name>-->
-        <!--       <def:name>GeometrySegment</def:name>-->
-        <!--       <def:name>GeometrySegment2D</def:name>-->
-        <!--       <def:name>GeometrySegment3D</def:name>-->
-        <!--       <def:name>GeometryType</def:name>-->
-        <!--        <def:name>GrommetMountingType</def:name>-->
-        <!--        <def:name>GrommetRole</def:name>-->
-        <!--        <def:name>GrommetSpecification</def:name>-->
-        <!--        <def:name>GrommetType</def:name>-->
-        <!--       <def:name>HarnessDrawingSpecification2D</def:name>-->
-        <!--       <def:name>HarnessGeometrySpecification3D</def:name>-->
-        <!--       <def:name>HistoryEntryType</def:name>-->
-        <!--        <def:name>HoleMountedFixingHoleShape</def:name>-->
-        <!--        <def:name>HoleMountedFixingHoleType</def:name>-->
-        <!--        <def:name>HoleMountedFixingRole</def:name>-->
-        <!--        <def:name>HoleMountedFixingSpecification</def:name>-->
-<!--        <def:name>HoleTerminalRole</def:name>-->
-<!--        <def:name>HoleTerminalSpecification</def:name>-->
-        <!--       <def:name>HousingComponent</def:name>-->
-        <!--       <def:name>HousingComponentReference</def:name>-->
-        <!--       <def:name>HousingComponentType</def:name>-->
-        <!--       <def:name>Instruction</def:name>-->
-<!--        <def:name>InsulationCrimpDetail</def:name>-->
-        <def:name checked="true">InsulationSpecification</def:name>
-<!--        <def:name>InsulationState</def:name>-->
-        <!--       <def:name>IntegerValueProperty</def:name>-->
-        <!--       <def:name>InternalComponentConnection</def:name>-->
-        <!--        <def:name>InternalTerminalConnection</def:name>-->
-        <!--       <def:name>ItemEquivalence</def:name>-->
-        <!--       <def:name>ItemHistoryEntry</def:name>-->
-        <def:name>ItemVersion</def:name>
-        <!--        <def:name>LabelPosition</def:name>-->
-        <!--        <def:name>LabelType</def:name>-->
-        <!--        <def:name>LabelingRole</def:name>-->
-        <!--        <def:name>LabelingSpecification</def:name>-->
-        <!--        <def:name>LabelingTechnology</def:name>-->
-<!--        <def:name>LanguageCode</def:name>-->
-        <!--       <def:name>LengthClassification</def:name>-->
-        <!--       <def:name>LevelOfApproval</def:name>-->
-        <!--       <def:name>LocalGeometrySpecification</def:name>-->
-        <!--       <def:name>LocalPosition</def:name>-->
-        <!--<def:name>LocalizedString</def:name>-->
-        <!--       <def:name>LocalizedStringProperty</def:name>-->
-        <!--<def:name>LocalizedTypedString</def:name>-->
-        <!--<def:name>LocalizedTypedStringType</def:name>-->
-        <!--       <def:name>Location</def:name>-->
-        <!--       <def:name>Mapping</def:name>-->
-        <!--       <def:name>MappingSpecification</def:name>-->
-<!--        <def:name>MassInformation</def:name>-->
-<!--        <def:name>MassInformationSource</def:name>-->
-        <def:name>Material</def:name>
-<!--        <def:name>MaterialComposition</def:name>-->
-        <!--       <def:name>MatingDetail</def:name>-->
-        <!--       <def:name>MatingPoint</def:name>-->
-        <!--       <def:name>MeasurePointPosition</def:name>-->
-        <!--       <def:name>MeasurementPoint</def:name>-->
-        <!--       <def:name>MeasurementPointReference</def:name>-->
-<!--        <def:name>ModularSlot</def:name>-->
-<!--        <def:name>ModularSlotAddOn</def:name>-->
-<!--        <def:name>ModularSlotReference</def:name>-->
-        <!--       <def:name>ModuleFamily</def:name>-->
-        <!--       <def:name>ModuleFamilySpecification</def:name>-->
-        <!--       <def:name>ModuleList</def:name>-->
-        <!--       <def:name>ModuleListSpecification</def:name>-->
-        <!--        <def:name>MultiCavityPlugRole</def:name>-->
-        <!--        <def:name>MultiCavityPlugSpecification</def:name>-->
-        <!--        <def:name>MultiCavitySealRole</def:name>-->
-        <!--        <def:name>MultiCavitySealSpecification</def:name>-->
-        <!--       <def:name>MultiFuseRole</def:name>-->
-        <!--       <def:name>MultiFuseSpecification</def:name>-->
-        <!--       <def:name>MultiFuseType</def:name>-->
-        <!--       <def:name>NURBSControlPoint</def:name>-->
-        <!--       <def:name>NURBSCurve</def:name>-->
-        <!--       <def:name>Net</def:name>-->
-        <!--       <def:name>NetGroup</def:name>-->
-        <!--       <def:name>NetSpecification</def:name>-->
-        <!--       <def:name>NetType</def:name>-->
-        <!--       <def:name>NetViewSpecification</def:name>-->
-        <!--       <def:name>NetworkNode</def:name>-->
-        <!--       <def:name>NetworkNodeSubType</def:name>-->
-        <!--       <def:name>NetworkNodeType</def:name>-->
-        <!--       <def:name>NetworkNodeViewItem</def:name>-->
-        <!--       <def:name>NetworkPort</def:name>-->
-        <!--       <def:name>NetworkPortViewItem</def:name>-->
-        <!--       <def:name>NetworkPortViewItemSide</def:name>-->
-        <!--       <def:name>NodeLocation</def:name>-->
-        <!--       <def:name>NodeMapping</def:name>-->
-        <!--       <def:name>NodeType</def:name>-->
-        <!--       <def:name>NominalVoltage</def:name>-->
-        <def:name checked="true">NumericalValue</def:name>
-        <!--       <def:name>NumericalValueProperty</def:name>-->
-        <def:name checked="true">OccurrenceOrUsage</def:name>
-        <!--       <def:name>OccurrenceOrUsageViewItem2D</def:name>-->
-        <!--       <def:name>OccurrenceOrUsageViewItem3D</def:name>-->
-<!--        <def:name>OnPointPlacement</def:name>-->
-<!--        <def:name>OnWayPlacement</def:name>-->
-<!--        <def:name>OpenCavitiesAssignment</def:name>-->
-<!--        <def:name>OpenWireEndTerminalRole</def:name>-->
-<!--        <def:name>OpenWireEndTerminalSpecification</def:name>-->
-<!--        <def:name>PartNature</def:name>-->
-        <def:name checked="true">PartOccurrence</def:name>
-        <def:name>PartOrUsageRelatedSpecification</def:name>
-        <!--       <def:name>PartRelation</def:name>-->
-        <!--       <def:name>PartRelationType</def:name>-->
-<!--        <def:name>PartStructureContentType</def:name>-->
-<!--        <def:name>PartStructureSpecification</def:name>-->
-        <!--       <def:name>PartSubstitutionSpecification</def:name>-->
-<!--        <def:name>PartUsage</def:name>-->
-<!--        <def:name>PartUsageSpecification</def:name>-->
-        <def:name>PartVersion</def:name>
-<!--        <def:name>PartWithSubComponentsRole</def:name>-->
-        <!--       <def:name>Path</def:name>-->
-        <!--       <def:name>PathSegment</def:name>-->
-        <!--       <def:name>Permission</def:name>-->
-        <!--       <def:name>Person</def:name>-->
-        <!--       <def:name>PinApplianceType</def:name>-->
-        <!--       <def:name>PinComponent</def:name>-->
-        <!--       <def:name>PinComponentBehavior</def:name>-->
-        <!--       <def:name>PinComponentReference</def:name>-->
-        <!--       <def:name>PinComponentType</def:name>-->
-        <!--       <def:name>PinCurrentInformation</def:name>-->
-        <!--       <def:name>PinCurrentType</def:name>-->
-        <!--       <def:name>PinOpticalInformation</def:name>-->
-        <!--       <def:name>PinTiming</def:name>-->
-        <!--       <def:name>PinTimingType</def:name>-->
-        <!--       <def:name>PinType</def:name>-->
-        <!--       <def:name>PinVoltageInformation</def:name>-->
-        <!--       <def:name>PinVoltageType</def:name>-->
-        <!--       <def:name>PinWireMappingPoint</def:name>-->
-        <!--       <def:name>PinWireMappingSpecification</def:name>-->
-        <!--       <def:name>PlaceableElementRole</def:name>-->
-        <!--       <def:name>PlaceableElementSpecification</def:name>-->
-        <!--       <def:name>Placement</def:name>-->
-        <!--       <def:name>PlacementPoint</def:name>-->
-        <!--       <def:name>PlacementPointPosition</def:name>-->
-        <!--       <def:name>PlacementPointReference</def:name>-->
-        <!--       <def:name>PlacementSpecification</def:name>-->
-        <!--       <def:name>PlacementType</def:name>-->
-        <def:name checked="true">PluggableTerminalRole</def:name>
-        <def:name checked="true">PluggableTerminalSpecification</def:name>
-        <def:name>PluggableTerminalType</def:name>
-        <!--       <def:name>PotentialDistributorRole</def:name>-->
-        <!--       <def:name>PotentialDistributorSpecification</def:name>-->
-        <!--       <def:name>PowerConsumption</def:name>-->
-        <!--       <def:name>PowerConsumptionType</def:name>-->
-<!--        <def:name>PrimaryLockingType</def:name>-->
-        <def:name checked="true">PrimaryPartType</def:name>
-        <!--       <def:name>PrimaryResourceType</def:name>-->
-        <!--       <def:name>Project</def:name>-->
-<!--        <def:name>ProtectionMaterialLength</def:name>-->
-        <!--       <def:name>RelaisApplianceType</def:name>-->
-        <!--       <def:name>RelaisType</def:name>-->
-        <!--       <def:name>RelayRole</def:name>-->
-        <!--       <def:name>RelaySpecification</def:name>-->
-        <!--       <def:name>RequirementsConformanceSpecification</def:name>-->
-        <!--       <def:name>RequirementsConformanceStatement</def:name>-->
-        <def:name>ResourceVersion</def:name>
-<!--        <def:name>RingTerminalRole</def:name>-->
-<!--        <def:name>RingTerminalSpecification</def:name>-->
-        <!--        <def:name>RobustnessClass</def:name>-->
-        <!--        <def:name>RobustnessClassReferenceSystem</def:name>-->
-        <!--        <def:name>RobustnessProperties</def:name>-->
-        <def:name checked="true">Role</def:name>
-        <def:name>RoutableElement</def:name>
-        <!--       <def:name>Routing</def:name>-->
-        <!--       <def:name>RoutingSpecification</def:name>-->
-<!--        <def:name>SealState</def:name>-->
-<!--        <def:name>SealedCavitiesAssignment</def:name>-->
-<!--        <def:name>SealingGeometry</def:name>-->
-<!--        <def:name>SecondaryLockingType</def:name>-->
-<!--        <def:name>SegmentConnectionPoint</def:name>-->
-        <!--       <def:name>SegmentConnectionPointHC</def:name>-->
-        <!--       <def:name>SegmentCrossSectionArea</def:name>-->
-        <!--       <def:name>SegmentCrossSectionAreaType</def:name>-->
-        <!--       <def:name>SegmentForm</def:name>-->
-        <!--       <def:name>SegmentLength</def:name>-->
-        <!--       <def:name>SegmentLocation</def:name>-->
-        <!--       <def:name>SegmentMapping</def:name>-->
-        <!--       <def:name>SheetOrChapter</def:name>-->
-<!--        <def:name>ShieldSpecification</def:name>-->
-        <!--        <def:name>ShrinkableTubeRole</def:name>-->
-        <!--        <def:name>ShrinkableTubeSpecification</def:name>-->
-        <!--       <def:name>Signal</def:name>-->
-        <!--       <def:name>SignalCurve</def:name>-->
-        <!--       <def:name>SignalDirection</def:name>-->
-        <!--       <def:name>SignalForm</def:name>-->
-        <!--       <def:name>SignalGraph</def:name>-->
-        <!--       <def:name>SignalGraphEdge</def:name>-->
-        <!--       <def:name>SignalGraphNode</def:name>-->
-        <!--       <def:name>SignalGraphRelation</def:name>-->
-        <!--       <def:name>SignalGraphRelationType</def:name>-->
-        <!--       <def:name>SignalInformationType</def:name>-->
-        <!--       <def:name>SignalSpecification</def:name>-->
-        <!--       <def:name>SignalSubType</def:name>-->
-        <!--       <def:name>SignalTransmissionMediumType</def:name>-->
-        <!--       <def:name>SignalType</def:name>-->
-        <!--       <def:name>SimpleValueProperty</def:name>-->
-        <def:name>Size</def:name>
-        <def:name checked="true">Slot</def:name>
-        <!--       <def:name>SlotCoupling</def:name>-->
-<!--        <def:name>SlotGender</def:name>-->
-<!--        <def:name>SlotLayout</def:name>-->
-<!--        <def:name>SlotLayoutType</def:name>-->
-        <!--       <def:name>SlotMapping</def:name>-->
-        <def:name>SlotReference</def:name>
-<!--        <def:name>SlotSealingType</def:name>-->
-        <def:name>SlotSpecification</def:name>
-<!--        <def:name>SoundDampingClass</def:name>-->
-<!--        <def:name>SpecificRole</def:name>-->
-        <def:name>Specification</def:name>
-<!--        <def:name>SpliceTerminalRole</def:name>-->
-<!--        <def:name>SpliceTerminalSpecification</def:name>-->
-<!--        <def:name>SpliceType</def:name>-->
-        <!--       <def:name>StatusOfApproval</def:name>-->
-        <!--        <def:name>StripeRole</def:name>-->
-        <!--        <def:name>StripeSpecification</def:name>-->
-        <!--       <def:name>SwitchingState</def:name>-->
-        <!--        <def:name>TapeRole</def:name>-->
-        <!--        <def:name>TapeSpecification</def:name>-->
-        <!--        <def:name>TapingDirection</def:name>-->
-<!--        <def:name>TemperatureInformation</def:name>-->
-<!--        <def:name>TemperatureType</def:name>-->
-<!--        <def:name>TerminalBoltNominalSize</def:name>-->
-<!--        <def:name>TerminalBoltType</def:name>-->
-<!--        <def:name>TerminalCurrentInformation</def:name>-->
-<!--        <def:name>TerminalDistanceInformation</def:name>-->
-<!--        <def:name>TerminalDistanceType</def:name>-->
-        <!--       <def:name>TerminalPairing</def:name>-->
-        <!--       <def:name>TerminalPairingSpecification</def:name>-->
-<!--        <def:name>TerminalPositionAssuranceState</def:name>-->
-        <def:name checked="true">TerminalReception</def:name>
-<!--        <def:name>TerminalReceptionGender</def:name>-->
-        <def:name checked="true">TerminalReceptionReference</def:name>
-        <def:name checked="true">TerminalReceptionSpecification</def:name>
-        <def:name checked="true">TerminalRole</def:name>
-<!--        <def:name>TerminalSealingType</def:name>-->
-        <def:name checked="true">TerminalSpecification</def:name>
-        <def:name>TerminalType</def:name>
-        <!--       <def:name>TextBasedInstruction</def:name>-->
-        <def:name checked="true">Tolerance</def:name>
-        <!--       <def:name>TopologyBendingRestriction</def:name>-->
-        <!--       <def:name>TopologyBendingRestrictionSpecification</def:name>-->
-        <!--       <def:name>TopologyGroupSpecification</def:name>-->
-        <!--       <def:name>TopologyMappingSpecification</def:name>-->
-        <!--       <def:name>TopologyNode</def:name>-->
-        <!--       <def:name>TopologySegment</def:name>-->
-        <!--       <def:name>TopologySpecification</def:name>-->
-        <!--       <def:name>TopologyZone</def:name>-->
-        <!--       <def:name>TopologyZoneSpecification</def:name>-->
-        <!--       <def:name>TopologyZoneType</def:name>-->
-        <!--        <def:name>TransmissionMediumType</def:name>-->
-        <!--        <def:name>TubeRole</def:name>-->
-        <!--        <def:name>TubeShape</def:name>-->
-        <!--        <def:name>TubeSlitStyle</def:name>-->
-        <!--        <def:name>TubeSpecification</def:name>-->
-        <!--       <def:name>TypeOfPermission</def:name>-->
-        <!--       <def:name>UsageConstraint</def:name>-->
-        <!--       <def:name>UsageConstraintSpecification</def:name>-->
-        <!--       <def:name>UsageConstraintType</def:name>-->
-        <!--       <def:name>UsageNode</def:name>-->
-        <!--       <def:name>UsageNodeSpecification</def:name>-->
-        <!--       <def:name>UsageNodeType</def:name>-->
-<!--        <def:name>ValueDetermination</def:name>-->
-        <def:name>ValueRange</def:name>
-        <!--       <def:name>ValueRangeProperty</def:name>-->
-        <def:name checked="true">ValueWithUnit</def:name>
-        <!--       <def:name>VariantCode</def:name>-->
-        <!--       <def:name>VariantCodeSpecification</def:name>-->
-        <!--       <def:name>VariantCodeType</def:name>-->
-        <!--       <def:name>VariantConfiguration</def:name>-->
-        <!--       <def:name>VariantConfigurationSpecification</def:name>-->
-        <!--       <def:name>VariantConfigurationType</def:name>-->
-        <!--       <def:name>VariantGroup</def:name>-->
-        <!--       <def:name>VariantGroupSpecification</def:name>-->
-        <!--       <def:name>VariantGroupType</def:name>-->
-        <!--       <def:name>VariantStructureNode</def:name>-->
-        <!--       <def:name>VariantStructureSpecification</def:name>-->
-        <!--       <def:name>VecContent</def:name>-->
-        <!--       <def:name>VecVersion</def:name>-->
-        <!--        <def:name>WindingFirmness</def:name>-->
-        <!--        <def:name>WindingType</def:name>-->
-<!--        <def:name>WireAddOnType</def:name>-->
-        <def:name>WireElement</def:name>
-        <def:name checked="true">WireElementReference</def:name>
-<!--        <def:name>WireElementShape</def:name>-->
-        <def:name checked="true">WireElementSpecification</def:name>
-        <def:name checked="true">WireEnd</def:name>
-        <def:name>WireEndAccessoryRole</def:name>
-        <def:name>WireEndAccessorySpecification</def:name>
-<!--        <def:name>WireGroupSpecification</def:name>-->
-<!--        <def:name>WireGroupType</def:name>-->
-<!--        <def:name>WireGrouping</def:name>-->
-<!--        <def:name>WireGroupingSpecification</def:name>-->
-        <def:name checked="true">WireLength</def:name>
-        <def:name checked="true">WireLengthType</def:name>
-        <def:name checked="true">WireMounting</def:name>
-        <def:name checked="true">WireMountingDetail</def:name>
-        <!--        <def:name>WireProtectionGroup</def:name>-->
-        <!--        <def:name>WireProtectionGroupSpecification</def:name>-->
-        <!--        <def:name>WireProtectionRole</def:name>-->
-        <!--        <def:name>WireProtectionSpecification</def:name>-->
-        <def:name checked="true">WireReception</def:name>
-<!--        <def:name>WireReceptionAddOn</def:name>-->
-        <def:name checked="true">WireReceptionReference</def:name>
-        <def:name checked="true">WireReceptionSpecification</def:name>
-        <def:name>WireReceptionType</def:name>
-        <def:name checked="true">WireRole</def:name>
-        <def:name>WireSpecification</def:name>
-<!--        <def:name>WireTupleSpecification</def:name>-->
-<!--        <def:name>WireTupleTermination</def:name>-->
-<!--        <def:name>WireTupleTerminationSpecification</def:name>-->
-        <def:name checked="true">WireType</def:name>
-        <!--       <def:name>ZoneAssignment</def:name>-->
-        <!--       <def:name>ZoneCoverage</def:name>-->
+        <def:class name="String">"></def:class>
+        <def:class name="Double"></def:class>
+        <def:class name="Integer"></def:class>
+        <def:class name="Int"></def:class>
+        <def:class name="Date"></def:class>
+        <def:class name="Boolean"></def:class>
+        <def:class name="AbstractSlot">
+            <def:attribute name="SlotNumber"/>
+            <def:attribute name="SlotSpecification"/>
+        </def:class>
+        <def:class name="AbstractSlotReference">
+            <def:attribute name="Identification"/>
+            <def:attribute name="ReferencedSlot"/>            
+        </def:class>
+        <def:class name="BoundingBox">
+            <def:attribute name="X"/>
+            <def:attribute name="Y"/>
+            <def:attribute name="Z"/>
+        </def:class>
+        <def:class name="CartesianDimension">
+            <def:attribute name="Height"/>
+            <def:attribute name="Width"/>            
+        </def:class>
+        <def:class name="CartesianPoint3D">
+            <def:attribute name="X"/>
+            <def:attribute name="Y"/>
+            <def:attribute name="Z"/>            
+        </def:class>
+        <def:class name="CartesianVector">            
+        </def:class>
+        <def:class name="CartesianVector3D">
+            <def:attribute name="X"/>
+            <def:attribute name="Y"/>
+            <def:attribute name="Z"/>            
+        </def:class>
+        <def:class name="Cavity">
+            <def:attribute name="CavityNumber"/>
+            <def:attribute name="CavitySpecification"/>
+            <def:attribute name="PositionDetail"/>
+        </def:class>
+        <def:class name="CavityMounting">">
+            <def:attribute name="EquippedCavityRef"/>            
+            <def:attribute name="CavityMountingDetail"/>
+        </def:class>
+        <def:class name="CavityMountingDetail">
+            <def:attribute name="EquippedCavityRef"/>
+            <def:attribute name="TerminalReceptionReference"/>
+        </def:class>
+        <def:class name="CavityPartRole"></def:class>
+        <def:class name="CavityPartSpecification"></def:class>
+        <def:class name="CavityPositionDetail">
+            <def:attribute name="Rotation"/>
+            <def:attribute name="InsertionDepth"/>
+        </def:class>
+        <def:class name="CavityReference">
+            <def:attribute name="Identification"/>
+            <def:attribute name="ReferencedCavity"/>
+        </def:class>
+        <def:class name="CavitySealRole">
+            <def:attribute name="CavitySealSpecification"/>
+        </def:class>
+        <def:class name="CavitySealSpecification"></def:class>
+        <def:class name="CavitySpecification">
+        </def:class>
+        <def:class name="Color">
+            <def:attribute name="Key"/>
+            <def:attribute name="ReferenceSystem"/>
+        </def:class>
+        <def:class name="ColorReferenceSystem"></def:class>
+        <def:class name="CompositionSpecification">
+            <def:attribute name="Component"/>
+        </def:class>
+        <def:class name="ConductorMaterial">
+            <def:attribute name="Material"/>
+        </def:class>
+        <def:class name="ConductorSpecification">
+            <def:attribute name="WireType"/>
+            <def:attribute name="CrossSectionArea"/>
+        </def:class>
+        <def:class name="ConductorStructure"></def:class>
+        <def:class name="ConductorType"></def:class>
+        <def:class name="ConfigurableElement"></def:class>
+        <def:class name="ConnectorHousingRole">
+            <def:attribute name="ConnectorHousingSpecification"/>
+            <def:attribute name="SlotReference"/>
+        </def:class>
+        <def:class name="ConnectorHousingSpecification">
+            <def:attribute name="Slot"/>                        
+        </def:class>
+        <def:class name="ConnectorLockingState"></def:class>
+        <def:class name="ConnectorLockingType"></def:class>
+        <def:class name="ConnectorOutletDirection"></def:class>
+        <def:class name="ConnectorPositionAssuranceState"></def:class>
+        <def:class name="ConnectorPositionAssuranceType"></def:class>
+        <def:class name="ContactPoint">
+            <def:attribute name="Identification"/>
+            <def:attribute name="MountedTerminal"/>
+            <def:attribute name="CavityMounting"/>
+            <def:attribute name="WireMounting"/>            
+        </def:class>
+        <def:class name="ContactingSpecification">
+            <def:attribute name="ContactPoint"/>
+        </def:class>
+        <def:class name="CoreSpecification">
+            <def:attribute name="OutsideDiameter"/>
+        </def:class>
+        <def:class name="CrimpDetail">
+            <def:attribute name="Size"></def:attribute>
+        </def:class>
+        <def:class name="CoreCrimpDetail">
+            <def:attribute name="InsulationCrimpDetails"></def:attribute>
+            <def:attribute name="AppliesTo"></def:attribute>
+        </def:class>
+        <def:class name="InsulationCrimpDetail">
+            <def:attribute name="PullOffForce"></def:attribute>
+            <def:attribute name="AppliesTo"></def:attribute>
+        </def:class>
+        <def:class name="CrimpShape"></def:class>
+        <def:class name="DocumentType"></def:class>
+        <def:class name="DocumentVersion">
+            <def:attribute name="DocumentNumber"/>            
+            <def:attribute name="DocumentType"/>            
+            <def:attribute name="DocumentVersion"/>            
+            <def:attribute name="DigitalRepresentationIndex"/>                        
+            <def:attribute name="ReferencedPart"/>
+            <def:attribute name="Specification"/>
+        </def:class>
+        <def:class name="ExtendableElement"></def:class>
+        <def:class name="GeneralTechnicalPartSpecification">
+            <def:attribute name="ColorInformation"/>                        
+            <def:attribute name="BoundingBox"/>                        
+        </def:class>
+        <def:class name="InsulationSpecification">
+            <def:attribute name="WireType"/>
+            <def:attribute name="BaseColor"/>
+            <def:attribute name="FirstIdentificationColor"/> 
+            <def:attribute name="SecondIdentificationColor"/>
+        </def:class>
+        <def:class name="ItemVersion">
+            <def:attribute name="CompanyName"/>            
+        </def:class>
+        <def:class name="Material">
+            <def:attribute name="Key"/>
+            <def:attribute name="ReferenceSystem"/>            
+        </def:class>
+        <def:class name="NumericalValue">
+            <def:attribute name="ValueComponent"/>
+            <def:attribute name="Tolerance"/>            
+        </def:class>
+        <def:class name="OccurrenceOrUsage">
+            <def:attribute name="Identification"/>
+            <def:attribute name="Role"/>
+        </def:class>
+        <def:class name="PartOccurrence">
+            <def:attribute name="Part"/>
+        </def:class>
+        <def:class name="PartOrUsageRelatedSpecification">
+            <def:attribute name="SpecialPartType"/>
+            <def:attribute name="DescribedPart"/>
+        </def:class>
+        <def:class name="PartVersion">
+            <def:attribute name="PartNumber"/>
+            <def:attribute name="PartVersion"/>
+            <def:attribute name="PrimaryPartType"/>
+        </def:class>
+        <def:class name="PluggableTerminalRole"></def:class>
+        <def:class name="PluggableTerminalSpecification">
+        </def:class>
+        <def:class name="PluggableTerminalType"></def:class>
+        <def:class name="PrimaryPartType"></def:class>
+        <def:class name="ResourceVersion">
+            <def:attribute name="ResourceNumber"/>
+            <def:attribute name="ResourceVersion"/>
+        </def:class>
+        <def:class name="Role">
+            <def:attribute name="Identification"/>
+        </def:class>
+        <def:class name="RoutableElement"></def:class>
+        <def:class name="Size">
+            <def:attribute name="Width"/>
+            <def:attribute name="Height"/>
+        </def:class>
+        <def:class name="Slot">
+            <def:attribute name="Cavity"/>
+        </def:class>
+        <def:class name="SlotReference">
+            <def:attribute name="CavityReference"/>
+        </def:class>
+        <def:class name="SlotSpecification"></def:class>
+        <def:class name="Specification">
+            <def:attribute name="Identification"/>
+        </def:class>
+        <def:class name="TerminalReception">
+            <def:attribute name="Identification"/>
+            <def:attribute name="TerminalReceptionSpecification"/>
+        </def:class>
+        <def:class name="TerminalReceptionReference">
+            <def:attribute name="Identification"/>
+            <def:attribute name="TerminalReception"/>            
+        </def:class>
+        <def:class name="TerminalReceptionSpecification">
+            <def:attribute name="PullOutForce"/>
+            <def:attribute name="TestingPullOutForce"/>
+            <def:attribute name="ContactRangeLength"/>
+            <def:attribute name="TerminalType"/>
+        </def:class>
+        <def:class name="TerminalRole">
+            <def:attribute name="TerminalSpecification"/>
+            <def:attribute name="TerminalReceptionReference"/>
+            <def:attribute name="WireReceptionReference"/>
+        </def:class>
+        <def:class name="TerminalSpecification">
+            <def:attribute name="VoltageRange"/>                        
+            <def:attribute name="ConnectionALength"/>                        
+            <def:attribute name="OverallLength"/>                      
+            <def:attribute name="TerminalReception"/>                        
+            <def:attribute name="WireReception"/>                      
+        </def:class>
+        <def:class name="TerminalType">
+            <def:attribute name="Name"/>                        
+            <def:attribute name="NominalSize"/>                                    
+        </def:class>
+        <def:class name="Tolerance">
+            <def:attribute name="LowerBoundary"/>                        
+            <def:attribute name="UpperBoundary"/>                                                
+        </def:class>
+        <def:class name="ValueRange">
+            <def:attribute name="Minimum"/>
+            <def:attribute name="Maximum"/>                        
+        </def:class>
+        <def:class name="ValueWithUnit">
+            <def:attribute name="UnitComponent"/>
+        </def:class>
+        <def:class name="WireElement">
+            <def:attribute name="Identification"/>
+            <def:attribute name="WireElementSpecification"/>
+            <def:attribute name="SubWireElement"/>
+        </def:class>
+        <def:class name="WireElementReference">
+            <def:attribute name="Identification"/>
+            <def:attribute name="ReferencedWireElement"/>
+            <def:attribute name="WireEnd"/>
+            <def:attribute name="WireLength"/>
+        </def:class>
+        <def:class name="WireElementSpecification">
+            <def:attribute name="Type"/>
+            <def:attribute name="OutsideDiameter"/>
+            <def:attribute name="ConductorSpecification"/>
+            <def:attribute name="InsulationSpecification"/>
+            <def:attribute name="SubWireElementSpecification"/>
+        </def:class>
+        <def:class name="WireEnd">
+            <def:attribute name="Identification"/>
+            <def:attribute name="PositionOnWire"/>
+            <def:attribute name="StrippingLength"/>
+        </def:class>
+        <def:class name="WireLength">
+            <def:attribute name="LengthType"/>
+            <def:attribute name="LengthValue"/>            
+        </def:class>
+        <def:class name="WireLengthType"></def:class>
+        <def:class name="WireMounting">
+            <def:attribute name="MountedCavitySeal"/>
+            <def:attribute name="ReferencedWireEnd"/>            
+            <def:attribute name="WireMountingDetail"/>                        
+        </def:class>
+        <def:class name="WireMountingDetail">
+            <def:attribute name="CoreCrimpSize"/>
+            <def:attribute name="InsulationCrimpSize"/>
+            <def:attribute name="WireTipProtrusion"/>
+            <def:attribute name="ContactedWireReception"/>
+            <def:attribute name="ReferencedWireEnd"/>
+        </def:class>
+        <def:class name="WireReception">
+            <def:attribute name="Identification"/>
+            <def:attribute name="Rotation"/>
+            <def:attribute name="WireReceptionSpecification"/>
+        </def:class>
+        <def:class name="WireReceptionReference">
+            <def:attribute name="Identification"/>
+            <def:attribute name="WireReception"/>            
+        </def:class>
+        <def:class name="WireReceptionSpecification">
+            <def:attribute name="CrimpConnectionLength"/>
+            <def:attribute name="CoreCrimpDetails"/>
+            <def:attribute name="InsulationDisplacementLength"/>
+            <def:attribute name="CoreCrossSectionArea"/>
+            <def:attribute name="WireTipProtrusion"/>
+            <def:attribute name="ConductorCrimpLength"/>
+            <def:attribute name="InsulationCrimpLength"/>            
+        </def:class>
+        <def:class name="WireReceptionType"></def:class>
+        <def:class name="WireRole">
+            <def:attribute name="WireSpecification"/>
+            <def:attribute name="WireElementReference"/>
+        </def:class>
+        <def:class name="WireSpecification">
+            <def:attribute name="WireElementSpecification"/>
+            <def:attribute name="WireElement"/>
+        </def:class>
+        <def:class name="WireType">
+            <def:attribute name="Type"/>
+            <def:attribute name="ReferenceSystem"/>            
+        </def:class>
     </xsl:variable>
     
     <xsl:variable name="nodeids-table">
@@ -597,7 +401,7 @@
         </UANodeSet>
     </xsl:template>
     
-    <xsl:template match="packagedElement[@xmi:type='uml:Class' and (@name = $whitelist/def:name)]" mode="create-type">
+    <xsl:template match="packagedElement[@xmi:type='uml:Class' and (@name = $whitelist/def:class/@name)]" mode="create-type">
         <UADataType>
             <xsl:if test="@isAbstract='true'">
                 <xsl:attribute name="IsAbstract" select="'true'"/>
@@ -684,14 +488,32 @@
     
     <xsl:template match="ownedAttribute[@xmi:type='uml:Property' and  (not(exists(@association)) or @aggregation='composite')]" mode="create-element">
         <xsl:variable name="type" select="key('idlookup',@type)"/>
-        <xsl:if test="$type[@name = $whitelist/def:name]">
-            <Field>
-                <xsl:apply-templates select="." mode="multiplicity-attributes"/>                        
-                <xsl:apply-templates select="." mode="create-name"/>
-                <xsl:attribute name="DataType"><xsl:apply-templates select="$type" mode="create-type-ref"/></xsl:attribute>
-                <Description><xsl:apply-templates select="." mode="documentation"/></Description>
-            </Field>
-        </xsl:if>            
+        <xsl:choose>
+            <xsl:when test="$type[@name = $whitelist/def:class/@name]">
+                <xsl:variable name="className">
+                    <xsl:apply-templates select="../@name" mode="format-name"/>
+                </xsl:variable>
+                <xsl:variable name="attributeName">
+                    <xsl:apply-templates select="./@name" mode="format-name"/>
+                </xsl:variable>
+                <xsl:choose>
+                    <xsl:when test="$whitelist/def:class[@name = $className]/def:attribute[@name=$attributeName]">
+                        <Field>
+                            <xsl:apply-templates select="." mode="multiplicity-attributes"/>                        
+                            <xsl:apply-templates select="." mode="create-name"/>
+                            <xsl:attribute name="DataType"><xsl:apply-templates select="$type" mode="create-type-ref"/></xsl:attribute>
+                            <Description><xsl:apply-templates select="." mode="documentation"/></Description>
+                        </Field>                                        
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:message select="concat('Filtered: ',$className,'.',$attributeName)"></xsl:message>                        
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:when>
+<!--            <xsl:otherwise>
+                <xsl:message select="concat('Attribute ', @name,' not included, because ',$type/@name,' is not included.')"/>
+            </xsl:otherwise>-->
+        </xsl:choose>
     </xsl:template>
     
     <!-- IDREF Mechanism -->
@@ -700,13 +522,26 @@
     <xsl:template match="ownedAttribute[@xmi:type='uml:Property' and exists(@association) and not(@aggregation='composite')]" mode="create-element">
         <!-- Don't create reference to enums and CDATAs -->
         <xsl:variable name="type" select="key('idlookup',@type)"/>
-        <xsl:if test="not($type/@xmi:type='uml:Enumeration') and ($type[@name = $whitelist/def:name])">
+        <xsl:if test="not($type/@xmi:type='uml:Enumeration') and ($type[@name = $whitelist/def:class/@name])">
             <!-- use role name if exists; otherwise use type name for name atttribute -->
-            <Field DataType="String">
-                <xsl:apply-templates select="." mode="multiplicity-attributes"/>
-                <xsl:apply-templates select="." mode="create-name"/>   
-                <Description><xsl:apply-templates select="." mode="documentation"/></Description>
-            </Field>               								                
+            <xsl:variable name="className">
+                <xsl:apply-templates select="../@name" mode="format-name"/>
+            </xsl:variable>
+            <xsl:variable name="attributeName">
+                <xsl:apply-templates select="./@name" mode="format-name"/>
+            </xsl:variable>
+            <xsl:choose>
+                <xsl:when test="$whitelist/def:class[@name = $className]/def:attribute[@name=$attributeName]">                    
+                    <Field DataType="String">
+                        <xsl:apply-templates select="." mode="multiplicity-attributes"/>
+                        <xsl:apply-templates select="." mode="create-name"/>   
+                        <Description><xsl:apply-templates select="." mode="documentation"/></Description>
+                    </Field>
+                </xsl:when>
+               <xsl:otherwise>
+                    <xsl:message select="concat('Filtered: ',$className,'.',$attributeName)"></xsl:message>                        
+                </xsl:otherwise>
+            </xsl:choose>                    
        </xsl:if>		
     </xsl:template>
     
@@ -853,7 +688,7 @@
     </xsl:template>
     
     
-    <xsl:template match="packagedElement[@xmi:type='uml:Enumeration' and @xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration  and (@name = $whitelist/def:name)]" mode="create-type">
+    <xsl:template match="packagedElement[@xmi:type='uml:Enumeration' and @xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration  and (@name = $whitelist/def:class/@name)]" mode="create-type">
         <UADataType>
             <xsl:attribute name="NodeId" select="key('nodeid-lookup',@xmi:id,$nodeids-table)/@nodeid"></xsl:attribute>
             <xsl:attribute name="BrowseName">
@@ -875,7 +710,7 @@
         </UADataType>                
     </xsl:template>
 
-    <xsl:template match="packagedElement[@xmi:type='uml:Enumeration' and not(@xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration) and (@name = $whitelist/def:name)]" mode="create-type">
+    <xsl:template match="packagedElement[@xmi:type='uml:Enumeration' and not(@xmi:id=//Stereotypes:ClosedEnumeration/@base_Enumeration) and (@name = $whitelist/def:class/@name)]" mode="create-type">
         <UAObjectType>
             <xsl:attribute name="NodeId" select="key('nodeid-lookup',@xmi:id,$nodeids-table)/@nodeid"></xsl:attribute>
             <xsl:attribute name="BrowseName">
