@@ -10,7 +10,7 @@ categories: []
 date: 2024-02-22
 lastmod: 2019-12-02T12:43:57+01:00
 draft: false
-review: true
+review: false
 
 history:
   - date: 2024-02-22
@@ -28,8 +28,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 20100
 ---
-
-{{< review >}}
 Various initiatives in the recent past have shown an increase in the importance of semantic models and the use of ontologies in industry (e.g. Catena-X). For this reason, and due to the opportunities and potential of this technology, it has been decided to also publish the VEC as an ontology in the future (starting in 2024). This should facilitate the creation of VEC-based solutions in the area of the Semantic Web / Linked Data / Knowledge Graphs and enable a simple transition between the different worlds.
 
 The RDF variant of the VEC is intended as an additional technical representation of the underlying UML model, in addition to the XML schema variant that has existed since the beginning. This is not a replacement or discontinuation of the previous approach, but rather an extension of the toolbox for application scenarios in which the more monolithic representation as an XML structure appears less suitable (e.g. distributed development in dataspace / cloud architectures). Nevertheless, the XML variant will retain its raison d'être in the future for use cases in which a compact and complete representation is required (e.g. archiving or passing on defined development statuses).

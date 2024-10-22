@@ -11,7 +11,7 @@ lastmod: 2020-05-29
 draft: false
 math: true
 diagram: true
-review: true
+review: false
 
 classes:
   - Wire_protection_occurrence
@@ -29,7 +29,6 @@ menu:
     #parent: Example Topic
     weight: 4000
 ---
-{{< review "KBLFRM-631" >}}
 
 {{< figure src="sealed-ring-terminal.png" lightbox="true" class="float-right" numbered="true" title="Sealed ring terminal with overlapping protection" width="400px" >}}
 

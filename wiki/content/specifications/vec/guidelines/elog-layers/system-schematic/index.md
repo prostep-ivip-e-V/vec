@@ -213,7 +213,6 @@ In the VEC these connections do not differ in modelling from 'normal' ones in th
 
 ### Inner Structure of Component Nodes
 
-{{< review KBLFRM-790 >}}
 
 In the system schematic, components are often considered black boxes. However, there scenarios where this is not sufficient and a view on the inner structure is required. Therefore, {{< vec-class ComponentNode>}} can be structured hierarchically. This requirement is also the logical consequence of the concept of subdivided {{< vec-class UsageNode>}}s. Since {{< vec-class ComponentNode>}}s are representatives / realizations of {{< vec-class UsageNode>}}s, at least the same representation options are required here (see [this implementation guideline]({{< relref "../../key-concepts/usage-nodes/" >}}) for more details).
 

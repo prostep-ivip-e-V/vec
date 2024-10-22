@@ -11,7 +11,7 @@ lastmod: 2021-05-19
 draft: false
 math: true
 diagram: true
-review: true
+review: false
 
 classes:
   - Connector_occurrence
@@ -28,8 +28,6 @@ menu:
     #parent: Example Topic
     weight: 6000
 ---
-{{< review "KBLFRM-1026" >}}
-
 For historical reasons, the representation of splices in the KBL is quite implicit. A splice is represented as a regular {{< kbl-class "Connector_housing" >}} respectively a {{< kbl-class "Connector_occurrence" >}}. It can be identified with the _Connector_occurrence.Usage_ and/or _Connector_housing.Housing_type_ (see {{< issue KBLFRM-1025 >}}). Due to these generic approach the splice is currently missing some splice specific information on the occurrence level in the KBL model:
 
 * **Type:** Defines if the splice is a parallel splice or an end splice. An end splice is a splice where all wires are inserted from the same side of the splice, a parallel splice has wires from both sides.

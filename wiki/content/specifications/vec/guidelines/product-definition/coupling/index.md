@@ -9,7 +9,7 @@ categories: []
 date: 2021-03-01
 lastmod: 2023-06-23T15:11:41+01:00
 draft: false
-review: true
+review: false
 
 classes:
   - CouplingSpecification
@@ -38,7 +38,6 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 400
 ---
-{{< review KBLFRM-1212 >}}
 The VEC interprets the term "coupling" to encompass various types of plug-in or detachable connections within the wiring system. This includes the linking of wiring harnesses with one another, wiring harnesses with E/E components, and E/E components with one another (for example, fuses within fuse carriers). A distinction must be made between two dimensions: on the one hand, the definition in the master data of the components for valid combinations and the mapping of the different sides (see  {{< vec-diagram "component-characteristics/cavity-mapping">}}), and on the other hand the definition of a coupling in the actual use (see  {{< vec-diagram "connectivity/coupling-specification">}}). This is indicated in the figure below on the left hand side for the part master data and on the right hand side for the harness definition.
 
 {{< figure src="coupling-overview.svg" title="Overview Coupling Concepts" numbered="true" lightbox="true">}}

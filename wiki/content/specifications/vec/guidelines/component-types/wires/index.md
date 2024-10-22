@@ -10,7 +10,7 @@ categories: []
 date: 2019-03-07
 lastmod: 2019-11-29T17:30:52+01:00
 draft: false
-review: true
+review: false
 
 classes:
   - WireSpecification
@@ -307,8 +307,6 @@ The figure below displays the structural representation of the example in terms 
 Again, on the left side is the {{< vec-class WireSpecification >}} with its contained {{< vec-class WireElement >}}, on the right side the {{< vec-class WireElementSpecification >}}s. It is worth noting that the white cores are represented by a single {{< vec-class WireElementSpecification >}}, whereas each is represented by an individual {{< vec-class WireElement >}}s.
 
 ## WireLength, WireEnds and Cutting & Stripping (especially for multi cores)
-
-{{< review "KBLFRM-1214" >}}
 
 {{% callout note %}}
 This section applies primarily to VEC 2.1 and later. The attributes _cutBackLength_ & _strippingLength_ in the {{< vec-class WireEnd >}}, required to create a detailed definition of the different lengths at the end of a wire and the displacement of the {{<vec-class WireElement>}}s to each other, were first introduced with version 2.1.
