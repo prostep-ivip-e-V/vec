@@ -1,6 +1,6 @@
 ---
-title: Partitioning, Sizing & Packaging (XML)
-linktitle: Partitioning, Sizing & Packaging
+title: Files, Partitioning, Sizing & Packaging (XML)
+linktitle: Files, Partitioning, Sizing & Packaging
 type: specs
 toc: true
 authors: [becker]
@@ -10,13 +10,24 @@ date: 2024-03-14T00:00:00.000Z
 lastmod: 2024-03-14T00:00:00.000Z
 draft: false
 review: false
-history: [{date: 2024-03-14T00:00:00.000Z, description: Extracted information from PSI recommendation and extended it where necesseray., issue: KBLFRM-1191}, {date: 2024-03-19T00:00:00.000Z, description: 'Consolidated information about the VEC package, added path format', issue: KBLFRM-1230}]
+history: [{date: 2024-03-14T00:00:00.000Z, description: Extracted information from PSI recommendation and extended it where necesseray., issue: KBLFRM-1191}, {date: 2024-03-19T00:00:00.000Z, description: 'Consolidated information about the VEC package, added path format', issue: KBLFRM-1230}, {date: 2024-10-22T00:00:00.000Z, description: Initial Definition of File-Extension, issue: KBLFRM-1100}]
 classes: null
 menu: {vec-guidelines: {parent: general, weight: 60}}
 weight: 5600
 ---
+## VEC XML Files
+{{< review KBLFRM-1100 >}}
+In general, XML data is structured in individual units of information, kown as documents. These documents can be transmitted through various machanisms, such as Web Services, enabling seamless exchange between systems. 
+Alternatively, they can be stored within a file system for persistent storage or later retrieval. T
 
-## Partitioning and Sizing of a VEC XML File
+his guideline gives best practices for the [Partitioning and Sizing](#partitioning-and-sizing) of such documents and explains how set of files can be exchanged together as a consistent archive ([VEC-Package](#vec-package))
+
+{{% callout note %}}
+When storing VEC XML data in the file system the file extension shall be `.vec`.
+{{% /callout %}}
+
+
+### Partitioning and Sizing
 
 In theory it is possible to export all data of a company that relates to the vehicle network in a single VEC XML file. However, this is not a very reasonable approach for several reasons. Amongst those are:
 
@@ -57,6 +68,11 @@ Depending on the individual requirements the technical format of the archive can
 -   ZIP
 -   or a zipped tar.
 
+{{% callout note %}}
+When storing a VEC Package in the file system the file extension shall be `.vecpackage.{zip|tar|tgz}`, depending on the used archive format.
+{{% /callout %}}
+
+
 In addition, the archive can contain any number of addditional data files. There is no restriction on the type or format of these files. A VEC-Package may contain multiple VEC files and /or it may contain, for example drawings as SVG, CAD models of the harness or components as JT models.
 
 The structure of the archive is not restricted. A VEC-Package may contain a flat set of files, but may also have a folder structure. It is recommended to use a folder structure to organize the files in the archive: e.g. to apply a grouping of all drawings or project related groupings.
@@ -92,3 +108,6 @@ In the the example, the package consists of the following files:
     -   `components/4711_a.svg`: A component symbol (to be used in the 2D-drawing) defined in SVG.
 
 In the VEC (especially in the `index.vec`) a {{< vec-class "DocumentVersion" >}} object is created for each external document (see lower half of the diagram). This {{< vec-class "DocumentVersion" >}} object references the {{< vec-class "PartVersion" >}} to which it is related.
+
+
+
