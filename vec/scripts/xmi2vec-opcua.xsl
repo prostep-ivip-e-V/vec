@@ -392,7 +392,7 @@
                 <DisplayName>OpenEnum</DisplayName>
                 <Documentation><![CDATA[Base class for all open enums.]]></Documentation>
                 <References>
-                    <Reference ReferenceType="HasSubType" IsForward="false">i=58</Reference>
+                    <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
                 </References>
             </UAObjectType>            
             <xsl:apply-templates select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[(@xmi:type='uml:Class' or @xmi:type='uml:Enumeration')and not(@xmi:id=//MagicDraw_Profile:Legend/@base_Class)]" mode="create-type">
@@ -416,12 +416,12 @@
             <References>                
                 <xsl:choose>
                     <xsl:when test="exists(generalization)">
-                        <Reference ReferenceType="HasSubType" IsForward="false">
+                        <Reference ReferenceType="HasSubtype" IsForward="false">
                             <xsl:value-of select="key('nodeid-lookup',generalization/@general,$nodeids-table)/@nodeid"/>
                         </Reference>                        
                     </xsl:when>
                     <xsl:otherwise>
-                        <Reference ReferenceType="HasSubType" IsForward="false">i=22</Reference>
+                        <Reference ReferenceType="HasSubtype" IsForward="false">i=22</Reference>
                     </xsl:otherwise>
                 </xsl:choose>
             </References>
@@ -697,7 +697,7 @@
             </xsl:attribute>
             <DisplayName><xsl:apply-templates select="@name" mode="format-name"/></DisplayName>
             <References>
-                <Reference ReferenceType="HasSubType" IsForward="false">i=29</Reference>
+                <Reference ReferenceType="HasSubtype" IsForward="false">i=29</Reference>
             </References>
             <Definition>
                 <xsl:attribute name="Name">
@@ -720,7 +720,7 @@
             <DisplayName><xsl:apply-templates select="@name" mode="format-name"/></DisplayName>
             <Documentation><xsl:apply-templates select="." mode="documentation"/></Documentation>
             <References>
-                <Reference ReferenceType="HasSubType" IsForward="false">ns=1;i=1000</Reference>
+                <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1000</Reference>
             </References>
         </UAObjectType>
         <xsl:apply-templates
@@ -747,7 +747,7 @@
             <DisplayName><xsl:apply-templates select="@name" mode="format-name"/></DisplayName>
             <Documentation><xsl:apply-templates select="." mode="documentation"/></Documentation>
             <References>
-                <Reference ReferenceType="HasSubType" IsForward="false">
+                <Reference ReferenceType="HasSubtype" IsForward="false">
                     <xsl:value-of select="key('nodeid-lookup',../@xmi:id,$nodeids-table)/@nodeid"/>
                 </Reference>
             </References>     
