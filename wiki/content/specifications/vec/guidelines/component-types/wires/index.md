@@ -26,6 +26,9 @@ classes:
   - WireElementReference
 
 history:
+  - date: 2024-12-19T00:00:00Z
+    description: "Added description for layering and odering of wire elements."
+    issue: "KBLFRM-1234" 
   - date: 2023-11-06T00:00:00Z
     description: "Added a section about wire length, wire ends, stripping and cutting."
     issue: "KBLFRM-1214"
@@ -271,6 +274,34 @@ The following is a XML listing of the VEC representation of the [multicore examp
     </Unit>
 </vec:VecContent>
 ```
+
+### Ordering & Layering of WireElements
+
+{{< review KBLFRM-1234 >}}
+
+{{% callout note %}}
+This section applies to VEC 2.2 and later. 
+{{% /callout %}}
+
+{{< figure src="wireelement-index-layer.svg" lightbox="true" numbered="true" title="Complex Wire Structure" class="float-right w-25" >}}
+
+When specifying complex wires, the order and layering of {{<vec-class WireElement >}}s must be specifiable in some case. An example of this can be seen on the right in Figure "[Complex Wire Structure]({{<relref "#figure-complex-wire-structure">}})". 
+
+The hierarchical `subWireElement` relationship between {{<vec-class WireElement >}}s is defined with a "contained in" semantics and is strictly hierarchical. In this sense, all conductors A-F in the example are sub-elements of the root element, the cable sheath. Although conductor F is located within the circle formed by A-E, it is not a true sub-element of any of the other elements. This merely represents the spatial arrangement of the elements relative to one another at the same level of hierarchical definition. This arrangement is defined with attributes `layer` and `index` within the {{<vec-class WireElement >}}.
+
+The `layer` defines levels for the _SubWireElements_ of an individual  {{<vec-class WireElement >}} from the inside to the outside. {{<vec-class WireElement >}} with same value for `level` are on the same level. The `index` defines a natural order on the {{<vec-class WireElement >}}s that are on the same level. Meaning, two  {{<vec-class WireElement >}}s `A` & `B` are next to each other when there is no {{<vec-class WireElement >}} `C` with `C.index` value between `A.index` and `B.index`. The `index` defines an order, not a direction (e.g. clockwise vs. counter clockwise), since that dependends on the viewing direction (see figure).
+
+If any  _SubWireElement_ of a {{<vec-class WireElement >}} defines `layer` or `index`, all _SubWireElement_ of this {{<vec-class WireElement >}} shall define it.
+
+The following diagram shows the corresponding structure with {{<vec-class WireElement >}}s. The {{<vec-class WireElementSpecification >}}s were omitted for the sake of clarity.
+
+{{< figure src="wireelement-order-and-layer.svg" lightbox="true" numbered="true" title="Specification of a Order and Layers in the VEC">}}
+
+[Ribbon cables]({{<relref  "#ribbon-cables" >}}) are also an example where the `index` is relevant.
+
+{{% callout note %}}
+Defining `layer` and `index` within the {{<vec-class WireElement >}} results in this information being part of the {{<vec-class WireSpecification >}} rather than the {{<vec-class WireElementSpecification >}}. Consequently, this means that this information cannot be shared between different WireSpecifications. This was an intentional design decision, as the use case for such information reuse is very limited on one hand, while on the other hand, the complexity of the modeling required for such a reuse would have increased drastically.
+{{% /callout %}}
 
 ## Special Cases of Wires
 
