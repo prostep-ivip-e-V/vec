@@ -15,7 +15,7 @@ menu:
   vec-guidelines:
     # Toplevel element. For sub sections the identifier of the subsection
     parent: Topology
-    weight: 18001
+    weight: 100
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 18001
