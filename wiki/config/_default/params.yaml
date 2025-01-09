@@ -131,5 +131,5 @@ VEC:
   current_classes_url: "specifications/vec/v210/classes"
 KBL:
   current_version: "2.5.sr1"
-  current_base_url: "specifications/kbl/25-sr1"
+  current_base_url: "specifications/kbl/v25-sr1"
   current_classes_url: "specifications/kbl/v25-sr1/classes"
