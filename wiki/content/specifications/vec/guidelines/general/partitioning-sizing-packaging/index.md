@@ -18,9 +18,9 @@ weight: 5600
 ## VEC XML Files
 {{< review KBLFRM-1100 >}}
 In general, XML data is structured in individual units of information, kown as documents. These documents can be transmitted through various machanisms, such as Web Services, enabling seamless exchange between systems. 
-Alternatively, they can be stored within a file system for persistent storage or later retrieval. T
+Alternatively, they can be stored within a file system for persistent storage or later retrieval. 
 
-his guideline gives best practices for the [Partitioning and Sizing](#partitioning-and-sizing) of such documents and explains how set of files can be exchanged together as a consistent archive ([VEC-Package](#vec-package))
+This guideline gives best practices for the [Partitioning and Sizing](#partitioning-and-sizing) of such documents and explains how set of files can be exchanged together as a consistent archive ([VEC-Package](#vec-package))
 
 {{% callout note %}}
 When storing VEC XML data in the file system the file extension shall be `.vec`.
