@@ -105,25 +105,34 @@ In the VEC, all payload data is contained within {{<vec-class DocumentVersion>}}
 1. It is common practice to describe components in individual datasets/documents and publish them separately. This means one document per connector, wire, etc. (see [Partitioning and Sizing]({{<relref "../../general/partitioning-sizing-packaging/#partitioning-and-sizing">}})).
 1. It is also common for a wiring harness to be fully described in a 150% dataset, containing all information about the used component occurrences, modules, and so on.
 
-This means that {{<vec-class DocumentVersion>}}s with `DocumentType=PartMaster` must be created for all components used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except the Instance of {{<kbl-class Part_With_Title_Block>}}.
+This means that a {{<vec-class DocumentVersion>}}s with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except the Instance of {{<kbl-class Part_With_Title_Block>}}.
 
 For the {{<kbl-class Harness>}} itself, a {{<vec-class DocumentVersion>}} with `DocumentType=HarnessDescription` is created. This document contains all relevant information about the harness as well as the {{<vec-class specification>}}s for the {{<kbl-class Module>}}s and {{<kbl-class Harness_configuration>}}s.
 
+
 ### PartMaster Document
 
-Which Specs are created
+A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see [Component Description]({{<relref "../component-description">}}). The following specifications have to be created. The Mapping of those is described in the section [Specifications]({{<relref "#specifications">}}): 
+
+* {{<vec-class GeneralTechnicalPartSpecification>}} (for all {{<kbl-class Part>}}).
+* {{<vec-class ConnectorHousingSpecification>}} (onliy for KBL {{<kbl-class Connector_Housing>}})
+
 
 ### HarnessDescription Document
 
-Which Specs are created.
+A `HarnessDescription` document contains alls {{< vec-class Specification >}} that are required to describe a Harness.
+
+* {{<vec-class TopologySpecification >}}
 
 ## Specifications
 
 ### GeneralTechnicalPartSpecification
 
-## Core Elements
+### ConnectorHousingSpecification
 
-### Units
+### TopologySpecification
+
+## Core Elements
 
 ### String / LocalizedStrings
 
@@ -132,6 +141,8 @@ TODO: Locale must be guessed.
 {{% /callout %}}
 
 ### NumericalValue
+
+### Units
 
 To define numerical values, both the VEC and the KBL require units. If the attributes `Si_unit_name`, `Si_prefix`, and `Si_dimension` have been used to define a KBL {{< kbl-class Unit>}}, it can be mapped straight forward to a {{<vec-class SIUnit>}} in the VEC.
 
