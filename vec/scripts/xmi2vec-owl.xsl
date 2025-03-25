@@ -63,7 +63,8 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             </owl:Class>
             
             <owl:DatatypeProperty rdf:about="#enumLiteral">
-                <rdfs:label xml:lang="en">enumLiteral</rdfs:label>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+                <rdfs:label xml:lang="en">enumLiteral</rdfs:label>                
                 <rdfs:comment xml:lang="en">Defines the literal value of an enumeration as represented in the model.</rdfs:comment>
                 <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
                 <rdfs:domain rdf:resource="#Enumeration"></rdfs:domain>                
@@ -89,6 +90,7 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             </owl:Class>
             
             <owl:DataProperty rdf:about="#orderedIndex">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
                 <rdfs:comment xml:lang="en">Defines the order of Ordered elements. Lower indices are further forward in a list. 0 is the lowest index, i.e. the first element.</rdfs:comment>
                 <rdfs:domain rdf:resource="#Ordered"></rdfs:domain>
                 <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"></rdfs:range>
@@ -117,11 +119,13 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <!-- General Extensions of the UML Model -->
             
             <owl:ObjectProperty rdf:about="#contains">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
                 <rdfs:label xml:lang="en">contains</rdfs:label>
                 <rdfs:comment xml:lang="en">This is the representation of the containment modeled in the UML. All associations that are a "containment" in the UML model are subproperties of this property.</rdfs:comment>
             </owl:ObjectProperty>
 
             <owl:ObjectProperty rdf:about="#parent">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
                 <rdfs:label xml:lang="en">parent</rdfs:label>
                 <rdfs:comment xml:lang="en">The inverse of 'contains'.</rdfs:comment>
                 <owl:inverseOf rdf:resource="#contains"/>                
@@ -235,6 +239,7 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <xsl:apply-templates select="." mode="label"/>
             <xsl:apply-templates select="." mode="comment"/>
             <xsl:apply-templates select="." mode="deprecation"/>
+            <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
             
             <rdfs:range>
                 <xsl:apply-templates select="$type" mode="resource"/>
@@ -256,10 +261,11 @@ Timestamp: <xsl:value-of select="$timestamp"/>
         <xsl:variable name="isNonUniqueOrOrdered" select="ext:isNonUniqueOrOrdered(.)"/>
         <xsl:variable name="isAssociation" select="ext:isAssociation(.)"/>
         <xsl:variable name="isNonUniqueOrOrderedAssociation" select="($isNonUniqueOrOrdered and $isAssociation)"/>
-        <owl:ObjectProperty>
+        <owl:ObjectProperty>         
             <xsl:apply-templates select="." mode="about"/>
             <xsl:apply-templates select="." mode="label"/>
             <xsl:apply-templates select="." mode="comment"/>
+            <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
             <xsl:if test="$isNonUniqueOrOrderedAssociation">
                 <rdfs:comment>This association is defined as unique='<xsl:value-of select="@isUnique"/>' and ordered='<xsl:value-of select="@isOrdered='true'"/>'. This can not be represented efficiently directly in RDF/OWL. Therefore, this association references Wrappers as proxies to the actual elements, instead of the actual elements itself (like a regular association).</rdfs:comment>
                 <rdfs:subPropertyOf rdf:resource="#contains"/>
@@ -300,6 +306,7 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             </owl:Class>
             
             <owl:ObjectProperty rdf:about="#{ext:first-lower($bucketClassName)}Item">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
                 <rdfs:domain rdf:resource="#{ext:bucketClassName($type)}"></rdfs:domain>
                 <rdfs:range>
                     <xsl:apply-templates select="$type" mode="resource"/>
