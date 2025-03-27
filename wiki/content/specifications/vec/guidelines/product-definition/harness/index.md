@@ -123,6 +123,12 @@ A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecificati
 A `HarnessDescription` document contains alls {{< vec-class Specification >}} that are required to describe a Harness.
 
 * {{<vec-class TopologySpecification >}}
+* {{<vec-class CompositionSpecification >}} (Occurrences)
+* {{<vec-class CompositionSpecification >}} (Modules)
+
+{{% callout warning %}}
+Explain the speciality of two composition specifications
+{{% /callout %}}
 
 ## Specifications
 
@@ -132,7 +138,18 @@ A `HarnessDescription` document contains alls {{< vec-class Specification >}} th
 
 ### TopologySpecification
 
+### CompositionSpecification
+
+Modules describe dual character of modules (occurrence & part). 
+
+#### PartOcurrences
+Identification is mandatory... not all KBL Occurrences have mandatory indentification.
+
 ## Core Elements
+
+### Custom Properties / Installation Information
+
+KBL Installation Information not always used as custom property.
 
 ### String / LocalizedStrings
 
