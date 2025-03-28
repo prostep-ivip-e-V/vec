@@ -1,6 +1,6 @@
 # VEC Contribution Guide
 
-The VEC and ECAD-WIKI are published under the MIT License. If you would like to contribute something this document should help you get started.
+Thanks for considering to contribute to the Vehicle Electric Container. The VEC and ECAD-WIKI are published under the MIT License. If you would like to contribute something this document should help you get started.
 
 ## Active Participation and Contribution
 
