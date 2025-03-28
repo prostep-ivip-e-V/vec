@@ -15,8 +15,8 @@ function createDirectories(pathname) {
 }
 
 const pdfPages = [
-    { url: 'http://localhost:8080/specifications/vec/guidelines/printable.html', outputPath: './pdf/specifications/vec/guidelines/vec-guidelines.pdf' },
-    { url: 'http://localhost:8080/specifications/kbl/guidelines/printable.html', outputPath: './pdf/specifications/kbl/guidelines/kbl-guidelines.pdf' },
+    { url: 'http://localhost:8080/specifications/vec/guidelines/index.html', outputPath: './pdf/specifications/vec/guidelines/vec-guidelines.pdf' },
+    { url: 'http://localhost:8080/specifications/kbl/guidelines/index.html', outputPath: './pdf/specifications/kbl/guidelines/kbl-guidelines.pdf' },
     // Add more pages as needed
 ];
 
@@ -24,7 +24,12 @@ const pdfPages = [
     
 
     // Launch a headless browser
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
 
     for (const pageConfig of pdfPages) {
     // Open a new page

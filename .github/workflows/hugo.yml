@@ -87,9 +87,12 @@ jobs:
           log: "log.txt"
           logTime: "false"
           custom404Page: "/404.html"
-      - run: |
-          curl -vvvv http://localhost:8080/index.html
-          cat log.txt            
+      - name: Generate PDF
+        run: |
+          cd wiki && \
+          npm install puppeteer && \
+          node ./generate-pdf.js && \
+          cp -r pdf/* public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
