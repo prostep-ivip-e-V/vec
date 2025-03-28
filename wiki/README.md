@@ -1,4 +1,3 @@
-[![pipeline status](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/badges/master/pipeline.svg)](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/commits/master)
 ---
 
 This is the source for the new ECAD-WIKI. The current Wiki can be found under 
