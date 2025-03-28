@@ -57,8 +57,8 @@ jobs:
           && hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"/ \
-          && mkdir -p  ./wiki/public/ontologies/2024/03/vec/ \
-          && cp ./wiki/content/specifications/vec/v210/vec-2.1.0-ontology.ttl ./wiki/public/ontologies/2024/03/vec/index.html
+          && mkdir -p  ./public/ontologies/2024/03/vec/ \
+          && cp ./content/specifications/vec/v210/vec-2.1.0-ontology.ttl ./public/ontologies/2024/03/vec/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
