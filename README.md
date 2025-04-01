@@ -9,6 +9,8 @@ The Vehicle Electric Container - Foundation for the Digitalization of your E/E P
 
 Get the most comprehensive standard for the digital representation of information created during the Electrical System Development Process.
 
+All documentation, the released specifications and implementation guidelines can be found in the [ECAD-WIKI](https://ecad-wiki.prostep.org). This repository hosts the sources for everything and the issue management.
+
 ## Overview
 
 - **VEC Model Development:** Development of the actual VEC model with its textual specification and the
