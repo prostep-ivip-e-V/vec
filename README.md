@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./media/Prostep_Logo_weiss_rgb.png">
-  <img alt="prostep ivip association logo" src="./media/Prostep_Logo_dunklblau_rgb.png" width="250px">
+  <source media="(prefers-color-scheme: dark)" srcset="media/prostep_Logo_weiss_rgb_.png">
+  <img alt="prostep ivip association logo" src="media/Prostep_Logo_dunklblau_rgb.png" width="250px">
 </picture>
 
 # Vehicle Electric Container
