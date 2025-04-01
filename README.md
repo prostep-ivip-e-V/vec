@@ -1,4 +1,7 @@
-<img src="https://www.prostep.org/typo3conf/ext/sitepackage/Resources/Public/Images/prostep_logo.svg" alt="prostep ivip logo" width="250px">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./media/Prostep_Logo_weiss_rgb.png">
+  <img alt="prostep ivip association logo" src="./media/Prostep_Logo_dunklblau_rgb.png" width="250px">
+</picture>
 
 # Vehicle Electric Container
 
