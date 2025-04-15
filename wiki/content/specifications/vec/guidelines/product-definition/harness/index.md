@@ -90,7 +90,7 @@ The following {{<vec-class PrimaryPartType >}} could be used for KBL Parts:
 | {{<kbl-class Component_box >}} | `EEComponent` |
 | {{<kbl-class Component >}} | `EEComponent` |
 
-When creating {{<vec-class PartVersion >}} in the VEC, basically a {{<vec-class PartVersion >}} Object is required for each KBL {{<kbl-class Part>}}. Those can be found under `/KBL_container/(Accessory|AssemblyPart|CavityPlug|...)`, `/KBL_container/Harness/Module` and `/KBL_container/Harness/Harness_configuration`.
+When mapping into the VEC, a {{<vec-class PartVersion >}} Object is required for each KBL {{<kbl-class Part>}}. Those can be found under `/KBL_container/(Accessory|AssemblyPart|CavityPlug|...)`, `/KBL_container/Harness/Module` and `/KBL_container/Harness/Harness_configuration`.
 
 {{% callout note %}}
 **Data Quality**: The KBL allows to have the same `Part_number` under different classifications. E.g. a tape can be used as {{<kbl-class Wire_protection>}} or as {{<kbl-class Accessory>}} to some other part (see {{<kbl-class Part>}} for more details). 
@@ -100,17 +100,21 @@ Due to other modeling approaches in the VEC, there is no longer any need for thi
 
 ## DocumentVersions
 
-In the VEC, all payload data is contained within {{<vec-class DocumentVersion>}}s. Typically, you would structure these according to the actual documents used in the process. Unfortunately, this concept in its detail form is not present in the KBL. Therefore, for the generic conversion described here, practical assumptions need to be made:
+In the VEC, all payload data is contained within {{<vec-class DocumentVersion>}}s. Typically, you would structure those according to the actual documents used in the process. Unfortunately, this concept in its detail form is not present in the KBL. Therefore, for the generic conversion described here, practical assumptions need to be made:
 
-1. It is common practice to describe components in individual datasets/documents and publish them separately. This means one document per connector, wire, etc. (see [Partitioning and Sizing]({{<relref "../../general/partitioning-sizing-packaging/#partitioning-and-sizing">}})).
-1. It is also common for a wiring harness to be fully described in a 150% dataset, containing all information about the used component occurrences, modules, and so on.
+1. It is common practice to describe components in individual datasets/documents and publish them separately &rarr; one {{<vec-class  DocumentVersion >}} for each harness component (e.g. connector, wire and terminal, see [Partitioning and Sizing]({{<relref "../../general/partitioning-sizing-packaging/#partitioning-and-sizing">}})), see section [PartMaster Documents]({{<relref "#partmaster-documents">}}).
+1. It is also common for a wiring harness to be fully described in a single 150% dataset, containing all information about the used component occurrences, variants, connectivtiy, dimensioning, and so on &rarr; one {{< vec-class DocumentVersion >}} for the harness itself, see section [HarnessDescription Document]({{<relref "#harnessdescription-document">}}).
 
-This means that a {{<vec-class DocumentVersion>}}s with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except the Instance of {{<kbl-class Part_With_Title_Block>}}.
+This means that a {{<vec-class DocumentVersion>}}s with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except instances of {{<kbl-class Part_With_Title_Block>}}.
 
 For the {{<kbl-class Harness>}} itself, a {{<vec-class DocumentVersion>}} with `DocumentType=HarnessDescription` is created. This document contains all relevant information about the harness as well as the {{<vec-class specification>}}s for the {{<kbl-class Module>}}s and {{<kbl-class Harness_configuration>}}s.
 
 
-### PartMaster Document
+### PartMaster Documents
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
 
 A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see [Component Description]({{<relref "../component-description">}}). The following specifications have to be created. The Mapping of those is described in the section [Specifications]({{<relref "#specifications">}}): 
 
@@ -119,6 +123,11 @@ A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecificati
 
 
 ### HarnessDescription Document
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
 
 A `HarnessDescription` document contains alls {{< vec-class Specification >}} that are required to describe a Harness.
 
