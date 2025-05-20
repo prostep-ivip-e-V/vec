@@ -48,8 +48,11 @@ The implementation guideline focuses on the structural mapping and does not cove
 The guideline follows a logical order rather than an order dictated by model dependencies. Since the VEC is a graph—not a strict tree—it allows cross-references between branches. As a result, you may encounter cases where a model element references another model element whose mapping is described later in this guideline.
 
 The reference implementation addresses this challenge by using a two-phase approach.
+{{% callout note %}}
+VEC XML snippets in this guideline are taken from the KBL to VEC conversion output of the reference implementation. Input for that is the sample KBL file provided here: [Volkswagen - VOBES - Component Box]({{< relref "/sample/2015-03-19-volkswagen-vobes-component-box" >}}).
+{{% /callout %}}
 
-## The Beginning
+## Starting Point
 
 Everything starts with the model root element {{< vec-class veccontent >}}, see the figure below (all attributes omitted).
 
@@ -61,7 +64,7 @@ The following sub elements of the VEC are required for a harness description and
 - [DocumentVersions]({{< relref "#documentversions" >}})
 - [Units]({{< relref "#units" >}})
 
-## PartVersions
+### PartVersions
 
 The concept of parts is quite different in KBL and VEC. In the VEC a {{<vec-class PartVersion>}} is just a PDM-Header for the part. The various aspects of a part (e.g. is it a wire or connector) are handled by different types of {{<vec-class PartOrUsageRelatedSpecification >}}s contained in the {{<vec-class DocumentVersion >}} describing the part. In the KBL, the different types of parts are expressed as subclasses of {{<kbl-class Part>}}. The concept in the VEC that most closely reflects the approach of the KBL is the {{<vec-class PrimaryPartType >}}. 
 
@@ -98,45 +101,170 @@ When mapping into the VEC, a {{<vec-class PartVersion >}} Object is required for
 Due to other modeling approaches in the VEC, there is no longer any need for this. Multiple occurrences of the same part version in the VEC are considered a semantic error. Deduplication should be carried out in post-processing.
 {{% /callout %}}
 
-## DocumentVersions
+### DocumentVersions
 
 In the VEC, all payload data is contained within {{<vec-class DocumentVersion>}}s. Typically, you would structure those according to the actual documents used in the process. Unfortunately, this concept in its detail form is not present in the KBL. Therefore, for the generic conversion described here, practical assumptions need to be made:
 
-1. It is common practice to describe components in individual datasets/documents and publish them separately &rarr; one {{<vec-class  DocumentVersion >}} for each harness component (e.g. connector, wire and terminal, see [Partitioning and Sizing]({{<relref "../../general/partitioning-sizing-packaging/#partitioning-and-sizing">}})), see section [PartMaster Documents]({{<relref "#partmaster-documents">}}).
-1. It is also common for a wiring harness to be fully described in a single 150% dataset, containing all information about the used component occurrences, variants, connectivtiy, dimensioning, and so on &rarr; one {{< vec-class DocumentVersion >}} for the harness itself, see section [HarnessDescription Document]({{<relref "#harnessdescription-document">}}).
+1. It is common practice to describe components in individual datasets/documents and publish them separately &rarr; one {{<vec-class  DocumentVersion >}} for each harness component (e.g. connector, wire and terminal, see [Partitioning and Sizing]({{<relref "../../general/partitioning-sizing-packaging/#partitioning-and-sizing">}})), see section [Part Master Data]({{<relref "#part-master-data">}}).
+1. It is also common for a wiring harness to be fully described in a single 150% dataset, containing all information about the used component occurrences, variants, connectivtiy, dimensioning, and so on &rarr; one {{< vec-class DocumentVersion >}} for the harness itself, see section [Harness Description]({{<relref "#harness-description">}}).
 
 This means that a {{<vec-class DocumentVersion>}}s with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except instances of {{<kbl-class Part_With_Title_Block>}}.
 
 For the {{<kbl-class Harness>}} itself, a {{<vec-class DocumentVersion>}} with `DocumentType=HarnessDescription` is created. This document contains all relevant information about the harness as well as the {{<vec-class specification>}}s for the {{<kbl-class Module>}}s and {{<kbl-class Harness_configuration>}}s.
 
 
-### PartMaster Documents
+## Part Master Data
 
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
-
+For all components used in a wiring harness, some part master data is required. 
 A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see [Component Description]({{<relref "../component-description">}}). The following specifications have to be created. The Mapping of those is described in the section [Specifications]({{<relref "#specifications">}}): 
+
+{{% callout note %}}
+**Data Quality**: Since the scope of the KBL is the product definition of a harness, the contained master data is limited to the bare minimum (e.g. cavities of a connector, cross section area and color of the wire). On the other hand, the VEC offers a wide range of options for a detailed component description. In a real scenario, it would therefore be more likely to enrich the data with information from a library during conversion than to transfer the master data from the KBL directly 1:1.
+{{% /callout %}}
 
 * {{<vec-class GeneralTechnicalPartSpecification>}} (for all {{<kbl-class Part>}}).
 * {{<vec-class ConnectorHousingSpecification>}} (onliy for KBL {{<kbl-class Connector_Housing>}})
 
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
 
-### HarnessDescription Document
+
+## Harness Description
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+A `HarnessDescription` document contains all {{< vec-class Specification >}}s that are required to describe a Harness. As a foundation those are often using the part master data. With the specifactions the VEC has a more "view oriented" modelling approach, with each specification representing a specific view on the product model, with the possibility to have links between the views. The following sections will describe the mapping view by view.
+
+A VEC derived from the KBL would contain one `HarnessDescription` document for the {{<kbl-class Harness>}} in the KBL.
+
+### Bill of Material / Part Structure
+
+One central view on the product is the bill of material (BoM) or part structure, so which parts (components) are used for the harness, its variants and modules.
+
+The KBL has a very explicit definition of the part structure with predefined levels and semantics (compare the diagram below, which is for the sake of simplicity conceptually and not precisely KBL syntax):
+
+- {{< kbl-class Harness >}}: Container for all variants and part occurrences of a harness (150% definition).
+- {{< kbl-class Module >}}: A subset of part occurrences the used for variant management within the harness (< 100%).
+- {{< kbl-class Harness_configuration >}}: A set of {{< kbl-class Module >}}s used define specific variants of a harness (= 100%)
+- {{< kbl-class Module_configuration >}}: A subset of part occurrences without part number (< 100%).
+- {{< kbl-class Assembly_part >}}: A predefined part consisting of multiple parts, that is used within a harness (e.g. a USB-Cable).
+- {{< kbl-class Connection_or_Occurrence >}}: A occurrence (usage) of a part/component within the harness with capability to define usage specific information (e.g. wire length).
+
+```mermaid
+graph LR;
+  H[Harness];
+  O[Occurrence]
+  P[Part]
+  M[Module]
+  HC[Harness_configuration]
+  MC[Module_configuration]
+  A[Assembly_part]
+  H -- contains --> M & HC & MC & O;
+  M & MC & A -- uses --> O;
+  HC -- uses --> M;
+  O -- instance of --> P;
+```
+
+In contrast, the VEC provides a highly generic and flexible concept for representing Bills of Materials (BoMs). While a strictly defined and semantically precise model like the one in KBL has clear advantages—such as unambiguous interpretation and validation—it must also be capable of reflecting real-world complexity. The rigid semantics of the KBL work well within its original scope, but become increasingly insufficient when moving beyond it.
+
+In broader application scenarios, additional concepts are often required, such as production modules, lead sets, or vehicle configurations for cost and variant calculations. Furthermore, the interpretation of certain concepts may vary depending on the stakeholder’s perspective. For example, an OEM might define a structure as an assembly, whereas a Tier 1 supplier may regard the same structure as a module. This highlights the need for more adaptable and context-aware modeling approaches, as supported by the VEC. The basic concepts are illustrated in the following diagram:
+
+```mermaid
+graph LR;
+  CS[CompositionSpecification];
+  O[PartOccurrence];
+  P[PartVersion];
+  PS[PartStructure];
+  CS -- contains --> O;
+  O -- instance of --> P;
+  PS -- describes --> P;
+  PS -- in BoM --> O;
+```
+The {{< vec-class CompositionSpecification >}} serves as a container for defining {{< vec-class PartOccurrence >}}s. At this stage, it is not yet associated with any specific part and does not represent a configuration of parts. Such an independent container is necessary, particularly when describing variant-rich (150%) products, where individual part usages cannot always be uniquely assigned to a single configuration unit and may be reused in multiple contexts.
+
+Using the {{< vec-class PartStructureSpecification >}}, subsets of the previously defined {{< vec-class PartOccurrence >}}s can now be selected and defined as the Bill of Materials (BoM) for a specific {{< vec-class PartVersion >}}. These {{< vec-class PartVersion >}}s can, in turn, be instantiated as {{< vec-class PartOccurrence >}}s to define another level of the BoM.
+
+This recursive structure allows for the representation of hierarchical BoMs of arbitrary depth, as well as parallel BoM structures—for example, engineering BoM (EBOM) and manufacturing BoM (MBOM).
+
+The assignment to semantics commonly used in harness development (such as harness, module, etc.) is done via the `content` attribute of the {{< vec-class PartStructureSpecification >}} with literals defined in {{< vec-class "PartStructureContentType">}}. This semantic classification then implies specific constraints—for example, with respect to completeness (e.g. 100%, 150%) and the types of elements that are allowed.
+
+A typical example: a variant usually consists of modules, which means that only {{< vec-class PartOccurrence >}}s representing modules may be referenced in a variant’s BoM.
+ 
+As shown in the diagram above, the Bill of Materials (BoM) structure in KBL essentially consists of three levels:
+
+1. **{{<kbl-class Harness >}} / {{<kbl-class Harness_Configuration >}}**: This represents the top level of the hierarchical BoM. The interpretation of the {{<kbl-class Harness >}} element varies depending on whether the context is a staged wiring harness (Stufenleitungssatz) or a customer-specific harness (KSK):
+
+    * In the case of a KSK, the {{<kbl-class Harness >}} represents a 150% BoM of all orderable modules. Existing {{<kbl-class Harness_Configuration >}} elements are orthogonal to this and typically represent predefined variants, e.g., for calculation purposes.
+    * For staged harnesses, the {{<kbl-class Harness >}} element merely serves as a container for defining the various variants, which are modeled as {{<kbl-class Harness_Configuration >}} elements.
+2. **{{<kbl-class Module>}}s**: Break down the complete set of all occurrences (150%) into smaller subset suitable for variant management.
+3. **{{<kbl-class Connection_or_Occurrence >}}**: All instances of the harness components (e.g. connectors, wires)
+
+The basic mapping of those concepts into the generic approach of the VEC is illustrated in the diagram below.
+
+```mermaid
+graph LR;
+  OC["PartOccurrence"];
+  CSC["CompositionSpecification"];
+  PSM["PartStructureSpecification"];
+  PVM["PartVersion"];
+  CSM["CompositionSpecification"];
+  OM["PartOccurrence"];
+  PVH["PartVersion"]
+  PSH["PartStructureSpecification"];
+
+  PSM -- in BOM --> OC;
+  OM -- instance of --> PVM;
+  subgraph "Components (Part Master Definition)"
+    PVO["PartVersion"];
+  end 
+  subgraph "Components (Instances)"
+    OC -- instance of --> PVO;
+    CSC -- contains --> OC;
+  end
+  subgraph "Modules (Instances)"  
+    CSM -- contains --> OM;
+  end
+  subgraph "Modules (Part Master Definition)"
+    PSM -- describes --> PVM;
+  end
+  subgraph Harness/HarnessConfiguration
+    PSH -- describes --> PVH;
+    PSH -- in BOM --> OM;
+  end
+```
+Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of on layer are then used to define the part master defintion of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
+
+{{% callout note %}}
+A detail not shown in the diagram above is that an instance of a BoM part must include references to its subcomponents. In the case of library parts (i.e., {{<kbl-class Assembly_part >}} in KBL), the subcomponents are represented by distinct {{<vec-class PartOccurrence >}} instances, separate from those used to define the part’s structure.
+
+In contrast, for modules within a wiring harness, the same {{<vec-class PartOccurrence >}} instances are reused both to define the structure and for instantiation. This distinction reflects different instantiation approaches and has important implications for reuse and traceability. A detailed explanation of these modeling approaches can be found in the VEC specification under: {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}
+
+{{% /callout %}}
+
+composite-part-descriptions/instantiation-approaches/
+
+
+
+* {{<vec-class CompositionSpecification >}} (Occurrences)
+* {{<vec-class CompositionSpecification >}} (Modules)
+* {{<vec-class TopologySpecification >}}
+
+### Topology
 
 {{% callout warning %}}
 Work in Progress
 {{% /callout %}}
 
 
-A `HarnessDescription` document contains alls {{< vec-class Specification >}} that are required to describe a Harness.
-
-* {{<vec-class TopologySpecification >}}
-* {{<vec-class CompositionSpecification >}} (Occurrences)
-* {{<vec-class CompositionSpecification >}} (Modules)
-
 {{% callout warning %}}
 Explain the speciality of two composition specifications
+{{% /callout %}}
+
+{{% callout warning %}}
+TODO: Define Mapping of Module Configuration
 {{% /callout %}}
 
 ## Specifications
@@ -153,6 +281,7 @@ Modules describe dual character of modules (occurrence & part).
 
 #### PartOcurrences
 Identification is mandatory... not all KBL Occurrences have mandatory indentification.
+
 
 ## Core Elements
 
