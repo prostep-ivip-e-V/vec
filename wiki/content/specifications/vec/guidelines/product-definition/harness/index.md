@@ -136,18 +136,18 @@ Work in Progress
 Work in Progress
 {{% /callout %}}
 
-A `HarnessDescription` document contains all {{< vec-class Specification >}}s that are required to describe a Harness. As a foundation those are often using the part master data. With the specifactions the VEC has a more "view oriented" modelling approach, with each specification representing a specific view on the product model, with the possibility to have links between the views. The following sections will describe the mapping view by view.
+A `HarnessDescription` document contains all {{< vec-class Specification >}}s that are required to describe a Harness. The specifications in the VEC provivde a more "view oriented" modelling approach than the KBL. Each specification representing a specific view on the product model, with the possibility to have links between the views. The following sections will describe the mapping topic by topic (or, in other words view by view).
 
 A VEC derived from the KBL would contain one `HarnessDescription` document for the {{<kbl-class Harness>}} in the KBL.
 
 ### Bill of Material / Part Structure
 
-One central view on the product is the bill of material (BoM) or part structure, so which parts (components) are used for the harness, its variants and modules.
+One central view on the product is the bill of material (BoM) or part structure. The information which parts (components) are used for the harness, its variants and modules.
 
-The KBL has a very explicit definition of the part structure with predefined levels and semantics (compare the diagram below, which is for the sake of simplicity conceptually and not precisely KBL syntax):
+The KBL has a very explicit definition of the part structure with predefined levels and semantics, compare the diagram below (_Note: The diagram is, for the sake of simplicity, conceptually and not precisely KBL syntax_):
 
-- {{< kbl-class Harness >}}: Container for all variants and part occurrences of a harness (150% definition).
-- {{< kbl-class Module >}}: A subset of part occurrences the used for variant management within the harness (< 100%).
+- {{< kbl-class Harness >}}: The container for all variants and part occurrences that compose a harness description (150% definition).
+- {{< kbl-class Module >}}: A subset of part occurrences the is used for variant management within the harness (< 100%).
 - {{< kbl-class Harness_configuration >}}: A set of {{< kbl-class Module >}}s used define specific variants of a harness (= 100%)
 - {{< kbl-class Module_configuration >}}: A subset of part occurrences without part number (< 100%).
 - {{< kbl-class Assembly_part >}}: A predefined part consisting of multiple parts, that is used within a harness (e.g. a USB-Cable).
@@ -168,9 +168,9 @@ graph LR;
   O -- instance of --> P;
 ```
 
-In contrast, the VEC provides a highly generic and flexible concept for representing Bills of Materials (BoMs). While a strictly defined and semantically precise model like the one in KBL has clear advantages—such as unambiguous interpretation and validation—it must also be capable of reflecting real-world complexity. The rigid semantics of the KBL work well within its original scope, but become increasingly insufficient when moving beyond it.
+In contrast, the VEC provides a highly generic and flexible concept for representing Bills of Material (BoMs). While a strictly defined and semantically precise model, like the one in KBL, has clear advantages — such as unambiguous interpretation and validation — it must also be capable of reflecting real-world complexity. The rigid semantics of the KBL work well within its original scope, but become increasingly insufficient when moving beyond it.
 
-In broader application scenarios, additional concepts are often required, such as production modules, lead sets, or vehicle configurations for cost and variant calculations. Furthermore, the interpretation of certain concepts may vary depending on the stakeholder’s perspective. For example, an OEM might define a structure as an assembly, whereas a Tier 1 supplier may regard the same structure as a module. This highlights the need for more adaptable and context-aware modeling approaches, as supported by the VEC. The basic concepts are illustrated in the following diagram:
+In broader application scenarios, additional concepts are often required, such as production modules, lead sets, or vehicle configurations e.g. for cost and variant calculations. Furthermore, the interpretation of certain concepts may vary depending on the stakeholder’s perspective. For example, an OEM might define a structure as an assembly, whereas a Tier1-supplier may regard the same structure as a module. This highlights the need for more adaptable and context-aware modeling approaches, as supported by the VEC. The basic concepts are illustrated in the following diagram:
 
 ```mermaid
 graph LR;
@@ -183,13 +183,13 @@ graph LR;
   PS -- describes --> P;
   PS -- in BoM --> O;
 ```
-The {{< vec-class CompositionSpecification >}} serves as a container for defining {{< vec-class PartOccurrence >}}s. At this stage, it is not yet associated with any specific part and does not represent a configuration of parts. Such an independent container is necessary, particularly when describing variant-rich (150%) products, where individual part usages cannot always be uniquely assigned to a single configuration unit and may be reused in multiple contexts.
+The {{< vec-class CompositionSpecification >}} serves as a container for defining {{< vec-class PartOccurrence >}}s. At this stage, it is not yet associated with any specific part and does not represent a configuration of parts. Such an independent container is necessary, particularly when describing variant-rich (150%) products, where individual occurrences of parts cannot always be uniquely assigned to a single configuration unit and may be reused in multiple contexts (150% definition).
 
-Using the {{< vec-class PartStructureSpecification >}}, subsets of the previously defined {{< vec-class PartOccurrence >}}s can now be selected and defined as the Bill of Materials (BoM) for a specific {{< vec-class PartVersion >}}. These {{< vec-class PartVersion >}}s can, in turn, be instantiated as {{< vec-class PartOccurrence >}}s to define another level of the BoM.
+Using the {{< vec-class PartStructureSpecification >}}, subsets of the previously defined {{< vec-class PartOccurrence >}}s can now be selected and defined as the Bill of Material (BoM) for a specific {{< vec-class PartVersion >}}. These {{< vec-class PartVersion >}}s can, in turn, be instantiated as {{< vec-class PartOccurrence >}}s to define another level of the BoM.
 
 This recursive structure allows for the representation of hierarchical BoMs of arbitrary depth, as well as parallel BoM structures—for example, engineering BoM (EBOM) and manufacturing BoM (MBOM).
 
-The assignment to semantics commonly used in harness development (such as harness, module, etc.) is done via the `content` attribute of the {{< vec-class PartStructureSpecification >}} with literals defined in {{< vec-class "PartStructureContentType">}}. This semantic classification then implies specific constraints—for example, with respect to completeness (e.g. 100%, 150%) and the types of elements that are allowed.
+The assignment to semantics commonly used in harness development (such as harness, module, etc.) is done via the `content` attribute of the {{< vec-class PartStructureSpecification >}} with literals defined in {{< vec-class "PartStructureContentType">}}. This classification then implies semantic constraints — for example, with respect to completeness (e.g. 100%, 150%) and the types of elements that are allowed.
 
 A typical example: a variant usually consists of modules, which means that only {{< vec-class PartOccurrence >}}s representing modules may be referenced in a variant’s BoM.
  
@@ -235,22 +235,95 @@ graph LR;
     PSH -- in BOM --> OM;
   end
 ```
-Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of on layer are then used to define the part master defintion of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
+Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master defintion of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
 
 {{% callout note %}}
 A detail not shown in the diagram above is that an instance of a BoM part must include references to its subcomponents. In the case of library parts (i.e., {{<kbl-class Assembly_part >}} in KBL), the subcomponents are represented by distinct {{<vec-class PartOccurrence >}} instances, separate from those used to define the part’s structure.
 
-In contrast, for modules within a wiring harness, the same {{<vec-class PartOccurrence >}} instances are reused both to define the structure and for instantiation. This distinction reflects different instantiation approaches and has important implications for reuse and traceability. A detailed explanation of these modeling approaches can be found in the VEC specification under: {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}
+In contrast, for modules within a wiring harness, the same {{<vec-class PartOccurrence >}} instances are reused, both to define the structure and for instantiation. This distinction reflects different instantiation approaches and has important implications for reuse and traceability. A detailed explanation of these modeling approaches can be found in the VEC specification under: {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}
 
 {{% /callout %}}
 
-composite-part-descriptions/instantiation-approaches/
+#### Mapping KBL Classification to `PartStructureContentType`
 
+The following table defines the Mapping between KBL classifications and {{<vec-class PartStructureContentType>}}s.
 
+| KBL Classification | `PartStructureContentType` |
+| -------- | ------- |
+| {{<kbl-class harness>}}  | `Harness`    |
+| {{<kbl-class harness_configuration >}} | `Variant`    |
+| {{<kbl-class module >}}    | `Module`    |
+| {{<kbl-class Assembly_part >}}    | `Assembly`    |
 
-* {{<vec-class CompositionSpecification >}} (Occurrences)
-* {{<vec-class CompositionSpecification >}} (Modules)
-* {{<vec-class TopologySpecification >}}
+#### XML Representation
+The following XML listings explain the BoM mapping in detail. The start from the lowest level (the compenents) and the end at the top (the harness).
+
+The first step is to create the basic occurrences for the harness. For every {{<kbl-class Connection_or_occurrence >}} in the KBL {{<kbl-class Harness >}} a {{<vec-class PartOccurrence >}} is created. An exception is the KBL {{<kbl-class Connection >}}, which is not representing an occurrence of a component, therefore no {{<vec-class PartOccurrence >}} is created. The {{<vec-class Role>}}s are omitted in the snippet below, as this a seperate topic, handled in [Instantiation of Components]({{<relref "#instantiation-of-components">}}). The `Identification` used for the {{<vec-class CompositionSpecification >}} is `COMPONENTS`.
+
+```xml
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00289">
+      <Identification>COMPONENTS</Identification>
+      <Component id="PartOccurrence_00290">
+        <Identification>GenericIdentifier-0</Identification>
+        <Part>PartVersion_00375</Part>
+        ...
+      </Component>
+      <Component id="PartOccurrence_00291">
+        <Identification>GenericIdentifier-1</Identification>
+        <Part>PartVersion_00375</Part>
+        ...
+      </Component>
+      ...
+    </Specification>
+```
+
+For each module, a {{<vec-class PartStructureSpecification >}} is created, referencing the occurrences that belong to the module, defined above.
+
+```xml
+    <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00368">
+      <Identification>PSS-MDL123456</Identification>
+      <DescribedPart>PartVersion_00504</DescribedPart>
+      <Content>Module</Content>
+      <InBillOfMaterial>PartOccurrence_00291 PartOccurrence_00290 ...</InBillOfMaterial>
+    </Specification>
+```
+To define the next layer, instance of the modules are required. Those are created within a seperate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'`. As it can be seen, the module {{<vec-class PartOccurrence >}} references the same component {{<vec-class PartOccurrence >}} as the {{<vec-class PartStructureSpecification >}}. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). However, to provide a consistent appearance in the model for all parts with a BoM, both concepts shall be used.
+
+```xml
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00286">
+      <Identification>MODULES</Identification>
+      <Component id="PartOccurrence_00287">
+        <Identification>MDL123456</Identification>
+        <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00288">
+          <Identification>MDL123456</Identification>
+          <PartStructureSpecification>PartStructureSpecification_00368<PartStructureSpecification>
+          <SubComponent>PartOccurrence_00291 PartOccurrence_00290 ...</SubComponent>
+        </Role>
+        <Part>PartVersion_00504</Part>
+      </Component>
+    </Specification>
+```
+As Module is now a regular {{<vec-class PartOccurrence >}} the generic concepts in the VEC for {{<vec-class PartOccurrence >}}s can now be applied (e.g. Variant Management, see below) and no module specific modelling concepts, like the KBL `Logistic_control_information` are required.
+
+Based on the module {{<vec-class PartOccurrence >}}s, now a {{<vec-class PartStructureSpecification >}} for the harness can be defined.
+
+```xml
+    <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00367">
+      <Identification>PSS-LTG0011200</Identification>
+      <DescribedPart>PartVersion_00500</DescribedPart>
+      <InBillOfMaterial>PartOccurrence_00287 ...</InBillOfMaterial>
+    </Specification>
+```
+
+### Instantiation of Components
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Variance Information for Modules
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
 
 ### Topology
 
