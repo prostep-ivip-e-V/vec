@@ -1,0 +1,24 @@
+name: Label issues
+on:
+  issues:
+    types: [opened]
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - run: gh issue edit "$NUMBER" --add-label "$LABELS"
+        if: ${{ contains(github.event.issue.body, 'VEC') }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABELS: VEC
+      - run: gh issue edit "$NUMBER" --add-label "$LABELS"
+        if: ${{ contains(github.event.issue.body, 'KBL') }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABELS: KBL          

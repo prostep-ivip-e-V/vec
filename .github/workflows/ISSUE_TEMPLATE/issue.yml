@@ -1,0 +1,31 @@
+name: Issue Report
+description: Suggest a feature request or a report a bug for this project.
+labels: ["Triage"]
+assignees:
+  - beckerjohannes
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue report! 
+        
+        The more detailed your description is and the more information you provide us with, the faster and better we can assess and process the issue. 
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe your requirements or what extensions you would like to see. Also describe where you want to see improvements (e.g. Model or Implementation Guidelines).
+      placeholder: Tell us what improvements you want to see!
+    validations:
+      required: true
+  - type: dropdown
+    id: model
+    attributes:
+      label: Which model does the issue affect?
+      description: Multiple options allowed.
+      multiple: true
+      options:
+        - VEC
+        - KBL
+    validations:
+      required: true        
