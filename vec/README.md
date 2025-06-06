@@ -35,6 +35,7 @@ Current nightly builds
 14. Commit, Push, Review and Merge your feature branch.
 15. Force a commit by changing the `date:` value of `content\specifications\vec\guidelines\_index.md` to the have implementation guidelines in first place of the listing.
 16. Release the Version in JIRA and close all issues associated with the version. 
+17. Refresh the ontology redirects for https://ecad.prostep.org in the old gitlab.com ECAD-WIKI repository (https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io)
 
 
 ```yaml
