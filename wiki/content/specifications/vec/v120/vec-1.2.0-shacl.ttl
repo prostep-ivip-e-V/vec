@@ -1,10 +1,18 @@
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+﻿@prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix vec:   <http://www.prostep.org/ontologies/ecad/2024/03/vec#> .
 @prefix vecsh: <http://www.prostep.org/ontologies/ecad/2024/03/vec-shacl#> .
 @prefix xs:    <http://www.w3.org/2001/XMLSchema#> .
+
+vecsh:TopologyZoneSpecificationShape
+        rdf:type        sh:NodeShape;
+        sh:property     [ sh:class     vec:TopologyZone;
+                          sh:minCount  0;
+                          sh:path      vec:topologyZoneSpecificationZone
+                        ];
+        sh:targetClass  vec:TopologyZoneSpecification .
 
 vecsh:ConnectorHousingRoleShape
         rdf:type         sh:NodeShape;
@@ -38,14 +46,6 @@ vecsh:PinWireMappingSpecificationShape
                            sh:path      vec:pinWireMappingSpecificationPinWireMappingPoint
                          ];
         sh:targetClass   vec:PinWireMappingSpecification .
-
-vecsh:TopologyZoneSpecificationShape
-        rdf:type        sh:NodeShape;
-        sh:property     [ sh:class     vec:TopologyZone;
-                          sh:minCount  0;
-                          sh:path      vec:topologyZoneSpecificationZone
-                        ];
-        sh:targetClass  vec:TopologyZoneSpecification .
 
 vecsh:Transformation3DInverseShape
         rdf:type             sh:NodeShape;
@@ -125,21 +125,6 @@ vecsh:IECUnitShape  rdf:type  sh:NodeShape;
                          ];
         sh:targetClass   vec:IECUnit .
 
-vecsh:PartSubstitutionSpecificationShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:SpecificationShape;
-        sh:property      [ sh:class     vec:PartVersion;
-                           sh:minCount  0;
-                           sh:path      vec:partSubstitutionSpecificationAlternativePartVersions
-                         ];
-        sh:targetClass   vec:PartSubstitutionSpecification .
-
-vecsh:MatingPointInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
-        sh:class             vec:MatingPoint;
-        sh:targetSubjectsOf  vec:matingPointConnection , vec:matingPointMatingDetail , vec:matingPointSecondTerminalRole , vec:matingPointFirstTerminalRole , vec:matingPointIdentification .
-
 vecsh:CouplingSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
@@ -148,6 +133,21 @@ vecsh:CouplingSpecificationShape
                            sh:path      vec:couplingSpecificationCouplingPoint
                          ];
         sh:targetClass   vec:CouplingSpecification .
+
+vecsh:MatingPointInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
+        sh:class             vec:MatingPoint;
+        sh:targetSubjectsOf  vec:matingPointConnection , vec:matingPointMatingDetail , vec:matingPointSecondTerminalRole , vec:matingPointFirstTerminalRole , vec:matingPointIdentification .
+
+vecsh:PartSubstitutionSpecificationShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:SpecificationShape;
+        sh:property      [ sh:class     vec:PartVersion;
+                           sh:minCount  0;
+                           sh:path      vec:partSubstitutionSpecificationAlternativePartVersions
+                         ];
+        sh:targetClass   vec:PartSubstitutionSpecification .
 
 vecsh:CavitySpecificationInverseShape
         rdf:type             sh:NodeShape;
@@ -184,27 +184,22 @@ vecsh:SealingGeometryEnumShape
 vecsh:ItemVersionShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:Creation;
-                           sh:maxCount  1;
+        sh:property      [ sh:class     vec:Instruction;
                            sh:minCount  0;
-                           sh:path      vec:itemVersionCreation
+                           sh:path      vec:itemVersionProcessingInstruction
                          ];
-        sh:property      [ sh:class     vec:CopyrightInformation;
-                           sh:maxCount  1;
+        sh:property      [ sh:class     vec:Contract;
                            sh:minCount  0;
-                           sh:path      vec:itemVersionCopyrightInformation
-                         ];
-        sh:property      [ sh:class     vec:LocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:itemVersionAbbreviation
+                           sh:path      vec:itemVersionContract
                          ];
         sh:property      [ sh:class     vec:AbstractLocalizedString;
                            sh:minCount  0;
                            sh:path      vec:itemVersionDescription
                          ];
-        sh:property      [ sh:class     vec:Instruction;
+        sh:property      [ sh:class     vec:CopyrightInformation;
+                           sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:itemVersionProcessingInstruction
+                           sh:path      vec:itemVersionCopyrightInformation
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -215,13 +210,18 @@ vecsh:ItemVersionShape
                            sh:minCount  0;
                            sh:path      vec:itemVersionChangeDescription
                          ];
+        sh:property      [ sh:class     vec:LocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:itemVersionAbbreviation
+                         ];
         sh:property      [ sh:class     vec:Approval;
                            sh:minCount  0;
                            sh:path      vec:itemVersionApproval
                          ];
-        sh:property      [ sh:class     vec:Contract;
+        sh:property      [ sh:class     vec:Creation;
+                           sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:itemVersionContract
+                           sh:path      vec:itemVersionCreation
                          ];
         sh:targetClass   vec:ItemVersion .
 
@@ -320,42 +320,42 @@ vecsh:CopyrightInformationInverseShape
 vecsh:TopologySegmentShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:class     vec:TopologySegment;
+        sh:property      [ sh:class     vec:TopologyNode;
                            sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:topologySegmentInstantiatedSegment
-                         ];
-        sh:property      [ sh:class     vec:SegmentLength;
-                           sh:minCount  0;
-                           sh:path      vec:topologySegmentLengthInformation
-                         ];
-        sh:property      [ sh:class     vec:LocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:topologySegmentProcessingInstruction
+                           sh:minCount  1;
+                           sh:path      vec:topologySegmentEndNode
                          ];
         sh:property      [ sh:class     vec:TopologyNode;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:topologySegmentStartNode
                          ];
-        sh:property      [ sh:class     vec:SegmentForm;
+        sh:property      [ sh:class     vec:TopologySegment;
                            sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:topologySegmentForm
-                         ];
-        sh:property      [ sh:class     vec:SegmentCrossSectionArea;
                            sh:minCount  0;
-                           sh:path      vec:topologySegmentCrossSectionAreaInformation
-                         ];
-        sh:property      [ sh:class     vec:TopologyNode;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:topologySegmentEndNode
+                           sh:path      vec:topologySegmentInstantiatedSegment
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:topologySegmentIdentification
+                         ];
+        sh:property      [ sh:class     vec:SegmentCrossSectionArea;
+                           sh:minCount  0;
+                           sh:path      vec:topologySegmentCrossSectionAreaInformation
+                         ];
+        sh:property      [ sh:class     vec:SegmentLength;
+                           sh:minCount  0;
+                           sh:path      vec:topologySegmentLengthInformation
+                         ];
+        sh:property      [ sh:class     vec:SegmentForm;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:topologySegmentForm
+                         ];
+        sh:property      [ sh:class     vec:LocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:topologySegmentProcessingInstruction
                          ];
         sh:property      [ sh:class     vec:AliasIdentification;
                            sh:minCount  0;
@@ -405,14 +405,22 @@ vecsh:CavityGeometryEnumShape
 vecsh:PinComponentBehaviorShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
+        sh:property      [ sh:class     vec:PinVoltageInformation;
+                           sh:minCount  0;
+                           sh:path      vec:pinComponentBehaviorVoltageInformation
+                         ];
         sh:property      [ sh:class     vec:PinCurrentInformation;
                            sh:minCount  0;
                            sh:path      vec:pinComponentBehaviorCurrentInformation
                          ];
-        sh:property      [ sh:class     vec:Signal;
+        sh:property      [ sh:class     vec:PinOpticalInformation;
+                           sh:minCount  0;
+                           sh:path      vec:pinComponentBehaviorOpticalInformation
+                         ];
+        sh:property      [ sh:class     vec:PinApplianceType;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:pinComponentBehaviorSignal
+                           sh:path      vec:pinComponentBehaviorApplianceType
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -424,27 +432,19 @@ vecsh:PinComponentBehaviorShape
                            sh:minCount  0;
                            sh:path      vec:pinComponentBehaviorSignalDirection
                          ];
-        sh:property      [ sh:class     vec:PinType;
+        sh:property      [ sh:class     vec:Signal;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:pinComponentBehaviorPinType
+                           sh:path      vec:pinComponentBehaviorSignal
                          ];
         sh:property      [ sh:class     vec:AbstractLocalizedString;
                            sh:minCount  0;
                            sh:path      vec:pinComponentBehaviorDescription
                          ];
-        sh:property      [ sh:class     vec:PinOpticalInformation;
-                           sh:minCount  0;
-                           sh:path      vec:pinComponentBehaviorOpticalInformation
-                         ];
-        sh:property      [ sh:class     vec:PinApplianceType;
+        sh:property      [ sh:class     vec:PinType;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:pinComponentBehaviorApplianceType
-                         ];
-        sh:property      [ sh:class     vec:PinVoltageInformation;
-                           sh:minCount  0;
-                           sh:path      vec:pinComponentBehaviorVoltageInformation
+                           sh:path      vec:pinComponentBehaviorPinType
                          ];
         sh:targetClass   vec:PinComponentBehavior .
 
@@ -705,13 +705,26 @@ vecsh:SignalSpecificationInverseShape
 vecsh:VecContentShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:ItemHistoryEntry;
+        sh:property      [ sh:class     vec:Unit;
                            sh:minCount  0;
-                           sh:path      vec:vecContentItemHistoryEntry
+                           sh:path      vec:vecContentUnit
+                         ];
+        sh:property      [ sh:class     vec:CopyrightInformation;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:vecContentStandardCopyrightInformation
                          ];
         sh:property      [ sh:class     vec:Project;
                            sh:minCount  0;
                            sh:path      vec:vecContentProject
+                         ];
+        sh:property      [ sh:class     vec:CopyrightInformation;
+                           sh:minCount  0;
+                           sh:path      vec:vecContentCopyrightInformation
+                         ];
+        sh:property      [ sh:class     vec:PartVersion;
+                           sh:minCount  0;
+                           sh:path      vec:vecContentPartVersion
                          ];
         sh:property      [ sh:class     vec:DocumentVersion;
                            sh:minCount  0;
@@ -720,43 +733,30 @@ vecsh:VecContentShape
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:vecContentGeneratingSystemVersion
-                         ];
-        sh:property      [ sh:class     vec:Contract;
-                           sh:minCount  0;
-                           sh:path      vec:vecContentContract
-                         ];
-        sh:property      [ sh:class     vec:Unit;
-                           sh:minCount  0;
-                           sh:path      vec:vecContentUnit
-                         ];
-        sh:property      [ sh:datatype  xs:dateTime;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:vecContentDateOfCreation
+                           sh:path      vec:vecContentGeneratingSystemName
                          ];
         sh:property      [ sh:class     vec:VecVersion;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:vecContentVecVersion
                          ];
-        sh:property      [ sh:class     vec:PartVersion;
+        sh:property      [ sh:class     vec:Contract;
                            sh:minCount  0;
-                           sh:path      vec:vecContentPartVersion
+                           sh:path      vec:vecContentContract
+                         ];
+        sh:property      [ sh:class     vec:ItemHistoryEntry;
+                           sh:minCount  0;
+                           sh:path      vec:vecContentItemHistoryEntry
+                         ];
+        sh:property      [ sh:datatype  xs:dateTime;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:vecContentDateOfCreation
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:vecContentGeneratingSystemName
-                         ];
-        sh:property      [ sh:class     vec:CopyrightInformation;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:vecContentStandardCopyrightInformation
-                         ];
-        sh:property      [ sh:class     vec:CopyrightInformation;
-                           sh:minCount  0;
-                           sh:path      vec:vecContentCopyrightInformation
+                           sh:path      vec:vecContentGeneratingSystemVersion
                          ];
         sh:targetClass   vec:VecContent .
 
@@ -787,10 +787,24 @@ vecsh:NetworkPortShape
 vecsh:CavitySpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
+        sh:property      [ sh:class     vec:PrimaryLockingType;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:cavitySpecificationPrimaryLockingType
+                         ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:cavitySpecificationMinWireElementOutsideDiameter
+                           sh:path      vec:cavitySpecificationMaxWireElementOutsideDiameter
+                         ];
+        sh:property      [ sh:class     vec:TerminalType;
+                           sh:minCount  0;
+                           sh:path      vec:cavitySpecificationCompatibleTerminalType
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:cavitySpecificationCavityDesign
                          ];
         sh:property      [ sh:class     vec:CavityGeometry;
                            sh:maxCount  1;
@@ -802,34 +816,20 @@ vecsh:CavitySpecificationShape
                            sh:minCount  0;
                            sh:path      vec:cavitySpecificationCavityDimension
                          ];
-        sh:property      [ sh:class     vec:TerminalType;
-                           sh:minCount  0;
-                           sh:path      vec:cavitySpecificationCompatibleTerminalType
-                         ];
         sh:property      [ sh:datatype  xs:boolean;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:cavitySpecificationSealable
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:cavitySpecificationMaxWireElementOutsideDiameter
                          ];
         sh:property      [ sh:class     vec:Ordered , vec:NumericalValue;
                            sh:maxCount  2;
                            sh:minCount  0;
                            sh:path      vec:cavitySpecificationAngle
                          ];
-        sh:property      [ sh:datatype  xs:string;
+        sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:cavitySpecificationCavityDesign
-                         ];
-        sh:property      [ sh:class     vec:PrimaryLockingType;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:cavitySpecificationPrimaryLockingType
+                           sh:path      vec:cavitySpecificationMinWireElementOutsideDiameter
                          ];
         sh:targetClass   vec:CavitySpecification .
 
@@ -923,37 +923,37 @@ vecsh:WireElementInverseShape
 
 vecsh:ApprovalShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:Permission;
-                           sh:minCount  0;
-                           sh:path      vec:approvalPermission
-                         ];
-        sh:property      [ sh:class     vec:AbstractLocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:approvalDescription
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:approvalIdentification
-                         ];
         sh:property      [ sh:datatype  xs:string;
                            sh:minCount  0;
                            sh:path      vec:approvalCompanyInScope
+                         ];
+        sh:property      [ sh:class     vec:LevelOfApproval;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:approvalLevelOfApproval
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:approvalAdditionalLevelInformation
                          ];
+        sh:property      [ sh:class     vec:AbstractLocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:approvalDescription
+                         ];
         sh:property      [ sh:class     vec:StatusOfApproval;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:approvalStatus
                          ];
-        sh:property      [ sh:class     vec:LevelOfApproval;
+        sh:property      [ sh:class     vec:Permission;
+                           sh:minCount  0;
+                           sh:path      vec:approvalPermission
+                         ];
+        sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:approvalLevelOfApproval
+                           sh:path      vec:approvalIdentification
                          ];
         sh:targetClass   vec:Approval .
 
@@ -973,15 +973,21 @@ vecsh:NodeLocationShape
                          ];
         sh:targetClass   vec:NodeLocation .
 
+vecsh:WireReceptionAddOnInverseShape
+        rdf:type             sh:NodeShape;
+        sh:class             vec:WireReceptionAddOn;
+        sh:targetSubjectsOf  vec:wireReceptionAddOnType , vec:wireReceptionAddOnWireAddOn .
+
 vecsh:CavityPlugSpecificationInverseShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:CavityPartSpecificationInverseShape;
         sh:class         vec:CavityPlugSpecification .
 
-vecsh:WireReceptionAddOnInverseShape
+vecsh:ExtensionSlotReferenceInverseShape
         rdf:type             sh:NodeShape;
-        sh:class             vec:WireReceptionAddOn;
-        sh:targetSubjectsOf  vec:wireReceptionAddOnType , vec:wireReceptionAddOnWireAddOn .
+        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
+        sh:class             vec:ExtensionSlotReference;
+        sh:targetSubjectsOf  vec:extensionSlotReferenceIdentification , vec:extensionSlotReferenceExtensionSlot , vec:extensionSlotReferenceUsedInserts .
 
 vecsh:FlatCoreSpecificationShape
         rdf:type         sh:NodeShape;
@@ -992,12 +998,6 @@ vecsh:FlatCoreSpecificationShape
                            sh:path      vec:flatCoreSpecificationSize
                          ];
         sh:targetClass   vec:FlatCoreSpecification .
-
-vecsh:ExtensionSlotReferenceInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
-        sh:class             vec:ExtensionSlotReference;
-        sh:targetSubjectsOf  vec:extensionSlotReferenceIdentification , vec:extensionSlotReferenceExtensionSlot , vec:extensionSlotReferenceUsedInserts .
 
 vecsh:CavityAccessorySpecificationShape
         rdf:type         sh:NodeShape;
@@ -1042,6 +1042,12 @@ vecsh:NodeLocationInverseShape
         sh:class             vec:NodeLocation;
         sh:targetSubjectsOf  vec:nodeLocationReferencedNode .
 
+vecsh:WireGroupingInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
+        sh:class             vec:WireGrouping;
+        sh:targetSubjectsOf  vec:wireGroupingContainedWireGroupings , vec:wireGroupingConnectionGroup , vec:wireGroupingWireGroupSpecification , vec:wireGroupingRelatedWireElementReference , vec:wireGroupingIdentification .
+
 vecsh:RoleShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
         sh:property      [ sh:datatype  xs:string;
@@ -1050,12 +1056,6 @@ vecsh:RoleShape  rdf:type  sh:NodeShape;
                            sh:path      vec:roleIdentification
                          ];
         sh:targetClass   vec:Role .
-
-vecsh:WireGroupingInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
-        sh:class             vec:WireGrouping;
-        sh:targetSubjectsOf  vec:wireGroupingContainedWireGroupings , vec:wireGroupingConnectionGroup , vec:wireGroupingWireGroupSpecification , vec:wireGroupingRelatedWireElementReference , vec:wireGroupingIdentification .
 
 vecsh:PotentialDistributorSpecificationInverseShape
         rdf:type             sh:NodeShape;
@@ -1072,12 +1072,6 @@ vecsh:LocalizedStringPropertyShape
                            sh:path      vec:localizedStringPropertyValue
                          ];
         sh:targetClass   vec:LocalizedStringProperty .
-
-vecsh:VariantGroupSpecificationInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:SpecificationInverseShape;
-        sh:class             vec:VariantGroupSpecification;
-        sh:targetSubjectsOf  vec:variantGroupSpecificationVariantGroup .
 
 vecsh:WireGroupingShape
         rdf:type         sh:NodeShape;
@@ -1106,6 +1100,12 @@ vecsh:WireGroupingShape
                            sh:path      vec:wireGroupingIdentification
                          ];
         sh:targetClass   vec:WireGrouping .
+
+vecsh:VariantGroupSpecificationInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:SpecificationInverseShape;
+        sh:class             vec:VariantGroupSpecification;
+        sh:targetSubjectsOf  vec:variantGroupSpecificationVariantGroup .
 
 vecsh:WireEndInverseShape
         rdf:type             sh:NodeShape;
@@ -1248,50 +1248,15 @@ vecsh:ModularSlotReferenceInverseShape
 vecsh:TubeSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:WireProtectionSpecificationShape;
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationIsSlit
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationInnerDiameter
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationNominalSize
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationBendRadius
-                         ];
-        sh:property      [ sh:class     vec:TubeShape;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationShape
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationHeight
-                         ];
         sh:property      [ sh:class     vec:TubeSlitStyle;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:tubeSpecificationSlitStyle
                          ];
-        sh:property      [ sh:class     vec:NumericalValue;
+        sh:property      [ sh:datatype  xs:boolean;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:tubeSpecificationWallThickness
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:tubeSpecificationSecondaryNominalSize
+                           sh:path      vec:tubeSpecificationIsSlit
                          ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
@@ -1301,12 +1266,47 @@ vecsh:TubeSpecificationShape
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
+                           sh:path      vec:tubeSpecificationLength
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:tubeSpecificationInnerDiameter
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:tubeSpecificationSecondaryNominalSize
+                         ];
+        sh:property      [ sh:class     vec:TubeShape;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:tubeSpecificationShape
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:tubeSpecificationBendRadius
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:tubeSpecificationNominalSize
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:tubeSpecificationHeight
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
                            sh:path      vec:tubeSpecificationOuterDiameter
                          ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:tubeSpecificationLength
+                           sh:path      vec:tubeSpecificationWallThickness
                          ];
         sh:targetClass   vec:TubeSpecification .
 
@@ -1426,47 +1426,6 @@ vecsh:RobustnessClassReferenceSystemEnumShape
         sh:severity     sh:Info;
         sh:targetClass  vec:RobustnessClassReferenceSystem .
 
-vecsh:SheetOrChapterShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterSheetNumber
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:sheetOrChapterIdentification
-                         ];
-        sh:property      [ sh:class     vec:PartVersion;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterReferencedPart
-                         ];
-        sh:property      [ sh:class     vec:ChangeDescription;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterChangeDescription
-                         ];
-        sh:property      [ sh:class     vec:Specification;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterSpecification
-                         ];
-        sh:property      [ sh:class     vec:AbstractLocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterDescription
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterSheetVersion
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:sheetOrChapterSheetFormat
-                         ];
-        sh:targetClass   vec:SheetOrChapter .
-
 vecsh:WireLengthShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
@@ -1481,6 +1440,47 @@ vecsh:WireLengthShape
                            sh:path      vec:wireLengthLengthType
                          ];
         sh:targetClass   vec:WireLength .
+
+vecsh:SheetOrChapterShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:ExtendableElementShape;
+        sh:property      [ sh:class     vec:ChangeDescription;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterChangeDescription
+                         ];
+        sh:property      [ sh:class     vec:AbstractLocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterDescription
+                         ];
+        sh:property      [ sh:class     vec:PartVersion;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterReferencedPart
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterSheetVersion
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterSheetFormat
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterSheetNumber
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:sheetOrChapterIdentification
+                         ];
+        sh:property      [ sh:class     vec:Specification;
+                           sh:minCount  0;
+                           sh:path      vec:sheetOrChapterSpecification
+                         ];
+        sh:targetClass   vec:SheetOrChapter .
 
 vecsh:CustomPropertyShape
         rdf:type        sh:NodeShape;
@@ -1499,68 +1499,48 @@ vecsh:FittingOutletInverseShape
 
 vecsh:SignalShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:AbstractLocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:signalDescription
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:signalDataRate
-                         ];
-        sh:property      [ sh:class     vec:SignalInformationType;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:signalSignalInformationType
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:signalIdentification
-                         ];
-        sh:property      [ sh:class     vec:SignalTransmissionMediumType;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:signalSignalTransmissionMediumType
-                         ];
         sh:property      [ sh:class     vec:SignalSubType;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:signalSignalSubType
-                         ];
-        sh:property      [ sh:class     vec:SignalForm;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:signalSignalForm
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:signalSignalName
-                         ];
-        sh:property      [ sh:class     vec:AliasIdentification;
-                           sh:minCount  0;
-                           sh:path      vec:signalAliasId
                          ];
         sh:property      [ sh:class     vec:ConductorSpecification;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:signalRecommendedConductorSpecification
                          ];
-        sh:property      [ sh:class     vec:CurrentType;
+        sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:signalCurrentType
+                           sh:path      vec:signalSignalName
                          ];
-        sh:property      [ sh:class     vec:InsulationSpecification;
-                           sh:maxCount  1;
+        sh:property      [ sh:class     vec:AbstractLocalizedString;
                            sh:minCount  0;
-                           sh:path      vec:signalRecommendedInsulationSpecification
+                           sh:path      vec:signalDescription
                          ];
         sh:property      [ sh:class     vec:SignalType;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:signalSignalType
+                         ];
+        sh:property      [ sh:class     vec:AliasIdentification;
+                           sh:minCount  0;
+                           sh:path      vec:signalAliasId
+                         ];
+        sh:property      [ sh:class     vec:SignalForm;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:signalSignalForm
+                         ];
+        sh:property      [ sh:class     vec:SignalTransmissionMediumType;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:signalSignalTransmissionMediumType
+                         ];
+        sh:property      [ sh:class     vec:SignalInformationType;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:signalSignalInformationType
                          ];
         sh:property      [ sh:class     vec:NominalVoltage;
                            sh:maxCount  1;
@@ -1572,15 +1552,35 @@ vecsh:SignalShape  rdf:type  sh:NodeShape;
                            sh:minCount  0;
                            sh:path      vec:signalClampName
                          ];
+        sh:property      [ sh:class     vec:InsulationSpecification;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:signalRecommendedInsulationSpecification
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:signalIdentification
+                         ];
         sh:property      [ sh:class     vec:NetType;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:signalNetType
                          ];
+        sh:property      [ sh:class     vec:CurrentType;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:signalCurrentType
+                         ];
         sh:property      [ sh:class     vec:SignalCurve;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:signalSignalCurve
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:signalDataRate
                          ];
         sh:targetClass   vec:Signal .
 
@@ -1670,23 +1670,13 @@ vecsh:FunctionalRequirementShape
 vecsh:TopologyZoneShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:class     vec:RobustnessProperties;
-                           sh:minCount  0;
-                           sh:path      vec:topologyZoneRequiredRobustnessProperties
-                         ];
-        sh:property      [ sh:class     vec:TemperatureInformation;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:topologyZoneAmbientTemperature
-                         ];
         sh:property      [ sh:class     vec:TopologyZone;
                            sh:minCount  0;
                            sh:path      vec:topologyZoneSubZone
                          ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:topologyZoneIdentification
+        sh:property      [ sh:class     vec:ZoneAssignment;
+                           sh:minCount  0;
+                           sh:path      vec:topologyZoneAssignment
                          ];
         sh:property      [ sh:class     vec:TopologyZoneType;
                            sh:maxCount  1;
@@ -1697,9 +1687,19 @@ vecsh:TopologyZoneShape
                            sh:minCount  0;
                            sh:path      vec:topologyZoneDescription
                          ];
-        sh:property      [ sh:class     vec:ZoneAssignment;
+        sh:property      [ sh:class     vec:TemperatureInformation;
+                           sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:topologyZoneAssignment
+                           sh:path      vec:topologyZoneAmbientTemperature
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:topologyZoneIdentification
+                         ];
+        sh:property      [ sh:class     vec:RobustnessProperties;
+                           sh:minCount  0;
+                           sh:path      vec:topologyZoneRequiredRobustnessProperties
                          ];
         sh:targetClass   vec:TopologyZone .
 
@@ -1712,20 +1712,9 @@ vecsh:ApplicationConstraintInverseShape
 vecsh:NetworkNodeShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:class     vec:UsageNode;
-                           sh:maxCount  1;
+        sh:property      [ sh:class     vec:NetworkPort;
                            sh:minCount  0;
-                           sh:path      vec:networkNodeRealizedUsageNode
-                         ];
-        sh:property      [ sh:class     vec:NetworkNodeType;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:networkNodeNetworkNodeType
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:networkNodeIdentification
+                           sh:path      vec:networkNodePort
                          ];
         sh:property      [ sh:class     vec:LocalizedString;
                            sh:minCount  0;
@@ -1736,13 +1725,24 @@ vecsh:NetworkNodeShape
                            sh:minCount  0;
                            sh:path      vec:networkNodeSubType
                          ];
-        sh:property      [ sh:class     vec:NetworkPort;
-                           sh:minCount  0;
-                           sh:path      vec:networkNodePort
-                         ];
         sh:property      [ sh:class     vec:AbstractLocalizedString;
                            sh:minCount  0;
                            sh:path      vec:networkNodeDescription
+                         ];
+        sh:property      [ sh:class     vec:NetworkNodeType;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:networkNodeNetworkNodeType
+                         ];
+        sh:property      [ sh:class     vec:UsageNode;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:networkNodeRealizedUsageNode
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:networkNodeIdentification
                          ];
         sh:targetClass   vec:NetworkNode .
 
@@ -1915,11 +1915,6 @@ vecsh:WireEndAccessorySpecificationShape
                          ];
         sh:targetClass   vec:WireEndAccessorySpecification .
 
-vecsh:SpliceTerminalSpecificationShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:TerminalSpecificationShape;
-        sh:targetClass   vec:SpliceTerminalSpecification .
-
 vecsh:MatingDetailInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
@@ -1930,6 +1925,11 @@ vecsh:SoundDampingClassInverseShape
         rdf:type             sh:NodeShape;
         sh:class             vec:SoundDampingClass;
         sh:targetSubjectsOf  vec:soundDampingClassReferenceSystem , vec:soundDampingClassClassKey .
+
+vecsh:SpliceTerminalSpecificationShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:TerminalSpecificationShape;
+        sh:targetClass   vec:SpliceTerminalSpecification .
 
 vecsh:LocalizedStringShape
         rdf:type         sh:NodeShape;
@@ -2194,52 +2194,52 @@ vecsh:OpenCavitiesAssignmentShape
                         ];
         sh:targetClass  vec:OpenCavitiesAssignment .
 
-vecsh:SignalTypeEnumShape
-        rdf:type        sh:NodeShape;
-        sh:in           ( vec:SignalType_Information vec:SignalType_Energy vec:SignalType_Ground );
-        sh:severity     sh:Info;
-        sh:targetClass  vec:SignalType .
-
 vecsh:PlacementInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
         sh:class             vec:Placement;
         sh:targetSubjectsOf  vec:placementPlacedElement , vec:placementIsOnTopOf , vec:placementType , vec:placementIdentification .
 
+vecsh:SignalTypeEnumShape
+        rdf:type        sh:NodeShape;
+        sh:in           ( vec:SignalType_Information vec:SignalType_Energy vec:SignalType_Ground );
+        sh:severity     sh:Info;
+        sh:targetClass  vec:SignalType .
+
 vecsh:UsageConstraintShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:datatype  xs:dateTime;
-                           sh:maxCount  1;
+        sh:property      [ sh:datatype  xs:string;
                            sh:minCount  0;
-                           sh:path      vec:usageConstraintFromDate
+                           sh:path      vec:usageConstraintProjectPhase
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:usageConstraintToSerialNumber
                          ];
-        sh:property      [ sh:datatype  xs:dateTime;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:usageConstraintToDate
-                         ];
         sh:property      [ sh:class     vec:UsageConstraintType;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:usageConstraintType
                          ];
-        sh:property      [ sh:class     vec:UsageNode;
-                           sh:minCount  0;
-                           sh:path      vec:usageConstraintUsageNode
-                         ];
         sh:property      [ sh:class     vec:Project;
                            sh:minCount  0;
                            sh:path      vec:usageConstraintProject
                          ];
-        sh:property      [ sh:datatype  xs:string;
+        sh:property      [ sh:datatype  xs:dateTime;
+                           sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:usageConstraintProjectPhase
+                           sh:path      vec:usageConstraintToDate
+                         ];
+        sh:property      [ sh:class     vec:UsageNode;
+                           sh:minCount  0;
+                           sh:path      vec:usageConstraintUsageNode
+                         ];
+        sh:property      [ sh:datatype  xs:dateTime;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:usageConstraintFromDate
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -2342,6 +2342,35 @@ vecsh:ExtensionSlotReferenceShape
                          ];
         sh:targetClass   vec:ExtensionSlotReference .
 
+vecsh:MatingPointShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:ConfigurableElementShape;
+        sh:property      [ sh:class     vec:Connection;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:matingPointConnection
+                         ];
+        sh:property      [ sh:class     vec:MatingDetail;
+                           sh:minCount  0;
+                           sh:path      vec:matingPointMatingDetail
+                         ];
+        sh:property      [ sh:class     vec:TerminalRole;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:matingPointSecondTerminalRole
+                         ];
+        sh:property      [ sh:class     vec:TerminalRole;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:matingPointFirstTerminalRole
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:matingPointIdentification
+                         ];
+        sh:targetClass   vec:MatingPoint .
+
 vecsh:SlotInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:AbstractSlotInverseShape;
@@ -2382,35 +2411,6 @@ vecsh:VariantConfigurationShape
                          ];
         sh:targetClass   vec:VariantConfiguration .
 
-vecsh:MatingPointShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:class     vec:Connection;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:matingPointConnection
-                         ];
-        sh:property      [ sh:class     vec:MatingDetail;
-                           sh:minCount  0;
-                           sh:path      vec:matingPointMatingDetail
-                         ];
-        sh:property      [ sh:class     vec:TerminalRole;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:matingPointSecondTerminalRole
-                         ];
-        sh:property      [ sh:class     vec:TerminalRole;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:matingPointFirstTerminalRole
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:matingPointIdentification
-                         ];
-        sh:targetClass   vec:MatingPoint .
-
 vecsh:PathSegmentShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
@@ -2449,43 +2449,43 @@ vecsh:SpecificRoleShape
 vecsh:WireElementReferenceShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:RoutableElementShape;
-        sh:property      [ sh:datatype  xs:boolean;
+        sh:property      [ sh:class     vec:Connection;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:wireElementReferenceUnconnected
-                         ];
-        sh:property      [ sh:class     vec:Signal;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementReferenceSignal
-                         ];
-        sh:property      [ sh:class     vec:WireLength;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementReferenceWireLength
-                         ];
-        sh:property      [ sh:class     vec:ConnectionGroup;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementReferenceConnectionGroup
+                           sh:path      vec:wireElementReferenceConnection
                          ];
         sh:property      [ sh:class     vec:WireElement;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:wireElementReferenceReferencedWireElement
                          ];
-        sh:property      [ sh:class     vec:Connection;
+        sh:property      [ sh:class     vec:ConnectionGroup;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:wireElementReferenceConnection
-                         ];
-        sh:property      [ sh:class     vec:WireEnd;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementReferenceWireEnd
+                           sh:path      vec:wireElementReferenceConnectionGroup
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:wireElementReferenceIdentification
+                         ];
+        sh:property      [ sh:class     vec:WireEnd;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementReferenceWireEnd
+                         ];
+        sh:property      [ sh:class     vec:Signal;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementReferenceSignal
+                         ];
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementReferenceUnconnected
+                         ];
+        sh:property      [ sh:class     vec:WireLength;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementReferenceWireLength
                          ];
         sh:targetClass   vec:WireElementReference .
 
@@ -2552,12 +2552,6 @@ vecsh:PinWireMappingPointShape
                         ];
         sh:targetClass  vec:PinWireMappingPoint .
 
-vecsh:CartesianPoint2DInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
-        sh:class             vec:CartesianPoint2D;
-        sh:targetSubjectsOf  vec:cartesianPoint2DY , vec:cartesianPoint2DX .
-
 vecsh:EEComponentRoleShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:RoleShape;
@@ -2580,6 +2574,12 @@ vecsh:EEComponentRoleShape
                            sh:path      vec:eEComponentRoleEEComponentSpecification
                          ];
         sh:targetClass   vec:EEComponentRole .
+
+vecsh:CartesianPoint2DInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
+        sh:class             vec:CartesianPoint2D;
+        sh:targetSubjectsOf  vec:cartesianPoint2DY , vec:cartesianPoint2DX .
 
 vecsh:NetworkNodeTypeEnumShape
         rdf:type        sh:NodeShape;
@@ -2682,11 +2682,6 @@ vecsh:ContractInverseShape
         sh:class             vec:Contract;
         sh:targetSubjectsOf  vec:contractContractRole , vec:contractCompanyName .
 
-vecsh:RoutableElementShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:targetClass   vec:RoutableElement .
-
 vecsh:BuildingBlockPositioning2DShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
@@ -2705,40 +2700,45 @@ vecsh:BuildingBlockPositioning2DShape
 vecsh:ChangeDescriptionShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:Person;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:changeDescriptionApprover
-                         ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:changeDescriptionIdentification
-                         ];
-        sh:property      [ sh:class     vec:Person;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:changeDescriptionResponsibleDesigner
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:minCount  0;
-                           sh:path      vec:changeDescriptionRelatedChangeRequest
-                         ];
-        sh:property      [ sh:class     vec:AbstractLocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:changeDescriptionDescription
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:changeDescriptionLabel
                          ];
         sh:property      [ sh:datatype  xs:dateTime;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:changeDescriptionChangeDate
                          ];
+        sh:property      [ sh:class     vec:Person;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:changeDescriptionResponsibleDesigner
+                         ];
+        sh:property      [ sh:class     vec:Person;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:changeDescriptionApprover
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:minCount  0;
+                           sh:path      vec:changeDescriptionRelatedChangeRequest
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:changeDescriptionLabel
+                         ];
+        sh:property      [ sh:class     vec:AbstractLocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:changeDescriptionDescription
+                         ];
         sh:targetClass   vec:ChangeDescription .
+
+vecsh:RoutableElementShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:ConfigurableElementShape;
+        sh:targetClass   vec:RoutableElement .
 
 vecsh:WireElementSpecificationInverseShape
         rdf:type             sh:NodeShape;
@@ -2749,29 +2749,19 @@ vecsh:WireElementSpecificationInverseShape
 vecsh:TopologyNodeShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:class     vec:NodeType;
+        sh:property      [ sh:class     vec:TopologyNode;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:topologyNodeNodeType
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:topologyNodeIdentification
-                         ];
-        sh:property      [ sh:class     vec:UsageNode;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:topologyNodeRealizedUsageNode
+                           sh:path      vec:topologyNodeInstantiatedNode
                          ];
         sh:property      [ sh:class     vec:LocalizedString;
                            sh:minCount  0;
                            sh:path      vec:topologyNodeProcessingInstruction
                          ];
-        sh:property      [ sh:class     vec:TopologyNode;
+        sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:topologyNodeInstantiatedNode
+                           sh:minCount  1;
+                           sh:path      vec:topologyNodeIdentification
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -2781,6 +2771,16 @@ vecsh:TopologyNodeShape
         sh:property      [ sh:class     vec:AliasIdentification;
                            sh:minCount  0;
                            sh:path      vec:topologyNodeAliasId
+                         ];
+        sh:property      [ sh:class     vec:UsageNode;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:topologyNodeRealizedUsageNode
+                         ];
+        sh:property      [ sh:class     vec:NodeType;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:topologyNodeNodeType
                          ];
         sh:targetClass   vec:TopologyNode .
 
@@ -2807,16 +2807,6 @@ vecsh:ModularSlotShape
 vecsh:PartVersionShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ItemVersionShape;
-        sh:property      [ sh:class     vec:Project;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:partVersionProject
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:partVersionIsPreferredPart
-                         ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
@@ -2827,9 +2817,24 @@ vecsh:PartVersionShape
                            sh:minCount  1;
                            sh:path      vec:partVersionPrimaryPartType
                          ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:partVersionPartNumber
+                         ];
+        sh:property      [ sh:class     vec:Project;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:partVersionProject
+                         ];
         sh:property      [ sh:class     vec:AliasIdentification;
                            sh:minCount  0;
                            sh:path      vec:partVersionAliasId
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:partVersionPartVersion
                          ];
         sh:property      [ sh:class     vec:PartNature;
                            sh:maxCount  1;
@@ -2838,13 +2843,8 @@ vecsh:PartVersionShape
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:partVersionPartNumber
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:partVersionPartVersion
+                           sh:minCount  0;
+                           sh:path      vec:partVersionIsPreferredPart
                          ];
         sh:targetClass   vec:PartVersion .
 
@@ -2992,50 +2992,50 @@ vecsh:BoltMountedFixingSpecificationInverseShape
 
 vecsh:DimensionShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:dimensionIdentification
-                         ];
-        sh:property      [ sh:class     vec:DimensionAnchor;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:dimensionDimensionAnchor
-                         ];
-        sh:property      [ sh:class     vec:Path;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:dimensionPath
-                         ];
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:dimensionValueComponent
-                         ];
-        sh:property      [ sh:class     vec:Location;
-                           sh:maxCount  2;
-                           sh:minCount  0;
-                           sh:path      vec:dimensionDefinedLocations
-                         ];
-        sh:property      [ sh:class     vec:Tolerance;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:dimensionTolerance
-                         ];
-        sh:property      [ sh:class     vec:DimensionAnchor;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:dimensionReferenceAnchor
                          ];
         sh:property      [ sh:class     vec:Unit;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:dimensionUnitComponent
                          ];
+        sh:property      [ sh:class     vec:Tolerance;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:dimensionTolerance
+                         ];
         sh:property      [ sh:datatype  xs:boolean;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:dimensionValueCalculated
+                         ];
+        sh:property      [ sh:class     vec:DimensionAnchor;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:dimensionReferenceAnchor
+                         ];
+        sh:property      [ sh:class     vec:Path;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:dimensionPath
+                         ];
+        sh:property      [ sh:class     vec:DimensionAnchor;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:dimensionDimensionAnchor
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:dimensionIdentification
+                         ];
+        sh:property      [ sh:class     vec:Location;
+                           sh:maxCount  2;
+                           sh:minCount  0;
+                           sh:path      vec:dimensionDefinedLocations
                          ];
         sh:targetClass   vec:Dimension .
 
@@ -3364,12 +3364,6 @@ vecsh:SignalSubTypeEnumShape
         sh:severity     sh:Info;
         sh:targetClass  vec:SignalSubType .
 
-vecsh:RelaySpecificationInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:EEComponentSpecificationInverseShape;
-        sh:class             vec:RelaySpecification;
-        sh:targetSubjectsOf  vec:relaySpecificationApplianceType , vec:relaySpecificationLowNoise , vec:relaySpecificationRelaisType , vec:relaySpecificationIMax .
-
 vecsh:MappingSpecificationInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:SpecificationInverseShape;
@@ -3387,6 +3381,12 @@ vecsh:GrommetSpecificationInverseShape
         rdfs:subClassOf      vecsh:PartOrUsageRelatedSpecificationInverseShape;
         sh:class             vec:GrommetSpecification;
         sh:targetSubjectsOf  vec:grommetSpecificationCableLeadThrough , vec:grommetSpecificationGrommetType , vec:grommetSpecificationPlateThickness , vec:grommetSpecificationHoleDiameter , vec:grommetSpecificationHardness .
+
+vecsh:RelaySpecificationInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:EEComponentSpecificationInverseShape;
+        sh:class             vec:RelaySpecification;
+        sh:targetSubjectsOf  vec:relaySpecificationApplianceType , vec:relaySpecificationLowNoise , vec:relaySpecificationRelaisType , vec:relaySpecificationIMax .
 
 vecsh:VariantGroupShape
         rdf:type         sh:NodeShape;
@@ -3447,9 +3447,30 @@ vecsh:FerriteSpecificationInverseShape
 vecsh:OccurrenceOrUsageShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
+        sh:property      [ sh:class     vec:Instruction;
+                           sh:minCount  0;
+                           sh:path      vec:occurrenceOrUsageInstallationInstruction
+                         ];
         sh:property      [ sh:class     vec:AbstractLocalizedString;
                            sh:minCount  0;
                            sh:path      vec:occurrenceOrUsageDescription
+                         ];
+        sh:property      [ sh:class     vec:UsageNode;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:occurrenceOrUsageRealizedUsageNode
+                         ];
+        sh:property      [ sh:class     vec:Role;
+                           sh:minCount  0;
+                           sh:path      vec:occurrenceOrUsageRole
+                         ];
+        sh:property      [ sh:class     vec:LocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:occurrenceOrUsageAbbreviation
+                         ];
+        sh:property      [ sh:class     vec:AliasIdentification;
+                           sh:minCount  0;
+                           sh:path      vec:occurrenceOrUsageAliasId
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -3459,27 +3480,6 @@ vecsh:OccurrenceOrUsageShape
         sh:property      [ sh:class     vec:OccurrenceOrUsage;
                            sh:minCount  0;
                            sh:path      vec:occurrenceOrUsageReferenceElement
-                         ];
-        sh:property      [ sh:class     vec:UsageNode;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:occurrenceOrUsageRealizedUsageNode
-                         ];
-        sh:property      [ sh:class     vec:AliasIdentification;
-                           sh:minCount  0;
-                           sh:path      vec:occurrenceOrUsageAliasId
-                         ];
-        sh:property      [ sh:class     vec:LocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:occurrenceOrUsageAbbreviation
-                         ];
-        sh:property      [ sh:class     vec:Instruction;
-                           sh:minCount  0;
-                           sh:path      vec:occurrenceOrUsageInstallationInstruction
-                         ];
-        sh:property      [ sh:class     vec:Role;
-                           sh:minCount  0;
-                           sh:path      vec:occurrenceOrUsageRole
                          ];
         sh:targetClass   vec:OccurrenceOrUsage .
 
@@ -3638,12 +3638,6 @@ vecsh:NURBSCurveInverseShape
         sh:class             vec:NURBSCurve;
         sh:targetSubjectsOf  vec:nURBSCurveKnots , vec:nURBSCurveControlPoint , vec:nURBSCurveDegree .
 
-vecsh:CompositeUnitInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:UnitInverseShape;
-        sh:class             vec:CompositeUnit;
-        sh:targetSubjectsOf  vec:compositeUnitFactors .
-
 vecsh:RoutingSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
@@ -3652,20 +3646,6 @@ vecsh:RoutingSpecificationShape
                            sh:path      vec:routingSpecificationRouting
                          ];
         sh:targetClass   vec:RoutingSpecification .
-
-vecsh:FittingSpecificationShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:WireProtectionSpecificationShape;
-        sh:property      [ sh:class     vec:FittingOutlet;
-                           sh:minCount  0;
-                           sh:path      vec:fittingSpecificationOutlet
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:fittingSpecificationForm
-                         ];
-        sh:targetClass   vec:FittingSpecification .
 
 vecsh:SlotSpecificationShape
         rdf:type         sh:NodeShape;
@@ -3701,6 +3681,26 @@ vecsh:SlotSpecificationShape
                            sh:path      vec:slotSpecificationEmvProtectionRequired
                          ];
         sh:targetClass   vec:SlotSpecification .
+
+vecsh:CompositeUnitInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:UnitInverseShape;
+        sh:class             vec:CompositeUnit;
+        sh:targetSubjectsOf  vec:compositeUnitFactors .
+
+vecsh:FittingSpecificationShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:WireProtectionSpecificationShape;
+        sh:property      [ sh:class     vec:FittingOutlet;
+                           sh:minCount  0;
+                           sh:path      vec:fittingSpecificationOutlet
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:fittingSpecificationForm
+                         ];
+        sh:targetClass   vec:FittingSpecification .
 
 vecsh:CableLeadThroughShape
         rdf:type         sh:NodeShape;
@@ -3744,33 +3744,15 @@ vecsh:FuseComponentShape
 vecsh:WireElementSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
+        sh:property      [ sh:class     vec:InsulationSpecification;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationInsulationSpecification
+                         ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:wireElementSpecificationMinBendRadiusStatic
-                         ];
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationSuitedForDynamicUse
-                         ];
-        sh:property      [ sh:class     vec:Size;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationSize
-                         ];
-        sh:property      [ sh:class     vec:FillerSpecification;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationFillerSpecification
-                         ];
-        sh:property      [ sh:class     vec:WireReceptionType;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationValidWireReceptionTypes
-                         ];
-        sh:property      [ sh:class     vec:WireType;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationType
                          ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
@@ -3786,25 +3768,9 @@ vecsh:WireElementSpecificationShape
                            sh:minCount  0;
                            sh:path      vec:wireElementSpecificationSubWireElementSpecification
                          ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
+        sh:property      [ sh:class     vec:WireType;
                            sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationMinBendRadiusDynamic
-                         ];
-        sh:property      [ sh:class     vec:InsulationSpecification;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationInsulationSpecification
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationImpedance
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireElementSpecificationGridSpacing
+                           sh:path      vec:wireElementSpecificationType
                          ];
         sh:property      [ sh:class     vec:WireGroupSpecification;
                            sh:maxCount  1;
@@ -3815,6 +3781,40 @@ vecsh:WireElementSpecificationShape
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:wireElementSpecificationConductorSpecification
+                         ];
+        sh:property      [ sh:class     vec:Size;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationSize
+                         ];
+        sh:property      [ sh:class     vec:FillerSpecification;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationFillerSpecification
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationGridSpacing
+                         ];
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationSuitedForDynamicUse
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationMinBendRadiusDynamic
+                         ];
+        sh:property      [ sh:class     vec:WireReceptionType;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationValidWireReceptionTypes
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireElementSpecificationImpedance
                          ];
         sh:targetClass   vec:WireElementSpecification .
 
@@ -3913,19 +3913,6 @@ vecsh:GeometrySegment3DShape
                          ];
         sh:targetClass   vec:GeometrySegment3D .
 
-vecsh:WireTypeShape  rdf:type  sh:NodeShape;
-        sh:property     [ sh:datatype  xs:string;
-                          sh:maxCount  1;
-                          sh:minCount  1;
-                          sh:path      vec:wireTypeReferenceSystem
-                        ];
-        sh:property     [ sh:datatype  xs:string;
-                          sh:maxCount  1;
-                          sh:minCount  1;
-                          sh:path      vec:wireTypeType
-                        ];
-        sh:targetClass  vec:WireType .
-
 vecsh:FixingSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
@@ -3940,6 +3927,19 @@ vecsh:FixingSpecificationShape
                            sh:path      vec:fixingSpecificationOffset
                          ];
         sh:targetClass   vec:FixingSpecification .
+
+vecsh:WireTypeShape  rdf:type  sh:NodeShape;
+        sh:property     [ sh:datatype  xs:string;
+                          sh:maxCount  1;
+                          sh:minCount  1;
+                          sh:path      vec:wireTypeReferenceSystem
+                        ];
+        sh:property     [ sh:datatype  xs:string;
+                          sh:maxCount  1;
+                          sh:minCount  1;
+                          sh:path      vec:wireTypeType
+                        ];
+        sh:targetClass  vec:WireType .
 
 vecsh:MultiCavityPlugSpecificationInverseShape
         rdf:type             sh:NodeShape;
@@ -4276,17 +4276,17 @@ vecsh:FunctionalAssignmentGroupInverseShape
         sh:class             vec:FunctionalAssignmentGroup;
         sh:targetSubjectsOf  vec:functionalAssignmentGroupFunctionalRequirements .
 
-vecsh:InternalComponentConnectionInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
-        sh:class             vec:InternalComponentConnection;
-        sh:targetSubjectsOf  vec:internalComponentConnectionPins , vec:internalComponentConnectionConductorSpecification , vec:internalComponentConnectionIdentification .
-
 vecsh:RequirementsConformanceSpecificationInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:PartOrUsageRelatedSpecificationInverseShape;
         sh:class             vec:RequirementsConformanceSpecification;
         sh:targetSubjectsOf  vec:requirementsConformanceSpecificationConformanceStatement .
+
+vecsh:InternalComponentConnectionInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
+        sh:class             vec:InternalComponentConnection;
+        sh:targetSubjectsOf  vec:internalComponentConnectionPins , vec:internalComponentConnectionConductorSpecification , vec:internalComponentConnectionIdentification .
 
 vecsh:DimensionAnchorInverseShape
         rdf:type         sh:NodeShape;
@@ -4408,34 +4408,10 @@ vecsh:CavitySealRoleInverseShape
 vecsh:ApplicationConstraintShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:ApplicationConstraint;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:applicationConstraintBaseInclusion
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:applicationConstraintFromSerialNumber
-                         ];
-        sh:property      [ sh:class     vec:Project;
-                           sh:minCount  0;
-                           sh:path      vec:applicationConstraintProject
-                         ];
-        sh:property      [ sh:datatype  xs:dateTime;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:applicationConstraintToDate
-                         ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:applicationConstraintToSerialNumber
-                         ];
-        sh:property      [ sh:class     vec:ApplicationConstraintType;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:applicationConstraintType
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:minCount  0;
@@ -4445,6 +4421,30 @@ vecsh:ApplicationConstraintShape
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:applicationConstraintFromDate
+                         ];
+        sh:property      [ sh:class     vec:Project;
+                           sh:minCount  0;
+                           sh:path      vec:applicationConstraintProject
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:applicationConstraintFromSerialNumber
+                         ];
+        sh:property      [ sh:class     vec:ApplicationConstraint;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:applicationConstraintBaseInclusion
+                         ];
+        sh:property      [ sh:datatype  xs:dateTime;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:applicationConstraintToDate
+                         ];
+        sh:property      [ sh:class     vec:ApplicationConstraintType;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:applicationConstraintType
                          ];
         sh:targetClass   vec:ApplicationConstraint .
 
@@ -4687,6 +4687,12 @@ vecsh:WireEndShape  rdf:type  sh:NodeShape;
                          ];
         sh:targetClass   vec:WireEnd .
 
+vecsh:WireProtectionRoleInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:RoleInverseShape;
+        sh:class             vec:WireProtectionRole;
+        sh:targetSubjectsOf  vec:wireProtectionRoleWireProtectionSpecification , vec:wireProtectionRoleProtectionLength .
+
 vecsh:PartUsageShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:OccurrenceOrUsageShape;
         sh:property      [ sh:class     vec:PartUsage;
@@ -4708,12 +4714,6 @@ vecsh:PartUsageShape  rdf:type  sh:NodeShape;
                            sh:path      vec:partUsagePrimaryPartUsageType
                          ];
         sh:targetClass   vec:PartUsage .
-
-vecsh:WireProtectionRoleInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:RoleInverseShape;
-        sh:class             vec:WireProtectionRole;
-        sh:targetSubjectsOf  vec:wireProtectionRoleWireProtectionSpecification , vec:wireProtectionRoleProtectionLength .
 
 vecsh:IntegerValuePropertyShape
         rdf:type         sh:NodeShape;
@@ -4776,49 +4776,6 @@ vecsh:ShieldSpecificationShape
                          ];
         sh:targetClass   vec:ShieldSpecification .
 
-vecsh:ConnectorHousingSpecificationShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationCoupleable
-                         ];
-        sh:property      [ sh:class     vec:Coding;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationCoding
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationAverageWireLengthAddOn
-                         ];
-        sh:property      [ sh:class     vec:SegmentConnectionPoint;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationSegmentConnectionPoint
-                         ];
-        sh:property      [ sh:class     vec:ValueRange;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationVoltageRange
-                         ];
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationConnectorPositionAssurance
-                         ];
-        sh:property      [ sh:class     vec:ConnectorOutletDirection;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationOutletDirection
-                         ];
-        sh:property      [ sh:class     vec:AbstractSlot;
-                           sh:minCount  0;
-                           sh:path      vec:connectorHousingSpecificationSlot
-                         ];
-        sh:targetClass   vec:ConnectorHousingSpecification .
-
 vecsh:VariantConfigurationSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
@@ -4827,6 +4784,49 @@ vecsh:VariantConfigurationSpecificationShape
                            sh:path      vec:variantConfigurationSpecificationVariantConfiguration
                          ];
         sh:targetClass   vec:VariantConfigurationSpecification .
+
+vecsh:ConnectorHousingSpecificationShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationCoupleable
+                         ];
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationConnectorPositionAssurance
+                         ];
+        sh:property      [ sh:class     vec:AbstractSlot;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationSlot
+                         ];
+        sh:property      [ sh:class     vec:SegmentConnectionPoint;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationSegmentConnectionPoint
+                         ];
+        sh:property      [ sh:class     vec:ConnectorOutletDirection;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationOutletDirection
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationAverageWireLengthAddOn
+                         ];
+        sh:property      [ sh:class     vec:Coding;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationCoding
+                         ];
+        sh:property      [ sh:class     vec:ValueRange;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:connectorHousingSpecificationVoltageRange
+                         ];
+        sh:targetClass   vec:ConnectorHousingSpecification .
 
 vecsh:CavityMountingDetailInverseShape
         rdf:type             sh:NodeShape;
@@ -5020,6 +5020,63 @@ vecsh:PinTypeEnumShape
         sh:severity     sh:Info;
         sh:targetClass  vec:PinType .
 
+vecsh:CableDuctSpecificationShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
+        sh:property      [ sh:class     vec:CableDuctOutlet;
+                           sh:minCount  0;
+                           sh:path      vec:cableDuctSpecificationOutlet
+                         ];
+        sh:targetClass   vec:CableDuctSpecification .
+
+vecsh:PartStructureSpecificationShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
+        sh:property      [ sh:class     vec:OccurrenceOrUsage;
+                           sh:minCount  0;
+                           sh:path      vec:partStructureSpecificationInBillOfMaterial
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:partStructureSpecificationContent
+                         ];
+        sh:targetClass   vec:PartStructureSpecification .
+
+vecsh:AliasIdentificationShape
+        rdf:type        sh:NodeShape;
+        sh:property     [ sh:class     vec:AbstractLocalizedString;
+                          sh:minCount  0;
+                          sh:path      vec:aliasIdentificationDescription
+                        ];
+        sh:property     [ sh:datatype  xs:string;
+                          sh:maxCount  1;
+                          sh:minCount  0;
+                          sh:path      vec:aliasIdentificationScope
+                        ];
+        sh:property     [ sh:class     vec:AliasIdentificationType;
+                          sh:maxCount  1;
+                          sh:minCount  0;
+                          sh:path      vec:aliasIdentificationType
+                        ];
+        sh:property     [ sh:datatype  xs:string;
+                          sh:maxCount  1;
+                          sh:minCount  1;
+                          sh:path      vec:aliasIdentificationIdentificationValue
+                        ];
+        sh:targetClass  vec:AliasIdentification .
+
+vecsh:  rdf:type      owl:Ontology;
+        rdfs:comment  "\nThis shapes graph can be used to validate VEC graphs against the VEC Syntax rules (similiar to the XSD rules, plus a bit more..\n\nThis file is provided under the terms of the MIT license reproduced here.\nCopyright © 2021 prostep ivip association\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\t\t\n\n---------------------------------------------------------------------------------------------------\n\nGenerated Ontology from VEC model. Changelog can be found at https://track.prostep.com/browse/KBLFRM.\nAttention: If this is a SNAPSHOT version, then this schema is produced by a nightly or preview build, \nis NO OFFICIAL RELEASE and can change at any time.\n\nVersion:   1.2.0\nRevision:  not-set\nTimestamp: not-set\n---------------------------------------------------------------------------------------------------                    \n                "@en;
+        rdfs:label    "SHACL for Vehicle Electric Container"@en;
+        owl:imports   vec: , sh:;
+        sh:declare    [ sh:namespace  "http://www.prostep.org/ontologies/ecad/2024/03/vec-shacl#";
+                        sh:prefix     "vecsh"
+                      ];
+        sh:declare    [ sh:namespace  "http://www.prostep.org/ontologies/ecad/2024/03/vec#";
+                        sh:prefix     "vec"
+                      ] .
+
 vecsh:TerminalPairingShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
@@ -5055,29 +5112,6 @@ vecsh:TerminalPairingShape
                          ];
         sh:targetClass   vec:TerminalPairing .
 
-vecsh:CableDuctSpecificationShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
-        sh:property      [ sh:class     vec:CableDuctOutlet;
-                           sh:minCount  0;
-                           sh:path      vec:cableDuctSpecificationOutlet
-                         ];
-        sh:targetClass   vec:CableDuctSpecification .
-
-vecsh:PartStructureSpecificationShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
-        sh:property      [ sh:class     vec:OccurrenceOrUsage;
-                           sh:minCount  0;
-                           sh:path      vec:partStructureSpecificationInBillOfMaterial
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:partStructureSpecificationContent
-                         ];
-        sh:targetClass   vec:PartStructureSpecification .
-
 vecsh:WireReceptionShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
@@ -5102,40 +5136,6 @@ vecsh:WireReceptionShape
                            sh:path      vec:wireReceptionIdentification
                          ];
         sh:targetClass   vec:WireReception .
-
-vecsh:AliasIdentificationShape
-        rdf:type        sh:NodeShape;
-        sh:property     [ sh:class     vec:AbstractLocalizedString;
-                          sh:minCount  0;
-                          sh:path      vec:aliasIdentificationDescription
-                        ];
-        sh:property     [ sh:datatype  xs:string;
-                          sh:maxCount  1;
-                          sh:minCount  0;
-                          sh:path      vec:aliasIdentificationScope
-                        ];
-        sh:property     [ sh:class     vec:AliasIdentificationType;
-                          sh:maxCount  1;
-                          sh:minCount  0;
-                          sh:path      vec:aliasIdentificationType
-                        ];
-        sh:property     [ sh:datatype  xs:string;
-                          sh:maxCount  1;
-                          sh:minCount  1;
-                          sh:path      vec:aliasIdentificationIdentificationValue
-                        ];
-        sh:targetClass  vec:AliasIdentification .
-
-vecsh:  rdf:type      owl:Ontology;
-        rdfs:comment  "\nThis shapes graph can be used to validate VEC graphs against the VEC Syntax rules (similiar to the XSD rules, plus a bit more..\n\nThis file is provided under the terms of the MIT license reproduced here.\nCopyright ┬® 2021 prostep ivip association\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\t\t\n\n---------------------------------------------------------------------------------------------------\n\nGenerated Ontology from VEC model. Changelog can be found at https://track.prostep.com/browse/KBLFRM.\nAttention: If this is a SNAPSHOT version, then this schema is produced by a nightly or preview build, \nis NO OFFICIAL RELEASE and can change at any time.\n\nVersion:   1.2.0\nRevision:  not-set\nTimestamp: not-set\n---------------------------------------------------------------------------------------------------                    \n                "@en;
-        rdfs:label    "SHACL for Vehicle Electric Container"@en;
-        owl:imports   vec: , sh:;
-        sh:declare    [ sh:namespace  "http://www.prostep.org/ontologies/ecad/2024/03/vec-shacl#";
-                        sh:prefix     "vecsh"
-                      ];
-        sh:declare    [ sh:namespace  "http://www.prostep.org/ontologies/ecad/2024/03/vec#";
-                        sh:prefix     "vec"
-                      ] .
 
 vecsh:LocationShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:DimensionAnchorShape;
@@ -5207,6 +5207,16 @@ vecsh:PrimaryLockingTypeEnumShape
         sh:severity     sh:Info;
         sh:targetClass  vec:PrimaryLockingType .
 
+vecsh:CableTieRoleShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:RoleShape;
+        sh:property      [ sh:class     vec:CableTieSpecification;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:cableTieRoleCableTieSpecification
+                         ];
+        sh:targetClass   vec:CableTieRole .
+
 vecsh:PinComponentShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
@@ -5239,16 +5249,6 @@ vecsh:PinComponentShape
                            sh:path      vec:pinComponentIdentification
                          ];
         sh:targetClass   vec:PinComponent .
-
-vecsh:CableTieRoleShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:RoleShape;
-        sh:property      [ sh:class     vec:CableTieSpecification;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:cableTieRoleCableTieSpecification
-                         ];
-        sh:targetClass   vec:CableTieRole .
 
 vecsh:OpenCavitiesAssignmentInverseShape
         rdf:type             sh:NodeShape;
@@ -5411,23 +5411,13 @@ vecsh:ValueWithUnitInverseShape
 vecsh:InsulationSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:insulationSpecificationLabelIdentificationValue
-                         ];
-        sh:property      [ sh:class     vec:Color;
-                           sh:minCount  0;
-                           sh:path      vec:insulationSpecificationFirstIdentificationColor
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:insulationSpecificationLabelIdentificationType
-                         ];
         sh:property      [ sh:class     vec:Color;
                            sh:minCount  0;
                            sh:path      vec:insulationSpecificationLabelIdentificationColor
+                         ];
+        sh:property      [ sh:class     vec:Color;
+                           sh:minCount  0;
+                           sh:path      vec:insulationSpecificationSecondIdentificationColor
                          ];
         sh:property      [ sh:class     vec:Material;
                            sh:minCount  0;
@@ -5439,12 +5429,22 @@ vecsh:InsulationSpecificationShape
                          ];
         sh:property      [ sh:class     vec:Color;
                            sh:minCount  0;
-                           sh:path      vec:insulationSpecificationSecondIdentificationColor
+                           sh:path      vec:insulationSpecificationFirstIdentificationColor
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:insulationSpecificationLabelIdentificationType
                          ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:insulationSpecificationThickness
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:insulationSpecificationLabelIdentificationValue
                          ];
         sh:targetClass   vec:InsulationSpecification .
 
@@ -5558,16 +5558,6 @@ vecsh:ModularSlotReferenceShape
                          ];
         sh:targetClass   vec:ModularSlotReference .
 
-vecsh:MeasurePointPositionShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:LocalPositionShape;
-        sh:property      [ sh:class     vec:MeasurementPoint;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:measurePointPositionMeasurementPoint
-                         ];
-        sh:targetClass   vec:MeasurePointPosition .
-
 vecsh:StripeSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:WireProtectionSpecificationShape;
@@ -5593,17 +5583,35 @@ vecsh:StripeSpecificationShape
                          ];
         sh:targetClass   vec:StripeSpecification .
 
+vecsh:MeasurePointPositionShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:LocalPositionShape;
+        sh:property      [ sh:class     vec:MeasurementPoint;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:measurePointPositionMeasurementPoint
+                         ];
+        sh:targetClass   vec:MeasurePointPosition .
+
 vecsh:DocumentVersionShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ItemVersionShape;
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:documentVersionDocumentNumber
+                           sh:minCount  0;
+                           sh:path      vec:documentVersionFileName
+                         ];
+        sh:property      [ sh:class     vec:Specification;
+                           sh:minCount  0;
+                           sh:path      vec:documentVersionSpecification
                          ];
         sh:property      [ sh:class     vec:SheetOrChapter;
                            sh:minCount  0;
                            sh:path      vec:documentVersionSheetOrChapter
+                         ];
+        sh:property      [ sh:class     vec:ItemEquivalence;
+                           sh:minCount  0;
+                           sh:path      vec:documentVersionItemEquivalence
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -5613,29 +5621,26 @@ vecsh:DocumentVersionShape
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:documentVersionFileName
+                           sh:path      vec:documentVersionDataFormat
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:documentVersionCreatingSystem
+                         ];
+        sh:property      [ sh:class     vec:DocumentVersion;
+                           sh:minCount  0;
+                           sh:path      vec:documentVersionRelatedDocument
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:documentVersionDocumentNumber
                          ];
         sh:property      [ sh:class     vec:DocumentType;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:documentVersionDocumentType
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:documentVersionDigitalRepresentationIndex
-                         ];
-        sh:property      [ sh:class     vec:ItemEquivalence;
-                           sh:minCount  0;
-                           sh:path      vec:documentVersionItemEquivalence
-                         ];
-        sh:property      [ sh:class     vec:Specification;
-                           sh:minCount  0;
-                           sh:path      vec:documentVersionSpecification
-                         ];
-        sh:property      [ sh:class     vec:DocumentVersion;
-                           sh:minCount  0;
-                           sh:path      vec:documentVersionRelatedDocument
                          ];
         sh:property      [ sh:class     vec:PartVersion;
                            sh:minCount  0;
@@ -5643,13 +5648,8 @@ vecsh:DocumentVersionShape
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:documentVersionDocumentVersion
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:documentVersionDataFormat
+                           sh:path      vec:documentVersionDigitalRepresentationIndex
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
@@ -5658,8 +5658,8 @@ vecsh:DocumentVersionShape
                          ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:documentVersionCreatingSystem
+                           sh:minCount  1;
+                           sh:path      vec:documentVersionDocumentVersion
                          ];
         sh:targetClass   vec:DocumentVersion .
 
@@ -5970,6 +5970,12 @@ vecsh:ShrinkableTubeSpecificationInverseShape
         sh:class             vec:ShrinkableTubeSpecification;
         sh:targetSubjectsOf  vec:shrinkableTubeSpecificationWaterAbsorbtion , vec:shrinkableTubeSpecificationResin , vec:shrinkableTubeSpecificationMaximumLongitudinalShrinkage , vec:shrinkableTubeSpecificationShrinkingFactor .
 
+vecsh:SignalInformationTypeEnumShape
+        rdf:type        sh:NodeShape;
+        sh:in           ( vec:SignalInformationType_Analog vec:SignalInformationType_Digital );
+        sh:severity     sh:Info;
+        sh:targetClass  vec:SignalInformationType .
+
 vecsh:ItemEquivalenceShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
@@ -5983,18 +5989,6 @@ vecsh:ItemEquivalenceShape
                            sh:path      vec:itemEquivalenceCompanyName
                          ];
         sh:targetClass   vec:ItemEquivalence .
-
-vecsh:SignalInformationTypeEnumShape
-        rdf:type        sh:NodeShape;
-        sh:in           ( vec:SignalInformationType_Analog vec:SignalInformationType_Digital );
-        sh:severity     sh:Info;
-        sh:targetClass  vec:SignalInformationType .
-
-vecsh:PlaceableElementRoleInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:RoleInverseShape;
-        sh:class             vec:PlaceableElementRole;
-        sh:targetSubjectsOf  vec:placeableElementRolePlaceableElementSpecification , vec:placeableElementRoleMeasurementPointReference , vec:placeableElementRolePlacementPointReference .
 
 vecsh:CableLeadThroughSpecificationShape
         rdf:type         sh:NodeShape;
@@ -6035,6 +6029,12 @@ vecsh:USUnitNameEnumShape
         rdf:type        sh:NodeShape;
         sh:in           ( vec:USUnitName_Thou vec:USUnitName_Inch vec:USUnitName_Foot vec:USUnitName_Yard vec:USUnitName_Chain vec:USUnitName_Furlong vec:USUnitName_Mile vec:USUnitName_League vec:USUnitName_FluidOunce vec:USUnitName_Gill vec:USUnitName_Pint vec:USUnitName_Quart vec:USUnitName_Gallon vec:USUnitName_Grain vec:USUnitName_Drachm vec:USUnitName_Ounce vec:USUnitName_Pound vec:USUnitName_Stone vec:USUnitName_Quarter vec:USUnitName_HundredWeight vec:USUnitName_Ton vec:USUnitName_Perch vec:USUnitName_Rood vec:USUnitName_Acre vec:USUnitName_AWG );
         sh:targetClass  vec:USUnitName .
+
+vecsh:PlaceableElementRoleInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:RoleInverseShape;
+        sh:class             vec:PlaceableElementRole;
+        sh:targetSubjectsOf  vec:placeableElementRolePlaceableElementSpecification , vec:placeableElementRoleMeasurementPointReference , vec:placeableElementRolePlacementPointReference .
 
 vecsh:ComponentPortShape
         rdf:type         sh:NodeShape;
@@ -6214,24 +6214,6 @@ vecsh:SpecificRoleInverseShape
         sh:class             vec:SpecificRole;
         sh:targetSubjectsOf  vec:specificRoleSpecification , vec:specificRoleSpecificRoleType .
 
-vecsh:ModuleFamilyShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:ExtendableElementShape;
-        sh:property      [ sh:class     vec:PartWithSubComponentsRole;
-                           sh:minCount  1;
-                           sh:path      vec:moduleFamilyModuleInFamily
-                         ];
-        sh:property      [ sh:class     vec:AbstractLocalizedString;
-                           sh:minCount  0;
-                           sh:path      vec:moduleFamilyDescription
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:moduleFamilyIdentification
-                         ];
-        sh:targetClass   vec:ModuleFamily .
-
 vecsh:BoundingBoxShape
         rdf:type        sh:NodeShape;
         sh:property     [ sh:class     vec:NumericalValue;
@@ -6250,6 +6232,24 @@ vecsh:BoundingBoxShape
                           sh:path      vec:boundingBoxX
                         ];
         sh:targetClass  vec:BoundingBox .
+
+vecsh:ModuleFamilyShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:ExtendableElementShape;
+        sh:property      [ sh:class     vec:PartWithSubComponentsRole;
+                           sh:minCount  1;
+                           sh:path      vec:moduleFamilyModuleInFamily
+                         ];
+        sh:property      [ sh:class     vec:AbstractLocalizedString;
+                           sh:minCount  0;
+                           sh:path      vec:moduleFamilyDescription
+                         ];
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:moduleFamilyIdentification
+                         ];
+        sh:targetClass   vec:ModuleFamily .
 
 vecsh:EEComponentSpecificationInverseShape
         rdf:type             sh:NodeShape;
@@ -6446,17 +6446,17 @@ vecsh:HarnessGeometrySpecification3DInverseShape
         sh:class             vec:HarnessGeometrySpecification3D;
         sh:targetSubjectsOf  vec:harnessGeometrySpecification3DGeometryType , vec:harnessGeometrySpecification3DBuildingBlockPositionings , vec:harnessGeometrySpecification3DType .
 
-vecsh:ContactPointInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
-        sh:class             vec:ContactPoint;
-        sh:targetSubjectsOf  vec:contactPointWireMounting , vec:contactPointMountedTerminal , vec:contactPointCavityMounting , vec:contactPointIdentification .
-
 vecsh:RingTerminalSpecificationInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:TerminalSpecificationInverseShape;
         sh:class             vec:RingTerminalSpecification;
         sh:targetSubjectsOf  vec:ringTerminalSpecificationTorsionProtection , vec:ringTerminalSpecificationOutsideDimension , vec:ringTerminalSpecificationBoltType , vec:ringTerminalSpecificationThickness , vec:ringTerminalSpecificationBoltNominalSize , vec:ringTerminalSpecificationBoltDiameter .
+
+vecsh:ContactPointInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
+        sh:class             vec:ContactPoint;
+        sh:targetSubjectsOf  vec:contactPointWireMounting , vec:contactPointMountedTerminal , vec:contactPointCavityMounting , vec:contactPointIdentification .
 
 vecsh:WireSpecificationShape
         rdf:type         sh:NodeShape;
@@ -6563,44 +6563,44 @@ vecsh:RingTerminalSpecificationShape
 vecsh:GeneralTechnicalPartSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:PartOrUsageRelatedSpecificationShape;
+        sh:property      [ sh:class     vec:PartRelation;
+                           sh:minCount  0;
+                           sh:path      vec:generalTechnicalPartSpecificationPartRelation
+                         ];
         sh:property      [ sh:class     vec:RobustnessProperties;
                            sh:minCount  0;
                            sh:path      vec:generalTechnicalPartSpecificationRobustnessProperties
+                         ];
+        sh:property      [ sh:class     vec:TemperatureInformation;
+                           sh:minCount  0;
+                           sh:path      vec:generalTechnicalPartSpecificationTemperatureInformation
+                         ];
+        sh:property      [ sh:class     vec:Material;
+                           sh:minCount  0;
+                           sh:path      vec:generalTechnicalPartSpecificationMaterialInformation
                          ];
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:generalTechnicalPartSpecificationFitRate
                          ];
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:generalTechnicalPartSpecificationUnspecifiedAccessoryPermitted
-                         ];
-        sh:property      [ sh:class     vec:Material;
-                           sh:minCount  0;
-                           sh:path      vec:generalTechnicalPartSpecificationMaterialInformation
-                         ];
-        sh:property      [ sh:class     vec:MassInformation;
-                           sh:minCount  0;
-                           sh:path      vec:generalTechnicalPartSpecificationMassInformation
-                         ];
         sh:property      [ sh:class     vec:BoundingBox;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:generalTechnicalPartSpecificationBoundingBox
                          ];
-        sh:property      [ sh:class     vec:PartRelation;
+        sh:property      [ sh:class     vec:MassInformation;
                            sh:minCount  0;
-                           sh:path      vec:generalTechnicalPartSpecificationPartRelation
-                         ];
-        sh:property      [ sh:class     vec:TemperatureInformation;
-                           sh:minCount  0;
-                           sh:path      vec:generalTechnicalPartSpecificationTemperatureInformation
+                           sh:path      vec:generalTechnicalPartSpecificationMassInformation
                          ];
         sh:property      [ sh:class     vec:Color;
                            sh:minCount  0;
                            sh:path      vec:generalTechnicalPartSpecificationColorInformation
+                         ];
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:generalTechnicalPartSpecificationUnspecifiedAccessoryPermitted
                          ];
         sh:targetClass   vec:GeneralTechnicalPartSpecification .
 
@@ -6715,24 +6715,10 @@ vecsh:FittingSpecificationInverseShape
 vecsh:ConductorSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
-        sh:property      [ sh:class     vec:MassInformation;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:conductorSpecificationMassInformation
-                         ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:conductorSpecificationStructure
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:conductorSpecificationNumberOfStrands
-                         ];
-        sh:property      [ sh:class     vec:Material;
-                           sh:minCount  0;
-                           sh:path      vec:conductorSpecificationMaterial
                          ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
@@ -6742,16 +6728,7 @@ vecsh:ConductorSpecificationShape
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:conductorSpecificationCrossSectionArea
-                         ];
-        sh:property      [ sh:class     vec:NumericalValue;
-                           sh:maxCount  1;
-                           sh:minCount  0;
                            sh:path      vec:conductorSpecificationStrandDiameter
-                         ];
-        sh:property      [ sh:class     vec:Material;
-                           sh:minCount  0;
-                           sh:path      vec:conductorSpecificationPlatingMaterial
                          ];
         sh:property      [ sh:class     vec:NumericalValue;
                            sh:maxCount  1;
@@ -6762,10 +6739,33 @@ vecsh:ConductorSpecificationShape
                            sh:minCount  0;
                            sh:path      vec:conductorSpecificationCurrentInformation
                          ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:conductorSpecificationNumberOfStrands
+                         ];
+        sh:property      [ sh:class     vec:NumericalValue;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:conductorSpecificationCrossSectionArea
+                         ];
         sh:property      [ sh:datatype  xs:string;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:conductorSpecificationType
+                         ];
+        sh:property      [ sh:class     vec:MassInformation;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:conductorSpecificationMassInformation
+                         ];
+        sh:property      [ sh:class     vec:Material;
+                           sh:minCount  0;
+                           sh:path      vec:conductorSpecificationMaterial
+                         ];
+        sh:property      [ sh:class     vec:Material;
+                           sh:minCount  0;
+                           sh:path      vec:conductorSpecificationPlatingMaterial
                          ];
         sh:targetClass   vec:ConductorSpecification .
 
@@ -6827,37 +6827,37 @@ vecsh:InsulationStateEnumShape
 vecsh:ComponentNodeShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
-        sh:property      [ sh:class     vec:ComponentConnector;
+        sh:property      [ sh:class     vec:LocalizedString;
                            sh:minCount  0;
-                           sh:path      vec:componentNodeComponentConnector
-                         ];
-        sh:property      [ sh:datatype  xs:string;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:componentNodeIdentification
+                           sh:path      vec:componentNodeAbbreviation
                          ];
         sh:property      [ sh:class     vec:ComponentNodeType;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:componentNodeComponentNodeType
                          ];
-        sh:property      [ sh:class     vec:ComponentNode;
+        sh:property      [ sh:class     vec:ComponentConnector;
                            sh:minCount  0;
-                           sh:path      vec:componentNodeChildNode
-                         ];
-        sh:property      [ sh:class     vec:UsageNode;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:componentNodeRealizedUsageNode
+                           sh:path      vec:componentNodeComponentConnector
                          ];
         sh:property      [ sh:class     vec:NetworkNode;
                            sh:maxCount  1;
                            sh:minCount  0;
                            sh:path      vec:componentNodeNetworkNode
                          ];
-        sh:property      [ sh:class     vec:LocalizedString;
+        sh:property      [ sh:datatype  xs:string;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:componentNodeIdentification
+                         ];
+        sh:property      [ sh:class     vec:UsageNode;
+                           sh:maxCount  1;
                            sh:minCount  0;
-                           sh:path      vec:componentNodeAbbreviation
+                           sh:path      vec:componentNodeRealizedUsageNode
+                         ];
+        sh:property      [ sh:class     vec:ComponentNode;
+                           sh:minCount  0;
+                           sh:path      vec:componentNodeChildNode
                          ];
         sh:property      [ sh:class     vec:ComponentNodeSubType;
                            sh:maxCount  1;
@@ -6991,12 +6991,6 @@ vecsh:FunctionalAssignmentGroupShape
                          ];
         sh:targetClass   vec:FunctionalAssignmentGroup .
 
-vecsh:BuildingBlockSpecification3DInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:SpecificationInverseShape;
-        sh:class             vec:BuildingBlockSpecification3D;
-        sh:targetSubjectsOf  vec:buildingBlockSpecification3DGeometrySegment , vec:buildingBlockSpecification3DGeometryNode , vec:buildingBlockSpecification3DTopologyZone , vec:buildingBlockSpecification3DPlacedElementViewItem3D , vec:buildingBlockSpecification3DCartesianPoint , vec:buildingBlockSpecification3DBaseUnit .
-
 vecsh:NetGroupShape  rdf:type  sh:NodeShape;
         rdfs:subClassOf  vecsh:ConfigurableElementShape;
         sh:property      [ sh:class     vec:Net;
@@ -7018,6 +7012,12 @@ vecsh:NetGroupShape  rdf:type  sh:NodeShape;
                            sh:path      vec:netGroupIdentification
                          ];
         sh:targetClass   vec:NetGroup .
+
+vecsh:BuildingBlockSpecification3DInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:SpecificationInverseShape;
+        sh:class             vec:BuildingBlockSpecification3D;
+        sh:targetSubjectsOf  vec:buildingBlockSpecification3DGeometrySegment , vec:buildingBlockSpecification3DGeometryNode , vec:buildingBlockSpecification3DTopologyZone , vec:buildingBlockSpecification3DPlacedElementViewItem3D , vec:buildingBlockSpecification3DCartesianPoint , vec:buildingBlockSpecification3DBaseUnit .
 
 vecsh:PinComponentInverseShape
         rdf:type             sh:NodeShape;
@@ -7227,17 +7227,17 @@ vecsh:TopologyBendingRestrictionInverseShape
         sh:class             vec:TopologyBendingRestriction;
         sh:targetSubjectsOf  vec:topologyBendingRestrictionMinBendRadiusStatic , vec:topologyBendingRestrictionMinBendRadiusDynamic , vec:topologyBendingRestrictionRestrictedPath .
 
-vecsh:CavityMountingInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
-        sh:class             vec:CavityMounting;
-        sh:targetSubjectsOf  vec:cavityMountingCavityAccessory , vec:cavityMountingReplacedPlug , vec:cavityMountingEquippedCavityRef , vec:cavityMountingCavityMountingDetail .
-
 vecsh:TerminalSpecificationInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:PartOrUsageRelatedSpecificationInverseShape;
         sh:class             vec:TerminalSpecification;
         sh:targetSubjectsOf  vec:terminalSpecificationSealingType , vec:terminalSpecificationInternalTerminalConnection , vec:terminalSpecificationWireReception , vec:terminalSpecificationTerminalReception , vec:terminalSpecificationVoltageRange , vec:terminalSpecificationCurrentInformation .
+
+vecsh:CavityMountingInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
+        sh:class             vec:CavityMounting;
+        sh:targetSubjectsOf  vec:cavityMountingCavityAccessory , vec:cavityMountingReplacedPlug , vec:cavityMountingEquippedCavityRef , vec:cavityMountingCavityMountingDetail .
 
 vecsh:CavityPlugRoleInverseShape
         rdf:type             sh:NodeShape;
@@ -7692,6 +7692,15 @@ vecsh:ExtensionSlotShape
                          ];
         sh:targetClass   vec:ExtensionSlot .
 
+vecsh:TextBasedInstructionShape
+        rdf:type         sh:NodeShape;
+        rdfs:subClassOf  vecsh:InstructionShape;
+        sh:property      [ sh:class     vec:LocalizedString;
+                           sh:minCount  1;
+                           sh:path      vec:textBasedInstructionInstallationInstruction
+                         ];
+        sh:targetClass   vec:TextBasedInstruction .
+
 vecsh:CavityMappingShape
         rdf:type        sh:NodeShape;
         sh:property     [ sh:datatype  xs:string;
@@ -7705,21 +7714,6 @@ vecsh:CavityMappingShape
                           sh:path      vec:cavityMappingIdentificationA
                         ];
         sh:targetClass  vec:CavityMapping .
-
-vecsh:TextBasedInstructionShape
-        rdf:type         sh:NodeShape;
-        rdfs:subClassOf  vecsh:InstructionShape;
-        sh:property      [ sh:class     vec:LocalizedString;
-                           sh:minCount  1;
-                           sh:path      vec:textBasedInstructionInstallationInstruction
-                         ];
-        sh:targetClass   vec:TextBasedInstruction .
-
-vecsh:CartesianDimensionInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
-        sh:class             vec:CartesianDimension;
-        sh:targetSubjectsOf  vec:cartesianDimensionWidth , vec:cartesianDimensionHeight .
 
 vecsh:BuildingBlockSpecification3DShape
         rdf:type         sh:NodeShape;
@@ -7751,6 +7745,12 @@ vecsh:BuildingBlockSpecification3DShape
                            sh:path      vec:buildingBlockSpecification3DBaseUnit
                          ];
         sh:targetClass   vec:BuildingBlockSpecification3D .
+
+vecsh:CartesianDimensionInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ExtendableElementInverseShape;
+        sh:class             vec:CartesianDimension;
+        sh:targetSubjectsOf  vec:cartesianDimensionWidth , vec:cartesianDimensionHeight .
 
 vecsh:SlotMappingShape
         rdf:type        sh:NodeShape;
@@ -7948,12 +7948,6 @@ vecsh:ExternalMappingSpecificationShape
                          ];
         sh:targetClass   vec:ExternalMappingSpecification .
 
-vecsh:BoltTerminalSpecificationInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:TerminalSpecificationInverseShape;
-        sh:class             vec:BoltTerminalSpecification;
-        sh:targetSubjectsOf  vec:boltTerminalSpecificationMaxTerminalCount , vec:boltTerminalSpecificationTorsionProtection , vec:boltTerminalSpecificationBoltType , vec:boltTerminalSpecificationBoltNominalSize , vec:boltTerminalSpecificationBoltHeight , vec:boltTerminalSpecificationBoltDiameter .
-
 vecsh:MatingDetailShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:ExtendableElementShape;
@@ -7978,6 +7972,12 @@ vecsh:MatingDetailShape
                            sh:path      vec:matingDetailIdentification
                          ];
         sh:targetClass   vec:MatingDetail .
+
+vecsh:BoltTerminalSpecificationInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:TerminalSpecificationInverseShape;
+        sh:class             vec:BoltTerminalSpecification;
+        sh:targetSubjectsOf  vec:boltTerminalSpecificationMaxTerminalCount , vec:boltTerminalSpecificationTorsionProtection , vec:boltTerminalSpecificationBoltType , vec:boltTerminalSpecificationBoltNominalSize , vec:boltTerminalSpecificationBoltHeight , vec:boltTerminalSpecificationBoltDiameter .
 
 vecsh:CodingInverseShape
         rdf:type             sh:NodeShape;
@@ -8074,17 +8074,17 @@ vecsh:ModuleListSpecificationInverseShape
         sh:class             vec:ModuleListSpecification;
         sh:targetSubjectsOf  vec:moduleListSpecificationModuleListConfiguration .
 
-vecsh:NetGroupInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
-        sh:class             vec:NetGroup;
-        sh:targetSubjectsOf  vec:netGroupNet , vec:netGroupDescription , vec:netGroupNetGroupType , vec:netGroupIdentification .
-
 vecsh:PartVersionInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:ItemVersionInverseShape;
         sh:class             vec:PartVersion;
         sh:targetSubjectsOf  vec:partVersionPreferredUseCase , vec:partVersionPartVersion , vec:partVersionPrimaryPartType , vec:partVersionProject , vec:partVersionIsPreferredPart , vec:partVersionNature , vec:partVersionAliasId , vec:partVersionPartNumber .
+
+vecsh:NetGroupInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:ConfigurableElementInverseShape;
+        sh:class             vec:NetGroup;
+        sh:targetSubjectsOf  vec:netGroupNet , vec:netGroupDescription , vec:netGroupNetGroupType , vec:netGroupIdentification .
 
 vecsh:SimpleValuePropertyInverseShape
         rdf:type             sh:NodeShape;
@@ -8137,17 +8137,17 @@ vecsh:TapeSpecificationInverseShape
         sh:class             vec:TapeSpecification;
         sh:targetSubjectsOf  vec:tapeSpecificationCoilCoreDiameter , vec:tapeSpecificationThickness , vec:tapeSpecificationWidth , vec:tapeSpecificationAdhesive , vec:tapeSpecificationBacking .
 
-vecsh:SlotReferenceInverseShape
-        rdf:type             sh:NodeShape;
-        rdfs:subClassOf      vecsh:AbstractSlotReferenceInverseShape;
-        sh:class             vec:SlotReference;
-        sh:targetSubjectsOf  vec:slotReferenceCavityReference .
-
 vecsh:WireRoleInverseShape
         rdf:type             sh:NodeShape;
         rdfs:subClassOf      vecsh:RoleInverseShape;
         sh:class             vec:WireRole;
         sh:targetSubjectsOf  vec:wireRoleWireElementReference , vec:wireRoleWireSpecification .
+
+vecsh:SlotReferenceInverseShape
+        rdf:type             sh:NodeShape;
+        rdfs:subClassOf      vecsh:AbstractSlotReferenceInverseShape;
+        sh:class             vec:SlotReference;
+        sh:targetSubjectsOf  vec:slotReferenceCavityReference .
 
 vecsh:ValueRangePropertyInverseShape
         rdf:type             sh:NodeShape;
@@ -8314,6 +8314,16 @@ vecsh:CavityMountingShape
 vecsh:WireReceptionSpecificationShape
         rdf:type         sh:NodeShape;
         rdfs:subClassOf  vecsh:SpecificationShape;
+        sh:property      [ sh:class     vec:ValueRange;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireReceptionSpecificationCoreCrossSectionArea
+                         ];
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireReceptionSpecificationSealable
+                         ];
         sh:property      [ sh:class     vec:Material;
                            sh:minCount  0;
                            sh:path      vec:wireReceptionSpecificationPlatingMaterial
@@ -8323,6 +8333,11 @@ vecsh:WireReceptionSpecificationShape
                            sh:minCount  0;
                            sh:path      vec:wireReceptionSpecificationInsulationDisplacementLength
                          ];
+        sh:property      [ sh:datatype  xs:boolean;
+                           sh:maxCount  1;
+                           sh:minCount  0;
+                           sh:path      vec:wireReceptionSpecificationMultiContact
+                         ];
         sh:property      [ sh:class     vec:ValueRange;
                            sh:maxCount  1;
                            sh:minCount  0;
@@ -8331,21 +8346,6 @@ vecsh:WireReceptionSpecificationShape
         sh:property      [ sh:class     vec:WireReceptionAddOn;
                            sh:minCount  0;
                            sh:path      vec:wireReceptionSpecificationAddOns
-                         ];
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireReceptionSpecificationSealable
-                         ];
-        sh:property      [ sh:class     vec:ValueRange;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireReceptionSpecificationCoreCrossSectionArea
-                         ];
-        sh:property      [ sh:datatype  xs:boolean;
-                           sh:maxCount  1;
-                           sh:minCount  0;
-                           sh:path      vec:wireReceptionSpecificationMultiContact
                          ];
         sh:property      [ sh:class     vec:ConductorMaterial;
                            sh:minCount  0;
@@ -8555,22 +8555,7 @@ vecsh:Transformation3DShape
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
                            sh:minCount  1;
-                           sh:path      vec:transformation3DA23
-                         ];
-        sh:property      [ sh:datatype  xs:double;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:transformation3DA33
-                         ];
-        sh:property      [ sh:datatype  xs:double;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:transformation3DA12
-                         ];
-        sh:property      [ sh:datatype  xs:double;
-                           sh:maxCount  1;
-                           sh:minCount  1;
-                           sh:path      vec:transformation3DA21
+                           sh:path      vec:transformation3DA11
                          ];
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
@@ -8580,7 +8565,12 @@ vecsh:Transformation3DShape
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
                            sh:minCount  1;
-                           sh:path      vec:transformation3DA32
+                           sh:path      vec:transformation3DA33
+                         ];
+        sh:property      [ sh:datatype  xs:double;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:transformation3DA21
                          ];
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
@@ -8590,12 +8580,22 @@ vecsh:Transformation3DShape
         sh:property      [ sh:datatype  xs:double;
                            sh:maxCount  1;
                            sh:minCount  1;
-                           sh:path      vec:transformation3DA11
+                           sh:path      vec:transformation3DA23
+                         ];
+        sh:property      [ sh:datatype  xs:double;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:transformation3DA12
                          ];
         sh:property      [ sh:class     vec:CartesianPoint3D;
                            sh:maxCount  1;
                            sh:minCount  1;
                            sh:path      vec:transformation3DOrigin
+                         ];
+        sh:property      [ sh:datatype  xs:double;
+                           sh:maxCount  1;
+                           sh:minCount  1;
+                           sh:path      vec:transformation3DA32
                          ];
         sh:targetClass   vec:Transformation3D .
 
