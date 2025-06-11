@@ -20,6 +20,21 @@
 		<model.directory>models</model.directory>
 		<vec.model.file>vec.mdxml</vec.model.file>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena-cmds</artifactId>
+			<version>5.4.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.5.18</version>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
 	
 	<build>
 		<plugins>
@@ -107,7 +122,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<plugin>		
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>xml-maven-plugin</artifactId>
 				<executions>
@@ -277,7 +292,7 @@
 								</validationSet>
 							</validationSets>
 						</configuration>
-					</execution>
+					</execution>					
 				</executions>
 				<dependencies>
 					<dependency>
@@ -286,6 +301,74 @@
 						<version>9.9.1-5</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<descriptors>
+					<descriptor>assembly.xml</descriptor>
+					</descriptors>
+					<!-- name of the output folder under target/ -->
+					<finalName>jena</finalName>
+				</configuration>
+				<executions>
+					<execution>
+					<id>install-jena</id>
+					<phase>generate-resources</phase>
+					<goals>
+						<goal>single</goal>
+					</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+			   <groupId>org.codehaus.mojo</groupId>
+      			<artifactId>exec-maven-plugin</artifactId>
+				<version>3.5.1</version>
+				<executions>
+					<execution>
+						<id>convert-onto-rdf-to-turtle</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<outputFile>${project.build.directory}/rdf/vec-${project.version}-onto.ttl</outputFile>
+
+							<arguments>
+								<argument>-Dlogback.configurationFile=logback.xml</argument>
+								<argument>-cp</argument>
+								<argument>${project.build.directory}/jena-libs/*</argument>
+								<argument>riotcmd.riot</argument>
+								<argument>--formatted=TURTLE</argument>
+								<argument>${project.build.directory}/rdf/vec_${project.version}-onto.rdf</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>convert-shacl-rdf-to-turtle</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<outputFile>${project.build.directory}/rdf/vec-${project.version}-shacl.ttl</outputFile>
+
+							<arguments>
+								<argument>-Dlogback.configurationFile=logback.xml</argument>
+								<argument>-cp</argument>
+								<argument>${project.build.directory}/jena-libs/*</argument>
+								<argument>riotcmd.riot</argument>
+								<argument>--formatted=TURTLE</argument>
+								<argument>${project.build.directory}/rdf/vec_${project.version}-shacl.rdf</argument>
+							</arguments>
+						</configuration>
+					</execution>
+
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.amashchenko.maven.plugin</groupId>

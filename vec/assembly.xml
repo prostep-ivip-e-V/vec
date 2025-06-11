@@ -1,0 +1,26 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 
+                              http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+  <id>libs</id>
+  <formats>
+    <format>dir</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+
+  <dependencySets>
+    <dependencySet>
+      <!-- this is your “root” artifact: -->
+      <includes>
+        <include>org.apache.jena:jena-cmds</include>
+        <include>ch.qos.logback:logback-classic</include>
+      </includes>
+      <!-- walk and include all of its transitives: -->
+      <useTransitiveDependencies>true</useTransitiveDependencies>
+      <!-- don’t apply the include filter to transitives: -->
+      <useTransitiveFiltering>true</useTransitiveFiltering>
+      <!-- put them in the root of the directory: -->
+      <outputDirectory></outputDirectory>
+    </dependencySet>
+  </dependencySets>
+</assembly>
