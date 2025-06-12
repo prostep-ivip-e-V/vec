@@ -44,6 +44,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          # 0 = “fetch all commits and tags” so Hugo can find per-file history
+          fetch-depth: 0
           submodules: recursive
       - name: Setup Pages
         id: pages
