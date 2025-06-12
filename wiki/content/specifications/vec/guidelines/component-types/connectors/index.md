@@ -10,6 +10,7 @@ categories: []
 date: 2018-11-29
 lastmod: 2019-12-02T12:46:37+01:00
 draft: false
+review: true
 
 menu:
   vec-guidelines:
@@ -21,8 +22,10 @@ menu:
 weight: 6000
 ---
 ## Modular Connector 
+{{< gh-review "957" >}}
 ### Component Description
-{{< figure src="modular_connector.jpg" title="Modular Connector" numbered="true" lightbox="true">}}
+
+{{< figure src="modular-connector.svg" title="Modular Connector" numbered="true" lightbox="true">}}
 
 This tutorial illustrates the definition / description of modular connectors. A modular connector is a connector that can be recursively assembled, so that certain fields can fitted with different other parts.
 
@@ -31,7 +34,7 @@ In the displayed example the {{< vec-class PartVersion >}} "4711" is a modular c
 The referencing for the *allowedInserts* is established to a {{< vec-class PartVersion >}} and not to {{< vec-class ConnectorHousingSpecification >}} to support the distribution of part master data in individual files.
 
 ### Instancing 
-{{< figure src="modular_connector_instancing.jpg" title="Instanciating Modular Connectors" numbered="true" lightbox="true">}}
+{{< figure src="modular-connector-instancing.svg" title="Instanciating Modular Connectors" numbered="true" lightbox="true">}}
 
 The diagram shows the instantiation of modular connector (previous example). On the left hand side of the diagram the component description of the modular connector is shown (similar to the previous example). On the right hand side the instancing of such a modular connector is shown.
 

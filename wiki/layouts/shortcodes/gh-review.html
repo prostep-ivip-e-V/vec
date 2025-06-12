@@ -1,0 +1,11 @@
+{{- $issueNumber := .Get 0 -}}
+{{- $completeUrl := printf "https://github.com/prostep-ivip-e-V/vec/issues/%s" $issueNumber -}}
+<div class="alert alert-warning">
+    <div>
+        <p><strong>Disclaimer:</strong> This page or section is currently under review by the community.</p>
+        <p>The content of this page or section can be subject to change at any time. If you find any issues or if you have any review comments please drop us an issue in our <a target="_blank" href="https://github.com/prostep-ivip-e-V/vec/issues/"> Issue Management</a> on GitHub.</p>
+        {{- if($issueNumber) -}}
+        <p>This page or section resolves <a target="_blank" href="{{$completeUrl}}">#{{$issueNumber}}</a></p>
+        {{- end -}}
+    </div>
+</div>
