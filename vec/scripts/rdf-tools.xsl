@@ -8,6 +8,13 @@
     exclude-result-prefixes="xs xmi ext"
     version="2.0">
     
+    <xsl:variable name="VEC-PREFIX">vec</xsl:variable>
+    <xsl:variable name="VEC-BASE-IRI" select="'http://www.prostep.org/ontologies/ecad/2024/03/vec'"/>
+    <xsl:variable name="VEC-NS-IRI" select=" concat($VEC-BASE-IRI,'#')"/>
+    <xsl:variable name="VEC-SH-PREFIX">vecsh</xsl:variable>
+    <xsl:variable name="VEC-SH-NS-IRI" select=" concat($VEC-BASE-IRI,'-shacl','#')"/>
+    
+    
     <!-- ######################################################################################### -->
     <!-- ####       Utilities                                                                  ### -->
     <!-- ######################################################################################### -->      
@@ -134,6 +141,29 @@
     <xsl:template match="text()" mode="sanitize-html" >
         <xsl:value-of select="normalize-space(.)" />
     </xsl:template>
+    
+    <!-- UniqueNess & Order -->
+    
+    <xsl:function name="ext:isAssociation" as="xs:boolean">
+        <xsl:param name="ownedAttribute"/>
+        <xsl:sequence select="exists($ownedAttribute/@association) and not(($ownedAttribute/@aggregation='composite'))"></xsl:sequence>        
+    </xsl:function>
+    
+    <xsl:function name="ext:isNonUniqueOrOrdered" as="xs:boolean">
+        <xsl:param name="ownedAttribute"/>
+        <xsl:variable name="upper">
+            <xsl:apply-templates select="$ownedAttribute//upperValue" mode="create-cardinality-value"/>                    
+        </xsl:variable>   
+        <xsl:sequence select="($upper != '1') and (($ownedAttribute/@isUnique='false') or ($ownedAttribute/@isOrdered='true'))"/>
+    </xsl:function>
+    
+    <xsl:function name="ext:bucketClassName" as="xs:string">
+        <xsl:param name="type"></xsl:param>
+        <xsl:variable name="name">
+            <xsl:apply-templates select="$type" mode="resource-name"/>
+        </xsl:variable>
+        <xsl:sequence select="concat($name,'Wrapper')"></xsl:sequence>
+    </xsl:function>
     
     <!-- Overriding default templates -->
     <xsl:template match="*"/>

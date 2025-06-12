@@ -3,13 +3,15 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema#" 
     xmlns:xmi="http://www.omg.org/spec/XMI/20131001" 
     xmlns:uml="http://www.omg.org/spec/UML/20131001"
+    xmlns:ext="https://ecad.propstep.org/2023/xslt/extensions"
+   
     xmlns:Stereotypes="http://www.magicdraw.com/schemas/Stereotypes.xmi"
     xmlns:MagicDraw_Profile="http://www.omg.org/spec/UML/20131001/MagicDrawProfile"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile" version="2.0">
+    exclude-result-prefixes="uml xmi Stereotypes MagicDraw_Profile ext" version="2.0">
     
     <xsl:import href="rdf-tools.xsl"/>
     
@@ -24,9 +26,6 @@
      <xsl:param name="revision">not-set</xsl:param>
      <xsl:param name="timestamp">not-set</xsl:param>
 
-    <xsl:variable name="VEC-PREFIX">vec</xsl:variable>
-    <xsl:variable name="VEC-BASE-IRI" select="'https://ecad.prostep.org/2023/vec'"/>
-    <xsl:variable name="VEC-NS-IRI" select=" concat($VEC-BASE-IRI,'#')"/>
     <xsl:variable name="VEC-VERSION-NS-IRI" select=" concat($VEC-BASE-IRI,'/',$VEC_VERSION,'#')"/>
     
     <xsl:template match="/">
@@ -64,9 +63,11 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             </owl:Class>
             
             <owl:DatatypeProperty rdf:about="#enumLiteral">
-                <rdfs:label xml:lang="en">enumLiteral</rdfs:label>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+                <rdfs:label xml:lang="en">enumLiteral</rdfs:label>                
                 <rdfs:comment xml:lang="en">Defines the literal value of an enumeration as represented in the model.</rdfs:comment>
-                <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>                
+                <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+                <rdfs:domain rdf:resource="#Enumeration"></rdfs:domain>                
                 <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:DatatypeProperty>
             
@@ -83,6 +84,17 @@ Timestamp: <xsl:value-of select="$timestamp"/>
                 <rdfs:subClassOf rdf:resource="#Enumeration"/>
             </owl:Class>
             
+            <owl:Class rdf:about="#Ordered">
+                <rdfs:label xml:lang="en">Ordered</rdfs:label>
+                <rdfs:comment xml:lang="en">Class of elements that are ordered within their containment.</rdfs:comment>
+            </owl:Class>
+            
+            <owl:DataProperty rdf:about="#orderedIndex">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+                <rdfs:comment xml:lang="en">Defines the order of Ordered elements. Lower indices are further forward in a list. 0 is the lowest index, i.e. the first element.</rdfs:comment>
+                <rdfs:domain rdf:resource="#Ordered"></rdfs:domain>
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"></rdfs:range>
+            </owl:DataProperty>
             
 
             <xsl:variable name="classes" select="xmi:XMI/uml:Model/packagedElement[@name='VEC']//packagedElement[@xmi:type='uml:Class' and not(@xmi:id=//MagicDraw_Profile:Legend/@base_Class)]"/>
@@ -107,11 +119,13 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <!-- General Extensions of the UML Model -->
             
             <owl:ObjectProperty rdf:about="#contains">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
                 <rdfs:label xml:lang="en">contains</rdfs:label>
                 <rdfs:comment xml:lang="en">This is the representation of the containment modeled in the UML. All associations that are a "containment" in the UML model are subproperties of this property.</rdfs:comment>
             </owl:ObjectProperty>
 
             <owl:ObjectProperty rdf:about="#parent">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
                 <rdfs:label xml:lang="en">parent</rdfs:label>
                 <rdfs:comment xml:lang="en">The inverse of 'contains'.</rdfs:comment>
                 <owl:inverseOf rdf:resource="#contains"/>                
@@ -225,11 +239,15 @@ Timestamp: <xsl:value-of select="$timestamp"/>
             <xsl:apply-templates select="." mode="label"/>
             <xsl:apply-templates select="." mode="comment"/>
             <xsl:apply-templates select="." mode="deprecation"/>
-            <!--
+            <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+            
             <rdfs:range>
                 <xsl:apply-templates select="$type" mode="resource"/>
             </rdfs:range>
-            -->
+            <rdfs:domain>
+                <xsl:apply-templates select=".." mode="resource"/>
+            </rdfs:domain>
+            
         </owl:DatatypeProperty>
     </xsl:template>
     
@@ -240,24 +258,64 @@ Timestamp: <xsl:value-of select="$timestamp"/>
     
     <xsl:template match="ownedAttribute[key('idlookup',@type)[not(@xmi:type='uml:PrimitiveType')]]" mode="objectproperties">
         <xsl:variable name="type" select="key('idlookup',@type)"/>
-        <owl:ObjectProperty>
+        <xsl:variable name="isNonUniqueOrOrdered" select="ext:isNonUniqueOrOrdered(.)"/>
+        <xsl:variable name="isAssociation" select="ext:isAssociation(.)"/>
+        <xsl:variable name="isNonUniqueOrOrderedAssociation" select="($isNonUniqueOrOrdered and $isAssociation)"/>
+        <owl:ObjectProperty>         
             <xsl:apply-templates select="." mode="about"/>
             <xsl:apply-templates select="." mode="label"/>
             <xsl:apply-templates select="." mode="comment"/>
+            <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+            <xsl:if test="$isNonUniqueOrOrderedAssociation">
+                <rdfs:comment>This association is defined as unique='<xsl:value-of select="@isUnique"/>' and ordered='<xsl:value-of select="@isOrdered='true'"/>'. This can not be represented efficiently directly in RDF/OWL. Therefore, this association references Wrappers as proxies to the actual elements, instead of the actual elements itself (like a regular association).</rdfs:comment>
+                <rdfs:subPropertyOf rdf:resource="#contains"/>
+            </xsl:if>
             <xsl:apply-templates select="." mode="deprecation"/>
-            
-            <!--
-            <rdfs:range>
-                <xsl:apply-templates select="$type" mode="resource"/>
-            </rdfs:range>
-            <rdfs:domain>
-                <xsl:apply-templates select=".." mode="resource"/>
-            </rdfs:domain> -->
-            <xsl:if test="not(exists(@association)) or (@aggregation='composite')">
-            <rdfs:subPropertyOf rdf:resource="#contains"/>
+            <xsl:if test="@isOrdered='true'">
+                <rdfs:range rdf:resource="#Ordered"></rdfs:range>
             </xsl:if>
             
+            <xsl:choose>
+                <xsl:when test="$isNonUniqueOrOrderedAssociation">
+                    <rdfs:range rdf:resource="#{ext:bucketClassName($type)}"></rdfs:range>
+                </xsl:when>
+                <xsl:otherwise>
+                    <rdfs:range>
+                        <xsl:apply-templates select="$type" mode="resource"/>
+                    </rdfs:range>
+                </xsl:otherwise>
+            </xsl:choose>                
+            <rdfs:domain>
+                <xsl:apply-templates select=".." mode="resource"/>
+            </rdfs:domain>
+            <xsl:if test="not(exists(@association)) or (@aggregation='composite')">
+            <rdfs:subPropertyOf rdf:resource="#contains"/>
+            </xsl:if>            
         </owl:ObjectProperty>
+        
+        <xsl:if test="$isNonUniqueOrOrderedAssociation">
+            <xsl:variable name="bucketClassName" select="ext:bucketClassName($type)"/>
+            
+            <owl:Class>
+                <xsl:attribute name="rdf:about"><xsl:text>#</xsl:text><xsl:value-of select="$bucketClassName"/></xsl:attribute>
+                <rdfs:comment>
+                    <xsl:text>Container class for </xsl:text>
+                    <xsl:apply-templates select="$type" mode="resource-name"></xsl:apply-templates> 
+                    <xsl:text> to participate in non-unique and/or ordered associations.</xsl:text>
+                </rdfs:comment>            
+            </owl:Class>
+            
+            <owl:ObjectProperty rdf:about="#{ext:first-lower($bucketClassName)}Item">
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+                <rdfs:domain rdf:resource="#{ext:bucketClassName($type)}"></rdfs:domain>
+                <rdfs:range>
+                    <xsl:apply-templates select="$type" mode="resource"/>
+                </rdfs:range>
+                <rdfs:comment>
+                    <xsl:text>References the actual item for a Wrapper.</xsl:text>
+                </rdfs:comment>
+            </owl:ObjectProperty>
+        </xsl:if>
     </xsl:template>
     
     <!-- ######################################################################################### -->
