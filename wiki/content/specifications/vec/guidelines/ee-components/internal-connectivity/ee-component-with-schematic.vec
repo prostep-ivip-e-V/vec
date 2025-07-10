@@ -1,0 +1,638 @@
+<?xml version="1.0" ?>
+<vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
+  <VecVersion>2.2.0</VecVersion>
+  <GeneratingSystemName>VEC Samples</GeneratingSystemName>
+  <DateOfCreation>2025-07-10T00:00:00</DateOfCreation>
+  <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
+  <DocumentVersion id="DocumentVersion_00001">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DRAW-EE-COMP</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00151</ReferencedPart>
+    <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_00002">
+      <Identification>GTPS-EE-COMP</Identification>
+      <DescribedPart>PartVersion_00151</DescribedPart>
+    </Specification>
+    <Specification xsi:type="vec:ConnectionSpecification" id="ConnectionSpecification_00003">
+      <Identification>SCHEMATIC</Identification>
+      <ComponentNode id="ComponentNode_00004">
+        <Identification>EE-COMP</Identification>
+        <ChildNode id="ComponentNode_00005">
+          <Identification>F1</Identification>
+          <ComponentConnector id="ComponentConnector_00006">
+            <Identification>A</Identification>
+            <ComponentPort id="ComponentPort_00007">
+              <Identification>1</Identification>
+            </ComponentPort>
+            <ComponentPort id="ComponentPort_00008">
+              <Identification>2</Identification>
+            </ComponentPort>
+          </ComponentConnector>
+        </ChildNode>
+        <ChildNode id="ComponentNode_00009">
+          <Identification>R1</Identification>
+          <ComponentConnector id="ComponentConnector_00010">
+            <Identification>A</Identification>
+            <ComponentPort id="ComponentPort_00011">
+              <Identification>1</Identification>
+              <Description xsi:type="vec:LocalizedString" id="LocalizedString_00012">
+                <LanguageCode>En</LanguageCode>
+                <Value>Switch-A</Value>
+              </Description>
+            </ComponentPort>
+            <ComponentPort id="ComponentPort_00013">
+              <Identification>2</Identification>
+              <Description xsi:type="vec:LocalizedString" id="LocalizedString_00014">
+                <LanguageCode>En</LanguageCode>
+                <Value>Switch-B</Value>
+              </Description>
+            </ComponentPort>
+            <ComponentPort id="ComponentPort_00015">
+              <Identification>3</Identification>
+              <Description xsi:type="vec:LocalizedString" id="LocalizedString_00016">
+                <LanguageCode>En</LanguageCode>
+                <Value>Switched-A</Value>
+              </Description>
+            </ComponentPort>
+            <ComponentPort id="ComponentPort_00017">
+              <Identification>4</Identification>
+              <Description xsi:type="vec:LocalizedString" id="LocalizedString_00018">
+                <LanguageCode>En</LanguageCode>
+                <Value>Switched-B</Value>
+              </Description>
+            </ComponentPort>
+          </ComponentConnector>
+        </ChildNode>
+        <ComponentConnector id="ComponentConnector_00019">
+          <Identification>A</Identification>
+          <ComponentPort id="ComponentPort_00020">
+            <Identification>1</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00021">
+              <LanguageCode>En</LanguageCode>
+              <Value>Power</Value>
+            </Description>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00022">
+            <Identification>2</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00023">
+              <LanguageCode>En</LanguageCode>
+              <Value>F1</Value>
+            </Description>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00024">
+            <Identification>3</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00025">
+              <LanguageCode>En</LanguageCode>
+              <Value>Switch-A</Value>
+            </Description>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00026">
+            <Identification>4</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00027">
+              <LanguageCode>En</LanguageCode>
+              <Value>Switch-B</Value>
+            </Description>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00028">
+            <Identification>5</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00029">
+              <LanguageCode>En</LanguageCode>
+              <Value>Switched+F2</Value>
+            </Description>
+          </ComponentPort>
+        </ComponentConnector>
+        <ComponentConnector id="ComponentConnector_00030">
+          <Identification>F2</Identification>
+          <ComponentPort id="ComponentPort_00031">
+            <Identification>1</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00032">
+              <LanguageCode>En</LanguageCode>
+              <Value>F2 - Pluggable</Value>
+            </Description>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00033">
+            <Identification>2</Identification>
+            <Description xsi:type="vec:LocalizedString" id="LocalizedString_00034">
+              <LanguageCode>En</LanguageCode>
+              <Value>F2 - Pluggable</Value>
+            </Description>
+          </ComponentPort>
+        </ComponentConnector>
+      </ComponentNode>
+      <Connection id="Connection_00035">
+        <Identification>POWER</Identification>
+        <ConnectionEnd id="ConnectionEnd_00036">
+          <Identification>EE-COMP.A.1</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00020</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00037">
+          <Identification>EE-COMP.F2.1</Identification>
+          <IsExternalEnd>false</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00031</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00038">
+          <Identification>F1.A.1</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00007</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Connection_00039">
+        <Identification>F1-Limited</Identification>
+        <ConnectionEnd id="ConnectionEnd_00040">
+          <Identification>EE-COMP.A.2</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00022</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00041">
+          <Identification>F1.A.2</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00008</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Connection_00042">
+        <Identification>F2-Limited</Identification>
+        <ConnectionEnd id="ConnectionEnd_00043">
+          <Identification>EE-COMP.F2.2</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00033</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00044">
+          <Identification>R1.A.4</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00017</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Connection_00045">
+        <Identification>F2-Limited-Switched</Identification>
+        <ConnectionEnd id="ConnectionEnd_00046">
+          <Identification>EE-COMP.A.5</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00028</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00047">
+          <Identification>R1.A.3</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00015</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Connection_00048">
+        <Identification>R1-Switch-A</Identification>
+        <ConnectionEnd id="ConnectionEnd_00049">
+          <Identification>EE-COMP.A.3</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00024</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00050">
+          <Identification>R1.A.1</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00011</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+      <Connection id="Connection_00051">
+        <Identification>R1-Switch-B</Identification>
+        <ConnectionEnd id="ConnectionEnd_00052">
+          <Identification>EE-COMP.A.4</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00026</ConnectedComponentPort>
+        </ConnectionEnd>
+        <ConnectionEnd id="ConnectionEnd_00053">
+          <Identification>R1.A.2</Identification>
+          <IsExternalEnd>true</IsExternalEnd>
+          <ConnectedComponentPort>ComponentPort_00013</ConnectedComponentPort>
+        </ConnectionEnd>
+      </Connection>
+    </Specification>
+    <Specification xsi:type="vec:PluggableTerminalSpecification" id="PluggableTerminalSpecification_00054">
+      <Identification>PTC-EE-COMP-PIN</Identification>
+      <DescribedPart></DescribedPart>
+      <TerminalType>Integrated</TerminalType>
+    </Specification>
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_00055">
+      <Identification>CHS-A</Identification>
+      <DescribedPart></DescribedPart>
+      <Slot xsi:type="vec:Slot" id="Slot_00056">
+        <SlotNumber>X</SlotNumber>
+        <Cavity id="Cavity_00057">
+          <CavityNumber>1</CavityNumber>
+        </Cavity>
+        <Cavity id="Cavity_00058">
+          <CavityNumber>2</CavityNumber>
+        </Cavity>
+        <Cavity id="Cavity_00059">
+          <CavityNumber>3</CavityNumber>
+        </Cavity>
+        <Cavity id="Cavity_00060">
+          <CavityNumber>4</CavityNumber>
+        </Cavity>
+        <Cavity id="Cavity_00061">
+          <CavityNumber>5</CavityNumber>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_00062">
+      <Identification>CHS-F2</Identification>
+      <DescribedPart></DescribedPart>
+      <Slot xsi:type="vec:Slot" id="Slot_00063">
+        <SlotNumber>X</SlotNumber>
+        <Cavity id="Cavity_00064">
+          <CavityNumber>1</CavityNumber>
+        </Cavity>
+        <Cavity id="Cavity_00065">
+          <CavityNumber>2</CavityNumber>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification xsi:type="vec:EEComponentSpecification" id="EEComponentSpecification_00066">
+      <Identification>EECS-EE-COMP</Identification>
+      <DescribedPart>PartVersion_00151</DescribedPart>
+      <ComponentNode>ComponentNode_00004</ComponentNode>
+      <HousingComponent id="HousingComponent_00067">
+        <Identification>A</Identification>
+        <ComponentConnector>ComponentConnector_00019</ComponentConnector>
+        <HousingSpecification>ConnectorHousingSpecification_00055</HousingSpecification>
+        <PinComponent id="PinComponent_00068">
+          <Identification>1</Identification>
+          <ComponentPort>ComponentPort_00020</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00057</ReferencedCavity>
+        </PinComponent>
+        <PinComponent id="PinComponent_00069">
+          <Identification>2</Identification>
+          <ComponentPort>ComponentPort_00022</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00058</ReferencedCavity>
+        </PinComponent>
+        <PinComponent id="PinComponent_00070">
+          <Identification>3</Identification>
+          <ComponentPort>ComponentPort_00024</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00059</ReferencedCavity>
+        </PinComponent>
+        <PinComponent id="PinComponent_00071">
+          <Identification>4</Identification>
+          <ComponentPort>ComponentPort_00026</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00060</ReferencedCavity>
+        </PinComponent>
+        <PinComponent id="PinComponent_00072">
+          <Identification>5</Identification>
+          <ComponentPort>ComponentPort_00028</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00061</ReferencedCavity>
+        </PinComponent>
+      </HousingComponent>
+      <HousingComponent id="HousingComponent_00073">
+        <Identification>F2</Identification>
+        <ComponentConnector>ComponentConnector_00030</ComponentConnector>
+        <HousingSpecification>ConnectorHousingSpecification_00062</HousingSpecification>
+        <PinComponent id="PinComponent_00074">
+          <Identification>1</Identification>
+          <ComponentPort>ComponentPort_00031</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00064</ReferencedCavity>
+        </PinComponent>
+        <PinComponent id="PinComponent_00075">
+          <Identification>2</Identification>
+          <ComponentPort>ComponentPort_00033</ComponentPort>
+          <PinSpecification>PluggableTerminalSpecification_00054</PinSpecification>
+          <ReferencedCavity>Cavity_00065</ReferencedCavity>
+        </PinComponent>
+      </HousingComponent>
+    </Specification>
+    <Specification xsi:type="vec:FuseSpecification" id="FuseSpecification_00076">
+      <Identification>FS-F1</Identification>
+      <DescribedPart></DescribedPart>
+      <IMax id="NumericalValue_00077">
+        <UnitComponent>SIUnit_00152</UnitComponent>
+        <ValueComponent>15.0</ValueComponent>
+      </IMax>
+    </Specification>
+    <Specification xsi:type="vec:RelaySpecification" id="RelaySpecification_00078">
+      <Identification>RS-R1</Identification>
+      <DescribedPart></DescribedPart>
+      <LowNoise>true</LowNoise>
+    </Specification>
+    <Specification xsi:type="vec:CoreSpecification" id="CoreSpecification_00079">
+      <Identification>BUSBAR</Identification>
+      <CrossSectionArea id="NumericalValue_00080">
+        <UnitComponent>SIUnit_00153</UnitComponent>
+        <ValueComponent>5.0</ValueComponent>
+      </CrossSectionArea>
+    </Specification>
+    <Specification xsi:type="vec:WireElementSpecification" id="WireElementSpecification_00081">
+      <Identification>BUSBAR</Identification>
+      <ConductorSpecification>CoreSpecification_00079</ConductorSpecification>
+    </Specification>
+    <Specification xsi:type="vec:WireSpecification" id="WireSpecification_00082">
+      <Identification>WS-BUSBAR</Identification>
+      <DescribedPart></DescribedPart>
+      <WireElementSpecification>WireElementSpecification_00081</WireElementSpecification>
+      <WireElement id="WireElement_00083">
+        <Identification>BUSBAR</Identification>
+        <WireElementSpecification>WireElementSpecification_00081</WireElementSpecification>
+      </WireElement>
+    </Specification>
+    <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00084">
+      <Identification>STRUCTURE</Identification>
+      <DescribedPart>PartVersion_00151</DescribedPart>
+      <InBillOfMaterial>PartUsage_00086 PartUsage_00089 PartUsage_00092 PartUsage_00095 PartUsage_00098 PartUsage_00101 PartUsage_00104 PartUsage_00106</InBillOfMaterial>
+    </Specification>
+    <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00085">
+      <Identification>VIRTUAL COMPONENTS</Identification>
+      <PartUsage id="PartUsage_00086">
+        <Identification>POWER</Identification>
+        <Role xsi:type="vec:WireRole" id="WireRole_00087">
+          <Identification>POWER</Identification>
+          <WireSpecification>WireSpecification_00082</WireSpecification>
+          <WireElementReference id="WireElementReference_00088">
+            <Identification>BUSBAR</Identification>
+            <Connection>Connection_00035</Connection>
+            <ReferencedWireElement>WireElement_00083</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>WireSpecification_00082</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00089">
+        <Identification>F1-Limited</Identification>
+        <Role xsi:type="vec:WireRole" id="WireRole_00090">
+          <Identification>F1-Limited</Identification>
+          <WireSpecification>WireSpecification_00082</WireSpecification>
+          <WireElementReference id="WireElementReference_00091">
+            <Identification>BUSBAR</Identification>
+            <Connection>Connection_00039</Connection>
+            <ReferencedWireElement>WireElement_00083</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>WireSpecification_00082</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00092">
+        <Identification>F2-Limited</Identification>
+        <Role xsi:type="vec:WireRole" id="WireRole_00093">
+          <Identification>F2-Limited</Identification>
+          <WireSpecification>WireSpecification_00082</WireSpecification>
+          <WireElementReference id="WireElementReference_00094">
+            <Identification>BUSBAR</Identification>
+            <Connection>Connection_00042</Connection>
+            <ReferencedWireElement>WireElement_00083</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>WireSpecification_00082</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00095">
+        <Identification>F2-Limited-Switched</Identification>
+        <Role xsi:type="vec:WireRole" id="WireRole_00096">
+          <Identification>F2-Limited-Switched</Identification>
+          <WireSpecification>WireSpecification_00082</WireSpecification>
+          <WireElementReference id="WireElementReference_00097">
+            <Identification>BUSBAR</Identification>
+            <Connection>Connection_00045</Connection>
+            <ReferencedWireElement>WireElement_00083</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>WireSpecification_00082</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00098">
+        <Identification>R1-Switch-A</Identification>
+        <Role xsi:type="vec:WireRole" id="WireRole_00099">
+          <Identification>R1-Switch-A</Identification>
+          <WireSpecification>WireSpecification_00082</WireSpecification>
+          <WireElementReference id="WireElementReference_00100">
+            <Identification>BUSBAR</Identification>
+            <Connection>Connection_00048</Connection>
+            <ReferencedWireElement>WireElement_00083</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>WireSpecification_00082</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00101">
+        <Identification>R1-Switch-B</Identification>
+        <Role xsi:type="vec:WireRole" id="WireRole_00102">
+          <Identification>R1-Switch-B</Identification>
+          <WireSpecification>WireSpecification_00082</WireSpecification>
+          <WireElementReference id="WireElementReference_00103">
+            <Identification>BUSBAR</Identification>
+            <Connection>Connection_00051</Connection>
+            <ReferencedWireElement>WireElement_00083</ReferencedWireElement>
+          </WireElementReference>
+        </Role>
+        <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>WireSpecification_00082</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00104">
+        <Identification>F1</Identification>
+        <Role xsi:type="vec:FuseRole" id="FuseRole_00105">
+          <Identification>F1</Identification>
+          <EEComponentSpecification>FuseSpecification_00076</EEComponentSpecification>
+          <ComponentNode>ComponentNode_00005</ComponentNode>
+        </Role>
+        <PrimaryPartUsageType>Fuse</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>FuseSpecification_00076</PartOrUsageRelatedSpecification>
+      </PartUsage>
+      <PartUsage id="PartUsage_00106">
+        <Identification>R1</Identification>
+        <Role xsi:type="vec:RelayRole" id="RelayRole_00107">
+          <Identification>R1</Identification>
+          <EEComponentSpecification>RelaySpecification_00078</EEComponentSpecification>
+          <ComponentNode>ComponentNode_00009</ComponentNode>
+        </Role>
+        <PrimaryPartUsageType>Relay</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>RelaySpecification_00078</PartOrUsageRelatedSpecification>
+      </PartUsage>
+    </Specification>
+  </DocumentVersion>
+  <DocumentVersion id="DocumentVersion_00108">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>SCHEMATIC</DocumentNumber>
+    <DocumentVersion>1</DocumentVersion>
+    <Specification xsi:type="vec:ConnectionSpecification" id="ConnectionSpecification_00109">
+      <Identification>SCHEMATIC</Identification>
+      <ComponentNode id="ComponentNode_00110">
+        <Identification>A200</Identification>
+        <ComponentConnector id="ComponentConnector_00111">
+          <Identification>A</Identification>
+          <ComponentPort id="ComponentPort_00112">
+            <Identification>1</Identification>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00113">
+            <Identification>2</Identification>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00114">
+            <Identification>3</Identification>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00115">
+            <Identification>4</Identification>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00116">
+            <Identification>5</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+        <ComponentConnector id="ComponentConnector_00117">
+          <Identification>F2</Identification>
+          <ComponentPort id="ComponentPort_00118">
+            <Identification>1</Identification>
+          </ComponentPort>
+          <ComponentPort id="ComponentPort_00119">
+            <Identification>2</Identification>
+          </ComponentPort>
+        </ComponentConnector>
+      </ComponentNode>
+    </Specification>
+    <Specification xsi:type="vec:ReusageSpecification" id="ReusageSpecification_00120">
+      <Identification>RS-DRAW-EE-COMP-SCHEMATIC</Identification>
+      <Reusage id="Reusage_00121">
+        <Template>ComponentNode_00004</Template>
+        <Usage>ComponentNode_00110</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00122">
+        <Template>ComponentConnector_00019</Template>
+        <Usage>ComponentConnector_00111</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00123">
+        <Template>ComponentPort_00020</Template>
+        <Usage>ComponentPort_00112</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00124">
+        <Template>ComponentPort_00022</Template>
+        <Usage>ComponentPort_00113</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00125">
+        <Template>ComponentPort_00024</Template>
+        <Usage>ComponentPort_00114</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00126">
+        <Template>ComponentPort_00026</Template>
+        <Usage>ComponentPort_00115</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00127">
+        <Template>ComponentPort_00028</Template>
+        <Usage>ComponentPort_00116</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00128">
+        <Template>ComponentConnector_00030</Template>
+        <Usage>ComponentConnector_00117</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00129">
+        <Template>ComponentPort_00031</Template>
+        <Usage>ComponentPort_00118</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00130">
+        <Template>ComponentPort_00033</Template>
+        <Usage>ComponentPort_00119</Usage>
+      </Reusage>
+    </Specification>
+  </DocumentVersion>
+  <DocumentVersion id="DocumentVersion_00131">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>HARNESS-1</DocumentNumber>
+    <DocumentType>HarnessDescription</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00132">
+      <Identification>COMPONENTS</Identification>
+      <Component id="PartOccurrence_00133">
+        <Identification>A200*1</Identification>
+        <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00134">
+          <Identification>A200*1</Identification>
+          <EEComponentSpecification>EEComponentSpecification_00066</EEComponentSpecification>
+          <ComponentNode>ComponentNode_00110</ComponentNode>
+<!--Embedded ConnectorHousingRole omitted.-->
+          <HousingComponentRef id="HousingComponentReference_00135">
+            <Identification>A</Identification>
+            <ComponentConnector>ComponentConnector_00111</ComponentConnector>
+            <HousingComponent>HousingComponent_00067</HousingComponent>
+            <PinComponentRef id="PinComponentReference_00136">
+              <Identification>1</Identification>
+              <PinComponent>PinComponent_00068</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00137">
+                <Identification>1</Identification>
+                <ComponentPort>ComponentPort_00112</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+            <PinComponentRef id="PinComponentReference_00138">
+              <Identification>2</Identification>
+              <PinComponent>PinComponent_00069</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00139">
+                <Identification>2</Identification>
+                <ComponentPort>ComponentPort_00113</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+            <PinComponentRef id="PinComponentReference_00140">
+              <Identification>3</Identification>
+              <PinComponent>PinComponent_00070</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00141">
+                <Identification>3</Identification>
+                <ComponentPort>ComponentPort_00114</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+            <PinComponentRef id="PinComponentReference_00142">
+              <Identification>4</Identification>
+              <PinComponent>PinComponent_00071</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00143">
+                <Identification>4</Identification>
+                <ComponentPort>ComponentPort_00115</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+            <PinComponentRef id="PinComponentReference_00144">
+              <Identification>5</Identification>
+              <PinComponent>PinComponent_00072</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00145">
+                <Identification>5</Identification>
+                <ComponentPort>ComponentPort_00116</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+          </HousingComponentRef>
+<!--Embedded ConnectorHousingRole omitted.-->
+          <HousingComponentRef id="HousingComponentReference_00146">
+            <Identification>F2</Identification>
+            <ComponentConnector>ComponentConnector_00117</ComponentConnector>
+            <HousingComponent>HousingComponent_00073</HousingComponent>
+            <PinComponentRef id="PinComponentReference_00147">
+              <Identification>1</Identification>
+              <PinComponent>PinComponent_00074</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00148">
+                <Identification>1</Identification>
+                <ComponentPort>ComponentPort_00118</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+            <PinComponentRef id="PinComponentReference_00149">
+              <Identification>2</Identification>
+              <PinComponent>PinComponent_00075</PinComponent>
+              <TerminalRole xsi:type="vec:BoltTerminalRole" id="BoltTerminalRole_00150">
+                <Identification>2</Identification>
+                <ComponentPort>ComponentPort_00119</ComponentPort>
+                <TerminalSpecification>PluggableTerminalSpecification_00054</TerminalSpecification>
+              </TerminalRole>
+            </PinComponentRef>
+          </HousingComponentRef>
+        </Role>
+        <Part>PartVersion_00151</Part>
+      </Component>
+    </Specification>
+  </DocumentVersion>
+  <PartVersion id="PartVersion_00151">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>EE-COMP</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>EEComponent</PrimaryPartType>
+  </PartVersion>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00152">
+    <SiUnitName>Ampere</SiUnitName>
+  </Unit>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00153">
+    <Exponent>2</Exponent>
+    <SiUnitName>Metre</SiUnitName>
+    <SiPrefix>Milli</SiPrefix>
+  </Unit>
+</vec:VecContent>

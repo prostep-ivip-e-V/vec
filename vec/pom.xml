@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.prostep.ecadif</groupId>
 	<artifactId>vec</artifactId>
-	<version>2.1.1-SNAPSHOT</version>
+	<version>2.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<prerequisites>
@@ -37,7 +37,40 @@
 	</dependencies>
 	
 	<build>
-		<plugins>
+		<plugins>			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.6.1</version>
+				<executions>
+					<execution>
+						<id>vec_version_clean</id>
+						<goals>
+							<goal>regex-property</goal>
+						</goals>
+						<configuration>
+							<name>vec.version.clean</name>
+							<value>${project.version}</value>
+							<regex>^([^-]*)(-.*)?</regex>
+							<replacement>$1</replacement>
+							<failIfNoMatch>true</failIfNoMatch>
+						</configuration>
+					</execution>
+					<execution>
+						<id>vec_version_snapshot</id>
+						<goals>
+							<goal>regex-property</goal>
+						</goals>
+						<configuration>
+							<name>vec.version.snapshot</name>
+							<value>${project.version}</value>
+							<regex>^([^-]*)(-.*)?</regex>
+							<replacement>$2</replacement>
+							<failIfNoMatch>false</failIfNoMatch>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>	
 			<!--
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -335,7 +368,7 @@
 						</goals>
 						<configuration>
 							<executable>java</executable>
-							<outputFile>${project.build.directory}/rdf/vec-${project.version}-onto.ttl</outputFile>
+							<outputFile>${project.build.directory}/rdf/vec-${vec.version.clean}-onto${vec.version.snapshot}.ttl</outputFile>
 
 							<arguments>
 								<argument>-Dlogback.configurationFile=logback.xml</argument>
@@ -343,7 +376,7 @@
 								<argument>${project.build.directory}/jena-libs/*</argument>
 								<argument>riotcmd.riot</argument>
 								<argument>--formatted=TURTLE</argument>
-								<argument>${project.build.directory}/rdf/vec_${project.version}-onto.rdf</argument>
+								<argument>${project.build.directory}/rdf/vec_${vec.version.clean}-onto${vec.version.snapshot}.rdf</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -355,7 +388,7 @@
 						</goals>
 						<configuration>
 							<executable>java</executable>
-							<outputFile>${project.build.directory}/rdf/vec-${project.version}-shacl.ttl</outputFile>
+							<outputFile>${project.build.directory}/rdf/vec-${vec.version.clean}-shacl${vec.version.snapshot}.ttl</outputFile>
 
 							<arguments>
 								<argument>-Dlogback.configurationFile=logback.xml</argument>
@@ -363,7 +396,7 @@
 								<argument>${project.build.directory}/jena-libs/*</argument>
 								<argument>riotcmd.riot</argument>
 								<argument>--formatted=TURTLE</argument>
-								<argument>${project.build.directory}/rdf/vec_${project.version}-shacl.rdf</argument>
+								<argument>${project.build.directory}/rdf/vec_${vec.version.clean}-shacl${vec.version.snapshot}.rdf</argument>
 							</arguments>
 						</configuration>
 					</execution>
