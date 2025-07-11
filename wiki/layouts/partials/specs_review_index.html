@@ -35,10 +35,14 @@
       <td>
         {{- if .Params.history -}}
         {{- range first 1 (sort .Params.history "date" "desc") -}}
+        {{- if .ghIssue -}}
+        {{- $completeUrl := printf "https://github.com/prostep-ivip-e-V/vec/issues/%s" .ghIssue -}}
+        <a href="{{$completeUrl}}">#{{- .ghIssue -}}</a>:&nbsp;
+        {{- end -}}
         {{- if .issue -}}
         {{- $completeUrl := printf "https://prostep-ivip.atlassian.net/browse/%s" .issue -}}
         <a href="{{$completeUrl}}">{{- .issue -}}</a>:&nbsp;
-        {{- end -}}
+        {{- end -}}   
         {{- .description -}}      
         <br/>
         {{- end -}}    

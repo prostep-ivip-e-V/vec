@@ -11,6 +11,13 @@ date: 2018-11-29
 lastmod: 2019-12-02T12:46:37+01:00
 draft: false
 review: true
+
+history:
+  - date: 2025-06-13T00:00:00Z
+    description: "Improved cavity mapping for modular connectors."
+    ghIssue: "957"
+
+
 classes:
   - ConnectorHousingSpecification
   - Slot

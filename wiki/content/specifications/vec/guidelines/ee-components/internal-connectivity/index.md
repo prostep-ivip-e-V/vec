@@ -22,10 +22,9 @@ classes:
   - ComponentPort
 
 history:
-  - date: 2024-12-19T00:00:00Z
-    description: "Added description for layering and odering of wire elements."
+  - date: 2025-07-11T00:00:00Z
+    description: "New generic concept for E/E component with internal connectivity."
     ghIssue: "915"
- #   issue: "KBLFRM-1234" 
 
 menu:
   vec-guidelines:
