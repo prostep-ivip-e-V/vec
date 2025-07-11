@@ -24,6 +24,7 @@ classes:
 history:
   - date: 2024-12-19T00:00:00Z
     description: "Added description for layering and odering of wire elements."
+    ghIssue: "915"
  #   issue: "KBLFRM-1234" 
 
 menu:
@@ -40,7 +41,8 @@ links:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10100
 ---
-{{< gh-review 915 >}}
+<!-- TODO: set links and classes references to Reusage & ReusageSpec after V2.2 release -->
+{{< gh-review "915" >}}
 {{% callout note %}}
 This Guideline applies to VEC 2.2 and later. 
 {{% /callout %}}

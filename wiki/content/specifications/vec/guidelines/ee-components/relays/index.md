@@ -8,6 +8,10 @@ date: 2018-11-29
 lastmod: 2019-03-07
 draft: false
 
+classes:
+  - RelaySpecification
+  - SwitchingState
+
 menu:
   vec-guidelines:
     parent: ee-components
@@ -16,6 +20,10 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10400
 ---
+{{% callout note %}}
+This guideline applies to VEC Versions prior to V2.2. With 2.2 a more generic approach was introduced for the representation of internal connectivity and integrated subcomponents. Check the guideline for [Internal connectivity]({{<relref "../internal-connectivity">}}).
+{{% /callout %}}
+
 {{< figure src="relays.jpg" title="Relays" numbered="true" >}}
 
 A relay is a component for switching current loads. Unlike fuses, there are more than one input pin and one output pin (number of pins >3). Some components, referred to as relays, are in reality small controllers with up to 17 pins.

@@ -9,6 +9,9 @@ date: 2019-03-07
 lastmod: 2019-03-07
 draft: false
 
+classes:
+  - MultiFuseSpecification
+
 menu:
   vec-guidelines:
     parent: ee-components
@@ -17,6 +20,9 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10300
 ---
+{{% callout note %}}
+This guideline applies to VEC Versions prior to V2.2. With 2.2 a more generic approach was introduced for the representation of internal connectivity and integrated subcomponents. Check the guideline for [Internal connectivity]({{<relref "../internal-connectivity">}}).
+{{% /callout %}}
 {{< figure src="multi-fuse.png" lightbox="true" class="float-right" title="Multi Fuse Illustration" width="300px" >}}
 
 A mutlifuse is a special type of fuse that combines multiple fuses in a single component (see [Multi Fuse Illustration]({{< relref "#figure-multi-fuse-illustration" >}})). In contrast to a regular fuse, where there are only two interchangeable pins, the multi fuse has a single dedicated supplying pin and multiple protected pins. 

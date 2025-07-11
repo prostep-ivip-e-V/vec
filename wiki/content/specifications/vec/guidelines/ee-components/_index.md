@@ -163,6 +163,10 @@ The listing below shows the general xml structure for such a component box. Omit
 </Specification>
 ```
 ## Internal Connectivity 
+{{% callout note %}}
+This section applies to VEC Versions prior to V2.2. With 2.2 a more generic approach was introduced for the representation of internal connectivity and integrated subcomponents. Check the guideline for [Internal connectivity]({{<relref "internal-connectivity">}}).
+{{% /callout %}}
+
 ### Connections 
 {{< figure src="component_box_schematic.png" lightbox="true"  title="Component Box Schematic Illustration" width="400px" class="float-right" >}} 
 
