@@ -7,7 +7,7 @@
         {{- end -}}    
     {{- if (gt (len ($reason | default "")) 0) -}}
     :<br><em>
-        {{-   printf "%s" $reason -}}
+        {{- $reason | safeHTML -}}
     </em>
     {{- end -}}
 </div>
