@@ -22,7 +22,7 @@ image:
 ---
 ## Do you want to participate actively?
 
-Under the umbrella of the prostep ivip Association, the continous development and improvement process of the standards takes place in two project groups, the VES-WF and the ECAD-IF. A more detailed description of the group activities can be found here: [VES-WF](https://www.prostep.org/en/projects/pdm-for-vehicle-electric-systems-pdm4ves/) / [ECAD-IF](https://www.prostep.org/en/projects/ecad-implementor-forum/).
+Under the umbrella of the prostep ivip Association, the continous development and improvement process of the standards takes place in two project groups, the VES-WF and the ECAD-IF. A more detailed description of the group activities can be found here: [VES-WF / ECAD-IF](https://www.prostep.org/projekte/ves/ecad-projektgruppen).
 
 If you want to join, please reach out to the contact person listed on the corresponding page.
 
@@ -31,9 +31,7 @@ If you want to join, please reach out to the contact person listed on the corres
 Continuous development and improvement is crucial, also for standards. An essential factor to achieve this, is feedback from the user and implementer commmunity. Therefore: 
 
 **If you find a bug or an error in the recommendations, the schemas or 
-any of the provided documentation of the standards, please do not hesitate to drop us an issue in our [issue tracking system](https://prostep-ivip.atlassian.net/projects/KBLFRM/). The same applies to all kinds of feature requests and questions.**
-
-The issue management is done in a JIRA instance provided by prostep ivip. To request access, please send a request to Dr. Max Ungerer (*max.ungerer(at)prostep.com*)
+any of the provided documentation of the standards, please do not hesitate to drop us an issue in our [issue tracking on GitHub](https://github.com/prostep-ivip-e-V/vec/issues). The same applies to all kinds of feature requests and questions.**
 
 ## You want to contribute content directly to the ECAD-WIKI?
 {{% callout note %}}
@@ -48,14 +46,12 @@ Since the specifications (KBL & VEC) are subject to a strict issue and publishin
 
 Then you are more than welcome. All you need is a *GitLab.com* account, and that is what you need to know:
 - The ECAD-WIKI is generated with the static website generator [Hugo](https://gohugo.io/). 
-- All content pages are stricly written in markdown and managed in our GitLab.com project [ECAD-WIKI](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io).
+- All content pages are stricly written in markdown and managed in our GitLab.com project [ECAD-WIKI](https://github.com/prostep-ivip-e-V/vec/tree/main/wiki).
 - All pages have a "Edit this page" link on the left bottom. If you click this link, you are brought to GitLab's markdown online editor for this page.
-- If you are not an active member of the project, you have to fork the project and then create a merge request with your changes. No worries, these are just two clicks in the web interface. More details in the [GitLab.com Documentation](https://docs.gitlab.com/ee/user/project/repository/forking_workflow.html).
+- If you are not an active member of the project, you have to fork the project and then create a pull request with your changes. No worries, these are just two clicks in the web interface. More details in the [GitHub Documentation](https://docs.github.com/de/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 - After your first contribution, you can request `Developer` access to the project, which makes the "forking" unnecessary.
-- If you have a contribution (a feature request is also a contribution), but can not provide a merge request you can drop us an issue on [GitLab.com](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/-/issues). 
+- If you have a contribution (a feature request is also a contribution), but can not provide a merge request you can drop us an issue on [GitHub.com](https://github.com/prostep-ivip-e-V/vec/issues). 
 
-{{% callout warning %}}
-This is only valid for features of the Wiki itself and content as specified above. Issues and merge requests concerning the specifications itself will be closed without further comment.
-{{% /callout %}}
+
 
 

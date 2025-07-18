@@ -71,9 +71,9 @@ features:
   privacy_pack: 
     enable: true
   repository:
-    url: 'https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io'
-    content_dir: content
-    branch: master
+    url: 'https://github.com/prostep-ivip-e-V/vec'
+    content_dir: wiki/content
+    branch: main
   avatar:
     gravatar: true
     shape: circle
