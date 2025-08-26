@@ -373,7 +373,7 @@ TODO: Define Mapping of Module Configuration
 Modules describe dual character of modules (occurrence & part). 
 
 #### PartOccurrences
-Identification is mandatory... not all KBL Occurrences have mandatory indentification.
+Identification is mandatory... not all KBL Occurrences have mandatory identification.
 
 
 ## Core Elements
