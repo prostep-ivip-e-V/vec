@@ -316,7 +316,7 @@ To define the next layer, instance of the modules are required. Those are create
         <Identification>MDL123456</Identification>
         <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00288">
           <Identification>MDL123456</Identification>
-          <PartStructureSpecification>PartStructureSpecification_00368<PartStructureSpecification>
+          <PartStructureSpecification>PartStructureSpecification_00368</PartStructureSpecification>
           <SubComponent>PartOccurrence_00291 PartOccurrence_00290 ...</SubComponent>
         </Role>
         <Part>PartVersion_00504</Part>
