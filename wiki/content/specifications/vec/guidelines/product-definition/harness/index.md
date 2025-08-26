@@ -144,6 +144,22 @@ The following table defines the {{<vec-class PartOrUsageRelatedSpecification >}}
 | {{<kbl-class Component >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
 
 
+### GeneralTechnicalPartSpecification
+
+In the VEC, every part receives a {{<vec-class GeneralTechnicalPartSpecification >}}; that is, for each instance of a KBL {{<kbl-class Part >}}, such a specification is created in its describing {{<vec-class DocumentVersion>}}. This specification covers basic technical information about the component, such as dimensions, weight, material, and dependencies to other parts. The XML representation for any given part would look approximately as follows:
+
+```xml
+    <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_00002">
+      <Identification>GTPS-AS0105563</Identification>
+      <DescribedPart>PartVersion_00592</DescribedPart>
+      <MassInformation id="MassInformation_00003">
+        <Value id="NumericalValue_00004">
+          <UnitComponent>SIUnit_00729</UnitComponent>
+          <ValueComponent>47.7</ValueComponent>
+        </Value>
+      </MassInformation>
+    </Specification>
+```
 
 {{% callout warning %}}
 Work in Progress
@@ -407,7 +423,7 @@ TODO: Define Mapping of Module Configuration
 
 ## Specifications
 
-### GeneralTechnicalPartSpecification
+
 
 ### ConnectorHousingSpecification
 
