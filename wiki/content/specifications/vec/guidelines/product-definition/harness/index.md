@@ -307,7 +307,7 @@ For each module, a {{<vec-class PartStructureSpecification >}} is created, refer
       <InBillOfMaterial>PartOccurrence_00291 PartOccurrence_00290 ...</InBillOfMaterial>
     </Specification>
 ```
-To define the next layer, instance of the modules are required. Those are created within a seperate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'`. As it can be seen, the module {{<vec-class PartOccurrence >}} references the same component {{<vec-class PartOccurrence >}} as the {{<vec-class PartStructureSpecification >}}. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). However, to provide a consistent appearance in the model for all parts with a BoM, both concepts shall be used.
+To define the next layer, instance of the modules are required. Those are created within a separate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'`. As it can be seen, the module {{<vec-class PartOccurrence >}} references the same component {{<vec-class PartOccurrence >}} as the {{<vec-class PartStructureSpecification >}}. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). However, to provide a consistent appearance in the model for all parts with a BoM, both concepts shall be used.
 
 ```xml
     <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00286">
