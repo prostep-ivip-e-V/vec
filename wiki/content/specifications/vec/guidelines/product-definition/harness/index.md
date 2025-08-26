@@ -255,7 +255,7 @@ graph LR;
     PSH -- in BOM --> OM;
   end
 ```
-Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master defintion of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
+Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master definition of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
 
 {{% callout note %}}
 A detail not shown in the diagram above is that an instance of a BoM part must include references to its subcomponents. In the case of library parts (i.e., {{<kbl-class Assembly_part >}} in KBL), the subcomponents are represented by distinct {{<vec-class PartOccurrence >}} instances, separate from those used to define the part’s structure.
