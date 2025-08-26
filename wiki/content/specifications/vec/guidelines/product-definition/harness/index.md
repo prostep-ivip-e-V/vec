@@ -323,7 +323,7 @@ To define the next layer, instance of the modules are required. Those are create
       </Component>
     </Specification>
 ```
-As Module is now a regular {{<vec-class PartOccurrence >}} the generic concepts in the VEC for {{<vec-class PartOccurrence >}}s can now be applied (e.g. Variant Management, see below) and no module specific modelling concepts, like the KBL `Logistic_control_information` are required.
+As a Module is now a regular {{<vec-class PartOccurrence >}} the generic concepts in the VEC for {{<vec-class PartOccurrence >}}s can now be applied (e.g. Variant Management, see below) and no module specific modelling concepts, like the KBL `Logistic_control_information` are required.
 
 Based on the module {{<vec-class PartOccurrence >}}s, now a {{<vec-class PartStructureSpecification >}} for the harness can be defined.
 
