@@ -340,9 +340,54 @@ Based on the module {{<vec-class PartOccurrence >}}s, now a {{<vec-class PartStr
 Work in Progress
 {{% /callout %}}
 
-### Variance Information for Modules
+### Variant Management (Logistic Control Information)
+The KBL uses the {{<kbl-class Module_configuration >}} element and its `Logistic_control_information` attribute to define variant management information. In contrast, the VEC offers a more flexible approach, allowing variant management data to be associated with almost any element that is a subclass of {{<vec-class ConfigurableElement >}}. Additionally, the VEC introduces an indirection layer, enabling elements to be supplemented with variant management information either retrospectively or externally. It is also possible to assign different control information to an element depending on the context.
+
+As a result, the single `Logistic_control_information` attribute in the KBL is mapped to a more comprehensive set of classes and attributes in the VEC, providing greater flexibility and specificity in variant management. Specifically, two specifications are required for this purpose, with one instance of each per harness:
+
+1. The {{<vec-class VariantConfigurationSpecification >}} defines the set of configuration terms used. For each distinct `Logistic_control_information` string, a corresponding {{<vec-class VariantConfiguration >}} should be created.
+2. The {{<vec-class ConfigurationConstraintSpecification >}} assigns these terms to specific elements. For each {{<kbl-class Module >}} with a `Logistic_control_information`, a {{<vec-class ConfigurationConstraint >}} should be created to link the corresponding {{<vec-class PartOccurrence>}} to the appropriate {{<vec-class VariantConfiguration>}}.
+
+The following XML snippet illustrates the required specifications and their relationships.
+
+```xml
+    <Specification xsi:type="vec:VariantConfigurationSpecification" id="VariantConfigurationSpecification_00403">
+      <Identification>VCS-LTG0011200</Identification>
+      <VariantConfiguration id="VariantConfiguration_00404">
+        <Identification>VarConf_MDL123456</Identification>
+        <LogisticControlExpression>L0L+ALL</LogisticControlExpression>
+        <ConfigurationType>Logistic</ConfigurationType>
+      </VariantConfiguration>
+    </Specification>
+    <Specification xsi:type="vec:ConfigurationConstraintSpecification" id="ConfigurationConstraintSpecification_00405">
+      <Identification>CCS-LTG0011200</Identification>
+      <ConfigurationConstraint id="ConfigurationConstraint_00406">
+        <Identification>ConfConstraint_MDL123456</Identification>
+        <ConfigInfo>VariantConfiguration_00404</ConfigInfo>
+        <ConstrainedElements>PartOccurrence_00408</ConstrainedElements>
+      </ConfigurationConstraint>
+    </Specification>
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00407">
+      <Identification>MODULES</Identification>
+      <Component id="PartOccurrence_00408">
+        <Identification>MDL123456</Identification>
+        <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00409">
+          <Identification>MDL123456</Identification>
+          <PartStructureSpecification>PartStructureSpecification_00589</PartStructureSpecification>
+          <SubComponent>...</SubComponent>
+        </Role>
+        <Part>PartVersion_00725</Part>
+      </Component>
+    </Specification>
+```
+
+{{%callout note %}}
+As mentioned before, the KBL {{<kbl-class Module >}} is split up in the VEC into its part definition aspects (i.e. {{<vec-class PartStructureSpecification >}}) and in its instance/uasge aspects (i.e. {{<vec-class PartOccurrence >}}). The variant management is always attached to usage context of something. Therefore, the {{<vec-class configurationConstraint >}} is pointing to the {{<vec-class PartOccurrence>}}.
+{{%/callout %}}
+
+
 {{% callout warning %}}
-Work in Progress
+TODO: How to handle Module_configurations that are defined directly under the Harness element.
 {{% /callout %}}
 
 ### Topology
