@@ -58,7 +58,7 @@ Everything starts with the model root element {{< vec-class veccontent >}}, see 
 
 {{< figure src="veccontent.png" title="VecContent" numbered="true" lightbox="true">}}
 
-The following sub elements of the VEC are required for a harness description and are covered by some information in the KBL (the sections containing the detail inforamtion are linked):
+The following sub elements of the VEC are required for a harness description and are covered by some information in the KBL (the sections containing the detail information are linked):
 
 - [PartVersions]({{< relref "#partversions" >}})
 - [DocumentVersions]({{< relref "#documentversions" >}})
