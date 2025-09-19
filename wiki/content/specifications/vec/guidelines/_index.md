@@ -3,7 +3,7 @@ title: VEC Implementation Guidelines
 linktitle: Overview
 toc: false
 type: specs
-date: "2024-01-08"
+date: "2025-09-19"
 draft: false
 outputs:
   - html
