@@ -11,6 +11,7 @@ outputs:
   - printable
 printable: true
 math: true
+
 specs:
   toc: true
   history: true
