@@ -19,11 +19,11 @@ links:
   - icon_pack: fas
     icon: file-pdf
     name: VEC Full Model Documentation (Printable Version)
-    url: "VEC-Model-Documentation-V2.2.0.pdf"
+    url: "VEC-Full-Model-Documentation-V2.2.0.pdf"
   - icon_pack: fas
     icon: file-word
     name: VEC Full Model Documentation (Annotated Changes to V2.1.0)
-    url: "VEC-Model-Documentation-V2.2.0-diff.docx"
+    url: "VEC-Full-Model-Documentation-V2.2.0-diff.docx"
   - icon_pack: far
     icon: folder-open
     name: VEC Online Model Description
