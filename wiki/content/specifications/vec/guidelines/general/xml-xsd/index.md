@@ -476,8 +476,7 @@ displays the `occurrenceOrUsage` association between
 {{<vec-class OccurrenceOrUsageViewItem2D>}} and
 {{<vec-class OccurrenceOrUsage>}}. Associations are translated into `IDREF` or
 `IDREFS` in the XML Schema, in contrast to aggregations that are translated into
-contained `xs:element` (compare
-{{<vec-diagram "xml-representation-of-the-model/mapping-of-the-vec-model-to-xml-schema-definition-xsd">}}).
+contained `xs:element`.
 The XML Schema representation of the association is the following:
 
 ```xml

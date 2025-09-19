@@ -169,8 +169,7 @@ the process, the assignment of information pieces to its original
 An illustrative example for this, is the distribution and use of component
 master data (compare [figure on the
 right]({{< relref "#figure-documentversions-in-the-information-flow" >}})). As
-described in
-"{{< vec-diagram "xml-representation-of-the-model/partitioning-and-sizing-of-vec-files" >}}"
+described in [XML / XSD Representation]({{<relref "../../general/xml-xsd">}})
 component master data is best provided with one VEC per component, containing at
 least one {{< vec-class documentversion >}} with the component's specifications
 (_VEC A_, _B_, _C_).
