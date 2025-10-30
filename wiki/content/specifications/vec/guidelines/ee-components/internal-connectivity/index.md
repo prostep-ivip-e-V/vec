@@ -20,6 +20,8 @@ classes:
   - ComponentNode
   - ComponentConnector
   - ComponentPort
+  - ReusageSpecification
+  - Reusage
 
 history:
   - date: 2025-07-11T00:00:00Z
@@ -40,7 +42,6 @@ links:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10100
 ---
-<!-- TODO: set links and classes references to Reusage & ReusageSpec after V2.2 release -->
 {{< gh-review "915" >}}
 {{% callout note %}}
 This Guideline applies to VEC 2.2 and later. 
@@ -69,7 +70,7 @@ The logical layer on both sides is modeled using the {{<vec-class "ConnectionSpe
 
 On the **master data side**, the E/E component is represented by a single {{<vec-class "ComponentNode" >}} with associated _childNodes_ and {{<vec-class "Connection" >}}s.
 
-On the **usage side**, this node can be cloned (with or without internal structure) and embedded into a larger system context. The link between the representation in the usage context and the original master data is established through a _ReusageSpecification_.
+On the **usage side**, this node can be cloned (with or without internal structure) and embedded into a larger system context. The link between the representation in the usage context and the original master data is established through a  {{<vec-class "ReusageSpecification" >}}.
 
 ### Physical Layer
 
@@ -346,8 +347,8 @@ The master data definitions described in the previous sections can be used on bo
 #### Logical Layer
 
 On the logical layer, this constitutes a reuse of information. The same concepts (i.e., classes and attributes) are used in both the master data and the usage context. That means a {{<vec-class "ConnectionSpecification" >}} is used on both sides to describe the logical connectivity. However, the usage of a {{<vec-class "ComponentNode" >}} may deviate from its master definition, according to process-specific rules. For example, the identification (name) of a {{<vec-class "ComponentNode" >}} in the master data may differ from its designation in a specific usage context.
-<!--TODO: Create link to ReusageSpecification after release of VEC 2.2 -->
-To enable traceability between usage and master data, a `ReusageSpecification` is used. 
+
+To enable traceability between usage and master data, a {{<vec-class "ReusageSpecification" >}} is used. 
 
 The corresponding XML representation is shown below.
 The {{<vec-class "ConnectionSpecification" >}} from the master data was already listed earlier.

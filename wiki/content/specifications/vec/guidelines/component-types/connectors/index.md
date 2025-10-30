@@ -63,9 +63,9 @@ All relations between the collector housing and the inserts are only based on {{
 The next paragraphs apply to VEC 2.2 and later. 
 {{% /callout %}}
 
-In addition to that, the {{<vec-class ModularSlot >}} can define a `ModularSlotLayout` for each valid assembly variant to define an indidivdual {{<vec-class Cavity >}} numbering for inserts when used in this {{<vec-class ModularSlot >}}. On the left hand side, a {{<vec-class MappingSpecification >}} is used to create link between the insert `4713` and the ModularSlotLayout `2` (the mapping of `4712` is omitted in the diagram). 
+In addition to that, the {{<vec-class ModularSlot >}} can define a {{<vec-class CavityLayout >}} for each valid assembly variant to define an indidivdual {{<vec-class Cavity >}} numbering for inserts when used in this {{<vec-class ModularSlot >}}. On the left hand side, a {{<vec-class MappingSpecification >}} is used to create link between the insert `4713` and the {{<vec-class CavityLayout >}} `2` (the mapping of `4712` is omitted in the diagram). 
 
-The ModularSlotLayout and the virtual {{<vec-class Cavity >}}s in it could be also used to create a {{<vec-class Mapping >}} with a mating connector (not shown in the diagram).
+The {{<vec-class CavityLayout >}} and the virtual {{<vec-class Cavity >}}s in it could be also used to create a {{<vec-class Mapping >}} with a mating connector (not shown in the diagram).
 
 ### Instancing 
 {{< figure src="modular-connector-instancing.svg" title="Instanciating Modular Connectors" numbered="true" lightbox="true">}}
