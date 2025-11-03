@@ -128,4 +128,3 @@ The _XML_ representation of the above example within the {{< vec-class "NetSpeci
   </DocumentVersion>
 </vec:VecContent>
 ```
-
