@@ -7,8 +7,8 @@ toc: true
 authors: [becker]
 tags: []
 categories: []
-date: 2025-10-29
-lastmod: 2025-10-30
+date: 2025-11-02
+lastmod: 2025-11-02
 draft: false
 review: true
 
@@ -40,11 +40,11 @@ The _Architectural Layer_ is the highest abstraction layer for describing electr
 
 {{< figure src="architecture-illustration.svg" lightbox="true" title="Simple Architectural Layer (Illustration)" numbered="true">}}
 
-The figure above illustrates a simple sketch of a "Power Window (Driver Side)" system in the architectural layer. It shows the main components involved (Body Controller, Door Module and Power Window Engine) and the communication links between them. However, it does not specify how these connections are physically realized (e.g. electrical potentials, wire types, connectors). The instancing of this sketch in the VEC is shown in the figure below.
+The figure above illustrates a simple sketch of a "Power Window (Driver Side)" system in the architectural layer. It shows the main components involved (Body Controller, Door Module Driver, and Power Window Engine Driver) and the communication links between them. However, it does not specify how these connections are physically realized (e.g., electrical potentials, wire types, connectors). The instantiation of this sketch in the VEC is shown in the figure below.
 
 {{< figure src="architecture.svg" lightbox="true" title="Simple Architectural Layer" numbered="true">}}
 
-The VEC instantiation in this example contains slightly more detail than the sketch, but still refrains from defining physical realization aspects. The VEC elements used to describe the _Architectural Layer_ are contained in the {{< vec-class NetSpecification >}}. Each E/E Component is represented by a {{< vec-class NetworkNode>}}. The communication links between the components are represented by three {{< vec-class "Net" >}}s. A {{< vec-class "Net" >}} is the usage of a {{< vec-class NetType >}}, e.g. "CAN Bus" or "HAL", defining the technology used for communication. The {{< vec-class "Net" >}} defines a specific instance of this technology in the system, e.g. "Body-CAN Bus" or "HAL for Power Window Driver Side".
+The VEC instantiation in this example contains slightly more detail than the sketch, but still refrains from defining physical realization aspects. The VEC elements used to describe the _Architectural Layer_ are contained in the {{< vec-class NetSpecification >}}. Each E/E Component is represented by a {{< vec-class NetworkNode >}}. The communication links between the components are represented by three {{< vec-class "Net" >}}s. A {{< vec-class "Net" >}} is the usage of a {{< vec-class NetType >}}, e.g., "CAN Bus" or "HAL", defining the technology used for communication. The {{< vec-class "Net" >}} defines a specific instance of this technology in the system, e.g., "Body-CAN Bus" or "HAL for Power Window Driver Side".
 
 The _XML_ representation of the above example within the {{< vec-class "NetSpecification" >}} is shown below:
 
