@@ -26,6 +26,9 @@ classes:
   - WireElementReference
 
 history:
+  - date: 2025-11-04T00:00:00Z
+    description: "Adapted to structural changes / deprecations of WireElement / WireElementSpecificaiton relations in VEC version 2.2.0"
+    ghIssue: "1143"
   - date: 2024-12-19T00:00:00Z
     description: "Added description for layering and odering of wire elements."
     issue: "KBLFRM-1234" 
@@ -47,12 +50,18 @@ menu:
     # Toplevel element. For sub sections the identifier of the subsection
     parent: component-types
     weight: 5000
+links:    
+  - icon_pack: fas
+    icon: file-code
+    name: single-core.vec
+    url: 'ecad-wiki-guideline-single-core.vec'	    
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 
 weight: 5000
 ---
 
+{{< gh-review "1143">}}
 
 This Implementation Guideline covers the various aspects of a correct wire representation in the VEC for different scenarios and variants of wires. It covers both multi cores and single cores.
 
@@ -60,56 +69,169 @@ The VEC contains model elements for the representation of wires which would not 
 
 ## Specifying the Elements of a Wire
 
-In the world of the VEC, a wire is a hierarchical structure of wire elements. A wire element can be any node in the hierarchy that has to be addressed individually for the definition of specific properties. A wire element can be manifested either by physical material (e.g. a core, an insulation, a shield) or by the logical necessity for the definition of certain product properties during the production process (e.g. a grouping for twisted pairs). 
+In the world of the VEC, a wire is a hierarchical structure of {{< vec-class WireElement>}}s. A wire element can be any node in the hierarchy that has to be addressed individually for the definition of specific properties. A wire element can be manifested either by physical material (e.g. a core, an insulation, a shield) or by the logical necessity for the definition of certain product properties during the production process (e.g. a grouping for twisted pairs). 
 
-The properties of wire elements are defined with a {{< vec-class WireElementSpecification >}} (see the figure below).
+The properties of {{< vec-class WireElement>}} are defined with a {{< vec-class WireElementSpecification >}} (see the figure below).
 
-{{< figure src="wire-element-specification.jpg" lightbox="true" title="Wire Element Specification" numbered="true">}}
+{{< figure src="wire-element-specification.svg" lightbox="true" title="Wire Element Specification" numbered="true">}}
 
-The {{< vec-class WireElementSpecification >}} is a generic node in the hierarchical structure of a wire. The hierarchy represents the real structure of wire from the outside to inside. For example, if an insulation is placed around two cores, the cores are sub elements of the insulation. Subordinated elements in the structure are defined by referencing *subWireElementSpecifications*. The actual technical properties of a wire element are defined by referencing a corresponding auxiliary specifications. For example (see the Diagram {{< vec-diagram "component-characteristics/wire" >}} in the recommendation for a complete list):
+The {{< vec-class WireElementSpecification >}} is a generic, reusable definition of the properties of a wire element. That means, multiple {{< vec-class WireElement >}}s can reference the same {{< vec-class WireElementSpecification >}}, if they share the same technical properties. A specified wire element can be used in different contexts. For example, a white single core can be used as individual single core wire or as part of several different multi core wires. It can even be used multiple times as part of the same multi core (compare CAT7 twisted pair cables that might contain up to 4 similar white cores). Therefore, the definition is represented by a {{< vec-class WireElementSpecification >}}, which is independent of a specific {{< vec-class WireSpecification >}}.
 
-- {{< vec-class InsulationSpecification >}} if the wire element has insulation properties, or 
+The actual technical properties of a wire element are defined by referencing a corresponding auxiliary specifications. For example (see the Diagram {{< vec-diagram "component-characteristics/wire" >}} in the recommendation for a complete list):
+
+- {{< vec-class InsulationSpecification >}} if the wire element has insulation properties, and/or 
 - {{< vec-class ConductorSpecification >}} if the wire element has conducting properties.
+
+{{% callout note %}}
+In previous versions of the VEC, the {{< vec-class WireElementSpecification>}} was also used to define the hierarchical structure of a wire. However, this approach turned out to insufficient for an unambiguous representation of complex wires (see next section for details). Therefore, since VEC version 2.2.0 the hierarchical structure of a wire is defined by the {{< vec-class WireElement >}}s only and the use of `WireElementSpecification.SubWireElementSpecification` is discouraged.
+{{% /callout %}}
+
 
 {{% callout note %}}The auxiliary specifications can be shared between different {{< vec-class WireElementSpecification >}}. For example, in the real world all FLRY wires with a specific cross section area have the same properties for the core. This *can* (not a must) be expressed in the VEC by sharing the same {{< vec-class CoreSpecification >}}.{{% /callout %}}
 
-In reality, a specified wire element can be used in different contexts. For example, a white single core can be used as individual single core wire or as part of several different multi core wires. It can even be used multiple times as part of the same multi core (compare CAT7 twisted pair cables that might contain up to 4 similar white cores). To represent this fact, the {{< vec-class WireElementSpecification >}} itself is also designed to be reusable. 
-
 ## From the individual Elements to a whole Wire
 
-From a part master data perspective, the {{< vec-class WireElementSpecification >}} is sufficient to describe a wire with all its aspects, when navigating from the root wire element to its leaves. However, the ability to reuse {{< vec-class WireElementSpecification >}}s comes with draw back: 
+From a part master data perspective, the {{< vec-class WireElementSpecification >}} was (pre VEC V2.2) sufficient to describe a wire with all its aspects, when navigating from the root wire element to its leaves. However, the ability to reuse {{< vec-class WireElementSpecification >}}s within a {{ vec-class WireSpecification }} or between multiple wires introduced a draw back:
 
-> Referencing a {{< vec-class WireElementSpecification >}} does not unambiguously define the context of its usage.
+> Referencing a {{< vec-class WireElementSpecification >}} does not unambiguously define which wire element is actually meant in the context of its usage.
 
 The following figure shall illustrate this. The red lines are hypothetical associations for the demonstration of the problem. In the VEC those associations do not exist, because of the described problem the actual model is different.
 
- When navigating from a part master data perspective (e.g. _PartVersion A_ &rarr; _Composite-Wire B_ &rarr; _White-Core_) the context is unambiguously defined by the navigation path. However, when referencing such wire element from somewhere else in the model, indicated with the _RoutedWire_ rectangle, the context is not defined unambiguously. It is not clear to which white core the association from the _RoutedWire_ refers to, indicated by the red lines.
+ When navigating from a part master data perspective (e.g. _PartVersion A_ &rarr; _Composite-Wire B_ &rarr; _White-Core_) the context is unambiguously defined by the navigation path. However, in the model the part master data is normally used somewhere, for example the wire is used somewhere in the harness. This is indicated by the _RoutedWire_ in the figure. In that case, it is vital to know which wire element in which wire is actually meant. However, when doing a reverse navigation in the model, indicated by the red lines, it is not clear which white core is actually meant. The white core is reused in multiple wires (or in multiple locations within the same wire). Therefore, the context is ambiguous.
 
 {{< figure src="ambigious-context-problem.svg" lightbox="true" title="Ambigious Context Problem" numbered="true">}}
 
-To solve this dilemma, the VEC introduced the {{< vec-class WireSpecification >}} and the {{< vec-class WireElement >}}. The {{< vec-class WireSpecification >}} is the {{< vec-class PartOrUsageRelatedSpecification >}} of a wire and the mandatory root of any wire (element) that can be used as an individual component. It references the root {{< vec-class WireElement >}} and the root {{< vec-class WireElementSpecification >}}. 
+To solve this dilemma, the VEC introduced the {{< vec-class WireSpecification >}} and the {{< vec-class WireElement >}}. The {{< vec-class WireSpecification >}} is the {{< vec-class PartOrUsageRelatedSpecification >}} of a wire and the mandatory root of any wire (element) that can be used as an individual component. It references the root {{< vec-class WireElement >}} and the root {{< vec-class WireElementSpecification >}} (deprecated since VEC V2.2).
 
-The {{< vec-class WireElement >}} is the context specific handle of a {{< vec-class WireElementSpecification >}} in a specific {{< vec-class WireSpecification >}} (primarily needed for multi cores, but due to a consistent modelling approach also mandatory for single cores). The {{< vec-class WireElement >}}s are used as a target for references.
+The {{< vec-class WireElement >}} is the context specific handle of a {{< vec-class WireElementSpecification >}} in a specific {{< vec-class WireSpecification >}} (primarily needed for multi cores, but due to a consistent modelling approach also mandatory for single cores). The {{< vec-class WireElement >}} also defines the actual hierarchy of the wire elements within the wire. The {{< vec-class WireElement >}}s are used as a target for references.
 
 {{% callout note %}}
-Every {{< vec-class WireElementSpecification >}} referenced transitively by the root {{< vec-class WireElementSpecification >}} of a {{< vec-class WireSpecification >}} requires a corresponding {{< vec-class WireElement >}} in the same {{< vec-class WireSpecification >}}. Care must be taken to ensure that the hierarchies defined by the {{< vec-class WireElement >}} and the {{< vec-class WireElementSpecification >}} are consistent with each other.
-{{% /callout %}}
-
-The redundant replication of the wire hierarchy within the {{< vec-class WireElement >}}s is necessary, because without this hierarchy wires with multiple occurrences of the same {{< vec-class WireElementSpecification >}} within the wire could not be represented consistently (see {{< issue KBLFRM-949 >}}).  
+The redundant definition of the wire hierarchy within the {{< vec-class WireElementSpecification >}} and {{< vec-class WireElement >}}s has been deprecated with VEC V2.2, because for a precise definition of the hierarchy the `WireElementSpecification.SubWireElementSpecification` was insufficient and incomplete, especially when using the same specification multiple times. Therefore, this association was deprecated and the reuse of complex structures among multiple wires is not supported anymore. However, the hierarchical structure of a wire is now unambiguously defined by the {{< vec-class WireElement >}}s only.
+{{% /callout  %}}
+ 
 
 ## Definition of a Single Core 
 
-{{< figure src="single-core-specification.jpg" lightbox="true" title="Single Core Specification" numbered="true" >}}
+{{< figure src="single-core.svg" lightbox="true" title="Single Core Specification" numbered="true" >}}
 
-The figure above illustrates the representation of a single core wire in the VEC. The {{< vec-class WireSpecification >}} is the {{< vec-class PartOrUsageRelatedSpecification >}} describing a {{< vec-class PartVersion >}}. Each {{< vec-class WireSpecification >}} has a single root {{< vec-class WireElementSpecification >}} that defines the actual properties and the structure of the wire, and a single root {{< vec-class WireElement >}} that serves as the context specific handle of the {{< vec-class WireElementSpecification >}} (see above).
+The figure above illustrates the representation of a single core wire in the VEC. The {{< vec-class WireSpecification >}} is the {{< vec-class PartOrUsageRelatedSpecification >}} describing a {{< vec-class PartVersion >}}. Each {{< vec-class WireSpecification >}} has a single root {{< vec-class WireElement >}} that serves as the context specific handle of the {{< vec-class WireElementSpecification >}} (see above).
 
 In theory, there are two possible representations for single cores in the VEC (see the figure below). A minimal representation, where the single core is represented by one wire element with conducting and insulating properties at the same time, and a more extensive one, where the single core is represented by two hierarchical wire elements, one for the insulation and one for the actual core. 
 
 {{% callout note %}}
- It is recommended for single cores to use always the minimal representation of the {{< vec-class WireElementSpecification >}}. Otherwise the number of objects and structures in the model are inflated without additional information or benefits. 
+ For single cores the minimal representation of the {{< vec-class WireElementSpecification >}} shall always be used. Otherwise the number of objects and structures in the model are inflated without additional information or benefits. 
  {{% /callout %}}
 
-{{< figure src="minimal-representation.jpg" lightbox="true" numbered="true" title="Minimal Representation vs. non-compliant Representation">}}
+{{< figure src="minimal-representation.svg" lightbox="true" numbered="true" title="Minimal Representation vs. non-compliant Representation">}}
+
+### XML Listing
+
+The following is a XML listing of the VEC representation of the single core (complete file can be downloaded at the end of the page). To illustrate the purpose of the different specifications more clearly, the listing also contains some additional technical properties, that are not contained in the figures above. 
+
+```xml
+<?xml version="1.0" ?>
+<vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
+  <VecVersion>2.2.0</VecVersion>
+  <GeneratingSystemName>VEC Samples</GeneratingSystemName>
+  <DateOfCreation>2025-11-04T12:52:59.048113500Z</DateOfCreation>
+  <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
+  <DocumentVersion id="DocumentVersion_00001">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DRAW-WIRE</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00017</ReferencedPart>
+    <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_00002">
+      <Identification>GTPS-WIRE</Identification>
+      <DescribedPart>PartVersion_00017</DescribedPart>
+      <MassInformation id="MassInformation_00003">
+        <DeterminationType>Measured</DeterminationType>
+        <Value id="NumericalValue_00004">
+          <UnitComponent>CompositeUnit_00020</UnitComponent>
+          <ValueComponent>4.6</ValueComponent>
+        </Value>
+        <ValueSource>Series</ValueSource>
+      </MassInformation>
+    </Specification>
+    <Specification xsi:type="vec:CoreSpecification" id="CoreSpecification_00005">
+      <Identification>Core-WIRE</Identification>
+      <CrossSectionArea id="NumericalValue_00006">
+        <UnitComponent>SIUnit_00021</UnitComponent>
+        <ValueComponent>0.35</ValueComponent>
+      </CrossSectionArea>
+      <NumberOfStrands id="NumericalValue_00007">
+        <UnitComponent>OtherUnit_00023</UnitComponent>
+        <ValueComponent>7.0</ValueComponent>
+      </NumberOfStrands>
+      <StrandDiameter id="NumericalValue_00008">
+        <UnitComponent>SIUnit_00022</UnitComponent>
+        <ValueComponent>0.27</ValueComponent>
+      </StrandDiameter>
+    </Specification>
+    <Specification xsi:type="vec:InsulationSpecification" id="InsulationSpecification_00009">
+      <Identification>Ins-WIRE</Identification>
+      <Thickness id="NumericalValue_00010">
+        <UnitComponent>SIUnit_00022</UnitComponent>
+        <ValueComponent>0.2</ValueComponent>
+      </Thickness>
+    </Specification>
+    <Specification xsi:type="vec:WireElementSpecification" id="WireElementSpecification_00011">
+      <Identification>1</Identification>
+      <Type id="WireType_00012">
+        <Type>FLRY-A</Type>
+        <ReferenceSystem>DIN 76722</ReferenceSystem>
+      </Type>
+      <OutsideDiameter id="NumericalValue_00013">
+        <UnitComponent>SIUnit_00022</UnitComponent>
+        <ValueComponent>1.3</ValueComponent>
+        <Tolerance id="Tolerance_00014">
+          <LowerBoundary>-0.1</LowerBoundary>
+          <UpperBoundary>0.0</UpperBoundary>
+        </Tolerance>
+      </OutsideDiameter>
+      <ConductorSpecification>CoreSpecification_00005</ConductorSpecification>
+      <InsulationSpecification>InsulationSpecification_00009</InsulationSpecification>
+    </Specification>
+    <Specification xsi:type="vec:WireSpecification" id="WireSpecification_00015">
+      <Identification>WS-WIRE</Identification>
+      <DescribedPart>PartVersion_00017</DescribedPart>
+      <WireElementSpecification>WireElementSpecification_00011</WireElementSpecification>
+      <WireElement id="WireElement_00016">
+        <Identification>1</Identification>
+        <WireElementSpecification>WireElementSpecification_00011</WireElementSpecification>
+      </WireElement>
+    </Specification>
+  </DocumentVersion>
+  <PartVersion id="PartVersion_00017">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>WIRE</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>Wire</PrimaryPartType>
+  </PartVersion>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00018">
+    <Exponent>-1</Exponent>
+    <SiUnitName>Metre</SiUnitName>
+  </Unit>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00019">
+    <SiUnitName>Gram</SiUnitName>
+  </Unit>
+  <Unit xsi:type="vec:CompositeUnit" id="CompositeUnit_00020">
+    <Factors>SIUnit_00019 SIUnit_00018</Factors>
+  </Unit>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00021">
+    <Exponent>2</Exponent>
+    <SiUnitName>Metre</SiUnitName>
+    <SiPrefix>Milli</SiPrefix>
+  </Unit>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00022">
+    <SiUnitName>Metre</SiUnitName>
+    <SiPrefix>Milli</SiPrefix>
+  </Unit>
+  <Unit xsi:type="vec:OtherUnit" id="OtherUnit_00023">
+    <OtherUnitName>Piece</OtherUnitName>
+  </Unit>
+</vec:VecContent>
+```
 
 ## Definition of a Multicore Wire
 
@@ -117,15 +239,19 @@ In theory, there are two possible representations for single cores in the VEC (s
 
 The figure on the right illustrates a "simple" multicore wire, that will serve as an example for the following sections. It consists of two single cores of different colouring that form a twisted pair: _"A"_, a green one and _"B"_ a blue one. Around the twisted pair is a shielding (braiding or foil) and an outer insulation (sheath).
 
-The figure below displays the structural representation of the example in the terms of the VEC. On the left side is the {{< vec-class WireSpecification >}} with its contained {{< vec-class WireElement >}}.s To emphasis the hierarchical containment of the {{< vec-class WireElement >}}s, which can also be found in the _XML_ structure, they are represented with nested boxes. On the right side are the {{< vec-class WireElementSpecification >}}. Corresponding {{< vec-class WireElement >}}s and {{< vec-class WireElementSpecification >}}s are highlighted in the same colours. The technical properties of the {{< vec-class WireElementSpecification >}} are defined in the referenced auxiliary specifications.
+The figure below displays the structural representation of the example in the terms of the VEC. On the left side is the {{< vec-class WireSpecification >}} with its contained {{< vec-class WireElement >}}s. To emphasis the hierarchical containment of the {{< vec-class WireElement >}}s, which can also be found in the _XML_ structure, they are represented with nested boxes. On the right side are the {{< vec-class WireElementSpecification >}}. Corresponding {{< vec-class WireElement >}}s and {{< vec-class WireElementSpecification >}}s are highlighted in the same colours. The technical properties of the {{< vec-class WireElementSpecification >}} are defined in the referenced auxiliary specifications.
 
-{{< figure src="multi-core-specification.svg" lightbox="true"  title="Multicore Specification" numbered="true"  >}}
+{{< figure src="multi-core.svg" lightbox="true"  title="Multicore Specification" numbered="true"  >}}
 
 Notable things in this example:
 
 1. The specification of the smallest elements of the multicore, the single cores (one outlined in red), is similar to the specification of an individual single core. It could even be the same {{< vec-class WireElementSpecification >}}.
 2. Since the only difference between Core _"A"_ & _"B"_ is the different insulation colouring, they share the same {{< vec-class CoreSpecification >}}.
 3. The different layers around the two cores (twisting, shielding, insulation) are represented by individual {{< vec-class WireElement >}} / {{< vec-class WireElementSpecification >}}. This is in contrast to the single core where insulation and conductor are represented by a single {{< vec-class WireElement >}} / {{< vec-class WireElementSpecification >}}. 
+
+{{% callout note %}}
+The hierarchy definition on specifications {{< vec-class WireSpecification >}} &rarr; {{< vec-class WireElementSpecification >}} &rarr; {{< vec-class WireElementSpecification >}} is redundant to {{< vec-class WireSpecification >}} &rarr; {{< vec-class WireElement >}} &rarr; {{< vec-class WireElement >}} and has been deprecated since VEC version 2.2.0. 
+{{% /callout  %}}
 
 {{< figure src="https://upload.wikimedia.org/wikipedia/commons/3/37/Multicore_cable_diagram.jpg" lightbox="true" title="Cutaway diagram of a shielded multicore cable with four cores each with three individual conductors<br><small>Open Electrical, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0, via Wikimedia Commons</small>" class="float-left w-50 pr-3" >}}
 
