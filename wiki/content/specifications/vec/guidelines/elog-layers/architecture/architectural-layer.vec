@@ -1,73 +1,8 @@
----
-title: "Architectural Layer"
-#linktitle: Link in Sidemenu
-type: specs
-# Table of Content on the right side. Only useful for large pages.
-toc: true
-authors: [becker]
-tags: []
-categories: []
-date: 2025-11-02
-lastmod: 2025-11-02
-draft: false
-review: true
-
-classes:
-  - NetSpecification
-  - NetworkNode
-  - Net
-  - NetworkPort
-  - NetType
-
-history:
-  - date: 2025-10-30T00:00:00Z
-    description: "Added Implementation Guideline for the Architectural Layer."
-    ghIssue: "573" 
-  - date: 2025-11-06T00:00:00Z
-    description: "Extended Architectural Layer with transition to system schematic."
-    ghIssue: "575" 
-
-menu:
-  vec-guidelines:
-    # Toplevel element. For sub sections the identifier of the subsection
-    parent: elog-layers
-    weight: 500
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
-
-weight: 5000
-links:    
-  - icon_pack: fas
-    icon: file-code
-    name: architectural-layer.vec
-    url: 'architectural-layer.vec'	
----
-{{< gh-review "573" >}}
-
-{{% callout info %}}
-The XML examples from this guideline can be downloaded as a single file: [architectural-layer.vec](architectural-layer.vec)
-{{% /callout %}}
-
-## Basic Architectural Layer
-
-The _Architectural Layer_ is the highest abstraction layer for describing electrological aspects in the VEC. It focuses on defining the connectivity between components without specifying the physical realization of that connectivity. This layer is particularly useful for early design phases, where the overall system architecture needs to be established without delving into implementation details.
-
-{{< figure src="architecture-illustration.svg" lightbox="true" title="Basic Architectural Layer (Illustration)" numbered="true">}}
-
-The figure above illustrates a simple sketch of a "Power Window (Driver Side)" system in the architectural layer. It shows the main components involved (Body Controller, Door Module Driver, and Power Window Engine Driver) and the communication links between them. However, it does not specify how these connections are physically realized (e.g., electrical potentials, wire types, connectors). The instantiation of this sketch in the VEC is shown in the figure below.
-
-{{< figure src="basic-architecture.svg" lightbox="true" title="Basic Architectural Layer in VEC" numbered="true">}}
-
-The VEC instantiation in this example contains slightly more detail than the sketch, but still refrains from defining physical realization aspects. The VEC elements used to describe the _Architectural Layer_ are contained in the {{< vec-class NetSpecification >}}. Each E/E Component is represented by a {{< vec-class NetworkNode >}}. The communication links between the components are represented by three {{< vec-class "Net" >}}s. A {{< vec-class "Net" >}} is the usage of a {{< vec-class NetType >}}, e.g., "CAN Bus" or "HALL", defining the technology used for communication. The {{< vec-class "Net" >}} defines a specific instance of this technology in the system, e.g., "Body-CAN Bus" or "HALL for Power Window Driver Side".
-
-The _XML_ representation of the above example within the {{< vec-class "NetSpecification" >}} is shown below:
-
-```xml
 <?xml version="1.0" ?>
 <vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
   <VecVersion>2.2.0</VecVersion>
   <GeneratingSystemName>VEC Samples</GeneratingSystemName>
-  <DateOfCreation>2025-11-03T14:05:24.068903900Z</DateOfCreation>
+  <DateOfCreation>2025-11-06T16:08:14.494356200Z</DateOfCreation>
   <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
   <DocumentVersion id="DocumentVersion_00001">
     <CompanyName>Acme Inc.</CompanyName>
@@ -140,26 +75,6 @@ The _XML_ representation of the above example within the {{< vec-class "NetSpeci
         </Port>
       </NetworkNode>
     </Specification>
-  </DocumentVersion>
-</vec:VecContent>
-```
-
-## Transition to System Schematic Layer
-
-The system schematic layer is one abstraction level below the architectural layer. It adds more detail to the connectivity defined in the architectural layer by differentiating the electrical potentials and connections between components, while still not delving into physical realization details, e.g. wire colors or cross sections. More details regarding the system schematic layer can be found in the [System Schematic Layer]({{< relref "../system-schematic" >}}) guideline. This transition is illustrated in the figure below.
-
-{{< figure src="system-schematic-illustration.svg" lightbox="true" title="Transition to System Schematic (Illustration)" numbered="true">}}
-
-To maintain clarity, we build upon the previous example of the architectural layer, but with a focus on just the _HALL_ network and its two participants, the _DMD_ and _PWED_. A HALL-sensor signal typically consists of three electrical potentials: a power supply voltage, a ground reference, and the actual signal output. In the architectural layer, this entire communication link is represented by a single {{< vec-class "Net" >}} named "PWED-HALL". However, in the system schematic layer, this link is broken down into three distinct {{< vec-class Connection >}}s, each representing one of the electrical potentials involved in the HALL communication. Also note, that the {{< vec-class ComponentNode >}} has a {{< vec-class ComponentPort >}} for each electrical potential. These ports are grouped under a  {{< vec-class ComponentConnector >}}.
-
-The figure belows shows the VEC instantiation of the system schematic layer and the tracability into the network layer, but only for the _PWED_ side and a single connection in order to avoid cluttering of the diagram. Also note that the figure contains {{<vec-class signal>}}s as the pyhsical pendants of the {{< vec-class NetType >}}.
-
-{{< figure src="transition-system-schematic.svg" lightbox="true" title="Transition to System Schematic Layer in VEC" numbered="true">}}
-
-The _XML_ representation of the above example within the {{< vec-class "ConnectionSpecification" >}} is shown below. This is a partial extract focusing on the connections related to the HALL network and extends the previous _XML_ example for the architectural layer:
-
-```xml
-[...]
     <Specification xsi:type="vec:SignalSpecification" id="SignalSpecification_00018">
       <Identification>SIGNALS</Identification>
       <Signal id="Signal_00019">
@@ -268,5 +183,5 @@ The _XML_ representation of the above example within the {{< vec-class "Connecti
         </ConnectionEnd>
       </Connection>
     </Specification>
-[...]
-```
+  </DocumentVersion>
+</vec:VecContent>

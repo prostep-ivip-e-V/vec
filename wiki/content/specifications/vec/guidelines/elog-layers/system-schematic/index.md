@@ -38,6 +38,10 @@ menu:
 weight: 1000
 ---
 
+{{% callout info %}}
+The transition for the Architectural Layer to the System Schematic Layer is described in more detail in the [Architectural Layer]({{< relref "../architecture" >}}) guideline.
+{{% /callout %}}
+
 ## System Schematic Basics
 
 The system schematic is used to illustrate the electrical components (e.g. ECUs, sensors or switches) in a vehicle electrical system and their connections to each other on an electrological level without physical realization details. In many companies the system schematic is specific for an individual system and not an individual vehicle variant.
