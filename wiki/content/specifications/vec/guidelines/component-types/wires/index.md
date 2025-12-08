@@ -5,12 +5,12 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker, steinbuechler]
-tags: ["Review", "Wire", "Single Core", "Multi Core"]
+tags: ["Wire", "Single Core", "Multi Core"]
 categories: []
 date: 2019-03-07
 lastmod: 2019-11-29T17:30:52+01:00
 draft: false
-review: true
+review: false
 
 classes:
   - WireSpecification
@@ -60,9 +60,6 @@ links:
 
 weight: 5000
 ---
-
-{{< gh-review "1143">}}
-
 This Implementation Guideline covers the various aspects of a correct wire representation in the VEC for different scenarios and variants of wires. It covers both multi cores and single cores.
 
 The VEC contains model elements for the representation of wires which would not be strictly necessary for the exclusive representation of single core wires. However, single core wire elements with the same specification can occur in both, single and multi-core wires. In order to achieve a consistent representation of all cases in the model and in order to allow the reuse of data elements, a uniform modelling approach was chosen for single and multicore wires. At the first glance, this may seem unnecessarily complicated in the case of single core wires, but it simplifies the mapping of wires in the VEC on the long run, when all kinds of wires and not only single-cores have to be supported.
@@ -402,8 +399,6 @@ The following is a XML listing of the VEC representation of the [multicore examp
 ```
 
 ### Ordering & Layering of WireElements
-
-{{< review KBLFRM-1234 >}}
 
 {{% callout note %}}
 This section applies to VEC 2.2 and later. 

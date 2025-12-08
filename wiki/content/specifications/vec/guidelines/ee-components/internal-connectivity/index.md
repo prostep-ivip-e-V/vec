@@ -9,7 +9,7 @@ categories: []
 date: 2025-07-08
 lastmod: 2025-07-08
 draft: false
-review: true
+review: false
 classes:
 
 classes:
@@ -42,7 +42,6 @@ links:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 10100
 ---
-{{< gh-review "915" >}}
 {{% callout note %}}
 This Guideline applies to VEC 2.2 and later. 
 {{% /callout %}}

@@ -9,7 +9,7 @@ tags: []
 categories: []
 date: 2024-12-23
 draft: false
-review: true
+review: false
 classes:
   - RoutingSpecification
   - RoutableElement
@@ -36,7 +36,6 @@ links:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
 ---
-{{< review KBLFRM-1256 >}}
 A {{< vec-class Routing >}} is used to associate a {{< vec-class RoutableElement >}} with a topology. For a wiring harness, 
 the {{< vec-class RoutableElement >}} will be a {{< vec-class WireElementReference >}}. In early development phases 
 (and depending on the development process) it might be desired to associate a schematic with a topology. Therefore, 

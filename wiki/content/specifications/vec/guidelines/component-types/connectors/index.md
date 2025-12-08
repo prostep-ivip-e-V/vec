@@ -10,7 +10,7 @@ categories: []
 date: 2018-11-29
 lastmod: 2019-12-02T12:46:37+01:00
 draft: false
-review: true
+review: false
 
 history:
   - date: 2025-06-13T00:00:00Z
@@ -38,7 +38,6 @@ menu:
 weight: 6000
 ---
 ## Modular Connector 
-{{< gh-review "957" >}}
 A modular connector is a type of electrical connector designed to support flexible, configurable assembly using interchangeable subcomponents, typically called contact modules or inserts. Instead of having a fixed internal structure, a modular connector provides modular slots into which different contact modules can be inserted, depending on the application's electrical or mechanical requirements. 
 
 This approach allows for highly adaptable connector designs that can accommodate different pole counts, signal types, or layout constraints—all while reusing standard housing and interface components. Modular connectors can also serve as a means to break down large wiring harnesses into smaller, automatable subassemblies, enabling more efficient and scalable manufacturing processes.
