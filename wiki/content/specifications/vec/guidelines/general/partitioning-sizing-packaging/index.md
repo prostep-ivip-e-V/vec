@@ -7,23 +7,27 @@ authors: [becker]
 tags: []
 categories: []
 date: 2024-03-14T00:00:00.000Z
-lastmod: 2024-03-14T00:00:00.000Z
+lastmod: 2025-12-08T00:00:00.000Z
 draft: false
-review: false
-history: [{date: 2024-03-14T00:00:00.000Z, description: Extracted information from PSI recommendation and extended it where necesseray., issue: KBLFRM-1191}, {date: 2024-03-19T00:00:00.000Z, description: 'Consolidated information about the VEC package, added path format', issue: KBLFRM-1230}, {date: 2024-10-22T00:00:00.000Z, description: Initial Definition of File-Extension, issue: KBLFRM-1100}]
+review: true
+history: [
+    {date: 2024-03-14T00:00:00.000Z, description: Extracted information from PSI recommendation and extended it where necesseray., issue: KBLFRM-1191}, 
+    {date: 2024-03-19T00:00:00.000Z, description: 'Consolidated information about the VEC package, added path format', issue: KBLFRM-1230}, 
+    {date: 2024-10-22T00:00:00.000Z, description: Initial Definition of File-Extension, issue: KBLFRM-1100},
+    {date: 2025-12-08T00:00:00.000Z, description: Added recommendation for file extension and IANA Media Types of VEC files., ghIssue: "1144"}
+    ]
 classes: null
 menu: {vec-guidelines: {parent: general, weight: 60}}
 weight: 5600
 ---
 ## VEC XML Files
-{{< review KBLFRM-1100 >}}
 In general, XML data is structured in individual units of information, kown as documents. These documents can be transmitted through various machanisms, such as Web Services, enabling seamless exchange between systems. 
 Alternatively, they can be stored within a file system for persistent storage or later retrieval. 
 
 This guideline gives best practices for the [Partitioning and Sizing](#partitioning-and-sizing) of such documents and explains how set of files can be exchanged together as a consistent archive ([VEC-Package](#vec-package))
 
 {{% callout note %}}
-When storing VEC XML data in the file system the file extension shall be `.vec`.
+When storing VEC XML data in the file system the file extension shall be `.vec` and the Media Type `application/vec+xml`. Check out  the IANA Media Types registry for further details: https://www.iana.org/assignments/media-types/application/vec+xml
 {{% /callout %}}
 
 
@@ -62,14 +66,10 @@ A VEC-Package is an archive containing two things:
 -   One index file: `index.vec` (a VEC file)
 -   At least one data file (not required to be a VEC file)
 
-Depending on the individual requirements the technical format of the archive can be:
-
--   TAR
--   ZIP
--   or a zipped tar.
+The archive bundles all files together in a single file for exchange. Depending on individual technical requirements and preferences `ZIP` or `GZIP` can be used as archive formats. The compressed file can either contain the folder structure and content files of the VEC-Package directly (in case of `ZIP`), or it can contain a tar archive (in case of `GZIP`), with the folder structure and content files.
 
 {{% callout note %}}
-When storing a VEC Package in the file system the file extension shall be `.vecpackage.{zip|tar|tgz}`, depending on the used archive format.
+When storing a VEC Package in the file system the file extension shall be `.vecpackage.{zip|gz}`, depending on the used compression / archive format. The Media Type shall be `application/vec-package+zip` for ZIP archives and `application/vec-package+gzip` for gzipped tar archives. Check out  the IANA Media Types registry for further details: https://www.iana.org/assignments/media-types/application/vec-package+zip and https://www.iana.org/assignments/media-types/application/vec-package+gzip
 {{% /callout %}}
 
 
@@ -83,7 +83,7 @@ A VEC-Package shall contain an index file providing further information about th
 
 The elements of the index VEC file are restricted to the classes {{< vec-class "DocumentVersion" >}} and {{< vec-class "PartVersion" >}}. The index file contains a {{< vec-class "DocumentVersion" >}} for each file in the package. The attributes of the {{< vec-class "DocumentVersion" >}} are used to provide further information on the files:
 
--   **dataFormat**: the format of the file in the VEC-Package (as MIME-Type if available).
+-   **dataFormat**: the format of the file in the VEC-Package (as Media Type if available).
 -   **documentNumber**: the number of the document
 -   **documentVersion**: the version of the document
 -   **fileName**: the name of the file as it appears in the package, including the folder structure. It must not point to any file location which is not part of the VEC-Package (e.g. a File on a central server file share). The fileName is relative to the VEC-Package root. It MUST NOT contain a drive or device letter, or a leading slash. All slashes MUST be forward slashes `/` (UNIX-style).
@@ -93,7 +93,7 @@ that an SVG file which represents the wiring diagram of a harness, can be expres
 in the index file by a {{< vec-class "DocumentVersion" >}} pointing to a {{< vec-class "PartVersion" >}}, which represents the
 harness.
 
-{{< figure src="vec-package-index.jpg" title="Index of a VEC-Package" numbered="true" lightbox="true" >}}
+{{< figure src="vec-package-index.svg" title="Index of a VEC-Package" numbered="true" lightbox="true" >}}
 
 The figure above illustrates the structure of such a VEC-Package and the corresponding `index.vec`. The upper half of the diagram illustrates the file structure within the archive. In the root of the archive is the mandatory `index.vec` file that describes the content of the package. The content of `index.vec` is illustrated in the lower half of the diagram.
 
