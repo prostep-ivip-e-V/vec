@@ -2,7 +2,7 @@
 {{- $pageName := .Get 0 -}}
 {{- $completeUrl := printf "%s/%s.md" $basePath $pageName -}}
 {{- with .Page.GetPage ($completeUrl) -}}
-<a {{ printf "href=%q" .Permalink | safeHTMLAttr }}>{{ .Title }}</a>
+<a {{ printf "href=%q" .Permalink | safeHTMLAttr }}><code>{{ .Title }}</code></a>
 {{- else -}}
 {{- errorf "vec class page not found for %s: %s" $pageName .Position -}}
 {{- end -}}

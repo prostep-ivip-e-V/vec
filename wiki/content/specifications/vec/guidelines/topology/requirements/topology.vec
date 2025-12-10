@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
+  <VecVersion>2.2.0</VecVersion>
+  <GeneratingSystemName>VEC Samples</GeneratingSystemName>
+  <DateOfCreation>2025-12-10T16:22:47.842965700Z</DateOfCreation>
+  <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
+  <DocumentVersion id="DocumentVersion_00001">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>123456789</DocumentNumber>
+    <DocumentType>HarnessDescription</DocumentType>
+    <DocumentVersion>A</DocumentVersion>
+    <Specification xsi:type="vec:TopologySpecification" id="TopologySpecification_00002">
+      <Identification>TOPOLOGY</Identification>
+      <TopologyNode id="TopologyNode_00003">
+        <Identification>ND-I</Identification>
+      </TopologyNode>
+      <TopologyNode id="TopologyNode_00004">
+        <Identification>ND-II</Identification>
+      </TopologyNode>
+      <TopologyNode id="TopologyNode_00005">
+        <Identification>ND-III</Identification>
+      </TopologyNode>
+      <TopologyNode id="TopologyNode_00006">
+        <Identification>ND-IV</Identification>
+      </TopologyNode>
+      <TopologySegment id="TopologySegment_00007">
+        <Identification>SEG-I</Identification>
+        <EndNode>TopologyNode_00006</EndNode>
+        <StartNode>TopologyNode_00003</StartNode>
+        <LengthInformation id="SegmentLength_00008">
+          <Length id="NumericalValue_00009">
+            <UnitComponent>SIUnit_00040</UnitComponent>
+            <ValueComponent>1100.0</ValueComponent>
+          </Length>
+          <Classification>Designed</Classification>
+        </LengthInformation>
+      </TopologySegment>
+      <TopologySegment id="TopologySegment_00010">
+        <Identification>SEG-II</Identification>
+        <EndNode>TopologyNode_00004</EndNode>
+        <StartNode>TopologyNode_00006</StartNode>
+        <LengthInformation id="SegmentLength_00011">
+          <Length id="NumericalValue_00012">
+            <UnitComponent>SIUnit_00040</UnitComponent>
+            <ValueComponent>1200.0</ValueComponent>
+          </Length>
+          <Classification>Designed</Classification>
+        </LengthInformation>
+      </TopologySegment>
+      <TopologySegment id="TopologySegment_00013">
+        <Identification>SEG-III</Identification>
+        <EndNode>TopologyNode_00006</EndNode>
+        <StartNode>TopologyNode_00005</StartNode>
+        <LengthInformation id="SegmentLength_00014">
+          <Length id="NumericalValue_00015">
+            <UnitComponent>SIUnit_00040</UnitComponent>
+            <ValueComponent>1300.0</ValueComponent>
+          </Length>
+          <Classification>Designed</Classification>
+        </LengthInformation>
+      </TopologySegment>
+    </Specification>
+    <Specification xsi:type="vec:TopologyZoneSpecification" id="TopologyZoneSpecification_00016">
+      <Identification>TOPOLOGY-ZONES</Identification>
+      <Zone id="TopologyZone_00017">
+        <Identification>HOT</Identification>
+        <AmbientTemperature id="TemperatureInformation_00018">
+          <TemperatureRange id="ValueRange_00019">
+            <UnitComponent>SIUnit_00041</UnitComponent>
+            <Minimum>-30.0</Minimum>
+            <Maximum>125.0</Maximum>
+          </TemperatureRange>
+          <TemperatureType>AmbientTemperature</TemperatureType>
+        </AmbientTemperature>
+        <Assignment id="ZoneAssignment_00020">
+          <AssignedSegment>TopologySegment_00007</AssignedSegment>
+          <Coverage id="ZoneCoverage_00021">
+            <FirstLocation xsi:type="vec:NodeLocation" id="NodeLocation_00022">
+              <Identification>ND-IV</Identification>
+              <ReferencedNode>TopologyNode_00006</ReferencedNode>
+            </FirstLocation>
+            <SecondLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_00023">
+              <Identification>Loc A</Identification>
+              <Offset id="NumericalValue_00024">
+                <UnitComponent>SIUnit_00040</UnitComponent>
+                <ValueComponent>600.0</ValueComponent>
+              </Offset>
+              <Anchor>FromEndNode</Anchor>
+              <ReferencedSegment>TopologySegment_00007</ReferencedSegment>
+            </SecondLocation>
+          </Coverage>
+        </Assignment>
+        <Assignment id="ZoneAssignment_00025">
+          <AssignedSegment>TopologySegment_00010</AssignedSegment>
+          <Coverage id="ZoneCoverage_00026">
+            <FirstLocation xsi:type="vec:NodeLocation" id="NodeLocation_00027">
+              <Identification>ND-IV</Identification>
+              <ReferencedNode>TopologyNode_00006</ReferencedNode>
+            </FirstLocation>
+            <SecondLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_00028">
+              <Identification>Loc B</Identification>
+              <Offset id="NumericalValue_00029">
+                <UnitComponent>SIUnit_00040</UnitComponent>
+                <ValueComponent>500.0</ValueComponent>
+              </Offset>
+              <Anchor>FromStartNode</Anchor>
+              <ReferencedSegment>TopologySegment_00010</ReferencedSegment>
+            </SecondLocation>
+          </Coverage>
+        </Assignment>
+        <Assignment id="ZoneAssignment_00030">
+          <AssignedSegment>TopologySegment_00013</AssignedSegment>
+        </Assignment>
+      </Zone>
+      <Zone id="TopologyZone_00031">
+        <Identification>WET</Identification>
+        <RequiredRobustnessProperties id="RobustnessProperties_00032">
+          <Class>LiquidIngressProtection</Class>
+          <ClassKey>9K</ClassKey>
+          <ClassReferenceSystem>ISO 20653</ClassReferenceSystem>
+          <HasRobustness>true</HasRobustness>
+        </RequiredRobustnessProperties>
+        <Assignment id="ZoneAssignment_00033">
+          <AssignedSegment>TopologySegment_00010</AssignedSegment>
+          <Coverage id="ZoneCoverage_00034">
+            <FirstLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_00035">
+              <Identification>Loc C</Identification>
+              <Offset id="NumericalValue_00036">
+                <UnitComponent>SIUnit_00040</UnitComponent>
+                <ValueComponent>200.0</ValueComponent>
+              </Offset>
+              <Anchor>FromStartNode</Anchor>
+              <ReferencedSegment>TopologySegment_00010</ReferencedSegment>
+            </FirstLocation>
+            <SecondLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_00037">
+              <Identification>Loc D</Identification>
+              <Offset id="NumericalValue_00038">
+                <UnitComponent>SIUnit_00040</UnitComponent>
+                <ValueComponent>600.0</ValueComponent>
+              </Offset>
+              <Anchor>FromStartNode</Anchor>
+              <ReferencedSegment>TopologySegment_00010</ReferencedSegment>
+            </SecondLocation>
+          </Coverage>
+        </Assignment>
+      </Zone>
+    </Specification>
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00039">
+      <Identification>COMPONENTS</Identification>
+    </Specification>
+  </DocumentVersion>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00040">
+    <SiUnitName>Metre</SiUnitName>
+    <SiPrefix>Milli</SiPrefix>
+  </Unit>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00041">
+    <SiUnitName>DegreeCelsius</SiUnitName>
+  </Unit>
+</vec:VecContent>
