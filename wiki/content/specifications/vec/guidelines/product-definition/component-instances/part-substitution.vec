@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
+  <VecVersion>2.2.0</VecVersion>
+  <GeneratingSystemName>VEC Samples</GeneratingSystemName>
+  <DateOfCreation>2025-12-15T08:46:10.433874300Z</DateOfCreation>
+  <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
+  <DocumentVersion id="DocumentVersion_00001">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DOC-T-0001</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00025</ReferencedPart>
+    <Specification xsi:type="vec:CorrugatedPipeSpecification" id="CorrugatedPipeSpecification_00002">
+      <Identification>CPS-T-0001</Identification>
+      <DescribedPart>PartVersion_00025</DescribedPart>
+      <InnerDiameter id="NumericalValue_00005">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>6.3</ValueComponent>
+      </InnerDiameter>
+      <NominalSize>6/10</NominalSize>
+      <OuterDiameter id="NumericalValue_00006">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>10.0</ValueComponent>
+      </OuterDiameter>
+      <CorrugationHeight id="NumericalValue_00003">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>3.0</ValueComponent>
+      </CorrugationHeight>
+      <CorrugationWidth id="NumericalValue_00004">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>5.0</ValueComponent>
+      </CorrugationWidth>
+    </Specification>
+  </DocumentVersion>
+  <DocumentVersion id="DocumentVersion_00007">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DOC-T-0002</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00026</ReferencedPart>
+    <Specification xsi:type="vec:CorrugatedPipeSpecification" id="CorrugatedPipeSpecification_00008">
+      <Identification>CPS-T-0002</Identification>
+      <DescribedPart>PartVersion_00026</DescribedPart>
+      <InnerDiameter id="NumericalValue_00011">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>9.0</ValueComponent>
+      </InnerDiameter>
+      <NominalSize>9/13</NominalSize>
+      <OuterDiameter id="NumericalValue_00012">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>13.6</ValueComponent>
+      </OuterDiameter>
+      <CorrugationHeight id="NumericalValue_00009">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>3.0</ValueComponent>
+      </CorrugationHeight>
+      <CorrugationWidth id="NumericalValue_00010">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>5.0</ValueComponent>
+      </CorrugationWidth>
+    </Specification>
+  </DocumentVersion>
+  <DocumentVersion id="DocumentVersion_00013">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DOC-T-A100</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00027</ReferencedPart>
+    <Specification xsi:type="vec:CorrugatedPipeSpecification" id="CorrugatedPipeSpecification_00014">
+      <Identification>CPS-T-A100</Identification>
+      <DescribedPart>PartVersion_00027</DescribedPart>
+      <CorrugationHeight id="NumericalValue_00015">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>3.0</ValueComponent>
+      </CorrugationHeight>
+      <CorrugationWidth id="NumericalValue_00016">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>5.0</ValueComponent>
+      </CorrugationWidth>
+    </Specification>
+    <Specification xsi:type="vec:PartSubstitutionSpecification" id="PartSubstitutionSpecification_00017">
+      <Identification>PSS-T-A100</Identification>
+      <DescribedPart>PartVersion_00027</DescribedPart>
+      <AlternativePartVersions>PartVersion_00025 PartVersion_00026</AlternativePartVersions>
+    </Specification>
+  </DocumentVersion>
+  <DocumentVersion id="DocumentVersion_00018">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>HARNESS</DocumentNumber>
+    <DocumentType>HarnessDescription</DocumentType>
+    <DocumentVersion>A</DocumentVersion>
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00019">
+      <Identification>COMPONENTS</Identification>
+      <Component id="PartOccurrence_00020">
+        <Identification>TUBE-OCC</Identification>
+        <Role xsi:type="vec:CorrugatedPipeRole" id="CorrugatedPipeRole_00021">
+          <Identification>TUBE-OCC</Identification>
+          <WireProtectionSpecification>CorrugatedPipeSpecification_00014</WireProtectionSpecification>
+        </Role>
+        <Part>PartVersion_00027</Part>
+      </Component>
+    </Specification>
+    <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00022">
+      <Identification>USAGES</Identification>
+      <PartUsage id="PartUsage_00023">
+        <Identification>TUBE-PU</Identification>
+        <Role xsi:type="vec:CorrugatedPipeRole" id="CorrugatedPipeRole_00024">
+          <Identification>TUBE-PU</Identification>
+          <WireProtectionSpecification>CorrugatedPipeSpecification_00014</WireProtectionSpecification>
+        </Role>
+        <PrimaryPartUsageType>CorrugatedPipe</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>CorrugatedPipeSpecification_00014 PartSubstitutionSpecification_00017</PartOrUsageRelatedSpecification>
+      </PartUsage>
+    </Specification>
+  </DocumentVersion>
+  <PartVersion id="PartVersion_00025">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>T-0001</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>CorrugatedPipe</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="PartVersion_00026">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>T-0002</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>CorrugatedPipe</PrimaryPartType>
+  </PartVersion>
+  <PartVersion id="PartVersion_00027">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>T-A100</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>CorrugatedPipe</PrimaryPartType>
+  </PartVersion>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00028">
+    <SiUnitName>Metre</SiUnitName>
+    <SiPrefix>Milli</SiPrefix>
+  </Unit>
+</vec:VecContent>

@@ -9,7 +9,7 @@ tags: []
 categories: []
 date: 2022-10-07
 draft: false
-review: false
+review: true
 classes:
   - PartUsage
   - PartOccurrence
@@ -29,6 +29,15 @@ history:
   - date: 2022-10-21
     description: "Cardinality of PartOccurrence.RealizedPartUsage"
     issue: "KBLFRM-984"
+  - date: 2025-12-15
+    description: "Added example for PartSubstitutionSpecification"
+    ghIssue: "484"
+
+links:
+  - icon_pack: fas
+    icon: file-code
+    name: part-substitution.vec
+    url: 'part-substitution.vec'    
 
 menu:
   vec-guidelines:
@@ -91,9 +100,6 @@ The {{< vec-class PartUsage >}} is not required to reference all the specificati
 
 The {{< vec-class PartOrUsageRelatedSpecification >}} for the {{< vec-class PartUsage >}} can describe a {{< vec-class PartVersion >}} at the same time, but they are **not required** to. That means, a {{< vec-class PartUsage >}} is free to define its own specifications, for example in its own context ({{< vec-class DocumentVersion >}}) or in a separate {{< vec-class DocumentVersion >}}.
   
-
-<!-- TODO KBLFRM-931, KBLFRM-984, KBLFRM-945, KBLFRM-994, Done: KBLFRM-1038 -->
-
 ## Realization of PartUsages with PartOccurrences
 
 Although {{< vec-class PartUsage >}} and {{< vec-class PartOccurrence >}} can coexist at the same time (shown in figure 1), they represent different levels of abstraction. The coexistence is only possible, because in reality, a product definition of a harness can contain different layers of abstraction at the same time as well (e.g. some components can be defined in 150% definitions and some are only determinable in a 100% definition).
@@ -101,4 +107,149 @@ Although {{< vec-class PartUsage >}} and {{< vec-class PartOccurrence >}} can co
 {{< figure src="realization.svg" title="Realization of PartUsages with PartOccurrences" numbered="true" lightbox="true">}}
 
 Figure 2 presents a highly simplified situation for the sake of the concept. On the left hand side is a wiring definition with two Variants, _A_ & _B_. _A_ & _B_ have the same logical connectivity, however, variant _B_ has a slightly higher power output, resulting in a {{<vec-class PartUsage>}} (a requirement!) for variant B with a larger wire cross section area. The wiring also defines the color of the wire. However, other significant properties are left open (e.g. insulation material) for later determination. In the following design process, the other properties required for a component selection are defined (e.g. the insulation material, when the location of the wire in the vehicle is known). It is also decided, that it is more efficient to realize both variants with a single wire (satisfying both requirements at same time). Traceability is preserved in the case, with the _RealizedPartUsage_ reference from {{< vec-class PartOccurrence >}} to {{< vec-class PartUsage >}}. The fact that a {{< vec-class PartOccurrence >}} can realize the requirements of multiple {{< vec-class PartUsage >}}s at the same time is the reason that the multiplicity of this association is "0..*".
+
+## Selection Tables / Part Substitutions
+
+{{< gh-review "484">}}
+
+There are use cases where a specific component cannot be defined at the time of creation for a certain aspect of the product definition. This is often because harnesses are designed as 150% definitions, where some components can only be defined precisely in a 100% definition. Some examples are:
+- The selection of a **ring terminal** depends on the exact number of wires and their cross-sectional area, which can often only be determined in a 100% definition. However, other requirements for the ring terminal (e.g. material, plating, size of the ring etc.) are already known in the 150% definition and can be specified.
+- The selection of a **tube** depends on the exact bundle diameter, which also can often only be determined in a 100% definition. However, other requirements for the tube (e.g. material, color, wall thickness etc.) are already known in the 150% definition and can be specified.
+
+In such cases, it is common practice to define a set or a family of possible components that satisfy the general requirements and can be selected later in the design process, when the other defining characteristics are known. This list of possible components is often referred to as a _selection table_ or _part substitution list_ and is expressed in the VEC by a {{< vec-class PartSubstitutionSpecification >}}.
+
+For this implementation guideline, we will use the following selection table:
+
+> **T-A100 Corrugated Pipe Selection Table**  
+> | Part Number | Description               | Nominal Size | Inner &#8960; |     Outer &#8960; |
+> |-------------|---------------------------|--------------|--------------:|------------------:|
+> | T-0001      | Corrugated Pipe N6/10     | N6/10        | 6.3 mm        |           10.0 mm |
+> | T-0002      | Corrugated Pipe N9/13     | N9/13        | 9.0 mm        |           13.6 mm |
+
+There are two common ways to represent such a selection table in current design processes:
+
+1. Option 1: The selection table is given a regular part number (e.g. `T-A100`) and is handled like a regular part. The actual selection of a specific component (e.g. `T-0001`) is done later in the process by the supplier. The fact that `T-A100` is a selection table is only documented in the part drawing or other textual fields.  
+2. Option 2: The selection table is _not_ given a regular part number. Instead, it is referenced by a document or drawing number, and the selection table is documented in those textual fields. The actual selection is also done later in the process by the supplier.
+
+Both approaches can be expressed explicitly in the VEC with equal quality. The main difference is that in the first approach the selection table is expressed as a regular {{< vec-class PartVersion >}} with a part number, whereas in the second approach it is expressed as a {{< vec-class PartUsage >}} without a part number.
+
+First, the items in the selection table must be expressed in the VEC as regular components, each with a {{< vec-class PartVersion >}} and all the relevant {{< vec-class PartOrUsageRelatedSpecification >}}s. For `T-0001` the corresponding XML snippet could look like this:
+
+```xml
+  ...
+  <DocumentVersion id="DocumentVersion_00001">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DOC-T-0001</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00025</ReferencedPart>
+    <Specification xsi:type="vec:CorrugatedPipeSpecification" id="CorrugatedPipeSpecification_00002">
+      <Identification>CPS-T-0001</Identification>
+      <DescribedPart>PartVersion_00025</DescribedPart>
+      <InnerDiameter id="NumericalValue_00005">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>6.3</ValueComponent>
+      </InnerDiameter>
+      <NominalSize>6/10</NominalSize>
+      <OuterDiameter id="NumericalValue_00006">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>10.0</ValueComponent>
+      </OuterDiameter>
+      <CorrugationHeight id="NumericalValue_00003">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>3.0</ValueComponent>
+      </CorrugationHeight>
+      <CorrugationWidth id="NumericalValue_00004">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>5.0</ValueComponent>
+      </CorrugationWidth>
+    </Specification>
+  </DocumentVersion>
+  ...
+  <PartVersion id="PartVersion_00025">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>T-0001</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>CorrugatedPipe</PrimaryPartType>
+  </PartVersion>
+  ...
+```
+Then, the selection table has to be expressed with placeholder component specifications defining the common attributes of the entries in the selection table and a {{< vec-class PartSubstitutionSpecification >}} referencing the possible components. The XML for that should look like this:
+
+```xml
+  ...
+  <DocumentVersion id="DocumentVersion_00013">
+    <CompanyName>Acme Inc.</CompanyName>
+    <DocumentNumber>DOC-T-A100</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_00027</ReferencedPart>
+    <Specification xsi:type="vec:CorrugatedPipeSpecification" id="CorrugatedPipeSpecification_00014">
+      <Identification>CPS-T-A100</Identification>
+      <DescribedPart>PartVersion_00027</DescribedPart>
+      <CorrugationHeight id="NumericalValue_00015">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>3.0</ValueComponent>
+      </CorrugationHeight>
+      <CorrugationWidth id="NumericalValue_00016">
+        <UnitComponent>SIUnit_00028</UnitComponent>
+        <ValueComponent>5.0</ValueComponent>
+      </CorrugationWidth>
+    </Specification>
+    <Specification xsi:type="vec:PartSubstitutionSpecification" id="PartSubstitutionSpecification_00017">
+      <Identification>PSS-T-A100</Identification>
+      <DescribedPart>PartVersion_00027</DescribedPart>
+      <AlternativePartVersions>PartVersion_00025 PartVersion_00026</AlternativePartVersions>
+    </Specification>
+  </DocumentVersion>
+  ...
+  <PartVersion id="PartVersion_00027">
+    <CompanyName>Acme Inc.</CompanyName>
+    <PartNumber>T-A100</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>CorrugatedPipe</PrimaryPartType>
+  </PartVersion>
+  ...
+```
+
+{{% callout note %}}
+In the example above, the {{< vec-class PartSubstitutionSpecification >}} and the {{< vec-class CorrugatedPipeSpecification >}} reference a {{< vec-class PartVersion >}} as `DescribedPart`. This is only relevant for Option 1, when the selection table is represented as a regular part with a part number. In Option 2, when the selection table is not represented as a regular part, the `DescribedPart` references and the `ReferencedPart` of the {{< vec-class DocumentVersion >}} can be omitted.
+{{% /callout %}}
+
+The real difference between both options is now, how the selection table is referenced in the actual product definition. In Option 1, the selection table is referenced via its regular {{< vec-class PartVersion >}}, by creating a {{< vec-class PartOccurrence >}} referencing this {{< vec-class PartVersion >}}. The XML snippet for that could look like this:
+
+```xml
+  ...
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00019">
+      <Identification>COMPONENTS</Identification>
+      <Component id="PartOccurrence_00020">
+        <Identification>TUBE-OCC</Identification>
+        <Role xsi:type="vec:CorrugatedPipeRole" id="CorrugatedPipeRole_00021">
+          <Identification>TUBE-OCC</Identification>
+          <WireProtectionSpecification>CorrugatedPipeSpecification_00014</WireProtectionSpecification>
+        </Role>
+        <Part>PartVersion_00027</Part>
+      </Component>
+    </Specification>
+  ...
+```
+In Option 2, the selection table is referenced directly via the {{< vec-class PartUsage >}}. The XML snippet for that could look like this:
+
+```xml
+  ...
+    <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00022">
+      <Identification>USAGES</Identification>
+      <PartUsage id="PartUsage_00023">
+        <Identification>TUBE-PU</Identification>
+        <Role xsi:type="vec:CorrugatedPipeRole" id="CorrugatedPipeRole_00024">
+          <Identification>TUBE-PU</Identification>
+          <WireProtectionSpecification>CorrugatedPipeSpecification_00014</WireProtectionSpecification>
+        </Role>
+        <PrimaryPartUsageType>CorrugatedPipe</PrimaryPartUsageType>
+        <PartOrUsageRelatedSpecification>CorrugatedPipeSpecification_00014 PartSubstitutionSpecification_00017</PartOrUsageRelatedSpecification>
+      </PartUsage>
+    </Specification>
+  ...
+```
+The complete example can be downloaded from the [Additional Resources]({{<relref "#additional-resources">}}) at the end of this page.
 
