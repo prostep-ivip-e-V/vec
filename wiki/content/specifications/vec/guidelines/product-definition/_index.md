@@ -1,41 +1,54 @@
 ---
-title: "Product Definition of a Harness"
+title: Product Definition of a Harness
 linktitle: Product Definition
 type: specs
-# Table of Content on the right side. Only useful for large pages.
-authors: ["becker"]
+authors: [becker]
 tags: []
 categories: []
-date: 2022-09-01
-lastmod: 2022-09-01
+date: 2022-09-01T00:00:00.000Z
+lastmod: 2022-09-01T00:00:00.000Z
 draft: false
-review: false
+review: true
 toc: true
-
-classes:
-
-
-history:
-  - date: 2022-09-09
-    description: "New Implementation Guideline for PartUsages & PartOccurences"
-    issue: "KBLFRM-1038"
-
-menu:
-  vec-guidelines:
-    identifier: product-definition
-    weight: 4000
-
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+classes: null
+history: [
+  {date: 2022-09-09T00:00:00.000Z, description: New Implementation Guideline for Part Usages & Part Occurrences, issue: KBLFRM-1038},
+  {date: 2025-12-18T00:00:00.000Z, description: Content of a HarnessDescription, ghIssue: "1036"}
+]
+menu: {vec-guidelines: {identifier: product-definition, weight: 4000}}
 weight: 4000
 ---
-The definition of the product itself (the wiring harness) is one of the major use cases of the VEC. The figure below illustrates the basic building blocks in the data model, to do this and shall give some guidance where to look for specific topics. It is not a complete map of the VEC.
 
-{{< figure src="product-definition.svg" numbered="true" lightbox="true" title="Building Blocks of a Harness Product Definition">}}
+The definition of the product itself (the wiring harness) is one of the major use cases of the VEC. The figure below illustrates the basic building blocks in the data model and provides guidance on where to look for specific topics. It is not a complete map of the VEC.
 
-A wiring harness consists of recurring components that are produced and installed in large quantities (e.g. connectors, wires, terminals, seals etc.). These elements have properties that are the same for all elements of a specific type and are independent of their use. In most cases, such types are identified in specific company context as a part with a unique part number. The description of those common properties is often referred to as "Part Master Data". The "Component Specification / Part Master Data" section (blue box on the right hand side) is represents this type of information. This area is explained in more detail in the section ["Component Specification"]({{< relref component-description >}}).
+{{< figure src="product-definition.svg" numbered="true" lightbox="true" title="Building Blocks of a Harness Product Definition" >}}
 
-A wiring harness definition is then formed withe specific uses of those components ("types"), whereby a component can also occur several times. Each individual instance of a component can have additional properties specific to its usage (e.g. signal & length of a wire, name of connector, etc). Those properties are defined in the block "Instances of Components", highlighted in green. In this area, the VEC has the ability to differentiate between abstract instances of components ({{< vec-class partusage >}}), where a specific component is not yet defined, but some properties are known, and instances of concrete components ({{< vec-class partoccurrence >}})
+A wiring harness consists of recurring components that are produced and installed in large quantities (e.g., connectors, wires, terminals, and seals). These components have properties that are the same for all components of a specific type and are independent of their usage. In most cases, such types are identified within a company context as parts with unique part numbers. The description of these common properties is often referred to as "Part Master Data". The "Component Specification / Part Master Data" section (blue box on the right-hand side) represents this information. This area is explained in more detail in the section ["Component Specification"]({{< relref "component-description" >}}).
 
-Based on those instances, you can specify bill of materials (BOM), with or without variance, for composite parts, which can be in turn used hierarchically as instances for more complex parts (block on the right side, highlighted in orange). See ["Composite Parts"]({{< relref composite-parts >}}).
+A wiring harness definition is then formed by specific uses of those component types, and a component can also occur multiple times. Each instance of a component may have additional properties specific to its usage (e.g., the signal and length of a wire, or the name of a connector). These properties are defined in the "Instances of Components" block, highlighted in green. In this area, the VEC distinguishes between abstract instances of components ({{< vec-class partusage >}}), where a specific component is not yet defined but some properties are known, and instances of concrete components ({{< vec-class partoccurrence >}}). See ["Instances of Components"]({{< relref "component-instances" >}}) for more details.
 
-In addition to the BOM view, it is also important to establish the relationships of the components to each other and to other elements of the wiring harness definition (e.g. topology or electrology). This is done with the "Behaviour Relationship Definitions" (highlighted in violet), specifications that define specific relationships e.g. routing, placement or contacting and traceability relationships between components and definitions in layers of higher abstraction.
+Based on these instances, you can specify bills of materials (BOMs), with or without variance, for composite parts, which can in turn be used hierarchically as instances for more complex parts (block on the right-hand side, highlighted in orange). See ["Composite Parts"]({{< relref "composite-parts" >}}) for more details.
+
+In addition to the BOM view, it is important to establish relationships between components and other elements of the wiring harness definition (e.g., topology or electrology). This is accomplished through "Behaviour & Relationship Definitions" (highlighted in violet), which specify relationships such as routing, placement, contacting, and traceability between components and definitions at higher levels of abstraction.
+
+## Harness Description Document
+
+{{< gh-review "1036">}}
+
+The figure below illustrates how these building blocks are typically organized within a VEC describing a single harness. It also shows the typical content of {{< vec-class Specification >}}s within a {{< vec-class DocumentVersion >}} with `DocumentType=HarnessDescription`.
+
+{{< figure src="basic-structure.svg" numbered="true" lightbox="true" title="Document Structure and Typical Content of a Harness Product Definition" >}}
+
+At the top level, a VEC that describes a wiring harness usually consists of two major blocks:
+1. The Part Master Data of all components (connectors, wires, terminals, seals, etc.) used within the wiring harness. Per component, this is usally a {{< vec-class PartVersion >}}, identifying the component, and a {{< vec-class DocumentVersion >}} containing the {{< vec-class Specification >}} defining this component.
+2. A single {{< vec-class DocumentVersion >}} with `DocumentType=HarnessDescription`, containing all information specific to the wiring harness itself, and one or more {{< vec-class PartVersion >}}s identifying the parts (e.g., modules, individual harnesses) defined within this wiring harness description.
+
+The figure also shows the typical {{< vec-class Specification >}}s used to define the information in the different building blocks of a wiring harness definition.
+
+{{% callout info %}}
+The VEC is an open and modular model for the entire physical electrical system of a vehicle. This means the list of specifications is not a hard requirement nor exhaustive. You may add additional specifications or documents to the wiring harness definition if you want to provide a richer information model (e.g., system schematics, signals, usage nodes). You may also choose to leave out some of the specifications shown in the figure above if they are not relevant for your use case or process (e.g., 2D/3D is mutually exclusive in many processes).
+{{% /callout %}}
+
+This is also the case for harness descriptions that evolve during the development process. In early phases or specific disciplines of the development, you may only have a subset of the specifications shown above and add more information as the development progresses. For example, a harness description coming from a 3D design tool may only contain topology, 3D geometry, and some geometry‑relevant components and their placements. Electrical information, routing, and variant information may be added by another discipline at a later (or parallel) stage.
+
+A detailed description of each block/specification in the figure would go beyond the scope of this implementation guideline. Please refer to the respective sections linked above or in the table of contents for more information on each building block.
