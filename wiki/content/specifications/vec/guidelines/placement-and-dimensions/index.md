@@ -10,6 +10,27 @@ categories: []
 date: 2019-03-11
 lastmod: 2019-12-02T12:45:40+01:00
 draft: false
+review: true
+
+classes:
+  - Location
+  - SegmentLocation
+  - NodeLocation
+  - OnWayPlacement
+  - OnPointPlacement
+  - Placement
+  - PlacementPointReference
+  - MeasurementPointReference
+  - PlavceableElementRole
+  - PlaceableElementSpecification
+  - DefaultDimensionSpecification
+  - Dimension
+  - DefaultDimension
+
+history:
+  - date: 2025-12-22T00:00:00Z
+    description: "Clarified semantic difference between SegmentLocation and NodeLocation."
+    ghIusse: "953"
 
 menu:
   vec-guidelines:
@@ -22,6 +43,20 @@ weight: 18001
 ---
 A Placement defines the way how a component is associated to the topology. The following sections contain examples about the different types of placements.
 
+## Semantic Difference: `SegmentLocation` vs. `NodeLocation`
+
+{{< gh-review "935">}}
+
+The VEC has two different concepts to define locations in the topology: {{< vec-class SegmentLocation >}} and {{< vec-class NodeLocation >}}. On the first glance it seems that there is a semantic overlap between these two concepts, since a {{< vec-class TopologySegment >}} starts and ends at a {{< vec-class TopologyNode >}}, so where is the difference between a {{< vec-class SegmentLocation >}} with an offset of 0mm (or a value equal to the segment length) and a {{< vec-class NodeLocation >}} at the corresponding {{< vec-class TopologyNode >}}? The figure below illustrates the scenario:
+
+{{< figure src="locations.svg" title="Node vs. Segment Location" numbered="true" lightbox="true">}}
+
+A {{< vec-class SegmentLocation >}} is used to define a location somewhere "on" a {{< vec-class TopologySegment >}}, even if it is at the very beginning or end of the segment. This means that the location has a clear reference to a specific single segment. This is especially important, if mulitple segments are connected to the same node (e.g. a branching point). In this case a {{< vec-class SegmentLocation >}} with an offset of 0mm or segment length clearly defines on which segment the location is placed. In contrast a {{< vec-class NodeLocation >}} always refers to the {{< vec-class TopologyNode >}} itself, without any reference (or preference) to a specific segment. This means that a {{< vec-class NodeLocation >}} is used, if the location is really "at" the node, independent of the connected segments.
+
+{{% callout info %}}
+Use {{< vec-class SegmentLocation >}}s for component whe the placement has a clear association to specific {{< vec-class TopologySegment >}}, even if the location is (infinitesimal) close to a {{< vec-class TopologyNode >}}. Use {{< vec-class NodeLocation >}}s for components which are really placed "at" a {{< vec-class TopologyNode >}}, independent of the connected segments.
+{{% /callout %}}
+
 ## Simple WireProtection 
 {{< figure src="simple_wireprotection_illustration.jpg" title="Illustration of Simple Wire Protection" numbered="true" lightbox="true">}}
 
@@ -29,7 +64,9 @@ This diagram illustrates the placement of a simple *WireProtection* as shown in 
 
 {{< figure src="simple_wireprotection.jpg" title="Wire Protection Example" numbered="true" lightbox="true">}}
 
-The Figure above displays the placement of a simple wire protection. The {{< vec-class PartOccurrence >}} is placed with an {{< vec-class OnWayPlacement >}} via a {{< vec-class PlaceableElementRole >}}. This means the placed component covers a linear area of the harness topology. The start and the end of this area is defined with two {{< vec-class Location >}}s. In the shown situation the *StartLocation* is a {{< vec-class SegmentLocation >}}, which means the start is somewhere in the middle of a {{< vec-class TopologySegment >}}. It is defined to be at 120mm measured from the *EndNode* of the {{< vec-class TopologySegment >}}. The *EndLocation* of the WireProtection is located on a {{< vec-class TopologyNode >}} with a {{< vec-class NodeLocation >}}. It is not valid to define {{< vec-class Location >}}s with {{< vec-class SegmentLocation >}}, which could be also expressed by {{< vec-class NodeLocation >}}s. This means for {{< vec-class SegmentLocation >}}s an offset of 0 or equal to the segment length is illegal.
+The Figure above displays the placement of a simple wire protection. The {{< vec-class PartOccurrence >}} is placed with an {{< vec-class OnWayPlacement >}} via a {{< vec-class PlaceableElementRole >}}. This means the placed component covers a linear area of the harness topology. The start and the end of this area is defined with two {{< vec-class Location >}}s. In the shown situation the *StartLocation* is a {{< vec-class SegmentLocation >}}, which means the start is somewhere in the middle of a {{< vec-class TopologySegment >}}. It is defined to be at 120mm measured from the *EndNode* of the {{< vec-class TopologySegment >}}. The *EndLocation* of the WireProtection is located on a {{< vec-class TopologyNode >}} with a {{< vec-class NodeLocation >}}. 
+
+`Offset`-values for {{< vec-class SegmentLocation>}}s of "`0`" or a value equal to segment length are valid, and indicate an explicit reference to that {{< vec-class TopologySegment >}} at the {{< vec-class TopologyNode >}}.
 
 Since the offset is {{< vec-class NumericalValue>}} it can have an optional {{< vec-class Tolerance>}}.
 
