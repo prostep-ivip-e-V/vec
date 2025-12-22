@@ -19,7 +19,7 @@ classes:
 
 history:
   - date: 2025-12-08T00:00:00Z
-    description: "Routing Variants in the VEC"
+    description: "Added guideline for topology zone requirements."
     ghIusse: "1138"
 
 menu:
