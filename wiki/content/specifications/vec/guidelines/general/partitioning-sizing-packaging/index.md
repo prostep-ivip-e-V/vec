@@ -69,7 +69,7 @@ A VEC-Package is an archive containing two things:
 The archive bundles all files together in a single file for exchange. Depending on individual technical requirements and preferences `ZIP` or `GZIP` can be used as archive formats. The compressed file can either contain the folder structure and content files of the VEC-Package directly (in case of `ZIP`), or it can contain a tar archive (in case of `GZIP`), with the folder structure and content files.
 
 {{% callout note %}}
-When storing a VEC Package in the file system the file extension shall be `.vecpackage.{zip|gz}`, depending on the used compression / archive format. The Media Type shall be `application/vec-package+zip` for ZIP archives and `application/vec-package+gzip` for gzipped tar archives. Check out  the IANA Media Types registry for further details: https://www.iana.org/assignments/media-types/application/vec-package+zip and https://www.iana.org/assignments/media-types/application/vec-package+gzip
+When storing a VEC Package in the file system the file extension shall be `.vecpkg.{zip|gz}`, depending on the used compression / archive format. The Media Type shall be `application/vec-package+zip` for ZIP archives and `application/vec-package+gzip` for gzipped tar archives. Check out  the IANA Media Types registry for further details: https://www.iana.org/assignments/media-types/application/vec-package+zip and https://www.iana.org/assignments/media-types/application/vec-package+gzip
 {{% /callout %}}
 
 
