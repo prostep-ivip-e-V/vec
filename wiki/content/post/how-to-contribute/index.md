@@ -1,5 +1,5 @@
 ---
-title: "How to Contribute"
+title: "ECAD-WIKI Contribution Guideline"
 subtitle: ""
 summary: ""
 authors: []
@@ -20,38 +20,24 @@ image:
   focal_point: "Smart"
   preview_only: false
 ---
-## Do you want to participate actively?
+## ECAD-WIKI Contribution Guideline (applies to KBL & VEC)
 
-Under the umbrella of the prostep ivip Association, the continous development and improvement process of the standards takes place in two project groups, the VES-WF and the ECAD-IF. A more detailed description of the group activities can be found here: [VES-WF / ECAD-IF](https://www.prostep.org/projekte/ves/ecad-projektgruppen).
+Thanks for considering to contribute! The VEC, KBL and ECAD-WIKI are published under the MIT License. If you would like to contribute something this document should help you get started.
 
-If you want to join, please reach out to the contact person listed on the corresponding page.
+## Active Participation and Contribution
 
-## You found a bug, have a feature request or a question in the specifications?
+Under the umbrella of the prostep ivip Association, the continous development and improvement process of the standards takes place in two working groups, the VES-WF and the ECAD-IF. 
 
-Continuous development and improvement is crucial, also for standards. An essential factor to achieve this, is feedback from the user and implementer commmunity. Therefore: 
+A more detailed description of the group activities can be found on the [prostep ivip website](https://www.prostep.org/en/projects/ves/ecad-project-groups). If you want to join, please reach out to the contact person listed the page.
 
-**If you find a bug or an error in the recommendations, the schemas or 
-any of the provided documentation of the standards, please do not hesitate to drop us an issue in our [issue tracking on GitHub](https://github.com/prostep-ivip-e-V/vec/issues). The same applies to all kinds of feature requests and questions.**
+## Using GitHub Issues
 
-## You want to contribute content directly to the ECAD-WIKI?
-{{% callout note %}}
-Since the specifications (KBL & VEC) are subject to a strict issue and publishing process, the following only applies to content beyond that (e.g. Implementation Guidelines & Sample Files).
-{{% /callout %}}
+We use GitHub issues to track bugs and enhancements. 
 
-*Every contribution counts!* You can provide your own contribution to the content of the ECAD-WIKI when:
+**You found a bug, have a feature request or a question in the specifications?** 
 
-- You find errors, typos or other room for improvement in the existing documents,
-- You want to contribute a proposal for an Implementation Guideline, or
-- You have done a review for one of the sample files, and want to provide your findings
-
-Then you are more than welcome. All you need is a *GitLab.com* account, and that is what you need to know:
-- The ECAD-WIKI is generated with the static website generator [Hugo](https://gohugo.io/). 
-- All content pages are stricly written in markdown and managed in our GitLab.com project [ECAD-WIKI](https://github.com/prostep-ivip-e-V/vec/tree/main/wiki).
-- All pages have a "Edit this page" link on the left bottom. If you click this link, you are brought to GitLab's markdown online editor for this page.
-- If you are not an active member of the project, you have to fork the project and then create a pull request with your changes. No worries, these are just two clicks in the web interface. More details in the [GitHub Documentation](https://docs.github.com/de/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
-- After your first contribution, you can request `Developer` access to the project, which makes the "forking" unnecessary.
-- If you have a contribution (a feature request is also a contribution), but can not provide a merge request you can drop us an issue on [GitHub.com](https://github.com/prostep-ivip-e-V/vec/issues). 
-
+Continuous development and improvement is crucial, also for standards. An essential factor to achieve this, is feedback from the user and implementer commmunity. Therefore, if you find a bug or an error in the recommendations, the schemas or 
+any of the provided documentation of the standards, please do not hesitate to drop us an issue in our [issue tracker](https://github.com/prostep-ivip-e-V/vec/issues). The same applies to all kinds of feature requests and questions.
 
 
 

@@ -49,4 +49,4 @@ To avoid dialects in the different VEC implementations, further guidelines or re
 
 ## Contributing and Proposals
 
-If you find any bugs in the implementation guidelines or if you have a request for a specific topic, or if you would like to contribute your own tutorials please drop us an issue on the [PROSTEP JIRA](https://prostep-ivip.atlassian.net/projects/KBLFRM/). If you don't have an account there yet, [see here]({{< relref "post/how-to-contribute" >}}) for the procedure to get one.
+If you find any bugs in the implementation guidelines or if you have a request for a specific topic, or if you would like to contribute your own tutorials please drop us an issue on the [GitHub Issue Tracker](https://github.com/prostep-ivip-e-V/vec/issues). For more information please read our "[Contribution Guideline]({{< relref "post/how-to-contribute" >}})".
