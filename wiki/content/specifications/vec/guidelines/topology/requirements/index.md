@@ -20,7 +20,7 @@ classes:
 history:
   - date: 2025-12-08T00:00:00Z
     description: "Added guideline for topology zone requirements."
-    ghIusse: "1138"
+    ghIssue: "1138"
 
 menu:
   vec-guidelines:
@@ -53,7 +53,7 @@ This guideline explains when to use which approach and clarifies the validity of
 
 ### `PartUsage`
 
-A {{< vec-class PartUsage>}} represents a **placeholder component** that must later be realized as a {{< vec-class PartOccurrence>}} during detailed design and production preparation. The {{< vec-class PartOrUsageRelatedSpecification >}} referenced by the {{< vec-class PartUsage>}} express **requirements** for a wire protection component, that must be satisfied by the {{< vec-class PartOccurrence>}} selected later in the process,without defining the actual solution or specific component.
+A {{< vec-class PartUsage>}} represents a **placeholder component** that must later be realized as a {{< vec-class PartOccurrence>}} during detailed design and production preparation. The {{< vec-class PartOrUsageRelatedSpecification >}} referenced by the {{< vec-class PartUsage>}} express **requirements** for a wire protection component, that must be satisfied by the {{< vec-class PartOccurrence>}} selected later in the process, without defining the actual solution or specific component.
 
 Use this approach when:
 
@@ -106,7 +106,7 @@ The assignments of the segments to the zones are modelled using {{< vec-class Zo
 The zones are defined solely on the basis of the topology, which is ‘formless’ in the VEC. The spatial characteristics and shape of the topology zones are also not part of the VEC. The modelling of the topology zones and determining the corresponding intersections with the topology is the task of an engineering system. The topology zones in the VEC represent the result of this process.
 {{% /callout %}}
 
-The XML snippets in the following sections are taken from a consistent file representing the example above. For better readbability, some part of the XML are omitted. This is indicated by using `...` in the XML. The complete VEC file can be downloaded from the [Additional Resources]({{<relref "#additional-resources">}}) at the end of this page.
+The XML snippets in the following sections are taken from a consistent file representing the example above. For better readability, some parts of the XML are omitted. This is indicated by using `...` in the XML. The complete VEC file can be downloaded from the [Additional Resources]({{<relref "#additional-resources">}}) at the end of this page.
 
 The definition consists of two relevant specifications: A {{< vec-class TopologySpecification >}} and {{< vec-class TopologyZoneSpecification >}} for the zones. In this example, both are contained in the same {{< vec-class DocumentVersion >}}. The definition of the topology looks as follows:
 
@@ -154,9 +154,9 @@ The definition consists of two relevant specifications: A {{< vec-class Topology
     ...
 ```
 
-The definition of the Zones is the following. The snippet shows the complete definition of the _Hot Zone_. The definition of the _Wet Zone_ is similar and therefore the assigment section is omitted here (see complete file for a full reference).
+The definition of the Zones is the following. The snippet shows the complete definition of the _Hot Zone_. The definition of the _Wet Zone_ is similar and therefore the assignment section is omitted here (see complete file for a full reference).
 
-For `SEG-I` and `SEG-II` the assignment defines a {{< vec-class ZoneCoverage >}} to indicate the start and end locations of the coverage on the segment, since they are only partially within in the zone. If those segments had multiple areas where the interacted with zone, each area would be defined by an indiviual {{< vec-class ZoneCoverage >}}. `SEG-III` is entirely within the _Hot Zone_ and therefore does not need a coverage definition.
+For `SEG-I` and `SEG-II` the assignment defines a {{< vec-class ZoneCoverage >}} to indicate the start and end locations of the coverage on the segment, since they are only partially within in the zone. If those segments had multiple areas where they interacted with the zone, each area would be defined by an individual {{< vec-class ZoneCoverage >}}. `SEG-III` is entirely within the _Hot Zone_ and therefore does not need a coverage definition.
 ```xml
     ...
     <Specification xsi:type="vec:TopologyZoneSpecification" id="TopologyZoneSpecification_00016">
