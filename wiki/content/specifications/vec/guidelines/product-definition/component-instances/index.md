@@ -9,7 +9,7 @@ tags: []
 categories: []
 date: 2022-10-07
 draft: false
-review: true
+review: false
 classes:
   - PartUsage
   - PartOccurrence
@@ -110,7 +110,6 @@ Figure 2 presents a highly simplified situation for the sake of the concept. On 
 
 ## Selection Tables / Part Substitutions
 
-{{< gh-review "484">}}
 
 There are use cases where a specific component cannot be defined at the time of creation for a certain aspect of the product definition. This is often because harnesses are designed as 150% definitions, where some components can only be defined precisely in a 100% definition. Some examples are:
 - The selection of a **ring terminal** depends on the exact number of wires and their cross-sectional area, which can often only be determined in a 100% definition. However, other requirements for the ring terminal (e.g. material, plating, size of the ring etc.) are already known in the 150% definition and can be specified.

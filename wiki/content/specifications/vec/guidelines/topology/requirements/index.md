@@ -9,7 +9,7 @@ tags: []
 categories: []
 date: 2025-12-08T00:00:00Z
 draft: false
-review: true
+review: false
 classes:
   - TopologySpecification
   - TopologyZoneSpecification
@@ -38,7 +38,7 @@ links:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 100
 ---
-{{< gh-review "1138">}}
+
 ## Background
 During geometrical harness design (e.g. in 3D), certain sections of the electrical wiring harness may require additional protection — e.g., increased abrasion resistance or sound damping — due to the local mechanical or environmental conditions at the vehicle.
 
