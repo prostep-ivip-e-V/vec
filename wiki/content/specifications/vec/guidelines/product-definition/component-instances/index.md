@@ -213,7 +213,7 @@ Then, the selection table has to be expressed with placeholder component specifi
 ```
 
 {{% callout note %}}
-In the example above, the {{< vec-class PartSubstitutionSpecification >}} and the {{< vec-class CorrugatedPipeSpecification >}} reference a {{< vec-class PartVersion >}} as `DescribedPart`. This is only relevant for Option 1, when the selection table is represented as a regular part with a part number. In Option 2, when the selection table is not represented as a regular part, the `DescribedPart` references and the `ReferencedPart` of the {{< vec-class DocumentVersion >}} can be omitted.
+In the example above, the {{< vec-class PartSubstitutionSpecification >}} and the {{< vec-class CorrugatedPipeSpecification >}} reference a {{< vec-class PartVersion >}} as `DescribedPart`. This is only relevant for Option 1, when the selection table is represented as a regular part with a part number. In Option 2, when the selection table is not represented as a regular part, the `DescribedPart` references of the {{< vec-class PartOrUsageRelatedSpecification >}}s and the `ReferencedPart` of the {{< vec-class DocumentVersion >}} can be omitted.
 {{% /callout %}}
 
 The real difference between both options is now, how the selection table is referenced in the actual product definition. In Option 1, the selection table is referenced via its regular {{< vec-class PartVersion >}}, by creating a {{< vec-class PartOccurrence >}} referencing this {{< vec-class PartVersion >}}. The XML snippet for that could look like this:
@@ -233,7 +233,7 @@ The real difference between both options is now, how the selection table is refe
     </Specification>
   ...
 ```
-In Option 2, the selection table is referenced directly via the {{< vec-class PartUsage >}}. The XML snippet for that could look like this:
+In Option 2, the {{< vec-class PartSubstitutionSpecification >}} representing the selection table is referenced directly via the {{< vec-class PartUsage >}}. The XML snippet for that could look like this:
 
 ```xml
   ...
