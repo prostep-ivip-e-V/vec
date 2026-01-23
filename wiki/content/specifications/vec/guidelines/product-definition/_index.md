@@ -31,7 +31,7 @@ Based on these instances, you can specify bills of materials (BOMs), with or wit
 
 In addition to the BOM view, it is important to establish relationships between components and other elements of the wiring harness definition (e.g., topology or electrology). This is accomplished through "Behaviour & Relationship Definitions" (highlighted in violet), which specify relationships such as routing, placement, contacting, and traceability between components and definitions at higher levels of abstraction.
 
-## Harness Description Document
+## Harness Description Document Structure and Typical Content
 
 {{< gh-review "1036">}}
 
@@ -39,9 +39,13 @@ The figure below illustrates how these building blocks are typically organized w
 
 {{< figure src="basic-structure.svg" numbered="true" lightbox="true" title="Document Structure and Typical Content of a Harness Product Definition" >}}
 
-At the top level, a VEC that describes a wiring harness usually consists of two major blocks:
-1. The Part Master Data of all components (connectors, wires, terminals, seals, etc.) used within the wiring harness. Per component, this is usally a {{< vec-class PartVersion >}}, identifying the component, and a {{< vec-class DocumentVersion >}} containing the {{< vec-class Specification >}} defining this component.
-2. A single {{< vec-class DocumentVersion >}} with `DocumentType=HarnessDescription`, containing all information specific to the wiring harness itself, and one or more {{< vec-class PartVersion >}}s identifying the parts (e.g., modules, individual harnesses) defined within this wiring harness description.
+At the top level, a VEC that describes single a wiring harness usually consists of two major blocks:
+1. The Part Master Data of all components (connectors, wires, terminals, seals, etc.) used within the wiring harness. For components that shall be used (instantiated) within the harness, this is a {{< vec-class PartVersion >}}, identifying the component, and a {{< vec-class DocumentVersion >}} containing the {{< vec-class PartOrUsageRelatedSpecification >}} defining this component.
+2. A single {{< vec-class DocumentVersion >}} with `DocumentType=HarnessDescription`, containing all information specific to the wiring harness itself, and one or more {{< vec-class PartVersion >}}s identifying the parts (e.g., modules, individual harnesses) defined within this wiring harness description. This {{< vec-class DocumentVersion >}} serves as a container for all information related to the harness. Since wiring harness are defined with a 150%-model approach, this single document contains the definitions of _all_ variants and modules defining the harness.
+
+{{% callout info %}}
+If the VEC should contain more than one wiring harness definition (e.g. a vehicle network with multiple harnesses), you may choose to have multiple {{< vec-class DocumentVersion >}}s with `DocumentType=HarnessDescription`, each describing a single harness. In this case, the Part Master Data block is shared among all harness definitions.
+{{% /callout %}}
 
 The figure also shows the typical {{< vec-class Specification >}}s used to define the information in the different building blocks of a wiring harness definition.
 
