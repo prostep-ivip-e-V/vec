@@ -1,9 +1,6 @@
 ---
-
 This is the source for the new ECAD-WIKI. The current Wiki can be found under 
-http://ecad-wiki.prostep.org . The preview of the new Wiki can be found under 
-https://ecad-wiki.gitlab.io.
-
+https://ecad-wiki.prostep.org . 
 ---
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -56,7 +53,7 @@ All available Hugo versions are listed here: https://gitlab.com/pages/hugo/conta
 To work locally with this project, you'll have to follow the steps below:
 
 1. Clone this project
-1. [Install Hugo (Extended)](https://gohugo.io/getting-started/installing/). Currently Version 0.81.0. Under Windows this is easy with Chocolatey.
+1. [Install Hugo (Extended)](https://gohugo.io/getting-started/installing/). Currently Version v0.120.3. Under Windows this is easy with Chocolatey.
 1. Install GoLang. Also available via Chocolatey `choco install golang` 
 1. Preview your project: `hugo server`
 1. Add content
@@ -136,6 +133,7 @@ Otherwise the heading levels will be messed up, when we generate a single page v
 1.  If you use [figures](https://sourcethemes.com/academic/docs/writing-markdown-latex/#images) do **NOT** reference by number. 
 The numbering is done with CSS and if we generate a single page version the will depend on 
 the position in the complete document.
+1.  Most SVG images are created with [draw.io](https://draw.io). See below.
 
 #### Related content
 
