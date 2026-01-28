@@ -9,7 +9,7 @@ categories: []
 date: 2020-06-22
 lastmod: 2019-12-02T12:43:57+01:00
 draft: false
-review: false
+review: true
 diagram: false
 
 history:
@@ -19,6 +19,9 @@ history:
   - date: 2020-11-27
     description: "Integrated Review Comments for the whole page"
     issue: "KBLFRM-996"
+  - date: 2026-01-28
+    description: "Added section on 'Content from mixed Sources'"
+    ghIssue: "956"    
 
 classes:
   - VecContent
@@ -194,6 +197,23 @@ the actual XML snippet might require adaption. At least the XML `ID`-attributes 
 be checked for uniqueness and, in case of a conflict, changed. Referencing `IDREF(S)` 
 also have to be changed accordingly.
 {{% /callout %}}
+
+### Content from mixed Sources
+
+{{< gh-review "956" >}}
+
+It is a common scenario that a VEC model contains information from different sources. In some cases it is pretty obvious that the information comes from different sources, e.g. part master data from a component database, a system schematic from an ECAD tool, and a geometry model from a 3D CAD system. 
+
+However, there are also use cases where the information from different sources is not so clearly distinguishable by its type. It is even possible, that the same type of information is obtained from different sources. Some examples for such scenarios are:
+
+- Occurrences of components are defined in different places / process steps, e.g. in the electrologic, DMU or in the actual harness design.  
+- Additional information like placements and routing might come from different tools or process steps as well.
+
+There are two apporoaches to handle such scenarios in the VEC, while keeping the traceability of the information to its source:
+- **Separate DocumentVersions per Source**: In this approach, the information from each source is contained in a separate {{< vec-class DocumentVersion >}}. This is the preferred approach, as it clearly separates the information from different sources and preserves traceability in the change management. Each {{< vec-class DocumentVersion >}} can be clearly associated with its source, e.g. by using appropriate meta-data like document type, document number, version, etc.
+- **Single DocumentVersion with individual Specifications**: This is approach is used, if all information must be combined into a single {{< vec-class DocumentVersion >}}. The information from different sources is kept separated by using individual {{< vec-class Specification >}}s for each source. However, this approach lacks the clear representation of source metadata on the {{< vec-class DocumentVersion >}} level (e.g. document number & version), which might impact traceability for example in the change management. 
+
+
 
 ## Types of Documents
 
