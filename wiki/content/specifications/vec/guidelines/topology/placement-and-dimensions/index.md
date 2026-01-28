@@ -5,7 +5,6 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: ["Placement", "Dimension", "Fixing", "Wireprotection","Location"]
 categories: []
 date: 2019-03-11
 lastmod: 2019-12-02T12:45:40+01:00
@@ -113,35 +112,49 @@ In the VEC such a wire protection is modelled with a {{< vec-class OnWayPlacemen
 The {{<vec-class Path>}} is an ordered list of the segments from the start to the end. If a {{< vec-class SegmentLocation >}} is used for the start and/or the end, the path must contain these {{< vec-class TopologySegment >}}s as well.
 
 
-## Placement on Points (Fixed Components)
+## Placement on Points
 
-The other common use case when placing components in the topology is the placement of fixed components on specific points in the topology, such as connectors, fixings, and so on. The following sections illustrate how such placements can be modelled in the VEC, both without and with dimensions.
+The other common use case when placing components in the topology is the placement of components fixed to specific points in the topology, such as connectors, fixings, and so on. The following sections illustrate how such placements can be modelled in the VEC, both without and with dimensions.
 
-### Fixing Placement 
-{{< figure src="fixing_placement_illustration.jpg" title="Illustration of Fixing Placements" numbered="true" lightbox="true">}}
+For components that are placed on specific points, the {{<vec-class placement>}} defines an association of a reference point on the component (the {{<vec-class PlacementPoint>}}) to a specific point in the topology (the {{<vec-class Location>}}). The exact postion of the {{<vec-class PlacementPoint>}} on the component is defined in the components {{<vec-class PlaceableElementSpecification>}}. For most components types specific conventions exists, which point on the component is used as {{<vec-class PlacementPoint>}}.
 
-This diagram illustrates a more complex placement situation, including the usage of dimension.
+### Single Locations
 
-The illustration shows a bracket, that is placed independently on two Segments (SEG-1 & SEG-2). The two points where the bracket is placed on the {{< vec-class TopologySegment >}}s are identified separately ({{< vec-class PlacementPointReference >}} A & B). Additionally a {{< vec-class Dimension >}} is added, which gives a {{< vec-class Tolerance >}} between a geometric point (e.g. a bolt) on the bracket ({{< vec-class MeasurementPointReference >}} C) and a *Node* (ND-1) in the Topology (see {{< vec-class TopologyNode >}}).
+The most common case for point-based placement is the assignment of a component to a single {{< vec-class Location >}}. Such components can be placed either on a {{< vec-class TopologyNode >}} or on a {{< vec-class TopologySegment >}}. Depending on the component type, additional constraints may apply. For example, connectors shall only be placed on topology nodes; placing them on a segment would imply a wire ending in the middle of the segment, which would violate the definition of a {{< vec-class TopologySegment >}}. The following figure illustrates these concepts:
 
-{{< figure src="fixing_placement.jpg" title="Placement of Fixings" numbered="true" lightbox="true">}}
+{{< figure src="onpoint-placement-illustration.svg" title="Placement of Components onto a single Location (Illustration)" numbered="true" lightbox="true">}}
 
-The diagram illustrates the instantiation of the example in the preceding diagram. Since the {{< vec-class PartOccurrence >}} can be placed in the topology, it has a {{< vec-class PlaceableElementRole >}} (with a corresponding {{< vec-class PlaceableElementSpecification >}} not shown in the diagram). The points where it can be placed onto the topology are represented by the {{< vec-class PlacementPointReference >}}s A & B. The point which can be used as anchor for a dimension (which can be any reference point on the component), is represented by the {{< vec-class MeasurementPointReference >}} C.
+The diagram below illustrates the instantiation of the example in the preceding diagram.
 
-The actual placement is done with an {{< vec-class OnPointPlacement >}} which has two {{< vec-class SegmentLocation >}}s. One for each {{< vec-class PlacementPointReference >}}.
+{{< figure src="onpoint-placement-single.svg" title="Placement of Components onto a single Location" numbered="true" lightbox="true">}}
 
-### Fixed Components (Single Location) 
-{{< figure src="fixed_components_single_location.jpg" title="Placement of Fixed Components on a Single Location" numbered="true" lightbox="true">}}
+As shown in the figure above, the {{< vec-class PartOccurrence >}} is placed using an {{< vec-class OnPointPlacement >}} that references the a {{< vec-class PlaceableElementRole >}} of the {{< vec-class PartOccurrence >}}. The location where it is placed is defined by a single {{< vec-class Location >}}. For components that are placed on a {{< vec-class TopologySegment >}}, a {{< vec-class SegmentLocation >}} is used. For components that are placed on a {{< vec-class TopologyNode >}}, a {{< vec-class NodeLocation >}} is used.
 
-Fixed components are elements that are placed on a certain point in the topology, such as Connectors, Fixings and so on. These components are placed with an {{< vec-class OnPointPlacement >}} as shown in the example. If the Component has to be placed on a Node (e.g. a Connector) a {{< vec-class NodeLocation >}} is used. If the Component has to be placed on a Segment a {{< vec-class SegmentLocation >}} is used. The usage and constraints for the Locations are the same like the ones for {{< vec-class OnWayPlacement >}}s.
+The explicit definition of the {{<vec-class PlacementPoint>}}s in the {{<vec-class PlaceableElementSpecification>}} and the {{< vec-class PlacementPointReference >}} in the {{< vec-class PlaceableElementRole >}} is not mandatory for components that are only placed at a single location. However, it is recommended to define them anyway, as it improves the clarity of the model and allows for easier extension in the future (e.g. if the component is later placed at multiple locations).
 
-### Fixed Components (Multiple Locations) 
-{{< figure src="fixed_components_multiple_locations.jpg" title="Placement of Fixed Components on Multiple Locations" numbered="true" lightbox="true">}}
+### Multiple Locations with Dimensions
 
-Some components, for example channels or a large connector with more than one segment connection point, may be placed on multiple positions in the Topology. For example a channel can have two or more reference points (e.g. the outlets) that must be associated to the different positions topology. In these cases an {{< vec-class OnPointPlacement >}} with more than one location is used. In order to identify which location places which point of the component (e.g. the outlets), a {{< vec-class PlaceableElementRole >}} can define {{< vec-class PlacementPointReference >}}s which are creating a relationship to the component description.
+In addition to simple placements at single locations, significantly more complex scenarios also exist. One such scenario is illustrated in the following figure.
+
+{{< figure src="onpoint-placement-multiple-illustration.svg" title="Multiple Locations with Dimensions (Illustration)" numbered="true" lightbox="true">}}
+
+The figure shows a bracket featuring two guides through which two {{<vec-class topologysegment>}}s can pass. These guides are represented by the placement points `A` and `C`. In the shown example, the bracket is positioned in the topology by assigning these placement points to SEG-1 and SEG-2 using {{< vec-class SegmentLocation >}}s.
+
+For quality assurance, however, the decisive measure is the distance between a reference point in the topology (in this case the {{< vec-class TopologyNode >}} `ND-2`) and another functionally significant point of the bracket, for example the pin by which the bracket is fixed to the vehicle body. This point is not relevant for establishing the connection to the topology and is therefore not used as a placement point. Instead, it is defined as a {{<vec-class MeasurementPoint >}} . In the figure, this point is labeled as MeasurementPoint `B`. The dimension indicated in green specifies the required distance between this measurement point and the {{< vec-class TopologyNode >}} `ND-2`, along with the associated tolerance.
+
+For this example, a bracket is used. However, similar scenarios can also arise with other component types, such as connectors, grommets or cable ducts that have multiple connection points to the topology and additional functionally relevant points that need to be dimensioned. The nature of those points can vary depending on the component type. For instance, in connectors, the {{< vec-class SegmentConnectionPoint >}}s are used as placement points, while for grommets, the {{< vec-class CableLeadThroughOutlet >}}s serve this purpose.
+
+The following diagram illustrates the instantiation with VEC classes of the example in the preceding diagram.
+
+{{< figure src="onpoint-placement-multiple.svg" title="Multiple Locations with Dimensions" numbered="true" lightbox="true">}}
+
+Please note that the actual definition of the {{< vec-class PlacementPoint >}}s and {{< vec-class MeasurementPoint >}}s is done in the {{< vec-class PlaceableElementSpecification >}} of the part master definition (not shown in the diagram for clarity). The {{< vec-class PlacementPointReference >}}s `A` and `C` in the {{< vec-class PlaceableElementRole >}} create the relationship between the placement points defined in the component specification and the locations in the topology. The {{< vec-class MeasurementPointReference >}} `B` in the {{< vec-class PlaceableElementRole >}} creates the relationship between the measurement point defined in the component specification and the dimension defined in the placement.
+
+It can also be seen, that the `ValueCalculated`-attribute of {{< vec-class Dimension >}} is set to `false`, indicating that the dimension value is explicitly defined. Since a {{< vec-class MeasurementPoint >}} is an arbitrary point on the component the dimension value can not be derived from topology and placement information alone.
+
 
 ## Default Dimensions 
-{{< figure src="default_dimensions.jpg" title="efault Dimensions " numbered="true" lightbox="true">}}
+{{< figure src="default-dimension.svg" title="Default Dimensions " numbered="true" lightbox="true">}}
 
 The diagram illustrates the use of a {{< vec-class DefaultDimensionSpecification >}}. The {{< vec-class DefaultDimensionSpecification >}} can be used to specify default dimensions / tolerances for certain attributes and {{< vec-class ValueRange >}}s. In this examples the *Specification* is used for the length of wires. (indicated by the *dimensionType)*. The *dimensionValueRange* defines for which value's of this type, the referenced {{< vec-class Tolerance >}} is applicable.
 
