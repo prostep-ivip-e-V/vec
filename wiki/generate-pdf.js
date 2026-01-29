@@ -25,7 +25,7 @@ const pdfPages = [
 
     // Launch a headless browser
     const browser = await puppeteer.launch({
-        timeout: 60000,
+        timeout: 0,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox'
