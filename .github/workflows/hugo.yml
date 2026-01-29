@@ -93,7 +93,7 @@ jobs:
       - name: Generate PDF
         run: |
           cd wiki && \
-          npm install puppeteer && \
+          npm install puppeteer@24.34.0 && \
           node ./generate-pdf.js && \
           cp -r pdf/* public
       - name: Upload artifact
