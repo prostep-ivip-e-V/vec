@@ -25,6 +25,7 @@ const pdfPages = [
 
     // Launch a headless browser
     const browser = await puppeteer.launch({
+        headless: 'old',
         protocolTimeout: 60000,
         timeout: 60000,
         args: [
