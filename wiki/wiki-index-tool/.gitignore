@@ -1,0 +1,20 @@
+# Vector index (rebuild with: python wiki_search.py index ./wiki)
+.wiki-index/
+.test-index/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Embedding model cache
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
