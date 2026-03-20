@@ -8,6 +8,13 @@ contradictions and content drift across large documentation sets.
 
 ```bash
 # Install dependencies
+
+# Ensure venv is available
+sudo apt install python3-venv python3-full
+# Create venv
+python3 -m venv .venv
+# Activate it
+source .venv/bin/activate
 pip install -r requirements.txt
 
 # Build the vector index (first run downloads the embedding model ~90MB)

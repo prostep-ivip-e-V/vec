@@ -21,6 +21,7 @@ Usage:
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -30,22 +31,32 @@ DEFAULT_INDEX_DIR = ".wiki-index"
 
 
 def cmd_index(args):
-    """Build or rebuild the vector index from a wiki directory."""
+    """Build or rebuild the vector index from one or more wiki directories."""
     from wiki_indexer.store import WikiVectorStore
 
-    wiki_dir = Path(args.wiki_dir)
+    wiki_dirs = [Path(d) for d in args.wiki_dir]
     index_dir = Path(args.index_dir)
 
-    if not wiki_dir.is_dir():
-        print(f"Error: {wiki_dir} is not a directory", file=sys.stderr)
-        sys.exit(1)
+    for wiki_dir in wiki_dirs:
+        if not wiki_dir.is_dir():
+            print(f"Error: {wiki_dir} is not a directory", file=sys.stderr)
+            sys.exit(1)
 
-    print(f"Chunking markdown files in {wiki_dir}...")
-    chunks = chunk_directory(wiki_dir)
-    print(f"  Found {len(chunks)} chunks from markdown files")
+    # Compute common root so source_file paths are relative to a shared base
+    resolved = [d.resolve() for d in wiki_dirs]
+    common_root = Path(os.path.commonpath(resolved)) if len(resolved) > 1 else resolved[0]
+
+    chunks = []
+    for wiki_dir, resolved_dir in zip(wiki_dirs, resolved):
+        print(f"Chunking markdown files in {wiki_dir}...")
+        dir_chunks = chunk_directory(resolved_dir, relative_to=common_root)
+        print(f"  Found {len(dir_chunks)} chunks")
+        chunks.extend(dir_chunks)
+
+    print(f"\nTotal: {len(chunks)} chunks from markdown files")
 
     if not chunks:
-        print("No markdown content found. Check the directory path.")
+        print("No markdown content found. Check the directory path(s).")
         sys.exit(1)
 
     # Show some stats about the chunks
@@ -274,7 +285,11 @@ def main():
 
     # index
     p_index = subparsers.add_parser("index", help="Build the vector index")
-    p_index.add_argument("wiki_dir", help="Path to the wiki directory")
+    p_index.add_argument(
+        "wiki_dir",
+        nargs="+",
+        help="Path(s) to wiki directory/directories to index",
+    )
     p_index.set_defaults(func=cmd_index)
 
     # search

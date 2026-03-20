@@ -273,12 +273,24 @@ def _split_large_chunks(chunks: list[Chunk]) -> list[Chunk]:
     return result
 
 
-def chunk_directory(wiki_dir: str | Path, glob_pattern: str = "**/*.md") -> list[Chunk]:
+def chunk_directory(
+    wiki_dir: str | Path,
+    glob_pattern: str = "**/*.md",
+    relative_to: str | Path | None = None,
+) -> list[Chunk]:
     """
     Chunk all markdown files in a directory tree.
     Returns all chunks sorted by source file.
+
+    Args:
+        wiki_dir: Directory to scan for markdown files.
+        glob_pattern: Glob pattern for finding files.
+        relative_to: Base directory for computing source_file paths.
+            Defaults to wiki_dir itself. Useful when indexing multiple
+            directories so all paths share a common root.
     """
-    wiki_path = Path(wiki_dir)
+    wiki_path = Path(wiki_dir).resolve()
+    base_path = Path(relative_to).resolve() if relative_to else wiki_path
     if not wiki_path.is_dir():
         raise ValueError(f"Not a directory: {wiki_dir}")
 
@@ -286,11 +298,12 @@ def chunk_directory(wiki_dir: str | Path, glob_pattern: str = "**/*.md") -> list
     md_files = sorted(wiki_path.glob(glob_pattern))
 
     for md_file in md_files:
-        # Skip hidden files/dirs
-        if any(part.startswith(".") for part in md_file.parts):
+        # Skip hidden files/dirs (check only path components, not leading ..)
+        rel_parts = md_file.relative_to(wiki_path).parts
+        if any(part.startswith(".") for part in rel_parts):
             continue
 
-        relative_path = str(md_file.relative_to(wiki_path))
+        relative_path = str(md_file.relative_to(base_path))
         content = md_file.read_text(encoding="utf-8", errors="replace")
         chunks = chunk_markdown(content, relative_path)
         all_chunks.extend(chunks)
