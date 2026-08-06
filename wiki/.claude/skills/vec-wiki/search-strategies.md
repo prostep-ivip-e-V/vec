@@ -81,12 +81,62 @@ jq -c 'select(
 jq -r 'select(.name == "WireSpecification") | "base: \(.base_classifiers | join(", "))"' \
   .claude/index/classes.jsonl
 
-# Find all classes with a given base class (direct subclasses)
-jq -r 'select(.base_classifiers[] == "Specification") | .name' \
+# Find the direct subclasses of a class (pre-computed, no scan needed)
+jq -r 'select(.name == "Specification") | .derived_classifiers[]' \
   .claude/index/classes.jsonl
 
 # Find all abstract classes
 jq -r 'select(.is_abstract == true) | .name' \
+  .claude/index/classes.jsonl
+```
+
+---
+
+## Model structure: attributes vs. relationships
+
+`attributes` holds plain-valued properties; `outgoing_relations` holds navigable
+association ends (the model relationships). Both carry `type` and `mult`.
+
+**Only own members are listed** — inherited ones are not copied down. To get the
+full picture of a class, walk `base_classifiers` upwards and union the results.
+
+```bash
+# Is an attribute mandatory?  (mult "1" or "1..*" = mandatory)
+jq -r 'select(.name == "DocumentVersion") | .attributes[] | "\(.name)\t\(.type)\t\(.mult)"' \
+  .claude/index/classes.jsonl
+
+# What can you navigate to from a class?
+jq -r 'select(.name == "DocumentVersion") | .outgoing_relations[] | "\(.role) -> \(.type) [\(.mult)] \(.aggregation)"' \
+  .claude/index/classes.jsonl
+
+# Which classes reference DocumentType anywhere in the model?
+jq -r 'select(.source == "attribute-type" and .to == "DocumentType") | .from' \
+  .claude/index/relations.jsonl
+
+# Walk one level up the hierarchy and list inherited attributes too
+jq -r 'select(.name == "DocumentVersion") | .base_classifiers[]' .claude/index/classes.jsonl
+# → ItemVersion, then repeat the attribute query for ItemVersion
+```
+
+---
+
+## Deprecated elements
+
+Deprecated classes, attributes and association ends carry a `deprecated` object
+with `since` and `reason`. **Never propose new content that relies on one** —
+say it is deprecated and name the replacement from `reason`.
+
+```bash
+# All deprecated classes with the reason
+jq -r 'select(.deprecated) | "\(.name)\tsince \(.deprecated.since)\t\(.deprecated.reason[:100])"' \
+  .claude/index/classes.jsonl
+
+# Deprecated attributes and relations, by owning class
+jq -r '.name as $c | (.attributes + .outgoing_relations)[] | select(.deprecated) | "\($c).\(.name // .role)\tsince \(.deprecated.since)"' \
+  .claude/index/classes.jsonl
+
+# Check a specific class before writing about it
+jq -r 'select(.name == "FuseComponent") | .deprecated // "not deprecated"' \
   .claude/index/classes.jsonl
 ```
 

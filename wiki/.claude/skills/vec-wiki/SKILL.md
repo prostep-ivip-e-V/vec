@@ -22,13 +22,22 @@ All indices live under `.claude/index/` relative to the wiki root:
 
 | File | Contents |
 |---|---|
-| `classes.jsonl` | 548 VEC classes and enumerations (from `vec-2.2.0.mdxml`) |
+| `classes.jsonl` | 548 VEC classes and enumerations (from `vec-2.2.0.mdxml`), with attributes, association ends, hierarchy and deprecation |
 | `pages.jsonl` | 715 markdown pages (v2.2.0 model docs + guidelines) |
 | `concepts.jsonl` | Inverted index: class → pages that mention it |
-| `relations.jsonl` | Typed edges: class ↔ page (frontmatter / inline-shortcode) |
+| `relations.jsonl` | Typed edges: class ↔ page and class → class (`frontmatter` / `inline-shortcode` / `attribute-type`) |
 | `guidelines.jsonl` | 186 extracted normative statements (RFC 2119 keywords) |
 
 Use `jq` to query them. See `search-strategies.md` for ready-made recipes.
+
+Two things to know before relying on `classes.jsonl`:
+
+- **537 of the 548 entries have a generated class page** (`has_generated_page`).
+  The rest are diagram legends and report-generator helpers; they are excluded
+  from `concepts.jsonl` and `relations.jsonl` and should be ignored.
+- **Attributes and relations are own-only, not inherited.** `DocumentVersion`
+  lists `documentNumber` but not `companyName` — that one comes from
+  `ItemVersion`. Walk `base_classifiers` when you need the complete set.
 
 ---
 
@@ -191,6 +200,9 @@ heading conventions.  Follow `cross-references.md` for linking rules.
 - **Front matter field for class links**: `classes:` (YAML list of PascalCase names)
 - **Shortcode for class links**: `{{< vec-class ClassName >}}`
 - **Class pages are read-only** (generated from XMI — see `cross-references.md`)
+- **Check deprecation before writing about a class or attribute.** Nine classes
+  and seven attributes carry a `deprecated` object with `since` and `reason`.
+  Never build new guidance on one; name the replacement given in `reason`.
 - **Stable citation key**: `guideline_url + section_anchor`, e.g.
   `/specifications/vec/guidelines/key-concepts/general-structure/#usages-of-the-documentversion`
 - **RFC 2119 keywords** used in guidelines: MUST, SHALL, SHOULD, MAY (and their

@@ -54,6 +54,17 @@ def strip_html(html: str) -> str:
     return re.sub(r"\s+", " ", p.get_text()).strip()
 
 
+# MagicDraw wraps every documentation body in an HTML document whose <style>
+# block leaks through the text extraction as a literal "p {padding:0px; …}"
+# prefix.  Strip it wherever a documentation body is read.
+CSS_PREAMBLE_RE = re.compile(r"^\s*(?:[a-z0-9]+\s*\{[^}]*\}\s*)+")
+
+
+def strip_doc(html: str) -> str:
+    """HTML-strip a MagicDraw documentation body and drop its CSS preamble."""
+    return CSS_PREAMBLE_RE.sub("", strip_html(html)).strip()
+
+
 def _xmi(tag: str) -> str:
     return f"{{{XMI_NS}}}{tag}"
 
@@ -63,6 +74,48 @@ def _uml(tag: str) -> str:
 
 
 # ── Phase 1: extract vocabulary from XMI ───────────────────────────────────
+
+STEREOTYPE_NS = "http://www.magicdraw.com/schemas/Stereotypes.xmi"
+
+
+def _collect_deprecations(root) -> dict[str, dict]:
+    """Map xmi:id -> {since, reason} for every element carrying <<Deprecated>>.
+
+    The stereotype is applied out-of-line: MagicDraw emits one
+    ``Stereotypes:Deprecated`` element per application, pointing at its target
+    via ``base_Element``.
+    """
+    deprecations: dict[str, dict] = {}
+    for elem in root.iter(f"{{{STEREOTYPE_NS}}}Deprecated"):
+        target = elem.get("base_Element")
+        if not target:
+            continue
+        deprecations[target] = {
+            "since": elem.get("since", ""),
+            "reason": strip_doc(elem.get("reason", "")),
+        }
+    return deprecations
+
+
+def _multiplicity(prop) -> str:
+    """Read a property's multiplicity.
+
+    Association ends carry ``lowerValue``/``upperValue`` as direct children,
+    but plain owned attributes bury them inside
+    ``xmi:Extension/modelExtension`` — so search the whole subtree rather than
+    only the immediate children.
+    """
+    lower, upper = "0", "1"
+    for lv in prop.iter("lowerValue"):
+        lower = lv.get("value", "0")
+        break
+    for uv in prop.iter("upperValue"):
+        upper = uv.get("value", "1")
+        break
+    if lower == upper:
+        return lower
+    return f"{lower}..{upper}"
+
 
 def extract_classes(xmi_path: Path) -> list[dict]:
     """Parse vec-2.2.0.mdxml and return one record per class/enumeration."""
@@ -77,7 +130,11 @@ def extract_classes(xmi_path: Path) -> list[dict]:
         if xid and name:
             id_to_name[xid] = name
 
+    deprecations = _collect_deprecations(root)
+
     records: list[dict] = []
+    # class name -> names of its direct base classifiers, inverted afterwards
+    generalizations: dict[str, list[str]] = {}
 
     def _walk(elem, package_path: list[str]) -> None:
         xtype = elem.get(_xmi("type"), "")
@@ -96,11 +153,7 @@ def extract_classes(xmi_path: Path) -> list[dict]:
             doc = ""
             for child in elem:
                 if child.tag == "ownedComment":
-                    raw = child.get("body", "")
-                    text = strip_html(raw)
-                    # Remove CSS/style preamble injected by MagicDraw
-                    text = re.sub(r"^p\s*\{[^}]*\}\s*", "", text).strip()
-                    doc = text
+                    doc = strip_doc(child.get("body", ""))
                     break
 
             # Base classifier(s) via generalization elements
@@ -111,8 +164,11 @@ def extract_classes(xmi_path: Path) -> list[dict]:
                     if gen_id in id_to_name:
                         bases.append(id_to_name[gen_id])
 
-            # Owned attributes
+            # Owned attributes.  A property that carries an `association`
+            # attribute is a navigable association end (a model relationship);
+            # everything else is a plain attribute.
             attrs: list[dict] = []
+            relations: list[dict] = []
             for child in elem:
                 ct = child.get(_xmi("type"), "")
                 if child.tag == "ownedAttribute" and ct == "uml:Property":
@@ -121,24 +177,28 @@ def extract_classes(xmi_path: Path) -> list[dict]:
                         continue
                     atype_id = child.get("type", "")
                     atype = id_to_name.get(atype_id, atype_id) if atype_id else "String"
-                    # Multiplicity
-                    lower = "0"
-                    upper = "1"
-                    for lv in child:
-                        if lv.tag == "lowerValue":
-                            lower = lv.get("value", "0")
-                        elif lv.tag == "upperValue":
-                            upper = lv.get("value", "1")
-                    mult = f"{lower}..{upper}" if lower != upper else lower
-                    if mult == "1..1":
-                        mult = "1"
+                    mult = _multiplicity(child)
                     # Attribute doc
                     adoc = ""
                     for lv in child:
                         if lv.tag == "ownedComment":
-                            adoc = strip_html(lv.get("body", ""))
+                            adoc = strip_doc(lv.get("body", ""))
                             break
-                    attrs.append({"name": aname, "type": atype, "mult": mult, "doc": adoc[:200]})
+
+                    entry = {"type": atype, "mult": mult, "doc": adoc[:200]}
+                    dep = deprecations.get(child.get(_xmi("id"), ""))
+                    if dep:
+                        entry["deprecated"] = dep
+
+                    if child.get("association"):
+                        aggregation = child.get("aggregation", "none")
+                        relations.append({
+                            "role": aname,
+                            "aggregation": aggregation,
+                            **entry,
+                        })
+                    else:
+                        attrs.append({"name": aname, **entry})
 
             # Determine owner package (last element of path after 'VEC' or package root)
             owner = package_path[-1] if package_path else ""
@@ -146,21 +206,39 @@ def extract_classes(xmi_path: Path) -> list[dict]:
             if owner.upper() == "VEC" and len(package_path) > 1:
                 owner = package_path[-1]
 
+            qualified_name = "::".join(package_path + [name])
+
             slug = name.lower()
             page_url = f"/specifications/vec/v220/classes/{slug}/"
             page_path = f"content/specifications/vec/v220/classes/{slug}.md"
+            has_page = (xmi_path.parent / "classes" / f"{slug}.md").is_file()
 
-            records.append({
+            generalizations[name] = bases
+
+            record = {
                 "name": name,
+                "qualified_name": qualified_name,
                 "element_type": element_type,
                 "owner": owner,
                 "is_abstract": is_abstract,
                 "base_classifiers": bases,
+                "derived_classifiers": [],  # filled in after the walk
                 "documentation": doc[:500],
                 "attributes": attrs,
+                "outgoing_relations": relations,
                 "page_url": page_url,
                 "page_path": page_path,
-            })
+                # The page generator is the authority on what belongs to the
+                # published schema.  A handful of model elements are diagram
+                # legends or MagicDraw report helpers and get no page; they are
+                # kept here for completeness but excluded from the derived
+                # indices so they cannot produce false matches.
+                "has_generated_page": has_page,
+            }
+            dep = deprecations.get(elem.get(_xmi("id"), ""))
+            if dep:
+                record["deprecated"] = dep
+            records.append(record)
         else:
             for child in elem:
                 _walk(child, package_path)
@@ -171,13 +249,23 @@ def extract_classes(xmi_path: Path) -> list[dict]:
     for child in model:
         _walk(child, [])
 
+    # Invert the generalization graph so each class knows its direct subclasses
+    derived: dict[str, list[str]] = defaultdict(list)
+    for child_name, bases in generalizations.items():
+        for base in bases:
+            derived[base].append(child_name)
+    for rec in records:
+        rec["derived_classifiers"] = sorted(derived.get(rec["name"], []))
+
     return records
 
 
 # ── Phase 2: index markdown pages ──────────────────────────────────────────
 
-VEC_CLASS_RE = re.compile(
-    r"\{\{[<{%]\s*(?:vec-class|kbl-class)\s+\"?([A-Za-z][A-Za-z0-9_]*)\"?\s*[>}%]\}\}",
+# Captures the shortcode name as well as its argument: `vec-class` and
+# `kbl-class` name two different vocabularies and must not be pooled.
+CLASS_SHORTCODE_RE = re.compile(
+    r"\{\{[<{%]\s*(vec-class|kbl-class)\s+\"?([A-Za-z][A-Za-z0-9_]*)\"?\s*[>}%]\}\}",
     re.IGNORECASE,
 )
 RFC2119_EN = re.compile(
@@ -234,8 +322,33 @@ def _extract_headings(body: str) -> list[str]:
     return seen
 
 
-def _extract_inline_classes(body: str) -> list[str]:
-    return list(dict.fromkeys(m.group(1) for m in VEC_CLASS_RE.finditer(body)))
+def _extract_inline_classes(body: str, kind: str = "vec-class") -> list[str]:
+    """Class names referenced by `{{< vec-class … >}}` / `{{< kbl-class … >}}`.
+
+    The shortcode resolves its argument by slug, so pages spell class names
+    inconsistently (`veccontent`, `documentversion`).  Canonicalisation to the
+    model's own casing happens later, once the vocabulary is known.
+    """
+    return list(dict.fromkeys(
+        m.group(2) for m in CLASS_SHORTCODE_RE.finditer(body)
+        if m.group(1).lower() == kind
+    ))
+
+
+def canonicalize_page_classes(pages: list[dict], classes: list[dict]) -> None:
+    """Rewrite page class references to the model's canonical casing, in place.
+
+    Without this, `veccontent` and `VecContent` are two different concepts and
+    every case-inconsistent mention shows up as a bogus front-matter gap.
+    """
+    canonical = {c["name"].lower(): c["name"] for c in classes if c["has_generated_page"]}
+
+    def fix(names: list[str]) -> list[str]:
+        return list(dict.fromkeys(canonical.get(n.lower(), n) for n in names))
+
+    for page in pages:
+        page["linked_classes_frontmatter"] = fix(page["linked_classes_frontmatter"])
+        page["linked_classes_inline"] = fix(page["linked_classes_inline"])
 
 
 def _extract_github_issues(fm: dict, body: str) -> list[int]:
@@ -308,7 +421,8 @@ def index_pages(spec_dir: Path, content_root: Path) -> list[dict]:
             status = "under-review"
 
         linked_classes_fm = [str(c) for c in (fm.get("classes") or [])]
-        linked_classes_inline = _extract_inline_classes(body)
+        linked_classes_inline = _extract_inline_classes(body, "vec-class")
+        linked_kbl_classes_inline = _extract_inline_classes(body, "kbl-class")
         github_issues = _extract_github_issues(fm, body)
         headings = _extract_headings(body)
 
@@ -333,6 +447,7 @@ def index_pages(spec_dir: Path, content_root: Path) -> list[dict]:
             "headings": headings,
             "linked_classes_frontmatter": linked_classes_fm,
             "linked_classes_inline": linked_classes_inline,
+            "linked_kbl_classes_inline": linked_kbl_classes_inline,
             "linked_pages": linked_pages,
             "github_issues": github_issues,
             "last_modified": _last_modified(fm, md_file),
@@ -343,12 +458,34 @@ def index_pages(spec_dir: Path, content_root: Path) -> list[dict]:
 
 # ── Phase 3: derived indices ────────────────────────────────────────────────
 
+def _typed_references(cls: dict, class_names: set[str]) -> list[str]:
+    """Class names referenced by a class's attribute and association-end types."""
+    refs: list[str] = []
+    for entry in cls["attributes"] + cls["outgoing_relations"]:
+        target = entry.get("type", "")
+        if target in class_names and target != cls["name"]:
+            refs.append(target)
+    return list(dict.fromkeys(refs))
+
+
+def published(classes: list[dict]) -> list[dict]:
+    """The subset of the model that the class-page generator publishes."""
+    return [c for c in classes if c["has_generated_page"]]
+
+
 def build_concepts(classes: list[dict], pages: list[dict]) -> list[dict]:
     """Invert the class -> pages relationship."""
+    classes = published(classes)
     # All known class names (lowercase for matching)
     class_names = {c["name"] for c in classes}
 
     mentions: dict[str, list[dict]] = defaultdict(list)
+
+    # Model-level references: a class page "mentions" every class used as the
+    # type of one of its attributes or association ends.
+    for cls in classes:
+        for target in _typed_references(cls, class_names):
+            mentions[target].append({"url": cls["page_url"], "via": "attribute-type"})
 
     for page in pages:
         url = page["url"]
@@ -394,9 +531,21 @@ def build_concepts(classes: list[dict], pages: list[dict]) -> list[dict]:
 
 def build_relations(classes: list[dict], pages: list[dict]) -> list[dict]:
     """Build typed edges between class names and page URLs."""
+    classes = published(classes)
     class_names = {c["name"] for c in classes}
     canonical: dict[str, str] = {n.lower(): n for n in class_names}
     records: list[dict] = []
+
+    # Model-level edges, derived from the XMI rather than from page text.
+    # These are directed class -> class: the reverse direction is answerable by
+    # filtering on `to`, so emitting both would only double the file.
+    for cls in classes:
+        for target in _typed_references(cls, class_names):
+            records.append({
+                "from": cls["name"], "from_kind": "class",
+                "to": target, "to_kind": "class",
+                "source": "attribute-type",
+            })
 
     for page in pages:
         url = page["url"]
@@ -471,15 +620,35 @@ def _strongest_modality(text: str) -> str:
     return best[0]
 
 
+MD_LINK_RE = re.compile(r"\[([^\]]*)\]\(\s*\{\{[<%].*?[>%]\}\}\s*\)")
+ANY_SHORTCODE_RE = re.compile(r"\{\{[<%].*?[>%]\}\}")
+
+
+def _readable(text: str) -> str:
+    """Turn raw markdown into a quotable sentence.
+
+    Class shortcodes collapse to the bare class name, links whose target is a
+    shortcode keep their link text, every other shortcode (callouts, figures)
+    is dropped, and hard line wraps are collapsed — so a cited statement reads
+    as prose rather than as source.
+    """
+    text = CLASS_SHORTCODE_RE.sub(lambda m: m.group(2), text)
+    text = MD_LINK_RE.sub(lambda m: m.group(1), text)
+    text = ANY_SHORTCODE_RE.sub("", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def _sentences(text: str) -> list[str]:
     # Simple sentence splitter: split on '. ', '! ', '? '
     sents = re.split(r"(?<=[.!?])\s+", text)
     return [s.strip() for s in sents if s.strip()]
 
 
-def extract_guidelines(pages: list[dict], content_root: Path) -> list[dict]:
+def extract_guidelines(pages: list[dict], content_root: Path,
+                       classes: list[dict]) -> list[dict]:
     """Extract normative statements from guideline pages."""
     records: list[dict] = []
+    canonical = {c["name"].lower(): c["name"] for c in classes if c["has_generated_page"]}
 
     for page in pages:
         if page["kind"] != "guideline":
@@ -529,8 +698,11 @@ def extract_guidelines(pages: list[dict], content_root: Path) -> list[dict]:
             clean_text = "\n".join(clean_lines)
 
             # Find classes mentioned in this section
-            inline = list(dict.fromkeys(m.group(1) for m in VEC_CLASS_RE.finditer(section_text)))
+            inline = _extract_inline_classes(section_text, "vec-class")
             scope_classes = inline if inline else scope_classes_page
+            scope_classes = list(dict.fromkeys(
+                canonical.get(c.lower(), c) for c in scope_classes
+            ))
 
             for sentence in _sentences(clean_text):
                 # Skip very short sentences or pure code/markup
@@ -551,9 +723,9 @@ def extract_guidelines(pages: list[dict], content_root: Path) -> list[dict]:
                     "section_anchor": anchor,
                     "scope_classes": scope_classes,
                     "modality": modality,
-                    "statement": sentence[:500],
+                    "statement": _readable(sentence)[:500],
                     "language": _detect_language(sentence),
-                    "context": context[:400],
+                    "context": _readable(context)[:400],
                     "extraction_confidence": "heuristic",
                 })
 
@@ -606,12 +778,29 @@ def main() -> None:
 
     print("=== Phase 1: extracting vocabulary from XMI ===")
     classes = extract_classes(xmi_path)
+    unpublished = [c for c in classes if not c["has_generated_page"]]
     print(f"  found {len(classes)} elements (classes + enumerations)")
+    print(f"  {len(classes) - len(unpublished)} have a generated class page")
+    if unpublished:
+        names = ", ".join(sorted({c["name"] for c in unpublished}))
+        print(f"  excluded from derived indices (no generated page): {names}")
+    deprecated = [c["name"] for c in classes if "deprecated" in c]
+    print(f"  {len(deprecated)} deprecated: {', '.join(sorted(deprecated))}")
     write_jsonl(classes, output_dir / "classes.jsonl")
 
     print("\n=== Phase 2: indexing markdown pages ===")
     pages = index_pages(spec_dir, content_root)
     print(f"  found {len(pages)} pages")
+    canonicalize_page_classes(pages, classes)
+
+    # Front-matter names that resolve to no model element are almost always
+    # typos in the wiki; surface them rather than letting them index silently.
+    known = {c["name"] for c in classes if c["has_generated_page"]}
+    unknown = sorted({
+        c for p in pages for c in p["linked_classes_frontmatter"] if c not in known
+    })
+    if unknown:
+        print(f"  WARNING: front-matter classes not in the VEC model: {', '.join(unknown)}")
     write_jsonl(pages, output_dir / "pages.jsonl")
 
     print("\n=== Phase 3: building derived indices ===")
@@ -622,7 +811,7 @@ def main() -> None:
     write_jsonl(relations, output_dir / "relations.jsonl")
 
     print("\n=== Phase 4: extracting normative statements ===")
-    guidelines = extract_guidelines(pages, content_root)
+    guidelines = extract_guidelines(pages, content_root, classes)
     print(f"  found {len(guidelines)} candidate normative statements")
     write_jsonl(guidelines, output_dir / "guidelines.jsonl")
 

@@ -1,11 +1,37 @@
 ---
 title: "Implementation Plan: Claude Code Knowledge Skill for the ECAD Wiki"
-status: draft
+status: implemented
+last_updated: 2026-08-06
 audience: maintainers of prostep-ivip-e-V/vec wiki
 related_repo: https://github.com/prostep-ivip-e-V/vec
 ---
 
 # Implementation Plan: Claude Code Knowledge Skill for the ECAD Wiki
+
+## 0. Current status
+
+v1 is built and lives on branch `feat/claude-wiki-skill`. All placeholders in
+this document have been replaced with what was actually found in the repo, and
+the open questions in section 10 are answered rather than pending.
+
+| Phase | State |
+|---|---|
+| 7.1 Discovery | done — findings folded into this document and `content-conventions.md` |
+| 7.2 Vocabulary from XMI | done — 548 elements, 537 published |
+| 7.3 Page indexing | done — 715 pages |
+| 7.4 Derived indices | done — 548 concepts, 1830 relation edges |
+| 7.5 Rule extraction | done — 186 candidate statements |
+| 7.6 Skill files | done — `SKILL.md` + four sub-files |
+| 7.7 E2E test | done — see `e2e-results.md` |
+| 7.8 CI workflow | done — `.github/workflows/vec-wiki-index.yml` at the **repo root** |
+
+Not done, deliberately: the four guideline edits that the 2026-03-19 meeting
+analysis identified (see `meeting-2026-03-19-analysis.md`). Those are content
+work, not skill work.
+
+A second, independent experiment — an embedding-based semantic indexer on branch
+`wiki-indexer` — is parked. It corresponds to item 3 in section 12 and is not
+part of v1.
 
 ## 1. Goal
 
@@ -30,15 +56,17 @@ published site (`https://ecad-wiki.prostep.org/`):
 
 - **VEC element vocabulary**: the UML model in `vec-2.2.0.mdxml` (MagicDraw
   XMI) is the hard truth. The class pages under
-  `content/specifications/vec/v220/classes/` are generated from it. There are
-  ~600 classes (see the published class index). The plan must derive its
-  vocabulary from the XMI, not from the markdown.
+  `content/specifications/vec/v220/classes/` are generated from it. The model
+  holds **548 classes and enumerations**, of which **537 have a generated
+  class page**; the remaining 11 are diagram legends and MagicDraw
+  report-generator helpers. The plan derives its vocabulary from the XMI, not
+  from the markdown.
 - **Hugo theme**: Wowchemy. Front matter is YAML, class pages are produced by
   a generator, prose pages (key-concepts, guidelines) are hand-edited.
-- **Class cross-linking**: prose pages already declare related VEC classes in
-  front matter. Inline links to a class use a Hugo shortcode of the form
-  `{{< vec-class ClassName >}}` (or similar — the exact name to be confirmed
-  against the repo's `layouts/shortcodes/`).
+- **Class cross-linking**: prose pages declare related VEC classes in the
+  front-matter field **`classes:`** (a YAML list of PascalCase names). Inline
+  links to a class use the shortcode **`{{< vec-class ClassName >}}`**; the
+  percent form is not used. `{{< kbl-class … >}}` is the KBL equivalent.
 - **Guideline IDs**: there are no stable rule IDs, but **page URLs are
   stable** (e.g. `/specifications/vec/guidelines/key-concepts/general-structure/`).
   These will serve as the citation key.
@@ -50,9 +78,13 @@ published site (`https://ecad-wiki.prostep.org/`):
 - **Languages**: model documentation and guidelines are primarily English,
   but discussion content (issues, change requests, in-meeting notes) is often
   German. The skill must handle a German question against an English corpus.
-- **Existing change-tracking**: guideline pages carry a "Change History"
-  table with GitHub issue links. New content should be authored in this same
-  style.
+- **Existing change-tracking**: guideline pages carry their change history in
+  front matter, not as a markdown table — a `history:` list of
+  `{date, description, issue | ghIssue}` entries, where `issue` is a legacy
+  Jira key (`KBLFRM-NNN`) and `ghIssue` a GitHub issue number. The theme
+  renders it. New content should be authored in this same style.
+- **Review status** is the front-matter flag `review: true`, not a body
+  callout.
 
 ## 3. Scope of v1
 
@@ -75,6 +107,9 @@ published site (`https://ecad-wiki.prostep.org/`):
 
 ```
 vec/                                     # repo root
+├── .github/
+│   └── workflows/
+│       └── vec-wiki-index.yml           # MUST live here, not under wiki/
 └── wiki/
     ├── content/
     │   └── specifications/vec/
@@ -107,19 +142,26 @@ vec/                                     # repo root
 small (single-digit MB) and being able to read them directly in a PR
 review is a feature.
 
+Note the workflow location: the git repository root is `vec/`, and GitHub
+Actions only reads `.github/workflows/` at that root. A workflow placed under
+`wiki/.github/workflows/` is silently ignored — it looks committed and never
+runs. The job therefore lives at the root with
+`defaults.run.working-directory: wiki` and `wiki/`-prefixed path filters.
+
 ## 5. The five indices
 
 ### 5.1 `classes.jsonl` — the source of truth (from XMI)
 
-One line per UML class, extracted from `vec-2.2.0.mdxml`.
+One line per UML class or enumeration, extracted from `vec-2.2.0.mdxml`.
 
 ```json
 {
   "name": "DocumentVersion",
-  "qualified_name": "vec::pdm::DocumentVersion",
+  "qualified_name": "VEC::core::DocumentVersion",
+  "element_type": "Class",
   "owner": "core",
   "is_abstract": false,
-  "base_classifier": "ItemVersion",
+  "base_classifiers": ["ItemVersion"],
   "derived_classifiers": [],
   "documentation": "A DocumentVersion is a unique identifier …",
   "attributes": [
@@ -127,16 +169,50 @@ One line per UML class, extracted from `vec-2.2.0.mdxml`.
     {"name": "documentType",   "type": "DocumentType", "mult": "0..1", "doc": "…"}
   ],
   "outgoing_relations": [
-    {"role": "documentClassification", "type": "DocumentClassification",
-     "mult": "0..*", "doc": "…"}
+    {"role": "specification", "type": "Specification", "mult": "0..*",
+     "aggregation": "composite", "doc": "…"}
   ],
   "page_url": "/specifications/vec/v220/classes/documentversion/",
-  "page_path": "content/specifications/vec/v220/classes/documentversion.md"
+  "page_path": "content/specifications/vec/v220/classes/documentversion.md",
+  "has_generated_page": true
 }
 ```
 
 This file replaces any hand-curated vocabulary list. All other indices
 reference it.
+
+Four properties of the extraction are worth stating explicitly, because they
+are easy to get wrong against MagicDraw XMI:
+
+- **Attributes vs. relations.** A `uml:Property` that carries an `association`
+  attribute is a navigable association end and goes to `outgoing_relations`
+  (with its `aggregation`); everything else is a plain attribute. The 506
+  entries in `outgoing_relations` across all classes match the 506
+  `uml:Association` elements in the model exactly.
+- **Multiplicity is nested.** Association ends carry `lowerValue` / `upperValue`
+  as direct children, but plain owned attributes bury them inside
+  `xmi:Extension/modelExtension`. Reading only direct children silently yields
+  `0..1` for every attribute — which is what the first implementation did, and
+  it made `documentNumber` look optional when the model says it is mandatory.
+  Multiplicities are now spot-checked against the generated class pages.
+- **Documentation bodies carry a CSS preamble.** Every MagicDraw comment is an
+  HTML document whose `<style>` block survives naive text extraction as a
+  literal `p {padding:0px; margin:0px;}` prefix. It is stripped from class,
+  attribute and relation docs alike.
+- **Members are own-only.** Inherited attributes are not copied down, so a
+  complete picture of a class requires walking `base_classifiers`. The
+  generated class pages *do* show inherited members, so the two differ by
+  design.
+
+Deprecated elements carry an extra `deprecated` object:
+
+```json
+"deprecated": {"since": "2.2", "reason": "The FuseComponent … has been replaced …"}
+```
+
+It appears on classes (9), attributes (7), association ends and enumeration
+literals, and comes from the `<<Deprecated>>` stereotype, which MagicDraw
+applies out-of-line via `base_Element`.
 
 ### 5.2 `pages.jsonl` — every markdown page
 
@@ -164,10 +240,12 @@ One line per `.md` file under `content/specifications/vec/`.
 `kind` distinguishes `class` (auto-generated, treat as reference data),
 `model-prose` (the v220 hand-written chapters), and `guideline`.
 
-`linked_classes_frontmatter` comes from a YAML field (whichever the repo
-already uses — to be confirmed during step 7.1).
+`linked_classes_frontmatter` comes from the `classes:` YAML field.
 `linked_classes_inline` comes from parsing the Hugo `{{< vec-class … >}}`
 shortcode out of the body.
+
+Only `v220` and `guidelines` are walked; older specification versions are
+skipped. The 715 pages break down as 554 class, 110 model-prose, 51 guideline.
 
 ### 5.3 `concepts.jsonl` — inverted index over classes
 
@@ -187,6 +265,12 @@ One line per class, listing every page that mentions it.
 
 This is what makes "what is affected by a change to DocumentType?"
 answerable in one `jq` call.
+
+`via` takes one of four values: `frontmatter`, `inline`, `frontmatter+inline`
+(prose pages), and `attribute-type` (the class page of every class that uses
+this one as an attribute or association-end type). Only classes with a
+generated page participate; the 11 legend/helper elements are excluded so they
+cannot produce false matches on common words like "Legend".
 
 ### 5.4 `guidelines.jsonl` — extracted rule statements
 
@@ -228,6 +312,18 @@ guideline pages talk about DocumentVersion?" without reading every page.
 {"from": "/specifications/vec/guidelines/key-concepts/general-structure/", "from_kind": "guideline",
  "to": "DocumentType", "to_kind": "class", "source": "inline-shortcode"}
 ```
+
+A third edge type carries the model graph itself, class → class:
+
+```json
+{"from": "DocumentVersion", "from_kind": "class",
+ "to": "DocumentType", "to_kind": "class", "source": "attribute-type"}
+```
+
+Page edges are emitted in both directions; `attribute-type` edges are directed
+only, since the reverse question ("who references DocumentType?") is a filter
+on `to` and emitting both would only double the file. The current totals are
+858 `attribute-type`, 690 `inline-shortcode` and 282 `frontmatter` edges.
 
 Edges are typed by their source so we can later detect asymmetries (page
 mentions class inline but front matter doesn't list it, or vice versa) —
@@ -313,16 +409,17 @@ jq -c 'select(.kind=="guideline" and .area=="key-concepts")' \
 ### 6.4 `content-conventions.md`
 
 Captures the existing house style so authored content matches what is
-already in the repo. To be filled in by reading actual pages during
-step 7.1; expected sections:
+already in the repo. Written against the actual pages; it documents:
 
-- Front matter required fields (`title`, `summary`, `date`, related
-  classes field — exact name to be confirmed).
-- The exact `vec-class` shortcode form (and any other shortcodes in
-  use, e.g. callouts).
-- "Change History" table format and where the GitHub issue link goes.
+- Front matter fields as they are actually used: `title`, `linktitle`,
+  `type: specs`, `toc`, `authors`, `date`, `lastmod`, `draft`, `review`,
+  `history`, `classes`, `menu` / `weight`.
+- The `{{< vec-class Name >}}` shortcode form, plus `kbl-class`, `figure`
+  and the `callout` percent-form shortcodes.
+- The `history:` front-matter list (not a markdown table), with `issue`
+  for legacy Jira keys and `ghIssue` for GitHub issue numbers.
 - Section heading conventions ("Fundamentals", "Types of …", etc.).
-- Status markers ("Under Review", "Stable") and when to use them.
+- `review: true` as the under-review marker, and when to use it.
 - Rules of thumb on when a topic earns its own page vs. a section in
   an existing page (rough heuristic: if it can be summarized in two
   paragraphs and is firmly inside an existing area, it's a section).
@@ -334,8 +431,8 @@ Documents the linking model so authored content is consistent:
 - Use `{{< vec-class … >}}` for every first occurrence of a class on
   a page; subsequent mentions in the same section may be plain text.
 - When a page introduces a normative rule about a class, the class
-  must appear in the front matter `linked_classes` field (whatever
-  it's called) so the auto-generated "Related Content" picks it up.
+  must appear in the front matter `classes:` list so the auto-generated
+  "Related Content" picks it up.
 - When pointing to another guideline, use the absolute URL form
   (`/specifications/vec/guidelines/…/…/`) — these are stable.
 - Avoid linking to class attribute anchors; link to the class page
@@ -345,39 +442,35 @@ Documents the linking model so authored content is consistent:
 ### 6.6 `glossary.md`
 
 Plain markdown table that the skill consults to translate German terms.
-Seed entries (to be expanded):
-
-| German | English | VEC class(es) | Notes |
-|---|---|---|---|
-| Stecker | Connector | `ConnectorHousingSpecification`, `PartVersion` (when component) | "Stecker" colloquially conflates housing and the whole component |
-| Leitung | Wire | `Wire`, `WireSpecification` | |
-| Systemschaltplan | System schematic | `NetSpecification`, `ConnectionSpecification`, `Connection` | |
-| Kabelbaum | Wiring harness | (KBL/VEC top-level) | |
-| Komponente | Component | `PartVersion`, `*Specification` | |
-| Empfänger | Receiver | (process role, not a class) | |
-| Sender | Sender | (process role, not a class) | |
+The seed list of seven entries has grown to 33, covering connectors,
+wires, terminals, seals, topology, nets and schematic vocabulary. See
+`.claude/skills/vec-wiki/glossary.md` for the current table.
 
 ## 7. Implementation phases
 
-### Phase 7.1 — Discovery against the actual repo (½ day)
+### Phase 7.1 — Discovery against the actual repo (½ day) — **done**
 
-Before writing the indexer, clone the repo and inspect:
+Findings, in the order the questions were asked:
 
-1. The exact YAML field used for class cross-linking in front matter
-   (likely `linked_classes`, `vec_classes`, or similar).
-2. The exact name of the `vec-class` shortcode (look in
-   `themes/<theme>/layouts/shortcodes/` and
-   `wiki/layouts/shortcodes/`).
-3. Whether status (`under-review`, `stable`) is a front matter field
-   or inferred from a Hugo callout in body.
-4. Whether the v220 prose pages (e.g. `parts-documents-and-resources.md`)
-   use the same shortcode/front-matter pattern as the guidelines.
-5. The structure of the Change History table (Markdown table vs.
-   shortcode).
-6. Whether there is an existing CI workflow we should plug into.
+1. **Class cross-linking front-matter field**: `classes:`, a YAML list of
+   PascalCase names.
+2. **Shortcode**: `{{< vec-class ClassName >}}`, angle-bracket form, class
+   name resolved by slug and therefore case-insensitive. `{{< kbl-class … >}}`
+   is the KBL counterpart. The percent form is not used.
+3. **Status**: the front-matter flag `review: true`, not a body callout.
+4. **v220 prose pages** use the same shortcode and front-matter pattern as
+   the guidelines, so one parser handles both.
+5. **Change history** is the front-matter `history:` list, not a markdown
+   table — entries are `{date, description, issue | ghIssue}`.
+6. **CI**: the repo already runs GitHub Actions from the repository root
+   (`add-labels.yml`, `hugo.yml`, the latter doing `cd wiki`). The index
+   workflow follows that pattern rather than introducing a new one. Note the
+   repo also carries a legacy `.gitlab-ci.yml` under `wiki/`, which is not
+   the live pipeline.
 
-Output: a short note `discovery-findings.md` updating the placeholders
-in this plan.
+No separate `discovery-findings.md` was produced; the findings are folded
+into this document and into `content-conventions.md`, which is where the
+skill actually reads them.
 
 ### Phase 7.2 — Vocabulary extraction (1 day)
 
@@ -473,40 +566,35 @@ and the indexer accordingly.
 
 ### Phase 7.8 — CI integration (¼ day)
 
-GitHub Action: on push to `main` and on PR, regenerate the indices
-and fail if the working tree is dirty afterwards. This is optional
-for v1 but recommended.
+On push to `main` and on PR, regenerate the indices and fail if the working
+tree is dirty afterwards.
 
-```yaml
-name: vec-wiki-index
-on: [push, pull_request]
-jobs:
-  rebuild:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: "3.12" }
-      - run: pip install -r .claude/tools/requirements.txt
-      - run: python .claude/tools/build_index.py
-      - run: git diff --exit-code .claude/index/
-```
+The workflow lives at **`.github/workflows/vec-wiki-index.yml` in the
+repository root**, not under `wiki/`. GitHub Actions discovers workflows only
+at the root; a file under `wiki/.github/workflows/` is committed, looks
+correct, and never runs. Because the wiki is a subdirectory, the job sets
+`defaults.run.working-directory: wiki` and filters on `wiki/`-prefixed paths —
+the same shape the existing `hugo.yml` deploy workflow uses.
+
+The staleness check prints the offending diff and a remediation hint rather
+than failing bare, since a bare `git diff --exit-code` gives a maintainer no
+idea what to do.
 
 ## 8. Total effort and order
 
 Roughly 4–5 working days, sequential within phases but the SKILL.md
 authoring (7.6) can run in parallel with rule extraction (7.5).
 
-| Phase | Work | Dependency |
-|---|---|---|
-| 7.1 | Discovery in repo | — |
-| 7.2 | Vocabulary from XMI | 7.1 |
-| 7.3 | Page indexing | 7.1 |
-| 7.4 | Derived indices | 7.2, 7.3 |
-| 7.5 | Rule extraction | 7.3 |
-| 7.6 | Skill files | 7.1 (parallel with 7.5) |
-| 7.7 | E2E test | 7.4, 7.5, 7.6 |
-| 7.8 | CI workflow | 7.7 |
+| Phase | Work | Dependency | State |
+|---|---|---|---|
+| 7.1 | Discovery in repo | — | done |
+| 7.2 | Vocabulary from XMI | 7.1 | done |
+| 7.3 | Page indexing | 7.1 | done |
+| 7.4 | Derived indices | 7.2, 7.3 | done |
+| 7.5 | Rule extraction | 7.3 | done |
+| 7.6 | Skill files | 7.1 (parallel with 7.5) | done |
+| 7.7 | E2E test | 7.4, 7.5, 7.6 | done |
+| 7.8 | CI workflow | 7.7 | done |
 
 ## 9. Acceptance criteria
 
@@ -530,26 +618,36 @@ repo, Claude Code can reliably:
    shortcode usage matching the conventions in the repo (verified by
    `hugo build` succeeding on the new file).
 
-## 10. Open questions to resolve in Phase 7.1
+## 10. Resolved questions
 
-- **Front matter field name** for class cross-linking. Inspect a few
-  existing pages (the published HTML shows the related-content
-  blocks come from somewhere — confirm whether they originate from a
-  front-matter list, a Hugo data file, or a page-bundle convention).
-- **Exact shortcode form**. `{{< vec-class DocumentVersion >}}`,
-  `{{< vec-class "DocumentVersion" >}}`, `{{% vec-class %}}…{{% /vec-class %}}`?
-  Inspect repo shortcodes.
-- **Are deprecated classes excluded** from the class index? Some
-  classes are flagged "Deprecated" — decide whether the skill should
-  warn or refuse to add new content referencing them.
-- **KBL coverage**: the `content/specifications/kbl/` tree exists.
-  Defer to v2 unless the indexer is essentially the same with a
-  different vocabulary source — in which case extending is cheap
-  and worth doing.
-- **Generated v.s. hand-edited class pages**: confirm that we should
-  treat class pages as read-only references and never propose edits
-  to them (they would be overwritten by the next XMI regeneration).
-  All authored changes must go to model-prose or guideline pages.
+- **Front matter field name** for class cross-linking: `classes:`, a
+  front-matter YAML list. Not a data file, not a page-bundle convention.
+- **Exact shortcode form**: `{{< vec-class DocumentVersion >}}` — angle
+  brackets, unquoted, resolved by slug and therefore case-insensitive.
+- **Deprecated classes** are **kept in the index, not excluded.** They are
+  part of the model and questions about them are legitimate; hiding them
+  would make the skill answer "no such class". Instead each deprecated class,
+  attribute, association end and enumeration literal carries a `deprecated`
+  object with `since` and `reason`, and `SKILL.md` instructs Claude to check
+  it before authoring and to name the replacement given in `reason` rather
+  than build new guidance on a deprecated element. Currently 9 classes and 7
+  attributes are affected.
+- **KBL coverage**: deferred to v2, as anticipated. `content/specifications/kbl/`
+  is not walked and no KBL pages are indexed. The `kbl-class` shortcode *is*
+  recognised by the page parser, so KBL mentions in VEC guideline prose are
+  not silently lost — but there is no KBL vocabulary to resolve them against
+  yet. Extending is cheap: a second vocabulary source plus widening the walk.
+- **Generated vs. hand-edited class pages**: confirmed read-only. Class pages
+  are regenerated from the XMI and any edit would be overwritten, so all
+  authored changes go to model-prose or guideline pages. `cross-references.md`
+  states this and `SKILL.md` repeats it under "Key facts for authoring".
+- **Elements without a generated page** (new, found during 7.2): 11 of the 548
+  model elements are diagram legends and MagicDraw report helpers with no
+  class page. They are kept in `classes.jsonl` with
+  `has_generated_page: false` and excluded from the derived indices. Keeping
+  rather than dropping them means a genuinely new class that has not been
+  regenerated yet stays visible instead of vanishing silently; the build
+  prints the exclusion list on every run.
 
 ## 11. Risks and mitigations
 
@@ -558,7 +656,8 @@ repo, Claude Code can reliably:
 | Heuristic rule extraction misses or fabricates normative statements | Keep `extraction_confidence: heuristic` flag; show extracted text alongside surrounding context in any answer; never let the skill claim a contradiction without quoting source |
 | XMI schema changes between VEC versions | Vocabulary extractor pinned to v2.2.0; bump explicitly when v2.3.0 ships |
 | Index drift (someone edits a page but doesn't rebuild) | CI check (phase 7.8); pre-commit hook as belt-and-braces |
-| Class slug computation diverges from the actual generator | Cross-check against the live class index URL list during phase 7.2 validation; if the generator's slug rule changes, the indexer must follow |
+| Class slug computation diverges from the actual generator | Every record records whether its page actually exists (`has_generated_page`), and the build prints the misses — divergence shows up as a growing exclusion list rather than as silent wrong URLs |
+| XMI structural quirks silently produce wrong data (multiplicity nested under `xmi:Extension`, CSS preamble in comments) | Multiplicities are spot-checked against the generated class pages, which are produced by an independent generator from the same source; a mismatch means one of the two is wrong |
 | German phrasing the glossary doesn't cover | Glossary is a markdown table — easy to extend; SKILL.md instructs Claude to surface unknown terms instead of guessing |
 | Skill drift as wiki structure evolves | The skill is in-repo, so changes ride along with content PRs and get reviewed together |
 
@@ -571,7 +670,10 @@ Possible v2 extensions, in rough priority order:
    IDs can be back-filled into front matter and the indexer can
    prefer them over heuristics.
 3. **Embedding-based fallback** — for cases where the inverted index
-   misses (paraphrased terminology, cross-language). Layer on top, do
+   misses (paraphrased terminology, cross-language). A standalone
+   prototype exists on branch `wiki-indexer` (`wiki-index-tool/`,
+   ChromaDB + sentence-transformers, generic over any markdown wiki).
+   It is parked, not integrated. Layer on top, do
    not replace the deterministic index.
 4. **Review-PR mode** — given a draft markdown file, Claude Code
    produces a review comment listing affected pages, contradictions,
