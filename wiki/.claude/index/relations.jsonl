@@ -1610,6 +1610,8 @@
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "ContactingSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "CouplingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "CouplingSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "CouplingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "CouplingPoint", "to_kind": "class", "source": "frontmatter"}
 {"from": "MatingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "MatingPoint", "to_kind": "class", "source": "frontmatter"}
 {"from": "SlotCoupling", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "frontmatter"}
@@ -1630,8 +1632,6 @@
 {"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "TerminalReception", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Connection", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "Connection", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "CouplingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "CouplingPoint", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "PartVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/coupling/", "from_kind": "guideline", "to": "PartVersion", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ConnectorHousingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/coupling/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1720,6 +1720,8 @@
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "PlacementPointReference", "to_kind": "class", "source": "frontmatter"}
 {"from": "MeasurementPointReference", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "MeasurementPointReference", "to_kind": "class", "source": "frontmatter"}
+{"from": "PlaceableElementRole", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "PlaceableElementRole", "to_kind": "class", "source": "frontmatter"}
 {"from": "PlaceableElementSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "PlaceableElementSpecification", "to_kind": "class", "source": "frontmatter"}
 {"from": "DefaultDimensionSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "frontmatter"}
@@ -1734,8 +1736,6 @@
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "TopologyNode", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "PartOccurrence", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "PartOccurrence", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "PlaceableElementRole", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "PlaceableElementRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "TapeRole", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "TapeRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "DimensionAnchor", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "inline-shortcode"}

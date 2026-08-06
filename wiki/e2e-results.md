@@ -113,15 +113,22 @@ class references and `scope_classes` are canonicalised to the model's casing.
 After both fixes `product-definition/harness/` reports 29 genuinely
 undeclared classes rather than 62.
 
-**Two genuine wiki bugs found, not fixed here** (content, not tooling):
+**Two genuine wiki bugs found and fixed:**
 
-| Page | Front-matter entry | Problem |
-|---|---|---|
-| `topology/placement-and-dimensions/` | `PlavceableElementRole` | Typo for `PlaceableElementRole` |
-| `product-definition/coupling/` | `Coupling` | No such class in the VEC model |
+| Page | Was | Now | Evidence |
+|---|---|---|---|
+| `topology/placement-and-dimensions/` | `PlavceableElementRole` | `PlaceableElementRole` | Typo; the corrected name exists in the model |
+| `product-definition/coupling/` | `Coupling` | `CouplingPoint` | No `Coupling` class exists; the body uses `{{< vec-class CouplingPoint >}}` six times and never declared it |
 
-Both are now reported by the build as a `WARNING`, so they cannot regress
-silently. They are left for a content PR.
+Both entries silently linked to nothing, so the bidirectional Related Content
+graph was broken in both directions: the guideline pages showed a dead related
+class, and `CouplingPoint` / `PlaceableElementRole` did not list the guideline
+that documents them. After the fix, `hugo` renders the class link on each
+guideline page and the guideline link on each class page.
+
+The build now reports any front-matter class that resolves to no model element
+as a `WARNING`, so this cannot regress silently. The current tree produces
+none.
 
 ---
 
