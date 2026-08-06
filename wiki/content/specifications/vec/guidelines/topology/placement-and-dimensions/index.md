@@ -20,7 +20,7 @@ classes:
   - Placement
   - PlacementPointReference
   - MeasurementPointReference
-  - PlavceableElementRole
+  - PlaceableElementRole
   - PlaceableElementSpecification
   - DefaultDimensionSpecification
   - Dimension

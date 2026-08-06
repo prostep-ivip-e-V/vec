@@ -13,7 +13,7 @@ review: false
 
 classes:
   - CouplingSpecification
-  - Coupling
+  - CouplingPoint
   - MatingPoint
   - SlotCoupling
   - CavityCoupling
