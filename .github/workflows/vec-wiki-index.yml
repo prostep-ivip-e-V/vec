@@ -1,0 +1,41 @@
+name: vec-wiki-index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'wiki/content/specifications/vec/**'
+      - 'wiki/.claude/tools/**'
+  pull_request:
+    paths:
+      - 'wiki/content/specifications/vec/**'
+      - 'wiki/.claude/tools/**'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: wiki
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r .claude/tools/requirements.txt
+
+      - name: Rebuild index
+        run: python .claude/tools/build_index.py
+
+      - name: Check index is up to date
+        run: |
+          if ! git diff --exit-code --stat .claude/index/; then
+            echo "::error::.claude/index/ is stale. Run 'python .claude/tools/build_index.py' from wiki/ and commit the result."
+            git diff .claude/index/
+            exit 1
+          fi
