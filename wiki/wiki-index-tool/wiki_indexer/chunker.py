@@ -11,6 +11,8 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+import yaml
+
 
 @dataclass
 class Chunk:
@@ -43,6 +45,33 @@ class Chunk:
             "end_line": self.end_line,
             "word_count": self.word_count,
         }
+
+
+FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?\n)---\s*\n", re.DOTALL)
+
+
+def strip_frontmatter(content: str) -> tuple[str, str | None]:
+    """
+    Remove YAML frontmatter from markdown content.
+
+    Returns (stripped_content, title) where title is the value of the
+    frontmatter 'title' field (or None if absent).
+    """
+    m = FRONTMATTER_RE.match(content)
+    if not m:
+        return content, None
+
+    title: str | None = None
+    try:
+        meta = yaml.safe_load(m.group(1))
+        if isinstance(meta, dict):
+            title = meta.get("title")
+            if title is not None:
+                title = str(title)
+    except yaml.YAMLError:
+        pass
+
+    return content[m.end() :], title
 
 
 # Regex for markdown headings
@@ -107,6 +136,16 @@ def chunk_markdown(content: str, source_file: str) -> list[Chunk]:
     - Chunks that are too small get merged with the next chunk
     - Chunks that are too large get split at paragraph boundaries
     """
+    content, fm_title = strip_frontmatter(content)
+
+    # If the frontmatter had a title and the document has no H1, inject one so
+    # it becomes the root of every chunk's heading path.
+    if fm_title:
+        headings_check = parse_headings(content.split("\n"))
+        has_h1 = any(level == 1 for _, level, _ in headings_check)
+        if not has_h1:
+            content = f"# {fm_title}\n\n{content}"
+
     lines = content.split("\n")
     headings = parse_headings(lines)
 
