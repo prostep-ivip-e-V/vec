@@ -23,7 +23,7 @@ from .chunker import Chunk
 #   "all-MiniLM-L6-v2"          — faster, smaller, 512 token limit
 #   "BAAI/bge-large-en-v1.5"    — higher quality, slower
 #   "nomic-ai/nomic-embed-text-v1.5" — good quality, 8192 token context
-DEFAULT_MODEL = "all-MiniLM-L6-v2"
+DEFAULT_MODEL = "nomic-ai/nomic-embed-text-v1.5"
 
 COLLECTION_NAME = "wiki_chunks"
 
@@ -50,7 +50,8 @@ class WikiVectorStore:
         from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
         self.embedding_fn = SentenceTransformerEmbeddingFunction(
-            model_name=model_name
+            model_name=model_name,
+            trust_remote_code=True,
         )
 
         self.collection = self.client.get_or_create_collection(

@@ -273,8 +273,8 @@ def main():
     )
     parser.add_argument(
         "--model",
-        default="all-MiniLM-L6-v2",
-        help="Sentence-transformer model name (default: all-MiniLM-L6-v2)",
+        default="nomic-ai/nomic-embed-text-v1.5",
+        help="Sentence-transformer model name (default: nomic-ai/nomic-embed-text-v1.5)",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 

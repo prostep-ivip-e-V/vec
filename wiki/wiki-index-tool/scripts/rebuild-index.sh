@@ -12,13 +12,13 @@
 # Environment variables:
 #   WIKI_DIR       Path to the wiki (default: ./wiki)
 #   INDEX_DIR      Path for the index (default: .wiki-index)
-#   EMBED_MODEL    Embedding model name (default: all-MiniLM-L6-v2)
+#   EMBED_MODEL    Embedding model name (default: anomic-ai/nomic-embed-text-v1.5)
 
 set -euo pipefail
 
 WIKI_DIR="${1:-${WIKI_DIR:-./wiki}}"
 INDEX_DIR="${2:-${INDEX_DIR:-.wiki-index}}"
-EMBED_MODEL="${EMBED_MODEL:-all-MiniLM-L6-v2}"
+EMBED_MODEL="${EMBED_MODEL:-nomic-ai/nomic-embed-text-v1.5}"
 
 SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
