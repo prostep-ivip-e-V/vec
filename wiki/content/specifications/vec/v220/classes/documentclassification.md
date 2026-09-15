@@ -19,7 +19,7 @@ A <i>DocumentClassification</i> is used to categorize and classify a document in
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | core |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [StructuredPrimitive]({{< relref "structuredprimitive.md" >}})<br/>  |
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

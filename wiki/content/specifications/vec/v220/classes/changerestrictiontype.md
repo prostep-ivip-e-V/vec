@@ -19,7 +19,7 @@ The <i>ChangeRestrictionType</i> defines the reason for a <i>changeRestriction</
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | core |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

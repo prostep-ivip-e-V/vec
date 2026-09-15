@@ -19,7 +19,7 @@ Defines the type (scenario)&#160;for which a TemperatureInformation applies.
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | physical_information |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

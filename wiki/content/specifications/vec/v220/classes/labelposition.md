@@ -19,7 +19,7 @@ Open Enumeration of standard label positions on <i>WireElementReferences.</i>
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | instancing_electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

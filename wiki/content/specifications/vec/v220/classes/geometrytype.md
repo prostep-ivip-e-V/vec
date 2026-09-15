@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | geo_3d |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

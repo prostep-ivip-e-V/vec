@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | schematic |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [Deprecated]({{< relref "deprecated.md" >}})<br/>  |
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

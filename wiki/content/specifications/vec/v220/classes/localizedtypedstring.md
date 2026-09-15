@@ -19,7 +19,7 @@ Allows the internationalization of text contents in a typed way. Attributes of t
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | core |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [StructuredPrimitive]({{< relref "structuredprimitive.md" >}})<br/>  |
 | **Base Classifier**     | [AbstractLocalizedString]({{< relref "abstractlocalizedstring.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

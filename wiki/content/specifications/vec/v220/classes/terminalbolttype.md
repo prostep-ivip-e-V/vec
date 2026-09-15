@@ -19,7 +19,7 @@ Open Enumeration to define different types of bolts for bolt /&#160;ring termina
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

@@ -19,7 +19,7 @@ Defines an OpenEnumeration for VariantConfigurationTypes. The configuration type
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | variants |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [Deprecated]({{< relref "deprecated.md" >}})<br/>  |
 | **Base Classifier**     | [ConfigurableElement]({{< relref "configurableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

@@ -19,7 +19,7 @@ A connector housing can define reference surfaces that serve as contact surfaces
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [StructuredPrimitive]({{< relref "structuredprimitive.md" >}})<br/>  |
 | **Base Classifier**     |   |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | custom_properties |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [StructuredPrimitive]({{< relref "structuredprimitive.md" >}})<br/>  |
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [BooleanValueProperty]({{< relref "booleanvalueproperty.md" >}}), [ComplexProperty]({{< relref "complexproperty.md" >}}), [DateValueProperty]({{< relref "datevalueproperty.md" >}}), [DoubleValueProperty]({{< relref "doublevalueproperty.md" >}}), [IntegerValueProperty]({{< relref "integervalueproperty.md" >}}), [LocalizedStringProperty]({{< relref "localizedstringproperty.md" >}}), [MultiDimensionalValueProperty]({{< relref "multidimensionalvalueproperty.md" >}}), [NumericalValueProperty]({{< relref "numericalvalueproperty.md" >}}), [SimpleValueProperty]({{< relref "simplevalueproperty.md" >}}), [ValueRangeProperty]({{< relref "valuerangeproperty.md" >}}) |
