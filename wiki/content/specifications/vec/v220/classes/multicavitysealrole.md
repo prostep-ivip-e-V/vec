@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | instancing_electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [Deprecated]({{< relref "deprecated.md" >}})<br/>  |
 | **Base Classifier**     | [CavitySealRole]({{< relref "cavitysealrole.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

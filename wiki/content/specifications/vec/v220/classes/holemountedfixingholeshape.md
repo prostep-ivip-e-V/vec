@@ -19,7 +19,7 @@ Open Enumeration of standard hole shapes (see HoleMountedFixingSpecification.hol
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | non_electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

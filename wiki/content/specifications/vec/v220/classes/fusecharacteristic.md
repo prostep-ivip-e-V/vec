@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | electrical_parts |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [StructuredPrimitive]({{< relref "structuredprimitive.md" >}})<br/>  |
 | **Base Classifier**     | [MultiDimensionalValue]({{< relref "multidimensionalvalue.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |

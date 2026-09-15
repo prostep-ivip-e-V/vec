@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | physical_information |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [constant]({{< relref "constant.md" >}})<br/>  |
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [CompositeUnit]({{< relref "compositeunit.md" >}}), [CustomUnit]({{< relref "customunit.md" >}}), [IECUnit]({{< relref "iecunit.md" >}}), [ImperialUnit]({{< relref "imperialunit.md" >}}), [OtherUnit]({{< relref "otherunit.md" >}}), [SIUnit]({{< relref "siunit.md" >}}), [USUnit]({{< relref "usunit.md" >}}) |

@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | usage_constraint |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [ClosedEnumeration]({{< relref "closedenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

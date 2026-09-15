@@ -19,7 +19,7 @@ Specifies the classification of a part number associated, indicating its semanti
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | core |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [OpenEnumeration]({{< relref "openenumeration.md" >}})<br/>  |
 
 ## Enumeration Literals
 | Name          | **Description** |

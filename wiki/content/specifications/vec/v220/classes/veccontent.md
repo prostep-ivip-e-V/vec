@@ -19,7 +19,7 @@ menu_name: vec-2.2.0
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | core |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [xml-root]({{< relref "xml-root.md" >}})<br/>  |
 | **Base Classifier**     | [ExtendableElement]({{< relref "extendableelement.md" >}})<br/>  |
 | **Is Abstract**         | false |
 | **Derived Classifiers** |   |
@@ -53,6 +53,56 @@ menu_name: vec-2.2.0
     <thead>
     <tbody>
     <tr>
+        <td>unit</td>
+        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the Units used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>standardCopyrightInformation</td>
+        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
+        <td>0..1</td>
+        <td>N</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>0..*</td>
+        <td><p> References the <i>CopyrightInformation</i> that is in effect for the complete content of this <i>VecContent</i>. It is applied to all <i>ItemVersions</i> that do not references their own individual <i>CopyrightInformation.</i>      </p></td>
+    </tr>
+    <tr>
+        <td>copyrightInformation</td>
+        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the CopyrightInformation used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>project</td>
+        <td><a href="{{< relref "project.md" >}}">Project</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the Projects used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>documentVersion</td>
+        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the DocumentVersions contained in the VEC-file.</td>
+    </tr>
+    <tr>
         <td>contract</td>
         <td><a href="{{< relref "contract.md" >}}">Contract</a></td>
         <td>0..*</td>
@@ -61,6 +111,16 @@ menu_name: vec-2.2.0
         <td>N</td>
         <td>1</td>
         <td>Specifies the contracts used in the VEC-file.</td>
+    </tr>
+    <tr>
+        <td>itemHistoryEntry</td>
+        <td><a href="{{< relref "itemhistoryentry.md" >}}">ItemHistoryEntry</a></td>
+        <td>0..*</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>1</td>
+        <td>Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file.</td>
     </tr>
     <tr>
         <td>partVersion</td>
@@ -83,16 +143,6 @@ menu_name: vec-2.2.0
         <td></td>
     </tr>
     <tr>
-        <td>copyrightInformation</td>
-        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the CopyrightInformation used in the VEC-file.</td>
-    </tr>
-    <tr>
         <td>quantityKind</td>
         <td><a href="{{< relref "quantitykind.md" >}}">QuantityKind</a></td>
         <td>0..*</td>
@@ -101,56 +151,6 @@ menu_name: vec-2.2.0
         <td>N</td>
         <td>1</td>
         <td><p> Specifies the <i>QuantityKind</i> used in the VEC-file.      </p></td>
-    </tr>
-    <tr>
-        <td>unit</td>
-        <td><a href="{{< relref "unit.md" >}}">Unit</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the Units used in the VEC-file.</td>
-    </tr>
-    <tr>
-        <td>standardCopyrightInformation</td>
-        <td><a href="{{< relref "copyrightinformation.md" >}}">CopyrightInformation</a></td>
-        <td>0..1</td>
-        <td>N</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>0..*</td>
-        <td><p> References the <i>CopyrightInformation</i> that is in effect for the complete content of this <i>VecContent</i>. It is applied to all <i>ItemVersions</i> that do not references their own individual <i>CopyrightInformation.</i>      </p></td>
-    </tr>
-    <tr>
-        <td>project</td>
-        <td><a href="{{< relref "project.md" >}}">Project</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the Projects used in the VEC-file.</td>
-    </tr>
-    <tr>
-        <td>itemHistoryEntry</td>
-        <td><a href="{{< relref "itemhistoryentry.md" >}}">ItemHistoryEntry</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the ItemVersionHistoryEntries for ItemVersions contained in the VEC-file.</td>
-    </tr>
-    <tr>
-        <td>documentVersion</td>
-        <td><a href="{{< relref "documentversion.md" >}}">DocumentVersion</a></td>
-        <td>0..*</td>
-        <td>Y</td>
-        <td>Y</td>
-        <td>N</td>
-        <td>1</td>
-        <td>Specifies the DocumentVersions contained in the VEC-file.</td>
     </tr>
     </tbody>
 </table>

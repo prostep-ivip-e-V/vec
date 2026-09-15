@@ -19,7 +19,7 @@ Abstract super-class for Localized text values.
 | Attribute               | Value |
 |-------------------------|-------|
 | **Owner**               | core |
-| **Applied Stereotype**  |   |
+| **Applied Stereotype**  | [StructuredPrimitive]({{< relref "structuredprimitive.md" >}})<br/>  |
 | **Base Classifier**     |   |
 | **Is Abstract**         | true |
 | **Derived Classifiers** | [LocalizedString]({{< relref "localizedstring.md" >}}), [LocalizedTypedString]({{< relref "localizedtypedstring.md" >}}) |
