@@ -92,7 +92,9 @@ Already pulling the other way — the texts to reuse, not rewrite:
 ### 3.2 What D-M resolves elsewhere
 
 - **#1158 Q4 (module `subComponent` redundancy):** resolved in principle — an in-place module
-  occurrence need not repeat the full list. What remains is the modality of the replacement
+  occurrence need not repeat the full list, and doing so was never what made assemblies and
+  modules uniform for a reader (see [3.4](#34-unified-handling-of-assemblies-and-modules--the-argument-is-inverted-not-lost)).
+  What remains is the modality of the replacement
   ([Decision 1](#decision-1--replacement-rule-for-instantiation)).
 - **#1158 Q7 (re-instantiation of harnesses inside a Bordnetz):** dissolves. Under D-M a harness
   occurrence at network level carries a `PartWithSubComponentsRole` and clones only the
@@ -117,6 +119,56 @@ assertions, schema filtering, Schematron) for processes that need the old guaran
 group also wants an explicit "unused" marking in the model is part of
 [Decision 1](#decision-1--replacement-rule-for-instantiation).
 
+### 3.4 "Unified handling of assemblies and modules" — the argument is inverted, not lost
+
+The only *justification* the wiki gives for the redundant `subComponent` list on in-place modules
+is `composite-parts` line 186: *"This unifies the handling of assemblies and modules for reading
+systems."* The implicit picture is that a reading system takes a composite occurrence, follows
+`PartWithSubComponentsRole.subComponent`, and finds the complete composition there — so modules
+had to offer the same complete list as assemblies. That picture no longer holds, for two reasons.
+
+**First, under the old rule the "unified" handling was already the expensive one.** A library
+assembly — a USB cable with a hundred components — had to be instantiated in full in every harness
+that used it, even where the harness said something about three of them. D-M removes that. Once
+it is gone, assemblies and modules **are** handled identically: in both cases the using context
+instantiates what it needs, and in both cases the complete composition lives in the part master
+data. Uniformity is preserved by dropping the requirement on both sides, not by keeping it on one.
+
+**Second, the instantiated occurrences were never the place to look for the complete picture.**
+The truth about *what a composite part consists of* is its `PartStructureSpecification`
+(`inBillOfMaterial`), reached from any composite occurrence via
+`PartWithSubComponentsRole.partStructureSpecification` (`1`). A reader who wants the full
+composition goes from the occurrence to the part master and reads it there. The intended
+navigation is the **other direction**: coming from the harness — a routing, a contacting, a
+placement of some occurrence — the reader must be able to detect that *this occurrence belongs to
+a composite part*, *which* composite occurrence that is, and *how to get to its part master data*.
+That is a membership question, and it is answered by the **inverse** of two links:
+
+| Case | Membership link (navigated inverse) | From the composite occurrence to the truth |
+|---|---|---|
+| In-place module | `PartStructureSpecification.inBillOfMaterial` ← occurrence; the same occurrences are the module's definition | `describedPart` → module `PartVersion`; the specification *is* the composition |
+| Library assembly | `PartWithSubComponentsRole.subComponent` ← instantiated occurrence (`A'`); `A'.instanciatedOccurrence` → `A` gives the master occurrence but **not** which assembly *instance* in this harness `A'` belongs to when the assembly is used more than once | `partStructureSpecification` → master `PartStructureSpecification` → `inBillOfMaterial` |
+
+For the in-place module, `subComponent` therefore adds nothing that `inBillOfMaterial` does not
+already provide — it is genuinely redundant, and omitting it is **not** a departure from uniform
+handling. For the library assembly, `subComponent` keeps a real job: it is the only link that
+ties an instantiated subcomponent to the specific assembly occurrence in the using context. Under
+Decision 1 it lists the subcomponents that *exist in this context* — a subset of the master
+composition — which is exactly what a membership link should contain.
+
+Consequences for the text:
+
+- The sentence *"This unifies the handling of assemblies and modules for reading systems"* is
+  removed, and the paragraph that carried it is rewritten around the two navigation directions
+  above: *composition* is read at the part master; *membership* is read at the occurrence. The
+  same rewrite retires the `harness` line 310 wording ("to provide a consistent appearance …
+  both concepts shall be used").
+- The membership recipe is a fifth entry for the #1160 R3 navigation section in
+  `general/interface-behaviour` ("which composite part does this occurrence belong to, and where
+  is its definition?"), alongside the four already listed there.
+- Decision 1c's "subset" rule gets its rationale from this section rather than from optionality
+  alone.
+
 ---
 
 ## 4. Theme II — Composite parts: what "having a BOM" means, and the levels above and below the harness
@@ -126,8 +178,13 @@ group also wants an explicit "unused" marking in the model is part of
 D-L chose between two constructions — "assembly that contains a connector" vs. "connector that
 has a BOM" — and rejected the second on four grounds (BOM means *built from*; which contained
 component is "leading"; why assemblies without a leading character exist; "leading" depends on
-use case). **The model has a third construction that was not on the table**, documented on this
-exact case:
+use case). The decision stands. What the wiki lacks is the **delimitation** that makes it
+executable: which of the existing mechanisms applies when, and — the point most likely to be
+misread — what a `CompositionSpecification` inside a part master document does and does not say.
+
+**`CompositionSpecification` is a container, not a statement about the part.** Two model
+sentences fix this, and both are easy to misread as offering a way to describe "inner structure
+without a BOM":
 
 > `CompositionSpecification`: *"…define a set of occurrences required to describe unambiguously the
 > design of a composite part. **This does not have to be necessarily the same occurrences which
@@ -140,20 +197,43 @@ exact case:
 > perspective even if it is referenced by a `DocumentVersion` containing a
 > `CompositionSpecification` with several occurrences."*
 
-I.e. a catalogue connector can be `PrimaryPartType = ConnectorHousing` with a
-`ConnectorHousingSpecification` **and** a `CompositionSpecification` / `PartUsageSpecification`
-for its contacts and seals, and **no** `PartStructureSpecification` — internally described, atomic
-in the BOM. It avoids objection #1 of D-L because there is no BOM. It is entirely absent from the
-implementation guidelines (`composite-parts` uses "atomic" only in its inverse, line 46).
+What they say is: **BOM membership is stated only by `PartStructureSpecification`.** The
+`CompositionSpecification` (and the `PartUsageSpecification`) merely give occurrences a place to
+live; the set of occurrences needed to *describe* a product is routinely different from the set
+that *constitutes* it. Two situations make the difference concrete:
 
-Four mechanisms now cover overlapping physical situations with no delimitation in the guidelines:
+- **Re-instantiated subcomponents of an assembly.** To place or route a pre-assembled cable in a
+  harness, its connectors and cores are instantiated in the harness (`A'`, `B'` — D-J). These
+  occurrences must live in the harness's `CompositionSpecification`, yet they are **not** BOM
+  positions of the harness: the harness buys the cable, not its connectors. Only the assembly
+  occurrence is in the harness's `inBillOfMaterial`.
+- **Phantom counterparts.** A cable assembly with a connector on one end and an open end on the
+  other may need a "phantom" connector on the open side so that stripping length and wire end
+  processing can be calculated correctly. That occurrence exists for description, is placed in the
+  assembly's `CompositionSpecification`, and is **not** part of the delivered assembly — it never
+  appears in its `PartStructureSpecification`.
+
+The "atomic part" sentence is the same rule read from the other side: a `CompositionSpecification`
+in a `PartMaster` document does **not** turn the described part into a composite; without a
+`PartStructureSpecification` the part is atomic in the BOM, whatever helper occurrences its
+document carries. It is a guard against inferring a BOM from a container, not a modelling route
+for catalogue parts. For this issue the consequence is the opposite of a shortcut: the contacts
+and seals that are physically part of the delivered catalogue part **belong in its
+`PartStructureSpecification`** (D-L, `Content = Assembly`), and the guideline must additionally
+say that occurrences may appear in the container without appearing in the BOM, with the two
+examples above.
+
+The implementation guidelines currently express neither half — `composite-parts` uses "atomic"
+only in its inverse (line 46: assemblies are *"not considered atomic"*) and never shows an
+occurrence that is in the container but not in the BOM.
+
+Three mechanisms cover overlapping physical situations with no delimitation in the guidelines:
 
 | Mechanism | Where | Criterion available today |
 |---|---|---|
 | `PartRelation` (accessories) | `component-types/accessories` | model: *"not included with the part number and have to be ordered separately"* |
 | `ModularSlot` / inserts | `component-types/connectors#modular-connector` | selectable variants of one housing; kept to `PartVersion` links so master data stays one-file-per-component |
-| `PartStructureSpecification` (assembly) | `composite-parts#assemblies` | D-L's choice |
-| `CompositionSpecification` without `PartStructureSpecification` (atomic) | model only | — |
+| `PartStructureSpecification` (assembly) | `composite-parts#assemblies` | D-L's choice — contents are included in the part number |
 
 Two secondary consequences of D-L:
 
@@ -171,7 +251,7 @@ Two secondary consequences of D-L:
   `PrimaryPartType`"*) will flag any producer shipping only the connector-housing slice of a
   `PartStructure` part — which D-M and `description-of-parts` explicitly allow.
 
-→ [Decision 2](#decision-2--recommended-construction-for-catalogue-parts-with-inner-structure),
+→ [Decision 2](#decision-2--delimitation-for-catalogue-parts-with-inner-structure),
 [Decision 3](#decision-3--marking-and-type-of-contained-anonymous-parts).
 
 ### 4.2 Within the harness: layers, brackets and control information (#1158)
@@ -276,37 +356,51 @@ one, and what it unblocks.
 - **1b Absence semantics.** Proposed: state that a missing instantiation element is "no
   statement", name the `general/xml-xsd` tightening route, and **do not** add an "explicitly
   unused" marking to the model unless a concrete use case is named.
-- **1c In-place modules.** Proposed: a module occurrence's `PartWithSubComponentsRole` **may** omit
-  `subComponent`; if filled, it shall be a subset of the `PartStructureSpecification`'s
-  `inBillOfMaterial`. The sentence *"This unifies the handling of assemblies and modules for
-  reading systems"* is removed, not softened — it is no longer true.
+- **1c In-place modules and `subComponent`.** Proposed: a module occurrence's
+  `PartWithSubComponentsRole` **may** omit `subComponent`; wherever `subComponent` is filled (module
+  or library assembly), it lists the subcomponent occurrences that exist in the using context and
+  shall be a subset of the `PartStructureSpecification`'s `inBillOfMaterial`. The sentence *"This
+  unifies the handling of assemblies and modules for reading systems"* is removed, not softened —
+  per [section 3.4](#34-unified-handling-of-assemblies-and-modules--the-argument-is-inverted-not-lost)
+  uniform handling is what D-M *restores*, and the composition is read at the part master, the
+  membership at the occurrence.
 - **1d Page shape.** `general/instantiation` keeps its URL and its type→instance correspondence
   paragraph; the rule paragraph is replaced.
 
 Unblocks: all Theme I edits; #1158 Q7; the pigtail example.
 
-### Decision 2 — Recommended construction for catalogue parts with inner structure
+### Decision 2 — Delimitation for catalogue parts with inner structure
 
-*#1078 Q1.* Options: (3) assembly — D-L as taken; (4) described-but-atomic — the model option
-D-L did not consider; both, with a criterion.
+*#1078 Q1.* D-L (assembly) is confirmed as the construction; what the group has to fix is the
+delimitation and the container/BOM clarification from
+[4.1](#41-below-the-harness-catalogue-parts-with-inner-structure-1078).
 
-Proposed: **both**, with the criterion *"do the contained components have (or will they get) a
-part number in the issuing process?"* — yes → (3) assembly, `Content = Assembly`; no → (4)
-atomic with a `PartUsageSpecification` describing the internals. `PartRelation` remains for
-components **not** included in the part number. `ModularSlot` remains for selectable inserts. The
-decision table goes into the new page ([7.6](#7-consolidated-action-plan)).
-
-If the group instead confirms (3) only, the model sentence on atomic parts needs a scope, because
-it currently reads as a general rule and contradicts the recommendation.
+- **2a Criterion.** Proposed: *"Is the contained item included in the catalogue part number?"* —
+  yes → it is a position in the part's `PartStructureSpecification` (`Content = Assembly`);
+  no → `PartRelation` (accessory) or, for selectable inserts of one housing, `ModularSlot`. The
+  decision table goes into the new page ([7](#7-consolidated-action-plan)).
+- **2b Container ≠ BOM.** Proposed: state explicitly, in `composite-parts` and on the model pages,
+  that occurrences may live in a `CompositionSpecification` / `PartUsageSpecification` without
+  being in any `PartStructureSpecification`, with the two examples (re-instantiated assembly
+  subcomponents in a harness; phantom counterparts for processing calculations), and that the
+  "atomic part" sentence is the guard that follows from it.
+- **2c Level of detail.** `composite-parts` line 52 already allows the assembly description to
+  range *"from a pure bill of material view to even a well defined 'mini harness'"*. Proposed:
+  keep that, and add that a catalogue part's `PartStructureSpecification` may be delivered
+  without any further specifications about its contents (D-M applies to master data too), and
+  that the contents' specifications needed by rule checkers (crimp ranges, cavity system, mating
+  capability) are the *typical*, not the required, content.
 
 ### Decision 3 — Marking and type of contained anonymous parts
 
 *#1078 Q2, Q3.*
 
-- **3a `PrimaryPartType`.** Under (3): `PartStructure` (as `composite-parts` line 70). Under (4):
-  the component type. Proposed: say so explicitly on the new page and delimit *hybrid* (one part,
-  several characteristics) from *composite* (one part, several contained components) at
-  `component-description` line 56.
+- **3a `PrimaryPartType`.** `PartStructure`, as `composite-parts` line 70 already says for
+  assemblies. Proposed: say so explicitly on the new page and delimit *hybrid* (one part, several
+  characteristics — a connector housing that is also a fixing) from *composite* (one part, several
+  contained components) at `component-description` line 56; a composite part may additionally
+  carry the characteristic specification of a contained component only if that is a property of
+  the *whole* (rare), never as a shortcut for the "leading" component D-L rejected.
 - **3b TC-0004.** Proposed: add a documented exception — a `PartVersion` described only by
   specifications that are not its primary one is a *partial description*, permitted per
   `description-of-parts`; TC-0004 becomes a warning, or is scoped to `PartMaster` documents that
@@ -395,15 +489,15 @@ a blocker can start now. Line references are in the three source analyses.
 | Page | Status | Action | Blocked by |
 |---|---|---|---|
 | `general/instantiation` | **affected (central)** | Replace completeness `shall` with the Decision 1 rule; absence = "no statement"; `relref` `general/xml-xsd` tightening; cross-ref `component-instances#instantiation-with-roles`; populate `classes:` | 1 |
-| `product-definition/composite-parts` | **affected (all three issues)** | Line 120 → Decision 1a; line 186 → 1c, remove the "unifies handling" sentence; add the layer rule (container = `CompositionSpecification` **or** `PartUsageSpecification`) with the control-info ⇒ occurrence ⇒ container reasoning; extend harness level beyond modules incl. `PartUsage` bracket; add the "described but atomic" construction; add a `PartUsage` subcomponent example; give the mechanism for neutral modules (D-J); Bordnetz section; `classes:` | 1, 2, 5 |
-| **New** `product-definition/catalogue-parts` | **new** | Decision table across the four mechanisms; catalogue-connector worked example (which specs the contacts need for crimp/cavity checkers); E/E-component-with-pigtail example showing per-layer views; consumption by `relref` to #1160 R3 | 1, 2, 3 |
+| `product-definition/composite-parts` | **affected (all three issues)** | Line 120 → Decision 1a; line 186 → 1c, replace the "unifies handling" justification with the two navigation directions of section 3.4 (composition at the part master, membership at the occurrence); add the layer rule (container = `CompositionSpecification` **or** `PartUsageSpecification`) with the control-info ⇒ occurrence ⇒ container reasoning; extend harness level beyond modules incl. `PartUsage` bracket; add the container ≠ BOM clarification with the re-instantiated-subcomponent and phantom-counterpart examples (Decision 2b); add a `PartUsage` subcomponent example; give the mechanism for neutral modules (D-J); Bordnetz section; `classes:` | 1, 2, 5 |
+| **New** `product-definition/catalogue-parts` | **new** | Decision table across the three mechanisms (Decision 2a) and the container ≠ BOM rule (2b); catalogue-connector worked example (which specs the contacts need for crimp/cavity checkers); E/E-component-with-pigtail example showing per-layer views; consumption by `relref` to #1160 R3 | 1, 2, 3 |
 | `product-definition/harness` | **affected** | Line 310 → 1c; line 258 → `relref` the general layer rule; line 345 scope "per harness"; `<Content>Harness</Content>`; mermaid labels; `COMPONENTS`/`MODULES` stated as a mapping recommendation; `classes:` | 1, 6 |
 | `product-definition/component-instances` | **minor** | Cite `#instantiation-with-roles` as the precedent; add the anonymous-`PartUsage` carve-out at `#shared-specifications` | 3c |
 | `product-definition/component-description` | **minor** | Delimit hybrid vs. composite at line 56; "can be recognised with `DocumentType`" → "is normally marked with" (#1160); cite `#content-requirements` from `general/instantiation`; add `DocumentType` to `classes:` | 3a |
 | `product-definition/_index.md` | **minor** | Soften "all information" (line 44); add D-E definition; state one-`HarnessDescription`-per-harness and the file-cardinality `relref`; per-`PartVersion` answer by `relref`; populate `classes:` | 7 |
 | `key-concepts/general-structure` | **affected** | #1160 R1/R2/R6/R7 edits; generalise the structure-preservation `SHALL` and add the semantic-merge carve-out with **two** worked examples (`system-schematic`, Bordnetz); `### Harness Description` under `## Types of Documents` written as typical scope with optionality | 6 |
 | `key-concepts/digital-change-tracking` | **affected** | #1160 R5 target-dataset section; Decision 7 answer; `classes: [DocumentVersion]` | 7 |
-| `general/interface-behaviour` | **affected** | #1160 R3 "Navigating Information in a VEC" with the four recipes; extend `classes:` | — |
+| `general/interface-behaviour` | **affected** | #1160 R3 "Navigating Information in a VEC" with the four recipes plus the composite-part membership recipe from section 3.4 (inverse `inBillOfMaterial` / `subComponent` → `partStructureSpecification` → `describedPart`); extend `classes:` with `PartWithSubComponentsRole`, `PartStructureSpecification` | 1 |
 | `ee-components/fuses`, `ee-components/relays` | **affected** | "all structure elements underneath will be instantiated" → context-relevant elements | 1 |
 | `elog-layers/coupling-devices` | **minor** | Line 68 "containment has semantic meaning" → align with D-B | — |
 | `compliance-tests` | **re-check** | TC-0004 exception per 3b; TC-0003/0005/0009 unchanged; consider a `subComponent ⊆ inBillOfMaterial` test if 1c is adopted | 1, 3 |
@@ -423,8 +517,8 @@ a blocker can start now. Line references are in the three source analyses.
 | `PartStructureContentType` — literal | Network-level literal | 5b/5c |
 | `PartStructureSpecification.content` | Document that `content` classifies the described part's aggregation level and implies completeness (10/100/150 %) and permitted BOM element types | — |
 | `instantiation-approaches` | Align the "shall be maintained consistently" sentence with Decision 1c | 1 |
-| `assemblies-modules-and-harness-configurations` | Promote the "atomic part" note to a proper paragraph with the catalogue-part example, or scope it | 2 |
-| `CompositionSpecification` | Sharpen the antenna-cable example: superset-of-BOM (150 %) vs. no-BOM (catalogue part); fix typo | 2 |
+| `assemblies-modules-and-harness-configurations` | Promote the "atomic part" note to a proper paragraph stating its purpose — BOM membership is declared only by `PartStructureSpecification`; a `CompositionSpecification` in a part master document does not make the part composite — with the re-instantiated-subcomponent example | 2b |
+| `CompositionSpecification` | Sharpen the documentation: the container holds the occurrences needed to *describe* the product, which may exceed those that *constitute* it (150 % superset; re-instantiated assembly subcomponents; phantom counterparts for processing calculations); keep the antenna-cable example; fix typo | 2b |
 | `PartUsage` | Widen "yet not possible to define a concrete part number" | 3c |
 | `PartNumberType` | Literal for "real but not separately orderable" — only if 3c takes the `PartVersion` route | 3c |
 | `CavityReference` et al. | "Explicitly unused" marking — only if 1b is rejected | 1b |

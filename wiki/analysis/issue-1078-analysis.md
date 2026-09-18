@@ -58,21 +58,22 @@ the assembly" concern raised on 10.03.2026 — cross-reference, do not restate.
 | Optionality of specifications | model `general-component-data/description-of-parts` | *"It is **not** required to describe every `PartVersion` in a specific VEC file with a corresponding `PartOrUsageRelatedSpecification`, if the information is not required in the context of the VEC file."* |
 | Accessories / supplementary parts | `component-types/accessories`, model `general-component-data/supplementary-parts` | `PartRelation` in a `GeneralTechnicalPartSpecification` expresses caps, locks, clips. `PartRelation` documentation: *"they are **not included with the part number** and have to [be] ordered separately."* |
 | Modular connectors | `component-types/connectors#modular-connector` | Housing + inserts are **not** an assembly: they use `PartRelation` + `ModularSlot` / `ModularSlotReference`, deliberately *"only based on `PartVersion` links and ID matching … supports the distribution of part master data with one VEC file per component."* |
-| Described-but-atomic parts | model `composite-part-descriptions/assemblies-modules-and-harness-configurations` | *"A `PartVersion` without a separate `PartStructureSpecification` shall be regarded as one atomic part out of a bill of material perspective even if it is referenced by a `DocumentVersion` containing a `CompositionSpecification` with several occurrences."* |
+| Container vs. BOM | model `composite-part-descriptions/assemblies-modules-and-harness-configurations` | *"A `PartVersion` without a separate `PartStructureSpecification` shall be regarded as one atomic part out of a bill of material perspective even if it is referenced by a `DocumentVersion` containing a `CompositionSpecification` with several occurrences."* |
 | Hybrid parts | `product-definition/component-description` line 56 | *"there can be cases of 'hybrid' components that fall into more than one category. In this case, the `PrimaryPartType` defines the primary character."* |
 | Cross-company identity | model `pdm-information/item-equivalence` | `ItemEquivalence` relates `ItemVersion`s across company scopes; *"the same component might have different approved operating conditions depending on the company scope, which results in differing technical attributes."* |
 
 ---
 
-## 2. The Decisive Finding: the Model Already Has a Fourth Option
+## 2. Container vs. BOM — the model statement the guidelines never explain
 
 The 19.02.2025 discussion framed the choice as **two** alternatives — "a ZSB that contains an
 E/E component / connector" vs. "an E/E component that has a bill of material" — and rejected the
 second on four grounds (BOM means *built from*; which of two contained connectors is "leading";
-why do assemblies without a leading character exist; "leading" depends on use case).
-
-**The model already provides a third construction that neither alternative covers**, and it is
-documented on exactly the case in this issue:
+why do assemblies without a leading character exist; "leading" depends on use case). The decision
+stands. What makes it hard to execute is that the guidelines never state the distinction the
+decision relies on: **what is in the BOM is declared only by `PartStructureSpecification`; the
+container specifications say nothing about it.** Two model sentences carry that rule, and both
+are easy to misread as offering "inner structure without a BOM":
 
 > `CompositionSpecification` (class documentation): *"used to define a set of occurrences required
 > to describe unambiguously the design of a composite part. **This does not have to be necessarily
@@ -86,23 +87,34 @@ documented on exactly the case in this issue:
 > bill of material perspective** even if it is referenced by a `DocumentVersion` containing a
 > `CompositionSpecification` with several occurrences."*
 
-In other words: a Rosenberger-style catalogue connector can be a `PartVersion` with
-`PrimaryPartType = ConnectorHousing`, a `ConnectorHousingSpecification`, **and** a
-`CompositionSpecification` / `PartUsageSpecification` describing its internal contacts and seals —
-with **no** `PartStructureSpecification`. It is then internally described but atomic in the BOM,
-which is precisely what "the contained parts have no customer part number" means, and it does not
-trigger objection #1 of the 19.02.2025 decision ("the BOM would mean the part is *built from*
-these") because there is no BOM at all.
+The `CompositionSpecification` (and the `PartUsageSpecification`) merely give occurrences a place
+to live. The set of occurrences needed to *describe* a product is routinely different from the set
+that *constitutes* it:
 
-**This option is entirely absent from the implementation guidelines.** `composite-parts` mentions
-`atomic` only in its inverse (line 46: assemblies are *"not considered atomic"*), and the
-`CompositionSpecification`-without-`PartStructureSpecification` case is never shown. An implementer
-reading only the guidelines cannot discover it.
+- **Re-instantiated subcomponents of an assembly.** To place or route a pre-assembled cable in a
+  harness, its connectors and cores are instantiated in the harness (`A*`, `B*` in
+  `composite-parts#usage-of-an-assembly`). These occurrences live in the harness's
+  `CompositionSpecification`, but they are **not** BOM positions of the harness — the harness buys
+  the cable, not its connectors. Only the assembly occurrence is in the harness's
+  `inBillOfMaterial`.
+- **Phantom counterparts.** A cable assembly with a connector on one end and an open end on the
+  other may need a "phantom" connector on the open side so that stripping length and wire-end
+  processing can be calculated. That occurrence exists for description, lives in the assembly's
+  `CompositionSpecification`, and is **not** part of the delivered assembly — it never appears in
+  its `PartStructureSpecification`.
 
-Whether the group wants it as the recommended answer, as a permitted alternative, or explicitly
-ruled out is [Q1](#q1--which-of-the-four-constructions-is-the-recommended-one). What is not
-tenable is leaving a normative model statement that the guidelines never mention while the
-guidelines recommend a different construction for the same case.
+The "atomic part" sentence is the same rule read from the other side: a `CompositionSpecification`
+in a `PartMaster` document does **not** make the described part composite; without a
+`PartStructureSpecification` it is atomic in the BOM, whatever helper occurrences its document
+carries. It is a guard against inferring a BOM from a container — not a modelling route.
+
+For this issue the consequence is: the contacts and seals that are physically part of the
+delivered catalogue part **belong in its `PartStructureSpecification`** (`Content = Assembly`),
+exactly as decided. Occurrences the part's description needs beyond that (a phantom mating side, a
+reference geometry) go into the container and stay out of the BOM. The guidelines currently
+express neither half — `composite-parts` mentions `atomic` only in its inverse (line 46:
+assemblies are *"not considered atomic"*) and never shows an occurrence that is in the container
+but not in the BOM.
 
 ---
 
@@ -168,7 +180,7 @@ must settle a different marking.
 
 ### F4 — Three existing mechanisms cover overlapping physical situations with no delimitation
 
-A connector that "brings its own caps, contacts and seals" can today be modelled in at least four
+A connector that "brings its own caps, contacts and seals" can today be modelled in three
 ways, and nothing in the wiki says which to use when:
 
 1. **`PartRelation` / accessories** — `component-types/accessories`. Criterion in the model:
@@ -177,12 +189,12 @@ ways, and nothing in the wiki says which to use when:
    inner components are selectable variants of the same housing.
 3. **`PartStructureSpecification` / assembly** — `composite-parts#assemblies`. The BOM route, the
    one the 19.02.2025 decision points to.
-4. **`CompositionSpecification` without `PartStructureSpecification`** — described but atomic
-   (section 2).
 
 The `PartRelation` criterion (*included in the part number or not*) is a crisp, usable dividing
-line between (1) and (3)/(4) and is **only in the model documentation, never in the guidelines**.
-A decision table belongs in the new guideline text.
+line between (1) and (3) and is **only in the model documentation, never in the guidelines**. A
+decision table belongs in the new guideline text, together with the container-vs-BOM rule from
+[section 2](#2-container-vs-bom--the-model-statement-the-guidelines-never-explain) so that helper
+occurrences are not mistaken for BOM positions.
 
 ### F5 — `PrimaryPartType` for a composite part is answered only inside the KBL mapping
 
@@ -246,41 +258,42 @@ class, that class belongs in `classes:`"*):
 
 ## 4. Open Questions Requiring a Decision
 
-### Q1 — Which of the four constructions is the recommended one?
+### Q1 — Delimitation and the container-vs-BOM rule
 
-The 19.02.2025 decision chose the assembly route (option 3 in [F4](#f4--three-existing-mechanisms-cover-overlapping-physical-situations-with-no-delimitation))
-without the "described but atomic" option (4) on the table. Before the tutorial is written:
+The 19.02.2025 decision (assembly route, option 3 in [F4](#f4--three-existing-mechanisms-cover-overlapping-physical-situations-with-no-delimitation))
+is confirmed. Before the tutorial is written, two things need an explicit go:
 
-- Is (4) the recommended representation when the contained components have no customer part
-  number, with (3) reserved for the case where they do?
-- Or is (3) always the answer, and (4) deprecated in practice — in which case the normative model
-  sentence about atomic parts needs a scope, because it currently reads as a general rule?
-- If both are permitted, the delimitation criterion has to be stated. The natural candidate is the
-  one `PartRelation` already uses: **is the contained item covered by the catalogue part number?**
-  — but that criterion separates (1) from (3)/(4), not (3) from (4).
+- **The criterion.** Proposed: *"Is the contained item included in the catalogue part number?"* —
+  yes → a position in the part's `PartStructureSpecification` (`Content = Assembly`); no →
+  `PartRelation` (accessory) or, for selectable inserts of one housing, `ModularSlot`.
+- **The container-vs-BOM rule.** Proposed: state in `composite-parts` and on the model pages that
+  occurrences may live in a `CompositionSpecification` / `PartUsageSpecification` without being
+  in any `PartStructureSpecification`, with the two examples from
+  [section 2](#2-container-vs-bom--the-model-statement-the-guidelines-never-explain), and that
+  the "atomic part" sentence is the guard that follows from it.
 
-Note that choosing (3) re-raises objection #2 of the 19.02.2025 decision in a new place: if the
-ZSB has a `PartStructureSpecification`, what is its `PartStructureContentType`? `Assembly` (100 %,
-"definition of part / component without variance, which has a bill of material") fits structurally
-but describes the catalogue part as *having a BOM*, which is the reading the decision rejected for
-E/E components.
+Note that `PartStructureContentType.Assembly` is documented as *"Definition of part / component
+without variance, which has a bill of material (100%)"* — describing the catalogue part as
+*having a BOM* is therefore intended, and is not the reading objection #1 of the decision rejected
+(that objection was about an E/E component *plus* a BOM as an add-on, not about a ZSB).
 
 ### Q2 — `PrimaryPartType`, hybrid parts, and TC-0004
 
 Given `PrimaryPartType` is closed and single-valued:
 
-- For a ZSB connector under construction (3): is the value `PartStructure`, with the connector
-  aspect carried by a contained occurrence — or `ConnectorHousing`, with the assembly aspect
-  carried by an additional `PartStructureSpecification` on the same `PartVersion` (the "hybrid
-  component" paragraph in `component-description` line 56 permits this)?
-- Under construction (4) the value is necessarily the component type (`ConnectorHousing`,
-  `EEComponent`, `Wire`), since there is no `PartStructureSpecification`.
+- For a ZSB connector: `PartStructure` (as `composite-parts` line 70 says for assemblies), with
+  the connector aspect carried by a contained occurrence. The alternative — `ConnectorHousing`
+  with an additional `PartStructureSpecification` on the same `PartVersion`, which the "hybrid
+  component" paragraph in `component-description` line 56 would permit — is exactly the "leading
+  component" shortcut the 19.02.2025 decision rejected; the guideline must say so, and delimit
+  *hybrid* (one part, several characteristics) from *composite* (one part, several contained
+  components).
 - Either way: does **TC-0004** need a carve-out? A producer who ships only the
   `ConnectorHousingSpecification` slice of a part whose `PrimaryPartType` is `PartStructure` will
   be flagged, even though `description-of-parts` explicitly allows shipping partial descriptions.
   This is a pre-existing tension that the new guidance will make routine.
 - The USB-cable question from 18.03.2026 is answered by `composite-parts` line 70
-  (`PartStructure`) for construction (3); confirm and make it findable outside the KBL mapping.
+  (`PartStructure`); confirm and make it findable outside the KBL mapping.
 
 ### Q3 — How is a permanently anonymous contained part marked?
 
@@ -369,10 +382,11 @@ once.
 - Line 120: drop `must be`; replace per [Q5](#q5--does-composite-partsusage-of-an-assembly-keep-a-weaker-rule).
   Keep lines 122–126 (the three justifications) and re-anchor them to the weaker rule, so the
   rationale is not lost with the requirement.
-- Add the "described but atomic" construction from [section 2](#2-the-decisive-finding-the-model-already-has-a-fourth-option)
-  as an explicit alternative, with the `CompositionSpecification` documentation and the
-  "atomic part" sentence from `assemblies-modules-and-harness-configurations` as its sources.
-  Blocked on [Q1](#q1--which-of-the-four-constructions-is-the-recommended-one).
+- Add the container-vs-BOM rule from [section 2](#2-container-vs-bom--the-model-statement-the-guidelines-never-explain)
+  with its two examples (re-instantiated assembly subcomponents in a harness; phantom
+  counterparts), citing the `CompositionSpecification` documentation and the "atomic part"
+  sentence from `assemblies-modules-and-harness-configurations` as its sources. Blocked on
+  [Q1](#q1--delimitation-and-the-container-vs-bom-rule).
 - Line 62–64 already permits `PartUsage`s for subcomponents, but every figure and XML listing on
   the page uses `PartOccurrence`. Add one `PartUsage` example — it is the case this issue is about.
 - Line 70 (`PrimaryPartType = "PartStructure"`) is the answer to the USB-cable question; keep it
@@ -419,11 +433,12 @@ between `composite-parts` (300) and `coupling` (400)). Content:
 
 1. **The problem** — catalogue part number covers contained components that the customer cannot
    order separately; design tools nevertheless need their properties.
-2. **Decision table** — which of the four constructions to use, keyed on: *is the contained item
+2. **Decision table** — which of the three mechanisms to use, keyed on: *is the contained item
    covered by the catalogue part number?* / *does the contained item have a customer part number?*
    / *is it a selectable variant of the same housing?* Links to `component-types/accessories`,
-   `component-types/connectors#modular-connector`, `composite-parts`. Blocked on
-   [Q1](#q1--which-of-the-four-constructions-is-the-recommended-one).
+   `component-types/connectors#modular-connector`, `composite-parts`. Followed by the
+   container-vs-BOM rule, so that helper occurrences in a part's description are not read as
+   BOM positions. Blocked on [Q1](#q1--delimitation-and-the-container-vs-bom-rule).
 3. **Worked example: catalogue connector** (the Rosenberger case) with XML, showing which
    specifications the contained contacts must carry so that crimp and cavity rule checkers work
    (`TerminalSpecification` incl. crimp ranges, `CavitySpecification`, `WireReceptionSpecification`).
@@ -465,15 +480,16 @@ is answered positively, this page (or a new sibling) is where it belongs, not in
 
 ## 6. Model (Documentation) Changes
 
-### 6.1 `composite-part-descriptions/assemblies-modules-and-harness-configurations` — clarify or scope the atomic-part rule
+### 6.1 `composite-part-descriptions/assemblies-modules-and-harness-configurations` — promote the atomic-part rule
 
 The sentence *"A `PartVersion` without a separate `PartStructureSpecification` shall be regarded as
 one atomic part out of a bill of material perspective even if it is referenced by a
 `DocumentVersion` containing a `CompositionSpecification` with several occurrences"* is currently
-an italicised `Note` carrying a `shall`. Depending on [Q1](#q1--which-of-the-four-constructions-is-the-recommended-one)
-it either becomes the model anchor for the recommended construction — in which case it should be
-promoted out of the note and given the catalogue-part example — or it needs a scope so it is not
-read as endorsing a construction the guidelines discourage.
+an italicised `Note` carrying a `shall`, with no statement of *why*. Promote it to a proper
+paragraph that states its purpose — BOM membership is declared only by
+`PartStructureSpecification`; a container in a part master document does not make the part
+composite — and give the re-instantiated-subcomponent example, so that it cannot be read as
+offering a way to describe inner structure without a BOM.
 
 ### 6.2 `PartUsage` — class documentation
 
@@ -492,13 +508,14 @@ exactly the contained contact. If [Q3](#q3--how-is-a-permanently-anonymous-conta
 goes the `PartVersion` route, a literal is needed; `PartNumberType` is an enumeration on
 `PartVersion` and would be the natural place.
 
-### 6.4 `CompositionSpecification` — surface the antenna-cable example
+### 6.4 `CompositionSpecification` — sharpen the container-vs-BOM wording
 
-The class documentation already carries the decisive example (section 2) but it is buried in a
-run-on paragraph and the wording *"This does not have to be necessarily the same occurrences which
-are building the bill of material"* is easy to read as being only about 150 % harnesses. Sharpen it
-to name both cases: occurrences that are a *superset* of the BOM (150 % harness) and occurrences
-that describe a part with *no* BOM at all (catalogue part).
+The class documentation already carries the rule (section 2) but it is buried in a run-on
+paragraph and the wording *"This does not have to be necessarily the same occurrences which are
+building the bill of material"* is easy to read as being only about 150 % harnesses. Sharpen it to
+say that the container holds the occurrences needed to *describe* the product, which may exceed
+those that *constitute* it — 150 % superset, re-instantiated assembly subcomponents in a using
+context, phantom counterparts for processing calculations — and keep the antenna-cable example.
 
 ### 6.5 "Explicitly unused" marking — blocked by Q4
 
@@ -520,7 +537,7 @@ translation case (OEM → Tier 1 → component supplier).
 | Page / artefact | Status | Action |
 |---|---|---|
 | `general/instantiation` | **affected (central)** | Drop the completeness `shall`; replace with "only what the context requires"; state that absence means "no statement", not "unused"; name the XSD-assertion tightening route; populate `classes:` |
-| `product-definition/composite-parts` | **affected** | Weaken line 120's `must be` while keeping its three justifications; add the "described but atomic" construction; add a `PartUsage` example; fix `classes:` — **coordinate with the #1158 edit to the same page** |
+| `product-definition/composite-parts` | **affected** | Weaken line 120's `must be` while keeping its three justifications; add the container-vs-BOM rule with its two examples; add a `PartUsage` example; fix `classes:` — **coordinate with the #1158 edit to the same page** |
 | `ee-components/fuses`, `ee-components/relays` | **affected** | "all structure elements underneath will be instantiated" → context-relevant elements (not noticed in the issue thread) |
 | `product-definition/component-instances` | **minor update** | Supplies "principle of optionality" — cite, don't restate; add the carve-out that a `PartUsage` inside a catalogue part is not an open requirement |
 | `product-definition/component-description` | **minor update** | Delimit *hybrid* from *composite* parts at line 56; cite `#content-requirements` as support for dropping completeness; add `DocumentType` to `classes:` |
@@ -529,15 +546,15 @@ translation case (OEM → Tier 1 → component supplier).
 | `general/interface-behaviour`, `general/xml-xsd` | no change | Receiver tolerance and the process-level tightening route — `relref` both |
 | `compliance-tests` | no change now | No test enforces completeness; TC-0004 may need a carve-out after Q2 |
 | `pdm-information` | adjacent | No `ItemEquivalence` guideline exists; candidate home if Q6 is answered positively |
-| VEC model — `assemblies-modules-and-harness-configurations` | **model change** | Promote or scope the "atomic part" `shall`, depending on Q1 |
+| VEC model — `assemblies-modules-and-harness-configurations` | **model change** | Promote the "atomic part" `shall` to a paragraph that states its purpose (container ≠ BOM) with an example |
 | VEC model — `PartUsage` | **model change** | Widen *"yet not possible to define a concrete part number"* for the permanently anonymous case (Q3) |
 | VEC model — `PartNumberType` | **model change** | No literal for "physically existing but not separately orderable" (blocked by Q3) |
-| VEC model — `CompositionSpecification` | **model change** | Sharpen the antenna-cable example so the no-BOM case is visible |
+| VEC model — `CompositionSpecification` | **model change** | Sharpen the wording: occurrences needed to describe ≠ occurrences that constitute; keep the antenna-cable example |
 | VEC model — "explicitly unused" marking | **model change, blocked by Q4** | Only if the group rejects the ambiguity introduced by F2 |
 | VEC model — `ItemEquivalence` | **model change, blocked by Q6** | Say whether differently decomposed parts may be equivalent |
 
-**Blocking decisions**, in order: Q7 (which issues this consolidates) → Q1 (which construction is
-recommended) → Q2 (`PrimaryPartType` / TC-0004) → Q3 (marking anonymous contained parts) → the
+**Blocking decisions**, in order: Q7 (which issues this consolidates) → Q1 (delimitation and
+container-vs-BOM rule) → Q2 (`PrimaryPartType` / TC-0004) → Q3 (marking anonymous contained parts) → the
 tutorial. Independently: Q4 and Q5 unblock the `general/instantiation` and `composite-parts` edits,
 which are the ones already decided and can proceed first. Q6 should probably be split out as its
 own issue.
