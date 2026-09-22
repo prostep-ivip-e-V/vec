@@ -8,3 +8,6 @@ public/
 
 .idea
 /.hugo_build.lock
+
+# Python venv for .claude/tools/build_index.py
+.venv/

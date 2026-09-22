@@ -8,7 +8,8 @@ description: |
   references VEC concepts in German or English (e.g. Stecker, Leitung,
   Systemschaltplan). Also use when reviewing a discussion or change request to
   find affected pages, detect contradictions, or determine where to place new
-  content.
+  content, and when the committed JSONL indices under .claude/index/ need
+  rebuilding after wiki content changes.
 ---
 
 # VEC Wiki Knowledge Skill
@@ -26,7 +27,7 @@ All indices live under `.claude/index/` relative to the wiki root:
 | `pages.jsonl` | 715 markdown pages (v2.2.0 model docs + guidelines) |
 | `concepts.jsonl` | Inverted index: class → pages that mention it |
 | `relations.jsonl` | Typed edges: class ↔ page and class → class (`frontmatter` / `inline-shortcode` / `attribute-type`) |
-| `guidelines.jsonl` | 186 extracted normative statements (RFC 2119 keywords) |
+| `guidelines.jsonl` | 189 extracted normative statements (RFC 2119 keywords) |
 
 Use `jq` to query them. See `search-strategies.md` for ready-made recipes.
 
@@ -38,6 +39,67 @@ Two things to know before relying on `classes.jsonl`:
 - **Attributes and relations are own-only, not inherited.** `DocumentVersion`
   lists `documentNumber` but not `companyName` — that one comes from
   `ItemVersion`. Walk `base_classifiers` when you need the complete set.
+
+The record counts above are a snapshot of the last rebuild; treat them as
+approximate and count the file if an exact number matters.
+
+### Rebuilding the index
+
+The indices are generated from the wiki content and committed to the repo, so
+they go stale as soon as content changes. **Rebuild before relying on them** if
+the working tree contains uncommitted or recently committed changes to guideline
+pages — otherwise an affect analysis silently misses the very change being
+discussed.
+
+Rebuild when a change adds, removes or renames a guideline page, edits a page's
+`classes:` front matter, adds or rewords a MUST/SHALL/SHOULD/MAY statement, or
+imports a new model version. Pure prose edits to an existing section do not
+need one.
+
+`build_index.py` needs `lxml`, `python-frontmatter` and `pyyaml`, which are
+usually missing from the system interpreter. Create a venv once:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r .claude/tools/requirements.txt
+```
+
+Then run it **from the wiki root** — the model and content paths resolve
+relative to the current directory:
+
+```bash
+.venv/bin/python .claude/tools/build_index.py
+```
+
+It overwrites all five files in `.claude/index/` and prints a record count per
+file. Use `--xmi <path>` to build against a different model version and
+`--wiki-root <path>` to run from elsewhere. `.venv/` is git-ignored.
+
+Show the user `git diff --stat -- .claude/index` afterwards, and leave the index
+files staged or unstaged rather than committing them on your own — they belong
+in the same commit as the content change that caused them.
+
+### Build warnings worth acting on
+
+Phase 2 warns about `classes:` front-matter names that do not resolve in the
+indexed model:
+
+```
+WARNING: front-matter classes not in the VEC model: GrippingFeature
+```
+
+Do not report this as an error without checking which of the two causes applies:
+
+- **A typo or an outdated class name** — a real defect. The name is dropped from
+  `concepts.jsonl`, so the page disappears from affect analysis. Fix the front
+  matter and rebuild.
+- **A class newer than the indexed model** — expected. `GrippingFeature` is a VEC
+  2.3 class and the index is built from `vec-2.2.0.mdxml`. Leave it alone, but
+  remember that Workflow 1 Step 2 returns nothing for such a class; fall back to
+  `grep -rn "<ClassName>" content/` instead of concluding no page covers it.
+
+Phase 1's lists of elements without a generated class page and of deprecated
+classes are informational, not problems.
 
 ---
 
