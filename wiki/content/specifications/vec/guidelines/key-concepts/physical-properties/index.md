@@ -12,12 +12,18 @@ lastmod: 2019-11-28T16:20:01+01:00
 draft: false
 math: true
 
+history:
+  - date: 2026-09-22T00:00:00Z
+    description: "Added exception for GrippingFeature to the reference system rule."
+    ghIssue: "1163"
+
 classes:
   - NumericalValue
   - Unit
   - SiUnit
   - CompositeUnit
   - Color
+  - GrippingFeature
 
 menu:
   vec-guidelines:
@@ -110,3 +116,11 @@ The example shown in the figure [Reference Systems](#figure-reference-systems) h
     [...]
 </vec:VecContent>
 ```
+
+{{% callout note %}}
+The rule that all values of a reference system based attribute express the _same_ real value has
+one exception, which applies to VEC 2.3 and later: `GrippingFeature`. There the [0..*]
+multiplicity denotes the set of features a component supports, so multiple entries for the same
+_ReferenceSystem_ are allowed and meaningful (see
+[Component Description]({{< relref "../../product-definition/component-description#gripping-features" >}})).
+{{% /callout %}}

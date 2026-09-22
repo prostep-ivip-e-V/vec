@@ -5,7 +5,7 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: []
+tags: ["Gripping", "Automation", "Handling"]
 categories: []
 date: 2022-09-12
 draft: false
@@ -14,11 +14,16 @@ classes:
   - PrimaryPartType
   - PartOrUsageRelatedSpecification
   - PartVersion
+  - GeneralTechnicalPartSpecification
+  - GrippingFeature
 
 history:
   - date: 2022-09-12T00:00:00Z
     description: "Clarification of the Minimum Content of DocumentVersions for Part Master Data."
     issue: "KBLFRM-931"
+  - date: 2026-09-22T00:00:00Z
+    description: "Added gripping features for handling automation."
+    ghIssue: "1163"
 
 menu:
   vec-guidelines:
@@ -72,6 +77,75 @@ However, following its principle of openness and extendability, the VEC provides
 6. Instancing is done via a {{< vec-class SpecificRole >}} (see chapter "{{< vec-diagram "instances-of-components/instances-of-undefined-components">}}" in the Specification for Details).
 
 An example in XML of such a custom component can be found in the [XML Listings](#xml-listings) section at the end of this page.
+
+
+## Gripping Features
+
+{{% callout note %}}
+This section applies to VEC 2.3 and later. The class `GrippingFeature` and the attribute
+{{< vec-class GeneralTechnicalPartSpecification >}}._SupportedGrippingFeatures_ were introduced
+with version 2.3.
+{{% /callout %}}
+
+The handling of components in an automated assembly process (e.g. by a robotic gripper) requires that the gripper can engage the component reliably. Standards such as DIN 72036 therefore require components - connector housings in the first place, but grommets, covers or fixings just as well - to provide standardized geometries for the form-fitting gripping during handling and mating processes.
+
+Since this is a property of _any_ component and not of a specific component type, it is part of the "General Component Data" and described with the _SupportedGrippingFeatures_ of the {{< vec-class GeneralTechnicalPartSpecification >}}. A `GrippingFeature` is identified by a _Key_, whose meaning is defined by a _ReferenceSystem_ - the same pattern that is used for {{< vec-class Material >}} or {{< vec-class Color >}} (see [Physical Properties]({{< relref "../../key-concepts/physical-properties#reference-systems" >}})).
+
+{{% callout note %}}
+In contrast to {{< vec-class Material >}} or {{< vec-class Color >}}, the values of
+_SupportedGrippingFeatures_ are **not** alternative representations of one and the same value.
+They are the set of features the component actually provides. A component may therefore declare
+several entries for the same _ReferenceSystem_, as long as their _Key_ values differ. The combination
+of _ReferenceSystem_ and _Key_ must be unique.
+{{% /callout %}}
+
+It can be assumed that two components declaring the same _Key_ in the same _ReferenceSystem_ can be handled by the same gripper. This is what makes the information usable for a variance analysis: counting the distinct _ReferenceSystem_ / _Key_ combinations over all components of a harness yields the number of different grippers a production line has to provide.
+
+If a component supports no standardized gripping geometry at all, the attribute is simply absent. There is no dedicated "no gripping feature" value - an empty list is not distinguishable from "not specified", which is the regular VEC behaviour for optional information (see [Content Requirements](#content-requirements)).
+
+### Reference Systems for Gripping Features
+
+The _ReferenceSystem_ is a free string, so the same standard can be written down in different ways. For the variance analysis described above to work across suppliers, the spelling has to be agreed upon. The following values should be used:
+
+| Reference System | Value of _ReferenceSystem_ |
+|---|---|
+| DIN 72036 | `DIN 72036` |
+| A company specific system | The company name, consistent with its usage for {{< vec-class Color >}} and {{< vec-class Material >}} (e.g. `ACME Inc.`) |
+
+### XML Listing
+
+The listing below shows a connector housing that supports two different gripping features of the same reference system and one company specific feature. The gripping features are located in the {{< vec-class GeneralTechnicalPartSpecification >}}, the connector specific data in the {{< vec-class ConnectorHousingSpecification >}}. Both describe the same {{< vec-class PartVersion >}}.
+
+```xml
+<DocumentVersion id="id_00001">
+    <DocumentType>PartMaster</DocumentType>
+    <ReferencedPart>id_part_4711</ReferencedPart>
+    <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="id_gtps_1">
+        <Identification>GTPS_4711</Identification>
+        <DescribedPart>id_part_4711</DescribedPart>
+        <SupportedGrippingFeatures id="id_gf_1">
+            <Key>AR-1</Key>
+            <ReferenceSystem>DIN 72036</ReferenceSystem>
+            <Description>
+                <LanguageCode>en</LanguageCode>
+                <Value>Automation rib, type 1</Value>
+            </Description>
+        </SupportedGrippingFeatures>
+        <SupportedGrippingFeatures id="id_gf_2">
+            <Key>AR-3</Key>
+            <ReferenceSystem>DIN 72036</ReferenceSystem>
+        </SupportedGrippingFeatures>
+        <SupportedGrippingFeatures id="id_gf_3">
+            <Key>GRP-A</Key>
+            <ReferenceSystem>ACME Inc.</ReferenceSystem>
+        </SupportedGrippingFeatures>
+    </Specification>
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="id_chs_1">
+        <Identification>CHS_4711</Identification>
+        <DescribedPart>id_part_4711</DescribedPart>
+    </Specification>
+</DocumentVersion>
+```
 
 
 ## `PartMaster` - DocumentVersions
