@@ -17,6 +17,9 @@ https://ecad-wiki.prostep.org .
     - [Creating Diagrams](#creating-diagrams)
   - [Migration Cheat Sheat](#migration-cheat-sheat)
     - [Replace WikiLinks (in migrated .md)](#replace-wikilinks-in-migrated-md)
+- [Claude Code Index](#claude-code-index)
+  - [Rebuilding the index](#rebuilding-the-index)
+  - [Reading the build warnings](#reading-the-build-warnings)
 - [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -212,6 +215,83 @@ the replacement term is:
 {{< vec-class "$1" >}}
 ```
 
+
+## Claude Code Index
+
+The `.claude/` directory holds tooling for [Claude Code](https://claude.com/claude-code):
+the `vec-wiki` skill (`.claude/skills/vec-wiki/`) and the JSONL indices it queries
+(`.claude/index/`). The indices let the assistant answer "which pages does this change
+affect?" and "does this rule contradict an existing guideline?" without grepping the whole
+wiki.
+
+The five index files are generated artefacts, but they are **committed to the repository**
+so that the skill works on a fresh clone without a Python setup:
+
+| File | Contents |
+|---|---|
+| `classes.jsonl` | VEC classes and enumerations parsed from `vec-2.2.0.mdxml` |
+| `pages.jsonl` | Every markdown page under `content/specifications/vec/` |
+| `concepts.jsonl` | Inverted index: class → pages that mention it |
+| `relations.jsonl` | Typed class ↔ page and class → class edges |
+| `guidelines.jsonl` | Normative statements extracted via RFC 2119 keywords |
+
+### Rebuilding the index
+
+Rebuild whenever you add, remove or rename a guideline page, change a page's `classes:`
+front matter, add or reword a normative (MUST/SHALL/SHOULD/MAY) statement, or import a new
+model version. Content-only edits that touch none of these do not need a rebuild.
+
+The build script needs Python 3.10+ and three third-party packages, which are generally not
+installed system-wide. Use a virtual environment:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r .claude/tools/requirements.txt
+```
+
+Then run the builder **from the wiki root** — it resolves the model and content paths
+relative to the current directory:
+
+```bash
+.venv/bin/python .claude/tools/build_index.py
+```
+
+`.venv/` is git-ignored. The script overwrites all five files in `.claude/index/` and prints
+a per-file record count; review `git diff --stat -- .claude/index` and commit the result
+together with the content change that caused it.
+
+Useful options:
+
+```bash
+# build against a different model version
+.venv/bin/python .claude/tools/build_index.py --xmi content/specifications/vec/v210/vec-2.1.0.mdxml
+
+# run from outside the wiki root
+.venv/bin/python .claude/tools/build_index.py --wiki-root /path/to/wiki
+```
+
+### Reading the build warnings
+
+Phase 2 prints a warning for every name in a page's `classes:` front matter that does not
+resolve to an element in the indexed model:
+
+```
+WARNING: front-matter classes not in the VEC model: GrippingFeature
+```
+
+This has two possible causes, and they need opposite responses:
+
+- **A typo or a renamed class** — fix the front matter. An unresolved name is silently
+  dropped from `concepts.jsonl`, so the page becomes invisible to affect analysis.
+- **A class from a VEC version newer than the indexed model** — expected, and nothing to
+  fix. `GrippingFeature` is a VEC 2.3 class while the index is built from `vec-2.2.0.mdxml`,
+  so it cannot resolve. Be aware that the page is not reachable through `concepts.jsonl`
+  for that class until the index is rebuilt against a model that contains it; plain `grep`
+  over `content/` still finds it.
+
+Phase 1 also lists the elements with no generated class page (diagram legends and report
+helpers, excluded from the derived indices) and the classes carrying a `deprecated` marker.
+Both lists are informational.
 
 ## Troubleshooting
 

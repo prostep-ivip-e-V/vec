@@ -197,3 +197,36 @@ If a class name returns no results, try:
 2. Try the base class: look up `base_classifiers` in `classes.jsonl` and repeat the query with the parent.
 3. Try a synonym from `glossary.md` and retry with the English/canonical class name.
 4. Fall back to `grep -i` on the raw JSONL files.
+
+---
+
+## Checking whether the index is stale
+
+The JSONL files are committed build artefacts, so they can lag behind the
+content. Confirm they are current before trusting an empty or surprising result.
+
+```bash
+# Newest content page vs. newest index file — if content is newer, rebuild
+find content/specifications/vec -name '*.md' -newer .claude/index/pages.jsonl | head
+
+# Guideline pages changed on this branch but not yet reflected in the index
+git diff --name-only main... -- content/specifications/vec/guidelines
+```
+
+If either command returns anything, rebuild from the wiki root before querying:
+
+```bash
+.venv/bin/python .claude/tools/build_index.py
+```
+
+See "Rebuilding the index" in `SKILL.md` for the one-time venv setup and for how
+to read the build warnings.
+
+```bash
+# Which pages declare a class that resolves to nothing in the indexed model?
+# (These are invisible to concepts.jsonl — usually a typo, or a class from a
+#  VEC version newer than the indexed one.)
+comm -13 \
+  <(jq -r 'select(.has_generated_page) | .name' .claude/index/classes.jsonl | sort -u) \
+  <(jq -r '.linked_classes_frontmatter[]' .claude/index/pages.jsonl | sort -u)
+```
