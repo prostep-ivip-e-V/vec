@@ -900,6 +900,8 @@
 {"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "SlotMapping", "to_kind": "class", "source": "frontmatter"}
 {"from": "CavityMapping", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/connectors/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "CavityMapping", "to_kind": "class", "source": "frontmatter"}
+{"from": "ReferenceSurfaceDefinition", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/connectors/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "ReferenceSurfaceDefinition", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartRelation", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/connectors/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "PartRelation", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "PartVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/connectors/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -928,6 +930,8 @@
 {"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "ModularSlotAddOn", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ConnectorHousingCapSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/connectors/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "ConnectorHousingCapSpecification", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "GeneralTechnicalPartSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/connectors/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/component-types/connectors/", "from_kind": "guideline", "to": "GeneralTechnicalPartSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "PlacementPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/fixings/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/component-types/fixings/", "from_kind": "guideline", "to": "PlacementPoint", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "MeasurementPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/component-types/fixings/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1512,14 +1516,14 @@
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "PartOrUsageRelatedSpecification", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "PartVersion", "to_kind": "class", "source": "frontmatter"}
+{"from": "GeneralTechnicalPartSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "GeneralTechnicalPartSpecification", "to_kind": "class", "source": "frontmatter"}
 {"from": "Approval", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "Approval", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Creation", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "Creation", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ChangeDescription", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "ChangeDescription", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "GeneralTechnicalPartSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "GeneralTechnicalPartSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "PlaceableElementSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "PlaceableElementSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "LocalGeometrySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1532,6 +1536,10 @@
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "CustomProperty", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SpecificRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "SpecificRole", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "Material", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "Material", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "Color", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "Color", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "DocumentType", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-description/", "from_kind": "guideline", "to": "DocumentType", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "CavitySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-description/", "to_kind": "guideline", "source": "inline-shortcode"}
