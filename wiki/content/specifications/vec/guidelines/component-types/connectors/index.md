@@ -5,7 +5,7 @@ type: specs
 # Table of Content on the right side. Only useful for large pages.
 toc: true
 authors: [becker]
-tags: ["Connector", "Cap", "Modular", "Connection Points"]
+tags: ["Connector", "Cap", "Modular", "Connection Points", "Gripping", "Automation"]
 categories: []
 date: 2018-11-29
 lastmod: 2019-12-02T12:46:37+01:00
@@ -16,6 +16,9 @@ history:
   - date: 2025-06-13T00:00:00Z
     description: "Improved cavity mapping for modular connectors."
     ghIssue: "957"
+  - date: 2026-09-22T00:00:00Z
+    description: "Added delimitation of gripping features and reference surfaces."
+    ghIssue: "1163"
 
 
 classes:
@@ -27,6 +30,8 @@ classes:
   - Mapping
   - SlotMapping
   - CavityMapping
+  - ReferenceSurfaceDefinition
+  - GrippingFeature
 
 menu:
   vec-guidelines:
@@ -98,3 +103,22 @@ If a {{< vec-class ConnectorHousingSpecification >}} has {{< vec-class ModularSl
 {{< figure src="simple_connectorhousingcap_wireaddon.jpg" title="Wire Add-Ons for the Usage of Caps" numbered="true" lightbox="true">}}
 
 Wire add-ons caused by cap's are defined in the {{< vec-class ConnectorHousingCapSpecification >}}. The specified value is the add-on required to reach the {{< vec-class SegmentConnectionPoint >}} of the ConnectorHousing from the entry point of the cap.
+
+## Gripping Features and Reference Surfaces
+
+{{% callout note %}}
+This section applies to VEC 2.3 and later. The class `GrippingFeature` and the attribute
+{{< vec-class GeneralTechnicalPartSpecification >}}._SupportedGrippingFeatures_ were introduced
+with version 2.3.
+{{% /callout %}}
+
+Connector housings are the primary driver for the description of gripping features, because they are the components a gripper has to handle and mate in an automated assembly process. Gripping features are however not a connector specific property: they are described with the _SupportedGrippingFeatures_ of the {{< vec-class GeneralTechnicalPartSpecification >}} of the component, which allows the same information for grommets, covers or fixings. See [Component Description]({{< relref "../../product-definition/component-description#gripping-features" >}}) for a detailed explanation.
+
+A connector housing typically carries two pieces of handling relevant information, which shall not be confused with each other:
+
+| Concept | Located at | Describes |
+|---|---|---|
+| _SupportedGrippingFeatures_ | {{< vec-class GeneralTechnicalPartSpecification >}} | The features (e.g. an automation rib) that allow the **form-fitting gripping** of the component by a gripper during handling and mating processes. |
+| {{< vec-class ReferenceSurfaceDefinition >}} | {{< vec-class ConnectorHousingSpecification >}} | The contact surfaces of the housing towards a **work piece holder**, including their tolerance limits. They support the accurate determination of cavity positions, e.g. during the insertion process. |
+
+A connector housing can, and typically will, be described with both.
