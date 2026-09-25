@@ -42,13 +42,13 @@ baseline the open decisions build on.
 |---|---|---|
 | **D-A** | A serialised VEC is a snapshot / baseline; a VEC is exchange, not data management. | #1160 |
 | **D-B** | The cut into `DocumentVersion`s is process-specific and reflects responsibilities and approvals. It is **not** a structural boundary of the model and **not** a boundary for references. `DocumentVersion`s are building blocks of an interface architecture. | #1160 |
-| **D-C** | Guidelines may describe *typical* `Specification` content for a `DocumentType`, always with optionality; they cannot prescribe it. | #1160 (R1) |
+| **D-C** | Guidelines may describe *typical* `Specification` content for a `DocumentType`, always with optionality; they cannot prescribe it. Process partner and individual interface contracts are free define stricter requirements. | #1160 (R1) |
 | **D-D** | Receivers locate information by navigating model relationships, not by keying off `DocumentType` (which is `0..1` and open) or an expected `DocumentVersion` layout. | #1160 (R3) |
 | **D-E** | A `HarnessDescription` is anything that describes the harness as a physical product, regardless of informational completeness. The other harness-related literals are different views, not more specific kinds. | #1160 (R4) |
 | **D-F** | The scope of one `HarnessDescription` (one harness, several, harness + adapter, RL/LL as variants or as separate harnesses) is a process decision. | #1158, 19.03.2026 |
-| **D-G** | Within a harness description, each aggregation level of the BOM ("Klammerobjekt") has its own container of occurrences. Components lie flat in one container; modules reference their subset from that pool and have no container of their own; module occurrences lie in a second container; if harnesses are instantiated in a Bordnetz, those occurrences lie in a third. | #1158, 19.03.2026 |
+| **D-G** | Within a harness description, each aggregation level of the BOM ("Klammerobjekt") has its own container (`CompositionSpecification`) of occurrences. Components lie flat in one container; modules reference their subset from that pool and have no container of their own (150% approach); module occurrences lie in a second container; if harnesses are instantiated in a Bordnetz, those occurrences lie in a third. | #1158, 19.03.2026 |
 | **D-H** | The BOM of a KSK / Stufenleitungssatz does not stop at module level: module occurrences are needed to carry logistic control information (`VariantConfiguration` / `ConfigurationConstraint`). A bracket with a part number is a `PartVersion`, otherwise a `PartUsage`. | #1158, 19.03.2026 |
-| **D-I** | An occurrence that belongs exclusively to modules is controlled via those modules and needs no own control information. | #1158, 19.03.2026 |
+| **D-I** | An occurrence that belongs exclusively to modules is controlled via those modules and needs no own control information. More precisely, occurrences that belong to a composite part without without variance do not need control information. If they belong to a part with a 150% BOM additional control information is needed (see modules in a KSK) | #1158, 19.03.2026 |
 | **D-J** | Library parts (assemblies, "neutral" modules shared across harnesses) keep their container in their own master-data document; their occurrences are re-instantiated in the using context with `instanciatedOccurrence` traceability. | #1158, 19.03.2026 (confirms `composite-parts`) |
 | **D-K** | Transporting a whole Bordnetz keeps the per-harness `DocumentVersion`s and their containers. For whole-network design, merging everything into one `DocumentVersion` — and the containers per level — is permitted. | #1158, 19.03.2026 |
 | **D-L** | Catalogue parts with inner structure are modelled as an assembly containing `PartUsage`s / `PartOccurrence`s, **not** as an E/E component or connector "that has a BOM". Consumers filter the occurrences relevant to them. | #1078, 19.02.2025 |
@@ -120,6 +120,8 @@ group also wants an explicit "unused" marking in the model is part of
 [Decision 1](#decision-1--replacement-rule-for-instantiation).
 
 ### 3.4 "Unified handling of assemblies and modules" — the argument is inverted, not lost
+
+Meeting Note: The `subComponent` is only used for occurrences that are actually instanciated to describe the installation of the composite part within its using context.
 
 The only *justification* the wiki gives for the redundant `subComponent` list on in-place modules
 is `composite-parts` line 186: *"This unifies the handling of assemblies and modules for reading
@@ -356,16 +358,15 @@ one, and what it unblocks.
 - **1b Absence semantics.** Proposed: state that a missing instantiation element is "no
   statement", name the `general/xml-xsd` tightening route, and **do not** add an "explicitly
   unused" marking to the model unless a concrete use case is named.
-- **1c In-place modules and `subComponent`.** Proposed: a module occurrence's
-  `PartWithSubComponentsRole` **may** omit `subComponent`; wherever `subComponent` is filled (module
-  or library assembly), it lists the subcomponent occurrences that exist in the using context and
-  shall be a subset of the `PartStructureSpecification`'s `inBillOfMaterial`. The sentence *"This
-  unifies the handling of assemblies and modules for reading systems"* is removed, not softened —
+- **1c In-place modules and `subComponent`.** Proposed: If an occurrence is instanctiated in the using context (see 1a), and only then, those occurrences shall be associated with the respective composite part occurrence (`PartWithSubComponentsRole`) via the `subComponent` association to have a clear definition of their "owner". The `instanciatedOccurrences` of the `subComponents` of a `PartWithSubComponentsRole` shall be subset of the `PartOccurrence`s referenced by the respective `PartStructureSpecification`.   
+  The sentence *"This unifies the handling of assemblies and modules for reading systems"* is removed, not softened —
   per [section 3.4](#34-unified-handling-of-assemblies-and-modules--the-argument-is-inverted-not-lost)
   uniform handling is what D-M *restores*, and the composition is read at the part master, the
   membership at the occurrence.
 - **1d Page shape.** `general/instantiation` keeps its URL and its type→instance correspondence
   paragraph; the rule paragraph is replaced.
+
+Decision 23.09.2026: All proposed statements confirmed  
 
 Unblocks: all Theme I edits; #1158 Q7; the pigtail example.
 
@@ -377,7 +378,7 @@ delimitation and the container/BOM clarification from
 
 - **2a Criterion.** Proposed: *"Is the contained item included in the catalogue part number?"* —
   yes → it is a position in the part's `PartStructureSpecification` (`Content = Assembly`);
-  no → `PartRelation` (accessory) or, for selectable inserts of one housing, `ModularSlot`. The
+  no → `PartRelation` (accessory). The selectable inserts of one housing, `ModularSlot` case mentioned above is just a special case of part relation. The
   decision table goes into the new page ([7](#7-consolidated-action-plan)).
 - **2b Container ≠ BOM.** Proposed: state explicitly, in `composite-parts` and on the model pages,
   that occurrences may live in a `CompositionSpecification` / `PartUsageSpecification` without
@@ -390,6 +391,8 @@ delimitation and the container/BOM clarification from
   without any further specifications about its contents (D-M applies to master data too), and
   that the contents' specifications needed by rule checkers (crimp ranges, cavity system, mating
   capability) are the *typical*, not the required, content.
+
+Decision 23.09.2026: All proposed statements confirmed  
 
 ### Decision 3 — Marking and type of contained anonymous parts
 
@@ -410,6 +413,8 @@ delimitation and the container/BOM clarification from
   `realizedPartUsage` is expected. Widen the `PartUsage` class documentation accordingly. No new
   `PartNumberType` literal unless the group prefers the `PartVersion` route.
 
+Decision 23.09.2026: All proposed statements confirmed. `PartUsage` can denote a fully determined component. No new `PartNumberType`, no `PartVersion` route.
+
 ### Decision 4 — T-parts and control-information inheritance
 
 *#1158 Q3, A9.* Should a component occurrence shared by several modules, or by none, be listed in
@@ -419,6 +424,8 @@ Proposed: **all** modules that require it list it (the BOM of each module is the
 D-I applies); an occurrence in no module carries its own `ConfigurationConstraint`. Needs
 confirmation because it affects quantity semantics (`OccurrenceOrUsage.quantity`) when a shared
 occurrence is counted once per module.
+
+Decision 23.09.2026 no changes needed. "T-Teile" would be just occurrences without an explicit module but with their own variant configuration information and "Komponlettierungsumfänge" are already supported with `ModuleList`. 
 
 ### Decision 5 — Representation of the Gesamtbordnetz
 
@@ -438,6 +445,14 @@ occurrence is counted once per module.
   neither provides. Revisit if 5b admits (2) and a bracket document is wanted. `NetworkArchitecture`
   must be documented at the same time to avoid confusion.
 
+Decision 23.09.2026: 
+- 5a) confirmed. 
+- 5b) is a spectrum (1) is the smallest. However, 2/3 are also possibilities. If 1) is really just a VEC file with multiple harness description documents, then there should be a reminder to the VEC packaging rules (only place data in a single VEC file things that is required/interconnected). Merging all harness descriptions into a single "Bordnetz" document is possible. However, its usefullness is questionable. If additional information is added (2) like a coupling information or baselines, a documentversion for containment is required.    
+- 5c) literals are needed for `PartStructureContentType`: 
+  - `VehicleNetwork` (collection of 150% harnesses, full variance) and 
+  - `CarSet` is configured set for a 100% vehicle. 
+- 5d) deferred. 
+
 ### Decision 6 — Merge behaviour and container scoping
 
 *#1158 Q6.* When a Bordnetz is merged into one `DocumentVersion` (D-K):
@@ -447,6 +462,10 @@ occurrence is counted once per module.
   traceability, keeps `harness` line 345 ("per harness") meaningful, and still satisfies D-K.
 - The case is written as the second worked example of the #1160 R6 semantic-merge carve-out in
   `general-structure`, alongside `system-schematic`.
+
+Decision 25.09.2026: 
+- Merging the content of HarnessDescription DocumentVersions into a single "VehicleNetwork" DocumentVersions is possible, but not recommended. In contrast to the "merging partial system schematics into an integrated system" case, the  "putting harnesses into a vehicle" is not a case where the harness itself would change or would behave differently if it is put into the vehicle. Only if that is the case, a "merge" document could be useful. 
+- Normally (when the individual harnesses remain unchanged), you would put the  HarnessDescription DocumentVersions together into a VEC file and then add (one or more) DocumentVersions that describe the mapping between the harnesses (the coupling), the validity (e.g. BaselineSpecification) and other things that might be related to complete Vehicle.
 
 ### Decision 7 — Cardinality of `HarnessDescription` per `PartVersion`
 
@@ -458,6 +477,8 @@ the one owning the BOM — carrying the `PartStructureSpecification` (TC-0003 st
 merge there is one `DocumentVersion` (TC-0005 stays). Written once, in `digital-change-tracking`,
 and referenced from `product-definition/_index.md`.
 
+Decision 25.09.2026: confirmed
+
 ### Decision 8 — Cross-organisational equivalence (split out)
 
 *#1078 Q6.* "Monolithic for the OEM, a structure for the manufacturer." `ItemEquivalence` exists,
@@ -467,6 +488,18 @@ intended, and there is no implementation guideline for `ItemEquivalence` at all.
 
 Proposed: **split into its own issue**; it needs its own page under `pdm-information` and is not
 blocking anything above.
+
+Decision: 25.09.2026:
+- Carve out into a own issue, however there are relations to the topics here.
+- Above, we discussed that it is not valid to give a "ZSB" a specification of one of its subcomponents (e.g. E/E-Component). This is still true, but requires refinement. If a ZSB has in its **assembled state** properties of a component type available in the VEC it is valid to use this `PrimaryPartType` and not the `PartStructure`. This is best explained in an example:
+    - You have a part, that is defined as `ConnectorHousing` by the OEM (with a `ConnectorHousingSpecification`).
+    - For the Tier-1 this is a ZSB, consisting of two contact carriers (each 20pins) (specified by individual `ConnectorHousingSpecification`), a backshell, lever, etc. 
+    - Still in its assembled state has the properties of a connector with 40 pins. 
+    - In the VEC, this could be expressed by a PartVersion, with primaryPartType ConnectorHousingSpecification and a PartStructurSpecification (and other specifications required)
+    - This is a totaly different case to the "E/E Komponenten mit Kabelschwanz" or the "USB-Cable" where the assembled component has complex properties that are the sum of multiple different aspects (e.g. the E/E-Component, some wiring, connectors etc.). Those must be represented as `PartStructure` and the specific properties are defined by the sub components. Part that have a topology will never meet the requirements for being something else than "PartStructure". The others might. 
+- Having different truths about a part (e.g. OEM vs. Tier1) can be expressed in two ways in the VEC (depending on process and methodology). 
+  1. Different `PartVersion` objects (OEM-PN vs Tier1-PN), both are specified by different specifications. Between those an "ItemEquivalence" can be set. 
+  2. A single `PartVersion` with different `DocumentVersion`s containing `Specification`s describing the `PartVersion` each containing the truth of one process partner. In that case you might resolve different specifcations of the same type when navigating from `PartVersion` to `Specification` describing it. To resolve the correct one a reader must resolve the containing context and decide which one is relevant for his use case. 
 
 ### Decision 9 — Housekeeping that needs no discussion, only a go
 
@@ -479,6 +512,7 @@ blocking anything above.
 - `vec-wiki` skill `glossary.md`: `Wire` → `WireElement` / `WireSpecification`.
 - #1078 comment "Possibly duplicated issues" — name and close them before drafting.
 
+Decision 25.09.2026: do it.
 ---
 
 ## 7. Consolidated Action Plan
