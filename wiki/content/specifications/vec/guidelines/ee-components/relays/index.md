@@ -5,8 +5,12 @@ authors: []
 tags: ["part-master"]
 categories: []
 date: 2018-11-29
-lastmod: 2019-03-07
+lastmod: 2026-09-28
 draft: false
+history:
+  - date: 2026-09-28
+    description: Instantiate only the structure elements relevant in the context
+    ghIssue: "1078"
 
 classes:
   - RelaySpecification
@@ -36,4 +40,4 @@ For more information see [Switching States]( {{< relref "../#switching-states" >
 
 ## Instantiating relays 
 
-Instantiating relays is like instantiating any other EE-Component. A {{< vec-class EEComponentRole >}} under a {{< vec-class PartOccurrence >}} references the {{< vec-class RelaySpecification >}} and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see chapter [E/E-Components]( {{< relref ".." >}}).
+Instantiating relays is like instantiating any other EE-Component. A {{< vec-class EEComponentRole >}} under a {{< vec-class PartOccurrence >}} references the {{< vec-class RelaySpecification >}}. The structure elements underneath are instantiated as far as they are relevant in the context (see [Instantiation of Model Structures]({{< relref "../../general/instantiation" >}})) and reference their corresponding part master element. For more information see chapter [E/E-Components]( {{< relref ".." >}}).

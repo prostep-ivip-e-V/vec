@@ -7,8 +7,12 @@ authors: ["becker"]
 tags: ["part-master", "instantiation"]
 categories: []
 date: 2018-11-29
-lastmod: 2019-03-07
+lastmod: 2026-09-28
 draft: false
+history:
+  - date: 2026-09-28
+    description: Instantiate only the structure elements relevant in the context
+    ghIssue: "1078"
 
 menu:
   vec-guidelines:
@@ -30,4 +34,4 @@ The *PinComponent* can reference a {{< vec-class TerminalSpecification >}} to de
 
 ## Instantiating fuses 
 
-Instantiating fuses is like instantiating any other EE-Component. A {{< vec-class "EEComponentRole" >}} under a {{< vec-class "PartOccurrence" >}} references the {{< vec-class "FuseSpecification" >}} and all structure elements underneath will be instantiated and references their corresponding part master element, too. For more information see [E/E-Components]({{< relref ".." >}}).
+Instantiating fuses is like instantiating any other EE-Component. A {{< vec-class "EEComponentRole" >}} under a {{< vec-class "PartOccurrence" >}} references the {{< vec-class "FuseSpecification" >}}. The structure elements underneath are instantiated as far as they are relevant in the context (see [Instantiation of Model Structures]({{< relref "../../general/instantiation" >}})) and reference their corresponding part master element. For more information see [E/E-Components]({{< relref ".." >}}).
