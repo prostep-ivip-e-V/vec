@@ -11,10 +11,24 @@ draft: false
 review: true
 
 classes:
+  - DocumentVersion
+  - PartVersion
+  - PartOccurrence
+  - CompositionSpecification
+  - PartStructureSpecification
+  - PartStructureContentType
+  - PartWithSubComponentsRole
+  - VariantConfigurationSpecification
+  - VariantConfiguration
+  - ConfigurationConstraintSpecification
+  - ConfigurationConstraint
 
 history:
   - date: 2025-02-13
     description: "Started Implementation Guideline for Mapping a Harness in the VEC"
+  - date: 2026-09-28T00:00:00Z
+    description: "Housekeeping: added missing content to the harness listing, aligned diagram labels, filled in classes."
+    ghIssue: "1158"
 
 
 menu:
@@ -201,7 +215,7 @@ graph LR;
   CS -- contains --> O;
   O -- instance of --> P;
   PS -- describes --> P;
-  PS -- in BoM --> O;
+  PS -- "bill of material" --> O;
 ```
 The {{< vec-class CompositionSpecification >}} serves as a container for defining {{< vec-class PartOccurrence >}}s. At this stage, it is not yet associated with any specific part and does not represent a configuration of parts. Such an independent container is necessary, particularly when describing variant-rich (150%) products, where individual occurrences of parts cannot always be uniquely assigned to a single configuration unit and may be reused in multiple contexts (150% definition).
 
@@ -235,7 +249,7 @@ graph LR;
   PVH["PartVersion"]
   PSH["PartStructureSpecification"];
 
-  PSM -- in BOM --> OC;
+  PSM -- "bill of material" --> OC;
   OM -- instance of --> PVM;
   subgraph "Components (Part Master Definition)"
     PVO["PartVersion"];
@@ -252,7 +266,7 @@ graph LR;
   end
   subgraph Harness/HarnessConfiguration
     PSH -- describes --> PVH;
-    PSH -- in BOM --> OM;
+    PSH -- "bill of material" --> OM;
   end
 ```
 Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master definition of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
@@ -331,6 +345,7 @@ Based on the module {{<vec-class PartOccurrence >}}s, now a {{<vec-class PartStr
     <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00367">
       <Identification>PSS-LTG0011200</Identification>
       <DescribedPart>PartVersion_00500</DescribedPart>
+      <Content>Harness</Content>
       <InBillOfMaterial>PartOccurrence_00287 ...</InBillOfMaterial>
     </Specification>
 ```

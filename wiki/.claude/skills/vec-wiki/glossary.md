@@ -7,7 +7,7 @@ German term to the VEC class name(s) before querying the indices.
 |---|---|---|---|
 | Stecker | Connector | `ConnectorHousingSpecification`, `PartVersion` (when component) | "Stecker" colloquially conflates housing and the whole component |
 | Buchse | Socket / Female connector | `ConnectorHousingSpecification` | Opposite gender to Stecker |
-| Leitung | Wire / Cable | `Wire`, `WireSpecification` | |
+| Leitung | Wire / Cable | `WireElement`, `WireSpecification`, `WireElementReference` | There is no class `Wire` in VEC 2.2.0 |
 | Kabel | Cable | `WireSpecification`, `CableSpecification` | "Kabel" often refers to multi-core assemblies |
 | Systemschaltplan | System schematic | `NetSpecification`, `ConnectionSpecification`, `Connection` | Top-level electrical network description |
 | Kabelbaum | Wiring harness | `VecContent`, `PartVersion` (harness-level) | Top-level assembly |
