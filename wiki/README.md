@@ -15,6 +15,7 @@ https://ecad-wiki.prostep.org .
   - [Implementation Guidelines](#implementation-guidelines)
     - [Related content](#related-content)
     - [Creating Diagrams](#creating-diagrams)
+    - [Creating Diagrams with Claude Code](#creating-diagrams-with-claude-code)
   - [Migration Cheat Sheat](#migration-cheat-sheat)
     - [Replace WikiLinks (in migrated .md)](#replace-wikilinks-in-migrated-md)
 - [Claude Code Index](#claude-code-index)
@@ -179,6 +180,39 @@ of the recommendation) and vice versa.
 
 Visio like Diagrams can be created as SVG via [draw.io](https://draw.io). The WEB editor 
 supports gitlab.com as backend for storage, so can load & save directly from a gitlab branch.
+
+#### Creating Diagrams with Claude Code
+
+[Claude Code](https://claude.com/claude-code) can generate draw.io diagrams with the
+[draw.io plugin](https://github.com/jgraph/drawio-mcp). The plugin is enabled for this
+project in `.claude/settings.json`; register its marketplace once per machine:
+
+```
+/plugin marketplace add jgraph/drawio-mcp
+/plugin install drawio@drawio
+```
+
+Then describe the diagram and the output format, for example:
+
+```
+/drawio:drawio create an illustration format SVG for the issue in analysis/ig-02-issue.md
+/drawio:drawio png class diagram of ConnectorHousingSpecification, Slot and Cavity
+```
+
+Without a format, the result is a plain `.drawio` file. Exported files use a double extension
+(`name.drawio.svg`, `name.drawio.png`, `name.drawio.pdf`) and contain the diagram itself, so
+they can be opened and edited again in draw.io.
+
+Exporting to SVG, PNG or PDF requires the [draw.io desktop app](https://www.drawio.com/)
+(it provides the command line used for export and layout). Without it, the plugin can only
+produce `.drawio` files or a link that opens the diagram in the web editor.
+
+Under WSL it is sufficient to install the desktop app on **Windows**; the plugin finds it in
+the default install location (`C:\Program Files\draw.io`). A separate Linux installation
+inside WSL is not needed.
+
+SVGs exported by draw.io embed a raster fallback for every formatted label, so they are
+larger than expected (around 1 MB for a medium diagram). Browsers do not use the fallback.
 
 ### Migration Cheat Sheat
 
