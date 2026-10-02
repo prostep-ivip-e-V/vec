@@ -9,13 +9,18 @@ categories: []
 date: 2021-03-01
 lastmod: 2019-11-28T15:11:41+01:00
 draft: false
-review: false
+review: true
 
 classes:
   - PartStructureSpecification
   - CompositionSpecification
+  - PartUsageSpecification
   - PartStructureContentType
   - PartWithSubComponentsRole
+  - PartOccurrence
+  - PartUsage
+  - PartVersion
+  - DocumentVersion
 
 history:
   - date: 2022-04-24
@@ -24,6 +29,9 @@ history:
   - date: 2022-04-25
     description: "Harness & Configurations in the VEC"
     issue: "KBLFRM-1059"
+  - date: 2026-10-02
+    description: "Instantiation of context relevant subcomponents; composition vs. membership"
+    ghIssue: "1174"
 
 
 menu:
@@ -113,13 +121,17 @@ If any information about the subcomponents or their relationships should be defi
 ```
 ### Usage of an Assembly
 
+{{< gh-review "1174" >}}
+
 An assembly is normally used in a context different from its definition, e.g., the assembly is defined in a master data library and used in a wiring harness. The following figure "Assembly Instantiation" illustrates this scenario.
 
 {{< figure src="assembly-instantiation.svg" numbered="true" lightbox="true" title="Assembly Instantiation">}}
 
-The instantiation of an assembly is normally done in a separate {{<vec-class DocumentVersion >}} (e.g. the definition of a harness, highlighted in purple in the figure above). The assembly itself is instantiated with a {{<vec-class PartOccurrence >}} and a {{<vec-class PartWithSubComponentsRole >}}, which is the corresponding {{<vec-class Role>}} for a {{<vec-class PartStructureSpecification>}}. Additionally, all subcomponents (referenced by the {{<vec-class PartStructureSpecification>}}) **must be** instantiated in the using context as well (_Component A*_ & _Component B*_). By default, those are clones of their part master data definitions. To preserve traceability between occurrences from the part master definition and the occurrences in instantiation context, each instance is referencing its corresponding part master data occurrence as `InstantiatedOccurrence`. In order to identify their affiliation to a particular assembly instance the {{<vec-class PartWithSubComponentsRole >}} references all of them as `SubComponent`. 
+The instantiation of an assembly is normally done in a separate {{<vec-class DocumentVersion >}} (e.g. the definition of a harness, highlighted in magenta in the figure above). The assembly itself is instantiated with a {{<vec-class PartOccurrence >}} and a {{<vec-class PartWithSubComponentsRole >}}, which is the corresponding {{<vec-class Role>}} for a {{<vec-class PartStructureSpecification>}}. Subcomponents of the assembly (referenced by the {{<vec-class PartStructureSpecification>}}) are instantiated in the using context if the context makes a statement about them (_Component A*_ & _Component B*_, see [Instantiation of Model Structures]({{< relref "../../general/instantiation" >}})). By default, those are clones of their part master data definitions. To preserve traceability between the occurrences of the part master definition and the occurrences in the using context, each instantiated occurrence shall reference its corresponding part master data occurrence as `InstanciatedOccurrence`. In order to identify their affiliation to a particular assembly instance, the {{<vec-class PartWithSubComponentsRole >}} shall reference them as `SubComponent`. Consequently, the `InstanciatedOccurrence`s of the `SubComponent`s are a subset of the `InBillOfMaterial` of the assembly's {{<vec-class PartStructureSpecification>}}.
 
-At a first glance, this detailed approach may seem partially redundant and superfluous. However, it offers the possibility to redefine properties of the occurrences in the usage and also allows precise definition of the actual usage. Here are some examples:
+If the using context does not state anything about the subcomponents (e.g. in a pure bill of material view), no subcomponent is instantiated and the `SubComponent` association remains empty.
+
+Instantiating subcomponents in the using context makes it possible to redefine properties of the occurrences in the usage and to define the actual usage precisely. Typical reasons for instantiating a subcomponent are:
 
 - **Redefinition of identifier and descriptions and associations:** Connectors and cores of a predefined cable will have generic names and identifiers in the assembly definition. When used in a vehicle, connectors will fullfil a specific function, so identifiers for connectors will be derived from {{<vec-class UsageNode>}}s; descriptions will be function specific (e.g., "Infotainment USB Port Center Console") and cores will realize system schematic connections of the vehicle. Furthermore, the same cable could be used multiple times in the same vehicle for different functions.
 - **Redefinition of technical properties:** Technical properties of an assembly might change in a specific usage. E.g., a predefined cable (contacted only on one side) comes in a specific length. During the harness assembly it might be cut down to the required length.
@@ -177,13 +189,17 @@ Not all harnesses are designed as customer specific harnesses. For less complex 
 
 ### Details
 
+{{< gh-review "1174" >}}
+
 The following figure shows the basic structure of a harness definition in the VEC. It has to be read from left to right.
 
 {{< figure src="harness-definition.svg" numbered="true" lightbox="true" title="Basic Concept of a Harness">}}
 
 The harness definition starts on the left hand side with the `COMPONENTS` {{<vec-class CompositionSpecification >}}. It contains all component occurrences that are required for the harness (or its definition). If the harness contains components without a specific {{<vec-class PartVersion >}}, the use of {{<vec-class PartUsage >}}s is also valid. The illustration contains only the hierarchical structure of a harness definition. A complete definition will include a wide variety of additional {{<vec-class Specification>}}s that allow the detailed definition of the harness based on the occurrences (e.g. {{<vec-class TopologySpecification >}}, {{<vec-class PlacementSpecification >}}, {{<vec-class RoutingSpecification >}}, {{<vec-class ContactingSpecification >}}).
 
-Based on these part occurrences, each module (_Module A_ & _Module B_) has a {{<vec-class PartStructureSpecification >}} (highlighted in yellow), that describes its {{<vec-class PartVersion>}}. This is completely analogous to the representation of assemblies. However, a harness (or a variant) is not created with _Module PartVersions_ but with {{<vec-class PartOccurrence>}}s of modules. For a clear structuring of the containments in VEC document the module occurrences (highlighted in orange) are placed in a second {{<vec-class CompositionSpecification >}}, the `MODULES` in the middle of the illustration. Each module's {{<vec-class PartOccurrence>}} has a {{<vec-class PartWithSubComponentsRole >}}, just as described above to the assembly instancing. However, due to the special nature of modules in a harness definition, the {{<vec-class PartWithSubComponentsRole >}} does not reference a cloned set of {{<vec-class PartOccurrence>}}s, but the same that are used for {{<vec-class PartStructureSpecification >}}. **All** {{<vec-class PartOccurrence>}}s referenced by the corresponding {{<vec-class PartStructureSpecification >}} as `InBillOfMaterial` must also be referenced as `SubComponent` by the {{<vec-class PartWithSubComponentsRole >}}. This supposed redundancy is due to the fact that a module is in principle defined by its first (and often only) occurrence. Although redundant, it is intentionally required to fill both associations (`PartStructureSpecification -> PartOccurrence` & `PartWithSubComponentsRole -> PartOccurrence`). This unifies the handling of assemblies and modules for reading systems. 
+Based on these part occurrences, each module (_Module A_ & _Module B_) has a {{<vec-class PartStructureSpecification >}} (highlighted in yellow), that describes its {{<vec-class PartVersion>}}. This is completely analogous to the representation of assemblies. However, a harness (or a variant) is not created with _Module PartVersions_ but with {{<vec-class PartOccurrence>}}s of modules. For a clear structuring of the containments in VEC document the module occurrences (highlighted in orange) are placed in a second {{<vec-class CompositionSpecification >}}, the `MODULES` in the middle of the illustration. Each module's {{<vec-class PartOccurrence>}} has a {{<vec-class PartWithSubComponentsRole >}}, just as described above for the instantiation of assemblies. However, modules are normally defined _in place_ (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}): the definition of the module coincides with its only usage. The {{<vec-class PartOccurrence>}}s referenced as `InBillOfMaterial` by the module's {{<vec-class PartStructureSpecification >}} are already the occurrences in the using context. They are not cloned and there is no `InstanciatedOccurrence` reference.
+
+The `SubComponent` association of a {{<vec-class PartWithSubComponentsRole >}} is intended for subcomponents that are instantiated in a using context (see [Usage of an Assembly]({{< relref "#usage-of-an-assembly" >}})). As the composition of an in-place module is completely defined by its {{<vec-class PartStructureSpecification >}} and nothing is instantiated, the {{<vec-class PartWithSubComponentsRole >}} of an in-place module should not reference `SubComponent`s. Reading systems shall nevertheless accept such references (e.g. in data created according to earlier versions of this guideline); if present, they shall be a subset of the `InBillOfMaterial` of the {{<vec-class PartStructureSpecification >}}.
 
 Finally (on the right side), the harness (150%) or a specific variant (100%) is defined as "bill of modules" with a {{<vec-class PartStructureSpecification >}} referencing all module occurrences that belong to the harness.
 
@@ -192,5 +208,14 @@ Even if this represention of a harness in the VEC appears to be somewhat more ex
 1. The VEC has a general concept for a multilevel bill of material with support of variance. The number of levels (components, assemblies, modules, harness) is arbitrary. It is also possible to create an orthogonal structuring, e.g., for production BOMs vs. logistic BOMs.
 1. The {{<vec-class PartOccurrence>}} separates context specific information (e.g,. variant configurations) from part master data. If a harness is reused and a module has different context information (e.g. different variant configurations in different vehicles) then, this is possible without recreating a module. 
 1. Reusing shared modules in different harnesses is, with slight changes for the reusing context, also supported. 
+
+#### Composition and Membership
+
+A reading system can ask two different questions about a composite part, which are answered by different navigation directions:
+
+- **What does the composite part consist of?** (_composition_) The composition is always defined by the {{<vec-class PartStructureSpecification >}} (`InBillOfMaterial`) of the composite part. It is reached from any instance of the composite part via `PartWithSubComponentsRole.PartStructureSpecification`. The instantiated subcomponents in a using context are not the place to look for the complete composition, since only the subcomponents relevant for the context are instantiated.
+- **Which composite part does an occurrence belong to?** (_membership_) Coming from an occurrence in the using context (e.g. from a routing, a contacting or a placement), a reading system finds the composite part by navigating the references in inverse direction:
+  - For in-place modules, via the {{<vec-class PartStructureSpecification >}}s that reference the occurrence as `InBillOfMaterial`.
+  - For instantiated library parts, via the {{<vec-class PartWithSubComponentsRole >}} that references the instantiated occurrence as `SubComponent`. This is the only reference that assigns an instantiated subcomponent to a specific instance of the assembly, if the assembly is used several times in the same context. The `InstanciatedOccurrence` only identifies the origin in the part master definition.
 
 [^1]: Stufenkabelbaum

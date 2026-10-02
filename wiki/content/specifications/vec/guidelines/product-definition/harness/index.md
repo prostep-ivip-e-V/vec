@@ -29,6 +29,9 @@ history:
   - date: 2026-09-28T00:00:00Z
     description: "Housekeeping: added missing content to the harness listing, aligned diagram labels, filled in classes."
     ghIssue: "1158"
+  - date: 2026-10-02T00:00:00Z
+    description: "Instantiation of context relevant subcomponents; no SubComponent references for in-place modules."
+    ghIssue: "1174"
 
 
 menu:
@@ -176,6 +179,8 @@ A VEC derived from a single KBL contains one `HarnessDescription` document for t
 
 ### Bill of Material / Part Structure
 
+{{< gh-review "1174" >}}
+
 One central view on the product is the bill of material (BoM) or part structure. The information which parts (components) are used for the harness, its variants and modules.
 
 The KBL has a very explicit definition of the part structure with predefined levels and semantics, compare the diagram below (_Note: The diagram is, for the sake of simplicity, conceptually, and not precisely KBL syntax_):
@@ -272,7 +277,7 @@ graph LR;
 Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master definition of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
 
 {{% callout note %}}
-A detail not shown in the diagram above is that an instance of a BoM part must include references to its subcomponents. In the case of library parts (i.e., {{<kbl-class Assembly_part >}} in KBL), the subcomponents are represented by distinct {{<vec-class PartOccurrence >}} instances, separate from those used to define the part’s structure.
+A detail not shown in the diagram above is the instantiation of the subcomponents of a BoM part. In the case of library parts (i.e., {{<kbl-class Assembly_part >}} in KBL), subcomponents that are relevant in the using context are represented by distinct {{<vec-class PartOccurrence >}} instances, separate from those used to define the part’s structure, and referenced as `SubComponent` by the instance of the BoM part.
 
 In contrast, for modules within a wiring harness, the same {{<vec-class PartOccurrence >}} instances are reused, both to define the structure and for instantiation. This distinction reflects different instantiation approaches and has important implications for reuse and traceability. A detailed explanation of these modeling approaches can be found in the VEC specification under: {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}
 
@@ -290,6 +295,9 @@ The following table defines the Mapping between KBL classifications and {{<vec-c
 | {{<kbl-class Assembly_part >}}    | `Assembly`    |
 
 #### XML Representation
+
+{{< gh-review "1174" >}}
+
 The following XML listings explain the BoM mapping in detail. They start from the lowest level (the components) and the end at the top (the harness).
 
 The first step is to create the basic occurrences for the harness. For every {{<kbl-class Connection_or_occurrence >}} in the KBL {{<kbl-class Harness >}} a {{<vec-class PartOccurrence >}} is created. An exception is the KBL {{<kbl-class Connection >}}, which is not representing an occurrence of a component, and therefore no {{<vec-class PartOccurrence >}} is created in the VEC. The {{<vec-class Role>}}s are omitted in the snippet below, as this a separate topic, handled in [Instantiation of Components]({{<relref "#instantiation-of-components">}}). The `Identification` used for the {{<vec-class CompositionSpecification >}} is `COMPONENTS`.
@@ -321,7 +329,7 @@ For each module, a {{<vec-class PartStructureSpecification >}} is created, refer
       <InBillOfMaterial>PartOccurrence_00291 PartOccurrence_00290 ...</InBillOfMaterial>
     </Specification>
 ```
-To define the next layer, instances of the modules are required. Those are created within a separate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'`. As it can be seen, the module {{<vec-class PartOccurrence >}} references the same component {{<vec-class PartOccurrence >}} as the {{<vec-class PartStructureSpecification >}}. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). However, to provide a consistent appearance in the model for all parts with a BoM, both concepts shall be used.
+To define the next layer, instances of the modules are required. Those are created within a separate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'`. The module {{<vec-class PartOccurrence >}} references the module's {{<vec-class PartStructureSpecification >}}, whose `InBillOfMaterial` are the component {{<vec-class PartOccurrence >}}s defined above. No component occurrences are cloned for the module occurrence. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). As the composition of the module is already defined by its {{<vec-class PartStructureSpecification >}}, the {{<vec-class PartWithSubComponentsRole >}} of the module occurrence should not reference the component occurrences as `SubComponent` (see [Composite Parts]({{< relref "../composite-parts#details" >}})).
 
 ```xml
     <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00286">
@@ -331,7 +339,6 @@ To define the next layer, instances of the modules are required. Those are creat
         <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00288">
           <Identification>MDL123456</Identification>
           <PartStructureSpecification>PartStructureSpecification_00368</PartStructureSpecification>
-          <SubComponent>PartOccurrence_00291 PartOccurrence_00290 ...</SubComponent>
         </Role>
         <Part>PartVersion_00504</Part>
       </Component>
