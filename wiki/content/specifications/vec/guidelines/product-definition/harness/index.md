@@ -32,6 +32,9 @@ history:
   - date: 2026-10-02T00:00:00Z
     description: "Instantiation of context relevant subcomponents; no SubComponent references for in-place modules."
     ghIssue: "1174"
+  - date: 2026-10-05T00:00:00Z
+    description: "Layer rule moved to Composite Parts; COMPONENTS / MODULES as recommendation; variant specifications per harness description."
+    ghIssue: "1178"
 
 
 menu:
@@ -181,6 +184,8 @@ A VEC derived from a single KBL contains one `HarnessDescription` document for t
 
 {{< gh-review "1174" >}}
 
+{{< gh-review "1178" >}}
+
 One central view on the product is the bill of material (BoM) or part structure. The information which parts (components) are used for the harness, its variants and modules.
 
 The KBL has a very explicit definition of the part structure with predefined levels and semantics, compare the diagram below (_Note: The diagram is, for the sake of simplicity, conceptually, and not precisely KBL syntax_):
@@ -274,7 +279,7 @@ graph LR;
     PSH -- "bill of material" --> OM;
   end
 ```
-Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). For the sake of a modular data structure, each layer defines its own {{<vec-class CompositionSpecification>}}. The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master definition of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
+Each layer consists of a part master definition ({{<vec-class PartVersion>}}), that is used to create instances ({{<vec-class "PartOccurrence">}}) within a container for the layer ({{<vec-class CompositionSpecification>}}). Each layer defines its own container (see [Composite Parts – Layers and Control Information]({{< relref "../composite-parts#layers-and-control-information" >}})). The {{<vec-class "PartOccurrence">}} of one layer are then used to define the part master definition of the next layer ({{<vec-class PartStructureSpecification>}} and {{<vec-class PartVersion>}}).
 
 {{% callout note %}}
 A detail not shown in the diagram above is the instantiation of the subcomponents of a BoM part. In the case of library parts (i.e., {{<kbl-class Assembly_part >}} in KBL), subcomponents that are relevant in the using context are represented by distinct {{<vec-class PartOccurrence >}} instances, separate from those used to define the part’s structure, and referenced as `SubComponent` by the instance of the BoM part.
@@ -298,9 +303,11 @@ The following table defines the Mapping between KBL classifications and {{<vec-c
 
 {{< gh-review "1174" >}}
 
+{{< gh-review "1178" >}}
+
 The following XML listings explain the BoM mapping in detail. They start from the lowest level (the components) and the end at the top (the harness).
 
-The first step is to create the basic occurrences for the harness. For every {{<kbl-class Connection_or_occurrence >}} in the KBL {{<kbl-class Harness >}} a {{<vec-class PartOccurrence >}} is created. An exception is the KBL {{<kbl-class Connection >}}, which is not representing an occurrence of a component, and therefore no {{<vec-class PartOccurrence >}} is created in the VEC. The {{<vec-class Role>}}s are omitted in the snippet below, as this a separate topic, handled in [Instantiation of Components]({{<relref "#instantiation-of-components">}}). The `Identification` used for the {{<vec-class CompositionSpecification >}} is `COMPONENTS`.
+The first step is to create the basic occurrences for the harness. For every {{<kbl-class Connection_or_occurrence >}} in the KBL {{<kbl-class Harness >}} a {{<vec-class PartOccurrence >}} is created. An exception is the KBL {{<kbl-class Connection >}}, which is not representing an occurrence of a component, and therefore no {{<vec-class PartOccurrence >}} is created in the VEC. The {{<vec-class Role>}}s are omitted in the snippet below, as this a separate topic, handled in [Instantiation of Components]({{<relref "#instantiation-of-components">}}). The `Identification` used for the {{<vec-class CompositionSpecification >}} is `COMPONENTS`. The identifications `COMPONENTS` and `MODULES` are a recommendation for this mapping and not a general VEC convention.
 
 ```xml
     <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00289">
@@ -329,7 +336,7 @@ For each module, a {{<vec-class PartStructureSpecification >}} is created, refer
       <InBillOfMaterial>PartOccurrence_00291 PartOccurrence_00290 ...</InBillOfMaterial>
     </Specification>
 ```
-To define the next layer, instances of the modules are required. Those are created within a separate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'`. The module {{<vec-class PartOccurrence >}} references the module's {{<vec-class PartStructureSpecification >}}, whose `InBillOfMaterial` are the component {{<vec-class PartOccurrence >}}s defined above. No component occurrences are cloned for the module occurrence. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). As the composition of the module is already defined by its {{<vec-class PartStructureSpecification >}}, the {{<vec-class PartWithSubComponentsRole >}} of the module occurrence should not reference the component occurrences as `SubComponent` (see [Composite Parts]({{< relref "../composite-parts#details" >}})).
+To define the next layer, instances of the modules are required. Those are created within a separate  {{<vec-class CompositionSpecification >}} with the `Identification = 'MODULES'` (a recommendation for this mapping, see above). The module {{<vec-class PartOccurrence >}} references the module's {{<vec-class PartStructureSpecification >}}, whose `InBillOfMaterial` are the component {{<vec-class PartOccurrence >}}s defined above. No component occurrences are cloned for the module occurrence. This is, because modules are normally defined in-place (see {{<vec-diagram "composite-part-descriptions/instantiation-approaches">}}). As the composition of the module is already defined by its {{<vec-class PartStructureSpecification >}}, the {{<vec-class PartWithSubComponentsRole >}} of the module occurrence should not reference the component occurrences as `SubComponent` (see [Composite Parts]({{< relref "../composite-parts#details" >}})).
 
 ```xml
     <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00286">
@@ -363,9 +370,12 @@ Work in Progress
 {{% /callout %}}
 
 ### Variant Management (Logistic Control Information)
+
+{{< gh-review "1178" >}}
+
 The KBL uses the {{<kbl-class Module_configuration >}} element and its `Logistic_control_information` attribute to define variant management information. In contrast, the VEC offers a more flexible approach, allowing variant management data to be associated with almost any element that is a subclass of {{<vec-class ConfigurableElement >}}. Additionally, the VEC introduces an indirection layer, enabling elements to be supplemented with variant management information either retrospectively or externally. It is also possible to assign different control information to an element depending on the context.
 
-As a result, the single `Logistic_control_information` attribute in the KBL is mapped to a more comprehensive set of classes and attributes in the VEC, providing greater flexibility and specificity in variant management. Specifically, two specifications are required for this purpose, with one instance of each per harness:
+As a result, the single `Logistic_control_information` attribute in the KBL is mapped to a more comprehensive set of classes and attributes in the VEC, providing greater flexibility and specificity in variant management. Specifically, two specifications are required for this purpose, with one instance of each per harness description ({{<vec-class DocumentVersion>}} with `DocumentType=HarnessDescription`):
 
 1. The {{<vec-class VariantConfigurationSpecification >}} defines the set of configuration terms used. For each distinct `Logistic_control_information` string, a corresponding {{<vec-class VariantConfiguration >}} should be created.
 2. The {{<vec-class ConfigurationConstraintSpecification >}} assigns these terms to specific elements. For each {{<kbl-class Module >}} with a `Logistic_control_information`, a {{<vec-class ConfigurationConstraint >}} should be created to link the corresponding {{<vec-class PartOccurrence>}} to the appropriate {{<vec-class VariantConfiguration>}}.

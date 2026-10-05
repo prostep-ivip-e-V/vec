@@ -21,6 +21,9 @@ classes:
   - PartUsage
   - PartVersion
   - DocumentVersion
+  - VariantConfiguration
+  - ConfigurationConstraint
+  - ModuleList
 
 history:
   - date: 2022-04-24
@@ -35,6 +38,9 @@ history:
   - date: 2026-10-05
     description: "Container is not a bill of material"
     ghIssue: "1176"
+  - date: 2026-10-05
+    description: "BOM layers of a harness and control information; neutral modules"
+    ghIssue: "1178"
 
 
 menu:
@@ -203,6 +209,8 @@ Not all harnesses are designed as customer specific harnesses. For less complex 
 
 {{< gh-review "1174" >}}
 
+{{< gh-review "1178" >}}
+
 The following figure shows the basic structure of a harness definition in the VEC. It has to be read from left to right.
 
 {{< figure src="harness-definition.svg" numbered="true" lightbox="true" title="Basic Concept of a Harness">}}
@@ -219,7 +227,19 @@ Even if this represention of a harness in the VEC appears to be somewhat more ex
 
 1. The VEC has a general concept for a multilevel bill of material with support of variance. The number of levels (components, assemblies, modules, harness) is arbitrary. It is also possible to create an orthogonal structuring, e.g., for production BOMs vs. logistic BOMs.
 1. The {{<vec-class PartOccurrence>}} separates context specific information (e.g,. variant configurations) from part master data. If a harness is reused and a module has different context information (e.g. different variant configurations in different vehicles) then, this is possible without recreating a module. 
-1. Reusing shared modules in different harnesses is, with slight changes for the reusing context, also supported. 
+1. Reusing shared modules in different harnesses is supported as well. A module that is used in several harnesses ("neutral module") is defined with the library approach, like an assembly: its {{<vec-class PartStructureSpecification >}} and its container are defined in its own part master {{<vec-class DocumentVersion >}}, and it is instantiated in each using harness as described in [Usage of an Assembly]({{< relref "#usage-of-an-assembly" >}}).
+
+#### Layers and Control Information
+
+Within a harness description, each aggregation level of the bill of material (e.g. components, modules, harness / variants) defines its own container for its instances: a {{<vec-class CompositionSpecification >}} for {{<vec-class PartOccurrence>}}s or a {{<vec-class PartUsageSpecification >}} for {{<vec-class PartUsage>}}s. The reason for this is the following chain:
+
+1. Variant control information ({{<vec-class VariantConfiguration >}} and {{<vec-class ConfigurationConstraint >}}, see [Variant Management]({{< relref "../harness#variant-management-logistic-control-information" >}})) is assigned to instances, not to part master data.
+1. Therefore, each composite part that carries control information has to be instantiated.
+1. Each instance requires a container.
+
+For a customer specific harness (KSK) or a staged harness (Stufenleitungssatz), the bill of material therefore does not end at the module level: the module occurrences are required to carry the logistic control information, and the harness (or variant) references them in its bill of material. If an element of a level has a part number, it is represented by a {{<vec-class PartVersion>}} and instantiated with a {{<vec-class PartOccurrence>}}. Otherwise, a {{<vec-class PartUsage>}} is used.
+
+Occurrences that belong to a composite part without variance (e.g. an assembly or a module) are controlled via that composite part and do not need their own control information. A composite part with a 150% bill of material (e.g. a harness consisting of modules) requires additional control information for its contents (e.g. for its modules). Occurrences that do not belong to any module carry their own control information. Completion scopes (_Komplettierungsumfänge_) can be expressed with a {{<vec-class ModuleList >}}.
 
 #### Composition and Membership
 
