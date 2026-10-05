@@ -1604,6 +1604,12 @@
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "PartVersion", "to_kind": "class", "source": "frontmatter"}
 {"from": "DocumentVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "DocumentVersion", "to_kind": "class", "source": "frontmatter"}
+{"from": "VariantConfiguration", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "VariantConfiguration", "to_kind": "class", "source": "frontmatter"}
+{"from": "ConfigurationConstraint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "ConfigurationConstraint", "to_kind": "class", "source": "frontmatter"}
+{"from": "ModuleList", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "ModuleList", "to_kind": "class", "source": "frontmatter"}
 {"from": "Specification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "Specification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "GeneralTechnicalPartSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "inline-shortcode"}
