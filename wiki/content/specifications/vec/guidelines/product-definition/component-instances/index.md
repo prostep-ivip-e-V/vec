@@ -9,12 +9,13 @@ tags: []
 categories: []
 date: 2022-10-07
 draft: false
-review: false
+review: true
 classes:
   - PartUsage
   - PartOccurrence
   - CompositionSpecification
   - PartUsageSpecification
+  - PartStructureSpecification
 
 history:
   - date: 2022-10-21
@@ -32,6 +33,9 @@ history:
   - date: 2025-12-15
     description: "Added example for PartSubstitutionSpecification"
     ghIssue: "484"
+  - date: 2026-10-05
+    description: "PartUsages without realization: the required resolution depends on the point of view of the process"
+    ghIssue: "1180"
 
 links:
   - icon_pack: fas
@@ -107,6 +111,18 @@ Although {{< vec-class PartUsage >}} and {{< vec-class PartOccurrence >}} can co
 {{< figure src="realization.svg" title="Realization of PartUsages with PartOccurrences" numbered="true" lightbox="true">}}
 
 Figure 2 presents a highly simplified situation for the sake of the concept. On the left hand side is a wiring definition with two Variants, _A_ & _B_. _A_ & _B_ have the same logical connectivity, however, variant _B_ has a slightly higher power output, resulting in a {{<vec-class PartUsage>}} (a requirement!) for variant B with a larger wire cross section area. The wiring also defines the color of the wire. However, other significant properties are left open (e.g. insulation material) for later determination. In the following design process, the other properties required for a component selection are defined (e.g. the insulation material, when the location of the wire in the vehicle is known). It is also decided, that it is more efficient to realize both variants with a single wire (satisfying both requirements at same time). Traceability is preserved in the case, with the _RealizedPartUsage_ reference from {{< vec-class PartOccurrence >}} to {{< vec-class PartUsage >}}. The fact that a {{< vec-class PartOccurrence >}} can realize the requirements of multiple {{< vec-class PartUsage >}}s at the same time is the reason that the multiplicity of this association is "0..*".
+
+### PartUsages without Realization
+
+{{< gh-review "1180" >}}
+
+In most cases, a {{< vec-class PartUsage >}} represents an open requirement, which is realized later in the process by a {{< vec-class PartOccurrence >}}. Whether a realization is required, however, is not a property of the {{< vec-class PartUsage >}} itself, but depends on the point of view of the process that uses the data.
+
+A {{< vec-class PartStructureSpecification >}} that describes a {{< vec-class PartVersion >}} always describes a finished product. For a process that _uses_ this product (e.g. a harness design using a catalogue part), the product is provided as a whole. The {{< vec-class PartUsage >}}s in its bill of material are sufficient to describe its contents, and the specifications they reference describe the properties of the contained components. Specific part numbers for these components are irrelevant from this point of view, and no realization with `RealizedPartUsage` is expected. A typical example are the contacts and seals of a connector assembly, which have no part number of their own and are not orderable separately.
+
+For a process that _produces_ the product (e.g. a harness supplier who receives the specification of a harness), the same {{< vec-class PartUsage >}}s are placeholders. They have to be resolved by actual parts, normally identified by part numbers, before the product can be manufactured. In this process, a realization with `RealizedPartUsage` is expected.
+
+Which level of resolution is required is therefore a matter of the respective process, and it can be defined in the interface agreements between the process partners.
 
 ## Selection Tables / Part Substitutions
 
