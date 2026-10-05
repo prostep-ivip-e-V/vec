@@ -1564,6 +1564,8 @@
 {"from": "/specifications/vec/guidelines/product-definition/component-instances/", "from_kind": "guideline", "to": "CompositionSpecification", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartUsageSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-instances/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/component-instances/", "from_kind": "guideline", "to": "PartUsageSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "PartStructureSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-instances/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/component-instances/", "from_kind": "guideline", "to": "PartStructureSpecification", "to_kind": "class", "source": "frontmatter"}
 {"from": "DocumentVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-instances/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/component-instances/", "from_kind": "guideline", "to": "DocumentVersion", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Specification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/component-instances/", "to_kind": "guideline", "source": "inline-shortcode"}
