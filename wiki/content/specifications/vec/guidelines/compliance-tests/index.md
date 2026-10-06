@@ -9,6 +9,12 @@ categories: []
 date: 2024-09-17
 lastmod: 2024-09-17T15:11:41+01:00
 draft: false
+review: true
+
+history:
+  - date: 2026-10-06T00:00:00Z
+    description: "TC-0004: a missing specification for the PrimaryPartType is suspicious, not an error."
+    ghIssue: "1182"
 
 menu:
   vec-guidelines:
@@ -120,6 +126,8 @@ This tool uses the suite definition provided below, runs it on a set of VEC XML 
 
 ## Compliance Rules
 
+{{< gh-review "1182" >}}
+
 The table below lists all rules currently contained within the Compliance Test Suite. 
 The set of rules will be continiously extended, so be sure to revisit frequently.
 
@@ -128,7 +136,7 @@ The set of rules will be continiously extended, so be sure to revisit frequently
 | TC-0001 | {{< vec-class "Tolerance" >}} | `Tolerance.LowerBoundary` must be less than or equals `UpperBoundary` | 18.09.2024 | 18.09.2024 |
 | TC-0002 | {{< vec-class "ValueRange" >}} | `ValueRange.Minimum` must be less than or equals `Maximum` | 18.09.2024 | 18.09.2024 |
 | TC-0003 | {{< vec-class "PartVersion" >}} | To avoid ambiguity, a `PartVersion` shall be only described by at most one Specification of each type. | 18.09.2024 | 18.09.2024 |
-| TC-0004 | {{< vec-class "PartVersion" >}} | If a `PartVersion` is `describedBy` {{<vec-class PartOrUsageRelatedSpecification >}}s there shall be one corresponding to the `PrimaryPartType`. | 18.09.2024 | 18.09.2024 |
+| TC-0004 | {{< vec-class "PartVersion" >}} | If a `PartVersion` is `describedBy` {{<vec-class PartOrUsageRelatedSpecification >}}s, the absence of one corresponding to the `PrimaryPartType` is suspicious. As a VEC may contain only a partial description of a part (see {{< vec-diagram "general-component-data/description-of-parts" >}}), this is not an error. | 18.09.2024 | 06.10.2026 |
 | TC-0005 | {{< vec-class "DocumentVersion" >}} | Having multiple `DocumentVersion` with the same `documentNumber` is suspicious, even when the `documentVersion` is different. | 18.09.2024 | 18.09.2024 |
 | TC-0006 | {{< vec-class "DocumentVersion" >}} | The `documentNumber` shall not be `/NULL` | 18.09.2024 | 18.09.2024 |
 | TC-0007 | {{< vec-class "PartVersion" >}} | The `partNumber` shall not be `/NULL` | 18.09.2024 | 18.09.2024 |

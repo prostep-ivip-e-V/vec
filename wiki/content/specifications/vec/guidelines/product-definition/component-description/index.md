@@ -9,13 +9,15 @@ tags: ["Gripping", "Automation", "Handling"]
 categories: []
 date: 2022-09-12
 draft: false
-review: false
+review: true
 classes:
   - PrimaryPartType
   - PartOrUsageRelatedSpecification
   - PartVersion
   - GeneralTechnicalPartSpecification
   - GrippingFeature
+  - PartStructureSpecification
+  - ConnectorHousingSpecification
 
 history:
   - date: 2022-09-12T00:00:00Z
@@ -24,6 +26,9 @@ history:
   - date: 2026-09-22T00:00:00Z
     description: "Added gripping features for handling automation."
     ghIssue: "1163"
+  - date: 2026-10-06T00:00:00Z
+    description: "Hybrid and composite components; PrimaryPartType of composite components."
+    ghIssue: "1182"
 
 menu:
   vec-guidelines:
@@ -60,6 +65,16 @@ The unique identification of a component is its {{< vec-class PartVersion >}}. I
  
 2. **Component Characteristics**: Specifications in this group describe properties that are very specific for a certain component type, e.g. {{< vec-class WireSpecification >}} for wires or {{< vec-class ConnectorHousingSpecification >}} for connectors. In most cases, a part can be clearly assigned to one of these categories. However, there can be cases of "hybrid" components that fall into more than one category. In this case, the {{< vec-class PrimaryPartType >}} defines the primary character of the components. A detailed description can be found here: "{{< vec-diagram "general-component-data/description-of-parts" >}}".
 
+
+## Hybrid and Composite Components
+
+{{< gh-review "1182" >}}
+
+A _hybrid_ component has to be distinguished from a _composite_ component. A hybrid component is one part with several characteristics (e.g. a connector housing that is also a fixing). A composite component is one part that consists of several contained components and therefore has a bill of material ({{< vec-class PartStructureSpecification >}}, see [Composite Parts]({{< relref "../composite-parts" >}})).
+
+The {{< vec-class PrimaryPartType >}} of a composite component is normally `PartStructure`. A composite component may use the {{< vec-class PrimaryPartType >}} of a component type instead, if the component **in its assembled state** has the properties of that component type as a whole. Example: a connector that consists of two contact carriers with 20 cavities each, a backshell and a lever, and that in its assembled state is a connector with 40 cavities, can be described by a {{< vec-class PartVersion >}} with `PrimaryPartType = ConnectorHousing`, a {{< vec-class ConnectorHousingSpecification >}} for the 40-cavity connector and a {{< vec-class PartStructureSpecification >}} for its contents.
+
+In contrast, a composite component whose properties are the sum of different aspects (e.g. an E/E component with a pigtail, or a preassembled USB cable) shall have `PrimaryPartType = PartStructure`. Its specific properties are defined by its subcomponents. A component that has a topology of its own is always a `PartStructure`. The characteristic specification of a contained component shall not be assigned to the composite component as a shortcut for a "leading" subcomponent.
 
 ## Unclassified / Custom Component Types 
 
