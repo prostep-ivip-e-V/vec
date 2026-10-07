@@ -22,6 +22,9 @@ history:
   - date: 2026-01-28
     description: "Added section on 'Content from mixed Sources'"
     ghIssue: "956"    
+  - date: 2026-10-07
+    description: "DocumentVersions as building blocks; aggregation vs. semantic merge; harness description"
+    ghIssue: "1184"
 
 classes:
   - VecContent
@@ -30,6 +33,7 @@ classes:
   - DocumentType
   - PartOrUsageRelatedSpecification
   - Specification
+  - ComponentNode
 
 menu:
   vec-guidelines:
@@ -97,10 +101,16 @@ distinction can be made here between:
   to describe / specify the properties of one or many
   {{< vec-class PartVersion >}}s.
 
+{{< gh-review "1184" >}}
+
 {{% callout note %}} The distribution of information into different documents is
-mainly driven by the requirements of the process. Nevertheless, certain best
-practices and minimal content can be defined for certain types of documents.
-{{% /callout %}}
+mainly driven by the requirements of the process. For certain types of documents,
+typical content can be described (see [Types of Documents]({{< relref "#types-of-documents" >}})).
+Following the principle of optionality, such descriptions are never a hard
+requirement, since a VEC can only be a fragment of the complete picture (compare
+[Content Requirements]({{< relref "../../product-definition/component-description#content-requirements" >}})).
+Process partners are free to agree on stricter requirements in their individual
+interface contracts. {{% /callout %}}
 
 ### Parts and Documents
 
@@ -157,7 +167,44 @@ be used in different ways:
 
 However, regardless of the use of the {{< vec-class DocumentVersion >}}, it always represents the meta-data of the entity in the process, which does not change depending on its VEC representation. Meaning, if for example a system schematic is referenced as external document in one place (VEC file) and is used as a native document / digital representation in another place, it is still a system schematic (_DocumentType_) with the same _DocumentNumber_ & _Version_.
 
+### DocumentVersions as Building Blocks of the Information Exchange
+
+{{< gh-review "1184" >}}
+
+A VEC (e.g. a file or the response of a REST interface) always represents a snapshot of
+information in a specific, fixed state. The VEC is a means of data exchange, not of data
+management (see [Expected Behaviour of VEC Interfaces]({{< relref "../../general/interface-behaviour#background" >}})).
+
+The cut of information into {{< vec-class DocumentVersion >}}s is process specific. It
+reflects the responsibilities and approvals in the process: the content of a
+{{< vec-class DocumentVersion >}} is the scope of information that the process tracks
+and annotates with meta data. {{< vec-class DocumentVersion >}}s are therefore the
+building blocks of an interface architecture — units of information exchanged between
+process partners, with a scope agreed within the process. There are typical scopes for
+typical processes (e.g. what a system schematic or a harness description contains), but
+significant deviations are valid as well.
+
+In contrast to {{< vec-class Specification >}}s, {{< vec-class DocumentVersion >}}s do
+not represent structural boundaries of the model. Even if two
+{{< vec-class DocumentVersion >}}s are contained in the same VEC file, they are clearly
+separated from the perspective of versioning (see [External References]({{< relref "../external-references" >}})),
+but not from the perspective of the model. In particular, they are no boundary for
+references:
+
+- **Within one VEC file**, references between elements in different
+  {{< vec-class DocumentVersion >}}s (e.g. from an occurrence in a harness description to
+  a {{< vec-class PartVersion >}} and its part master data, or from a wire to a
+  connection of a system schematic) are ordinary XML `IDREF`s.
+- **Across VEC files**, an `IDREF` cannot span the file boundary. The relationship is
+  established via the PDM identity of the referenced items
+  ({{< vec-class PartVersion >}} and {{< vec-class DocumentVersion >}} numbers and
+  versions), as assumed by the [partitioning rules]({{< relref "../../general/partitioning-sizing-packaging#partitioning-and-sizing" >}})
+  (rule 2). A VEC whose references can be resolved requires that the creating system
+  includes the referenced information with the appropriate scope.
+
 ### Combination and Reuse of Documents
+
+{{< gh-review "1184" >}}
 
 {{< figure src="document-version-flow.svg" class="float-right" title="DocumentVersions in the Information Flow" numbered="true" lightbox="true" width="400">}}
 
@@ -185,6 +232,28 @@ this would lead to a loss of traceability, even if the structures of the VEC
 would allow such an approach. Instead, copies of the
 {{< vec-class documentversion >}}s containing the component's part master data
 are placed beside the _DocumentVersion_ of the harness, within the same VEC.
+
+The same applies whenever content from several VEC files is combined into one VEC,
+e.g. to embed information for traceability or to bundle the harnesses of a vehicle
+network: the assignment of the information to its original
+{{< vec-class DocumentVersion >}}s shall be preserved (see also [Content from mixed
+Sources]({{< relref "#content-from-mixed-sources" >}})).
+
+This rule applies to the _aggregation_ of information, where the combined information
+itself remains unchanged. It does not apply to a _semantic merge_, where the
+combination creates new content. An example are partial system schematics: when
+partial systems are merged into an overall system, matching open links are resolved and
+the {{< vec-class ComponentNode >}}s of type `OpenLink` are removed (see [System Schematic
+– Partial Systems]({{< relref "../../elog-layers/system-schematic#partial-systems" >}})).
+The result is new information, contained in a new {{< vec-class DocumentVersion >}}.
+
+The combination of wiring harnesses into a vehicle network is normally **not** a
+semantic merge: a harness does not change or behave differently when it is put into a
+vehicle. Therefore, the harness descriptions of a vehicle network remain separate
+{{< vec-class DocumentVersion >}}s, and information concerning the vehicle network as a
+whole is added in additional {{< vec-class DocumentVersion >}}s.
+Merging the harness descriptions into a single {{< vec-class DocumentVersion >}} is
+possible, but not recommended.
 
 {{% callout note %}} A _DocumentVersion_ in the VEC and the physical _VEC file_
 shall not be equated. A _DocumentVersion_ is a logical entity and can be
@@ -234,6 +303,14 @@ components (a {{< vec-class partversion >}} or a set of
 that provide information for any component type. A detailed description can be
 found in the "[Component Description]({{< relref "../../product-definition/component-description">}})"
 Guideline.
+
+### Harness Description
+
+{{< gh-review "1184" >}}
+
+A harness description describes a wiring harness as a physical product, regardless
+of its informational completeness. Its typical content and the scope of a harness
+description are described in [Product Definition of a Harness]({{< relref "../../product-definition#harness-description-document-structure-and-typical-content" >}}).
 
 ### Master Data Definition
 

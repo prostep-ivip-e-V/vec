@@ -1462,6 +1462,8 @@
 {"from": "/specifications/vec/guidelines/key-concepts/general-structure/", "from_kind": "guideline", "to": "PartOrUsageRelatedSpecification", "to_kind": "class", "source": "frontmatter"}
 {"from": "Specification", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/general-structure/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/key-concepts/general-structure/", "from_kind": "guideline", "to": "Specification", "to_kind": "class", "source": "frontmatter"}
+{"from": "ComponentNode", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/general-structure/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/key-concepts/general-structure/", "from_kind": "guideline", "to": "ComponentNode", "to_kind": "class", "source": "frontmatter"}
 {"from": "ItemVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/general-structure/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/key-concepts/general-structure/", "from_kind": "guideline", "to": "ItemVersion", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Unit", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/general-structure/", "to_kind": "guideline", "source": "inline-shortcode"}
