@@ -1440,8 +1440,12 @@
 {"from": "/specifications/vec/guidelines/key-concepts/custom-properties/", "from_kind": "guideline", "to": "SimpleValueProperty", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "BooleanValueProperty", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/custom-properties/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/key-concepts/custom-properties/", "from_kind": "guideline", "to": "BooleanValueProperty", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "DocumentVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "from_kind": "guideline", "to": "DocumentVersion", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "DocumentVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "from_kind": "guideline", "to": "DocumentVersion", "to_kind": "class", "source": "frontmatter"}
+{"from": "PartStructureSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "from_kind": "guideline", "to": "PartStructureSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "PartVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/key-concepts/digital-change-tracking/", "from_kind": "guideline", "to": "PartVersion", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "DocumentVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/external-references/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/key-concepts/external-references/", "from_kind": "guideline", "to": "DocumentVersion", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/key-concepts/external-references/", "to_kind": "guideline", "source": "frontmatter"}

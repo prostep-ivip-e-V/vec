@@ -10,12 +10,19 @@ categories: []
 date: 2022-07-29
 lastmod: 2021-11-05T10:30:04+01:00
 draft: false
-review: false
+review: true
 
 history:
   - date: 2022-07-29
     description: "Implementation Guideline for Modification-Tracking & Versioning"
     issue: "KBLFRM-1007"
+  - date: 2026-10-08
+    description: "Contributions to a target dataset"
+    ghIssue: "1188"
+
+classes:
+  - DocumentVersion
+  - PartStructureSpecification
 
 menu:
   vec-guidelines:
@@ -65,6 +72,35 @@ An indication of change with _DigitalRepresentationIndex_ is mandatory only if t
 
 Changes related to the technical aspects of XML representation do not require a _DigitalRepresentationIndex_. This includes, but is not limited to changes of XML `ID` & `IDREF` elements (assuming the referenced objects are the same), ordering of XML elements and XML Meta elements like XML Comments ("`<!-- ... -->`") or XML Processing Instruction (`<?target instructions?>`)
 {{% /callout %}}
+
+### Contributions to a Target Dataset
+
+{{< gh-review "1188" >}}
+
+The scenarios above start from one source document with several digital representations. The
+inverse scenario is possible as well: a {{< vec-class "DocumentVersion" >}} with a known target
+identity (_CompanyName_, _DocumentNumber_ and _Version_) exists, and several processes or tools
+each contribute a part of its content. For example, a harness description is created by a 3D
+design tool (topology, geometry and placements), while electrical information and variants are
+contributed by another discipline (compare [Product Definition of a Harness]({{< relref "../../product-definition" >}})).
+
+Each contribution is a digital representation of the target {{< vec-class "DocumentVersion" >}}
+with partial content. The _DigitalRepresentationIndex_ indicates which state of a contribution
+has been delivered, according to the rule in [When to Modify]({{< relref "#when-to-modify" >}}).
+
+Merging the contributions is the responsibility of a system, not of the exchange format:
+
+- Before the merge, the contributions are independent from each other. They are exchanged in
+  separate VEC files; there is no reason to put them into a single VEC file (a VEC containing
+  several {{< vec-class "DocumentVersion" >}}s with the same _DocumentNumber_ is suspicious, see
+  [Compliance Tests]({{< relref "../../compliance-tests" >}}), TC-0005).
+- After the merge, there is logically one {{< vec-class "DocumentVersion" >}} with the merged
+  content and a new _DigitalRepresentationIndex_.
+
+If several contributions describe the same {{< vec-class PartVersion >}} (e.g. the
+{{< vec-class PartVersion >}} of a harness), only one of them — the one responsible for the bill
+of material — contains the {{< vec-class PartStructureSpecification >}} of this
+{{< vec-class PartVersion >}} (compare TC-0003).
 
 ### How to Create
 
