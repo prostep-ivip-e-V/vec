@@ -9,18 +9,30 @@ categories: []
 date: 2022-07-29
 lastmod: 2022-07-29
 draft: false
-review: false
+review: true
 diagram: false
 
 history:
   - date: 2022-07-29
     description: "Added Guideline for Import- / Export-Behaviour"
     issue: "KBLFRM-946"
+  - date: 2026-10-08
+    description: "Navigating information in a VEC"
+    ghIssue: "1186"
 
 classes:
   - VecContent
   - DocumentVersion
   - PartVersion
+  - DocumentType
+  - Specification
+  - PartOrUsageRelatedSpecification
+  - PartOccurrence
+  - PartUsage
+  - WireElementReference
+  - Connection
+  - PartStructureSpecification
+  - PartWithSubComponentsRole
 
 menu:
   vec-guidelines:
@@ -64,6 +76,44 @@ On the other hand, it is up to the system to verify that a VEC contains enough i
 ### Traceability Scenarios
 
 Even though it is not possible to define general relationship requirements between imported and exported data, there are use cases in which a traceability between imported and exported data is required. In such cases, slices of imported data might be embedded into the exported data. This scenario is described in section "[Combination and Reuse of Documents]({{< relref "../../key-concepts/general-structure/index.md#combination-and-reuse-of-documents">}})"
+
+## Navigating Information in a VEC
+
+{{< gh-review "1186" >}}
+
+A receiving system shall locate the information relevant for its use case primarily via the
+relationships of the model, and not by searching for specific
+{{< vec-class DocumentType >}}s or by expecting a specific structure of
+{{< vec-class DocumentVersion >}}s. The reasons are:
+
+- The `documentType` of a {{< vec-class DocumentVersion >}} is optional. A system relying on it
+  fails for valid VECs.
+- {{< vec-class DocumentType >}} is an open enumeration. The set of possible values cannot be
+  enumerated.
+- The cut of information into {{< vec-class DocumentVersion >}}s is process specific (see
+  [General Structure]({{< relref "../../key-concepts/general-structure#documentversions-as-building-blocks-of-the-information-exchange" >}})).
+
+The following table lists the navigation paths for common questions:
+
+| Question | Navigation |
+|---|---|
+| Part master data of a {{< vec-class PartVersion >}} | All {{< vec-class PartOrUsageRelatedSpecification >}}s that reference the {{< vec-class PartVersion >}} as `describedPart`. This is an inverse navigation; the {{< vec-class PartVersion >}} itself does not reference its specifications. |
+| Information about an instance | For a {{< vec-class PartOccurrence >}}: via `part` to the {{< vec-class PartVersion >}} and then as above. For a {{< vec-class PartUsage >}}: directly via `partOrUsageRelatedSpecification`. Context specific information via the `role`s of the instance (see [Instances of Components]({{< relref "../../product-definition/component-instances#relationship-to-part-master-data" >}})). |
+| System schematic connection of a wire | `WireElementReference.connection` leads to the {{< vec-class Connection >}}; `WireElementReference.referencedWireElement` to the {{< vec-class WireElement >}} of the part master data. |
+| Composition of a composite part | From an instance of the composite part via `PartWithSubComponentsRole.partStructureSpecification` to the {{< vec-class PartStructureSpecification >}} and its `inBillOfMaterial`. |
+| Composite part an occurrence belongs to | Inverse of `PartStructureSpecification.inBillOfMaterial` (in-place modules) or inverse of `PartWithSubComponentsRole.subComponent` (instantiated library parts), see [Composite Parts – Composition and Membership]({{< relref "../../product-definition/composite-parts#composition-and-membership" >}}). |
+| Process meta data of an element | Upwards in the containment hierarchy to the containing {{< vec-class DocumentVersion >}}. |
+
+The containing {{< vec-class DocumentVersion >}} and its meta data (including the
+{{< vec-class DocumentType >}}, if present) can then be used to decide whether a piece of
+information is relevant for the use case, e.g. to distinguish information from different
+sources (see [Content from mixed Sources]({{< relref "../../key-concepts/general-structure#content-from-mixed-sources" >}})).
+
+A {{< vec-class PartVersion >}} can be described by several specifications of the same type,
+contained in different {{< vec-class DocumentVersion >}}s, e.g. if each of them contains the view
+of a different process partner on the same part. In this case, a reading system has to evaluate
+the containing {{< vec-class DocumentVersion >}}s and decide which specification is relevant for
+its use case.
 
 ## Summary of the Requirements
 

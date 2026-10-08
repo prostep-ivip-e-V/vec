@@ -18,6 +18,7 @@ classes:
   - GrippingFeature
   - PartStructureSpecification
   - ConnectorHousingSpecification
+  - DocumentType
 
 history:
   - date: 2022-09-12T00:00:00Z
@@ -29,6 +30,9 @@ history:
   - date: 2026-10-06T00:00:00Z
     description: "Hybrid and composite components; PrimaryPartType of composite components."
     ghIssue: "1182"
+  - date: 2026-10-08T00:00:00Z
+    description: "Find part master data via model relationships, not via the DocumentType."
+    ghIssue: "1186"
 
 menu:
   vec-guidelines:
@@ -165,11 +169,13 @@ The listing below shows a connector housing that supports two different gripping
 
 ## `PartMaster` - DocumentVersions
 
+{{< gh-review "1186" >}}
+
 {{< figure src="part-master-document.svg" class="float-right" title="Part Master Documents" numbered="true" lightbox="true" width="400">}}
 
 A part master document describes the properties of a component or a group of
 components (a {{< vec-class partversion >}} or a set of
-{{< vec-class partversion >}}s). It can be recognised with the {{< vec-class DocumentType >}} = `PartMaster`. A schematic illustration can be found in the figure on the right side. It contains some general purpose specifications (highlighted in light blue) and component characteristics (highlighted in strong green), in most cases one. Those specifications are not mandatory and only necessary if the corresponding information aspect is relevant in the use case and can be provided. 
+{{< vec-class partversion >}}s). It is normally marked with the {{< vec-class DocumentType >}} = `PartMaster`. However, a reading system should find part master data via the model relationships and not via the {{< vec-class DocumentType >}} (see [Navigating Information in a VEC]({{< relref "../../general/interface-behaviour#navigating-information-in-a-vec" >}})). A schematic illustration can be found in the figure on the right side. It contains some general purpose specifications (highlighted in light blue) and component characteristics (highlighted in strong green), in most cases one. Those specifications are not mandatory and only necessary if the corresponding information aspect is relevant in the use case and can be provided. 
 
 Additionally, the document _could_ contain auxillary specifications that are
 required for a complete component description (in the illustration the
