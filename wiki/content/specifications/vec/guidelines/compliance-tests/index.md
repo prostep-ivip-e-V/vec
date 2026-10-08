@@ -15,6 +15,9 @@ history:
   - date: 2026-10-06T00:00:00Z
     description: "TC-0004: a missing specification for the PrimaryPartType is suspicious, not an error."
     ghIssue: "1182"
+  - date: 2026-10-08T00:00:00Z
+    description: "TC-0003: several specifications of the same type for a PartVersion are suspicious, not an error."
+    ghIssue: "1186"
 
 menu:
   vec-guidelines:
@@ -128,6 +131,8 @@ This tool uses the suite definition provided below, runs it on a set of VEC XML 
 
 {{< gh-review "1182" >}}
 
+{{< gh-review "1186" >}}
+
 The table below lists all rules currently contained within the Compliance Test Suite. 
 The set of rules will be continiously extended, so be sure to revisit frequently.
 
@@ -135,7 +140,7 @@ The set of rules will be continiously extended, so be sure to revisit frequently
 |-------|----------------|----------------|-------------|------------|
 | TC-0001 | {{< vec-class "Tolerance" >}} | `Tolerance.LowerBoundary` must be less than or equals `UpperBoundary` | 18.09.2024 | 18.09.2024 |
 | TC-0002 | {{< vec-class "ValueRange" >}} | `ValueRange.Minimum` must be less than or equals `Maximum` | 18.09.2024 | 18.09.2024 |
-| TC-0003 | {{< vec-class "PartVersion" >}} | To avoid ambiguity, a `PartVersion` shall be only described by at most one Specification of each type. | 18.09.2024 | 18.09.2024 |
+| TC-0003 | {{< vec-class "PartVersion" >}} | Having several Specifications of the same type describing a `PartVersion` is suspicious. As the Specifications can be contained in different `DocumentVersion`s, e.g. with the views of different process partners on the same part (see [Navigating Information in a VEC]({{< relref "../general/interface-behaviour#navigating-information-in-a-vec" >}})), this is not an error. | 18.09.2024 | 08.10.2026 |
 | TC-0004 | {{< vec-class "PartVersion" >}} | If a `PartVersion` is `describedBy` {{<vec-class PartOrUsageRelatedSpecification >}}s, the absence of one corresponding to the `PrimaryPartType` is suspicious. As a VEC may contain only a partial description of a part (see {{< vec-diagram "general-component-data/description-of-parts" >}}), this is not an error. | 18.09.2024 | 06.10.2026 |
 | TC-0005 | {{< vec-class "DocumentVersion" >}} | Having multiple `DocumentVersion` with the same `documentNumber` is suspicious, even when the `documentVersion` is different. | 18.09.2024 | 18.09.2024 |
 | TC-0006 | {{< vec-class "DocumentVersion" >}} | The `documentNumber` shall not be `/NULL` | 18.09.2024 | 18.09.2024 |
