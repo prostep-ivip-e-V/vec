@@ -36,6 +36,9 @@ history:
   - date: 2026-10-05
     description: "PartUsages without realization: the required resolution depends on the point of view of the process"
     ghIssue: "1180"
+  - date: 2026-10-09
+    description: "Link to Catalogue Parts with Inner Structure"
+    ghIssue: "1192"
 
 links:
   - icon_pack: fas
@@ -116,9 +119,11 @@ Figure 2 presents a highly simplified situation for the sake of the concept. On 
 
 {{< gh-review "1180" >}}
 
+{{< gh-review "1192" >}}
+
 In most cases, a {{< vec-class PartUsage >}} represents an open requirement, which is realized later in the process by a {{< vec-class PartOccurrence >}}. Whether a realization is required, however, is not a property of the {{< vec-class PartUsage >}} itself, but depends on the point of view of the process that uses the data.
 
-A {{< vec-class PartStructureSpecification >}} that describes a {{< vec-class PartVersion >}} always describes a product that will be finished at some point in the process, even if it does not exist yet: a part number can be assigned to a product long before it is manufactured. For a process that _uses_ this product (e.g. a harness design using a catalogue part), the product is provided as a whole. The {{< vec-class PartUsage >}}s in its bill of material are sufficient to describe its contents, and the specifications they reference describe the properties of the contained components. Specific part numbers for these components are irrelevant from this point of view, and no realization with `RealizedPartUsage` is expected. A typical example are the contacts and seals of a connector assembly, which have no part number of their own and are not orderable separately.
+A {{< vec-class PartStructureSpecification >}} that describes a {{< vec-class PartVersion >}} always describes a product that will be finished at some point in the process, even if it does not exist yet: a part number can be assigned to a product long before it is manufactured. For a process that _uses_ this product (e.g. a harness design using a catalogue part), the product is provided as a whole. The {{< vec-class PartUsage >}}s in its bill of material are sufficient to describe its contents, and the specifications they reference describe the properties of the contained components. Specific part numbers for these components are irrelevant from this point of view, and no realization with `RealizedPartUsage` is expected. A typical example are the contacts and seals of a connector assembly, which have no part number of their own and are not orderable separately (see [Catalogue Parts with Inner Structure]({{< relref "../catalogue-parts" >}})).
 
 For a process that _produces_ the product (e.g. a harness supplier who receives the specification of a harness), the same {{< vec-class PartUsage >}}s are placeholders. They have to be resolved by actual parts, normally identified by part numbers, before the product can be manufactured. In this process, a realization with `RealizedPartUsage` is expected.
 
