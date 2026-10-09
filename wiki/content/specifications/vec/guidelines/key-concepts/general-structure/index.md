@@ -25,6 +25,9 @@ history:
   - date: 2026-10-07
     description: "DocumentVersions as building blocks; aggregation vs. semantic merge; harness description"
     ghIssue: "1184"
+  - date: 2026-10-09
+    description: "Links to harness description and vehicle network in the product definition"
+    ghIssue: "1190"
 
 classes:
   - VecContent
@@ -206,6 +209,8 @@ references:
 
 {{< gh-review "1184" >}}
 
+{{< gh-review "1190" >}}
+
 {{< figure src="document-version-flow.svg" class="float-right" title="DocumentVersions in the Information Flow" numbered="true" lightbox="true" width="400">}}
 
 Typically, information is flowing through the process. It is created somewhere,
@@ -251,7 +256,8 @@ The combination of wiring harnesses into a vehicle network is normally **not** a
 semantic merge: a harness does not change or behave differently when it is put into a
 vehicle. Therefore, the harness descriptions of a vehicle network remain separate
 {{< vec-class DocumentVersion >}}s, and information concerning the vehicle network as a
-whole is added in additional {{< vec-class DocumentVersion >}}s.
+whole is added in additional {{< vec-class DocumentVersion >}}s (see [Product Definition – Vehicle
+Network]({{< relref "../../product-definition#vehicle-network" >}})).
 Merging the harness descriptions into a single {{< vec-class DocumentVersion >}} is
 possible, but not recommended.
 
@@ -308,9 +314,11 @@ Guideline.
 
 {{< gh-review "1184" >}}
 
+{{< gh-review "1190" >}}
+
 A harness description describes a wiring harness as a physical product, regardless
 of its informational completeness. Its typical content and the scope of a harness
-description are described in [Product Definition of a Harness]({{< relref "../../product-definition#harness-description-document-structure-and-typical-content" >}}).
+description are described in [Product Definition of a Harness]({{< relref "../../product-definition#what-is-a-harness-description" >}}).
 
 ### Master Data Definition
 
