@@ -41,6 +41,9 @@ history:
   - date: 2026-10-05
     description: "BOM layers of a harness and control information; neutral modules"
     ghIssue: "1178"
+  - date: 2026-10-09
+    description: "Link to Catalogue Parts with Inner Structure"
+    ghIssue: "1192"
 
 
 menu:
@@ -72,6 +75,8 @@ The figure above illustrates very simplified the concept of an assembly and its 
 
 {{< gh-review "1176" >}}
 
+{{< gh-review "1192" >}}
+
 The following figure "Assembly Definition" illustrates the basic structure of a part master data definition of an assembly. The upper half of the diagram contains the actual definition of the assembly, the lower half (highlighted in blue) contains the definition and details of the utilized subcomponents.
 
 {{< figure src="assembly-definition.svg" numbered="true" lightbox="true" title="Assembly Definition (Part Master Data)">}}
@@ -91,7 +96,7 @@ Conversely, the occurrences in a container are not necessarily part of any bill 
 - **Instantiated subcomponents of an assembly:** To place or route a preassembled cable in a harness, its connectors and cores are instantiated in the harness (_Component A*_ & _Component B*_, see [Usage of an Assembly]({{< relref "#usage-of-an-assembly" >}})). These occurrences are contained in the {{< vec-class CompositionSpecification >}} of the harness, but they are not positions of the harness' bill of material: the harness contains the cable, not its connectors. Only the occurrence of the assembly itself is referenced as `InBillOfMaterial`.
 - **Auxiliary occurrences for processing calculations:** A cable assembly with a connector on one side and an open end on the other side may need an auxiliary connector occurrence at the open end. It represents the connector the cable end will be terminated with later, so that the stripping length and the wire end processing can be calculated. This occurrence exists for the description only. It is contained in the {{< vec-class CompositionSpecification >}} of the assembly, but it is not part of the delivered assembly and therefore not referenced by its {{<vec-class PartStructureSpecification >}}.
 
-The same rule, read from the other side: a {{<vec-class PartVersion >}} without its own {{<vec-class PartStructureSpecification >}} is regarded as one atomic part from a bill of material perspective, even if its part master {{<vec-class DocumentVersion >}} contains a {{< vec-class CompositionSpecification >}} with several occurrences (see {{< vec-diagram "composite-part-descriptions/assemblies-modules-and-harness-configurations" >}}). This is a safeguard against deriving a bill of material from a container. It is **not** a way to describe the inner structure of a part without a bill of material: components that are physically contained in the delivered part belong in its {{<vec-class PartStructureSpecification >}}.
+The same rule, read from the other side: a {{<vec-class PartVersion >}} without its own {{<vec-class PartStructureSpecification >}} is regarded as one atomic part from a bill of material perspective, even if its part master {{<vec-class DocumentVersion >}} contains a {{< vec-class CompositionSpecification >}} with several occurrences (see {{< vec-diagram "composite-part-descriptions/assemblies-modules-and-harness-configurations" >}}). This is a safeguard against deriving a bill of material from a container. It is **not** a way to describe the inner structure of a part without a bill of material: components that are physically contained in the delivered part belong in its {{<vec-class PartStructureSpecification >}} (see [Catalogue Parts with Inner Structure]({{< relref "../catalogue-parts" >}})).
 
 The content of the assembly is defined explicitly with a {{<vec-class PartStructureSpecification >}} that references the instances contained in the assembly as `InBillOfMaterial` and referencing the {{<vec-class PartVersion >}} of the assembly as `DescribedPart`. In other words, the {{<vec-class PartStructureSpecification >}} represents the bill of material (BOM) of the assembly (or any other composite part in the VEC). The  {{<vec-class PartStructureSpecification >}} defines `Content="Assembly"` and the {{<vec-class PartVersion >}} of the assembly has a `PrimaryPartType = "PartStructure"`.
 
