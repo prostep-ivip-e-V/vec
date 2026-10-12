@@ -19,6 +19,7 @@ classes:
   - PartStructureSpecification
   - ConnectorHousingSpecification
   - DocumentType
+  - ItemEquivalence
 
 history:
   - date: 2022-09-12T00:00:00Z
@@ -33,6 +34,9 @@ history:
   - date: 2026-10-08T00:00:00Z
     description: "Find part master data via model relationships, not via the DocumentType."
     ghIssue: "1186"
+  - date: 2026-10-12T00:00:00Z
+    description: "Different views of the same part."
+    ghIssue: "1192"
 
 menu:
   vec-guidelines:
@@ -74,11 +78,22 @@ The unique identification of a component is its {{< vec-class PartVersion >}}. I
 
 {{< gh-review "1182" >}}
 
+{{< gh-review "1192" >}}
+
 A _hybrid_ component has to be distinguished from a _composite_ component. A hybrid component is one part with several characteristics (e.g. a connector housing that is also a fixing). A composite component is one part that consists of several contained components and therefore has a bill of material ({{< vec-class PartStructureSpecification >}}, see [Composite Parts]({{< relref "../composite-parts" >}})).
 
 The {{< vec-class PrimaryPartType >}} of a composite component is normally `PartStructure`. A composite component may use the {{< vec-class PrimaryPartType >}} of a component type instead, if the component **in its assembled state** has the properties of that component type as a whole. Example: a connector that consists of two contact carriers with 20 cavities each, a backshell and a lever, and that in its assembled state is a connector with 40 cavities, can be described by a {{< vec-class PartVersion >}} with `PrimaryPartType = ConnectorHousing`, a {{< vec-class ConnectorHousingSpecification >}} for the 40-cavity connector and a {{< vec-class PartStructureSpecification >}} for its contents.
 
 In contrast, a composite component whose properties are the sum of different aspects (e.g. an E/E component with a pigtail, or a preassembled USB cable) shall have `PrimaryPartType = PartStructure`. Its specific properties are defined by its subcomponents. A component that has a topology of its own is always a `PartStructure`. The characteristic specification of a contained component shall not be assigned to the composite component as a shortcut for a "leading" subcomponent.
+
+### Different Views of the Same Part
+
+A part can be monolithic from the point of view of one organisation (e.g. a connector for the OEM) and an assembly from the point of view of another (e.g. the manufacturer). This can be expressed in two ways, depending on process and methodology:
+
+1. Different {{< vec-class PartVersion >}}s (e.g. the OEM and the manufacturer part number), each described by its own specifications, related by an {{< vec-class ItemEquivalence >}}.
+2. A single {{< vec-class PartVersion >}} described by specifications in different {{< vec-class DocumentVersion >}}s, each containing the view of one process partner. A reading system resolves the relevant specification via the containing {{< vec-class DocumentVersion >}} (see [Navigating Information in a VEC]({{< relref "../../general/interface-behaviour#navigating-information-in-a-vec" >}})).
+
+The details are subject of a separate issue.
 
 ## Unclassified / Custom Component Types 
 
