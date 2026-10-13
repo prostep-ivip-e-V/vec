@@ -447,7 +447,7 @@ From a bill of material perspective, a vehicle network is a further level above 
 The vehicle network bill of material is contained in a {{<vec-class DocumentVersion >}} of its own, beside the harness descriptions.
 
 {{% callout note %}}
-The literals `VehicleNetwork` and `CarSet` are standardised from VEC 2.x.0. In earlier versions, the values are valid against the regular VEC XML schema, but not against the strict schema (see {{< vec-class PartStructureContentType >}} and [Open Enumerations]({{< relref "../../general/xml-xsd#open-enumerations" >}})).
+The literals `VehicleNetwork` and `CarSet` are standardised from VEC 2.3.0. In earlier versions, the values are valid against the regular VEC XML schema, but not against the strict schema (see {{< vec-class PartStructureContentType >}} and [Open Enumerations]({{< relref "../../general/xml-xsd#open-enumerations" >}})).
 {{% /callout %}}
 
 [^1]: Stufenkabelbaum
