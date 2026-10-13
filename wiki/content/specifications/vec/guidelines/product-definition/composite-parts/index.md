@@ -24,6 +24,10 @@ classes:
   - VariantConfiguration
   - ConfigurationConstraint
   - ModuleList
+  - PartRelation
+  - PrimaryPartType
+  - ConnectorHousingSpecification
+  - TerminalSpecification
 
 history:
   - date: 2022-04-24
@@ -41,6 +45,9 @@ history:
   - date: 2026-10-05
     description: "BOM layers of a harness and control information; neutral modules"
     ghIssue: "1178"
+  - date: 2026-10-09
+    description: "Assemblies: catalogue parts with inner structure, assembly or accessory, subcomponents with and without part number, examples"
+    ghIssue: "1192"
 
 
 menu:
@@ -60,13 +67,31 @@ Whereas the model description defines the general concepts of multilevel composi
 
 ## Assemblies
 
+{{< gh-review "1192" >}}
+
 Assemblies are predefined components, that are typically defined in a central place (e.g. a component library), reused in multiple projects / harnesses and whose inner structure is relevant for the harness design or the development process. Therefore, they are not considered atomic and information about their structure, subcomponents, etc is required. Often, assemblies are defined within their own drawings and have individual part numbers. Examples could be multipart connectors, fixings, grommets or, more complicated, preassembled cables like _USB_ or _LVDS_.
+
+A typical case are catalogue parts with inner structure: components that are ordered under a single part number, but physically contain further components, e.g. a connector delivered with pre-inserted contacts and seals, a shielded connector with its shield clamp, or an E/E component delivered with a pigtail ending in a connector. Design tools and rule checkers need the design relevant properties of the contained components (e.g. contact type and size, crimp ranges, cavity system, mating capability, geometry). Such a part is modelled as an assembly that contains its components, and **not** as a connector or E/E component "that has a bill of material". A bill of material means that the part is _built from_ its contents, and none of the contents is "leading" — which content is relevant depends on the use case.
 
 {{< figure src="assembly-concept.svg" numbered="true" lightbox="true" title="Basic Concept of an Assembly">}}
 
 The figure above illustrates very simplified the concept of an assembly and its usage. On the left hand side you can see the library or part master data definition of the assembly, on the right hand side you can see its usage. 
 
- The level of detail for the mapped information of an assembly can range from a pure bill of material view to even a well defined "mini harness". A pure bill of material view is often not sufficient, especially if the specific usage of the assembly in a larger wiring harness has to be defined precisely (e.g., for preassembled cables the placement of the connectors, the routing of the cable, a.s.o.).
+The level of detail for the mapped information of an assembly can range from a pure bill of material view to even a well defined "mini harness". A pure bill of material view is often not sufficient, especially if the specific usage of the assembly in a larger wiring harness has to be defined precisely (e.g., for preassembled cables the placement of the connectors, the routing of the cable, a.s.o.). On the other hand, a {{<vec-class PartStructureSpecification >}} may be delivered without any further specification about the contents. The specifications of the contents that are needed e.g. by rule checkers (a {{< vec-class TerminalSpecification >}} with crimp ranges, the {{< vec-class CavitySpecification >}}s, the mating capability) are the _typical_ content, not a required one.
+
+### Assembly or Accessory?
+
+In harness design, two situations deal with sets of parts that belong together and are easily confused:
+
+- **A part that consists of other parts:** the part defines a bill of material, i.e. it is _built from_ its contents and is delivered with them under its own part number (e.g. a connector with pre-inserted contacts and seals). This is the assembly described in this guideline.
+- **A part that requires other parts when it is used:** the other parts are mandatory or optional additions that are selected and ordered separately (e.g. a connector and the different variants of caps that can be chosen for it). These are accessories.
+
+The VEC represents these two situations with different concepts. Whether a component that comes together with another component is part of an assembly or not is decided by one criterion: **is the component included in the part number of the assembly?**
+
+| Situation | Construction | Guideline |
+|---|---|---|
+| The component is included in the part number (delivered with it, not ordered separately), regardless of whether it has a part number of its own | Position in the bill of material of the assembly: {{< vec-class PartStructureSpecification >}} with `Content = Assembly` | this section |
+| The component is not included in the part number and has to be ordered separately (e.g. caps, locks, clips) | {{< vec-class PartRelation >}} | [Accessories]({{< relref "../../component-types/accessories" >}}) |
 
 ### Part Master Data
 
@@ -78,9 +103,16 @@ The following figure "Assembly Definition" illustrates the basic structure of a 
 
 To define an assembly a {{<vec-class DocumentVersion >}} is required to contain all necessary {{< vec-class Specification >}}s (the "Assembly Definition" highlighted in green). This {{< vec-class DocumentVersion >}} has the `DocumentType = "PartMaster"`, just the same as for any other simple component. It can contain any {{<vec-class Specification >}} required to describe the assembly (like a {{<vec-class GeneralTechnicalPartSpecification >}}).
 
-To describe the inner structure of an assembly, instances of its subcomponents are needed. The instances of the subcomponents can be defined either with {{< vec-class PartOccurrence >}}s or {{< vec-class PartUsage >}}s, depending on whether the information about specific parts / part numbers of the subcomponents is required / available, or if the subcomponents are just needed as reference elements to define the concrete usage of the assembly in a harness. 
+To describe the inner structure of an assembly, instances of its subcomponents are needed (see [Instances of Components]({{< relref "../component-instances" >}})). Which kind of instance is used depends on whether the subcomponent has a part number of its own:
 
-To define the instances of the subcomponents a container specification is required within the {{< vec-class DocumentVersion >}} that defines the assembly. This is either a {{< vec-class CompositionSpecification >}} or a {{< vec-class PartUsageSpecification >}}, depending on the type of instances used for the assembly. In case of the example {{< vec-class PartOccurrence >}}s are used, and thus a {{< vec-class CompositionSpecification >}} is used as container.
+| | Subcomponent with a part number | Subcomponent without a part number |
+|---|---|---|
+| Instance | {{< vec-class PartOccurrence >}} | {{< vec-class PartUsage >}} |
+| Container | {{< vec-class CompositionSpecification >}} | {{< vec-class PartUsageSpecification >}} |
+| Properties of the subcomponent | Part master data of its own {{< vec-class PartVersion >}}, referenced via `Part`. The part master data can be contained in a separate {{< vec-class DocumentVersion >}} of the same VEC. | Specifications referenced directly via `PartOrUsageRelatedSpecification`, normally contained in the {{< vec-class DocumentVersion >}} of the assembly. |
+| Example | a standard contact that is also available on its own | the seals of a connector |
+
+Both kinds can be combined in the bill of material of the same assembly, each kind in its own container within the {{< vec-class DocumentVersion >}} that defines the assembly. For subcomponents with a part number, the part master data of their {{< vec-class PartVersion >}}s does not have to be complete either: a VEC may contain only the specifications that are relevant for the use case (see the level of detail described [above]({{< relref "#assemblies" >}})). A {{< vec-class PartUsage >}} in the bill of material of an assembly is sufficient from the point of view of a process that uses the assembly; no realization by a {{< vec-class PartOccurrence >}} is expected (see [Instances of Components – PartUsages without Realization]({{< relref "../component-instances#partusages-without-realization" >}})). In the figure above, {{< vec-class PartOccurrence >}}s are used, and thus a {{< vec-class CompositionSpecification >}} is used as container.
 
 {{% callout note %}}
 Both the {{< vec-class CompositionSpecification >}} and the {{< vec-class PartUsageSpecification >}} are just used as container to define instances of components. They do not make a statement about the content of an assembly. Not even implicitly by being contained in the {{<vec-class DocumentVersion >}} defining the assembly. For this reason, neither the {{< vec-class CompositionSpecification >}} nor the {{< vec-class PartUsageSpecification >}} is a {{< vec-class PartOrUsageRelatedSpecification >}}. This modelling approach enables the VEC to define for example 150% wiring harnesses or assembly families (see later in this implementation guideline).
@@ -93,7 +125,7 @@ Conversely, the occurrences in a container are not necessarily part of any bill 
 
 The same rule, read from the other side: a {{<vec-class PartVersion >}} without its own {{<vec-class PartStructureSpecification >}} is regarded as one atomic part from a bill of material perspective, even if its part master {{<vec-class DocumentVersion >}} contains a {{< vec-class CompositionSpecification >}} with several occurrences (see {{< vec-diagram "composite-part-descriptions/assemblies-modules-and-harness-configurations" >}}). This is a safeguard against deriving a bill of material from a container. It is **not** a way to describe the inner structure of a part without a bill of material: components that are physically contained in the delivered part belong in its {{<vec-class PartStructureSpecification >}}.
 
-The content of the assembly is defined explicitly with a {{<vec-class PartStructureSpecification >}} that references the instances contained in the assembly as `InBillOfMaterial` and referencing the {{<vec-class PartVersion >}} of the assembly as `DescribedPart`. In other words, the {{<vec-class PartStructureSpecification >}} represents the bill of material (BOM) of the assembly (or any other composite part in the VEC). The  {{<vec-class PartStructureSpecification >}} defines `Content="Assembly"` and the {{<vec-class PartVersion >}} of the assembly has a `PrimaryPartType = "PartStructure"`.
+The content of the assembly is defined explicitly with a {{<vec-class PartStructureSpecification >}} that references the instances contained in the assembly as `InBillOfMaterial` and referencing the {{<vec-class PartVersion >}} of the assembly as `DescribedPart`. In other words, the {{<vec-class PartStructureSpecification >}} represents the bill of material (BOM) of the assembly (or any other composite part in the VEC). The  {{<vec-class PartStructureSpecification >}} defines `Content="Assembly"` and the {{<vec-class PartVersion >}} of the assembly normally has a `PrimaryPartType = "PartStructure"`. The {{< vec-class PrimaryPartType >}} of a component type (e.g. `ConnectorHousing`) may only be used if the assembly in its assembled state has the properties of that type as a whole; an assembly with a topology of its own is always a `PartStructure` (see [Component Description – Hybrid and Composite Components]({{< relref "../component-description#hybrid-and-composite-components" >}}) and the [examples]({{< relref "#examples" >}}) below).
 
 If any information about the subcomponents or their relationships should be defined in a more detailed way (e.g. the contacting of a preassembled cable) appropriate {{< vec-class Specification >}}s can be added to the {{<vec-class DocumentVersion >}} of the assembly as needed (indicated in the figure with the `ContactingSpecification`). An assembly can even define its own topology ({{<vec-class TopologySpecification >}}) or schematic ({{<vec-class ConnectionSpecification >}}).
 
@@ -101,20 +133,11 @@ If any information about the subcomponents or their relationships should be defi
 #### XML Example
 
 ```xml
-<PartVersion id="id_1001_0">
-    <Description id="id_A1" xsi:type="vec:LocalizedString">
-        <LanguageCode>En</LanguageCode>
-        <Value>Composite Part A1</Value>
-    </Description>
-    <CompanyName>Example Corp.</CompanyName>
-    <PartNumber>N.1</PartNumber>
-    <PrimaryPartType>PartStructure</PrimaryPartType>
-</PartVersion>
-...
 <DocumentVersion id="id_1002_0">
     <CompanyName>Example Corp.</CompanyName>
     <DocumentNumber>N.1</DocumentNumber>
     <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>A</DocumentVersion>
     <ReferencedPart>id_1001_0</ReferencedPart>
     <Specification id="id_2000_0" xsi:type="vec:PartStructureSpecification">
         <Identification>P1</Identification>
@@ -136,6 +159,17 @@ If any information about the subcomponents or their relationships should be defi
         </Component>
     </Specification>
 </DocumentVersion>
+...
+<PartVersion id="id_1001_0">
+    <Description id="id_A1" xsi:type="vec:LocalizedString">
+        <LanguageCode>En</LanguageCode>
+        <Value>Composite Part A1</Value>
+    </Description>
+    <CompanyName>Example Corp.</CompanyName>
+    <PartNumber>N.1</PartNumber>
+    <PartVersion>A</PartVersion>
+    <PrimaryPartType>PartStructure</PrimaryPartType>
+</PartVersion>
 ```
 ### Usage of an Assembly
 
@@ -188,6 +222,150 @@ The following XML snippet shows the occurrences of the example in the {{<vec-cla
 </Component>
 ```
 
+### Examples
+
+#### Connector with Pre-inserted Contacts
+
+A connector delivered with pre-inserted contacts and seals under one part number can be represented in two ways. Both have a {{< vec-class PartStructureSpecification >}} for the contents; they differ in the {{< vec-class PrimaryPartType >}} of the assembly and in the specification that describes the connector properties. In both representations, the contents can be {{< vec-class PartOccurrence >}}s, {{< vec-class PartUsage >}}s or a combination of both (see [Part Master Data]({{< relref "#part-master-data" >}})).
+
+| | Representation A: `PartStructure` | Representation B: `ConnectorHousing` |
+|---|---|---|
+| Use when | the connector properties are those of the contained housing, and the part is described by its contents | the part **as a whole in its assembled state** has connector properties of its own that differ from its contents (e.g. a 40-cavity connector assembled from two 20-cavity contact carriers) |
+| `PrimaryPartType` of the assembly | `PartStructure` | `ConnectorHousing` |
+| Connector properties | {{< vec-class ConnectorHousingSpecification >}} of the contained housing | {{< vec-class ConnectorHousingSpecification >}} describing the assembly itself |
+| Contents | {{< vec-class PartStructureSpecification >}} referencing the housing, contacts and seals | {{< vec-class PartStructureSpecification >}} referencing the contact carriers, contacts, seals, backshell, … |
+
+In both cases, the contacts are described by a {{< vec-class TerminalSpecification >}}, as required by crimp and cavity rule checkers: for a contact with a part number in the part master data of its {{< vec-class PartVersion >}}, for a contact without a part number directly at its {{< vec-class PartUsage >}}. The assignment of the contacts to the cavities can be defined in the same {{< vec-class DocumentVersion >}} (e.g. with a {{< vec-class ContactingSpecification >}}), if required.
+
+**Representation A: PartStructure.** In this example, the contacts are standard contacts with a part number of their own ({{< vec-class PartOccurrence >}}s), while the housing and the seals have no part number of their own ({{< vec-class PartUsage >}}s).
+
+```xml
+<DocumentVersion id="dv_1">
+  <CompanyName>Supplier Corp.</CompanyName>
+  <DocumentNumber>CON-4711</DocumentNumber>
+  <DocumentType>PartMaster</DocumentType>
+  <DocumentVersion>A</DocumentVersion>
+  <ReferencedPart>pv_1</ReferencedPart>
+  <Specification xsi:type="vec:PartStructureSpecification" id="pss_1">
+    <Identification>BOM</Identification>
+    <DescribedPart>pv_1</DescribedPart>
+    <Content>Assembly</Content>
+    <InBillOfMaterial>pu_housing po_contact_1 po_contact_2 pu_seal_1 pu_seal_2</InBillOfMaterial>
+  </Specification>
+  <!-- contained components without a part number of their own -->
+  <Specification xsi:type="vec:PartUsageSpecification" id="pus_1">
+    <Identification>CONTENTS-WITHOUT-PN</Identification>
+    <PartUsage id="pu_housing">
+      <Identification>HOUSING</Identification>
+      <PrimaryPartUsageType>ConnectorHousing</PrimaryPartUsageType>
+      <PartOrUsageRelatedSpecification>chs_1</PartOrUsageRelatedSpecification>
+    </PartUsage>
+    <PartUsage id="pu_seal_1">
+      <Identification>SEAL-1</Identification>
+      <PrimaryPartUsageType>CavitySeal</PrimaryPartUsageType>
+    </PartUsage>
+    ...
+  </Specification>
+  <!-- contained components with a part number of their own -->
+  <Specification xsi:type="vec:CompositionSpecification" id="cs_1">
+    <Identification>CONTENTS-WITH-PN</Identification>
+    <Component id="po_contact_1">
+      <Identification>CONTACT-1</Identification>
+      <Part>pv_contact</Part>
+    </Component>
+    <Component id="po_contact_2">
+      <Identification>CONTACT-2</Identification>
+      <Part>pv_contact</Part>
+    </Component>
+  </Specification>
+  <Specification xsi:type="vec:ConnectorHousingSpecification" id="chs_1">
+    <Identification>CHS-HOUSING</Identification>
+    ...
+  </Specification>
+</DocumentVersion>
+<!-- part master data of the contact -->
+<DocumentVersion id="dv_contact">
+  <CompanyName>Supplier Corp.</CompanyName>
+  <DocumentNumber>TRM-0815</DocumentNumber>
+  <DocumentType>PartMaster</DocumentType>
+  <DocumentVersion>B</DocumentVersion>
+  <ReferencedPart>pv_contact</ReferencedPart>
+  <Specification xsi:type="vec:TerminalSpecification" id="ts_contact">
+    <Identification>TS-TRM-0815</Identification>
+    <DescribedPart>pv_contact</DescribedPart>
+    ...
+  </Specification>
+</DocumentVersion>
+...
+<PartVersion id="pv_1">
+  <CompanyName>Supplier Corp.</CompanyName>
+  <PartNumber>CON-4711</PartNumber>
+  <PartVersion>A</PartVersion>
+  <PrimaryPartType>PartStructure</PrimaryPartType>
+</PartVersion>
+<PartVersion id="pv_contact">
+  <CompanyName>Supplier Corp.</CompanyName>
+  <PartNumber>TRM-0815</PartNumber>
+  <PartVersion>B</PartVersion>
+  <PrimaryPartType>PluggableTerminal</PrimaryPartType>
+</PartVersion>
+```
+
+**Representation B: ConnectorHousing.** In this example, all contents have no part number of their own ({{< vec-class PartUsage >}}s).
+
+```xml
+<DocumentVersion id="dv_2">
+  <CompanyName>Supplier Corp.</CompanyName>
+  <DocumentNumber>CON-4712</DocumentNumber>
+  <DocumentType>PartMaster</DocumentType>
+  <DocumentVersion>A</DocumentVersion>
+  <ReferencedPart>pv_2</ReferencedPart>
+  <!-- the connector properties of the assembled part (40 cavities) -->
+  <Specification xsi:type="vec:ConnectorHousingSpecification" id="chs_40">
+    <Identification>CHS-CON-4712</Identification>
+    <DescribedPart>pv_2</DescribedPart>
+    ...
+  </Specification>
+  <Specification xsi:type="vec:PartStructureSpecification" id="pss_2">
+    <Identification>BOM</Identification>
+    <DescribedPart>pv_2</DescribedPart>
+    <Content>Assembly</Content>
+    <InBillOfMaterial>pu_carrier_1 pu_carrier_2 pu_backshell pu_lever ...</InBillOfMaterial>
+  </Specification>
+  <Specification xsi:type="vec:PartUsageSpecification" id="pus_2">
+    <Identification>CONTENTS</Identification>
+    <PartUsage id="pu_carrier_1">
+      <Identification>CARRIER-1</Identification>
+      <PrimaryPartUsageType>ConnectorHousing</PrimaryPartUsageType>
+      <PartOrUsageRelatedSpecification>chs_20</PartOrUsageRelatedSpecification>
+    </PartUsage>
+    ...
+  </Specification>
+  <Specification xsi:type="vec:ConnectorHousingSpecification" id="chs_20">
+    <!-- the 20-cavity contact carrier, used by both carrier PartUsages -->
+    <Identification>CHS-CARRIER-20</Identification>
+    ...
+  </Specification>
+</DocumentVersion>
+...
+<PartVersion id="pv_2">
+  <CompanyName>Supplier Corp.</CompanyName>
+  <PartNumber>CON-4712</PartNumber>
+  <PartVersion>A</PartVersion>
+  <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+</PartVersion>
+```
+
+#### E/E Component with Pigtail
+
+An E/E component that is delivered with wires ending in a harness side connector is a `PartStructure` with a topology of its own. Its bill of material contains the E/E component, the wires and the connector, each as a {{< vec-class PartOccurrence >}} or a {{< vec-class PartUsage >}}, depending on whether it has a part number of its own. Different consumers use different parts of this description:
+
+- **System schematic:** the {{< vec-class EEComponentSpecification >}} and its pins.
+- **Wiring:** the harness side connector and its mating capability.
+- **3D / topology:** the placeable elements and the bundle segment of the pigtail.
+
+A receiving system selects the occurrences and specifications relevant for its use case by navigating the model (see [Navigating Information in a VEC]({{< relref "../../general/interface-behaviour#navigating-information-in-a-vec" >}})). Different editors or process partners may see and deliver different slices of the same assembly; this is the normal case and not an inconsistency. When the assembly is used in a harness, only the subcomponents about which the harness makes a statement are instantiated, e.g. the harness side connector to define its coupling (see [Usage of an Assembly]({{< relref "#usage-of-an-assembly" >}})).
+
 ## Harness & Modules
 
 From a high level perspective, a harness is just a "very complicated" assembly. The two major differences are:
@@ -213,7 +391,7 @@ Not all harnesses are designed as customer specific harnesses. For less complex 
 
 The following figure shows the basic structure of a harness definition in the VEC. It has to be read from left to right.
 
-{{< figure src="harness-definition.svg" numbered="true" lightbox="true" title="Basic Concept of a Harness">}}
+{{< figure src="harness-definition.svg" numbered="true" lightbox="true" title="Harness Definition">}}
 
 The harness definition starts on the left hand side with the `COMPONENTS` {{<vec-class CompositionSpecification >}}. It contains all component occurrences that are required for the harness (or its definition). If the harness contains components without a specific {{<vec-class PartVersion >}}, the use of {{<vec-class PartUsage >}}s is also valid. The illustration contains only the hierarchical structure of a harness definition. A complete definition will include a wide variety of additional {{<vec-class Specification>}}s that allow the detailed definition of the harness based on the occurrences (e.g. {{<vec-class TopologySpecification >}}, {{<vec-class PlacementSpecification >}}, {{<vec-class RoutingSpecification >}}, {{<vec-class ContactingSpecification >}}).
 
