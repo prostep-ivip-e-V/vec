@@ -82,7 +82,12 @@ The level of detail for the mapped information of an assembly can range from a p
 
 ### Assembly or Accessory?
 
-Whether a component that comes together with another component is part of an assembly or not is decided by one criterion: **is the component included in the part number of the assembly?**
+In harness design, two situations deal with sets of parts that belong together and are easily confused:
+
+- **A part that consists of other parts:** the part defines a bill of material, i.e. it is _built from_ its contents and is delivered with them under its own part number (e.g. a connector with pre-inserted contacts and seals). This is the assembly described in this guideline.
+- **A part that requires other parts when it is used:** the other parts are mandatory or optional additions that are selected and ordered separately (e.g. a connector and the different variants of caps that can be chosen for it). These are accessories.
+
+The VEC represents these two situations with different concepts. Whether a component that comes together with another component is part of an assembly or not is decided by one criterion: **is the component included in the part number of the assembly?**
 
 | Situation | Construction | Guideline |
 |---|---|---|
