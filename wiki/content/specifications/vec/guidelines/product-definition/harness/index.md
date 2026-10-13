@@ -35,6 +35,9 @@ history:
   - date: 2026-10-05T00:00:00Z
     description: "Layer rule moved to Composite Parts; COMPONENTS / MODULES as recommendation; variant specifications per harness description."
     ghIssue: "1178"
+  - date: 2026-10-13T00:00:00Z
+    description: "One PartMaster document per component scoped to this mapping."
+    ghIssue: "1196"
 
 
 menu:
@@ -123,12 +126,14 @@ Due to other modeling approaches in the VEC, there is no longer any need for thi
 
 ### DocumentVersions
 
+{{< gh-review "1196" >}}
+
 In the VEC, all payload data is contained within {{<vec-class DocumentVersion>}}s. Typically, you would structure those according to the actual documents used in the process. Unfortunately, this concept in its detail form is not present in the KBL. Therefore, for the generic conversion described here, practical assumptions need to be made:
 
 1. It is common practice to describe components in individual datasets/documents and publish them separately &rarr; one {{<vec-class  DocumentVersion >}} for each harness component (e.g. connector, wire and terminal, see [Partitioning and Sizing]({{<relref "../../general/partitioning-sizing-packaging/#partitioning-and-sizing">}})), see section [Part Master Data]({{<relref "#part-master-data">}}).
 1. It is also common for a wiring harness to be fully described in a single 150% dataset, containing all information about the used component occurrences, variants, connectivity, dimensioning, and so on &rarr; one {{< vec-class DocumentVersion >}} for the harness itself, see section [Harness Description]({{<relref "#harness-description">}}).
 
-This means that a {{<vec-class DocumentVersion>}}s with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except instances of {{<kbl-class Part_With_Title_Block>}}.
+This means that, for this mapping, a {{<vec-class DocumentVersion>}} with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except instances of {{<kbl-class Part_With_Title_Block>}}.
 
 For the {{<kbl-class Harness>}} itself, a {{<vec-class DocumentVersion>}} with `DocumentType=HarnessDescription` is created. This document contains all relevant information about the harness as well as the {{<vec-class specification>}}s for the {{<kbl-class Module>}}s and {{<kbl-class Harness_configuration>}}s.
 
