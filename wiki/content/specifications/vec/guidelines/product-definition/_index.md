@@ -20,7 +20,8 @@ classes:
 history: [
   {date: 2022-09-09T00:00:00.000Z, description: New Implementation Guideline for Part Usages & Part Occurrences, issue: KBLFRM-1038},
   {date: 2025-12-18T00:00:00.000Z, description: Content of a HarnessDescription, ghIssue: "1036"},
-  {date: 2026-10-09T00:00:00.000Z, description: Definition of a HarnessDescription; vehicle network, ghIssue: "1190"}
+  {date: 2026-10-09T00:00:00.000Z, description: Definition of a HarnessDescription; vehicle network, ghIssue: "1190"},
+  {date: 2026-10-13T00:00:00.000Z, description: Link to Composite Parts – Vehicle Network, ghIssue: "1194"}
 ]
 menu: {vec-guidelines: {identifier: product-definition, weight: 4000}}
 weight: 4000
@@ -90,6 +91,8 @@ Tracking – Contributions to a Target Dataset]({{< relref "../key-concepts/digi
 
 {{< gh-review "1190" >}}
 
+{{< gh-review "1194" >}}
+
 A vehicle network (_Bordnetz_) can be represented with increasing scope:
 
 1. **A set of harness descriptions.** In the simplest form, a VEC contains several harness
@@ -103,7 +106,7 @@ A vehicle network (_Bordnetz_) can be represented with increasing scope:
    or a bill of material of the vehicle network, this information is contained in additional
    {{< vec-class DocumentVersion >}}s beside the unchanged harness descriptions.
 3. **A part structure.** If the vehicle network has an identity of its own (e.g. a part number),
-   it can be defined as a composite part (see [Composite Parts]({{< relref "composite-parts" >}})).
+   it can be defined as a composite part (see [Composite Parts – Vehicle Network]({{< relref "composite-parts#vehicle-network" >}})).
 
 Merging all harness descriptions into a single {{< vec-class DocumentVersion >}} is possible,
 but not recommended: a harness does not change when it is put into a vehicle, so a merged
