@@ -388,7 +388,7 @@ Not all harnesses are designed as customer specific harnesses. For less complex 
 
 The following figure shows the basic structure of a harness definition in the VEC. It has to be read from left to right.
 
-{{< figure src="harness-definition.svg" numbered="true" lightbox="true" title="Basic Concept of a Harness">}}
+{{< figure src="harness-definition.svg" numbered="true" lightbox="true" title="Harness Definition">}}
 
 The harness definition starts on the left hand side with the `COMPONENTS` {{<vec-class CompositionSpecification >}}. It contains all component occurrences that are required for the harness (or its definition). If the harness contains components without a specific {{<vec-class PartVersion >}}, the use of {{<vec-class PartUsage >}}s is also valid. The illustration contains only the hierarchical structure of a harness definition. A complete definition will include a wide variety of additional {{<vec-class Specification>}}s that allow the detailed definition of the harness based on the occurrences (e.g. {{<vec-class TopologySpecification >}}, {{<vec-class PlacementSpecification >}}, {{<vec-class RoutingSpecification >}}, {{<vec-class ContactingSpecification >}}).
 
