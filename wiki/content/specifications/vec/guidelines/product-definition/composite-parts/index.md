@@ -48,6 +48,9 @@ history:
   - date: 2026-10-09
     description: "Assemblies: catalogue parts with inner structure, assembly or accessory, subcomponents with and without part number, examples"
     ghIssue: "1192"
+  - date: 2026-10-13
+    description: "Vehicle network as a part structure"
+    ghIssue: "1194"
 
 
 menu:
@@ -427,5 +430,24 @@ A reading system can ask two different questions about a composite part, which a
 - **Which composite part does an occurrence belong to?** (_membership_) Coming from an occurrence in the using context (e.g. from a routing, a contacting or a placement), a reading system finds the composite part by navigating the references in inverse direction:
   - For in-place modules, via the {{<vec-class PartStructureSpecification >}}s that reference the occurrence as `InBillOfMaterial`.
   - For instantiated library parts, via the {{<vec-class PartWithSubComponentsRole >}} that references the instantiated occurrence as `SubComponent`. This is the only reference that assigns an instantiated subcomponent to a specific instance of the assembly, if the assembly is used several times in the same context. The `InstanciatedOccurrence` only identifies the origin in the part master definition.
+
+## Vehicle Network
+
+{{< gh-review "1194" >}}
+
+From a bill of material perspective, a vehicle network is a further level above the harness. If the vehicle network has an identity of its own (e.g. a part number), it is defined like any other composite part (see [Product Definition – Vehicle Network]({{< relref "../#vehicle-network" >}}) for the other representations):
+
+- A {{<vec-class PartVersion>}} with `PrimaryPartType = PartStructure` and a {{<vec-class PartStructureSpecification >}} with
+  - `Content = VehicleNetwork` for the complete set of harnesses of a vehicle with full variance (150%), or
+  - `Content = CarSet` for the configured set of harnesses of one specific vehicle (100%).
+- The bill of material of a `VehicleNetwork` references the occurrences of the harnesses or harness variants. The bill of material of a `CarSet` references the harness variants (staged harnesses) and / or the modules selected for the vehicle (customer specific harnesses). The occurrences are contained in a container of their own (see [Layers and Control Information]({{< relref "#layers-and-control-information" >}})).
+- Each harness occurrence has a {{<vec-class PartWithSubComponentsRole >}}. The modules and components of the harness are only instantiated in the context of the vehicle network if this context makes a statement about them (see [Usage of an Assembly]({{< relref "#usage-of-an-assembly" >}})), which is normally not the case.
+- If the vehicle network has no part number, {{<vec-class PartUsage>}}s in a {{<vec-class PartUsageSpecification >}} are used instead.
+
+The vehicle network bill of material is contained in a {{<vec-class DocumentVersion >}} of its own, beside the harness descriptions.
+
+{{% callout note %}}
+The literals `VehicleNetwork` and `CarSet` are standardised from VEC 2.3.0. In earlier versions, the values are valid against the regular VEC XML schema, but not against the strict schema (see {{< vec-class PartStructureContentType >}} and [Open Enumerations]({{< relref "../../general/xml-xsd#open-enumerations" >}})).
+{{% /callout %}}
 
 [^1]: Stufenkabelbaum
