@@ -10,6 +10,7 @@ categories: []
 date: 2022-02-09
 lastmod: 2019-12-02T12:46:09+01:00
 draft: false
+review: true
 classes:
   - ComponentNode
   - ComponentConnector
@@ -22,6 +23,9 @@ history:
   - date: 2022-02-04
     description: "Improved Implementation Guideline for coupling devices (and extracted to a separate page)"
     issue: "KBLFRM-600"    
+  - date: 2026-10-13
+    description: "Containment in DocumentVersions reflects responsibilities and release of information"
+    ghIssue: "1196"
 
 menu:
   vec-guidelines:
@@ -65,7 +69,9 @@ The connectivity between the port on each side is represented with a internal {{
 
 ### Document Structure
 
-Like with any self-contained piece of information in the VEC, for traceability reasons the definition of a _coupling _device_ should be in the correct {{< vec-class DocumentVersion>}}. Section [General Structure]({{< relref "../../key-concepts/general-structure">}}) explains the general concept of {{<vec-class DocumentVersion>}} and their containments. As described there, the containment of {{<vec-class Specification >}}s in their {{<vec-class DocumentVersion>}}s has a semantic meaning. The correct placement of a _coupling device_ in a containing {{<vec-class DocumentVersion>}} is a perfect example for that.
+{{< gh-review "1196" >}}
+
+Like with any self-contained piece of information in the VEC, for traceability reasons the definition of a _coupling _device_ should be in the correct {{< vec-class DocumentVersion>}}. Section [General Structure]({{< relref "../../key-concepts/general-structure">}}) explains the general concept of {{<vec-class DocumentVersion>}} and their containments. As described there, the containment of {{<vec-class Specification >}}s in their {{<vec-class DocumentVersion>}}s reflects the responsibilities and the release of information in the process. The correct placement of a _coupling device_ in a containing {{<vec-class DocumentVersion>}} is a perfect example for that.
 
 Depending on the engineering process, system schematic relevant coupling device might be defined in some kind of master data process, enforcing standardized coupling devices for a specific scope. In that case, one or more of those standardized coupling devices would be managed and published together, and then reused in a specific system schematic. This is illustrated in the figure _"Information Structure"_ below, on the left side of the figure. 
 
