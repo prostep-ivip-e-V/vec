@@ -25,7 +25,6 @@ classes:
   - ConfigurationConstraint
   - ModuleList
   - PartRelation
-  - ModularSlot
   - PrimaryPartType
   - ConnectorHousingSpecification
   - TerminalSpecification
@@ -93,7 +92,6 @@ The VEC represents these two situations with different concepts. Whether a compo
 |---|---|---|
 | The component is included in the part number (delivered with it, not ordered separately), regardless of whether it has a part number of its own | Position in the bill of material of the assembly: {{< vec-class PartStructureSpecification >}} with `Content = Assembly` | this section |
 | The component is not included in the part number and has to be ordered separately (e.g. caps, locks, clips) | {{< vec-class PartRelation >}} | [Accessories]({{< relref "../../component-types/accessories" >}}) |
-| Special case of the above: selectable inserts of a modular connector | {{< vec-class PartRelation >}} with {{< vec-class ModularSlot >}} | [Connectors – Modular Connector]({{< relref "../../component-types/connectors#modular-connector" >}}) |
 
 ### Part Master Data
 

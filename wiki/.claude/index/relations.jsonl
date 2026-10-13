@@ -1648,8 +1648,6 @@
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "ModuleList", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartRelation", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "PartRelation", "to_kind": "class", "source": "frontmatter"}
-{"from": "ModularSlot", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
-{"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "ModularSlot", "to_kind": "class", "source": "frontmatter"}
 {"from": "PrimaryPartType", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/composite-parts/", "from_kind": "guideline", "to": "PrimaryPartType", "to_kind": "class", "source": "frontmatter"}
 {"from": "ConnectorHousingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/composite-parts/", "to_kind": "guideline", "source": "frontmatter"}
