@@ -11,3 +11,6 @@ public/
 
 # Python venv for .claude/tools/build_index.py
 .venv/
+
+# Working files of the Claude Code issue workflow (issue texts, comments, commit messages)
+/analysis/
