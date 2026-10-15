@@ -43,6 +43,21 @@ Two things to know before relying on `classes.jsonl`:
 The record counts above are a snapshot of the last rebuild; treat them as
 approximate and count the file if an exact number matters.
 
+### Published vs. development model
+
+The index is built from the **published** model
+(`content/specifications/vec/v220/vec-2.2.0.mdxml`). Changes already made in the
+**development** model (`../vec/models/vec.mdxml`, relative to the wiki root) for
+the next release — new classes, attributes and literals, changed documentation —
+are not in the index and not on the generated class pages. Before relying on the
+index for a class, check the drift:
+
+```bash
+.venv/bin/python .claude/tools/model/model_drift.py --filter <ClassName> --docs
+```
+
+See the `vec-issue-workflow` skill (*Model Drift*) for the details.
+
 ### Rebuilding the index
 
 The indices are generated from the wiki content and committed to the repo, so
@@ -288,3 +303,6 @@ Switch to reading full pages when:
 | `content-conventions.md` | Front matter fields, shortcodes, heading style |
 | `cross-references.md` | Linking rules between pages and classes |
 | `glossary.md` | German ↔ English ↔ VEC class name translation table |
+
+For the end-to-end work on an issue (analysis, issue texts, guideline and model
+changes, commits), use the `vec-issue-workflow` skill.
