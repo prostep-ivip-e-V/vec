@@ -51,6 +51,9 @@ history:
   - date: 2026-10-13
     description: "Vehicle network as a part structure"
     ghIssue: "1194"
+  - date: 2026-10-19
+    description: "E/E component with pigtail: link to the detailed guideline"
+    ghIssue: "1127"
 
 
 menu:
@@ -361,6 +364,8 @@ In both cases, the contacts are described by a {{< vec-class TerminalSpecificati
 
 #### E/E Component with Pigtail
 
+{{< gh-review "1127" >}}
+
 An E/E component that is delivered with wires ending in a harness side connector is a `PartStructure` with a topology of its own. Its bill of material contains the E/E component, the wires and the connector, each as a {{< vec-class PartOccurrence >}} or a {{< vec-class PartUsage >}}, depending on whether it has a part number of its own. Different consumers use different parts of this description:
 
 - **System schematic:** the {{< vec-class EEComponentSpecification >}} and its pins.
@@ -368,6 +373,8 @@ An E/E component that is delivered with wires ending in a harness side connector
 - **3D / topology:** the placeable elements and the bundle segment of the pigtail.
 
 A receiving system selects the occurrences and specifications relevant for its use case by navigating the model (see [Navigating Information in a VEC]({{< relref "../../general/interface-behaviour#navigating-information-in-a-vec" >}})). Different editors or process partners may see and deliver different slices of the same assembly; this is the normal case and not an inconsistency. When the assembly is used in a harness, only the subcomponents about which the harness makes a statement are instantiated, e.g. the harness side connector to define its coupling (see [Usage of an Assembly]({{< relref "#usage-of-an-assembly" >}})).
+
+The part master data and the usage in a harness of an E/E component with pigtail are described in detail, with XML examples, in [E/E Components with Pigtail]({{< relref "../../ee-components/pigtail" >}}).
 
 ## Harness & Modules
 
