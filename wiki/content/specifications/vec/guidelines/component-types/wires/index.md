@@ -10,7 +10,7 @@ categories: []
 date: 2019-03-07
 lastmod: 2019-11-29T17:30:52+01:00
 draft: false
-review: false
+review: true
 
 classes:
   - WireSpecification
@@ -26,6 +26,9 @@ classes:
   - WireElementReference
 
 history:
+  - date: 2026-10-21
+    description: "Single core example regenerated without the deprecated WireSpecification.wireElementSpecification; listing and download match"
+    ghIssue: "1211"
   - date: 2025-11-04T00:00:00Z
     description: "Adapted to structural changes / deprecations of WireElement / WireElementSpecificaiton relations in VEC version 2.2.0"
     ghIssue: "1143"
@@ -123,6 +126,8 @@ In theory, there are two possible representations for single cores in the VEC (s
 
 ### XML Listing
 
+{{< gh-review "1211" >}}
+
 The following is a XML listing of the VEC representation of the single core (complete file can be downloaded at the end of the page). To illustrate the purpose of the different specifications more clearly, the listing also contains some additional technical properties, that are not contained in the figures above. 
 
 ```xml
@@ -130,7 +135,7 @@ The following is a XML listing of the VEC representation of the single core (com
 <vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
   <VecVersion>2.2.0</VecVersion>
   <GeneratingSystemName>VEC Samples</GeneratingSystemName>
-  <DateOfCreation>2025-11-04T12:52:59.048113500Z</DateOfCreation>
+  <DateOfCreation>2026-10-21T15:09:38.927415768Z</DateOfCreation>
   <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
   <DocumentVersion id="DocumentVersion_00001">
     <CompanyName>Acme Inc.</CompanyName>
@@ -156,6 +161,7 @@ The following is a XML listing of the VEC representation of the single core (com
         <UnitComponent>SIUnit_00021</UnitComponent>
         <ValueComponent>0.35</ValueComponent>
       </CrossSectionArea>
+<!-- Unit `piece`, see: https://github.com/prostep-ivip-e-V/vec/issues/1057 -->
       <NumberOfStrands id="NumericalValue_00007">
         <UnitComponent>OtherUnit_00023</UnitComponent>
         <ValueComponent>7.0</ValueComponent>
@@ -192,7 +198,6 @@ The following is a XML listing of the VEC representation of the single core (com
     <Specification xsi:type="vec:WireSpecification" id="WireSpecification_00015">
       <Identification>WS-WIRE</Identification>
       <DescribedPart>PartVersion_00017</DescribedPart>
-      <WireElementSpecification>WireElementSpecification_00011</WireElementSpecification>
       <WireElement id="WireElement_00016">
         <Identification>1</Identification>
         <WireElementSpecification>WireElementSpecification_00011</WireElementSpecification>
@@ -206,14 +211,14 @@ The following is a XML listing of the VEC representation of the single core (com
     <PrimaryPartType>Wire</PrimaryPartType>
   </PartVersion>
   <Unit xsi:type="vec:SIUnit" id="SIUnit_00018">
+    <SiUnitName>Gram</SiUnitName>
+  </Unit>
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00019">
     <Exponent>-1</Exponent>
     <SiUnitName>Metre</SiUnitName>
   </Unit>
-  <Unit xsi:type="vec:SIUnit" id="SIUnit_00019">
-    <SiUnitName>Gram</SiUnitName>
-  </Unit>
   <Unit xsi:type="vec:CompositeUnit" id="CompositeUnit_00020">
-    <Factors>SIUnit_00019 SIUnit_00018</Factors>
+    <Factors>SIUnit_00018 SIUnit_00019</Factors>
   </Unit>
   <Unit xsi:type="vec:SIUnit" id="SIUnit_00021">
     <Exponent>2</Exponent>

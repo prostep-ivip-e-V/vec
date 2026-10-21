@@ -328,7 +328,6 @@
     <Specification xsi:type="vec:WireSpecification" id="WireSpecification_00082">
       <Identification>WS-BUSBAR</Identification>
       <DescribedPart></DescribedPart>
-      <WireElementSpecification>WireElementSpecification_00081</WireElementSpecification>
       <WireElement id="WireElement_00083">
         <Identification>BUSBAR</Identification>
         <WireElementSpecification>WireElementSpecification_00081</WireElementSpecification>

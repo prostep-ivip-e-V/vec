@@ -9,7 +9,7 @@ categories: []
 date: 2025-07-08
 lastmod: 2025-07-08
 draft: false
-review: false
+review: true
 classes:
 
 classes:
@@ -24,6 +24,9 @@ classes:
   - Reusage
 
 history:
+  - date: 2026-10-21
+    description: "No deprecated WireSpecification.wireElementSpecification in the example"
+    ghIssue: "1211"
   - date: 2025-07-11T00:00:00Z
     description: "New generic concept for E/E component with internal connectivity."
     ghIssue: "915"
@@ -234,6 +237,8 @@ The complete logical structure can be found in the accompanying XML file.
 
 #### Physical Layer
 
+{{< gh-review "1211" >}}
+
 The first building block of the physical layer is the {{<vec-class EEComponentSpecification >}} itself, which represent the outer interface of the E/E component. 
 The XML representation below is shortened down to the Pin _1_ in the Connector _A_.
 
@@ -290,7 +295,6 @@ The second building block of the physical layer are the technical properties of 
     <Specification xsi:type="vec:WireSpecification" id="WireSpecification_00082">
       <Identification>WS-BUSBAR</Identification>
       <DescribedPart></DescribedPart>
-      <WireElementSpecification>WireElementSpecification_00081</WireElementSpecification>
       <WireElement id="WireElement_00083">
         <Identification>BUSBAR</Identification>
         <WireElementSpecification>WireElementSpecification_00081</WireElementSpecification>
