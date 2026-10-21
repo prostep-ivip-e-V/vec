@@ -32,10 +32,8 @@ skill for the content conventions. The class and diagram pages under
 - **Line endings:** some pages use CRLF (e.g. `product-definition/component-description/index.md`,
   `elog-layers/coupling-devices/index.md`). Preserve them: check with `file <page>`; in scripts
   read and write with `newline=''`.
-- **XML examples** must be valid against the schema of the referenced version
-  (`content/specifications/vec/v220/vec_2.2.0.xsd`): validate with `.venv/bin/python` + `lxml`.
-  Root `<vec:VecContent xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="…">` with
-  `<VecVersion>`; children are unqualified; `DocumentVersion`s before `PartVersion`s.
+- **XML examples** are scripted with the VEC scripting API of the harness-model project, never
+  written by hand: see [XML Examples](#xml-examples).
 - **Classes newer than the published model** (development model only, see *Model Drift* in
   [SKILL.md](SKILL.md#model-drift)): mention the VEC version that standardises them (e.g. a
   callout "standardised from VEC 2.3.0").
@@ -44,6 +42,27 @@ skill for the content conventions. The class and diagram pages under
 - **Consistency with the model documentation:** guideline and model must use the same wording for
   the same rule. If the guideline change implies a model documentation change, plan a model
   package with the same wording.
+
+## XML Examples
+
+XML examples are created with the VEC scripting API (`vec/vec-scripting`, experimental) of the
+harness-model project (`git@github.com:4Soft-de/harness-model.git`). It provides reusable building
+blocks, consistent IDs and references, and schema validation. The complete file is offered as a
+download on the guideline page; the page shows excerpts of it.
+
+1. Clone harness-model into `harness-model/` in the wiki root (excluded locally via
+   `../.git/info/exclude`: `/wiki/harness-model/`). Read its `CLAUDE.md` (build, license headers).
+2. Branch off `develop` in harness-model (`feature/…`). Extend the scripting API where needed,
+   staying within its builder pattern (`Builder`, `Customizer`, identification-based locators).
+3. Add a test under `vec/vec-scripting/src/test/java/com/foursoft/harness/vec/files/guidelines/`
+   (pattern: `WireTest`, `EeComponentWithPigtailTest`) that writes
+   `target/samples/ecad-wiki-guideline-<topic>.vec` and validates it. Run the module tests
+   (`./mvnw -o -pl vec/vec-scripting test`).
+4. Copy the `.vec` file into the page bundle and add it to the `links:` front matter
+   (`icon_pack: fas`, `icon: file-code`). Point to the download in the text.
+5. Take the excerpts from the generated file (unchanged lines, omissions as `...`); check that
+   every excerpt line occurs in the file.
+6. Commit in harness-model on the feature branch; the user pushes and opens the PR.
 
 ## Diagrams
 
