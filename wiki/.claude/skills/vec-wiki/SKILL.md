@@ -66,10 +66,12 @@ the working tree contains uncommitted or recently committed changes to guideline
 pages — otherwise an affect analysis silently misses the very change being
 discussed.
 
-Rebuild when a change adds, removes or renames a guideline page, edits a page's
-`classes:` front matter, adds or rewords a MUST/SHALL/SHOULD/MAY statement, or
-imports a new model version. Pure prose edits to an existing section do not
-need one.
+Rebuild after **every** change to the wiki content and commit the result with the
+change. The index records more than the obvious triggers (pages, `classes:`
+front matter, MUST/SHALL/SHOULD/MAY statements, model version): also headings,
+status, history and every GitHub issue linked in a page — including links inside
+XML listings. If `git diff --stat -- .claude/index` shows no change, there is
+nothing to commit.
 
 `build_index.py` needs `lxml`, `python-frontmatter` and `pyyaml`, which are
 usually missing from the system interpreter. Create a venv once:
