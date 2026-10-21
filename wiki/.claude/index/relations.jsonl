@@ -1198,6 +1198,10 @@
 {"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "PartOccurrence", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartUsage", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "PartUsage", "to_kind": "class", "source": "frontmatter"}
+{"from": "PlaceableElementSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "PlaceableElementSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "PlaceableElementRole", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "PlaceableElementRole", "to_kind": "class", "source": "frontmatter"}
 {"from": "PartVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "PartVersion", "to_kind": "class", "source": "frontmatter"}
 {"from": "PrimaryPartType", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
