@@ -1212,6 +1212,10 @@
 {"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "TopologyNode", "to_kind": "class", "source": "frontmatter"}
 {"from": "TopologySegment", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "TopologySegment", "to_kind": "class", "source": "frontmatter"}
+{"from": "ReusageSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "ReusageSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "Reusage", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "Reusage", "to_kind": "class", "source": "frontmatter"}
 {"from": "DocumentVersion", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/ee-components/pigtail/", "from_kind": "guideline", "to": "DocumentVersion", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "TerminalRole", "from_kind": "class", "to": "/specifications/vec/guidelines/ee-components/pigtail/", "to_kind": "guideline", "source": "inline-shortcode"}

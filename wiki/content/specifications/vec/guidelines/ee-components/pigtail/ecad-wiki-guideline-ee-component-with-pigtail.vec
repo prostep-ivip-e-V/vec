@@ -2,26 +2,26 @@
 <vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
   <VecVersion>2.2.0</VecVersion>
   <GeneratingSystemName>VEC Samples</GeneratingSystemName>
-  <DateOfCreation>2026-10-21T11:13:16.829907323Z</DateOfCreation>
+  <DateOfCreation>2026-10-21T11:21:46.167878370Z</DateOfCreation>
   <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
   <DocumentVersion id="DocumentVersion_00001">
     <CompanyName>Acme Inc.</CompanyName>
     <DocumentNumber>DRAW-CON-0042</DocumentNumber>
     <DocumentType>PartMaster</DocumentType>
     <DocumentVersion>1</DocumentVersion>
-    <ReferencedPart>PartVersion_00147</ReferencedPart>
+    <ReferencedPart>PartVersion_00153</ReferencedPart>
     <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_00002">
       <Identification>GTPS-CON-0042</Identification>
-      <DescribedPart>PartVersion_00147</DescribedPart>
+      <DescribedPart>PartVersion_00153</DescribedPart>
     </Specification>
     <Specification xsi:type="vec:PlaceableElementSpecification" id="PlaceableElementSpecification_00003">
       <Identification>PES-CON-0042</Identification>
-      <DescribedPart>PartVersion_00147</DescribedPart>
+      <DescribedPart>PartVersion_00153</DescribedPart>
       <ValidPlacementTypes>OnPoint</ValidPlacementTypes>
     </Specification>
     <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_00004">
       <Identification>CHS-CON-0042</Identification>
-      <DescribedPart>PartVersion_00147</DescribedPart>
+      <DescribedPart>PartVersion_00153</DescribedPart>
       <Slot xsi:type="vec:Slot" id="Slot_00005">
         <SlotNumber>A</SlotNumber>
         <Cavity id="Cavity_00006">
@@ -38,15 +38,15 @@
     <DocumentNumber>DRAW-TRM-0815</DocumentNumber>
     <DocumentType>PartMaster</DocumentType>
     <DocumentVersion>1</DocumentVersion>
-    <ReferencedPart>PartVersion_00148</ReferencedPart>
+    <ReferencedPart>PartVersion_00154</ReferencedPart>
     <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_00009">
       <Identification>GTPS-TRM-0815</Identification>
-      <DescribedPart>PartVersion_00148</DescribedPart>
+      <DescribedPart>PartVersion_00154</DescribedPart>
     </Specification>
     <Specification xsi:type="vec:WireReceptionSpecification" id="WireReceptionSpecification_00010">
       <Identification>WireRec-TRM-0815</Identification>
       <CoreCrossSectionArea id="ValueRange_00011">
-        <UnitComponent>SIUnit_00150</UnitComponent>
+        <UnitComponent>SIUnit_00156</UnitComponent>
         <Minimum>0.35</Minimum>
         <Maximum>0.5</Maximum>
       </CoreCrossSectionArea>
@@ -56,7 +56,7 @@
     </Specification>
     <Specification xsi:type="vec:PluggableTerminalSpecification" id="PluggableTerminalSpecification_00013">
       <Identification>PTS-TRM-0815</Identification>
-      <DescribedPart>PartVersion_00148</DescribedPart>
+      <DescribedPart>PartVersion_00154</DescribedPart>
       <InternalTerminalConnection id="InternalTerminalConnection_00014">
         <Identification>IntCon-TRM-0815</Identification>
         <TerminalReception>TerminalReception_00015</TerminalReception>
@@ -78,10 +78,10 @@
     <DocumentNumber>DRAW-SEN-2000</DocumentNumber>
     <DocumentType>PartMaster</DocumentType>
     <DocumentVersion>1</DocumentVersion>
-    <ReferencedPart>PartVersion_00149</ReferencedPart>
+    <ReferencedPart>PartVersion_00155</ReferencedPart>
     <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_00018">
       <Identification>GTPS-SEN-2000</Identification>
-      <DescribedPart>PartVersion_00149</DescribedPart>
+      <DescribedPart>PartVersion_00155</DescribedPart>
     </Specification>
     <Specification xsi:type="vec:PluggableTerminalSpecification" id="PluggableTerminalSpecification_00019">
       <Identification>PTC-EE-COMP-PIN</Identification>
@@ -123,7 +123,7 @@
     <Specification xsi:type="vec:WireReceptionSpecification" id="WireReceptionSpecification_00029">
       <Identification>WireRec-UNI-CONT</Identification>
       <CoreCrossSectionArea id="ValueRange_00030">
-        <UnitComponent>SIUnit_00150</UnitComponent>
+        <UnitComponent>SIUnit_00156</UnitComponent>
         <Minimum>0.35</Minimum>
         <Maximum>0.5</Maximum>
       </CoreCrossSectionArea>
@@ -151,7 +151,7 @@
     <Specification xsi:type="vec:CoreSpecification" id="CoreSpecification_00036">
       <Identification>Core-PIGTAIL</Identification>
       <CrossSectionArea id="NumericalValue_00037">
-        <UnitComponent>SIUnit_00150</UnitComponent>
+        <UnitComponent>SIUnit_00156</UnitComponent>
         <ValueComponent>0.35</ValueComponent>
       </CrossSectionArea>
     </Specification>
@@ -177,7 +177,7 @@
     </Specification>
     <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00043">
       <Identification>STRUCTURE-SEN-2000</Identification>
-      <DescribedPart>PartVersion_00149</DescribedPart>
+      <DescribedPart>PartVersion_00155</DescribedPart>
       <Content>Assembly</Content>
       <InBillOfMaterial>PartUsage_00060 PartUsage_00072 PartUsage_00077 PartUsage_00082 PartUsage_00086 PartOccurrence_00045 PartOccurrence_00051 PartOccurrence_00055</InBillOfMaterial>
     </Specification>
@@ -205,7 +205,7 @@
             </CavityReference>
           </SlotReference>
         </Role>
-        <Part>PartVersion_00147</Part>
+        <Part>PartVersion_00153</Part>
       </Component>
       <Component id="PartOccurrence_00051">
         <Identification>CONTACT-C1</Identification>
@@ -221,7 +221,7 @@
             <WireReception>WireReception_00016</WireReception>
           </WireReceptionReference>
         </Role>
-        <Part>PartVersion_00148</Part>
+        <Part>PartVersion_00154</Part>
       </Component>
       <Component id="PartOccurrence_00055">
         <Identification>CONTACT-C2</Identification>
@@ -237,7 +237,7 @@
             <WireReception>WireReception_00016</WireReception>
           </WireReceptionReference>
         </Role>
-        <Part>PartVersion_00148</Part>
+        <Part>PartVersion_00154</Part>
       </Component>
     </Specification>
     <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00059">
@@ -425,7 +425,7 @@
         <StartNode>TopologyNode_00104</StartNode>
         <LengthInformation id="SegmentLength_00107">
           <Length id="NumericalValue_00108">
-            <UnitComponent>SIUnit_00151</UnitComponent>
+            <UnitComponent>SIUnit_00157</UnitComponent>
             <ValueComponent>500.0</ValueComponent>
           </Length>
           <Classification>Designed</Classification>
@@ -478,105 +478,124 @@
       <Identification>TOPOLOGY</Identification>
       <TopologyNode id="TopologyNode_00121">
         <Identification>N-B12</Identification>
-        <InstantiatedNode>TopologyNode_00104</InstantiatedNode>
       </TopologyNode>
       <TopologyNode id="TopologyNode_00122">
         <Identification>N-X12</Identification>
-        <InstantiatedNode>TopologyNode_00105</InstantiatedNode>
       </TopologyNode>
       <TopologySegment id="TopologySegment_00123">
         <Identification>S-B12</Identification>
         <EndNode>TopologyNode_00122</EndNode>
-        <InstantiatedSegment>TopologySegment_00106</InstantiatedSegment>
         <StartNode>TopologyNode_00121</StartNode>
+        <LengthInformation id="SegmentLength_00124">
+          <Length id="NumericalValue_00125">
+            <UnitComponent>SIUnit_00157</UnitComponent>
+            <ValueComponent>500.0</ValueComponent>
+          </Length>
+          <Classification>Designed</Classification>
+        </LengthInformation>
       </TopologySegment>
     </Specification>
-    <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_00124">
+    <Specification xsi:type="vec:ReusageSpecification" id="ReusageSpecification_00126">
+      <Identification>RS-B12-ASSY-TOPOLOGY</Identification>
+      <Reusage id="Reusage_00127">
+        <Template>TopologyNode_00104</Template>
+        <Usage>TopologyNode_00121</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00128">
+        <Template>TopologyNode_00105</Template>
+        <Usage>TopologyNode_00122</Usage>
+      </Reusage>
+      <Reusage id="Reusage_00129">
+        <Template>TopologySegment_00106</Template>
+        <Usage>TopologySegment_00123</Usage>
+      </Reusage>
+    </Specification>
+    <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_00130">
       <Identification>PLACEMENTS</Identification>
-      <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00125">
+      <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00131">
         <Identification>B12</Identification>
-        <PlacedElement>PlaceableElementRole_00146</PlacedElement>
-        <Location xsi:type="vec:NodeLocation" id="NodeLocation_00126">
+        <PlacedElement>PlaceableElementRole_00152</PlacedElement>
+        <Location xsi:type="vec:NodeLocation" id="NodeLocation_00132">
           <Identification>B12</Identification>
           <ReferencedNode>TopologyNode_00121</ReferencedNode>
         </Location>
       </Placement>
-      <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00127">
+      <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00133">
         <Identification>X12</Identification>
-        <PlacedElement>PlaceableElementRole_00131</PlacedElement>
-        <Location xsi:type="vec:NodeLocation" id="NodeLocation_00128">
+        <PlacedElement>PlaceableElementRole_00137</PlacedElement>
+        <Location xsi:type="vec:NodeLocation" id="NodeLocation_00134">
           <Identification>X12</Identification>
           <ReferencedNode>TopologyNode_00122</ReferencedNode>
         </Location>
       </Placement>
     </Specification>
-    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00129">
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00135">
       <Identification>COMPONENTS</Identification>
-      <Component id="PartOccurrence_00130">
+      <Component id="PartOccurrence_00136">
         <Identification>X12</Identification>
-        <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00131">
+        <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00137">
           <Identification>X12</Identification>
           <PlaceableElementSpecification>PlaceableElementSpecification_00003</PlaceableElementSpecification>
         </Role>
-        <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_00132">
+        <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_00138">
           <Identification>X12</Identification>
           <ConnectorHousingSpecification>ConnectorHousingSpecification_00004</ConnectorHousingSpecification>
-          <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00133">
+          <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00139">
             <Identification>A</Identification>
             <ReferencedSlot>Slot_00005</ReferencedSlot>
-            <CavityReference id="CavityReference_00134">
+            <CavityReference id="CavityReference_00140">
               <Identification>1</Identification>
               <ReferencedCavity>Cavity_00006</ReferencedCavity>
             </CavityReference>
-            <CavityReference id="CavityReference_00135">
+            <CavityReference id="CavityReference_00141">
               <Identification>2</Identification>
               <ReferencedCavity>Cavity_00007</ReferencedCavity>
             </CavityReference>
           </SlotReference>
         </Role>
         <InstanciatedOccurrence>PartOccurrence_00045</InstanciatedOccurrence>
-        <Part>PartVersion_00147</Part>
+        <Part>PartVersion_00153</Part>
       </Component>
-      <Component id="PartOccurrence_00136">
+      <Component id="PartOccurrence_00142">
         <Identification>B12-ASSY</Identification>
-        <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00137">
+        <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00143">
           <Identification>B12-ASSY</Identification>
           <PartStructureSpecification>PartStructureSpecification_00043</PartStructureSpecification>
-          <SubComponent>PartUsage_00139 PartOccurrence_00130</SubComponent>
+          <SubComponent>PartUsage_00145 PartOccurrence_00136</SubComponent>
         </Role>
-        <Part>PartVersion_00149</Part>
+        <Part>PartVersion_00155</Part>
       </Component>
     </Specification>
-    <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00138">
+    <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00144">
       <Identification>USAGES</Identification>
-      <PartUsage id="PartUsage_00139">
+      <PartUsage id="PartUsage_00145">
         <Identification>B12</Identification>
-        <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00140">
+        <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00146">
           <Identification>B12</Identification>
           <EEComponentSpecification>EEComponentSpecification_00024</EEComponentSpecification>
 <!--Embedded ConnectorHousingRole omitted.-->
-          <HousingComponentRef id="HousingComponentReference_00141">
+          <HousingComponentRef id="HousingComponentReference_00147">
             <Identification>X1</Identification>
             <HousingComponent>HousingComponent_00025</HousingComponent>
-            <PinComponentRef id="PinComponentReference_00142">
+            <PinComponentRef id="PinComponentReference_00148">
               <Identification>1</Identification>
               <PinComponent>PinComponent_00026</PinComponent>
-              <TerminalRole xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00143">
+              <TerminalRole xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00149">
                 <Identification>1</Identification>
                 <TerminalSpecification>PluggableTerminalSpecification_00019</TerminalSpecification>
               </TerminalRole>
             </PinComponentRef>
-            <PinComponentRef id="PinComponentReference_00144">
+            <PinComponentRef id="PinComponentReference_00150">
               <Identification>2</Identification>
               <PinComponent>PinComponent_00027</PinComponent>
-              <TerminalRole xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00145">
+              <TerminalRole xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00151">
                 <Identification>2</Identification>
                 <TerminalSpecification>PluggableTerminalSpecification_00019</TerminalSpecification>
               </TerminalRole>
             </PinComponentRef>
           </HousingComponentRef>
         </Role>
-        <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00146">
+        <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00152">
           <Identification>B12</Identification>
           <PlaceableElementSpecification>PlaceableElementSpecification_00028</PlaceableElementSpecification>
         </Role>
@@ -586,30 +605,30 @@
       </PartUsage>
     </Specification>
   </DocumentVersion>
-  <PartVersion id="PartVersion_00147">
+  <PartVersion id="PartVersion_00153">
     <CompanyName>Acme Inc.</CompanyName>
     <PartNumber>CON-0042</PartNumber>
     <PartVersion>1</PartVersion>
     <PrimaryPartType>ConnectorHousing</PrimaryPartType>
   </PartVersion>
-  <PartVersion id="PartVersion_00148">
+  <PartVersion id="PartVersion_00154">
     <CompanyName>Acme Inc.</CompanyName>
     <PartNumber>TRM-0815</PartNumber>
     <PartVersion>1</PartVersion>
     <PrimaryPartType>PluggableTerminal</PrimaryPartType>
   </PartVersion>
-  <PartVersion id="PartVersion_00149">
+  <PartVersion id="PartVersion_00155">
     <CompanyName>Acme Inc.</CompanyName>
     <PartNumber>SEN-2000</PartNumber>
     <PartVersion>1</PartVersion>
     <PrimaryPartType>PartStructure</PrimaryPartType>
   </PartVersion>
-  <Unit xsi:type="vec:SIUnit" id="SIUnit_00150">
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00156">
     <Exponent>2</Exponent>
     <SiUnitName>Metre</SiUnitName>
     <SiPrefix>Milli</SiPrefix>
   </Unit>
-  <Unit xsi:type="vec:SIUnit" id="SIUnit_00151">
+  <Unit xsi:type="vec:SIUnit" id="SIUnit_00157">
     <SiUnitName>Metre</SiUnitName>
     <SiPrefix>Milli</SiPrefix>
   </Unit>

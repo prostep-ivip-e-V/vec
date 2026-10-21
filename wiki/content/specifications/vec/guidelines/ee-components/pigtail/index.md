@@ -37,6 +37,8 @@ classes:
   - TopologySpecification
   - TopologyNode
   - TopologySegment
+  - ReusageSpecification
+  - Reusage
 
 history:
   - date: 2026-10-19
@@ -111,7 +113,7 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
   <DocumentNumber>DRAW-SEN-2000</DocumentNumber>
   <DocumentType>PartMaster</DocumentType>
   <DocumentVersion>1</DocumentVersion>
-  <ReferencedPart>PartVersion_00149</ReferencedPart>
+  <ReferencedPart>PartVersion_00155</ReferencedPart>
   ...
   <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_00020">
     <Identification>CHS-X1</Identification>
@@ -149,7 +151,7 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
   ...
   <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00043">
     <Identification>STRUCTURE-SEN-2000</Identification>
-    <DescribedPart>PartVersion_00149</DescribedPart>
+    <DescribedPart>PartVersion_00155</DescribedPart>
     <Content>Assembly</Content>
     <InBillOfMaterial>PartUsage_00060 PartUsage_00072 PartUsage_00077 PartUsage_00082 PartUsage_00086 PartOccurrence_00045 PartOccurrence_00051 PartOccurrence_00055</InBillOfMaterial>
   </Specification>
@@ -177,7 +179,7 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
           </CavityReference>
         </SlotReference>
       </Role>
-      <Part>PartVersion_00147</Part>
+      <Part>PartVersion_00153</Part>
     </Component>
     <Component id="PartOccurrence_00051">
       <Identification>CONTACT-C1</Identification>
@@ -193,7 +195,7 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
           <WireReception>WireReception_00016</WireReception>
         </WireReceptionReference>
       </Role>
-      <Part>PartVersion_00148</Part>
+      <Part>PartVersion_00154</Part>
     </Component>
     ...
   </Specification>
@@ -311,7 +313,7 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
       <StartNode>TopologyNode_00104</StartNode>
       <LengthInformation id="SegmentLength_00107">
         <Length id="NumericalValue_00108">
-          <UnitComponent>SIUnit_00151</UnitComponent>
+          <UnitComponent>SIUnit_00157</UnitComponent>
           <ValueComponent>500.0</ValueComponent>
         </Length>
         <Classification>Designed</Classification>
@@ -350,7 +352,7 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
   </Specification>
 </DocumentVersion>
 ...
-<PartVersion id="PartVersion_00149">
+<PartVersion id="PartVersion_00155">
   <CompanyName>Acme Inc.</CompanyName>
   <PartNumber>SEN-2000</PartNumber>
   <PartVersion>1</PartVersion>
@@ -374,11 +376,15 @@ The contacting inside the assembly (both sides of the pigtail) is defined by the
 
 The instantiated subcomponents are not positions of the harness' bill of material: the harness contains the assembly, not its contents (see [Composite Parts – Part Master Data]({{< relref "../../product-definition/composite-parts#part-master-data" >}})).
 
-If the assembly defines a topology, the harness topology can instantiate it: the {{< vec-class TopologyNode >}}s and the {{< vec-class TopologySegment >}} of the pigtail in the harness reference their origin via `InstantiatedNode` / `InstantiatedSegment`, and the instantiated E/E component and connector are placed on the instantiated nodes (with the {{< vec-class PlaceableElementRole >}}s of the instantiated subcomponents). If the assembly has no topology, the pigtail is designed in the harness topology without these references.
+If the assembly defines a topology, the harness reuses it (see {{< vec-diagram "key-concepts/information-reuse" >}}): the {{< vec-class TopologyNode >}}s and the {{< vec-class TopologySegment >}} of the pigtail are copied into the topology of the harness, and a {{< vec-class ReusageSpecification >}} relates each copied element (_usage_) to its origin in the part master data of the assembly (_template_) with a {{< vec-class Reusage >}}. Each occurrence of the assembly in the harness has a {{< vec-class ReusageSpecification >}} of its own. The instantiated E/E component and connector are placed on the reused nodes (with the {{< vec-class PlaceableElementRole >}}s of the instantiated subcomponents). If the assembly has no topology, the pigtail is designed in the harness topology without a {{< vec-class ReusageSpecification >}}.
+
+{{% callout note %}}
+The associations `TopologyNode.instantiatedNode` and `TopologySegment.instantiatedSegment` are deprecated since VEC 2.2.0 and replaced by the general concept of the {{< vec-class ReusageSpecification >}}. They shall not be used to relate the topology of a harness to the topology of an assembly.
+{{% /callout %}}
 
 ### XML Example
 
-The following excerpt shows the use of the sensor in a harness. The occurrence of the assembly (`B12-ASSY`) references the instantiated sensor (`B12`) and the instantiated harness side connector (`X12`) as `SubComponent`s. Both are placed on the instantiated topology of the pigtail. The wires and contacts are not instantiated.
+The following excerpt shows the use of the sensor in a harness. The occurrence of the assembly (`B12-ASSY`) references the instantiated sensor (`B12`) and the instantiated harness side connector (`X12`) as `SubComponent`s. The topology of the pigtail is reused with the {{< vec-class ReusageSpecification >}} `RS-B12-ASSY-TOPOLOGY`, and both subcomponents are placed on the reused nodes. The wires and contacts are not instantiated.
 
 ```xml
 <DocumentVersion id="DocumentVersion_00119">
@@ -390,89 +396,108 @@ The following excerpt shows the use of the sensor in a harness. The occurrence o
     <Identification>TOPOLOGY</Identification>
     <TopologyNode id="TopologyNode_00121">
       <Identification>N-B12</Identification>
-      <InstantiatedNode>TopologyNode_00104</InstantiatedNode>
     </TopologyNode>
     <TopologyNode id="TopologyNode_00122">
       <Identification>N-X12</Identification>
-      <InstantiatedNode>TopologyNode_00105</InstantiatedNode>
     </TopologyNode>
     <TopologySegment id="TopologySegment_00123">
       <Identification>S-B12</Identification>
       <EndNode>TopologyNode_00122</EndNode>
-      <InstantiatedSegment>TopologySegment_00106</InstantiatedSegment>
       <StartNode>TopologyNode_00121</StartNode>
+      <LengthInformation id="SegmentLength_00124">
+        <Length id="NumericalValue_00125">
+          <UnitComponent>SIUnit_00157</UnitComponent>
+          <ValueComponent>500.0</ValueComponent>
+        </Length>
+        <Classification>Designed</Classification>
+      </LengthInformation>
     </TopologySegment>
   </Specification>
-  <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_00124">
+  <Specification xsi:type="vec:ReusageSpecification" id="ReusageSpecification_00126">
+    <Identification>RS-B12-ASSY-TOPOLOGY</Identification>
+    <Reusage id="Reusage_00127">
+      <Template>TopologyNode_00104</Template>
+      <Usage>TopologyNode_00121</Usage>
+    </Reusage>
+    <Reusage id="Reusage_00128">
+      <Template>TopologyNode_00105</Template>
+      <Usage>TopologyNode_00122</Usage>
+    </Reusage>
+    <Reusage id="Reusage_00129">
+      <Template>TopologySegment_00106</Template>
+      <Usage>TopologySegment_00123</Usage>
+    </Reusage>
+  </Specification>
+  <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_00130">
     <Identification>PLACEMENTS</Identification>
-    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00125">
+    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00131">
       <Identification>B12</Identification>
-      <PlacedElement>PlaceableElementRole_00146</PlacedElement>
-      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00126">
+      <PlacedElement>PlaceableElementRole_00152</PlacedElement>
+      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00132">
         <Identification>B12</Identification>
         <ReferencedNode>TopologyNode_00121</ReferencedNode>
       </Location>
     </Placement>
-    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00127">
+    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00133">
       <Identification>X12</Identification>
-      <PlacedElement>PlaceableElementRole_00131</PlacedElement>
-      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00128">
+      <PlacedElement>PlaceableElementRole_00137</PlacedElement>
+      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00134">
         <Identification>X12</Identification>
         <ReferencedNode>TopologyNode_00122</ReferencedNode>
       </Location>
     </Placement>
   </Specification>
-  <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00129">
+  <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00135">
     <Identification>COMPONENTS</Identification>
-    <Component id="PartOccurrence_00130">
+    <Component id="PartOccurrence_00136">
       <Identification>X12</Identification>
-      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00131">
+      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00137">
         <Identification>X12</Identification>
         <PlaceableElementSpecification>PlaceableElementSpecification_00003</PlaceableElementSpecification>
       </Role>
-      <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_00132">
+      <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_00138">
         <Identification>X12</Identification>
         <ConnectorHousingSpecification>ConnectorHousingSpecification_00004</ConnectorHousingSpecification>
-        <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00133">
+        <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00139">
           <Identification>A</Identification>
           <ReferencedSlot>Slot_00005</ReferencedSlot>
-          <CavityReference id="CavityReference_00134">
+          <CavityReference id="CavityReference_00140">
             <Identification>1</Identification>
             <ReferencedCavity>Cavity_00006</ReferencedCavity>
           </CavityReference>
-          <CavityReference id="CavityReference_00135">
+          <CavityReference id="CavityReference_00141">
             <Identification>2</Identification>
             <ReferencedCavity>Cavity_00007</ReferencedCavity>
           </CavityReference>
         </SlotReference>
       </Role>
       <InstanciatedOccurrence>PartOccurrence_00045</InstanciatedOccurrence>
-      <Part>PartVersion_00147</Part>
+      <Part>PartVersion_00153</Part>
     </Component>
-    <Component id="PartOccurrence_00136">
+    <Component id="PartOccurrence_00142">
       <Identification>B12-ASSY</Identification>
-      <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00137">
+      <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00143">
         <Identification>B12-ASSY</Identification>
         <PartStructureSpecification>PartStructureSpecification_00043</PartStructureSpecification>
-        <SubComponent>PartUsage_00139 PartOccurrence_00130</SubComponent>
+        <SubComponent>PartUsage_00145 PartOccurrence_00136</SubComponent>
       </Role>
-      <Part>PartVersion_00149</Part>
+      <Part>PartVersion_00155</Part>
     </Component>
   </Specification>
-  <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00138">
+  <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00144">
     <Identification>USAGES</Identification>
-    <PartUsage id="PartUsage_00139">
+    <PartUsage id="PartUsage_00145">
       <Identification>B12</Identification>
-      <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00140">
+      <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00146">
         <Identification>B12</Identification>
         <EEComponentSpecification>EEComponentSpecification_00024</EEComponentSpecification>
-        <HousingComponentRef id="HousingComponentReference_00141">
+        <HousingComponentRef id="HousingComponentReference_00147">
           <Identification>X1</Identification>
           <HousingComponent>HousingComponent_00025</HousingComponent>
           ...
         </HousingComponentRef>
       </Role>
-      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00146">
+      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00152">
         <Identification>B12</Identification>
         <PlaceableElementSpecification>PlaceableElementSpecification_00028</PlaceableElementSpecification>
       </Role>
