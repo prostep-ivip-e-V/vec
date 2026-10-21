@@ -2,7 +2,7 @@
 <vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
   <VecVersion>2.2.0</VecVersion>
   <GeneratingSystemName>VEC Samples</GeneratingSystemName>
-  <DateOfCreation>2026-10-21T11:21:46.167878370Z</DateOfCreation>
+  <DateOfCreation>2026-10-21T11:38:52.068136060Z</DateOfCreation>
   <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
   <DocumentVersion id="DocumentVersion_00001">
     <CompanyName>Acme Inc.</CompanyName>
@@ -169,7 +169,6 @@
     </Specification>
     <Specification xsi:type="vec:WireSpecification" id="WireSpecification_00041">
       <Identification>WS-PIGTAIL</Identification>
-      <WireElementSpecification>WireElementSpecification_00040</WireElementSpecification>
       <WireElement id="WireElement_00042">
         <Identification>1</Identification>
         <WireElementSpecification>WireElementSpecification_00040</WireElementSpecification>
