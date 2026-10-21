@@ -65,6 +65,10 @@ An E/E component with pigtail is an E/E component (e.g. a sensor) that is delive
 
 This guideline applies the general concepts of [Composite Parts]({{< relref "../../product-definition/composite-parts" >}}) to this case and shows a complete example: a sensor with a two-wire pigtail and a harness side connector.
 
+{{< figure src="pigtail-building-blocks.svg" numbered="true" lightbox="true" title="Building Blocks of an E/E Component with Pigtail" >}}
+
+The figure above shows the building blocks of an E/E component with pigtail. The part master data of the sensor with pigtail is a composite part: its bill of material references the contents, i.e. the sensor, the wires, the contacts and the harness side connector. Contents without a part number of their own are {{< vec-class PartUsage >}}s that reference their specifications directly; contents with a part number are {{< vec-class PartOccurrence >}}s of standard parts. The contacting, placement and routing of the contents and the topology of the pigtail are defined in the part master data as well. A harness that uses the sensor with pigtail references the composite part, instantiates only the subcomponents it makes a statement about and reuses the topology of the pigtail.
+
 ## Part Master Data
 
 The part master {{< vec-class DocumentVersion >}} of the assembly (`DocumentType = PartMaster`) contains the bill of material, the instances of the contents and the specifications that describe them.
@@ -361,6 +365,10 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
 ```
 
 ## Usage in a Harness
+
+{{< figure src="pigtail-definition-and-usage.svg" numbered="true" lightbox="true" title="Definition and Usage of an E/E Component with Pigtail" >}}
+
+The figure above shows the part master data of the sensor with pigtail (green) and its usage in a harness (magenta) with the identifiers of the XML examples.
 
 The assembly is used in a harness like any other assembly (see [Composite Parts – Usage of an Assembly]({{< relref "../../product-definition/composite-parts#usage-of-an-assembly" >}})):
 
