@@ -66,10 +66,12 @@ the working tree contains uncommitted or recently committed changes to guideline
 pages — otherwise an affect analysis silently misses the very change being
 discussed.
 
-Rebuild when a change adds, removes or renames a guideline page, edits a page's
-`classes:` front matter, adds or rewords a MUST/SHALL/SHOULD/MAY statement, or
-imports a new model version. Pure prose edits to an existing section do not
-need one.
+Rebuild after **every** change to the wiki content and commit the result with the
+change. The index records more than the obvious triggers (pages, `classes:`
+front matter, MUST/SHALL/SHOULD/MAY statements, model version): also headings,
+status, history and every GitHub issue linked in a page — including links inside
+XML listings. If `git diff --stat -- .claude/index` shows no change, there is
+nothing to commit.
 
 `build_index.py` needs `lxml`, `python-frontmatter` and `pyyaml`, which are
 usually missing from the system interpreter. Create a venv once:
@@ -277,9 +279,13 @@ heading conventions.  Follow `cross-references.md` for linking rules.
 - **Front matter field for class links**: `classes:` (YAML list of PascalCase names)
 - **Shortcode for class links**: `{{< vec-class ClassName >}}`
 - **Class pages are read-only** (generated from XMI — see `cross-references.md`)
-- **Check deprecation before writing about a class or attribute.** Nine classes
-  and seven attributes carry a `deprecated` object with `since` and `reason`.
-  Never build new guidance on one; name the replacement given in `reason`.
+- **Check deprecation before writing about a class, attribute or association.**
+  Nine classes and 18 attributes / association ends (`attributes[]`,
+  `outgoing_relations[]`) carry a `deprecated` object with `since` and `reason`;
+  for association ends it comes from the `«Deprecated»` association (e.g.
+  `TopologyNode.instantiatedNode`, replaced by the `ReusageSpecification`).
+  Never build new guidance on one, also not in XML examples; name the
+  replacement given in `reason`.
 - **Stable citation key**: `guideline_url + section_anchor`, e.g.
   `/specifications/vec/guidelines/key-concepts/general-structure/#usages-of-the-documentversion`
 - **RFC 2119 keywords** used in guidelines: MUST, SHALL, SHOULD, MAY (and their

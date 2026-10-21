@@ -186,7 +186,10 @@ def extract_classes(xmi_path: Path) -> list[dict]:
                             break
 
                     entry = {"type": atype, "mult": mult, "doc": adoc[:200]}
-                    dep = deprecations.get(child.get(_xmi("id"), ""))
+                    # <<Deprecated>> may be applied to the property itself or,
+                    # for an association end, to the association.
+                    dep = (deprecations.get(child.get(_xmi("id"), ""))
+                           or deprecations.get(child.get("association", "")))
                     if dep:
                         entry["deprecated"] = dep
 
@@ -786,6 +789,14 @@ def main() -> None:
         print(f"  excluded from derived indices (no generated page): {names}")
     deprecated = [c["name"] for c in classes if "deprecated" in c]
     print(f"  {len(deprecated)} deprecated: {', '.join(sorted(deprecated))}")
+    deprecated_members = sorted(
+        f"{c['name']}.{m.get('name') or m.get('role')}"
+        for c in classes
+        for m in c["attributes"] + c["outgoing_relations"]
+        if "deprecated" in m
+    )
+    print(f"  {len(deprecated_members)} deprecated attributes / association ends: "
+          f"{', '.join(deprecated_members)}")
     write_jsonl(classes, output_dir / "classes.jsonl")
 
     print("\n=== Phase 2: indexing markdown pages ===")
