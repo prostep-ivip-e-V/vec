@@ -135,7 +135,7 @@ The following is a XML listing of the VEC representation of the single core (com
 <vec:VecContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vec="http://www.prostep.org/ecad-if/2011/vec" id="Content_00000" xsi:schemaLocation="">
   <VecVersion>2.2.0</VecVersion>
   <GeneratingSystemName>VEC Samples</GeneratingSystemName>
-  <DateOfCreation>2026-10-21T11:38:51.699791282Z</DateOfCreation>
+  <DateOfCreation>2026-10-21T15:09:38.927415768Z</DateOfCreation>
   <GeneratingSystemVersion>0.0.1</GeneratingSystemVersion>
   <DocumentVersion id="DocumentVersion_00001">
     <CompanyName>Acme Inc.</CompanyName>
@@ -161,7 +161,7 @@ The following is a XML listing of the VEC representation of the single core (com
         <UnitComponent>SIUnit_00021</UnitComponent>
         <ValueComponent>0.35</ValueComponent>
       </CrossSectionArea>
-<!-- Unit `piece`, see: https://prostep-ivip.atlassian.net/browse/KBLFRM-1192 -->
+<!-- Unit `piece`, see: https://github.com/prostep-ivip-e-V/vec/issues/1057 -->
       <NumberOfStrands id="NumericalValue_00007">
         <UnitComponent>OtherUnit_00023</UnitComponent>
         <ValueComponent>7.0</ValueComponent>
