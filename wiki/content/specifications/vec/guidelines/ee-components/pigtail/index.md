@@ -153,31 +153,106 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
     <ValidPlacementTypes>OnPoint</ValidPlacementTypes>
   </Specification>
   ...
-  <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00043">
-    <Identification>STRUCTURE-SEN-2000</Identification>
+  <Specification xsi:type="vec:TopologySpecification" id="TopologySpecification_00043">
+    <Identification>TOPOLOGY</Identification>
+    <TopologyNode id="TopologyNode_00044">
+      <Identification>N-SENSOR</Identification>
+    </TopologyNode>
+    <TopologyNode id="TopologyNode_00045">
+      <Identification>N-CONNECTOR</Identification>
+    </TopologyNode>
+    <TopologySegment id="TopologySegment_00046">
+      <Identification>S-PIGTAIL</Identification>
+      <EndNode>TopologyNode_00045</EndNode>
+      <StartNode>TopologyNode_00044</StartNode>
+      <LengthInformation id="SegmentLength_00047">
+        <Length id="NumericalValue_00048">
+          <UnitComponent>SIUnit_00157</UnitComponent>
+          <ValueComponent>500.0</ValueComponent>
+        </Length>
+        <Classification>Designed</Classification>
+      </LengthInformation>
+    </TopologySegment>
+  </Specification>
+  <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_00049">
+    <Identification>PLACEMENTS</Identification>
+    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00050">
+      <Identification>SENSOR</Identification>
+      <PlacedElement>PlaceableElementRole_00100</PlacedElement>
+      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00051">
+        <Identification>SENSOR</Identification>
+        <ReferencedNode>TopologyNode_00044</ReferencedNode>
+      </Location>
+    </Placement>
+    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00052">
+      <Identification>CONNECTOR</Identification>
+      <PlacedElement>PlaceableElementRole_00075</PlacedElement>
+      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00053">
+        <Identification>CONNECTOR</Identification>
+        <ReferencedNode>TopologyNode_00045</ReferencedNode>
+      </Location>
+    </Placement>
+  </Specification>
+  <Specification xsi:type="vec:RoutingSpecification" id="RoutingSpecification_00054">
+    <Identification>ROUTINGS</Identification>
+    <Routing id="Routing_00055">
+      <Identification>W1</Identification>
+      <RoutedElement>WireElementReference_00103</RoutedElement>
+      <Path id="Path_00056">
+        <Segment>TopologySegment_00046</Segment>
+      </Path>
+    </Routing>
+    ...
+  </Specification>
+  <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_00059">
+    <Identification>PSS-SEN-2000</Identification>
     <DescribedPart>PartVersion_00155</DescribedPart>
     <Content>Assembly</Content>
-    <InBillOfMaterial>PartUsage_00060 PartUsage_00072 PartUsage_00077 PartUsage_00082 PartUsage_00086 PartOccurrence_00045 PartOccurrence_00051 PartOccurrence_00055</InBillOfMaterial>
+    <InBillOfMaterial>PartUsage_00089 PartUsage_00101 PartUsage_00106 PartUsage_00111 PartUsage_00115 PartOccurrence_00074 PartOccurrence_00080 PartOccurrence_00084</InBillOfMaterial>
   </Specification>
-  <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00044">
+  <Specification xsi:type="vec:ContactingSpecification" id="ContactingSpecification_00060">
+    <Identification>CONTACTING</Identification>
+    <ContactPoint id="ContactPoint_00061">
+      <Identification>SENSOR.X1.1</Identification>
+      <MountedTerminal>PluggableTerminalRole_00112</MountedTerminal>
+      <CavityMounting id="CavityMounting_00062">
+        <EquippedCavityRef>CavityReference_00094</EquippedCavityRef>
+      </CavityMounting>
+      <WireMounting id="WireMounting_00063">
+        <ReferencedWireEnd>WireEnd_00104</ReferencedWireEnd>
+      </WireMounting>
+    </ContactPoint>
+    <ContactPoint id="ContactPoint_00064">
+      <Identification>CONNECTOR.1</Identification>
+      <MountedTerminal>PluggableTerminalRole_00081</MountedTerminal>
+      <CavityMounting id="CavityMounting_00065">
+        <EquippedCavityRef>CavityReference_00078</EquippedCavityRef>
+      </CavityMounting>
+      <WireMounting id="WireMounting_00066">
+        <ReferencedWireEnd>WireEnd_00105</ReferencedWireEnd>
+      </WireMounting>
+    </ContactPoint>
+    ...
+  </Specification>
+  <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00073">
     <Identification>COMPONENTS</Identification>
-    <Component id="PartOccurrence_00045">
+    <Component id="PartOccurrence_00074">
       <Identification>CONNECTOR</Identification>
-      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00046">
+      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00075">
         <Identification>CONNECTOR</Identification>
         <PlaceableElementSpecification>PlaceableElementSpecification_00003</PlaceableElementSpecification>
       </Role>
-      <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_00047">
+      <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_00076">
         <Identification>CONNECTOR</Identification>
         <ConnectorHousingSpecification>ConnectorHousingSpecification_00004</ConnectorHousingSpecification>
-        <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00048">
+        <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00077">
           <Identification>A</Identification>
           <ReferencedSlot>Slot_00005</ReferencedSlot>
-          <CavityReference id="CavityReference_00049">
+          <CavityReference id="CavityReference_00078">
             <Identification>1</Identification>
             <ReferencedCavity>Cavity_00006</ReferencedCavity>
           </CavityReference>
-          <CavityReference id="CavityReference_00050">
+          <CavityReference id="CavityReference_00079">
             <Identification>2</Identification>
             <ReferencedCavity>Cavity_00007</ReferencedCavity>
           </CavityReference>
@@ -185,16 +260,16 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
       </Role>
       <Part>PartVersion_00153</Part>
     </Component>
-    <Component id="PartOccurrence_00051">
+    <Component id="PartOccurrence_00080">
       <Identification>CONTACT-C1</Identification>
-      <Role xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00052">
+      <Role xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00081">
         <Identification>CONTACT-C1</Identification>
         <TerminalSpecification>PluggableTerminalSpecification_00013</TerminalSpecification>
-        <TerminalReceptionReference id="TerminalReceptionReference_00053">
+        <TerminalReceptionReference id="TerminalReceptionReference_00082">
           <Identification>TR1</Identification>
           <TerminalReception>TerminalReception_00015</TerminalReception>
         </TerminalReceptionReference>
-        <WireReceptionReference id="WireReceptionReference_00054">
+        <WireReceptionReference id="WireReceptionReference_00083">
           <Identification>WR1</Identification>
           <WireReception>WireReception_00016</WireReception>
         </WireReceptionReference>
@@ -203,27 +278,27 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
     </Component>
     ...
   </Specification>
-  <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00059">
+  <Specification xsi:type="vec:PartUsageSpecification" id="PartUsageSpecification_00088">
     <Identification>USAGES</Identification>
-    <PartUsage id="PartUsage_00060">
+    <PartUsage id="PartUsage_00089">
       <Identification>SENSOR</Identification>
-      <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00061">
+      <Role xsi:type="vec:EEComponentRole" id="EEComponentRole_00090">
         <Identification>SENSOR</Identification>
         <EEComponentSpecification>EEComponentSpecification_00024</EEComponentSpecification>
-        <HousingComponentRef id="HousingComponentReference_00062">
+        <HousingComponentRef id="HousingComponentReference_00091">
           <Identification>X1</Identification>
           <HousingComponent>HousingComponent_00025</HousingComponent>
-          <ConnectorHousingRole id="ConnectorHousingRole_00063">
+          <ConnectorHousingRole id="ConnectorHousingRole_00092">
             <Identification>X1</Identification>
             <ConnectorHousingSpecification>ConnectorHousingSpecification_00020</ConnectorHousingSpecification>
-            <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00064">
+            <SlotReference xsi:type="vec:SlotReference" id="SlotReference_00093">
               <Identification>X</Identification>
               <ReferencedSlot>Slot_00021</ReferencedSlot>
-              <CavityReference id="CavityReference_00065">
+              <CavityReference id="CavityReference_00094">
                 <Identification>1</Identification>
                 <ReferencedCavity>Cavity_00022</ReferencedCavity>
               </CavityReference>
-              <CavityReference id="CavityReference_00066">
+              <CavityReference id="CavityReference_00095">
                 <Identification>2</Identification>
                 <ReferencedCavity>Cavity_00023</ReferencedCavity>
               </CavityReference>
@@ -232,26 +307,26 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
           ...
         </HousingComponentRef>
       </Role>
-      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00071">
+      <Role xsi:type="vec:PlaceableElementRole" id="PlaceableElementRole_00100">
         <Identification>SENSOR</Identification>
         <PlaceableElementSpecification>PlaceableElementSpecification_00028</PlaceableElementSpecification>
       </Role>
       <PrimaryPartUsageType>EEComponent</PrimaryPartUsageType>
       <PartOrUsageRelatedSpecification>EEComponentSpecification_00024 PlaceableElementSpecification_00028</PartOrUsageRelatedSpecification>
     </PartUsage>
-    <PartUsage id="PartUsage_00072">
+    <PartUsage id="PartUsage_00101">
       <Identification>W1</Identification>
-      <Role xsi:type="vec:WireRole" id="WireRole_00073">
+      <Role xsi:type="vec:WireRole" id="WireRole_00102">
         <Identification>W1</Identification>
         <WireSpecification>WireSpecification_00041</WireSpecification>
-        <WireElementReference id="WireElementReference_00074">
+        <WireElementReference id="WireElementReference_00103">
           <Identification>W1</Identification>
           <ReferencedWireElement>WireElement_00042</ReferencedWireElement>
-          <WireEnd id="WireEnd_00075">
+          <WireEnd id="WireEnd_00104">
             <Identification>SENSOR.X1.1</Identification>
             <PositionOnWire>0.0</PositionOnWire>
           </WireEnd>
-          <WireEnd id="WireEnd_00076">
+          <WireEnd id="WireEnd_00105">
             <Identification>CONNECTOR.1</Identification>
             <PositionOnWire>1.0</PositionOnWire>
           </WireEnd>
@@ -260,16 +335,16 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
       <PrimaryPartUsageType>Wire</PrimaryPartUsageType>
       <PartOrUsageRelatedSpecification>WireSpecification_00041</PartOrUsageRelatedSpecification>
     </PartUsage>
-    <PartUsage id="PartUsage_00082">
+    <PartUsage id="PartUsage_00111">
       <Identification>CONTACT-S1</Identification>
-      <Role xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00083">
+      <Role xsi:type="vec:PluggableTerminalRole" id="PluggableTerminalRole_00112">
         <Identification>CONTACT-S1</Identification>
         <TerminalSpecification>PluggableTerminalSpecification_00032</TerminalSpecification>
-        <TerminalReceptionReference id="TerminalReceptionReference_00084">
+        <TerminalReceptionReference id="TerminalReceptionReference_00113">
           <Identification>TR1</Identification>
           <TerminalReception>TerminalReception_00034</TerminalReception>
         </TerminalReceptionReference>
-        <WireReceptionReference id="WireReceptionReference_00085">
+        <WireReceptionReference id="WireReceptionReference_00114">
           <Identification>WR1</Identification>
           <WireReception>WireReception_00035</WireReception>
         </WireReceptionReference>
@@ -277,81 +352,6 @@ The following excerpt shows the part master data of a sensor with pigtail. The s
       <PrimaryPartUsageType>PluggableTerminal</PrimaryPartUsageType>
       <PartOrUsageRelatedSpecification>PluggableTerminalSpecification_00032</PartOrUsageRelatedSpecification>
     </PartUsage>
-    ...
-  </Specification>
-  <Specification xsi:type="vec:ContactingSpecification" id="ContactingSpecification_00090">
-    <Identification>CONTACTING</Identification>
-    <ContactPoint id="ContactPoint_00091">
-      <Identification>SENSOR.X1.1</Identification>
-      <MountedTerminal>PluggableTerminalRole_00083</MountedTerminal>
-      <CavityMounting id="CavityMounting_00092">
-        <EquippedCavityRef>CavityReference_00065</EquippedCavityRef>
-      </CavityMounting>
-      <WireMounting id="WireMounting_00093">
-        <ReferencedWireEnd>WireEnd_00075</ReferencedWireEnd>
-      </WireMounting>
-    </ContactPoint>
-    <ContactPoint id="ContactPoint_00094">
-      <Identification>CONNECTOR.1</Identification>
-      <MountedTerminal>PluggableTerminalRole_00052</MountedTerminal>
-      <CavityMounting id="CavityMounting_00095">
-        <EquippedCavityRef>CavityReference_00049</EquippedCavityRef>
-      </CavityMounting>
-      <WireMounting id="WireMounting_00096">
-        <ReferencedWireEnd>WireEnd_00076</ReferencedWireEnd>
-      </WireMounting>
-    </ContactPoint>
-    ...
-  </Specification>
-  <Specification xsi:type="vec:TopologySpecification" id="TopologySpecification_00103">
-    <Identification>TOPOLOGY</Identification>
-    <TopologyNode id="TopologyNode_00104">
-      <Identification>N-SENSOR</Identification>
-    </TopologyNode>
-    <TopologyNode id="TopologyNode_00105">
-      <Identification>N-CONNECTOR</Identification>
-    </TopologyNode>
-    <TopologySegment id="TopologySegment_00106">
-      <Identification>S-PIGTAIL</Identification>
-      <EndNode>TopologyNode_00105</EndNode>
-      <StartNode>TopologyNode_00104</StartNode>
-      <LengthInformation id="SegmentLength_00107">
-        <Length id="NumericalValue_00108">
-          <UnitComponent>SIUnit_00157</UnitComponent>
-          <ValueComponent>500.0</ValueComponent>
-        </Length>
-        <Classification>Designed</Classification>
-      </LengthInformation>
-    </TopologySegment>
-  </Specification>
-  <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_00109">
-    <Identification>PLACEMENTS</Identification>
-    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00110">
-      <Identification>SENSOR</Identification>
-      <PlacedElement>PlaceableElementRole_00071</PlacedElement>
-      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00111">
-        <Identification>SENSOR</Identification>
-        <ReferencedNode>TopologyNode_00104</ReferencedNode>
-      </Location>
-    </Placement>
-    <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_00112">
-      <Identification>CONNECTOR</Identification>
-      <PlacedElement>PlaceableElementRole_00046</PlacedElement>
-      <Location xsi:type="vec:NodeLocation" id="NodeLocation_00113">
-        <Identification>CONNECTOR</Identification>
-        <ReferencedNode>TopologyNode_00105</ReferencedNode>
-      </Location>
-    </Placement>
-  </Specification>
-  <Specification xsi:type="vec:RoutingSpecification" id="RoutingSpecification_00114">
-    <Identification>ROUTINGS</Identification>
-    <Routing id="Routing_00115">
-      <Identification>W1</Identification>
-      <RoutedElement>WireElementReference_00074</RoutedElement>
-      <Path id="Path_00116">
-        <Segment>TopologySegment_00106</Segment>
-      </Path>
-    </Routing>
     ...
   </Specification>
 </DocumentVersion>
@@ -424,15 +424,15 @@ The following excerpt shows the use of the sensor in a harness. The occurrence o
   <Specification xsi:type="vec:ReusageSpecification" id="ReusageSpecification_00126">
     <Identification>RS-B12-ASSY-TOPOLOGY</Identification>
     <Reusage id="Reusage_00127">
-      <Template>TopologyNode_00104</Template>
+      <Template>TopologyNode_00044</Template>
       <Usage>TopologyNode_00121</Usage>
     </Reusage>
     <Reusage id="Reusage_00128">
-      <Template>TopologyNode_00105</Template>
+      <Template>TopologyNode_00045</Template>
       <Usage>TopologyNode_00122</Usage>
     </Reusage>
     <Reusage id="Reusage_00129">
-      <Template>TopologySegment_00106</Template>
+      <Template>TopologySegment_00046</Template>
       <Usage>TopologySegment_00123</Usage>
     </Reusage>
   </Specification>
@@ -479,14 +479,14 @@ The following excerpt shows the use of the sensor in a harness. The occurrence o
           </CavityReference>
         </SlotReference>
       </Role>
-      <InstanciatedOccurrence>PartOccurrence_00045</InstanciatedOccurrence>
+      <InstanciatedOccurrence>PartOccurrence_00074</InstanciatedOccurrence>
       <Part>PartVersion_00153</Part>
     </Component>
     <Component id="PartOccurrence_00142">
       <Identification>B12-ASSY</Identification>
       <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00143">
         <Identification>B12-ASSY</Identification>
-        <PartStructureSpecification>PartStructureSpecification_00043</PartStructureSpecification>
+        <PartStructureSpecification>PartStructureSpecification_00059</PartStructureSpecification>
         <SubComponent>PartUsage_00145 PartOccurrence_00136</SubComponent>
       </Role>
       <Part>PartVersion_00155</Part>
@@ -510,7 +510,7 @@ The following excerpt shows the use of the sensor in a harness. The occurrence o
         <PlaceableElementSpecification>PlaceableElementSpecification_00028</PlaceableElementSpecification>
       </Role>
       <PrimaryPartUsageType>EEComponent</PrimaryPartUsageType>
-      <InstanciatedUsage>PartUsage_00060</InstanciatedUsage>
+      <InstanciatedUsage>PartUsage_00089</InstanciatedUsage>
       <PartOrUsageRelatedSpecification>EEComponentSpecification_00024 PlaceableElementSpecification_00028</PartOrUsageRelatedSpecification>
     </PartUsage>
   </Specification>
