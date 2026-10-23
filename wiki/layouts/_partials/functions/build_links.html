@@ -1,6 +1,8 @@
 {{/* ECAD-WIKI: copy of the HugoBlox partial (blox@v0.0.0-20260527025321-61f41d3667f1) with one fix:
      `$seen.Set "set" (dict)` stores a nil map with Hugo 0.162, so `SetInMap` fails with
      "assignment to entry in nil map". Initialise the map with a dummy entry instead.
+     Additionally, legacy `url_*` paths that are no page resource are matched by their file name
+     against the page resources (Wowchemy behaviour, e.g. `url_pdf` in content/event/2020-03-vec-webinar).
      Remove this override once fixed upstream. */}}
 {{/*
   Hugo Blox Page Link Builder
@@ -266,7 +268,11 @@
     {{ with ($page.Resources.GetMatch $u) }}
       {{ $u = .RelPermalink }}
     {{ else }}
-      {{ $u = $u | relURL }}
+      {{ with ($page.Resources.GetMatch (path.Base $u)) }}
+        {{ $u = .RelPermalink }}
+      {{ else }}
+        {{ $u = $u | relURL }}
+      {{ end }}
     {{ end }}
     {{ $typeF := $legacyType }}
     {{ $urlF := $u }}

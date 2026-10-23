@@ -7,10 +7,11 @@ https://ecad-wiki.prostep.org .
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [GitLab CI](#gitlab-ci)
-  - [Updating Hugo Version for CI Build](#updating-hugo-version-for-ci-build)
+- [Build & Deployment](#build--deployment)
+  - [Updating the Hugo version](#updating-the-hugo-version)
+  - [Updating HugoBlox](#updating-hugoblox)
 - [Building locally](#building-locally)
-  - [Preview your site](#preview-your-site)
+  - [Customizations](#customizations)
 - [Create Content](#create-content)
   - [Implementation Guidelines](#implementation-guidelines)
     - [Related content](#related-content)
@@ -21,60 +22,74 @@ https://ecad-wiki.prostep.org .
 - [Claude Code Index](#claude-code-index)
   - [Rebuilding the index](#rebuilding-the-index)
   - [Reading the build warnings](#reading-the-build-warnings)
-- [Troubleshooting](#troubleshooting)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## GitLab CI
+## Build & Deployment
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).
+The site is built with [Hugo](https://gohugo.io) and the [HugoBlox Kit](https://hugoblox.com)
+(module `github.com/HugoBlox/kit/modules/blox`, Tailwind CSS v4). Search is provided by
+[Pagefind](https://pagefind.app), a static search index built after Hugo.
 
-All content merged into the `master` branch will be build and deployed automatically.
+The site is built and deployed to GitHub Pages by the workflow
+[`.github/workflows/hugo.yml`](../.github/workflows/hugo.yml) for every push to `main`
+that changes `wiki/**`. The workflow also creates the PDF versions of the implementation
+guidelines (`generate-pdf.js`).
 
-### Updating Hugo Version for CI Build
+### Updating the Hugo version
 
-This build uses it's own docker image based on GitLabs Hugo Docker image. This is 
-because GitLabs Hugo Docker image has no `git` installed and thus Hugo's 
-`enableGitInfo` can not be used. However, the image used in this build is based on 
-GitLabs Hugo Docker Image and just installs `git`. 
+The Hugo version is defined in `HUGO_VERSION` in the workflow and in `hugoblox.yaml`.
+HugoBlox requires Hugo extended >= 0.161.1.
 
-The Docker image can be found in the `registry` branch of this repository 
-[here](https://gitlab.com/ecad-wiki/ecad-wiki.gitlab.io/tree/registry). In order to
-update to a newer version, the following things have to be done:
+### Updating HugoBlox
 
-1.  The first line for the `Dockerfile` has to be modified to desired version and commited.
-2.  A Tag with the version has to be created on the registry branch (e.g. `0.59.1`)
-
-If this is done, the ci for the registry branch builds the image and deploys it autmatically 
-into the container registry of this repository. By default the ci pipeline for ECAD WIKI 
-pages uses the `latest` available image in the registry. 
-
-All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry  
+The module version is pinned in `go.mod`. Update it with
+`hugo mod get github.com/HugoBlox/kit/modules/blox@<commit>` and review the changes, as
+some HugoBlox partials are overridden in `layouts/` (see "Customizations" below).
 
 ## Building locally
 
-To work locally with this project, you'll have to follow the steps below:
+Requirements:
 
-1. Clone this project
-1. [Install Hugo (Extended)](https://gohugo.io/getting-started/installing/). Currently Version v0.120.3. Under Windows this is easy with Chocolatey.
-1. Install GoLang. Also available via Chocolatey `choco install golang` 
-1. Preview your project: `hugo server`
-1. Add content
-1. Generate the website: `hugo` (optional)
-1. Install Visual Studio Code as an effective editor (optional)
+1. [Hugo extended](https://gohugo.io/installation/) v0.162.0 (see `hugoblox.yaml`)
+1. [Go](https://go.dev/dl/) (for Hugo modules)
+1. [Node.js](https://nodejs.org) >= 22 with `pnpm` (`corepack enable`)
 
-Read more at Hugo's [documentation][].
+Then:
 
-[^1]: Version 0.60.0 fixed a bug for the generation of page TOC's that was also patched 
-by the current academic theme. If both are applied it result in an ugly page TOC.
+```shell
+pnpm install          # Tailwind CSS & Pagefind
+hugo server           # preview on http://localhost:1313/
+hugo --minify         # build into public/
+pnpm run pagefind     # build the search index into public/pagefind/ (search only works after this)
+```
 
-### Preview your site
+If another project needs a different default Hugo version, install Hugo 0.162.0 into its
+own folder and call it with its full path, e.g.
 
-If you clone or download this project to your local computer and run `hugo server`,
-your site can be accessed under `localhost:1313/`.
+```shell
+mkdir -p ~/.local/opt/hugo/0.162.0 && cd ~/.local/opt/hugo/0.162.0
+curl -sSLf https://github.com/gohugoio/hugo/releases/download/v0.162.0/hugo_extended_0.162.0_linux-amd64.tar.gz | tar xz hugo
+~/.local/opt/hugo/0.162.0/hugo server
+```
 
-The theme used is adapted from https://sourcethemes.com/academic/.
+### Customizations
+
+The HugoBlox theme is used for the site shell (navbar, footer, home page, news, events).
+The specification pages (`type: specs`) use own layouts:
+
+* `layouts/specs/`, `layouts/specifications/specs.html`, `layouts/_partials/specs_*.html`:
+  layouts of the specification pages (menu-driven sidebar per specification version,
+  metadata, change history, related content, class index, single page printable version).
+* `layouts/_shortcodes/`: wiki shortcodes (`vec-class`, `svgfigure`, `info`, …) and
+  compatibility shortcodes for content written for the former Wowchemy theme
+  (`figure`, `callout`, `icon`, `staticref`). `relref`/`ref` are overridden, so that
+  relative references in page bundles (`../sibling`) resolve like in Hugo 0.120.
+* `layouts/_partials/views/1.html` … `4.html`: former numeric list views.
+* `layouts/_partials/functions/build_links.html`: HugoBlox partial with a bug fix for
+  Hugo 0.162 (remove when fixed upstream).
+* `assets/css/custom.css`: wiki styles (plain CSS on top of the HugoBlox stylesheet).
+* `data/authors/`: author profiles (HugoBlox author system).
 
 ## Create Content
 
@@ -115,7 +130,7 @@ menu:
     #parent: Example Topic
     weight: 1000
 
-# Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
+# Prev/next pager order
 weight: 1
 ---
 
@@ -134,7 +149,7 @@ Important things to do:
 1.  If want to define the length of the summary add the `<!--more-->` element.
 1.  The title is level h1. Give all subheadings level 2 or lower (`##`). 
 Otherwise the heading levels will be messed up, when we generate a single page version.
-1.  If you use [figures](https://sourcethemes.com/academic/docs/writing-markdown-latex/#images) do **NOT** reference by number. 
+1.  If you use figures (`figure` or `svgfigure` shortcode) do **NOT** reference by number. 
 The numbering is done with CSS and if we generate a single page version the will depend on 
 the position in the complete document.
 1.  Most SVG images are created with [draw.io](https://draw.io). See below.
@@ -164,10 +179,10 @@ The behaviour for the link algorithm is the follwoing (corresponds to `documentT
 
 **Guideline**: The values for `specification` and `documentType` are defined in the `_index.md` and 
 cascaded to all subordinate guidelines. The `elementType` is not used. The `version`-attribute is omitted 
-and the configuration value from `param.toml` is used. E.g:
-```toml
-[VEC]
-  current_version = "1.2.0"
+and the configuration value from `config/_default/params.yaml` is used. E.g:
+```yaml
+VEC:
+  current_version: "2.2.0"
 ```
 So Guidelines always link to most recent recommendation documents.
 
@@ -327,18 +342,6 @@ Phase 1 also lists the elements with no generated class page (diagram legends an
 helpers, excluded from the derived indices) and the classes carrying a `deprecated` marker.
 Both lists are informational.
 
-## Troubleshooting
-
-1. CSS is missing! That means two things:
-
-    Either that you have wrongly set up the CSS URL in your templates, or
-    your static generator has a configuration option that needs to be explicitly
-    set in order to serve static assets under a relative URL.
-
-[ci]: https://about.gitlab.com/gitlab-ci/
 [hugo]: https://gohugo.io
-[install]: https://gohugo.io/overview/installing/
-[documentation]: https://gohugo.io/overview/introduction/
-[userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
-[projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
-[post]: https://about.gitlab.com/2016/04/07/gitlab-pages-setup/#custom-domains
+[install]: https://gohugo.io/installation/
+[documentation]: https://gohugo.io/documentation/

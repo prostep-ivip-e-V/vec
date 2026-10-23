@@ -340,5 +340,17 @@ img[data-zoomable] { cursor: zoom-in; }
 
 @media print {
   .page-header, .page-footer, .hb-sidebar-container, .hb-toc, .specs-nav { display: none !important; }
+  .page-body { margin: 0 !important; }
   .specs-content table { display: table; overflow: visible; }
+
+  /* Compact typography for the single page version (PDF). */
+  .specs-printable { padding: 0 !important; max-width: none !important; }
+  .specs-printable .prose { font-size: 10pt; line-height: 1.45; }
+  .specs-printable .prose :where(p, ul, ol, figure, table, pre, .ecad-callout) { margin-top: 0.5em; margin-bottom: 0.5em; }
+  .specs-printable .prose :where(li) { margin-top: 0.15em; margin-bottom: 0.15em; }
+  .specs-printable .prose :where(h1) { font-size: 1.8em; margin: 1em 0 0.4em; }
+  .specs-printable .prose :where(h2) { font-size: 1.4em; margin: 1em 0 0.4em; }
+  .specs-printable .prose :where(h3, h4) { font-size: 1.15em; margin: 0.8em 0 0.3em; }
+  .specs-printable .prose pre { font-size: 0.85em; white-space: pre-wrap; }
+  .specs-printable figure { break-inside: avoid; }
 }
