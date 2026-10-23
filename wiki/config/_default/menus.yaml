@@ -5,16 +5,16 @@
 
 main:
   - name: Home
-    url: '#vec'
+    url: '/#vec'
     weight: 10
   - name: News
-    url: '#news'
+    url: '/#news'
     weight: 15
   - name: Events
-    url: '#featured'
+    url: '/#featured'
     weight: 17
   - name: Project Groups
-    url: '#groups'
+    url: '/#groups'
     weight: 19
   - name: Archive
     weight: 100
