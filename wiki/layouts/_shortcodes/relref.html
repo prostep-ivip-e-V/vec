@@ -1,0 +1,2 @@
+{{- /* Overrides Hugo's built-in `relref` shortcode, see functions/ecad_ref.html. */ -}}
+{{- partial "functions/ecad_ref" (dict "page" .Page "ref" (.Get 0) "absolute" false) -}}

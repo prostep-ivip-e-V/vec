@@ -1,0 +1,28 @@
+{{/* Alphabetical index of the child pages (class index). */}}
+{{ $letters := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+{{ $groups := dict }}
+{{ range .Pages.ByTitle }}
+  {{ $key := substr .Title 0 1 | lower }}
+  {{ $groups = merge $groups (dict $key ((index $groups $key) | default slice | append .)) }}
+{{ end }}
+
+<div class="specs-glossary-letters not-prose">
+{{ range $letters }}
+  <a href="#{{.}}">{{.}}</a>
+{{ end }}
+</div>
+
+<div class="specs-glossary not-prose">
+{{ range $letter := $letters }}
+  {{ with index $groups (lower $letter) }}
+  <div class="specs-glossary-card" id="{{ $letter }}">
+    <h3>{{ $letter }}</h3>
+    <ul>
+      {{ range . }}
+      <li class="specs-glossary-item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+{{ end }}
+</div>

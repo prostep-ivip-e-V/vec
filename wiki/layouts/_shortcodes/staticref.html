@@ -1,0 +1,11 @@
+{{/*
+    Link to a static file. Compatible with the former Wowchemy `staticref` shortcode.
+
+    Parameters
+    ----------
+    #0 : positional
+        URL for the link (if local path, it is relative to the site root).
+    #1 : optional, positional
+        Pass "newtab" as the second argument to open the link in a new tab.
+*/}}
+<a href="{{ .Get 0 | relURL }}"{{ if len .Params | eq 2 }} target="_blank"{{ end }}>{{ .Inner }}</a>

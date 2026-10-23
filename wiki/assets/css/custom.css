@@ -1,0 +1,330 @@
+/*************************************************
+ *  ECAD-WIKI styles on top of HugoBlox (Tailwind).
+ *  Loaded after the HugoBlox stylesheet. Plain CSS
+ *  (not processed by Tailwind), uses the theme's
+ *  CSS variables for colours.
+ **************************************************/
+
+/*************************************************
+ *  Legacy content classes (Bootstrap 4 semantics).
+ *  Used in content pages, e.g. on figures. Must
+ *  win over Tailwind utilities of the same name
+ *  (Tailwind `w-25` is 6.25rem, Bootstrap 25 %).
+ **************************************************/
+
+.w-25 { width: 25% !important; }
+.w-50 { width: 50% !important; }
+.w-75 { width: 75% !important; }
+.float-right { float: right !important; }
+.float-left { float: left !important; }
+.pr-3 { padding-right: 1rem !important; }
+.clearfix::after { display: block; clear: both; content: ""; }
+
+.prose figure.float-right { margin-left: 1rem; }
+.prose figure.float-left { margin-right: 1rem; }
+
+/*************************************************
+ *  Figures (figure & svgfigure shortcodes).
+ *  Figures are numbered with CSS counters, so the
+ *  numbering also works in the single page version.
+ **************************************************/
+
+.article-style { counter-reset: captions; }
+
+.article-style figure {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.article-style figcaption {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+figcaption.numbered::before {
+  counter-increment: captions;
+  content: attr(data-pre) counter(captions) attr(data-post);
+  font-weight: 600;
+}
+
+img[data-zoomable] { cursor: zoom-in; }
+
+.ecad-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgb(255 255 255 / 0.95);
+  cursor: zoom-out;
+}
+
+.ecad-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/*************************************************
+ *  Callouts (callout, deprecated, gh-review,
+ *  review shortcodes).
+ **************************************************/
+
+.ecad-callout {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid;
+  border-radius: 0.375rem;
+}
+
+.ecad-callout-icon { padding-top: 0.25rem; flex-shrink: 0; }
+.ecad-callout-body { min-width: 0; flex: 1; }
+.ecad-callout-body > :first-child,
+.ecad-callout-body > div > :first-child { margin-top: 0; }
+.ecad-callout-body > :last-child,
+.ecad-callout-body > div > :last-child { margin-bottom: 0; }
+.ecad-callout-body p { margin: 0.5rem 0; }
+
+.ecad-callout-note,
+.ecad-callout-info    { background: var(--color-blue-100, #dbeafe); border-color: var(--color-blue-500, #3b82f6); }
+.ecad-callout-note .ecad-callout-icon,
+.ecad-callout-info .ecad-callout-icon { color: var(--color-blue-600, #2563eb); }
+.ecad-callout-warning { background: var(--color-orange-100, #ffedd5); border-color: var(--color-orange-500, #f97316); }
+.ecad-callout-warning .ecad-callout-icon { color: var(--color-orange-600, #ea580c); }
+.ecad-callout-danger  { background: var(--color-red-100, #fee2e2); border-color: var(--color-red-500, #ef4444); }
+.ecad-callout-danger .ecad-callout-icon { color: var(--color-red-600, #dc2626); }
+
+/*************************************************
+ *  info shortcode (tooltip in association tables).
+ **************************************************/
+
+.ecad-info {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: help;
+  color: var(--color-neutral-500, #737373);
+}
+
+.ecad-info-icon { width: 1em; height: 1em; }
+
+/*************************************************
+ *  Specs layout.
+ **************************************************/
+
+.specs-content > .prose,
+.specs-content { max-width: 64rem; }
+
+/* Wide generated tables (class attributes, associations) scroll horizontally. */
+.specs-content table {
+  display: block;
+  overflow-x: auto;
+}
+
+.specs-content td p { margin: 0; }
+
+.specs-sidebar .specs-links { padding-bottom: 2rem; }
+
+/* Metadata line. */
+.specs-metadata {
+  margin: -0.5rem 0 1.5rem 0;
+  font-size: 0.875rem;
+  color: var(--color-neutral-500, #737373);
+}
+
+.specs-metadata a { color: inherit; text-decoration: underline; }
+.specs-meta-divider { margin: 0 0.4rem; }
+.specs-meta-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; }
+
+.specs-badge-review {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-red-600, #dc2626);
+}
+
+/* Change history. */
+.specs-history {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-neutral-200, #e5e5e5);
+  border-radius: 0.375rem;
+}
+
+.specs-history summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Related content (right column). */
+.specs-related {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--color-neutral-500, #737373);
+}
+
+.specs-related-title { font-weight: 600; margin-bottom: 0.5rem; }
+
+.specs-related > ul {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--color-neutral-200, #e5e5e5);
+}
+
+.specs-related > ul > li { margin-bottom: 0.75rem; font-weight: 600; }
+.specs-related ul ul { margin-top: 0.25rem; }
+.specs-related ul ul li { font-weight: 400; padding: 0.1rem 0; }
+.specs-related a:hover { color: var(--color-primary-600); }
+
+.specs-toc-level-1 { padding-left: 1rem; }
+.specs-toc-level-2 { padding-left: 2rem; }
+.specs-toc-level-3 { padding-left: 3rem; }
+
+/* Additional resources. */
+.specs-links-list { list-style: none; padding-left: 1.5rem; }
+.specs-link-icon { margin-right: 0.25rem; }
+
+/* Pager. */
+.specs-nav {
+  display: flex;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-neutral-200, #e5e5e5);
+  font-size: 0.875rem;
+}
+
+.specs-nav-item { width: 100%; hyphens: auto; word-wrap: break-word; }
+.specs-nav-item.next { text-align: right; }
+.specs-nav-item .meta-nav {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-neutral-500, #737373);
+}
+.specs-nav-item a:hover { color: var(--color-primary-600); }
+
+/* Page footer. */
+.specs-body-footer {
+  margin-top: 2rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-neutral-200, #e5e5e5);
+  font-size: 0.875rem;
+  color: var(--color-neutral-500, #737373);
+}
+
+.specs-body-footer a { text-decoration: underline; }
+
+/* Recently visited pages. */
+.ecad-trace { margin-top: 0.25rem; font-size: 0.75rem; color: var(--color-neutral-500, #737373); }
+.ecad-trace .breadcrumb { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
+.ecad-trace .breadcrumb-item + .breadcrumb-item::before { content: "›"; padding: 0 0.4rem; }
+.ecad-trace .breadcrumb-item.active { font-weight: 600; }
+
+/* Class index (glossary). */
+.specs-glossary-letters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.specs-glossary-letters a { font-weight: 600; color: var(--color-primary-700); }
+
+.specs-glossary { columns: 16rem; column-gap: 1rem; }
+
+.specs-glossary-card {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-neutral-200, #e5e5e5);
+  border-radius: 0.375rem;
+  scroll-margin-top: calc(var(--navbar-height, 4rem) + 1rem);
+}
+
+.specs-glossary-card h3 { margin: 0 0 0.5rem 0; font-weight: 700; }
+
+.specs-glossary-item {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0.875rem;
+}
+
+.specs-glossary-item a:hover { color: var(--color-primary-600); }
+
+/* Section list (e.g. /specifications/). */
+.specs-section-list { list-style: none; padding: 0; margin-top: 2rem; }
+.specs-section-list > li { margin-bottom: 2rem; }
+.specs-section-list h3 { font-size: 1.25rem; font-weight: 700; }
+
+/* Overall table of content of a spec version. */
+.specs-overall-toc ol {
+  list-style-type: none;
+  display: table;
+  counter-reset: item;
+  padding-left: 1.5rem;
+}
+
+.specs-overall-toc > ol { padding-left: 0.5rem; }
+
+.specs-overall-toc ol > li {
+  display: table-row;
+  counter-increment: item;
+  font-weight: 600;
+}
+
+.specs-overall-toc ol > li::before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.specs-overall-toc li li { font-weight: 400; }
+.specs-overall-toc a:hover { color: var(--color-primary-600); }
+
+/*************************************************
+ *  Printable (single page version, PDF).
+ **************************************************/
+
+.print { counter-reset: section; }
+
+.print-section > h1 { counter-reset: subsection; }
+.print-section > h1::before {
+  counter-increment: section;
+  content: counter(section) " ";
+}
+
+.print-section > h2, .print-sub-section > h1 {
+  counter-reset: subsubsection;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.print-section > h2::before, .print-sub-section > h1::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+
+.print-section > h3, .print-sub-section > h2 {
+  counter-reset: subsubsubsection;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.print-section > h3::before, .print-sub-section > h2::before {
+  counter-increment: subsubsection;
+  content: counter(section) "." counter(subsection) "." counter(subsubsection) " ";
+}
+
+.print-sub-section > h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.print-sub-section > h3::before {
+  counter-increment: subsubsubsection;
+  content: counter(section) "." counter(subsection) "." counter(subsubsection) "." counter(subsubsubsection) " ";
+}
+
+@media print {
+  .page-header, .page-footer, .hb-sidebar-container, .hb-toc, .specs-nav { display: none !important; }
+  .specs-content table { display: table; overflow: visible; }
+}

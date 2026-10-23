@@ -1,0 +1,36 @@
+{{/* Right column: page table of contents (if `toc: true`) and related content. */}}
+<nav class="hb-toc specs-toc order-last hidden w-64 shrink-0 xl:block print:hidden px-4" aria-label="table of contents" data-pagefind-ignore>
+  <div class="hb-scrollbar text-sm [hyphens:auto] sticky top-16 overflow-y-auto pr-4 pt-6 max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] -mr-4">
+    {{- if .Params.toc }}
+    {{- with .Fragments.Headings -}}
+    <p class="mb-4 font-semibold tracking-tight"><a href="#top">{{ i18n "on_this_page" }}</a></p>
+    {{- range . -}}
+    <ul>
+      {{- with .Headings -}}{{ template "specs-toc-headings" (dict "headings" . "level" 0) }}{{- end -}}
+    </ul>
+    {{- end -}}
+    {{- end -}}
+    {{- end }}
+
+    {{ partial "specs_related.html" . }}
+  </div>
+</nav>
+
+{{- define "specs-toc-headings" -}}
+  {{- $level := .level -}}
+  {{- if ge $level 4 -}}
+    {{ return }}
+  {{- end -}}
+  {{- range .headings }}
+    {{- if .Title }}
+      <li class="my-2 scroll-my-6 scroll-py-6">
+        <a class="{{ cond (eq $level 0) "font-semibold" (printf "specs-toc-level-%d" $level) }} inline-block text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 w-full break-words" href="#{{ anchorize .ID }}">
+          {{- .Title | plainify | htmlUnescape -}}
+        </a>
+      </li>
+    {{- end -}}
+    {{- with .Headings -}}
+      {{ template "specs-toc-headings" (dict "headings" . "level" (add $level 1)) }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

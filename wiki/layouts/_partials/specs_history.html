@@ -1,0 +1,35 @@
+{{ $page := . }}
+{{ if $page.Params.history }}
+<details class="specs-history" id="history-collapse">
+  <summary>Change History</summary>
+  <table class="w-full">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th style="width: 100%;">Subject</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{- if $page.GitInfo -}}
+      <tr>
+        <td class="whitespace-nowrap">Latest Commit</td>
+        <td> {{ $page.GitInfo.Subject }}</td>
+        <td class="whitespace-nowrap">{{ $page.Lastmod.Format "2006-01-02" }}</td>
+      </tr>
+      {{- end -}}
+      {{- range (sort $page.Params.history "date" "desc") -}}
+      <tr>
+        <td class="whitespace-nowrap">
+          {{- partial "specs_issue_links" . -}}
+        </td>
+        <td>
+          {{- .description -}}
+        </td>
+        <td class="whitespace-nowrap">{{ dateFormat "2006-01-02" .date }}</td>
+      </tr>
+      {{- end -}}
+    </tbody>
+  </table>
+</details>
+{{ end }}

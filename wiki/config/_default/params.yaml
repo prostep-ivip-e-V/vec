@@ -1,130 +1,104 @@
-# SITE SETUP
-# Guide: https://wowchemy.com/docs/getting-started/
-# Documentation: https://wowchemy.com/docs/
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
-# Appearance
+# ══════════════════════════════════════════════════════════════════════════════
+# HUGO BLOX CONFIGURATION
+# Schema: hugoblox.com/schema/v2
+# Documentation: https://hugoblox.com/docs/
+# ══════════════════════════════════════════════════════════════════════════════
+hugoblox:
+  schema: "2.0"
 
-appearance:
-  mode: light
-  theme_day: minimal
-#  theme_night: minimal
-  font: minimal
-  font_size: M
+  identity:
+    name: "ECAD WIKI"
+    organization: "prostep ivip association"
+    type: organization
+    tagline: ""
+    description: "Home of the standards KBL & VEC published by the VES-WF / ECAD-IF."
+    social:
+      twitter: ""
 
-# SEO
+  theme:
+    mode: light
+    pack: "default"
+    colors:
+      primary: ""
+      secondary: ""
+      neutral: ""
 
-marketing:
-  seo:
-    site_type: Project
-    local_business_type: ''
-    org_name: 'prostep ivip'
-    description: 'Home of the standards KBL & VEC published by the VES-WF / ECAD-IF.'
-    twitter: 'vec'
-  analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-  verification:
-    google: ''
-    baidu: ''
+  typography:
+    pack: "modern"
 
-# Site header
+  layout:
+    radius: "md"
+    spacing: "comfortable"
+    avatar_shape: circle
 
-header:
-  navbar:
+  header:
     enable: true
-    align: l
-    show_logo: true
-    show_language: false
-    show_day_night: false
-    show_search: true
-    highlight_active_link: true
+    style: navbar
+    sticky: true
+    align: left
+    search: true
+    theme_toggle: false
+    theme_picker: false
+    language_switcher: false
+    cta:
+      enable: false
 
-# Site footer
+  footer:
+    style: minimal
+    language_switcher: false
+    text: ""
 
-footer:
-  block: prostep
   copyright:
-    notice: '© {year} prostep ivip association. This work is licensed under {license}'
+    notice: "© {year} prostep ivip association. This work is licensed under {license}"
     license:
-      enable: true
+      type: cc
       allow_derivatives: true
       share_alike: false
       allow_commercial: true
 
-# Localization
+  seo:
+    title: ""
+    ai:
+      allow:
+        - /
+      disallow: []
 
-locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
-  address_format: en-us
+  content:
+    math:
+      enable: false
+    toc:
+      enable: true
+    reading_time:
+      enable: true
 
-# Site features
-
-features: 
-  syntax_highlighter:
-    theme_light: github-dark
-    enable: true
-    extra_languages:
-      - xml
-  math:
-    enable: false
-  privacy_pack: 
-    enable: true
-  repository:
-    url: 'https://github.com/prostep-ivip-e-V/vec'
-    content_dir: wiki/content
-    branch: main
-  avatar:
-    gravatar: true
-    shape: circle
-  comment:
-    provider: ''
-    disqus:
-      shortname: ''
-      show_count: true
-    commento:
-      url: ''
   search:
-    provider: docsearch
-    docsearch:
-      app_id: 'UQNVZS8DFX'
-      api_key: 'd0ad2f9038dcb6caaf423ea55ee6e530'
-      index_name: 'ecad-prostep'
-      search_parameters:
-        facetFilters: 
-          - 'lang:en-us'
-          - 'version:latest'
-#    provider: algolia
-    algolia:
-      app_id: 'U5U8H9UB2D'
-      api_key: '755d51e315f6045ee6e1174de5087731'
-      index_name: 'ecadwiki'
-      show_logo: true
-  map:
-    provider: ''
-    api_key: ''
-    zoom: 15
-
-# Extensions
-
-extensions:
-  cms:
-    branch: master
-    local_backend: false
-  isotope:
     enable: true
-  academicons:
+    suggestions: []
+    quick_actions: []
+
+  comments:
+    enable: false
+
+  repository:
+    enable: true
+    url: "https://github.com/prostep-ivip-e-V/vec"
+    branch: main
+    content_dir: wiki/content
+
+  locale:
+    date_format: "Jan 2, 2006"
+    time_format: "3:04 PM"
+    address_format: en-us
+
+  privacy:
     enable: true
 
-reading_time: true
-section_pager: true
-docs_section_pager: true
-sharing: true
-link_authors: true
-projects:
-  post_view: 2
-  publication_view: 2
-  talk_view: 2
+  debug:
+    enable: false
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ECAD-WIKI SPECIFIC PARAMETERS (used by the `specs` layouts and shortcodes)
+# ══════════════════════════════════════════════════════════════════════════════
 VEC:
   current_version: "2.2.0"
   current_base_url: "specifications/vec/v220"

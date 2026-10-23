@@ -1,0 +1,44 @@
+{{/* Fills the "recently visited" trace (partial ecad_trace.html). The trace is kept in the browser's localStorage. */}}
+<script>
+(function () {
+  var KEY = "ecad-wiki-trace";
+  var MAX = 7;
+  var list = document.getElementById("navbar-trace-list");
+  if (!list) {
+    return;
+  }
+
+  function truncate(str, num) {
+    return str.length <= num ? str : str.slice(0, num) + "…";
+  }
+
+  var history = [];
+  try {
+    history = JSON.parse(localStorage.getItem(KEY) || "[]");
+  } catch (e) {
+    history = [];
+  }
+
+  var url = document.URL.split("#")[0];
+  var previous = history.filter(function (e) { return e.url !== url; });
+
+  var current = list.firstElementChild;
+  previous.forEach(function (entry) {
+    var li = document.createElement("li");
+    li.className = "breadcrumb-item";
+    var a = document.createElement("a");
+    a.href = entry.url;
+    a.title = entry.title;
+    a.textContent = truncate(entry.title, 25);
+    li.appendChild(a);
+    list.insertBefore(li, current);
+  });
+
+  previous.push({ title: {{ .Title }}, url: url });
+  try {
+    localStorage.setItem(KEY, JSON.stringify(previous.slice(-MAX)));
+  } catch (e) {
+    /* Storage unavailable (private mode): no trace. */
+  }
+})();
+</script>

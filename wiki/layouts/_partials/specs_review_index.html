@@ -1,0 +1,9 @@
+{{/* Pages under review below the current page. */}}
+{{ $current_page := . }}
+{{ $pages := slice }}
+{{ range site.Pages.ByLastmod.Reverse }}
+  {{ if and (.IsDescendant $current_page) .Params.review }}
+    {{ $pages = $pages | append . }}
+  {{ end }}
+{{ end }}
+{{ partial "specs_history_table" (first 10 $pages) }}

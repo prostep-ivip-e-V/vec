@@ -1,0 +1,23 @@
+{{/*
+    Callout box. Compatible with the former Wowchemy `callout` shortcode, so content
+    can keep using `{{% callout note %}}…{{% /callout %}}`.
+    Replaces the deprecated HugoBlox `callout` shortcode (which renders a title and logs a warning).
+
+    Parameters
+    ----------
+    #0 : optional, positional
+        Callout type: "note" (default), "info" or "warning".
+*/}}
+{{- $type := lower (.Get 0 | default "note") -}}
+{{- $styles := dict
+  "note"    (dict "icon" "information-circle" "class" "ecad-callout-note")
+  "info"    (dict "icon" "information-circle" "class" "ecad-callout-info")
+  "warning" (dict "icon" "exclamation-triangle" "class" "ecad-callout-warning")
+-}}
+{{- $style := index $styles $type | default (index $styles "note") -}}
+<div class="ecad-callout {{ $style.class }}" data-callout="{{ $type }}">
+  <span class="ecad-callout-icon">{{ partial "functions/get_icon" (dict "name" $style.icon "attributes" "height=\"24\"") }}</span>
+  <div class="ecad-callout-body">
+    {{ .Inner | markdownify | emojify }}
+  </div>
+</div>

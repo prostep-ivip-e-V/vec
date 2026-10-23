@@ -1,0 +1,10 @@
+{{/* "Recently visited" trace. The list is filled by hooks/body-end/breadcrumb-trace.html. */}}
+{{ if not .IsHome }}
+  <nav class="ecad-trace hidden md:flex" aria-label="Recently visited" id="navbar-trace" data-pagefind-ignore>
+    <ol class="breadcrumb" id="navbar-trace-list">
+        <li class="breadcrumb-item active" aria-current="page">
+            {{ .LinkTitle | emojify }}
+        </li>
+    </ol>
+  </nav>
+{{ end }}
