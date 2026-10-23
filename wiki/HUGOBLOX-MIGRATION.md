@@ -1,7 +1,8 @@
 # Migration of the ECAD-WIKI to the HugoBlox documentation template
 
-Status: analysis and plan, nothing implemented yet. Analysed 2026-10-23 against
-`HugoBlox/kit` commit `68cbf33` (2026-05-27), template `templates/documentation`.
+Status: **implemented** on branch `wiki/hugoblox-migration` (see §9), not merged yet.
+Analysed 2026-10-23 against `HugoBlox/kit` commit `68cbf33` (2026-05-27), template
+`templates/documentation`; implemented against module `blox@v0.0.0-20260527025321-61f41d3667f1`.
 
 ## 1. Summary
 
@@ -312,3 +313,49 @@ HugoBlox as requested.
 * HugoBlox: https://hugoblox.com/ · Wowchemy users: https://hugoblox.com/wowchemy
 * Kit repository: https://github.com/HugoBlox/kit (`templates/documentation`, `modules/blox`)
 * Upgrade guide: https://hugoblox.com/docs/hugoblox/guides/upgrade/
+
+## 9. Implementation status (2026-10-23)
+
+Implemented on branch `wiki/hugoblox-migration`, built with Hugo 0.162.0 extended.
+
+### 9.1 Verification
+
+| Check | Result |
+|---|---|
+| Build | 7821 pages, ~35 s (old: 86 s), no errors |
+| URL parity (old vs new build) | All page URLs exist. Differences: taxonomy paginator pages (`/classes/<x>/page/N/`), resized image file names, `V112` files (see 9.2) |
+| Links inside the content of 6188 pages (old vs new) | Identical, except list pages that render summaries differently (`/news/`: one link) |
+| Internal link check over the whole new site (607 000 links) | No new broken links; the remaining ones existed before (PDFs created in CI, `doku.php`, some missing guideline downloads) |
+| Visual review (desktop 1280/1440, mobile 390) | Home, spec version, guideline, class, diagram, class index, section list, news, event, sample, search, mobile menu |
+| Printable version / PDF | Same structure (9 sections, 41 sub-sections); `generate-pdf.js` works. 248 instead of 132 pages, because the old PDF was scaled down to approx. 6 pt text |
+| Search (Pagefind) | 922 pages (current versions only, like the DocSearch `version:latest` filter), filter VEC/KBL |
+| `.claude/index` | Unchanged after `build_index.py` |
+
+### 9.2 Content changes (all others unchanged)
+
+* `content/home/*` replaced by `content/_index.md` (HugoBlox landing page).
+* Duplicate front matter keys removed (rejected by the YAML parser of Hugo 0.162; the old
+  parser used the last value, so the meaning is unchanged): `ee-components/internal-connectivity`
+  (`classes`), `elog-layers/wiring` (`toc`), `publication-process` (`date`).
+* `kbl/v22/_index.md`: `headless: true` removed. Hugo 0.120 ignored it for sections; Hugo 0.162
+  would no longer render the page.
+* `vec/V112/*` moved to `vec/v112/`. The v112 page links these files relatively; on the live
+  site these links are broken (`/specifications/vec/v112/vec-1.1.2-ontology.ttl` is 404), only
+  `/specifications/vec/V112/…` works. After the move the linked URLs work and the `V112` URLs are gone.
+
+### 9.3 Findings beyond the plan
+
+* Hugo ≥ 0.123 resolves relative `relref`s in leaf bundles from the parent directory
+  (76 links in guidelines). Solved with overridden `relref`/`ref` shortcodes (bundle-relative first).
+* `layouts/section/specs.html` is not found by the new template lookup → `layouts/specifications/specs.html`.
+* HugoBlox bug with Hugo 0.162 in `functions/build_links.html` (nil map) → overridden partial.
+* HugoBlox `card` view is single column; the home page uses `article-grid`.
+* Not changed (also broken on the live site): the `/ontologies/…` rewrites in `data/redirects.yaml`
+  use Netlify `_redirects` syntax, which GitHub Pages ignores.
+
+### 9.4 Open points before merging
+
+* Review by the team (look & feel, home page content).
+* Run the GitHub workflow once (e.g. via `workflow_dispatch` on the branch or a test repository).
+* Decide on the ontology URLs (`/ontologies/2024/03/vec…`), see 9.3.
+
