@@ -1,0 +1,9 @@
+# Author profile for HugoBlox (mirrors content/authors/becker/_index.md)
+schema: hugoblox/author/v1
+slug: becker
+name:
+  display: Johannes Becker
+role: Service Provider for the VES-WF & ECAD-IF
+affiliations:
+  - name: 4Soft GmbH
+    url: https://www.4soft.de

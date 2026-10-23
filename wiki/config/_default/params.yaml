@@ -34,6 +34,8 @@ hugoblox:
   header:
     enable: true
     style: navbar
+    # The logo already contains the organisation name.
+    show_title: false
     sticky: true
     align: left
     search: true

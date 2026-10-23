@@ -1,6 +1,5 @@
 ---
 title: KBL Version 2.2
-headless: true
 linktitle: Overview
 toc: false
 type: specs

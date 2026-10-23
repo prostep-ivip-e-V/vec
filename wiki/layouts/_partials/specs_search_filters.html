@@ -1,13 +1,4 @@
-{{/* Pagefind filters, replacing the former DocSearch meta tags (version / latest). */}}
+{{/* Pagefind filter: specification (VEC, KBL) shown as result type in the search modal. */}}
 {{- with .Params.specification -}}
-<span data-pagefind-filter="specification" hidden>{{ . }}</span>
-{{- end -}}
-{{- if .Params.specification -}}
-  {{- $current_version := (index site.Params .Params.specification).current_version -}}
-  {{- with .Params.version -}}
-<span data-pagefind-filter="version" hidden>{{ . }}</span>
-  {{- end -}}
-  {{- if or (not .Params.version) (eq .Params.version $current_version) -}}
-<span data-pagefind-filter="version" hidden>latest</span>
-  {{- end -}}
+<span data-pagefind-filter="type" hidden>{{ . }}</span>
 {{- end -}}

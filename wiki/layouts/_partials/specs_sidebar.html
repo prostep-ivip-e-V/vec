@@ -19,7 +19,11 @@
           <li><a class="hb-sidebar-custom-link text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
         {{ end }}
       {{ end }}
-      <li class="mt-5 mb-2 px-2 py-1.5 text-sm font-semibold text-gray-900 dark:text-gray-100">{{ $current_page.FirstSection.LinkTitle }}</li>
+      {{/* Title of the spec version or guideline section (e.g. /specifications/vec/v220/). */}}
+      {{ $ancestors := $current_page.Ancestors.Reverse }}
+      {{ $root := $current_page }}
+      {{ if gt (len $ancestors) 3 }}{{ $root = index $ancestors 3 }}{{ end }}
+      <li class="mt-5 mb-2 px-2 py-1.5 text-sm font-semibold text-gray-900 dark:text-gray-100">{{ $root.Title }}</li>
     </ul>
     <nav class="specs-links" aria-label="Section navigation">
       <ul class="flex flex-col gap-1">

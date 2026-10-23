@@ -17,7 +17,8 @@
         {{ partial "ecad_trace.html" . }}
       </div>
 
-      <div data-pagefind-body>
+      {{/* Only the current version of a specification is indexed for search. */}}
+      <div {{ if partial "functions/specs_is_latest" . }}data-pagefind-body{{ end }}>
         <h1 data-pagefind-meta="title">{{ .Title }}</h1>
 
         {{ if eq .Layout "glossary" }}

@@ -52,7 +52,7 @@ sections:
       count: 0
       order: desc
     design:
-      view: card
+      view: article-grid
       columns: 3
 
   - block: collection
@@ -78,7 +78,7 @@ sections:
       count: 0
       order: desc
     design:
-      view: card
+      view: article-grid
       columns: 3
 
   - block: collection
@@ -93,6 +93,6 @@ sections:
       sort_by: Weight
       order: asc
     design:
-      view: card
+      view: article-grid
       columns: 2
 ---

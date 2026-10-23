@@ -24,6 +24,17 @@
 .prose figure.float-left { margin-right: 1rem; }
 
 /*************************************************
+ *  Typography.
+ **************************************************/
+
+/* No backticks around inline code (e.g. `vec-class` links). */
+.prose code::before,
+.prose code::after { content: none !important; }
+
+/* Compact navbar: the wiki has many top level menu entries. */
+#site-header .nav-link { font-size: 0.9rem; }
+
+/*************************************************
  *  Figures (figure & svgfigure shortcodes).
  *  Figures are numbered with CSS counters, so the
  *  numbering also works in the single page version.
@@ -45,6 +56,7 @@ figcaption.numbered::before {
   counter-increment: captions;
   content: attr(data-pre) counter(captions) attr(data-post);
   font-weight: 600;
+  margin-right: 0.25em;
 }
 
 img[data-zoomable] { cursor: zoom-in; }
@@ -187,7 +199,9 @@ img[data-zoomable] { cursor: zoom-in; }
 
 /* Additional resources. */
 .specs-links-list { list-style: none; padding-left: 1.5rem; }
-.specs-link-icon { margin-right: 0.25rem; }
+.specs-links-list li { margin: 0.25rem 0; }
+.specs-link-icon { display: inline-block; margin-right: 0.35rem; color: var(--color-neutral-500, #737373); }
+.specs-link-icon svg { display: inline; }
 
 /* Pager. */
 .specs-nav {
