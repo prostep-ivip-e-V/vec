@@ -86,6 +86,8 @@ The specification pages (`type: specs`) use own layouts:
   (`figure`, `callout`, `icon`, `staticref`). `relref`/`ref` are overridden, so that
   relative references in page bundles (`../sibling`) resolve like in Hugo 0.120.
 * `layouts/_partials/views/1.html` … `4.html`: former numeric list views.
+* `layouts/_partials/views/article-grid--start.html`: HugoBlox view, fixed to use at most as many
+  columns as there are items (home page cards).
 * `layouts/_partials/functions/build_links.html`: HugoBlox partial with a bug fix for
   Hugo 0.162 (remove when fixed upstream).
 * `assets/css/custom.css`: wiki styles (plain CSS on top of the HugoBlox stylesheet).
