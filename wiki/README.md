@@ -81,6 +81,9 @@ curl -sSLf https://github.com/gohugoio/hugo/releases/download/v0.162.0/hugo_exte
 
 ### Customizations
 
+The complete list of customizations, why they exist, the HugoBlox native alternative and the
+housekeeping plan to reduce them is in [HUGOBLOX-MIGRATION.md](HUGOBLOX-MIGRATION.md) (section 10).
+
 The HugoBlox theme is used for the site shell (navbar, footer, home page, news, events).
 The specification pages (`type: specs`) use own layouts:
 
