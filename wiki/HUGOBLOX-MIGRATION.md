@@ -358,6 +358,10 @@ Implemented on branch `wiki/hugoblox-migration`, built with Hugo 0.162.0 extende
 * Review by the team (look & feel, home page content).
 * Run the GitHub workflow once (e.g. via `workflow_dispatch` on the branch or a test repository).
 * Decide on the ontology URLs (`/ontologies/2024/03/vec…`), see 9.3.
+* Author photos: the old site loaded them from Gravatar (no Gravatar support in HugoBlox). The
+  current Gravatar images were stored once in `assets/media/authors/` (becker, steinbuechler,
+  ungerer; fehlmann has no Gravatar image → placeholder). Confirm with the persons that their
+  photos may be stored in the public repository.
 
 
 ## 10. Customizations and housekeeping after go-live
@@ -381,7 +385,7 @@ change to drop the customization.
 | A7 | Legacy Bootstrap classes in `custom.css` (`.w-25`, `.float-right`, `.pr-3`, `.clearfix`, …) | Raw `class="…"` in 19 content files; Tailwind's `w-25` has another meaning (6.25 rem instead of 25 %) | Tailwind classes in content (`w-1/4`, `float-right`, `pr-4`) or no layout classes in content at all | content: 19 files |
 | A8 | `links` icon mapping (`specs_link_icon.html`) | Front matter `links` use Font Awesome names (`file-pdf`, `circle-nodes`, …) | HugoBlox icon names in front matter (`icon: hero/document-text`) | content: `links` in ~30 `_index.md` files (+ generator template, if the model report writes them) |
 | A9 | `build_links.html` second fix (legacy `url_pdf` path resolved by file name) | `content/event/2020-03-vec-webinar` has a wrong `url_pdf` path that Wowchemy tolerated | Front matter `links: [{type: pdf, url: 2020-03-VEC-Webinar.pdf}]` | content: 3 files with `url_*`/`external_link` (also removes 4 deprecation warnings) |
-| A10 | `data/authors/*.yaml` (profile data migrated from `content/authors/*/_index.md`: name, role, affiliations, short bio, links, interests, education, user groups) | HugoBlox reads author profiles from `data/authors/`, Wowchemy from the content pages; the content pages stay unchanged, so the data is duplicated | Only `data/authors/` (HugoBlox author system). The long description (body of `_index.md`) has no data field except `bio`, which is also shown in the author card below posts | content: 4 author folders → reduce `content/authors/*/_index.md` to the body text (or move it into `bio` and accept the longer author cards). Photos: see 9.4 |
+| A10 | `data/authors/*.yaml` (profile data migrated from `content/authors/*/_index.md`: name, role, affiliations, short bio, links, interests, education, user groups) | HugoBlox reads author profiles from `data/authors/`, Wowchemy from the content pages; the content pages stay unchanged, so the data is duplicated | Only `data/authors/` (HugoBlox author system). The long description (body of `_index.md`) has no data field except `bio`, which is also shown in the author card below posts | content: 4 author folders → reduce `content/authors/*/_index.md` to the body text (or move it into `bio` and accept the longer author cards). |
 | A11 | `layouts/specifications/specs.html` (section list for `layout: specs`) | `specifications/vec/_index.md` and `kbl/_index.md` use `layout: specs` (former `layouts/section/specs.html`) | HugoBlox landing page (`type: landing`, `collection` block) or the standard list layout | content: 2 files. Note: the list shows the `links` of each version — needs a replacement (e.g. cards with links), so this is a design decision |
 | A12 | `layouts/authors/term.html` (copy of the HugoBlox author page) | Shows what the former author pages showed: long description (body of `content/authors/<slug>/_index.md`), interests, education, and "Latest" as a compact list of all pages (HugoBlox: big cards, paginated → new `/authors/<slug>/page/N/` URLs) | HugoBlox author page (`bio` only, no interests/education, card list) | Drop together with A10 if the HugoBlox author page is acceptable |
 
