@@ -45,3 +45,15 @@ main:
 #  - name: CV
 #    url: uploads/resume.pdf
 #    weight: 70
+
+# Footer links (legally required pages, rendered by the HugoBlox footer).
+footer:
+  - name: Imprint
+    url: '/imprint/'
+    weight: 10
+  - name: Privacy Statement
+    url: '/privacy/'
+    weight: 20
+  - name: Legal Notice
+    url: '/terms/'
+    weight: 30

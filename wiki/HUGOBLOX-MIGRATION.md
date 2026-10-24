@@ -362,6 +362,11 @@ Implemented on branch `wiki/hugoblox-migration`, built with Hugo 0.162.0 extende
   current Gravatar images were stored once in `assets/media/authors/` (becker, steinbuechler,
   ungerer; fehlmann has no Gravatar image → placeholder). Confirm with the persons that their
   photos may be stored in the public repository.
+* Legal pages: Imprint, Privacy Statement and Legal Notice are linked in the footer of every page
+  (HugoBlox `footer` menu in `config/_default/menus.yaml`, no override). Have the privacy statement
+  reviewed for the new setup: the new pages load no third-party resources any more (the old site
+  loaded Google Fonts, jsDelivr/cdnjs and Gravatar), use no cookies (only `localStorage` for HugoBlox
+  UI settings) and the cookie banner of the old site is gone.
 
 
 ## 10. Customizations and housekeeping after go-live
@@ -426,6 +431,7 @@ change to drop the customization.
 | D3 | `config/_default/params.yaml`: `show_title: false`, compact nav font size in `custom.css` | Many top-level menu entries | Alternatively reduce the main menu (e.g. move News/Events/Groups into one entry) |
 | D4 | `hugo.yaml`: taxonomy `classes`, related index `classes`, output formats `Printable`/`redirects`, permalinks `event: /talk/:slug/` | Related content, printable version, URL compatibility | `/talk/` permalinks only for URL stability; could become `/event/` with aliases |
 | D5 | `package.json` script `search:dev` | Search index for `hugo server` | — |
+| D6 | `footer` menu in `menus.yaml` | Imprint, Privacy Statement, Legal Notice in the footer (legally required) | Native HugoBlox feature (replaces the former own footer `components/footers/prostep.html`) |
 
 ### 10.5 Leftovers to delete during housekeeping
 
