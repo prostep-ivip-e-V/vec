@@ -408,7 +408,7 @@ change to drop the customization.
 | C8 | Search: `specs_search_filters.html`, `functions/specs_is_latest.html`, `data-pagefind-body` only for current versions | Only current spec versions are searchable (like the former DocSearch `version:latest`), filter VEC/KBL | HugoBlox search modal supports only `type`/`category` filters → keep |
 | C9 | `functions/specs_menu_name.html` | Menu name of a spec page | Part of C1 |
 | C10 | `sample/single.html` | Sample file page with company/system/use case table and file list from page resources | Could become a plain page with a `links` list → design decision |
-| C11 | `ecad_trace.html` + `hooks/body-end/breadcrumb-trace.html` | "Recently visited" pages below the breadcrumb (former wiki feature) | None. Candidate for removal if nobody uses it |
+| C11 | ~~"Recently visited" trace~~ | **Removed** (2026-10-24): shown together with the HugoBlox breadcrumb it looked like a second, confusing breadcrumb | HugoBlox breadcrumb (position in the content) |
 | C12 | `hooks/body-end/ecad.html` | Lightbox for figures (`lightbox="true"`), opens the change history from the metadata link | HugoBlox has no lightbox. Drop with A2 if zoom is not needed |
 | C13 | `layouts/index.redirects` + `data/redirects.yaml` + output format `redirects` | Netlify `_redirects` for the ontology URLs | **Does not work on GitHub Pages** (also not on the live site). Native: Hugo `aliases` (HTML redirect pages) for page URLs; the ontology URLs (rewrite to `.ttl`) need a different solution → decide, then remove |
 
@@ -441,6 +441,6 @@ check as in §9.1; scripts in `~/.cache/hb-tools`).
    classes), A8 (icon names in `links`, incl. the model report generator).
 4. **Figures (A2, C12):** decide on Markdown images vs. own `figure` shortcode for floating figures
    and on the lightbox; then migrate the 201 uses.
-5. **Design decisions:** A11 (spec overview pages), C10 (samples), C11 (trace), C13 (redirects).
+5. **Design decisions:** A11 (spec overview pages), C10 (samples), C13 (redirects).
 6. **Evaluate C1:** spec pages on the HugoBlox `docs` layout with an overridden sidebar; only if
    it reduces the own code noticeably.

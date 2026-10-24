@@ -304,12 +304,6 @@ img[data-zoomable] { cursor: zoom-in; }
 
 .specs-body-footer a { text-decoration: underline; }
 
-/* Recently visited pages. */
-.ecad-trace { margin-top: 0.25rem; font-size: 0.75rem; color: var(--color-neutral-500, #737373); }
-.ecad-trace .breadcrumb { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
-.ecad-trace .breadcrumb-item + .breadcrumb-item::before { content: "›"; padding: 0 0.4rem; }
-.ecad-trace .breadcrumb-item.active { font-weight: 600; }
-
 /* Class index (glossary). */
 .specs-glossary-letters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
 .specs-glossary-letters a { font-weight: 600; color: var(--color-primary-700); }
