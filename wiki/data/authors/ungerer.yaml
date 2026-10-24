@@ -1,9 +1,35 @@
-# Author profile for HugoBlox (mirrors content/authors/ungerer/_index.md)
+# Author profile for HugoBlox, migrated from content/authors/ungerer/_index.md (Wowchemy).
+# The long description stays in the body of content/authors/ungerer/_index.md (shown on the author page).
 schema: hugoblox/author/v1
 slug: ungerer
 name:
   display: Max Ungerer
 role: Coordinator for the VES-WF & ECAD-IF
 affiliations:
-  - name: PROSTEP AG
-    url: https://www.prostep.com
+- name: PROSTEP AG
+  url: https://www.prostep.com
+bio: As a service provider I am in charge of coordinating the VES-WF and the ECAD-IF
+  activities.
+links:
+- icon: hero/envelope
+  url: mailto:max.ungerer@prostep.com
+- icon: brands/linkedin
+  url: https://www.linkedin.com/in/max-ungerer-0b511612
+- icon: brands/xing
+  url: https://www.xing.com/profile/Max_Ungerer/
+interests:
+- Information Modelling
+- Model-based Design and Systems Engineering
+- Standardization Management
+- Autonomous Driving
+education:
+- degree: Doctorate in Engineering
+  institution: Technical University Darmstadt
+  year: '1996'
+- degree: Diploma in Computer Science
+  institution: Technical University Darmstadt
+  year: '1985'
+user_groups:
+- VES-WF
+- ECAD-IF
+- Service Providers
