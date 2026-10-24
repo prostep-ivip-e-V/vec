@@ -59,10 +59,16 @@ Then:
 
 ```shell
 pnpm install          # Tailwind CSS & Pagefind
+pnpm run search:dev   # once: search index for `hugo server` (static/pagefind/, git-ignored)
 hugo server           # preview on http://localhost:1313/
 hugo --minify         # build into public/
-pnpm run pagefind     # build the search index into public/pagefind/ (search only works after this)
+pnpm run pagefind     # build the search index into public/pagefind/
 ```
+
+The search uses a static [Pagefind](https://pagefind.app) index. `hugo server` does not create
+it, so run `pnpm run search:dev` once (and again after larger content changes) to search
+in the local preview. The pnpm scripts call `$HUGO` if set, e.g.
+`HUGO=~/.local/opt/hugo/0.162.0/hugo pnpm run search:dev`.
 
 If another project needs a different default Hugo version, install Hugo 0.162.0 into its
 own folder and call it with its full path, e.g.

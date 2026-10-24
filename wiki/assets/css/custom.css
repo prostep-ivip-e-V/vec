@@ -35,6 +35,78 @@
 #site-header .nav-link { font-size: 0.9rem; }
 
 /*************************************************
+ *  Home page hero (VEC).
+ *  Deep navy to prostep blue (colours of the former
+ *  wiki hero), soft light spots and a faint grid.
+ *  `text_color_light` switches the block to light text.
+ **************************************************/
+
+.ecad-hero {
+  overflow: hidden;
+  background-color: #0b2a44;
+  background-image:
+    radial-gradient(40rem 22rem at 18% 0%, rgb(75 180 227 / 0.45), transparent 70%),
+    radial-gradient(36rem 24rem at 88% 100%, rgb(43 148 195 / 0.55), transparent 70%),
+    linear-gradient(135deg, #0b2a44 0%, #14476b 50%, #1f7cab 100%);
+}
+
+.ecad-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 75%);
+}
+
+.ecad-hero h1 { color: #fff; letter-spacing: -0.02em; text-shadow: 0 2px 24px rgb(0 0 0 / 0.25); }
+.ecad-hero p, .ecad-hero p strong { color: rgb(255 255 255 / 0.88); }
+.ecad-hero p strong { color: #fff; }
+
+/* Eyebrow ("Latest Release …") as a pill. */
+.ecad-hero h1 ~ * { position: relative; }
+.ecad-hero .uppercase {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid rgb(255 255 255 / 0.3);
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.1);
+  color: #d6f0fb;
+  backdrop-filter: blur(4px);
+}
+
+/* Buttons: white primary, outlined secondary. */
+.ecad-hero a.bg-primary-600 {
+  background: #fff;
+  color: #0b2a44;
+  box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.5);
+}
+.ecad-hero a.bg-primary-600:hover { background: #e6f5fc; }
+.ecad-hero a.ring-1 {
+  color: #fff;
+  --tw-ring-color: rgb(255 255 255 / 0.6);
+}
+.ecad-hero a.ring-1:hover { background: rgb(255 255 255 / 0.1); }
+
+/*************************************************
+ *  Home page sections: wider text column.
+ *  HugoBlox hardcodes `max-w-prose` (65ch) for the
+ *  markdown block and section headers and `max-w-3xl`
+ *  for the news list; there is no setting for it.
+ **************************************************/
+
+.hbb-section .max-w-prose,
+.hbb-section .max-w-3xl { max-width: min(60rem, 100%); }
+
+/* News list (view date-title-summary): its wrapper is not centred. */
+.hbb-section .w-fit:has(> .max-w-3xl) { width: min(60rem, 100%); margin-inline: auto; }
+
+/*************************************************
  *  Figures (figure & svgfigure shortcodes).
  *  Figures are numbered with CSS counters, so the
  *  numbering also works in the single page version.

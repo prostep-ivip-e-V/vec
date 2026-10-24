@@ -5,9 +5,10 @@
   "packageManager": "pnpm@10.14.0",
   "description": "ECAD-WIKI (VEC & KBL) built with Hugo and the HugoBlox Kit",
   "scripts": {
-    "dev": "hugo server --disableFastRender",
-    "build": "hugo --minify && pnpm run pagefind",
-    "pagefind": "pagefind --site public"
+    "dev": "${HUGO:-hugo} server --disableFastRender",
+    "build": "${HUGO:-hugo} --minify && pnpm run pagefind",
+    "pagefind": "pagefind --site public",
+    "search:dev": "${HUGO:-hugo} --minify -d .pagefind-build && pagefind --site .pagefind-build --output-path static/pagefind && rm -rf .pagefind-build"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",

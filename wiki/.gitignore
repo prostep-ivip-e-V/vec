@@ -19,3 +19,5 @@ public/
 /hugo_stats.json
 /public/
 /pagefind/
+/static/pagefind/
+/.pagefind-build/

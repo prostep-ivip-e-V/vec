@@ -17,9 +17,18 @@ sections:
         text: Documentation
         url: specifications/vec/v220
         icon: book-open
+        style: solid
       secondary_action:
         text: Implementation Guidelines
         url: specifications/vec/guidelines
+        style: outline
+    design:
+      # Brand gradient, see `.ecad-hero` in assets/css/custom.css.
+      css_class: ecad-hero
+      background:
+        text_color_light: true
+      spacing:
+        padding: ["1rem", 0, "1rem", 0]
 
   - block: markdown
     id: intro
