@@ -359,3 +359,88 @@ Implemented on branch `wiki/hugoblox-migration`, built with Hugo 0.162.0 extende
 * Run the GitHub workflow once (e.g. via `workflow_dispatch` on the branch or a test repository).
 * Decide on the ontology URLs (`/ontologies/2024/03/vec…`), see 9.3.
 
+
+## 10. Customizations and housekeeping after go-live
+
+Inventory of everything that differs from a plain HugoBlox documentation site (state of branch
+`wiki/hugoblox-migration`). Goal after go-live: remove group A and B items, reduce group C and D.
+
+Legend for the effort: **content** = number of content places that need a (mostly scriptable)
+change to drop the customization.
+
+### 10.1 Group A: compatibility shims, exist only to keep `content/` unchanged
+
+| # | Customization (file) | Why it exists | HugoBlox / Hugo native alternative | Effort to remove |
+|---|---|---|---|---|
+| A1 | `relref`/`ref` shortcode override + `functions/ecad_ref.html`; used by `svglink` | Hugo ≥ 0.123 resolves relative refs in leaf bundles (`…/page/index.md`) from the parent directory; the content was written for the old behaviour (bundle directory). 76 refs broke | Built-in `relref`/`ref` with paths that are valid for Hugo ≥ 0.123: either absolute (`/specifications/vec/guidelines/key-concepts/general-structure`) or relative to the parent directory | content: 165 relative refs in 43 bundles (all relative refs in leaf bundles should be checked, 76 actually differ). Scriptable: resolve each ref with the override, write the absolute path, compare the build (link diff, §9.1) |
+| A2 | `figure` shortcode (port of the Wowchemy shortcode) | 201 uses with Wowchemy parameters `title`, `numbered`, `lightbox`, `class`, `width`; HugoBlox has no `figure` shortcode, Hugo's built-in `figure` has no numbering/lightbox | Markdown image `![alt](file.svg "Caption")` with the HugoBlox image render hook (caption, zoom attribute); or Hugo's built-in `figure` (`caption`, `class`, `width`). Numbering stays CSS | content: 201 uses in 46 files. Floating figures (`class="float-right w-25"`) have no Markdown equivalent → keep `figure` for those or define a small own shortcode |
+| A3 | `callout` shortcode | 100 uses of `{{% callout note/info/warning %}}`; the HugoBlox `callout` is deprecated, logs a warning and adds a title | GitHub alert syntax `> [!NOTE]` / `> [!WARNING]` (HugoBlox blockquote render hook) | content: 100 uses in 47 files, scriptable. Note: `info` → `[!NOTE]`, the look changes slightly (title line) |
+| A4 | `icon` shortcode | Wowchemy signature with Font Awesome names and `pack` | HugoBlox `icon` shortcode with HugoBlox icon names (`name="hero/document-text"`) | content: 7 uses in 4 files |
+| A5 | `staticref` shortcode | Wowchemy shortcode, not in HugoBlox | Markdown link `[text](/specifications/…/file.xsd)` | content: 1 use |
+| A6 | `views/1…4.html` (numeric list views) | `view: 2`/`view: 3` in `post/_index.md`, `sample/_index.md` (Wowchemy numbers) | Named views (`view: card`, `date-title-summary`, …) | content: 2 files (+ 12 tiny layout files deleted) |
+| A7 | Legacy Bootstrap classes in `custom.css` (`.w-25`, `.float-right`, `.pr-3`, `.clearfix`, …) | Raw `class="…"` in 19 content files; Tailwind's `w-25` has another meaning (6.25 rem instead of 25 %) | Tailwind classes in content (`w-1/4`, `float-right`, `pr-4`) or no layout classes in content at all | content: 19 files |
+| A8 | `links` icon mapping (`specs_link_icon.html`) | Front matter `links` use Font Awesome names (`file-pdf`, `circle-nodes`, …) | HugoBlox icon names in front matter (`icon: hero/document-text`) | content: `links` in ~30 `_index.md` files (+ generator template, if the model report writes them) |
+| A9 | `build_links.html` second fix (legacy `url_pdf` path resolved by file name) | `content/event/2020-03-vec-webinar` has a wrong `url_pdf` path that Wowchemy tolerated | Front matter `links: [{type: pdf, url: 2020-03-VEC-Webinar.pdf}]` | content: 3 files with `url_*`/`external_link` (also removes 4 deprecation warnings) |
+| A10 | `data/authors/*.yaml` (copies of `content/authors/*/_index.md`) + `assets/media/authors/*.jpg` | HugoBlox reads author profiles from `data/authors/`, Wowchemy from the content pages | Only `data/authors/` (HugoBlox author system); reduce `content/authors/*/_index.md` to what the term pages need or delete them | content: 4 author folders; removes the duplication |
+| A11 | `layouts/specifications/specs.html` (section list for `layout: specs`) | `specifications/vec/_index.md` and `kbl/_index.md` use `layout: specs` (former `layouts/section/specs.html`) | HugoBlox landing page (`type: landing`, `collection` block) or the standard list layout | content: 2 files. Note: the list shows the `links` of each version — needs a replacement (e.g. cards with links), so this is a design decision |
+
+### 10.2 Group B: workarounds for upstream bugs / limitations
+
+| # | Customization | Why | Native alternative | Remove when |
+|---|---|---|---|---|
+| B1 | `functions/build_links.html` (copy, nil-map fix) | HugoBlox bug with Hugo 0.162: `SetInMap` on a nil map → build error on pages with links | Fixed upstream partial | HugoBlox fixes it (report the bug upstream); check on every module update |
+| B2 | `views/article-grid--start.html` (copy) | HugoBlox `article-grid` uses the configured number of columns even for fewer items (1 featured article → squeezed card) | Upstream fix, or per-section `columns` that match the item count | Fixed upstream (report) |
+| B3 | Menu anchors `'/#news'` instead of `'#news'` (`menus.yaml`) | HugoBlox navbar overwrites the home URL for anchor-only menu entries | `'#news'` | Fixed upstream; config only, no maintenance cost |
+| B4 | `.hbb-section .max-w-prose / .max-w-3xl` width override (`custom.css`) | Text width of landing blocks is hardcoded (65ch / 3xl), no setting | A HugoBlox setting (none today) | Keep (small) or drop and accept the narrow column |
+| B5 | `.prose code::before/after { content: none }` (`custom.css`) | Tailwind Typography adds backticks around inline code; HugoBlox's own rule loses against it in our setup | — | Check after module updates |
+
+### 10.3 Group C: wiki functionality without a HugoBlox equivalent (keep, but keep small)
+
+| # | Customization | Purpose | Native alternative / reduction idea |
+|---|---|---|---|
+| C1 | Specs layout family: `layouts/specs/*`, `_partials/specs_layout.html`, `specs_sidebar.html`, `specs_toc.html`, `specs_section_pager.html`, `specs_body_footer.html` | Page layout of ~6100 spec pages: **menu-driven sidebar per spec version** (`menu_name`/`menu`), right column with TOC + related content, menu-based prev/next | HugoBlox `docs` layout has a file-tree sidebar that renders the whole section tree on every page (not usable for ~550 class pages per version, no per-version menus). Reduction idea: use `type: docs` + override only `components/sidebar.html` with our menu sidebar and add related content via the `toc-end` hook. Needs a hook (or override) between title and content for metadata/history → evaluate after go-live |
+| C2 | `specs_metadata.html`, `specs_history.html`, `specs_issue_links.html`, `specs_deprecation.html` | Published/updated/version line, change history (`history` front matter, GitHub/JIRA issues), "newer version" note, review badge | No equivalent. Could be reduced to one partial |
+| C3 | `specs_related.html` | Related recommendation chapters/guidelines/classes via the `classes` front matter | HugoBlox `page_related.html` uses tags/categories; ours is domain specific → keep |
+| C4 | `specs_glossary.html` (`layout: glossary`) | Class index A–Z (15 generated pages) | None → keep |
+| C5 | `specs_overall_toc.html`, `specs_change_history_index.html`, `specs_review_index.html`, `specs_history_table.html` | Overall TOC, "Latest Changes", "Currently Under Review" tables on overview pages (`specs.*` front matter) | None → keep |
+| C6 | Printable output (`layouts/specs/list.printable.html`, `specs_layout.printable.html`, `specs_printable_content.html`, print CSS) + `generate-pdf.js` | Single page version and PDF of the implementation guidelines | None → keep |
+| C7 | Wiki shortcodes `vec-class`, `kbl-class`, `vec-diagram`, `svgfigure`, `svglink`, `info`, `deprecated`, `gh-review`, `review`, `issue` | Domain specific (links to class pages, clickable UML diagrams, association tooltips, review/deprecation notes). Restyled to Tailwind | `deprecated`/`gh-review`/`review` could be written as alerts (`> [!WARNING]`) but carry fixed texts → keep as shortcodes. `review` (JIRA) is legacy: 0 uses → can be deleted |
+| C8 | Search: `specs_search_filters.html`, `functions/specs_is_latest.html`, `data-pagefind-body` only for current versions | Only current spec versions are searchable (like the former DocSearch `version:latest`), filter VEC/KBL | HugoBlox search modal supports only `type`/`category` filters → keep |
+| C9 | `functions/specs_menu_name.html` | Menu name of a spec page | Part of C1 |
+| C10 | `sample/single.html` | Sample file page with company/system/use case table and file list from page resources | Could become a plain page with a `links` list → design decision |
+| C11 | `ecad_trace.html` + `hooks/body-end/breadcrumb-trace.html` | "Recently visited" pages below the breadcrumb (former wiki feature) | None. Candidate for removal if nobody uses it |
+| C12 | `hooks/body-end/ecad.html` | Lightbox for figures (`lightbox="true"`), opens the change history from the metadata link | HugoBlox has no lightbox. Drop with A2 if zoom is not needed |
+| C13 | `layouts/index.redirects` + `data/redirects.yaml` + output format `redirects` | Netlify `_redirects` for the ontology URLs | **Does not work on GitHub Pages** (also not on the live site). Native: Hugo `aliases` (HTML redirect pages) for page URLs; the ontology URLs (rewrite to `.ttl`) need a different solution → decide, then remove |
+
+### 10.4 Group D: design and configuration
+
+| # | Customization | Purpose | Note |
+|---|---|---|---|
+| D1 | `assets/css/custom.css` | Wiki styles (specs layout, callouts, figures, hero, print) as plain CSS on top of HugoBlox | Shrinks with A2/A3/A7, C1 refactoring. Could be moved into the Tailwind pipeline (`@apply`) if it grows |
+| D2 | `.ecad-hero` + `content/_index.md` design settings | Brand-coloured home page hero | Design choice |
+| D3 | `config/_default/params.yaml`: `show_title: false`, compact nav font size in `custom.css` | Many top-level menu entries | Alternatively reduce the main menu (e.g. move News/Events/Groups into one entry) |
+| D4 | `hugo.yaml`: taxonomy `classes`, related index `classes`, output formats `Printable`/`redirects`, permalinks `event: /talk/:slug/` | Related content, printable version, URL compatibility | `/talk/` permalinks only for URL stability; could become `/event/` with aliases |
+| D5 | `package.json` script `search:dev` | Search index for `hugo server` | — |
+
+### 10.5 Leftovers to delete during housekeeping
+
+* `data/page_sharer.toml`, `data/fonts/.gitkeep`, `data/themes/.gitkeep` (Wowchemy).
+* `layouts/_shortcodes/review.html` (JIRA review notice, no longer used in content).
+* Wowchemy-only front matter in content (`profile`, `share`, `commentable`, `image.focal_point`, `projects`, `header`, `design`, …): harmless, removable by script.
+
+### 10.6 Housekeeping plan (after go-live)
+
+Each step is a separate branch with a before/after build comparison (URL list, link diff and link
+check as in §9.1; scripts in `~/.cache/hb-tools`).
+
+1. **Upstream reports (B1, B2, B3):** open issues/PRs at `HugoBlox/kit`; remove the overrides
+   when a fixed module version is available.
+2. **Scripted content migrations (no visual change):** A1 (relrefs → absolute), A4, A5, A6, A9,
+   A10, leftovers (10.5). Then delete the shims.
+3. **Content migrations with small visual changes:** A3 (callouts → alerts), A7 (Bootstrap
+   classes), A8 (icon names in `links`, incl. the model report generator).
+4. **Figures (A2, C12):** decide on Markdown images vs. own `figure` shortcode for floating figures
+   and on the lightbox; then migrate the 201 uses.
+5. **Design decisions:** A11 (spec overview pages), C10 (samples), C11 (trace), C13 (redirects).
+6. **Evaluate C1:** spec pages on the HugoBlox `docs` layout with an overridden sidebar; only if
+   it reduces the own code noticeably.
