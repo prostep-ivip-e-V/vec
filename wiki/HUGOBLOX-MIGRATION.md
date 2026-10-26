@@ -358,10 +358,9 @@ Implemented on branch `wiki/hugoblox-migration`, built with Hugo 0.162.0 extende
 * Review by the team (look & feel, home page content).
 * Run the GitHub workflow once (e.g. via `workflow_dispatch` on the branch or a test repository).
 * Decide on the ontology URLs (`/ontologies/2024/03/vec…`), see 9.3.
-* Author photos: the old site loaded them from Gravatar (no Gravatar support in HugoBlox). The
-  current Gravatar images were stored once in `assets/media/authors/` (becker, steinbuechler,
-  ungerer; fehlmann has no Gravatar image → placeholder). Confirm with the persons that their
-  photos may be stored in the public repository.
+* Author photos: the old site loaded them from Gravatar (no Gravatar support in HugoBlox). Only
+  `assets/media/authors/becker.jpg` is stored in the repository; the other authors show the
+  placeholder icon (decision 2026-10-26).
 * Legal pages: Imprint, Privacy Statement and Legal Notice are linked in the footer of every page
   (HugoBlox `footer` menu in `config/_default/menus.yaml`, no override). Have the privacy statement
   reviewed for the new setup: the new pages load no third-party resources any more (the old site
