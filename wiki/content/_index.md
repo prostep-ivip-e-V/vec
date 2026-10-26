@@ -61,8 +61,7 @@ sections:
       count: 0
       order: desc
     design:
-      view: article-grid
-      columns: 3
+      view: card
 
   - block: collection
     id: news
