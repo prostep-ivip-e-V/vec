@@ -1,0 +1,40 @@
+{{ $spec := default "VEC" .Params.Specification }}
+{{ $default_version := (index site.Params (lower $spec)).current_version }}
+{{ $current_version := .Params.Version | default $default_version }}
+{{ $related := where (site.RegularPages.Related (dict "indices" (slice "classes") "document" .)) "Params.specification" $spec }}
+{{ $related_guidelines := where ($related) "Params.documenttype" "Guideline"}}
+{{ $related_recommendation := where (where ($related) "Params.documenttype" "Recommendation") "Params.version" $current_version}}
+{{ with $related }}
+<div class="specs-related">
+  <p class="specs-related-title">Related Content</p>
+  <ul>
+    {{ with where $related_recommendation "Params.elementtype" "in" (slice "Package" "Diagram") | first 10 }}
+    <li>Recommendation Chapters
+      <ul>
+        {{ range . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </li>
+    {{ end }}
+    {{ with $related_guidelines | first 10 }}
+    <li>Implementation Guidelines
+      <ul>
+        {{ range . }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </li>
+    {{ end }}
+    {{ with where $related_recommendation "Params.elementtype" "Class" }}
+    <li>Class Definitions
+        <ul>
+          {{ range sort . "Title"}}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

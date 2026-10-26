@@ -1,0 +1,29 @@
+{{- define "main" -}}
+<div class="mx-auto max-w-5xl px-6">
+  <div class="prose prose-slate dark:prose-invert max-w-none">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+    <div class="article-style">{{ . }}</div>
+    {{ end }}
+  </div>
+  <ul class="specs-section-list">
+    {{ range sort .Sections "Date" "desc" }}
+    <li>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <p>
+        {{ if .Params.summary }}
+        {{ .Params.summary | plainify | emojify }}
+        {{ else if .Params.abstract }}
+        {{ .Params.abstract | plainify | emojify | truncate 250 }}
+        {{ else if .Summary }}
+        {{ .Summary | plainify | emojify }}
+        {{ end }} <a href="{{ .RelPermalink }}">More...</a>
+        </p>
+        {{ partial "specs_links.html" . }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{- end -}}

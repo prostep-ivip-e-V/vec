@@ -1,0 +1,68 @@
+{{ $is_list := .is_list }}
+{{ $page := .page }}
+{{ $sep := `<span class="specs-meta-divider" aria-hidden="true">·</span>` | safeHTML }}
+
+<div class="specs-metadata not-prose" data-pagefind-ignore>
+
+  {{/* If `authors` is set and is not empty. */}}
+  {{ with $page.Params.authors }}
+  <div class="mb-1">
+    {{ partial "page_metadata_authors" $page }}
+  </div>
+  {{ end }}
+
+  <span class="article-date">
+    Published on {{ $page.Date.Format site.Params.hugoblox.locale.date_format }}
+  </span>
+  {{ if $page.Params.version }}
+  {{ $sep }}
+  <span>{{ $page.Params.specification }} Version {{ $page.Params.version }}</span>
+  {{ end }}
+  {{ if ne ($page.Lastmod.Format "2006-01-02") ($page.Date.Format "2006-01-02") }}
+  {{ $sep }}
+  <span class="article-date">
+    {{ i18n "last_updated" }} {{ $page.Lastmod.Format site.Params.hugoblox.locale.date_format }}
+  </span>
+  {{ end }}
+
+  {{ if ne $page.Params.reading_time false }}
+  {{ $sep }}
+  <span class="article-reading-time">
+    {{ $page.ReadingTime }} {{ i18n "minute_read" | default "min read" }}
+  </span>
+  {{ end }}
+
+  {{ $taxonomy := "categories" }}
+  {{ with $page.Param $taxonomy }}
+  {{ $sep }}
+  <span class="article-categories">
+    {{ partial "functions/get_icon" (dict "name" "folder" "attributes" "class=\"specs-meta-icon\"") }}
+    {{- range $index, $value := . -}}
+    {{- if gt $index 0 }}, {{ end -}}
+    <a href="{{ (site.GetPage (printf "/%s/%s" $taxonomy (. | urlize))).RelPermalink }}">{{ . }}</a>
+    {{- end -}}
+  </span>
+  {{ end }}
+  {{ if $page.Params.history }}
+  {{ $sep }}
+  <span class="article-history">
+    {{ partial "functions/get_icon" (dict "name" "clock" "attributes" "class=\"specs-meta-icon\"") }}
+    <a href="#history-collapse" class="specs-history-toggle">History</a>
+  </span>
+  {{ end }}
+  {{ if $page.Params.printable }}
+  {{ $sep }}
+  <span class="article-print">
+    {{ with $page.OutputFormats.Get "printable" -}}
+    {{ partial "functions/get_icon" (dict "name" "printer" "attributes" "class=\"specs-meta-icon\"") }}
+    <a class="single-page-print-button" href="{{ .RelPermalink }}">Single Page Printable</a>
+    {{- end }}
+  </span>
+  {{ end }}
+  {{- if $page.Params.review -}}
+  {{ $sep }}
+  <span class="article-under-review">
+    <span class="specs-badge-review">Under Review</span>
+  </span>
+  {{- end -}}
+</div>

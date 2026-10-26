@@ -1,0 +1,28 @@
+{{ $page := . }}
+<ul class="specs-links-list">
+    {{ range .Params.links }}
+    {{ $link := .url | default $page.RelPermalink }}
+    {{ $scheme := (urls.Parse $link).Scheme }}
+    {{ $target := "" }}
+    {{ if not $scheme }}
+      {{ $resource := $page.Resources.GetMatch $link }}
+      {{ if $resource }}
+        {{ $link = $resource.RelPermalink }}
+      {{ else }}
+        {{ $linkPage := $page.GetPage $link}}
+        {{ if $linkPage }}
+          {{ $link = $linkPage.RelPermalink }}
+        {{ else }}
+          {{ $link = $link | relURL }}
+        {{ end }}
+      {{ end }}
+    {{ else if in (slice "http" "https") $scheme }}
+      {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+    {{ end }}
+    <li>
+      {{ with .icon }}{{ partial "specs_link_icon" . }}{{ end }}
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+      {{ with .name }}{{ . | safeHTML }}{{end}}
+    </a></li>
+  {{ end }}
+</ul>

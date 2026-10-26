@@ -1,0 +1,16 @@
+{{/*
+  Name of the menu that holds the navigation of a specs page.
+  Taken from the `menu_name` param, Hugo's front matter menu config, or the last dir of the file path.
+
+  Input:  page
+  Output: menu name (string)
+*/}}
+{{- $menu_name := "" -}}
+{{- range $k, $v := .Params.menu -}}
+  {{- $menu_name = $k -}}
+{{- end -}}
+{{- $menu_name = .Params.menu_name | default $menu_name | default (path.Base (path.Split .File.Path).Dir) -}}
+{{- if not (index site.Menus $menu_name) -}}
+  {{- errorf "Please define menu items named `menu: %s:` in your %s front matter or define `menu.%s` in `config/_default/menus.yaml`." $menu_name .Path $menu_name -}}
+{{- end -}}
+{{- return $menu_name -}}

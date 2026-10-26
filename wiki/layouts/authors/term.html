@@ -1,0 +1,134 @@
+{{/* ECAD-WIKI: copy of the HugoBlox author page (blox@v0.0.0-20260527025321-61f41d3667f1) with changes
+     to keep the content of the former Wowchemy author pages:
+     - the long description is the body of content/authors/<slug>/_index.md (instead of the short `bio`),
+     - interests and education from data/authors/<slug>.yaml,
+     - "Latest" as a compact list of all pages of the author (no big cards, no paging; as before).
+     See HUGOBLOX-MIGRATION.md, section 10. */}}
+{{ define "main" }}
+
+{{ $slug := .Data.Term | urlize }}
+{{ $profile := partial "functions/get_author_profile" (dict "slug" $slug) }}
+{{ $avatar := $profile.avatar }}
+{{ $avatar_shape := site.Params.hugoblox.layout.avatar_shape | default "circle" }}
+
+<section class="max-w-5xl mx-auto px-6 py-10">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+    <div class="flex-shrink-0">
+      {{ if $avatar }}
+        {{ if not (reflect.IsImageResourceProcessable $avatar) }}
+        <img
+          class="h-32 w-32 sm:h-40 sm:w-40 {{ if ne $avatar_shape "square" }}rounded-full{{ end }}"
+          src="{{ $avatar.RelPermalink }}"
+          width="160"
+          height="160"
+          alt="{{ $profile.title }}"
+          loading="lazy"
+        />
+        {{ else }}
+        {{ $responsive := partial "functions/process_responsive_image.html" (dict
+          "image" $avatar
+          "mode" "fill"
+          "aspect_ratio" "1:1"
+          "anchor" "Center"
+          "sizes" (slice 160 240 320 480)
+        ) }}
+        <img
+          class="h-32 w-32 sm:h-40 sm:w-40 {{ if ne $avatar_shape "square" }}rounded-full{{ end }}"
+          srcset="{{ $responsive.srcset }}"
+          sizes="160px"
+          src="{{ $responsive.fallback.RelPermalink }}"
+          width="160"
+          height="160"
+          alt="{{ $profile.title }}"
+          loading="lazy"
+        />
+        {{ end }}
+      {{ else }}
+        <div class="h-32 w-32 sm:h-40 sm:w-40 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+          {{ partial "functions/get_icon" (dict "name" "hero/user" "attributes" "class=\"h-12 w-12 text-gray-400\"") }}
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="space-y-2">
+      <div class="flex items-center gap-2">
+        <h1 class="text-3xl sm:text-4xl font-bold">{{ $profile.title }}</h1>
+        {{ with $profile.status }}
+          {{ with .icon }}
+            <span class="text-2xl" aria-hidden="true">{{ . }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{ with $profile.role }}
+        <div class="text-lg font-semibold text-neutral-700 dark:text-neutral-200">{{ . | markdownify | emojify }}</div>
+      {{ end }}
+
+      {{ with $profile.affiliations }}
+        <div class="text-neutral-600 dark:text-neutral-300">
+          {{ range $index, $org := . }}
+            {{ if gt $index 0 }} · {{ end }}
+            {{ if $org.url }}<a href="{{ $org.url }}" class="underline">{{ $org.name }}</a>{{ else }}{{ $org.name }}{{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with .Content | default ($profile.bio | markdownify | emojify) }}
+        <div class="prose prose-slate dark:prose-invert max-w-none">
+          {{ . }}
+        </div>
+      {{ end }}
+
+      {{ if $profile.links }}
+        <div class="pt-2">
+          {{ partial "social_links" (dict "Params" (dict "profiles" $profile.links)) }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if or $profile.interests $profile.education }}
+<section class="max-w-5xl mx-auto px-6 pb-6 grid gap-8 sm:grid-cols-2">
+  {{ with $profile.interests }}
+  <div>
+    <h2 class="text-xl font-bold mb-3">{{ i18n "interests" | default "Interests" }}</h2>
+    <ul class="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+      {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ with $profile.education }}
+  <div>
+    <h2 class="text-xl font-bold mb-3">{{ i18n "education" | default "Education" }}</h2>
+    <ul class="space-y-3">
+      {{ range . }}
+      <li class="flex gap-3">
+        <span class="text-neutral-500 pt-0.5">{{ partial "functions/get_icon" (dict "name" "hero/academic-cap" "attributes" "style=\"height: 1.25em;\"") }}</span>
+        <div>
+          <div class="text-neutral-800 dark:text-neutral-200">{{ .degree }}{{ with .year }}, {{ . }}{{ end }}</div>
+          {{ with .institution }}<div class="text-sm text-neutral-500">{{ . }}</div>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+</section>
+{{ end }}
+
+{{ with where .Pages.ByDate.Reverse "Kind" "page" }}
+<section class="max-w-5xl mx-auto px-6 pb-10">
+  <h2 class="text-xl font-bold mb-3 pt-6 border-t border-neutral-200 dark:border-neutral-700">{{ i18n "latest" | default "Latest" }}</h2>
+  <ul class="space-y-1">
+    {{ range . }}
+    <li class="flex gap-4">
+      <span class="text-sm text-neutral-500 whitespace-nowrap w-28 shrink-0">{{ .Date | time.Format (site.Params.hugoblox.locale.date_format | default ":date_medium") }}</span>
+      <a class="text-primary-700 dark:text-primary-300 hover:underline" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ end }}

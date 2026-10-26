@@ -1,0 +1,93 @@
+# Configuration of Hugo
+# HugoBlox: https://hugoblox.com/docs/
+# Hugo Documentation: https://gohugo.io/configuration/
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+title: ECAD WIKI # Website name
+baseURL: '/' # Website URL
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## ADVANCED
+############################
+
+build:
+  writeStats: true
+enableGitInfo: true
+summaryLength: 30
+pagination:
+  pagerSize: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  term:
+    tags: '/tag/:slug/'
+    categories: '/category/:slug/'
+    publication_types: '/publication-type/:slug/'
+  page:
+    event: '/talk/:slug/'
+disableAliases: true
+outputs:
+  home: [HTML, RSS, WebAppManifest, redirects]
+  page: [HTML]
+  section: [HTML, RSS]
+imaging:
+  resampleFilter: lanczos
+  quality: 75
+  anchor: smart
+timeout: 600000
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+  class: classes
+markup:
+  _merge: deep
+  goldmark:
+    parser:
+      attribute:
+        # Wowchemy did not enable block attributes. A line `{...}` after a block
+        # would otherwise be consumed as attributes.
+        block: true
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: classes
+      weight: 100
+    - name: keywords
+      weight: 100
+    - name: date
+      weight: 10
+security:
+  _merge: deep
+sitemap:
+  _merge: deep
+minify:
+  _merge: deep
+mediaTypes:
+  text/netlify:
+    delimiters: ['']
+    suffixes: ['']
+outputFormats:
+  Printable:
+    mediaType: "text/html"
+    baseName: "printable"
+    isHTML: true
+  redirects:
+    baseName: _redirects
+    isPlainText: true
+    mediatype: text/netlify
+    notAlternative: true

@@ -10,7 +10,6 @@ categories: []
 date: 	2019-03-07
 lastmod: 2021-11-24T12:43:28+01:00
 draft: false
-toc: true
 
 history:
   - date: 2023-06-23

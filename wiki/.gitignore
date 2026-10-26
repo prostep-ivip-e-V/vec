@@ -14,3 +14,10 @@ public/
 
 # Working files of the Claude Code issue workflow (issue texts, comments, commit messages)
 /analysis/
+
+# HugoBlox build artefacts
+/hugo_stats.json
+/public/
+/pagefind/
+/static/pagefind/
+/.pagefind-build/

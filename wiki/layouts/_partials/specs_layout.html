@@ -1,0 +1,78 @@
+{{ $current_page := . }}
+
+{{/* Overlay used by the HugoBlox mobile navigation (see hb-sidebar.js). */}}
+<div class="hb-sidebar-mobile-menu fixed inset-0 z-10 bg-white dark:bg-black/80 hidden"></div>
+
+<div class="specs mx-auto flex max-w-screen-2xl">
+
+  {{ partial "specs_sidebar" . }}
+
+  {{ partial "specs_toc" . }}
+
+  <article class="flex w-full min-w-0 min-h-[calc(100vh-var(--navbar-height))] justify-center break-words pb-8">
+    <main class="specs-content prose prose-slate dark:prose-invert w-full min-w-0 max-w-5xl px-6 pt-4 md:px-12">
+
+      <div class="not-prose mb-4">
+        {{ partial "components/breadcrumb.html" . }}
+      </div>
+
+      {{/* Only the current version of a specification is indexed for search. */}}
+      <div {{ if partial "functions/specs_is_latest" . }}data-pagefind-body{{ end }}>
+        <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+
+        {{ if eq .Layout "glossary" }}
+
+        <div class="article-style">
+          {{ .Content }}
+        </div>
+
+        {{ partial "specs_glossary.html" . }}
+
+        {{ else }}
+
+        {{ partial "specs_metadata" (dict "page" $current_page "is_list" 0 "share" true) }}
+
+        {{ partial "specs_history" . }}
+
+        {{ partial "specs_deprecation" . }}
+
+        <div class="article-style">
+          {{ .Content }}
+        </div>
+
+        {{ if .Params.links }}
+        <h2 id="additional-resources">Additional Resources</h2>
+        {{ partial "specs_links.html" . }}
+        {{ end }}
+
+        {{ if .Params.specs.reviewIndex }}
+        <h2>Currently Under Review</h2>
+        The following table contains pages currently under review.
+        {{ partial "specs_review_index.html" . }}
+        {{ end }}
+
+        {{ if .Params.specs.history }}
+        <h2>Latest Changes</h2>
+        The following table contains lately changed pages, sorted descending by last change.
+        {{ partial "specs_change_history_index.html" . }}
+        {{ end }}
+
+        {{ if .Params.specs.toc }}
+        <h2>Table of Content</h2>
+        {{ partial "specs_overall_toc.html" . }}
+        {{ end }}
+
+        {{ end }}
+
+        {{ partial "specs_search_filters.html" . }}
+      </div>
+
+      {{ partial "tags.html" . }}
+
+      {{ partial "specs_section_pager" . }}
+
+      {{ partial "specs_body_footer" . }}
+
+    </main>
+  </article>
+</div>

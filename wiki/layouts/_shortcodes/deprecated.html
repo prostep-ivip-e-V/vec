@@ -1,0 +1,16 @@
+{{- $since := .Get "since" -}}
+{{- $reason := .Get "reason" -}}
+<div class="ecad-callout ecad-callout-danger not-prose" role="alert">
+  <span class="ecad-callout-icon">{{ partialCached "functions/get_icon" (dict "name" "exclamation-triangle" "attributes" "height=\"24\"") "ecad-icon-danger" }}</span>
+  <div class="ecad-callout-body">
+    <strong>Deprecated</strong>
+        {{- if (gt (len ($since | default "")) 0) -}}
+        &nbsp;{{-   printf "[for removal since V%s]" $since -}}
+        {{- end -}}
+    {{- if (gt (len ($reason | default "")) 0) -}}
+    :<br><em>
+        {{- $reason | safeHTML -}}
+    </em>
+    {{- end -}}
+  </div>
+</div>

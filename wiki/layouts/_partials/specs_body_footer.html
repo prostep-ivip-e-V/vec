@@ -1,0 +1,13 @@
+<div class="specs-body-footer not-prose">
+  <p>{{ i18n "last_updated" }} {{ .Lastmod.Format site.Params.hugoblox.locale.date_format }}</p>
+  {{ with .File }}
+  {{ $repo := site.Params.hugoblox.repository }}
+  {{ if $repo.enable }}
+  <p>
+    <a href="{{ $repo.url }}/edit/{{ $repo.branch | default "main" }}/{{ $repo.content_dir }}/{{ replace .Path "\\" "/" }}" target="_blank" rel="noopener">
+      {{ i18n "edit_page" | default "Edit this page" }}
+    </a>
+  </p>
+  {{ end }}
+  {{ end }}
+</div>

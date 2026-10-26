@@ -1,0 +1,13 @@
+{{/*
+  Whether a specs page belongs to the current version of its specification (or is version independent).
+  Only these pages are indexed for search, like the former DocSearch `version:latest` filter.
+
+  Input:  page
+  Output: bool
+*/}}
+{{- $latest := true -}}
+{{- if and .Params.specification .Params.version -}}
+  {{- $current_version := (index site.Params (lower .Params.specification)).current_version -}}
+  {{- $latest = eq (string .Params.version) (string $current_version) -}}
+{{- end -}}
+{{- return $latest -}}

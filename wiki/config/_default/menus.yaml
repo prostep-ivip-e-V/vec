@@ -5,16 +5,16 @@
 
 main:
   - name: Home
-    url: '#vec'
+    url: '/#vec'
     weight: 10
   - name: News
-    url: '#news'
+    url: '/#news'
     weight: 15
   - name: Events
-    url: '#featured'
+    url: '/#featured'
     weight: 17
   - name: Project Groups
-    url: '#groups'
+    url: '/#groups'
     weight: 19
   - name: Archive
     weight: 100
@@ -45,3 +45,15 @@ main:
 #  - name: CV
 #    url: uploads/resume.pdf
 #    weight: 70
+
+# Footer links (legally required pages, rendered by the HugoBlox footer).
+footer:
+  - name: Imprint
+    url: '/imprint/'
+    weight: 10
+  - name: Privacy Statement
+    url: '/privacy/'
+    weight: 20
+  - name: Legal Notice
+    url: '/terms/'
+    weight: 30

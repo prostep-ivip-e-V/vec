@@ -1,0 +1,13 @@
+{{ if and .Params.specification .Params.version }}
+{{- $spec_params := index site.Params (lower .Params.specification) -}}
+{{- $current_version := $spec_params.current_version -}}
+{{ if ne .Params.version $current_version }}
+<div class="ecad-callout ecad-callout-warning not-prose" data-pagefind-ignore>
+  <span class="ecad-callout-icon">{{ partial "functions/get_icon" (dict "name" "exclamation-triangle" "attributes" "height=\"24\"") }}</span>
+  <div class="ecad-callout-body">
+    {{- $completeUrl := printf "/%s" $spec_params.current_base_url | relURL -}}
+    <p><strong>Note:</strong> There is a newer version of this specification see <a {{ printf "href=%q" $completeUrl | safeHTMLAttr }}>{{ .Params.specification }} {{ $current_version }}</a></p>
+  </div>
+</div>
+{{ end }}
+{{ end }}

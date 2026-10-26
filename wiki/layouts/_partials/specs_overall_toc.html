@@ -1,0 +1,22 @@
+{{ $current_page := . }}
+{{ $menu_name := partial "functions/specs_menu_name" . }}
+{{ with (index site.Menus $menu_name).ByWeight }}
+<div class="specs-overall-toc not-prose">
+  <ol>
+  {{ range . }}
+  <li class="{{ if $current_page.IsMenuCurrent $menu_name . }} active{{ end }}">
+      <a {{ if .URL }}href="{{ .URL }}"{{else if .HasChildren }}href="{{ (index .Children 0).URL }}"{{end}}>{{ .Name }}</a>
+      {{- if .HasChildren }}
+      <ol>
+        {{ range .Children }}
+        <li {{ if $current_page.IsMenuCurrent $menu_name . }}class="active"{{ end }}>
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ol>
+      {{ end }}
+  </li>
+  {{ end }}
+  </ol>
+</div>
+{{ end }}

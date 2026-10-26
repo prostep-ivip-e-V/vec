@@ -1,0 +1,4 @@
+{{/* Pagefind filter: specification (VEC, KBL) shown as result type in the search modal. */}}
+{{- with .Params.specification -}}
+<span data-pagefind-filter="type" hidden>{{ . }}</span>
+{{- end -}}

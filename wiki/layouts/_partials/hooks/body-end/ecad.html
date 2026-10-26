@@ -1,0 +1,49 @@
+{{/* ECAD-WIKI page scripts: figure lightbox and change history toggle. */}}
+<script>
+(function () {
+  /* Lightbox for figures with `lightbox="true"` (former Wowchemy behaviour). */
+  document.addEventListener("click", function (e) {
+    var img = e.target.closest("img[data-zoomable]");
+    if (!img || img.closest("a")) {
+      return;
+    }
+    e.preventDefault();
+    var overlay = document.createElement("div");
+    overlay.className = "ecad-lightbox";
+    var big = document.createElement("img");
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    overlay.appendChild(big);
+    function close() {
+      overlay.remove();
+      document.removeEventListener("keydown", onKey);
+    }
+    function onKey(ev) {
+      if (ev.key === "Escape") {
+        close();
+      }
+    }
+    overlay.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    document.body.appendChild(overlay);
+  });
+
+  /* "History" link in the page metadata shows / hides the change history (like the former Bootstrap collapse). */
+  document.querySelectorAll(".specs-history-toggle").forEach(function (link) {
+    link.setAttribute("aria-controls", "history-collapse");
+    link.setAttribute("aria-expanded", "false");
+    link.addEventListener("click", function (e) {
+      var panel = document.getElementById("history-collapse");
+      if (!panel) {
+        return;
+      }
+      e.preventDefault();
+      panel.hidden = !panel.hidden;
+      link.setAttribute("aria-expanded", String(!panel.hidden));
+      if (!panel.hidden) {
+        panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  });
+})();
+</script>

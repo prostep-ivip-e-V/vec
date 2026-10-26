@@ -1,0 +1,56 @@
+{{ $current_page := . }}
+{{ $menu_name := partial "functions/specs_menu_name" . }}
+
+{{/*
+  Menu-driven sidebar. Uses the HugoBlox sidebar classes, so the HugoBlox mobile
+  navigation (hamburger in the navbar) opens and closes it.
+  Only the branch of the current page is expanded.
+*/}}
+<aside class="hb-sidebar-container specs-sidebar max-lg:[transform:translate3d(0,-100%,0)] lg:sticky" data-pagefind-ignore>
+  <div class="hb-scrollbar lg:h-[calc(100vh-var(--navbar-height))]">
+    <ul class="flex flex-col gap-1 lg:hidden">
+      {{/* Main navigation on small screens. */}}
+      {{ range site.Menus.main }}
+        {{ if .HasChildren }}
+          {{ range .Children }}
+          <li><a class="hb-sidebar-custom-link text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        {{ else }}
+          <li><a class="hb-sidebar-custom-link text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      {{ end }}
+      {{/* Title of the spec version or guideline section (e.g. /specifications/vec/v220/). */}}
+      {{ $ancestors := $current_page.Ancestors.Reverse }}
+      {{ $root := $current_page }}
+      {{ if gt (len $ancestors) 3 }}{{ $root = index $ancestors 3 }}{{ end }}
+      <li class="mt-5 mb-2 px-2 py-1.5 text-sm font-semibold text-gray-900 dark:text-gray-100">{{ $root.Title }}</li>
+    </ul>
+    <nav class="specs-links" aria-label="Section navigation">
+      <ul class="flex flex-col gap-1">
+        {{ range (index site.Menus $menu_name).ByWeight }}
+        {{ $is_current := $current_page.IsMenuCurrent $menu_name . }}
+        {{ $is_expanded := or $is_current ($current_page.HasMenuCurrent $menu_name .) }}
+        <li class="{{ if $is_expanded }}open{{ end }}">
+          {{ $url := .URL }}
+          {{ if and (not $url) .HasChildren }}{{ $url = (index .Children 0).URL }}{{ end }}
+          <a class="hb-sidebar-custom-link {{ if $is_current }}sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900{{ else }}text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50{{ end }}" {{ with $url }}href="{{ . }}"{{ end }}>
+            {{- .Name -}}
+          </a>
+          {{- if and .HasChildren $is_expanded }}
+          <div class="ltr:pr-0 overflow-hidden">
+            <ul class="hb-sidebar-list">
+              {{ range .Children }}
+              {{ $child_current := $current_page.IsMenuCurrent $menu_name . }}
+              <li class="flex flex-col">
+                <a class="hb-sidebar-custom-link {{ if $child_current }}sidebar-active-item bg-primary-100 font-semibold text-primary-800 dark:bg-primary-300 dark:text-primary-900{{ else }}text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-primary-800 dark:hover:text-gray-50{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</aside>

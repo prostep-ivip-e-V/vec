@@ -1,0 +1,7 @@
+############################
+## HUGO MODULES
+## Docs: https://gohugo.io/hugo-modules/
+############################
+
+imports:
+  - path: github.com/HugoBlox/kit/modules/blox

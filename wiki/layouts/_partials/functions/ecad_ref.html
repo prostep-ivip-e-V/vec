@@ -1,0 +1,29 @@
+{{/*
+  Resolve a page reference like Hugo 0.120 did.
+
+  Since Hugo 0.123, relative references in a leaf bundle (`…/page/index.md`) are resolved
+  from the bundle's parent directory. The wiki content was written for the old behaviour,
+  where they were resolved from the bundle directory itself (e.g. `../sibling-page`).
+  For leaf bundles, the reference is therefore first resolved from the bundle directory.
+  All other references are passed to Hugo's `ref`/`relref` unchanged.
+
+  Input:  dict "page" <page> "ref" <string> "absolute" <bool>
+  Output: URL (string)
+*/}}
+{{- $page := .page -}}
+{{- $ref := .ref -}}
+{{- $url := "" -}}
+{{- $parts := split $ref "#" -}}
+{{- $target := index $parts 0 -}}
+{{- $fragment := "" -}}
+{{- if gt (len $parts) 1 }}{{ $fragment = printf "#%s" (index $parts 1) }}{{ end -}}
+{{- if and $target (not (hasPrefix $target "/")) (eq $page.BundleType "leaf") $page.File -}}
+  {{- $candidate := path.Join "/" $page.File.Dir $target -}}
+  {{- with site.GetPage $candidate -}}
+    {{- $url = printf "%s%s" (cond $.absolute .Permalink .RelPermalink) $fragment -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $url -}}
+  {{- $url = cond .absolute (ref $page $ref) (relref $page $ref) -}}
+{{- end -}}
+{{- return $url -}}

@@ -1,0 +1,30 @@
+{{/* Table of pages with their latest history entry. Input: slice of pages. */}}
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Latest Content Addition / Commit</th>
+      <th>Created</th>
+      <th>Changed</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ range . }}
+    <tr>
+      <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+      <td>
+        {{- with .Params.history -}}
+        {{- range first 1 (sort . "date" "desc") -}}
+        {{- if or .ghIssue .issue -}}{{- partial "specs_issue_links" . -}}:&nbsp;{{- end -}}
+        {{- .description -}}
+        <br/>
+        {{- end -}}
+        {{- end -}}
+        {{ if .GitInfo }}<small>Latest Commit: {{ .GitInfo.Subject }}</small>{{ end }}
+      </td>
+      <td class="whitespace-nowrap">{{ .Date.Format "2006-01-02" }}</td>
+      <td class="whitespace-nowrap">{{ .Lastmod.Format "2006-01-02" }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>

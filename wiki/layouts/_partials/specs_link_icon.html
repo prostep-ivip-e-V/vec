@@ -1,0 +1,3 @@
+{{/* Icon of a `links` entry of a spec page. */}}
+{{- $name := partial "functions/ecad_icon_name" . -}}
+<span class="specs-link-icon">{{ partial "functions/get_icon" (dict "name" $name "attributes" "style=\"height: 1em; transform: translateY(0.1em);\"") }}</span>

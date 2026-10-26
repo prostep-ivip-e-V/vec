@@ -1,0 +1,25 @@
+{{/* All pages of the menu of this specs page, one after the other (single page printable version). */}}
+{{ $current_page := . }}
+{{ $menu_name := partial "functions/specs_menu_name" . }}
+<div class="print">
+{{ range (index site.Menus $menu_name).ByWeight }}
+{{ if not ($current_page.IsMenuCurrent $menu_name .) }}
+  <div class="print-section">
+      <h1>{{ .Title }}</h1>
+      {{- with .Page -}}
+        {{ .Content }}
+      {{- end -}}
+      {{- if .HasChildren -}}
+      {{- range .Children -}}
+      <div class="print-sub-section">
+        <h1>{{ .Title }}</h1>
+        {{- with .Page -}}
+          {{ .Content }}
+        {{- end -}}
+      </div>
+      {{- end -}}
+      {{- end -}}
+  </div>
+{{ end }}
+{{ end }}
+</div>
