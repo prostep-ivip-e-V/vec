@@ -114,12 +114,17 @@
 
 .article-style { counter-reset: captions; }
 
-.article-style figure {
+.article-style figure,
+.print figure {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
-.article-style figcaption {
+/* Images are block elements in Tailwind: centre them (Bootstrap centred them inline). */
+figure img { margin-inline: auto; }
+
+/* Also in the single page version, which has no .article-style wrapper. */
+figcaption {
   margin-bottom: 0;
   text-align: center;
 }
