@@ -19,8 +19,8 @@ hugoblox:
     mode: light
     pack: "default"
     colors:
-      primary: ""
-      secondary: ""
+      primary: "#2b94c3"   # prostep blue (former wiki hero)
+      secondary: "#0b2a44" # prostep navy (home page hero)
       neutral: ""
 
   typography:
