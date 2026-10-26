@@ -43,23 +43,23 @@ const pdfPages = [
             waitUntil: 'networkidle2' // Waits for the network to be idle (no more than 2 connections for at least 500 ms)
         });
 
-            // Scroll to the bottom of the page for all lazy loaded pictures.
-        await page.evaluate(async () => {
-            await new Promise((resolve, reject) => {
-                var totalHeight = 0;
-                var distance = 100; // Should be less than or equal to window.innerHeight
-                var timer = setInterval(() => {
-                    var scrollHeight = document.body.scrollHeight;
-                    window.scrollBy(0, distance);
-                    totalHeight += distance;
-
-                    if(totalHeight >= scrollHeight){
-                        clearInterval(timer);
-                        resolve();
-                    }
-                }, 100);
-            });
+        // Load all images now instead of lazily (loading="lazy"), wait until each one
+        // has loaded or failed, and collect the images that could not be displayed.
+        const broken = await page.evaluate(async () => {
+            const images = Array.from(document.images);
+            images.forEach((img) => { img.loading = 'eager'; });
+            await Promise.all(images.map((img) => img.complete ? null : new Promise((resolve) => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+            })));
+            return images.filter((img) => img.naturalWidth === 0).map((img) => img.currentSrc || img.src);
         });
+        if (broken.length > 0) {
+            // A broken image would show up as an icon in the PDF: fail the build instead.
+            console.error(`${broken.length} image(s) could not be loaded for ${pageConfig.url}:`);
+            broken.forEach((src) => console.error(`  ${src}`));
+            process.exitCode = 1;
+        }
 
         createDirectories(pageConfig.outputPath);
 
