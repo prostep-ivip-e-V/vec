@@ -233,7 +233,7 @@ img[data-zoomable] { cursor: zoom-in; }
   background: var(--color-red-600, #dc2626);
 }
 
-/* Change history. */
+/* Change history (hidden until "History" in the metadata line is clicked). */
 .specs-history {
   margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
@@ -241,10 +241,8 @@ img[data-zoomable] { cursor: zoom-in; }
   border-radius: 0.375rem;
 }
 
-.specs-history summary {
-  cursor: pointer;
-  font-weight: 600;
-}
+.specs-history[hidden] { display: none; }
+.specs-history > h2 { margin-top: 0.5rem; font-size: 1.25rem; }
 
 /* Related content (right column). */
 .specs-related {

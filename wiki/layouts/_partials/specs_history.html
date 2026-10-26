@@ -1,7 +1,7 @@
 {{ $page := . }}
 {{ if $page.Params.history }}
-<details class="specs-history" id="history-collapse">
-  <summary>Change History</summary>
+<div class="specs-history" id="history-collapse" hidden>
+  <h2>Change History</h2>
   <table class="w-full">
     <thead>
       <tr>
@@ -31,5 +31,5 @@
       {{- end -}}
     </tbody>
   </table>
-</details>
+</div>
 {{ end }}

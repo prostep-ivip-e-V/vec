@@ -1,21 +1,3 @@
-{{/* Icon of a `links` entry. Former Font Awesome names are mapped to the HugoBlox (Heroicons) icon set. */}}
-{{- $fa := dict
-  "circle-nodes"   "share"
-  "clipboard-check" "clipboard-document-check"
-  "file-pdf"     "document-text"
-  "file-code"    "code-bracket"
-  "file-archive" "archive-box"
-  "file-word"    "document-text"
-  "folder-open"  "folder-open"
-  "globe"        "globe-alt"
-  "object-group" "rectangle-group"
-  "shipping-fast" "truck"
-  "file"         "document"
-  "file-alt"     "document-text"
-  "download"     "arrow-down-tray"
-  "book"         "book-open"
-  "github"       "brands/github"
-  "external-link-alt" "arrow-top-right-on-square"
--}}
-{{- $name := index $fa . | default "link" -}}
+{{/* Icon of a `links` entry of a spec page. */}}
+{{- $name := partial "functions/ecad_icon_name" . -}}
 <span class="specs-link-icon">{{ partial "functions/get_icon" (dict "name" $name "attributes" "style=\"height: 1em; transform: translateY(0.1em);\"") }}</span>

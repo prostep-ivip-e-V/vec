@@ -3,6 +3,7 @@
      "assignment to entry in nil map". Initialise the map with a dummy entry instead.
      Additionally, legacy `url_*` paths that are no page resource are matched by their file name
      against the page resources (Wowchemy behaviour, e.g. `url_pdf` in content/event/2020-03-vec-webinar).
+     Font Awesome icon names of `links` (Wowchemy) are mapped by functions/ecad_icon_name.html.
      Remove this override once fixed upstream. */}}
 {{/*
   Hugo Blox Page Link Builder
@@ -57,12 +58,14 @@
     {{ $typeF := $type }}
     {{ $urlF := $url }}
     {{ $keyF := printf "%s::%s" $typeF $urlF }}
+    {{ $iconF := index (index $types $typeF) "icon" | default "hero/link" }}
+    {{ with .icon }}{{ $iconF = partial "functions/ecad_icon_name" . }}{{ end }}
     {{ if not ($seen.Get (printf "set.%s" $keyF)) }}
       {{ $seen.SetInMap "set" $keyF true }}
       {{ $links = $links | append (dict
           "type" $typeF
           "url" $urlF
-          "icon" (.icon | default (index (index $types $typeF) "icon") | default "hero/link")
+          "icon" $iconF
           "labelKey" (index (index $types $typeF) "label_i18n")
           "label" (.label | default .name)
           "contexts" (.contexts | default (slice "list" "page"))

@@ -1,0 +1,30 @@
+{{/*
+  Map a former Font Awesome icon name (Wowchemy) to the HugoBlox icon set (Heroicons, brands).
+  Names that are not in the map are returned unchanged (e.g. HugoBlox names like "hero/document").
+
+  Used by the `icon` shortcode, the `links` of spec pages and the HugoBlox link builder,
+  so that content written for Wowchemy (`icon: file-pdf`) keeps working.
+
+  Input:  icon name (string)
+  Output: HugoBlox icon name (string)
+*/}}
+{{- $fa := dict
+  "book"              "book-open"
+  "circle-nodes"      "share"
+  "clipboard-check"   "clipboard-document-check"
+  "download"          "arrow-down-tray"
+  "external-link-alt" "arrow-top-right-on-square"
+  "file"              "document"
+  "file-alt"          "document-text"
+  "file-archive"      "archive-box"
+  "file-code"         "code-bracket"
+  "file-pdf"          "document-text"
+  "file-word"         "document-text"
+  "folder-open"       "folder-open"
+  "github"            "brands/github"
+  "globe"             "globe-alt"
+  "info-circle"       "information-circle"
+  "object-group"      "rectangle-group"
+  "shipping-fast"     "truck"
+-}}
+{{- return (index $fa . | default .) -}}

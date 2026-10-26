@@ -14,14 +14,7 @@
         Right padding.
 */}}
 {{- if (.Get "name") -}}
-  {{- $fa := dict
-    "file-pdf"  "document-text"
-    "file-code" "code-bracket"
-    "file"      "document"
-    "download"  "arrow-down-tray"
-    "info-circle" "information-circle"
-  -}}
-  {{- $icon := index $fa (.Get "name") | default (.Get "name") -}}
+  {{- $icon := partial "functions/ecad_icon_name" (.Get "name") -}}
   {{- $padding_right := (.Get "padding_right") | default 1 -}}
   <span class="inline-block {{with (.Get "padding_left")}}pl-{{.}}{{end}} {{with $padding_right}}pr-{{.}}{{end}}">
     {{- partial "functions/get_icon" (dict "name" $icon "attributes" "style=\"height: 1em; transform: translateY(0.1em);\"") -}}
