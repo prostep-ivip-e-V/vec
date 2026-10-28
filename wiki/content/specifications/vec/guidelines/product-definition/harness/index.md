@@ -84,6 +84,12 @@ classes:
   - NURBSCurve
   - OccurrenceOrUsageViewItem3D
   - Transformation3D
+  - PlacementSpecification
+  - OnPointPlacement
+  - OnWayPlacement
+  - NodeLocation
+  - SegmentLocation
+  - PlaceableElementRole
 
 history:
   - date: 2025-02-13
@@ -126,6 +132,8 @@ history:
     description: "Topology: split of KBL nodes and segments into topology, geometry and placement; lengths and cross section areas."
   - date: 2026-10-28T00:00:00Z
     description: "Geometry: 2D and 3D, building blocks, centre curves with explicit knots, placement of occurrences as view items."
+  - date: 2026-10-28T00:00:00Z
+    description: "Placement: node references, fixing assignments and protection areas; relative and absolute locations; wire protections over several segments."
 
 links:
   - icon_pack: fas
@@ -1812,9 +1820,91 @@ In 2D, the shape of a segment is described by the path segments of the {{<vec-cl
 
 ### Placement
 
-{{% callout warning %}}
-Work in Progress
+The placement defines where a component is located in the topology of the harness, independent of a specific geometry. In the KBL, this information is attached to the topology elements. In the VEC, it is defined in a {{<vec-class PlacementSpecification>}} of the harness description, whose placements reference the {{<vec-class PlaceableElementRole>}} of the placed occurrence and one or more locations in the topology (see [Placements and Dimensions]({{<relref "../../topology/placement-and-dimensions">}})).
+
+| KBL | VEC |
+|-----|-----|
+| `Referenced_components` of a {{<kbl-class Node>}} | {{<vec-class OnPointPlacement>}} with a {{<vec-class NodeLocation>}} |
+| {{<kbl-class Fixing_assignment>}} of a {{<kbl-class Segment>}} | {{<vec-class OnPointPlacement>}} with a {{<vec-class SegmentLocation>}} |
+| {{<kbl-class Protection_area>}} of a {{<kbl-class Segment>}} | {{<vec-class OnWayPlacement>}} with a start and an end {{<vec-class SegmentLocation>}} |
+
+A component that is referenced by several nodes or fixing assignments (e.g. a fixing that is placed on several segments) gets one placement with several locations.
+
+**Placement on nodes.** Connectors and other components that are referenced by a {{<kbl-class Node>}} are placed on the corresponding {{<vec-class TopologyNode>}}:
+
+```xml
+    <Specification xsi:type="vec:PlacementSpecification" id="PlacementSpecification_id_328_0">
+      <Identification>PLACEMENT</Identification>
+      <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_id_316_0">
+        <Identification>XA.L2.1</Identification>
+        <PlacedElement>PlaceableElementRole_id_316_0</PlacedElement>
+        <Location xsi:type="vec:NodeLocation" id="NodeLocation_Node_1">
+          <Identification>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1 ST_SBBR_1</Identification>
+          <ReferencedNode>TopologyNode_Node_1</ReferencedNode>
+        </Location>
+      </Placement>
+      ...
+```
+
+**Placement on segments.** The locations on a segment are defined differently in both models. The KBL defines a location relative to the segment by a value between 0.0 and 1.0 (`Location`, `Start_location`, `End_location`), and optionally as an absolute value (`Absolute_location`, ...). The VEC defines a {{<vec-class SegmentLocation>}} by an absolute `Offset` from one of the nodes of the segment (`Anchor`: `FromStartNode` or `FromEndNode`).
+
+- If the KBL defines an absolute location, it should be used as offset.
+- Otherwise, the offset must be calculated from the relative location and the length of the segment. Note that the relative location in the KBL is a curve parameter, which is in general not proportional to the length of the curve; the calculated offset is an approximation.
+- The anchor should be chosen so that the location keeps its meaning when the segment length changes. The relative locations `0.0` and `1.0` are the start node and the end node of the segment, i.e. an offset of 0 from the respective node. For a wire protection, the start and end location should refer to different nodes, so that the protected area adapts to changes of the segment length (see [Placements and Dimensions – Basic Wire Protection]({{<relref "../../topology/placement-and-dimensions#basic-wire-protection">}})).
+
+The following example from the [generator cable sample](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/src/test/resources) shows a fixing and a wire protection on the same segment. The reference implementation calculates all offsets from the start node; the end location of the protection (`1.0`) is therefore not anchored at the end node as recommended above.
+
+```xml
+<!-- KBL -->
+        <Fixing_assignment id="Fixing_assignment_1">
+            <Location>0.886766</Location>
+            ...
+            <Fixing>Fixing_occurrence_1</Fixing>
+        </Fixing_assignment>
+        <Protection_area id="Protection_area_1">
+            <Start_location>0.045496</Start_location>
+            <End_location>1.000000</End_location>
+            <Associated_protection>Wire_protection_occurrence_1</Associated_protection>
+        </Protection_area>
+<!-- VEC -->
+      <Placement xsi:type="vec:OnWayPlacement" id="OnWayPlacement_Protection_area_1">
+        <Identification>N___105_343_01.1-ROUTING_BAUKST_LTGS_GENERATOR-Multi-branchable142/ElecRouteBody.1/Flexible Curve.1</Identification>
+        <PlacedElement>PlaceableElementRole_Wire_protection_occurrence_1</PlacedElement>
+        <EndLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_Protection_area_1">
+          <Identification>END</Identification>
+          <Offset id="NumericalValue_00064">
+            <UnitComponent>SIUnit_id_346_1</UnitComponent>
+            <ValueComponent>219.800924</ValueComponent>
+          </Offset>
+          <Anchor>FromStartNode</Anchor>
+          <ReferencedSegment>TopologySegment_Segment_1</ReferencedSegment>
+        </EndLocation>
+        <StartLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_Protection_area_1_1">
+          <Identification>START</Identification>
+          <Offset id="NumericalValue_00065">
+            <UnitComponent>SIUnit_id_346_1</UnitComponent>
+            <ValueComponent>10.000062838304</ValueComponent>
+          </Offset>
+          <Anchor>FromStartNode</Anchor>
+          <ReferencedSegment>TopologySegment_Segment_1</ReferencedSegment>
+        </StartLocation>
+      </Placement>
+      ...
+      <Placement xsi:type="vec:OnPointPlacement" id="OnPointPlacement_Fixing_occurrence_1">
+        <Identification>CL_01_Gen</Identification>
+        <PlacedElement>PlaceableElementRole_Fixing_occurrence_1</PlacedElement>
+        <Location xsi:type="vec:SegmentLocation" id="SegmentLocation_Fixing_assignment_1">
+          <Identification>FIXING-0</Identification>
+          ...
+```
+
+**Wire protections over several segments.** The KBL requires a {{<kbl-class Protection_area>}} per segment. A wire protection that covers several segments therefore has several protection areas. In the VEC, a continuous wire protection is described by one {{<vec-class OnWayPlacement>}} with a start and an end location and a `Path` over the segments in between (see [Placements and Dimensions – Wire Protection covering multiple Topology Segments]({{<relref "../../topology/placement-and-dimensions#wire-protection-covering-multiple-topology-segments">}})). Adjacent protection areas of the same wire protection should therefore be combined into one placement. The `Is_on_top_of` of a KBL {{<kbl-class Protection_area>}} corresponds to the `IsOnTopOf` of the VEC {{<vec-class Placement>}}.
+
+{{% callout note %}}
+The reference implementation creates one {{<vec-class OnWayPlacement>}} per KBL {{<kbl-class Protection_area>}} and does not map `Is_on_top_of` yet.
 {{% /callout %}}
+
+**Placement points.** If a component is placed at several locations, the VEC can define which point of the component is placed at which location ({{<vec-class PlacementPoint>}}, see [Placements and Dimensions – Multiple Locations with Dimensions]({{<relref "../../topology/placement-and-dimensions#multiple-locations-with-dimensions">}})). The KBL has no such concept, so this information cannot be derived.
 
 ### Routing
 
@@ -1860,4 +1950,5 @@ The following KBL concepts are not yet covered by this guideline:
 
 - **Mounting of components in component slots**: The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} a fuse or relay is plugged. In the VEC, this is a coupling between the E/E component and the component box (see [Coupling]({{<relref "../coupling">}})).
 - **Schematic connections**: A {{<kbl-class Schematic_connection>}} is a logical connection between cavities, which is realized by one or more {{<kbl-class Connection>}}s (`Realized_schematic_connection`). It is the closest KBL concept to a VEC {{<vec-class Connection>}}, but mapping it requires a system schematic with components and ports, which the KBL does not provide.
+- **Dimensions and tolerances**: The KBL {{<kbl-class Dimension_specification>}} and {{<kbl-class Default_dimension_specification>}} correspond to the {{<vec-class Dimension>}}s of a {{<vec-class PlacementSpecification>}} and to the {{<vec-class DefaultDimensionSpecification>}} (see [Placements and Dimensions]({{<relref "../../topology/placement-and-dimensions">}})). Note that the limits of a KBL {{<kbl-class Tolerance>}} are absolute values, whereas the boundaries of a VEC {{<vec-class Tolerance>}} are deviations from the nominal value.
 - **Bend radius and folding direction of nodes**: The `Bend_radius` and `Folding_direction` of a {{<kbl-class Node>}} have no direct counterpart in the {{<vec-class TopologyNode>}}. Bending restrictions are defined in the VEC along a path of the topology ({{<vec-class TopologyBendingRestriction>}}).
