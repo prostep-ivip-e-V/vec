@@ -28,6 +28,14 @@ classes:
   - ChangeDescription
   - CopyrightInformation
   - Project
+  - GeneralTechnicalPartSpecification
+  - ConnectorHousingSpecification
+  - PlaceableElementSpecification
+  - TerminalSpecification
+  - WireReceptionSpecification
+  - TerminalReceptionSpecification
+  - CavitySealSpecification
+  - CavityPlugSpecification
 
 history:
   - date: 2025-02-13
@@ -48,6 +56,8 @@ history:
     description: "Restructured along the content of a harness description; overview of the mapping; KBL and VEC example files for download."
   - date: 2026-10-28T00:00:00Z
     description: "Parts and documents: PDM attributes, identity of the documents, multi-classified parts, title block information, external references."
+  - date: 2026-10-28T00:00:00Z
+    description: "Part master data: specifications per KBL part class, general technical information, connector housings, terminals, cavity seals and plugs."
 
 links:
   - icon_pack: fas
@@ -332,56 +342,199 @@ The KBL `External_references` of a {{<kbl-class Part>}} are the documents associ
 ## Part Master Data
 
 For all components used in a wiring harness, a minimum set of part master data is required. 
-A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see  the Guideline "[Component Description]({{<relref "../component-description">}})". The following specifications have to be created. The mapping of those is described in the following sections: 
+A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see  the Guideline "[Component Description]({{<relref "../component-description">}})". The specifications that have to be created are listed below. The mapping of those is described in the following sections.
 
 {{% callout note %}}
 **Data Quality**: Since the scope of the KBL is the product definition of a harness, the contained master data is limited to the bare minimum (e.g. cavities of a connector, cross section area and color of the wire). On the other hand, the VEC offers a wide range of options for a detailed component description. In a real scenario, it would therefore be more likely to enrich the data with information from a library during conversion than to transfer the master data from the KBL directly 1:1.
 {{% /callout %}}
 
-The following table defines the {{<vec-class PartOrUsageRelatedSpecification >}} that are used to define each {{<kbl-class Part>}}. Auxiliary specifications that might required by the {{<vec-class PartOrUsageRelatedSpecification >}} for a complete definition (e.g. {{<vec-class WireReceptionSpecification>}}, {{<vec-class CavitySpecification >}} or {{<vec-class InsulationSpecification>}}) are listed in the corresponding section.
+The following table defines the {{<vec-class PartOrUsageRelatedSpecification >}} that are used to define each {{<kbl-class Part>}}. Auxiliary specifications that might be required by the {{<vec-class PartOrUsageRelatedSpecification >}} for a complete definition (e.g. {{<vec-class WireReceptionSpecification>}}, {{<vec-class CavitySpecification >}} or {{<vec-class InsulationSpecification>}}) are listed in the corresponding section.
 
-| KBL Class   | VEC PartOrUsageRelatedSpecification   |
-|--------------|------------------------|
-| {{<kbl-class Accessory >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Co_pack_part >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Cavity_Plug >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Cavity_seal >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class General_wire >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, {{<vec-class WireSpecification >}}, TBD |
-| {{<kbl-class Connector_housing >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, {{<vec-class ConnectorHousingSpecification>}}, TBD |
-| {{<kbl-class Fixing >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class General_Terminal >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Wire_Protection >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Harness >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Harness_configuration >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Module >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Assembly_Part >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Fuse >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Component_box >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
-| {{<kbl-class Component >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
+| KBL Class   | VEC PartOrUsageRelatedSpecification   | Section |
+|--------------|------------------------|---------|
+| {{<kbl-class Connector_housing >}} | {{<vec-class ConnectorHousingSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Connector Housings]({{<relref "#connector-housings">}}) |
+| {{<kbl-class General_Terminal >}} | {{<vec-class TerminalSpecification>}} | [Terminals]({{<relref "#terminals">}}) |
+| {{<kbl-class Cavity_seal >}} | {{<vec-class CavitySealSpecification>}} | [Cavity Seals and Cavity Plugs]({{<relref "#cavity-seals-and-cavity-plugs">}}) |
+| {{<kbl-class Cavity_Plug >}} | {{<vec-class CavityPlugSpecification>}} | [Cavity Seals and Cavity Plugs]({{<relref "#cavity-seals-and-cavity-plugs">}}) |
+| {{<kbl-class General_wire >}} | {{<vec-class WireSpecification >}} | [Wires]({{<relref "#wires">}}) |
+| {{<kbl-class Wire_Protection >}} | {{<vec-class WireProtectionSpecification>}} (or a more specific subclass), {{<vec-class PlaceableElementSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
+| {{<kbl-class Fixing >}} | {{<vec-class FixingSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
+| {{<kbl-class Accessory >}} | {{<vec-class PartOrUsageRelatedSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
+| {{<kbl-class Co_pack_part >}} | {{<vec-class PartOrUsageRelatedSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
+| {{<kbl-class Component_box >}} | {{<vec-class EEComponentSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
+| {{<kbl-class Fuse >}} | {{<vec-class EEComponentSpecification>}}, {{<vec-class FuseSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
+| {{<kbl-class Component >}} | {{<vec-class EEComponentSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
+| {{<kbl-class Assembly_Part >}} | {{<vec-class PartStructureSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Assembly Parts]({{<relref "#assembly-parts">}}) |
+
+In addition, every part receives a {{<vec-class GeneralTechnicalPartSpecification>}} (see [General Technical Information]({{<relref "#general-technical-information">}})). The {{<kbl-class Harness >}}, its {{<kbl-class Module >}}s and {{<kbl-class Harness_configuration >}}s do not have a `PartMaster` document. They are defined in the `HarnessDescription` (see [Bill of Material / Part Structure]({{<relref "#bill-of-material--part-structure">}})).
+
+The {{<vec-class PlaceableElementSpecification>}} is required for all components that are placed on the topology (see [Placement]({{<relref "#placement">}})). In the KBL, these are the components whose occurrences can be referenced by a {{<kbl-class Node>}} (`Referenced_components`), by a {{<kbl-class Fixing_assignment>}} or by a {{<kbl-class Protection_area>}}.
 
 ### General Technical Information
 
-{{% callout warning %}}
-Work in Progress
+In this mapping, every part receives a {{<vec-class GeneralTechnicalPartSpecification >}} (this is a convention, the VEC does not require it); that is, for each instance of a KBL {{<kbl-class Part >}}, such a specification is created in its describing {{<vec-class DocumentVersion>}}. This specification covers basic technical information about the component, such as dimensions, weight, material, and dependencies to other parts.
+
+| KBL | VEC {{<vec-class GeneralTechnicalPartSpecification>}} |
+|-----|-----|
+| `Mass_information` ({{<kbl-class Part>}}) | `MassInformation` |
+| `Material_information` ({{<kbl-class Part>}}) | `MaterialInformation` |
+| `Housing_colour` ({{<kbl-class Connector_housing>}}), `Colour` ({{<kbl-class Cavity_seal>}}, {{<kbl-class Cavity_plug>}}, {{<kbl-class Fuse>}}) | `ColorInformation` |
+
+The XML representation for the multi-fuse of the example file looks as follows:
+
+```xml
+<!-- KBL -->
+    <Assembly_part id="id_304_1">
+        <Part_number>AS0105563</Part_number>
+        ...
+        <Mass_information id="id_380_1">
+            <Unit_component>id_346_2</Unit_component>
+            <Value_component>47.7</Value_component>
+        </Mass_information>
+        ...
+<!-- VEC -->
+    <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_id_304_1">
+      <Identification>GTPS-AS0105563</Identification>
+      <DescribedPart>PartVersion_id_304_1</DescribedPart>
+      <MassInformation id="MassInformation_id_380_1">
+        <Value id="NumericalValue_id_380_1">
+          <UnitComponent>SIUnit_id_346_2</UnitComponent>
+          <ValueComponent>47.7</ValueComponent>
+        </Value>
+      </MassInformation>
+    </Specification>
+```
+
+In the KBL, colours and materials are plain strings. In the VEC, a {{<vec-class Color>}} and a {{<vec-class Material>}} consist of a key and the reference system that defines the meaning of the key (e.g. `RAL` for colours). The reference system is not contained in the KBL and must be known from the context of the KBL dialect (e.g. a company specific colour code).
+
+{{% callout note %}}
+The reference implementation uses the placeholder `ACME Inc.` as reference system. It also attaches the KBL `Processing_information` of a part as {{<vec-class CustomProperty>}} to the {{<vec-class PartVersion>}}. Since a {{<vec-class PartVersion>}} should contain only PDM information, the {{<vec-class GeneralTechnicalPartSpecification>}} is the better place for them (see [Custom Properties and Instructions]({{<relref "#custom-properties-and-instructions">}})).
 {{% /callout %}}
 
 ### Connector Housings
 
-{{% callout warning %}}
-Work in Progress
+A KBL {{<kbl-class Connector_housing>}} has the same basic structure as a VEC {{<vec-class ConnectorHousingSpecification>}}: the housing consists of {{<kbl-class Slot>}}s, which consist of {{<kbl-class Cavity>}}s. Both are mapped 1:1 to a {{<vec-class Slot>}} and a {{<vec-class Cavity>}}, where the `Id` of the KBL slot becomes the `SlotNumber` and the `Cavity_number` becomes the `CavityNumber`. The `Housing_code` is mapped to the {{<vec-class Coding>}} and the `Housing_type` to the `SpecialPartType` of the {{<vec-class ConnectorHousingSpecification>}}. The `Number_of_cavities` of a KBL slot can be represented by a {{<vec-class SlotSpecification>}}.
+
+Since connectors are placed on the topology, a {{<vec-class PlaceableElementSpecification>}} with `ValidPlacementTypes=OnPoint` is added to the `PartMaster` document.
+
+```xml
+<!-- KBL -->
+    <Connector_housing id="id_315_0">
+        <Part_number>ECP001706</Part_number>
+        ...
+        <Housing_colour>schwarz</Housing_colour>
+        <Housing_code>A</Housing_code>
+        <Slots id="id_341_0">
+            <Id>default</Id>
+            <Number_of_cavities>6</Number_of_cavities>
+            <Cavities id="id_370_0">
+                <Cavity_number>1</Cavity_number>
+            </Cavities>
+            ...
+        </Slots>
+    </Connector_housing>
+<!-- VEC -->
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_315_0">
+      <Identification>CHS-ECP001706</Identification>
+      <DescribedPart>PartVersion_id_315_0</DescribedPart>
+      <Coding id="Coding_00024">
+        <Coding>A</Coding>
+      </Coding>
+      <Slot xsi:type="vec:Slot" id="Slot_id_341_0">
+        <SlotNumber>default</SlotNumber>
+        <Cavity id="Cavity_id_370_0">
+          <CavityNumber>1</CavityNumber>
+        </Cavity>
+        ...
+      </Slot>
+    </Specification>
+    <Specification xsi:type="vec:PlaceableElementSpecification" id="PlaceableElementSpecification_id_315_0">
+      <Identification>PES-ECP001706</Identification>
+      <DescribedPart>PartVersion_id_315_0</DescribedPart>
+      <ValidPlacementTypes>OnPoint</ValidPlacementTypes>
+    </Specification>
+    <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_id_315_0">
+      <Identification>GTPS-ECP001706</Identification>
+      <DescribedPart>PartVersion_id_315_0</DescribedPart>
+      <ColorInformation id="Color_00025">
+        <Key>schwarz</Key>
+        <ReferenceSystem>ACME Inc.</ReferenceSystem>
+      </ColorInformation>
+    </Specification>
+```
+
+{{% callout note %}}
+**Data Quality**: In the KBL, splices, ring terminals and wire ends without a connector ("danglers") are often modelled as "virtual" connectors, i.e. as {{<kbl-class Connector_housing>}} with a dummy part number, whose occurrences are marked by the `Usage` of the {{<kbl-class Connector_occurrence>}}. In the VEC, such elements are not connector housings: a splice is a terminal ({{<vec-class SpliceTerminalSpecification>}}, see [Splices]({{<relref "../../component-types/splices">}})), a ring terminal is a {{<vec-class RingTerminalSpecification>}}, and an open wire end without a connector (`Usage=dangler` or `no end`) can be described as {{<vec-class OpenWireEndTerminalSpecification>}} if its location in the harness is relevant. This must be taken into account in the mapping of the occurrences (see [Connectivity]({{<relref "#connectivity">}})). The reference implementation does not evaluate the `Usage` yet and maps all of them as connector housings.
 {{% /callout %}}
 
 ### Terminals
 
-{{% callout warning %}}
-Work in Progress
+A KBL {{<kbl-class General_terminal>}} is described with a few flat attributes. The VEC {{<vec-class TerminalSpecification>}} describes the inner structure of a terminal: a {{<vec-class WireReception>}} for the connection of the wire, a {{<vec-class TerminalReception>}} for the connection to the mating terminal, and an {{<vec-class InternalTerminalConnection>}} between them. The properties of the receptions are defined by a {{<vec-class WireReceptionSpecification>}} and a {{<vec-class TerminalReceptionSpecification>}}, which are auxiliary specifications in the same `PartMaster` document.
+
+For a terminal from the KBL, this structure consists of exactly one wire reception, one terminal reception and the connection between them. The attributes of the KBL terminal are distributed as follows:
+
+| KBL {{<kbl-class General_terminal>}} | VEC |
+|-----|-----|
+| `Terminal_type` | `SpecialPartType` of the {{<vec-class TerminalSpecification>}}. Special terminal types have their own specification classes, e.g. {{<vec-class RingTerminalSpecification>}} or {{<vec-class SpliceTerminalSpecification>}}. |
+| `Plating_material` | `PlatingMaterial` of the {{<vec-class TerminalReceptionSpecification>}} (and of the {{<vec-class WireReceptionSpecification>}}, if it applies to the whole terminal) |
+| `Cross_section_area` | `CoreCrossSectionArea` of the {{<vec-class WireReceptionSpecification>}} |
+| `Outside_diameter` | `WireElementOutsideDiameter` of the {{<vec-class WireReceptionSpecification>}} |
+
+```xml
+<!-- KBL -->
+    <General_terminal id="id_326_0">
+        <Part_number>TER00156401</Part_number>
+        ...
+        <Plating_material>au</Plating_material>
+    </General_terminal>
+<!-- VEC -->
+    <Specification xsi:type="vec:TerminalSpecification" id="TerminalSpecification_id_326_0">
+      <Identification>TS-TER00156401</Identification>
+      <DescribedPart>PartVersion_id_326_0</DescribedPart>
+      <InternalTerminalConnection id="InternalTerminalConnection_id_326_0">
+        <Identification>ITC</Identification>
+        <TerminalReception>TerminalReception_id_326_0</TerminalReception>
+        <WireReception>WireReception_id_326_0</WireReception>
+      </InternalTerminalConnection>
+      <TerminalReception id="TerminalReception_id_326_0">
+        <Identification>TR</Identification>
+        <TerminalReceptionSpecification>TerminalReceptionSpecification_id_326_0</TerminalReceptionSpecification>
+      </TerminalReception>
+      <WireReception id="WireReception_id_326_0">
+        <Identification>WR</Identification>
+        <WireReceptionSpecification>WireReceptionSpecification_id_326_0</WireReceptionSpecification>
+      </WireReception>
+    </Specification>
+    <Specification xsi:type="vec:WireReceptionSpecification" id="WireReceptionSpecification_id_326_0">
+      <Identification>WRS</Identification>
+    </Specification>
+    <Specification xsi:type="vec:TerminalReceptionSpecification" id="TerminalReceptionSpecification_id_326_0">
+      <Identification>TRS</Identification>
+      <PlatingMaterial id="Material_00048">
+        <Key>au</Key>
+        <ReferenceSystem>ACME Inc.</ReferenceSystem>
+      </PlatingMaterial>
+    </Specification>
+```
+
+Terminals that are used on their own and placed on the topology (KBL {{<kbl-class Special_terminal_occurrence>}}, e.g. a ring terminal at a ground bolt) additionally require a {{<vec-class PlaceableElementSpecification>}}.
+
+{{% callout note %}}
+The structure with one wire reception and one terminal reception does not fit all terminal types. An end splice, for example, has only a wire reception (see [Splices]({{<relref "../../component-types/splices">}})). If the `Terminal_type` indicates such a terminal, the structure should be adapted accordingly. The reference implementation creates the same structure for all terminals.
 {{% /callout %}}
 
 ### Cavity Seals and Cavity Plugs
 
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
+Cavity seals and cavity plugs are mapped to a {{<vec-class CavitySealSpecification>}} and a {{<vec-class CavityPlugSpecification>}}.
+
+| KBL | VEC |
+|-----|-----|
+| {{<kbl-class Cavity_seal>}}`.Seal_type` | `SpecialPartType` of the {{<vec-class CavitySealSpecification>}} |
+| {{<kbl-class Cavity_seal>}}`.Wire_size` | `WireElementOutsideDiameter` of the {{<vec-class CavitySealSpecification>}} |
+| {{<kbl-class Cavity_plug>}}`.Plug_type` | `SpecialPartType` of the {{<vec-class CavityPlugSpecification>}} |
+| `Colour` | `ColorInformation` of the {{<vec-class GeneralTechnicalPartSpecification>}} |
+
+The cavity in which a seal or plug is used and the wire that is sealed are not part of the part master data. They are described by the [Connectivity]({{<relref "#connectivity">}}) of the harness.
 
 ### Wires
 
