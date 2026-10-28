@@ -393,8 +393,9 @@ def index_pages(spec_dir: Path, content_root: Path) -> list[dict]:
             all_files.extend(sorted(d.rglob("*.md")))
 
     for md_file in all_files:
-        # Skip hidden dirs
-        if any(p.startswith(".") for p in md_file.parts):
+        # Skip hidden dirs below the content root (not above it: the wiki itself may live in a hidden
+        # directory, e.g. a git worktree under .claude/worktrees/)
+        if any(p.startswith(".") for p in md_file.relative_to(content_root).parts):
             continue
         # Skip binary-only pages with no real prose
         try:
