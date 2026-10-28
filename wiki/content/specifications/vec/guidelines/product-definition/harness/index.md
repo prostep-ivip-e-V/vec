@@ -92,6 +92,15 @@ classes:
   - PlaceableElementRole
   - RoutingSpecification
   - Routing
+  - NumericalValue
+  - ValueRange
+  - LocalizedString
+  - CustomProperty
+  - TextBasedInstruction
+  - FileBasedInstruction
+  - DocumentBasedInstruction
+  - SIUnit
+  - CustomUnit
 
 history:
   - date: 2025-02-13
@@ -138,6 +147,8 @@ history:
     description: "Placement: node references, fixing assignments and protection areas; relative and absolute locations; wire protections over several segments."
   - date: 2026-10-28T00:00:00Z
     description: "Routing: routed wire element, path, mandatory segments and special routings."
+  - date: 2026-10-28T00:00:00Z
+    description: "Basic data types: numerical values, localized strings and placeholders, custom properties and instructions, units."
 
 links:
   - icon_pack: fas
@@ -1948,24 +1959,71 @@ The reference implementation does not map `Special_routed` and `Special_routed_c
 
 ### Numerical Values
 
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
+A KBL {{<kbl-class Numerical_value>}} (`Value_component` and `Unit_component`) corresponds directly to a VEC {{<vec-class NumericalValue>}} (`ValueComponent` and `UnitComponent`), a KBL {{<kbl-class Value_range>}} (`Minimum`, `Maximum` and `Unit_component`) to a VEC {{<vec-class ValueRange>}}. In both models, the units are defined once in the root element and referenced by the values (see [Units]({{<relref "#units">}})).
+
+```xml
+<!-- KBL -->
+        <Mass_information id="id_380_1">
+            <Unit_component>id_346_2</Unit_component>
+            <Value_component>47.7</Value_component>
+        </Mass_information>
+<!-- VEC -->
+      <MassInformation id="MassInformation_id_380_1">
+        <Value id="NumericalValue_id_380_1">
+          <UnitComponent>SIUnit_id_346_2</UnitComponent>
+          <ValueComponent>47.7</ValueComponent>
+        </Value>
+      </MassInformation>
+```
 
 ### Strings and Localized Strings
 
-{{% callout warning %}}
-Work in Progress
+Many KBL attributes that contain human readable text (e.g. `Description` and `Abbreviation` of a part) are plain strings without a language. In the VEC, such attributes are localized strings ({{<vec-class AbstractLocalizedString>}}), which require a `LanguageCode`. Since the KBL does not contain the language, it must be known from the context of the KBL dialect (e.g. "all descriptions are German"). If the KBL element additionally has a `Localized_description` ({{<kbl-class Localized_string>}}), each of them becomes a further localized string of the VEC attribute; the language codes of both models are the same.
 
-The locale of KBL strings must be guessed.
+```xml
+<!-- KBL -->
+        <Description>BUCHSENGEHAEUSE_6-POL</Description>
+<!-- VEC -->
+    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00238">
+      <LanguageCode>De</LanguageCode>
+      <Value>BUCHSENGEHAEUSE_6-POL</Value>
+    </Description>
+```
+
+{{% callout note %}}
+**Data Quality**: Some KBL dialects fill mandatory attributes for which no value is available with a placeholder (e.g. `/NULL` in VOBES data). If the corresponding VEC attribute is optional, the attribute should be omitted instead of copying the placeholder (see [Default Values]({{<relref "../../general/default-values">}})). For mandatory VEC attributes (e.g. the `DocumentVersion`), the placeholder `/NULL` is the correct representation of an unsupported value.
+
+The reference implementation uses German (`De`) as language for all KBL strings and copies the placeholders also into optional attributes (e.g. `Abbreviation`).
 {{% /callout %}}
 
 ### Custom Properties and Instructions
 
-{{% callout warning %}}
-Work in Progress
+The KBL uses a generic mechanism for additional information: {{<kbl-class Processing_instruction>}}s (`Processing_information`, e.g. of parts and topology elements) and {{<kbl-class Installation_instruction>}}s (`Installation_information` of occurrences), each with an `Instruction_type` and an `Instruction_value`. Their `Classification` ({{<kbl-class Instruction_classification>}}) defines how they are to be interpreted, which determines the VEC representation:
 
-KBL installation information is not always used as custom property.
+| KBL `Classification` | VEC |
+|-----|-----|
+| `custom property` (or not defined) | {{<vec-class CustomProperty>}}, e.g. a {{<vec-class SimpleValueProperty>}} with `Instruction_type` as `PropertyType` and `Instruction_value` as `Value` (see [Custom Properties]({{<relref "../../key-concepts/custom-properties">}})) |
+| `text` | {{<vec-class TextBasedInstruction>}} |
+| `file` | {{<vec-class FileBasedInstruction>}} |
+| `external reference` | {{<vec-class DocumentBasedInstruction>}}, referencing the {{<vec-class DocumentVersion>}} of the KBL {{<kbl-class External_reference>}} |
+
+Instructions are attached to the corresponding VEC element: processing instructions of a part to the `ProcessingInstruction` of the {{<vec-class PartVersion>}} (or, as custom properties, to its {{<vec-class GeneralTechnicalPartSpecification>}}), installation instructions to the `InstallationInstruction` of the {{<vec-class PartOccurrence>}}. Elements that are not an item version or an occurrence (e.g. the {{<vec-class TopologyNode>}} and {{<vec-class TopologySegment>}}) only offer a textual `ProcessingInstruction` (a localized string) or custom properties; for instructions of type and value, a custom property preserves more of the structure. A custom property should use the value type that matches its content (see [Custom Properties]({{<relref "../../key-concepts/custom-properties">}})).
+
+```xml
+<!-- KBL -->
+            <Installation_information id="id_379_0">
+                <Instruction_type>eqt_reference_id</Instruction_type>
+                <Instruction_value>L2.1</Instruction_value>
+            </Installation_information>
+<!-- VEC -->
+        <CustomProperty xsi:type="vec:SimpleValueProperty" id="SimpleValueProperty_id_379_0">
+          <PropertyType>eqt_reference_id</PropertyType>
+          <Value>L2.1</Value>
+        </CustomProperty>
+```
+
+{{% callout note %}}
+The reference implementation maps only instructions with the classification `custom property` (or without classification) and writes all of them as {{<vec-class SimpleValueProperty>}}.
 {{% /callout %}}
 
 ### Units
@@ -1973,7 +2031,7 @@ KBL installation information is not always used as custom property.
 To define numerical values, both the VEC and the KBL require units. If the attributes `Si_unit_name`, `Si_prefix`, and `Si_dimension` have been used to define a KBL {{< kbl-class Unit>}}, it can be mapped straight forward to a {{<vec-class SIUnit>}} in the VEC.
 
 {{% callout note %}}
-**Data Quality**: The KBL supports only a very limited set of SI units (see {{< kbl-class Si_unit_name >}}) and, in particular, does not support composite units (e.g., g/m). Such units are typically defined using the freely selectable `Unit_name`. When translating this into the VEC, those units can only be mapped to a VEC {{< vec-class "CustomUnit" >}}.
+**Data Quality**: The KBL supports only a very limited set of SI units (see {{< kbl-class Si_unit_name >}}) and, in particular, does not support composite units (e.g., g/m). Such units are typically defined using the freely selectable `Unit_name`. When translating this into the VEC, those units can only be mapped to a VEC {{< vec-class "CustomUnit" >}}, unless the meaning of the `Unit_name` is known from the context of the KBL dialect. In this case, it can be mapped to the corresponding {{<vec-class SIUnit>}} (e.g. a unit name `volt` as `SiUnitName=Volt`) or {{<vec-class CompositeUnit>}} (e.g. gram per metre).
 {{% /callout  %}}
 
 ## Open Topics
