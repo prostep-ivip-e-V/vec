@@ -2066,6 +2066,10 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SimpleValueProperty", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "CompositeUnit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CompositeUnit", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CouplingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingSpecification", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CouplingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingPoint", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Dimension", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Dimension", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "DefaultDimensionSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
