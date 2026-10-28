@@ -6,7 +6,7 @@ toc: true
 authors: [ "becker"]
 categories: []
 date: 2025-02-13
-lastmod: 2025-02-13T15:11:41+01:00
+lastmod: 2026-10-28T12:00:00+01:00
 draft: false
 review: true
 
@@ -38,7 +38,18 @@ history:
   - date: 2026-10-13T00:00:00Z
     description: "One PartMaster document per component scoped to this mapping."
     ghIssue: "1196"
+  - date: 2026-10-28T00:00:00Z
+    description: "Restructured along the content of a harness description; overview of the mapping; KBL and VEC example files for download."
 
+links:
+  - icon_pack: fas
+    icon: file-code
+    name: vobes_sample_kbl24_mit_sicherungstraeger.kbl
+    url: 'vobes_sample_kbl24_mit_sicherungstraeger.kbl'
+  - icon_pack: fas
+    icon: file-code
+    name: vobes_sample_kbl24_mit_sicherungstraeger.vec
+    url: 'vobes_sample_kbl24_mit_sicherungstraeger.vec'
 
 menu:
   vec-guidelines:
@@ -54,7 +65,7 @@ weight: 500
 
 This implementation guideline outlines the core concepts needed to create a dataset for a single wiring harness in the VEC, which is also the use case that lies in the center of the scope of the KBL.
 
-To ease adoption for those already familiar with the KBL, this guideline is structured as a mapping from the KBL model to the VEC model. Additionally, a reference implementation of a KBL-to-VEC converter is available on [GitHub](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/).
+To ease adoption for those already familiar with the KBL, this guideline is structured as a mapping from the KBL model to the VEC model: it explains the VEC concepts together with the KBL concepts they correspond to and shows where the information of a KBL file is found in a VEC. Additionally, a reference implementation of a KBL-to-VEC converter is available on [GitHub](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/).
 
 {{% callout note %}} **Disclaimer:** This implementation guideline (along with the converter implementation) covers only the scope of the KBL. The VEC is a far more expressive model.
 
@@ -66,26 +77,70 @@ There are fundamentally two approaches to describing such a mapping. One can eit
 
 On the one hand, the guideline's focus is on how to describe a harness in the VEC, which naturally suggests describing the mapping from this perspective. On the other hand, the VEC is the more precise model, meaning that many KBL concepts are distributed across different elements within the VEC. For example, a KBL {{< kbl-class Node >}} contains information relevant to the VEC concepts of a {{< vec-class TopologyNode >}} , {{< vec-class GeometryNode2D >}} and {{< vec-class GeometryNode3D >}}. It is more logical to describe the mapping of topology and 2D/3D geometry as cohesive units rather than addressing all three concepts in a mixed manner starting from the KBL Node.
 
-The implementation guideline focuses on the structural mapping and does not cover the mapping of individual attributes. If you are interested in those details, please refer to the reference implementation.
+The implementation guideline focuses on the structural mapping and covers individual attributes only where they are essential for understanding a concept. If you are interested in those details, please refer to the reference implementation. The guideline describes the concepts and not the converter: where the reference implementation currently deviates from this guideline or does not yet cover a concept, this is pointed out briefly.
 
 The guideline follows a logical order rather than an order dictated by model dependencies. Since the VEC is a graph—not a strict tree—it allows cross-references between branches. As a result, you may encounter cases where a model element references another model element whose mapping is described later in this guideline.
 
-The reference implementation addresses this challenge by using a two-phase approach.
+A converter can address this challenge with a two-phase approach, as the reference implementation does: first all VEC elements are created, then the references between them are resolved.
+
+The order of the sections follows the content of a harness description in the VEC (see [Product Definition of a Harness]({{< relref "../#harness-description-document-structure-and-typical-content" >}})):
+
+1. The [Overview]({{< relref "#overview" >}}) shows how the content of a KBL file is distributed across the VEC and introduces the principles that recur in all sections.
+2. [Parts and Documents]({{< relref "#parts-and-documents" >}}) explains how KBL parts become {{< vec-class PartVersion >}}s and {{< vec-class DocumentVersion >}}s.
+3. [Part Master Data]({{< relref "#part-master-data" >}}) describes the components used in the harness (connectors, terminals, wires, ...).
+4. [Harness Description]({{< relref "#harness-description" >}}) describes the harness itself: the instances of the components, the bill of material, the variants, the connectivity, and the topology with geometry, placement and routing.
+5. [Basic Data Types]({{< relref "#basic-data-types" >}}) covers the value types used everywhere (units, numerical values, strings, custom properties).
+
 {{% callout note %}}
-VEC XML snippets in this guideline are taken from the KBL to VEC conversion output of the reference implementation. Input for that is the sample KBL file provided here: [Volkswagen - VOBES - Component Box]({{< relref "/sample/2015-03-19-volkswagen-vobes-component-box" >}}).
+VEC XML snippets in this guideline are taken from the KBL to VEC conversion output of the reference implementation. Input for that is the sample KBL file [Volkswagen - VOBES - Component Box]({{< relref "/sample/2015-03-19-volkswagen-vobes-component-box" >}}). Both the KBL file and the resulting VEC file can be downloaded at the top of this page. The KBL file is the version used in the tests of the reference implementation. It differs from the published sample in two details: the node reference to the component box is corrected (in the published sample it references the `Component_box_occurrence`, which cannot be placed on a node), and a `Housing_code` is added to one connector housing.
+
+Note the versions of the example files: the KBL file is a KBL 2.4 file, while the KBL class links in this guideline refer to KBL 2.5 (the classes used here are the same in both versions). The VEC file declares `VecVersion` 2.1.0, although this guideline targets VEC 2.2; where this makes a difference, it is mentioned in the text.
+
+Topics that are not contained in this sample (e.g. wire protections, fixings, multi-core wires, module lists) are illustrated with other [sample files](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/src/test/resources) of the reference implementation.
 {{% /callout %}}
 
-## Starting Point
+## Overview
 
 Everything starts with the model root element {{< vec-class veccontent >}}, see the figure below (all attributes omitted).
 
 {{< figure src="veccontent.png" title="VecContent" numbered="true" lightbox="true">}}
 
-The following sub elements of the VEC are required for a harness description and are covered by some information in the KBL (the sections containing the detail information are linked):
+A KBL file (`KBL_container`) describes exactly one harness together with the parts used in it. In the VEC, this information is distributed as follows (the figure is conceptual and not precise syntax):
 
-- [PartVersions]({{< relref "#partversions" >}})
-- [DocumentVersions]({{< relref "#documentversions" >}})
-- [Units]({{< relref "#units" >}})
+{{< figure src="harness-overview.svg" title="Distribution of the KBL Content in the VEC" numbered="true" lightbox="true" >}}
+
+- Every KBL {{< kbl-class Part >}} (including the {{< kbl-class Harness >}} and its {{< kbl-class Module >}}s) is identified by a {{< vec-class PartVersion >}}.
+- The properties of the components (connectors, terminals, wires, ...) are described in one `PartMaster` document per component.
+- Everything that is specific to the harness—the instances of the components, the bill of material, the variants, the connectivity, the topology, the geometry, the placements and the routings—is contained in a single `HarnessDescription` document.
+
+The following table shows where the KBL content is found in the VEC and in which section of this guideline the mapping is described.
+
+| KBL | VEC | Section |
+|-----|-----|---------|
+| {{< kbl-class Part >}} (all subclasses) | {{< vec-class PartVersion >}} | [PartVersions]({{< relref "#partversions" >}}) |
+| Components (e.g. {{< kbl-class Connector_housing >}}, {{< kbl-class General_wire >}}) | {{< vec-class DocumentVersion >}} (`PartMaster`) with {{< vec-class PartOrUsageRelatedSpecification >}}s | [Part Master Data]({{< relref "#part-master-data" >}}) |
+| {{< kbl-class Harness >}} | {{< vec-class DocumentVersion >}} (`HarnessDescription`) | [Harness Description]({{< relref "#harness-description" >}}) |
+| {{< kbl-class Connection_or_occurrence >}} | {{< vec-class PartOccurrence >}} with {{< vec-class Role >}}s | [Instances of Components]({{< relref "#instances-of-components" >}}) |
+| {{< kbl-class Module >}}, {{< kbl-class Harness_configuration >}}, {{< kbl-class Assembly_part >}} | {{< vec-class PartStructureSpecification >}} | [Bill of Material]({{< relref "#bill-of-material--part-structure" >}}) |
+| {{< kbl-class Module_configuration >}} (of a module or of the harness), {{< kbl-class Module_family >}} | {{< vec-class VariantConfigurationSpecification >}}, {{< vec-class ConfigurationConstraintSpecification >}}, {{< vec-class ModuleListSpecification >}}, {{< vec-class ModuleFamilySpecification >}} | [Variant Management]({{< relref "#variant-management-logistic-control-information" >}}) |
+| {{< kbl-class Connection >}}, {{< kbl-class Contact_point >}} | {{< vec-class WireElementReference >}}, {{< vec-class ContactingSpecification >}}, {{< vec-class SignalSpecification >}} | [Connectivity]({{< relref "#connectivity" >}}) |
+| {{< kbl-class Node >}}, {{< kbl-class Segment >}} | {{< vec-class TopologySpecification >}} | [Topology]({{< relref "#topology" >}}) |
+| {{< kbl-class Cartesian_point >}}, {{< kbl-class B_spline_curve >}}, `Placement` | {{< vec-class BuildingBlockSpecification3D >}} / {{< vec-class BuildingBlockSpecification2D >}} | [Geometry]({{< relref "#geometry" >}}) |
+| `Referenced_components`, {{< kbl-class Fixing_assignment >}}, {{< kbl-class Protection_area >}} | {{< vec-class PlacementSpecification >}} | [Placement]({{< relref "#placement" >}}) |
+| {{< kbl-class Routing >}} | {{< vec-class RoutingSpecification >}} | [Routing]({{< relref "#routing" >}}) |
+| {{< kbl-class Unit >}}, {{< kbl-class Numerical_value >}}, ... | {{< vec-class Unit >}}, {{< vec-class NumericalValue >}}, ... | [Basic Data Types]({{< relref "#basic-data-types" >}}) |
+
+### Mapping Principles
+
+The following principles recur throughout the mapping:
+
+**Part and usage.** Like the KBL, the VEC distinguishes between the definition of a component type (KBL {{< kbl-class Part >}}, e.g. {{< kbl-class Connector_housing >}}) and its use in the harness (KBL {{< kbl-class Connection_or_occurrence >}}, e.g. {{< kbl-class Connector_occurrence >}}). In the VEC, the definition is made with {{< vec-class PartOrUsageRelatedSpecification >}}s in the `PartMaster` document of the component, the use with {{< vec-class PartOccurrence >}}s and {{< vec-class Role >}}s in the harness description (see the guideline [Component Instances]({{< relref "../component-instances" >}})). Since the KBL already follows this distinction, most concepts can be mapped in a straightforward manner.
+
+**One KBL element, several VEC elements.** The VEC is more modular than the KBL. A KBL element often contains information that belongs to different views in the VEC. For example, a KBL {{< kbl-class Node >}} contains information about the topology ({{< vec-class TopologyNode >}}), the geometry ({{< vec-class GeometryNode2D >}} or {{< vec-class GeometryNode3D >}}) and the placement of components ({{< vec-class OnPointPlacement >}}). Each view is described in its own section of this guideline.
+
+**Identification.** VEC elements are identified by their `Identification` attribute, which must be unique within its context (see [Identifiers]({{< relref "../../general/identifiers" >}})). Where the KBL provides an `Id`, it is used. Where the VEC requires an identification that has no counterpart in the KBL (e.g. for the specifications of a part), the reference implementation derives one, e.g. from the abbreviated class name and the part number (`CHS-ECP001706` for the {{< vec-class ConnectorHousingSpecification >}} of the part `ECP001706`). Such derived identifications are a convention of the reference implementation and not a VEC rule.
+
+## Parts and Documents
 
 ### PartVersions
 
@@ -141,7 +196,7 @@ For the {{<kbl-class Harness>}} itself, a {{<vec-class DocumentVersion>}} with `
 ## Part Master Data
 
 For all components used in a wiring harness, a minimum set of part master data is required. 
-A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see  the Guideline "[Component Description]({{<relref "../component-description">}})". The following specifications have to be created. The Mapping of those is described in the section [Specifications]({{<relref "#specifications">}}): 
+A `PartMaster` document contains all {{< vec-class PartOrUsageRelatedSpecification >}}s that are required to describe the component. For a general description of this concept see  the Guideline "[Component Description]({{<relref "../component-description">}})". The following specifications have to be created. The mapping of those is described in the following sections: 
 
 {{% callout note %}}
 **Data Quality**: Since the scope of the KBL is the product definition of a harness, the contained master data is limited to the bare minimum (e.g. cavities of a connector, cross section area and color of the wire). On the other hand, the VEC offers a wide range of options for a detailed component description. In a real scenario, it would therefore be more likely to enrich the data with information from a library during conversion than to transfer the master data from the KBL directly 1:1.
@@ -168,12 +223,53 @@ The following table defines the {{<vec-class PartOrUsageRelatedSpecification >}}
 | {{<kbl-class Component_box >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
 | {{<kbl-class Component >}} | {{<vec-class GeneralTechnicalPartSpecification>}}, TBD |
 
-
+### General Technical Information
 
 {{% callout warning %}}
 Work in Progress
 {{% /callout %}}
 
+### Connector Housings
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Terminals
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Cavity Seals and Cavity Plugs
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Wires
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Wire Protections, Fixings and Accessories
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Component Boxes, Fuses and other E/E Components
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Assembly Parts
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
 
 ## Harness Description
 
@@ -184,6 +280,14 @@ Work in Progress
 A `HarnessDescription` document contains all {{< vec-class Specification >}}s that are required to describe a Harness. The specifications in the VEC provide a more "view oriented" modelling approach than the KBL. Each specification representing a specific view on the product model, with the possibility to have links between the views. The following sections will describe the mapping topic by topic (or, in other words view by view).
 
 A VEC derived from a single KBL contains one `HarnessDescription` document for the {{<kbl-class Harness>}} defined in the KBL.
+
+### Instances of Components
+
+{{% callout warning %}}
+Work in Progress
+
+Identification is mandatory for a {{<vec-class PartOccurrence >}}, but not all KBL occurrences have an `Id`.
+{{% /callout %}}
 
 ### Bill of Material / Part Structure
 
@@ -312,7 +416,7 @@ The following table defines the Mapping between KBL classifications and {{<vec-c
 
 The following XML listings explain the BoM mapping in detail. They start from the lowest level (the components) and the end at the top (the harness).
 
-The first step is to create the basic occurrences for the harness. For every {{<kbl-class Connection_or_occurrence >}} in the KBL {{<kbl-class Harness >}} a {{<vec-class PartOccurrence >}} is created. An exception is the KBL {{<kbl-class Connection >}}, which is not representing an occurrence of a component, and therefore no {{<vec-class PartOccurrence >}} is created in the VEC. The {{<vec-class Role>}}s are omitted in the snippet below, as this a separate topic, handled in [Instantiation of Components]({{<relref "#instantiation-of-components">}}). The `Identification` used for the {{<vec-class CompositionSpecification >}} is `COMPONENTS`. The identifications `COMPONENTS` and `MODULES` are a recommendation for this mapping and not a general VEC convention.
+The first step is to create the basic occurrences for the harness. For every {{<kbl-class Connection_or_occurrence >}} in the KBL {{<kbl-class Harness >}} a {{<vec-class PartOccurrence >}} is created. An exception is the KBL {{<kbl-class Connection >}}, which is not representing an occurrence of a component, and therefore no {{<vec-class PartOccurrence >}} is created in the VEC. The {{<vec-class Role>}}s are omitted in the snippet below, as this a separate topic, handled in [Instances of Components]({{<relref "#instances-of-components">}}). The `Identification` used for the {{<vec-class CompositionSpecification >}} is `COMPONENTS`. The identifications `COMPONENTS` and `MODULES` are a recommendation for this mapping and not a general VEC convention.
 
 ```xml
     <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00289">
@@ -369,11 +473,6 @@ Based on the module {{<vec-class PartOccurrence >}}s, now a {{<vec-class PartStr
     </Specification>
 ```
 
-### Instantiation of Components
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
-
 ### Variant Management (Logistic Control Information)
 
 {{< gh-review "1178" >}}
@@ -427,50 +526,59 @@ As mentioned before, the KBL {{<kbl-class Module >}} is split up in the VEC into
 TODO: How to handle Module_configurations that are defined directly under the Harness element.
 {{% /callout %}}
 
+### Connectivity
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
 ### Topology
 
 {{% callout warning %}}
 Work in Progress
 {{% /callout %}}
 
+### Geometry
 
 {{% callout warning %}}
-Explain the speciality of two composition specifications
+Work in Progress
 {{% /callout %}}
+
+### Placement
 
 {{% callout warning %}}
-TODO: Define Mapping of Module Configuration
+Work in Progress
 {{% /callout %}}
 
-## Specifications
+### Routing
 
-### GeneralTechnicalPartSpecification
-
-### ConnectorHousingSpecification
-
-### TopologySpecification
-
-### CompositionSpecification
-
-Modules describe the dual character of modules (occurrence & part). 
-
-#### PartOccurrences
-Identification is mandatory... not all KBL Occurrences have mandatory identification.
-
-
-## Core Elements
-
-### Custom Properties / Installation Information
-
-KBL Installation Information not always used as custom property.
-
-### String / LocalizedStrings
-
-{{% callout note %}}
-TODO: Locale must be guessed.
+{{% callout warning %}}
+Work in Progress
 {{% /callout %}}
 
-### NumericalValue
+## Basic Data Types
+
+### Numerical Values
+
+{{% callout warning %}}
+Work in Progress
+{{% /callout %}}
+
+### Strings and Localized Strings
+
+{{% callout warning %}}
+Work in Progress
+
+The locale of KBL strings must be guessed.
+{{% /callout %}}
+
+### Custom Properties and Instructions
+
+{{% callout warning %}}
+Work in Progress
+
+KBL installation information is not always used as custom property.
+{{% /callout %}}
 
 ### Units
 
