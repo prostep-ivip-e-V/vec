@@ -22,6 +22,12 @@ classes:
   - VariantConfiguration
   - ConfigurationConstraintSpecification
   - ConfigurationConstraint
+  - AliasIdentification
+  - Creation
+  - Approval
+  - ChangeDescription
+  - CopyrightInformation
+  - Project
 
 history:
   - date: 2025-02-13
@@ -40,6 +46,8 @@ history:
     ghIssue: "1196"
   - date: 2026-10-28T00:00:00Z
     description: "Restructured along the content of a harness description; overview of the mapping; KBL and VEC example files for download."
+  - date: 2026-10-28T00:00:00Z
+    description: "Parts and documents: PDM attributes, identity of the documents, multi-classified parts, title block information, external references."
 
 links:
   - icon_pack: fas
@@ -142,6 +150,8 @@ The following principles recur throughout the mapping:
 
 ## Parts and Documents
 
+In the KBL, a {{<kbl-class Part>}} combines the identification of a component (part number, version, company) with its technical description. The VEC separates both: the {{<vec-class PartVersion>}} identifies the part, the technical description is contained in the {{<vec-class Specification>}}s of a {{<vec-class DocumentVersion>}} (see [General Structure – Parts and Documents]({{<relref "../../key-concepts/general-structure#parts-and-documents">}})). Each KBL part therefore results in a {{<vec-class PartVersion>}} and, for a component, in a `PartMaster` document.
+
 ### PartVersions
 
 The concept of parts is quite different in KBL and VEC. In the VEC a {{<vec-class PartVersion>}} is just a PDM-Header for the part. The various aspects of a part (e.g. is it a wire or connector) are handled by different types of {{<vec-class PartOrUsageRelatedSpecification >}}s contained in the {{<vec-class DocumentVersion >}} describing the part. In the KBL, the different types of parts are expressed as subclasses of {{<kbl-class Part>}}. The concept in the VEC that most closely reflects the approach of the KBL is the {{<vec-class PrimaryPartType >}}. 
@@ -173,10 +183,48 @@ The following {{<vec-class PrimaryPartType >}} could be used for KBL Parts:
 
 When mapping into the VEC, a {{<vec-class PartVersion >}} Object is required for each KBL {{<kbl-class Part>}}. Those can be found under `/KBL_container/(Accessory|AssemblyPart|CavityPlug|...)`, `/KBL_container/Harness/Module` and `/KBL_container/Harness/Harness_configuration`.
 
+The PDM attributes of the {{<kbl-class Part>}} are mapped directly to the {{<vec-class PartVersion>}}: `Part_number`, `Company_name` and `Version` become `PartNumber`, `CompanyName` and `PartVersion`, which together identify the part in the VEC. `Abbreviation` and `Description` (and `Localized_description`) become localized strings (see [Strings and Localized Strings]({{<relref "#strings-and-localized-strings">}})). Each {{<kbl-class Alias_identification>}} becomes an {{<vec-class AliasIdentification>}}, where the KBL `Description` ("the type of the Alias_identification") is mapped to the `Type`. The `Part_number_type` corresponds to the `PartNumberType` of the {{<vec-class PartVersion>}}.
+
+```xml
+<!-- KBL -->
+    <Connector_housing id="id_315_0">
+        <Part_number>ECP001706</Part_number>
+        <Company_name>MaybeAnyCompany</Company_name>
+        <Alias_id id="id_368_27">
+            <Alias_id>TBL001038B</Alias_id>
+            <Scope>VOBES</Scope>
+            <Description>tab_number</Description>
+        </Alias_id>
+        <Version>1</Version>
+        <Abbreviation>/NULL</Abbreviation>
+        <Description>BUCHSENGEHAEUSE_6-POL</Description>
+        ...
+    </Connector_housing>
+<!-- VEC -->
+  <PartVersion id="PartVersion_id_315_0">
+    ...
+    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00238">
+      <LanguageCode>De</LanguageCode>
+      <Value>BUCHSENGEHAEUSE_6-POL</Value>
+    </Description>
+    <CompanyName>MaybeAnyCompany</CompanyName>
+    <PartNumber>ECP001706</PartNumber>
+    <PartVersion>1</PartVersion>
+    <PrimaryPartType>ConnectorHousing</PrimaryPartType>
+    <AliasId id="AliasIdentification_id_368_27">
+      <IdentificationValue>TBL001038B</IdentificationValue>
+      <Type>tab_number</Type>
+      <Scope>VOBES</Scope>
+    </AliasId>
+  </PartVersion>
+```
+
 {{% callout note %}}
 **Data Quality**: The KBL allows to have the same `Part_number` under different classifications. E.g. a tape can be used as {{<kbl-class Wire_protection>}} or as {{<kbl-class Accessory>}} to some other part (see {{<kbl-class Part>}} for more details). 
 
 Due to other modeling approaches in the VEC, there is no longer any need for this. Multiple occurrences of the same part version in the VEC are considered a semantic error. Deduplication should be carried out in post-processing.
+
+The VEC way is a single {{<vec-class PartVersion>}} whose `PartMaster` document contains all specifications that are required for the different aspects of the part (see [Hybrid and Composite Components]({{<relref "../component-description#hybrid-and-composite-components">}})). A typical example in VOBES data are cable lugs, which are defined both as {{<kbl-class Connector_housing>}} and as {{<kbl-class General_terminal>}} with the same part number (e.g. `ECP001859AT` in the example file). In the VEC, this is one {{<vec-class PartVersion>}} with a {{<vec-class ConnectorHousingSpecification>}} and a {{<vec-class TerminalSpecification>}}. The reference implementation does not perform this deduplication yet.
 {{% /callout %}}
 
 ### DocumentVersions
@@ -191,6 +239,93 @@ In the VEC, all payload data is contained within {{<vec-class DocumentVersion>}}
 This means that, for this mapping, a {{<vec-class DocumentVersion>}} with `DocumentType=PartMaster` must be created for each component used in the wiring harness. These are all instances of {{<kbl-class Part>}} in the KBL except instances of {{<kbl-class Part_With_Title_Block>}}.
 
 For the {{<kbl-class Harness>}} itself, a {{<vec-class DocumentVersion>}} with `DocumentType=HarnessDescription` is created. This document contains all relevant information about the harness as well as the {{<vec-class specification>}}s for the {{<kbl-class Module>}}s and {{<kbl-class Harness_configuration>}}s.
+
+#### Identity of the Documents
+
+Since the KBL has no explicit document concept, the identity of the documents must be derived. The natural choice is the identity of the described part: `DocumentNumber`, `DocumentVersion` and `CompanyName` of the document are taken from `Part_number`, `Version` and `Company_name` of the part, and the document references the part as `ReferencedPart`. If the identities of the actual documents in the process are known, they should be used instead.
+
+```xml
+  <DocumentVersion id="DocumentVersion_id_315_0">
+    ...
+    <CompanyName>MaybeAnyCompany</CompanyName>
+    <DocumentNumber>ECP001706</DocumentNumber>
+    <DocumentType>PartMaster</DocumentType>
+    <DocumentVersion>1</DocumentVersion>
+    <ReferencedPart>PartVersion_id_315_0</ReferencedPart>
+    <RelatedDocument>DocumentVersion_External_reference_1</RelatedDocument>
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_315_0">
+      <Identification>CHS-ECP001706</Identification>
+      ...
+```
+
+The same applies to the `HarnessDescription`, whose identity is derived from the {{<kbl-class Harness>}}. A harness description defines not only the harness, but also its modules and harness configurations. All {{<vec-class PartVersion>}}s defined in the document should therefore be referenced as `ReferencedPart` (see [Product Definition of a Harness]({{<relref "../#harness-description-document-structure-and-typical-content">}})). The reference implementation currently references only the {{<vec-class PartVersion>}} of the harness.
+
+```xml
+  <DocumentVersion id="DocumentVersion_id_328_0_1">
+    ...
+    <CompanyName>MaybeAnyCompany</CompanyName>
+    <DocumentNumber>LTG0011200</DocumentNumber>
+    <DocumentType>HarnessDescription</DocumentType>
+    <DocumentVersion>2.4.0</DocumentVersion>
+    <ReferencedPart>PartVersion_id_328_0</ReferencedPart>
+    <RelatedDocument>DocumentVersion_External_reference_12 DocumentVersion_id_322_0 DocumentVersion_id_322_1</RelatedDocument>
+    ...
+```
+
+### Title Block and PDM Information
+
+The KBL distributes the information of a drawing title block over several places: {{<kbl-class Creation>}}, {{<kbl-class Approval>}} and {{<kbl-class Change_description>}} are defined directly in the `KBL_container` and reference the parts they apply to (`Is_applied_to`); a {{<kbl-class Part>}} can have {{<kbl-class Change>}}s and a `Copyright_note`; and the {{<kbl-class Part_with_title_block>}} (i.e. the {{<kbl-class Harness>}}, {{<kbl-class Module>}} and {{<kbl-class Harness_configuration>}}) adds project and car classification information. In the VEC, this is meta information of the {{<vec-class DocumentVersion>}} that contains the definition (see [PDM Information]({{<relref "../../pdm-information">}})), and in some cases of the {{<vec-class PartVersion>}}.
+
+| KBL | VEC |
+|-----|-----|
+| {{<kbl-class Creation>}} (`Name`, `Department`, `Date`) | {{<vec-class Creation>}} of the {{<vec-class DocumentVersion>}} |
+| {{<kbl-class Approval>}} (`Name`, `Department`, `Date`, `Type_of_approval`) | {{<vec-class Approval>}} of the {{<vec-class DocumentVersion>}} |
+| `Change` ({{<kbl-class Change>}}) and {{<kbl-class Change_description>}} | {{<vec-class ChangeDescription>}} of the {{<vec-class DocumentVersion>}} |
+| `Copyright_note` | {{<vec-class CopyrightInformation>}} in the {{<vec-class VecContent>}}, referenced by the {{<vec-class DocumentVersion>}} / {{<vec-class PartVersion>}} |
+| `Project_number`, `Car_classification_level_2` to `_4` | {{<vec-class Project>}} in the {{<vec-class VecContent>}}, referenced by the {{<vec-class PartVersion>}} |
+
+The target {{<vec-class DocumentVersion>}} of a {{<kbl-class Creation>}}, {{<kbl-class Approval>}} or {{<kbl-class Change_description>}} is the document that describes the part referenced by `Is_applied_to`. The structures are not identical: in the VEC, persons are described by a {{<vec-class Person>}}, and some attributes are mandatory that have no KBL source (e.g. the `Status` of an {{<vec-class Approval>}}), so they have to be filled with a default value (see [Default Values]({{<relref "../../general/default-values">}})).
+
+The title block information of the KBL {{<kbl-class Harness>}} belongs to the `HarnessDescription`. The title block information of a {{<kbl-class Module>}} or {{<kbl-class Harness_configuration>}} does not have a document of its own in the VEC, since modules and configurations are defined within the `HarnessDescription`. Where it differs from the harness, it can only be preserved on the {{<vec-class PartVersion>}} (e.g. {{<vec-class Project>}}, {{<vec-class CopyrightInformation>}}).
+
+{{% callout note %}}
+**Data Quality**: The dates in the KBL are strings without a defined format (e.g. `270115` in the example file), whereas the VEC uses `xs:date` / `xs:dateTime`. A conversion requires knowledge of the date format used in the KBL dialect.
+
+The reference implementation does not convert the title block information yet.
+{{% /callout %}}
+
+### External References
+
+A KBL {{<kbl-class External_reference>}} identifies a document that is not part of the KBL file (e.g. a 3D model or a drawing). Its counterpart in the VEC is a {{<vec-class DocumentVersion>}} that contains only PDM information and no specifications (see [Usages of the DocumentVersion]({{<relref "../../key-concepts/general-structure#usages-of-the-documentversion">}})). `Document_number`, `Change_level`, `Data_format`, `Creating_system` and `Location` are mapped to the attributes of the same meaning. The KBL `Document_type` literals (`part master`, `geometry model`, `harness description`, ...) have direct counterparts in the VEC {{<vec-class DocumentType>}} (`PartMaster`, `GeometryModel`, `HarnessDescription`, ...). Values outside the KBL enumeration are kept as they are.
+
+```xml
+<!-- KBL -->
+    <External_reference id="External_reference_1">
+        <Document_type>EKR</Document_type>
+        <Document_number>ECP001706</Document_number>
+        <Change_level>011112</Change_level>
+        <File_name>ECP001706.CATPart</File_name>
+        <Data_format>catPart</Data_format>
+        <Creating_system>CATIA V5R19 SP9</Creating_system>
+    </External_reference>
+<!-- VEC -->
+  <DocumentVersion id="DocumentVersion_External_reference_1">
+    <CompanyName>ACME Inc.</CompanyName>
+    <DocumentNumber>ECP001706</DocumentNumber>
+    <DocumentType>EKR</DocumentType>
+    <DocumentVersion>011112</DocumentVersion>
+    <CreatingSystem>CATIA V5R19 SP9</CreatingSystem>
+    <DataFormat>catPart</DataFormat>
+    <FileName>ECP001706.CATPart</FileName>
+  </DocumentVersion>
+```
+
+Two details need attention:
+
+- The `CompanyName` is mandatory in the VEC, but the KBL {{<kbl-class External_reference>}} has no company. If the company is not known from the context, `/NULL` should be used (see [Default Values]({{<relref "../../general/default-values">}})). The value `ACME Inc.` in the example is a placeholder of the reference implementation.
+- The `FileName` of a VEC {{<vec-class DocumentVersion>}} is reserved for documents that are part of the VEC package; otherwise it shall be omitted (see [External References]({{<relref "../../key-concepts/external-references">}})). The KBL `File_name` refers to a file outside of the KBL, so it should only be kept if the document is packaged together with the VEC file. The document can still be resolved via its domain key or via the `Location`, if given in the KBL.
+
+The KBL `External_references` of a {{<kbl-class Part>}} are the documents associated with the part (e.g. its 3D model). In the VEC, this relation can be expressed with different associations; the one with the most specific semantics should be chosen (see [External References]({{<relref "../../key-concepts/external-references">}})). For documents describing the part, this is `ReferencedPart` of the referenced {{<vec-class DocumentVersion>}}. The reference implementation uses the more general `RelatedDocument` of the `PartMaster` document (see the example above).
 
 
 ## Part Master Data
