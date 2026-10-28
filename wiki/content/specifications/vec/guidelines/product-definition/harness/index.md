@@ -36,6 +36,11 @@ classes:
   - TerminalReceptionSpecification
   - CavitySealSpecification
   - CavityPlugSpecification
+  - WireSpecification
+  - WireElement
+  - WireElementSpecification
+  - InsulationSpecification
+  - CoreSpecification
 
 history:
   - date: 2025-02-13
@@ -58,6 +63,8 @@ history:
     description: "Parts and documents: PDM attributes, identity of the documents, multi-classified parts, title block information, external references."
   - date: 2026-10-28T00:00:00Z
     description: "Part master data: specifications per KBL part class, general technical information, connector housings, terminals, cavity seals and plugs."
+  - date: 2026-10-28T00:00:00Z
+    description: "Part master data of wires: single cores, multi-core wires, attributes and colour types."
 
 links:
   - icon_pack: fas
@@ -626,8 +633,131 @@ The cavity in which a seal or plug is used and the wire that is sealed are not p
 
 ### Wires
 
-{{% callout warning %}}
-Work in Progress
+A KBL {{<kbl-class General_wire>}} describes a wire with flat attributes. If it is a multi-core wire, it contains a list of {{<kbl-class Core>}}s with similar attributes. The VEC describes a wire as a tree of {{<vec-class WireElement>}}s in a {{<vec-class WireSpecification>}}. Each {{<vec-class WireElement>}} references a {{<vec-class WireElementSpecification>}}, which defines its properties with a {{<vec-class ConductorSpecification>}} (here: {{<vec-class CoreSpecification>}}) and an {{<vec-class InsulationSpecification>}}. The background of this structure is explained in the guideline [Wires]({{<relref "../../component-types/wires">}}).
+
+The instances of a wire in the harness do not reference the specifications, but the {{<vec-class WireElement>}}s (see [Instances of Components]({{<relref "#instances-of-components">}})). This is why a {{<vec-class WireElement>}} is required for every wire and every core, although it has no direct counterpart in the KBL.
+
+**Single cores.** A {{<kbl-class General_wire>}} without {{<kbl-class Core>}}s is a single core. For single cores, the minimal representation shall be used (see [Wires – Definition of a Single Core]({{<relref "../../component-types/wires#definition-of-a-single-core">}})): one {{<vec-class WireElement>}} with one {{<vec-class WireElementSpecification>}} that references both the {{<vec-class CoreSpecification>}} and the {{<vec-class InsulationSpecification>}}.
+
+```xml
+<!-- KBL -->
+    <General_wire id="id_327_1">
+        <Part_number>WIR0010006</Part_number>
+        ...
+        <Wire_type>individual wire</Wire_type>
+        <Bend_radius id="id_369_1">
+            <Unit_component>id_346_1</Unit_component>
+            <Value_component>4</Value_component>
+        </Bend_radius>
+        <Cross_section_area id="id_375_1">
+            <Unit_component>id_346_0</Unit_component>
+            <Value_component>0.5</Value_component>
+        </Cross_section_area>
+        <Outside_diameter id="id_381_1">
+            <Unit_component>id_346_1</Unit_component>
+            <Value_component>1</Value_component>
+        </Outside_diameter>
+        <Cover_colour id="id_374_1">
+            <Colour_type>Grundfarbe</Colour_type>
+            <Colour_value>ws</Colour_value>
+        </Cover_colour>
+        <Cover_colour id="id_374_2">
+            <Colour_type>Kennfarbe</Colour_type>
+            <Colour_value>gn</Colour_value>
+        </Cover_colour>
+    </General_wire>
+<!-- VEC -->
+    <Specification xsi:type="vec:WireSpecification" id="WireSpecification_id_327_1">
+      <Identification>WS-WIR0010006</Identification>
+      <DescribedPart>PartVersion_id_327_1</DescribedPart>
+      <WireElement id="WireElement_id_327_1">
+        <Identification>WIRE</Identification>
+        <WireElementSpecification>WireElementSpecification_id_327_1</WireElementSpecification>
+      </WireElement>
+    </Specification>
+    <Specification xsi:type="vec:WireElementSpecification" id="WireElementSpecification_id_327_1">
+      <Identification>WIRE</Identification>
+      <Type id="WireType_00088">
+        <Type>individual wire</Type>
+        <ReferenceSystem>ACME Inc.</ReferenceSystem>
+      </Type>
+      <MinBendRadiusStatic id="NumericalValue_id_369_1">
+        ...
+      </MinBendRadiusStatic>
+      <OutsideDiameter id="NumericalValue_id_381_1">
+        ...
+      </OutsideDiameter>
+      <ConductorSpecification>CoreSpecification_id_327_1</ConductorSpecification>
+      <InsulationSpecification>InsulationSpecification_id_327_1</InsulationSpecification>
+    </Specification>
+    <Specification xsi:type="vec:InsulationSpecification" id="InsulationSpecification_id_327_1">
+      <Identification>WIRE-INS</Identification>
+      <BaseColor id="Color_00089">
+        <Key>ws</Key>
+        <ReferenceSystem>ACME Inc.</ReferenceSystem>
+      </BaseColor>
+      <FirstIdentificationColor id="Color_00090">
+        <Key>gn</Key>
+        <ReferenceSystem>ACME Inc.</ReferenceSystem>
+      </FirstIdentificationColor>
+    </Specification>
+    <Specification xsi:type="vec:CoreSpecification" id="CoreSpecification_id_327_1">
+      <Identification>WIRE-CORE</Identification>
+      <CrossSectionArea id="NumericalValue_id_375_1">
+        <UnitComponent>SIUnit_id_346_0</UnitComponent>
+        <ValueComponent>0.5</ValueComponent>
+      </CrossSectionArea>
+    </Specification>
+```
+
+**Multi-core wires.** A {{<kbl-class General_wire>}} with {{<kbl-class Core>}}s becomes a {{<vec-class WireElement>}} for the whole cable with one sub wire element per core. The {{<vec-class WireElementSpecification>}} of the cable carries the properties of the cable (e.g. outside diameter, bend radius) and the {{<vec-class InsulationSpecification>}} of the jacket, but no conductor. Each core has its own {{<vec-class WireElementSpecification>}} with a {{<vec-class CoreSpecification>}} and an {{<vec-class InsulationSpecification>}}.
+
+{{< figure src="multicore-wire.svg" title="Multi-Core Wire in KBL and VEC" numbered="true" lightbox="true" >}}
+
+The `Id` of the core is used as identification of its {{<vec-class WireElement>}}. The following excerpt shows the structure for a two-core cable of the [KSK sample](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/src/test/resources) of the reference implementation:
+
+```xml
+    <Specification xsi:type="vec:WireSpecification" id="WireSpecification_id_327_89">
+      <Identification>WS-O10a71692144</Identification>
+      ...
+      <WireElement id="WireElement_id_327_89">
+        <Identification>WIRE</Identification>
+        <WireElementSpecification>WireElementSpecification_id_327_89</WireElementSpecification>
+        <SubWireElement id="WireElement_id_317_0">
+          <Identification>2-ws@N_906_581_33</Identification>
+          <WireElementSpecification>WireElementSpecification_id_317_0</WireElementSpecification>
+        </SubWireElement>
+        <SubWireElement id="WireElement_id_317_1">
+          <Identification>1-ws@N_906_581_33</Identification>
+          <WireElementSpecification>WireElementSpecification_id_317_1</WireElementSpecification>
+        </SubWireElement>
+      </WireElement>
+    </Specification>
+```
+
+The KBL cannot express further inner structures of a multi-core wire, like twisting, shields or fillers. If such information is encoded in a KBL dialect (e.g. a `Wire_type=twist` for twisted cores), it should be mapped to the corresponding VEC concepts (e.g. a {{<vec-class WireGroupSpecification>}}, see [Wires – Definition of a Multicore Wire]({{<relref "../../component-types/wires#definition-of-a-multicore-wire">}})).
+
+**Attributes.** The attributes of a {{<kbl-class General_wire>}} and a {{<kbl-class Core>}} are mapped as follows:
+
+| KBL {{<kbl-class General_wire>}} / {{<kbl-class Core>}} | VEC |
+|-----|-----|
+| `Wire_type` | `Type` of the {{<vec-class WireElementSpecification>}} |
+| `Outside_diameter` | `OutsideDiameter` of the {{<vec-class WireElementSpecification>}} |
+| `Bend_radius` | `MinBendRadiusStatic` of the {{<vec-class WireElementSpecification>}} |
+| `Cross_section_area` | `CrossSectionArea` of the {{<vec-class CoreSpecification>}} (single cores and cores only) |
+| `Cover_colour` / `Core_colour` | colours of the {{<vec-class InsulationSpecification>}}, see below |
+
+The colours of a wire are typed in both models. The KBL `Colour_type` literals have a direct counterpart in the {{<vec-class InsulationSpecification>}}:
+
+| KBL `Colour_type` | VEC {{<vec-class InsulationSpecification>}} |
+|-----|-----|
+| `base colour` | `BaseColor` |
+| `first identification` | `FirstIdentificationColor` |
+| `second identification` | `SecondIdentificationColor` |
+| `label identification` | `LabelIdentificationColor` |
+
+{{% callout note %}}
+**Data Quality**: `Colour_type` is an open enumeration in the KBL, and some dialects use their own values (e.g. `Grundfarbe` and `Kennfarbe` in the example above). These values must be mapped to the VEC attributes with knowledge of the dialect. The reference implementation currently ignores the `Colour_type` and assigns the colours in the order of the KBL file (first colour as base colour, second colour as first identification colour, ...), which is only correct if the KBL file follows this order. As for all colours, the reference system is not contained in the KBL (see [General Technical Information]({{<relref "#general-technical-information">}})).
 {{% /callout %}}
 
 ### Wire Protections, Fixings and Accessories
