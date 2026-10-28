@@ -64,6 +64,12 @@ classes:
   - ModuleList
   - ModuleFamilySpecification
   - ModuleFamily
+  - ContactingSpecification
+  - ContactPoint
+  - CavityMounting
+  - WireMounting
+  - WireEnd
+  - Signal
 
 history:
   - date: 2025-02-13
@@ -100,6 +106,8 @@ history:
     description: "Bill of material: snippets from the example file, modules with Content=variant, harness configurations, proposal for occurrences outside of modules."
   - date: 2026-10-28T00:00:00Z
     description: "Variant management: module configurations under the harness (option code, module list), module families, harness configurations."
+  - date: 2026-10-28T00:00:00Z
+    description: "Connectivity: KBL connections and contact points in the wiring layer, multi-crimps and splices, signals."
 
 links:
   - icon_pack: fas
@@ -1520,9 +1528,89 @@ A {{<kbl-class Harness_configuration>}} can carry a `Logistic_control_informatio
 
 ### Connectivity
 
-{{% callout warning %}}
-Work in Progress
+In the KBL, the electrical connectivity of the harness is defined by two concepts:
+
+- A {{<kbl-class Connection>}} defines which wire (or core) connects which points of the harness. It references the wire occurrence (`Wire`) and has two or more {{<kbl-class Extremity>}}s, each of which references a {{<kbl-class Contact_point>}}. The connection can carry a signal (`Signal_name`).
+- A {{<kbl-class Contact_point>}} of a connector occurrence defines what happens at a cavity: it references the cavity (`Contacted_cavity`) and the parts used for the contacting (`Associated_parts`, e.g. terminal and seal).
+
+The VEC describes the same information in the wiring layer (see [Wiring]({{<relref "../../elog-layers/wiring">}})): the ends of a wire are {{<vec-class WireEnd>}}s of its {{<vec-class WireElementReference>}} (see [Instances of Components]({{<relref "#wires-and-cores">}})), and a {{<vec-class ContactPoint>}} in the {{<vec-class ContactingSpecification>}} of the harness description defines the contacting. One {{<vec-class ContactingSpecification>}} contains all {{<vec-class ContactPoint>}}s of the harness.
+
+{{< figure src="connectivity.svg" title="Connectivity in KBL and VEC" numbered="true" lightbox="true" >}}
+
+The mapping is as follows:
+
+| KBL | VEC |
+|-----|-----|
+| {{<kbl-class Connection>}} | no element of its own; its information is distributed to the {{<vec-class WireElementReference>}} of the wire (`Wire`), the {{<vec-class WireEnd>}}s and the {{<vec-class Signal>}} |
+| {{<kbl-class Extremity>}} | {{<vec-class WireEnd>}} of the {{<vec-class WireElementReference>}} (`Position_on_wire` becomes `PositionOnWire`) |
+| {{<kbl-class Contact_point>}} | {{<vec-class ContactPoint>}} |
+| `Contacted_cavity` | {{<vec-class CavityMounting>}} with the {{<vec-class CavityReference>}} as `EquippedCavityRef` |
+| `Extremity.Contact_point` | {{<vec-class WireMounting>}} that references the {{<vec-class WireEnd>}}s as `ReferencedWireEnd` |
+| `Associated_parts`: terminal | `MountedTerminal` ({{<vec-class TerminalRole>}}) of the {{<vec-class ContactPoint>}} |
+| `Associated_parts`: cavity seal | `MountedCavitySeal` ({{<vec-class CavitySealRole>}}) of the {{<vec-class WireMounting>}} |
+| `Replacing` of a terminal or seal, which replaces a plug ({{<kbl-class Part_substitution>}}) | `ReplacedPlug` ({{<vec-class CavityPlugRole>}}) of the {{<vec-class CavityMounting>}} |
+
+Note that the direction of the references is inverted: in the KBL, the {{<kbl-class Extremity>}} of the connection references the {{<kbl-class Contact_point>}}; in the VEC, the {{<vec-class WireMounting>}} of the {{<vec-class ContactPoint>}} references the {{<vec-class WireEnd>}}.
+
+The following example shows a connection of the example file, the wire of which is shown in [Instances of Components]({{<relref "#wires-and-cores">}}). One end is contacted with a terminal in a cavity of the connector `XA.L1.1`:
+
+```xml
+<!-- KBL -->
+        <Connection id="id_314_1">
+            <Id>1_D50_1_1</Id>
+            <Signal_name>1</Signal_name>
+            <Wire>id_350_1</Wire>
+            <Extremities id="id_377_2">
+                <Position_on_wire>0</Position_on_wire>
+                <Contact_point>id_372_6</Contact_point>
+            </Extremities>
+            <Extremities id="id_377_3">
+                <Position_on_wire>1</Position_on_wire>
+                <Contact_point>id_372_7</Contact_point>
+            </Extremities>
+        </Connection>
+        ...
+            <Contact_points id="id_372_7">
+                <Id>XA.L1.1-5#2_1_D50_1_1</Id>
+                <Associated_parts>id_344_1</Associated_parts>
+                <Contacted_cavity>id_370_16</Contacted_cavity>
+            </Contact_points>
+<!-- VEC -->
+      <ContactPoint id="ContactPoint_id_372_7">
+        <Identification>XA.L1.1-5#2_1_D50_1_1</Identification>
+        <MountedTerminal>TerminalRole_id_344_1</MountedTerminal>
+        <CavityMounting id="CavityMounting_id_372_7">
+          <EquippedCavityRef>CavityReference_id_370_16</EquippedCavityRef>
+        </CavityMounting>
+        <WireMounting id="WireMounting_id_372_7">
+          <ReferencedWireEnd>WireEnd_id_377_3</ReferencedWireEnd>
+        </WireMounting>
+      </ContactPoint>
+```
+
+**Multi-crimps and splices.** If several extremities reference the same {{<kbl-class Contact_point>}}, the {{<vec-class WireMounting>}} references all their {{<vec-class WireEnd>}}s (see [Wiring – Multi Crimp Contact]({{<relref "../../elog-layers/wiring#multi-crimp-contact">}})). The other end of the connection above is such a contact point: it belongs to the splice `D50`, which is modelled in the KBL as a "virtual" connector (`Usage=splice`). In the VEC, a splice has no cavities, so its {{<vec-class ContactPoint>}} has no {{<vec-class CavityMounting>}} (see [Wiring – Ringterminal - Splice]({{<relref "../../elog-layers/wiring#ringterminal---splice">}})). The reference implementation does not take this into account yet:
+
+```xml
+      <ContactPoint id="ContactPoint_id_372_6">
+        <Identification>D50-1#1_1_XA.L2.1_6_1#2_1_D50_1_1#6_1_XJ.SR1.1_4A_1</Identification>
+        <CavityMounting id="CavityMounting_id_372_6">
+          <EquippedCavityRef>CavityReference_id_370_65</EquippedCavityRef>
+        </CavityMounting>
+        <WireMounting id="WireMounting_id_372_6">
+          <ReferencedWireEnd>WireEnd_id_377_1 WireEnd_id_377_11 WireEnd_id_377_2</ReferencedWireEnd>
+        </WireMounting>
+      </ContactPoint>
+```
+
+A VEC {{<vec-class ContactPoint>}} represents exactly one contacting variant: all participants exist together in a harness or none of them. The KBL does not have this restriction. If the wires at a KBL contact point belong to different modules (a 150% splice), the contact point must be split (see [Splices]({{<relref "../../component-types/splices">}})): into one {{<vec-class ContactPoint>}} per contacting variant, if the variants are known, or otherwise into one {{<vec-class ContactPoint>}} per {{<vec-class WireEnd>}}. Since the KBL only provides the module membership of the wires and not the valid combinations, the second case is the usual one for a KBL file.
+
+**Signals.** The `Signal_name` of a KBL {{<kbl-class Connection>}} becomes a {{<vec-class Signal>}} in a {{<vec-class SignalSpecification>}}, which is referenced by the {{<vec-class WireElementReference>}} of the wire. Connections with the same signal name reference the same {{<vec-class Signal>}}. The `Signal_type` and `Nominal_voltage` of the connection correspond to the `SignalType` and `NominalVoltage` of the {{<vec-class Signal>}}. The KBL values are free strings, whereas the VEC attributes are enumerations (e.g. `Information`, `Energy`, `Ground` and `12V`, `48V`, `HV`), so a value mapping is required. The {{<vec-class SignalSpecification>}} can be contained in the harness description. If the signals are managed as a catalogue of their own, a document with `DocumentType=MasterDataDefinition` is used (see [Master Data Definition]({{<relref "../../key-concepts/general-structure#master-data-definition">}})).
+
+{{% callout note %}}
+The reference implementation creates a separate document with the custom document type `SignalList` and a placeholder identity for the signals, and converts only the signal names.
 {{% /callout %}}
+
+**Connections in the VEC.** The VEC also has a class {{<vec-class Connection>}}. It is not the counterpart of the KBL {{<kbl-class Connection>}}: a VEC {{<vec-class Connection>}} is a logical connection between the ports of components in a system schematic (see [System Schematic]({{<relref "../../elog-layers/system-schematic">}})). The closest KBL concept is the {{<kbl-class Schematic_connection>}}, which is not yet covered by this guideline (see [Open Topics]({{<relref "#open-topics">}})).
 
 ### Topology
 
@@ -1585,3 +1673,4 @@ To define numerical values, both the VEC and the KBL require units. If the attri
 The following KBL concepts are not yet covered by this guideline:
 
 - **Mounting of components in component slots**: The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} a fuse or relay is plugged. In the VEC, this is a coupling between the E/E component and the component box (see [Coupling]({{<relref "../coupling">}})).
+- **Schematic connections**: A {{<kbl-class Schematic_connection>}} is a logical connection between cavities, which is realized by one or more {{<kbl-class Connection>}}s (`Realized_schematic_connection`). It is the closest KBL concept to a VEC {{<vec-class Connection>}}, but mapping it requires a system schematic with components and ports, which the KBL does not provide.
