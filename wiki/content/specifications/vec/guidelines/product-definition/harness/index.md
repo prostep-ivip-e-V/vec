@@ -75,6 +75,15 @@ classes:
   - TopologySegment
   - SegmentLength
   - SegmentCrossSectionArea
+  - HarnessGeometrySpecification3D
+  - HarnessDrawingSpecification2D
+  - BuildingBlockSpecification3D
+  - BuildingBlockSpecification2D
+  - GeometryNode3D
+  - GeometrySegment3D
+  - NURBSCurve
+  - OccurrenceOrUsageViewItem3D
+  - Transformation3D
 
 history:
   - date: 2025-02-13
@@ -115,6 +124,8 @@ history:
     description: "Connectivity: KBL connections and contact points in the wiring layer, multi-crimps and splices, signals."
   - date: 2026-10-28T00:00:00Z
     description: "Topology: split of KBL nodes and segments into topology, geometry and placement; lengths and cross section areas."
+  - date: 2026-10-28T00:00:00Z
+    description: "Geometry: 2D and 3D, building blocks, centre curves with explicit knots, placement of occurrences as view items."
 
 links:
   - icon_pack: fas
@@ -1695,8 +1706,108 @@ The `Bend_radius` and `Folding_direction` of a KBL {{<kbl-class Node>}} have no 
 
 ### Geometry
 
+The KBL contains one geometry of the harness. Whether it is a 3D geometry (e.g. from a DMU) or a 2D geometry (e.g. of a formboard drawing) is implicit in the number of coordinates of the {{<kbl-class Cartesian_point>}}s. The VEC can contain both in parallel and distinguishes them explicitly:
+
+| | 3D | 2D |
+|-----|-----|-----|
+| Container | {{<vec-class HarnessGeometrySpecification3D>}} | {{<vec-class HarnessDrawingSpecification2D>}} |
+| Geometry | {{<vec-class BuildingBlockSpecification3D>}} | {{<vec-class BuildingBlockSpecification2D>}} |
+| {{<kbl-class Node>}} | {{<vec-class GeometryNode3D>}} | {{<vec-class GeometryNode2D>}} |
+| {{<kbl-class Segment>}} | {{<vec-class GeometrySegment3D>}} | {{<vec-class GeometrySegment2D>}} |
+| Occurrence `Placement` | {{<vec-class OccurrenceOrUsageViewItem3D>}} | {{<vec-class OccurrenceOrUsageViewItem2D>}} |
+
+The geometry of the harness is defined in a building block, which is positioned in the harness geometry by a {{<vec-class BuildingBlockPositioning3D>}} (or 2D). Since the KBL contains a single geometry, a single building block is sufficient and its positioning has no transformation. The geometry nodes and segments reference the {{<vec-class TopologyNode>}}s and {{<vec-class TopologySegment>}}s they represent, and use the same identifications.
+
+```xml
+    <Specification xsi:type="vec:HarnessGeometrySpecification3D" id="HarnessGeometrySpecification3D_id_328_0">
+      <Identification>GEOMETRY</Identification>
+      <Type>Dmu</Type>
+      <BuildingBlockPositionings id="BuildingBlockPositioning3D_id_328_0">
+        <Referenced3DBuildingBlock>BuildingBlockSpecification3D_id_328_0</Referenced3DBuildingBlock>
+      </BuildingBlockPositionings>
+    </Specification>
+    <Specification xsi:type="vec:BuildingBlockSpecification3D" id="BuildingBlockSpecification3D_id_328_0">
+      <Identification>BB_SPEC_3D</Identification>
+      <BaseUnit>SIUnit_id_346_1</BaseUnit>
+      <CartesianPoint id="CartesianPoint3D_Cartesian_point_1">
+        ...
+      <GeometryNode id="GeometryNode3D_Node_1">
+        <Identification>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1/ElecBundleSegmentExtremity.1 ST_SBBR_1</Identification>
+        <ReferenceNode>TopologyNode_Node_1</ReferenceNode>
+        <CartesianPoint>CartesianPoint3D_Cartesian_point_170</CartesianPoint>
+      </GeometryNode>
+      ...
+```
+
+{{% callout note %}}
+**Data Quality**: The coordinates in the KBL have no explicit unit, but the `BaseUnit` of a VEC building block is mandatory. It must be known from the context of the KBL dialect (usually millimetre, as the unit of the segment lengths). In 2D, the `BoundingBox` of the {{<vec-class BuildingBlockSpecification2D>}} is mandatory as well; it has no KBL source and must be derived from the extent of the coordinates.
+
+The reference implementation does not decide between 2D and 3D by the number of coordinates, but by a heuristic based on the segments: a geometry is treated as 3D if the segments have a `Form` and all of them have a centre curve.
+{{% /callout %}}
+
+**Centre curves.** The `Center_curve` of a KBL {{<kbl-class Segment>}} is a {{<kbl-class B_spline_curve>}} defined by its degree and control points. In 3D, it becomes a {{<vec-class NURBSCurve>}} of the {{<vec-class GeometrySegment3D>}} with the same degree and control points (all with `Weight=1.0`). The KBL restricts the curves to uniform B-splines, whose knot vector is implicit ("the knot spacing is 1.0, starting at -d, where d is the degree"). The VEC requires the knots explicitly: a uniform knot vector with `number of control points + degree + 1` values. The offset of the knot values is irrelevant for the shape of the curve. Note that the curve of a uniform (unclamped) B-spline does not start and end at its first and last control point. The `Start_vector` and `End_vector` of the KBL segment become the `StartVector` and `EndVector` of the geometry segment.
+
+```xml
+      <GeometrySegment id="GeometrySegment3D_Segment_1">
+        <Identification>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1</Identification>
+        <ReferenceSegment>TopologySegment_Segment_1</ReferenceSegment>
+        <StartVector id="Cartesiantor3D_00144">
+          <X>0.989368</X>
+          <Y>0.0</Y>
+          <Z>-0.145435</Z>
+        </StartVector>
+        ...
+        <EndNode>GeometryNode3D_Node_2</EndNode>
+        <StartNode>GeometryNode3D_Node_1</StartNode>
+        <Curve xsi:type="vec:NURBSCurve" id="NURBSCurve_Center_curve_1">
+          <Degree>6</Degree>
+          <Knots>0.0</Knots>
+          <Knots>1.0</Knots>
+          ...
+          <Knots>13.0</Knots>
+          <ControlPoint id="NURBSControlPoint_Cartesian_point_16">
+            <Weight>1.0</Weight>
+            <CartesianPoint3D>CartesianPoint3D_Cartesian_point_16</CartesianPoint3D>
+          </ControlPoint>
+          ...
+```
+
+In 2D, the shape of a segment is described by the path segments of the {{<vec-class GeometrySegment2D>}}.
+
+**Placement of occurrences.** The `Placement` of a KBL occurrence (e.g. of a connector) defines its position and orientation in the geometry. It becomes a view item of the {{<vec-class PartOccurrence>}} in the building block (in 3D an {{<vec-class OccurrenceOrUsageViewItem3D>}}, XML element `PlacedElementViewItem3D`), whose `Orientation` is a {{<vec-class Transformation3D>}}. The `Cartesian_point` of the KBL placement becomes the `Origin`. The orientation is given in the KBL by two direction vectors `U` and `V`, in the VEC by a 3 × 3 matrix.
+
+```xml
+<!-- KBL -->
+            <Placement id="Placement_1">
+                <U>-0.145435</U>
+                <U>0.000000</U>
+                <U>-0.989368</U>
+                <V>0.000000</V>
+                <V>1.000000</V>
+                <V>0.000000</V>
+                <Cartesian_point>Cartesian_point_1</Cartesian_point>
+            </Placement>
+<!-- VEC -->
+      <PlacedElementViewItem3D id="OccurrenceOrUsageViewItem3D_id_316_0">
+        <Identification>XA.L2.1</Identification>
+        <OccurrenceOrUsage>PartOccurrence_id_316_0</OccurrenceOrUsage>
+        <Orientation id="Transformation3D_Placement_1">
+          <A11>-0.145435</A11>
+          <A12>0.0</A12>
+          <A13>0.989368</A13>
+          <A21>0.0</A21>
+          <A22>1.0</A22>
+          <A23>0.0</A23>
+          <A31>-0.989368</A31>
+          <A32>0.0</A32>
+          <A33>-0.145435</A33>
+          <Origin>CartesianPoint3D_Cartesian_point_1</Origin>
+        </Orientation>
+      </PlacedElementViewItem3D>
+```
+
 {{% callout warning %}}
-Work in Progress
+**To be clarified:** The reference implementation interprets `U` and `V` as the directions of the local x and y axes and uses them as the first and second column of the matrix; the third column is the cross product `U × V`. The KBL documentation, however, describes `U` as "the rotation by means of the y-axis" and `V` as "the rotation by means of the z-axis". The interpretation of the KBL transformation needs to be clarified before the mapping of the matrix can be defined in this guideline. In addition, the reference implementation uses the transposed matrix for 2D.
 {{% /callout %}}
 
 ### Placement
