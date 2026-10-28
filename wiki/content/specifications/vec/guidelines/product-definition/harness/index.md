@@ -76,6 +76,8 @@ history:
     description: "Part master data of wire protections, fixings, accessories and co-pack parts."
   - date: 2026-10-28T00:00:00Z
     description: "Part master data of component boxes, fuses and other E/E components; section open topics."
+  - date: 2026-10-28T00:00:00Z
+    description: "Part master data of assembly parts."
 
 links:
   - icon_pack: fas
@@ -953,9 +955,49 @@ The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assem
 
 ### Assembly Parts
 
-{{% callout warning %}}
-Work in Progress
+A KBL {{<kbl-class Assembly_part>}} is a predefined part that consists of other parts (e.g. a pre-assembled cable). Like the {{<kbl-class Harness>}}, it contains occurrences of components. In the VEC, an assembly is described with the same concepts as any other bill of material (see [Composite Parts – Assemblies]({{<relref "../composite-parts#assemblies">}})). Its `PartMaster` document contains:
+
+- a {{<vec-class CompositionSpecification>}} with a {{<vec-class PartOccurrence>}} for each occurrence of the {{<kbl-class Assembly_part>}} (mapped as described in [Instances of Components]({{<relref "#instances-of-components">}})),
+- a {{<vec-class PartStructureSpecification>}} with `Content=Assembly`, which references all these occurrences as `InBillOfMaterial`. The KBL `Part_type` becomes its `SpecialPartType`,
+- a {{<vec-class PlaceableElementSpecification>}}, if the assembly is placed on the topology.
+
+The multi-fuse of the example file is such an assembly of six fuses:
+
+```xml
+<!-- KBL -->
+    <Assembly_part id="id_304_1">
+        <Part_number>AS0105563</Part_number>
+        ...
+        <Part_type>multifuse</Part_type>
+        <Component_occurrence id="id_303_1">
+            <Id>MFS_740_C150_1</Id>
+            <Mounting>id_442_0</Mounting>
+            <Part>id_302_0</Part>
+        </Component_occurrence>
+        ...
+    </Assembly_part>
+<!-- VEC -->
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_id_304_1">
+      <Identification>COMPONENTS</Identification>
+      <Component id="PartOccurrence_id_303_1">
+        <Identification>MFS_740_C150_1</Identification>
+        <Part>PartVersion_id_302_0</Part>
+      </Component>
+      ...
+    </Specification>
+    <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_id_304_1">
+      <Identification>PSS-AS0105563</Identification>
+      <SpecialPartType>multifuse</SpecialPartType>
+      <DescribedPart>PartVersion_id_304_1</DescribedPart>
+      <InBillOfMaterial>PartOccurrence_id_303_1 PartOccurrence_id_303_3 PartOccurrence_id_303_5 PartOccurrence_id_303_7 PartOccurrence_id_303_9 PartOccurrence_id_303_11</InBillOfMaterial>
+    </Specification>
+```
+
+{{% callout note %}}
+The reference implementation does not set `Content=Assembly` yet (see the example above). An {{<kbl-class Assembly_part>}} can also contain {{<kbl-class Connection>}}s, e.g. for a pre-assembled cable. Their mapping is the same as for the harness (see [Connectivity]({{<relref "#connectivity">}})), with the specifications in the `PartMaster` document of the assembly. The reference implementation does not convert them yet.
 {{% /callout %}}
+
+How an assembly is used in the harness, including the instantiation of its components, is described in [Instances of Components]({{<relref "#instances-of-components">}}).
 
 ## Harness Description
 
