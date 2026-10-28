@@ -1904,8 +1904,16 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "WireEnd", "to_kind": "class", "source": "frontmatter"}
 {"from": "Signal", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Signal", "to_kind": "class", "source": "frontmatter"}
-{"from": "TopologyNode", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologyNode", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "TopologySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologySpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "TopologyNode", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologyNode", "to_kind": "class", "source": "frontmatter"}
+{"from": "TopologySegment", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologySegment", "to_kind": "class", "source": "frontmatter"}
+{"from": "SegmentLength", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SegmentLength", "to_kind": "class", "source": "frontmatter"}
+{"from": "SegmentCrossSectionArea", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SegmentCrossSectionArea", "to_kind": "class", "source": "frontmatter"}
 {"from": "GeometryNode2D", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "GeometryNode2D", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "GeometryNode3D", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1916,8 +1924,6 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Role", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SignalSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SignalSpecification", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "TopologySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologySpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "BuildingBlockSpecification3D", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "BuildingBlockSpecification3D", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "BuildingBlockSpecification2D", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -2016,6 +2022,8 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SIUnit", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "CustomUnit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CustomUnit", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "TopologyBendingRestriction", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologyBendingRestriction", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Location", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "from_kind": "guideline", "to": "Location", "to_kind": "class", "source": "frontmatter"}
 {"from": "SegmentLocation", "from_kind": "class", "to": "/specifications/vec/guidelines/topology/placement-and-dimensions/", "to_kind": "guideline", "source": "frontmatter"}

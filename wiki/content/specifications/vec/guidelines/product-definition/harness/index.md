@@ -70,6 +70,11 @@ classes:
   - WireMounting
   - WireEnd
   - Signal
+  - TopologySpecification
+  - TopologyNode
+  - TopologySegment
+  - SegmentLength
+  - SegmentCrossSectionArea
 
 history:
   - date: 2025-02-13
@@ -108,6 +113,8 @@ history:
     description: "Variant management: module configurations under the harness (option code, module list), module families, harness configurations."
   - date: 2026-10-28T00:00:00Z
     description: "Connectivity: KBL connections and contact points in the wiring layer, multi-crimps and splices, signals."
+  - date: 2026-10-28T00:00:00Z
+    description: "Topology: split of KBL nodes and segments into topology, geometry and placement; lengths and cross section areas."
 
 links:
   - icon_pack: fas
@@ -1614,9 +1621,77 @@ The reference implementation creates a separate document with the custom documen
 
 ### Topology
 
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
+A KBL {{<kbl-class Node>}} or {{<kbl-class Segment>}} contains information that belongs to three different views in the VEC:
+
+| View | VEC | KBL information | Section |
+|-----|-----|-----|-----|
+| Topology (the graph of the harness) | {{<vec-class TopologySpecification>}} with {{<vec-class TopologyNode>}}s and {{<vec-class TopologySegment>}}s | `Id`, `Alias_id`, `Start_node`, `End_node`, lengths, cross section areas, `Form` | this section |
+| Geometry (the coordinates) | {{<vec-class BuildingBlockSpecification3D>}} / {{<vec-class BuildingBlockSpecification2D>}} with geometry nodes and segments | `Cartesian_point`, `Center_curve`, `Start_vector`, `End_vector` | [Geometry]({{<relref "#geometry">}}) |
+| Placement of components | {{<vec-class PlacementSpecification>}} | `Referenced_components` of the node, {{<kbl-class Fixing_assignment>}}s and {{<kbl-class Protection_area>}}s of the segment | [Placement]({{<relref "#placement">}}) |
+
+This separation makes the topology independent of a specific geometry: routings and placements refer to the topology only, and the same topology can have a 2D and a 3D geometry.
+
+The KBL file defines exactly one topology for the harness. It becomes one {{<vec-class TopologySpecification>}} in the harness description. Each {{<kbl-class Node>}} becomes a {{<vec-class TopologyNode>}} and each {{<kbl-class Segment>}} a {{<vec-class TopologySegment>}}, which references its start and end node. The `Id` of the KBL element is used as identification.
+
+The lengths and cross section areas of a {{<kbl-class Segment>}} have the same semantics in both models:
+
+| KBL {{<kbl-class Segment>}} | VEC {{<vec-class TopologySegment>}} |
+|-----|-----|
+| `Virtual_length` | {{<vec-class SegmentLength>}} with `Classification=Designed` |
+| `Physical_length` | {{<vec-class SegmentLength>}} with `Classification=Adapted` |
+| `Form` (`circular`, `noncircular`) | `Form` (`Circular`, `NonCircular`) |
+| `Cross_section_area_information` with `Value_determination=calculated` | {{<vec-class SegmentCrossSectionArea>}} with `ValueDetermination=Calculated`, `CrossSectionAreaType=Real` |
+| `Cross_section_area_information` with `Value_determination=measured` | {{<vec-class SegmentCrossSectionArea>}} with `ValueDetermination=Measured`, `CrossSectionAreaType=Real` |
+| `Cross_section_area_information` with `Value_determination=reserved` | {{<vec-class SegmentCrossSectionArea>}} with `ValueDetermination=Estimated`, `CrossSectionAreaType=Reserved` |
+
+The KBL value `reserved` mixes two aspects that are separated in the VEC: the kind of the cross section area (a reserved space instead of the real cross section) and the way the value was determined. Since the KBL does not tell how a reserved value was determined, `Estimated` is a reasonable assumption.
+
+```xml
+<!-- KBL -->
+    <Segment id="Segment_1">
+        <Id>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1</Id>
+        ...
+        <Virtual_length id="Virtual_length_1">
+            <Unit_component>id_346_1</Unit_component>
+            <Value_component>188.788275</Value_component>
+        </Virtual_length>
+        <Form>circular</Form>
+        <End_node>Node_2</End_node>
+        <Start_node>Node_1</Start_node>
+        ...
+        <Cross_section_area_information id="Cross_section_area_1">
+            <Value_determination>reserved</Value_determination>
+            <Area id="Area_1">
+                <Unit_component>id_346_0</Unit_component>
+                <Value_component>7.068583</Value_component>
+            </Area>
+        </Cross_section_area_information>
+    </Segment>
+<!-- VEC -->
+      <TopologySegment id="TopologySegment_Segment_1">
+        <Identification>ROUTING_HUT_TF01_MULTI-FUSE_V01VW-Multi-branchable1/ElecRouteBody.1/Flexible Curve.1</Identification>
+        <Form>Circular</Form>
+        <EndNode>TopologyNode_Node_2</EndNode>
+        <StartNode>TopologyNode_Node_1</StartNode>
+        <CrossSectionAreaInformation id="SegmentCrossSectionArea_Cross_section_area_1">
+          <Area id="NumericalValue_Area_1">
+            <UnitComponent>SIUnit_id_346_0</UnitComponent>
+            <ValueComponent>7.068583</ValueComponent>
+          </Area>
+          <ValueDetermination>Estimated</ValueDetermination>
+          <CrossSectionAreaType>Reserved</CrossSectionAreaType>
+        </CrossSectionAreaInformation>
+        <LengthInformation id="SegmentLength_00121">
+          <Length id="NumericalValue_Virtual_length_1">
+            <UnitComponent>SIUnit_id_346_1</UnitComponent>
+            <ValueComponent>188.788275</ValueComponent>
+          </Length>
+          <Classification>Designed</Classification>
+        </LengthInformation>
+      </TopologySegment>
+```
+
+The `Bend_radius` and `Folding_direction` of a KBL {{<kbl-class Node>}} have no direct counterpart in the {{<vec-class TopologyNode>}} (see [Open Topics]({{<relref "#open-topics">}})). The KBL has no concept of usage nodes, so the `RealizedUsageNode` of a {{<vec-class TopologyNode>}} is not set (see [Usage Nodes]({{<relref "../../key-concepts/usage-nodes">}})).
 
 ### Geometry
 
@@ -1674,3 +1749,4 @@ The following KBL concepts are not yet covered by this guideline:
 
 - **Mounting of components in component slots**: The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} a fuse or relay is plugged. In the VEC, this is a coupling between the E/E component and the component box (see [Coupling]({{<relref "../coupling">}})).
 - **Schematic connections**: A {{<kbl-class Schematic_connection>}} is a logical connection between cavities, which is realized by one or more {{<kbl-class Connection>}}s (`Realized_schematic_connection`). It is the closest KBL concept to a VEC {{<vec-class Connection>}}, but mapping it requires a system schematic with components and ports, which the KBL does not provide.
+- **Bend radius and folding direction of nodes**: The `Bend_radius` and `Folding_direction` of a {{<kbl-class Node>}} have no direct counterpart in the {{<vec-class TopologyNode>}}. Bending restrictions are defined in the VEC along a path of the topology ({{<vec-class TopologyBendingRestriction>}}).
