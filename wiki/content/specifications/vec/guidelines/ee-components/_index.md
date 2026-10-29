@@ -10,6 +10,12 @@ categories: ["Implementation Guidelines"]
 date: 2019-05-05T00:00:00+01:00
 lastmod: 2019-11-27T16:57:42+01:00
 draft: false
+review: true
+
+history:
+  - date: 2026-10-19
+    description: "Link to E/E components with pigtail"
+    ghIssue: "1127"
 
 classes:
   - EEComponentSpecification
@@ -23,6 +29,8 @@ menu:
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
 weight: 11000
 ---
+{{< gh-review "1127" >}}
+
 E/E components, represented in the VEC by the {{< vec-class "eecomponentspecification" >}} and 
 {{< vec-class "eecomponentrole" >}}, summarize all kinds of components with a more or less 
 complex electrical  function. In the VEC the description of an E/E component is a combination of 
@@ -41,6 +49,7 @@ E/E Components in terms of the VEC can be for example:
   * [Fuses]({{< relref "fuses" >}})
   * [Multifuses]({{< relref "multi-fuses" >}})
   * [Component Boxes]({{< relref "component-boxes" >}})
+  * [E/E Components with Pigtail]({{< relref "pigtail" >}})
 
 ## Connector Interface / EE Component Header 
 ### Basic Structure
