@@ -41,6 +41,9 @@ classes:
   - WireElementSpecification
   - InsulationSpecification
   - CoreSpecification
+  - WireProtectionSpecification
+  - FixingSpecification
+  - PartOrUsageRelatedSpecification
 
 history:
   - date: 2025-02-13
@@ -65,6 +68,8 @@ history:
     description: "Part master data: specifications per KBL part class, general technical information, connector housings, terminals, cavity seals and plugs."
   - date: 2026-10-28T00:00:00Z
     description: "Part master data of wires: single cores, multi-core wires, attributes and colour types."
+  - date: 2026-10-28T00:00:00Z
+    description: "Part master data of wire protections, fixings, accessories and co-pack parts."
 
 links:
   - icon_pack: fas
@@ -762,9 +767,38 @@ The colours of a wire are typed in both models. The KBL `Colour_type` literals h
 
 ### Wire Protections, Fixings and Accessories
 
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
+These components have in common that the KBL provides only a classification string and little or no technical data for them. In the VEC, they are described with the specification that matches the classification as closely as possible; the KBL classification string is kept as `SpecialPartType`.
+
+**Wire protections.** A {{<kbl-class Wire_protection>}} becomes a {{<vec-class WireProtectionSpecification>}} with the `Protection_type` as `SpecialPartType`. The VEC distinguishes different kinds of wire protections with more specific subclasses ({{<vec-class TapeSpecification>}}, {{<vec-class TubeSpecification>}}, {{<vec-class CorrugatedPipeSpecification>}}, ...). If the `Protection_type` of a KBL dialect allows to identify the kind (e.g. `TAPE`), the more specific class should be used. This is especially relevant for tapes, since the processing information of a tape (winding type, taping direction, ...) can only be expressed with the {{<vec-class TapeRole>}} of a {{<vec-class TapeSpecification>}} (see [Tapes and Tubes]({{<relref "../../component-types/tapes-and-tubes">}})). Since wire protections are placed along the topology, the {{<vec-class PlaceableElementSpecification>}} allows the placement type `OnWay`.
+
+The following example is taken from the [generator cable sample](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/src/test/resources) of the reference implementation, which does not yet use the more specific classes:
+
+```xml
+<!-- KBL -->
+    <Wire_protection id="Wire_protection_1">
+        <Part_number>O1112a614541a2</Part_number>
+        ...
+        <Protection_type>TAPE</Protection_type>
+    </Wire_protection>
+<!-- VEC -->
+    <Specification xsi:type="vec:WireProtectionSpecification" id="WireProtectionSpecification_Wire_protection_1">
+      <Identification>WPS-O1112a614541a2</Identification>
+      <SpecialPartType>TAPE</SpecialPartType>
+      <DescribedPart>PartVersion_Wire_protection_1</DescribedPart>
+    </Specification>
+    <Specification xsi:type="vec:PlaceableElementSpecification" id="PlaceableElementSpecification_Wire_protection_1">
+      <Identification>PES-O1112a614541a2</Identification>
+      <DescribedPart>PartVersion_Wire_protection_1</DescribedPart>
+      <ValidPlacementTypes>OnWay</ValidPlacementTypes>
+      <ValidPlacementTypes>OnPoint</ValidPlacementTypes>
+    </Specification>
+```
+
+**Fixings.** A {{<kbl-class Fixing>}} becomes a {{<vec-class FixingSpecification>}} with the `Fixing_type` as `SpecialPartType` and a {{<vec-class PlaceableElementSpecification>}} for the placement on a point of the topology. The KBL uses {{<kbl-class Fixing>}} for a broad range of components (e.g. clips, cable ducts or grommets). The VEC has dedicated specifications for some of them ({{<vec-class CableDuctSpecification>}}, {{<vec-class GrommetSpecification>}}), which should be used if the kind of fixing is known.
+
+**Accessories and co-pack parts.** The KBL classes {{<kbl-class Accessory>}} and {{<kbl-class Co_pack_part>}} have no direct counterpart in the VEC. Following the approach for cable ties in [Fixings]({{<relref "../../component-types/fixings">}}), they are described by a not further detailed {{<vec-class PartOrUsageRelatedSpecification>}}, whose `SpecialPartType` carries the `Accessory_type` or `Part_type`. If the kind of the part is known and the VEC has a specific specification for it, that one should be used. An accessory can be placed on the topology and therefore also gets a {{<vec-class PlaceableElementSpecification>}}.
+
+Note that the term "accessory" has a different meaning in the two models: in the KBL, {{<kbl-class Accessory>}} is a classification of a part. In the VEC, any part can be an accessory of another part, which is expressed with a {{<vec-class PartRelation>}} (see [Accessories]({{<relref "../../component-types/accessories">}})). The relation of a KBL accessory to the component it belongs to is defined on the instance level by the `Reference_element` (see [Instances of Components]({{<relref "#instances-of-components">}})).
 
 ### Component Boxes, Fuses and other E/E Components
 
