@@ -1944,6 +1944,10 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SegmentLocation", "to_kind": "class", "source": "frontmatter"}
 {"from": "PlaceableElementRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "PlaceableElementRole", "to_kind": "class", "source": "frontmatter"}
+{"from": "RoutingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "RoutingSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "Routing", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Routing", "to_kind": "class", "source": "frontmatter"}
 {"from": "GeometryNode2D", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "GeometryNode2D", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "VecContent", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1952,8 +1956,6 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Role", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SignalSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SignalSpecification", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "RoutingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "RoutingSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Unit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Unit", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "NumericalValue", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}

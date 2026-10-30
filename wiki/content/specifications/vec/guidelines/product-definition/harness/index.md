@@ -90,6 +90,8 @@ classes:
   - NodeLocation
   - SegmentLocation
   - PlaceableElementRole
+  - RoutingSpecification
+  - Routing
 
 history:
   - date: 2025-02-13
@@ -134,6 +136,8 @@ history:
     description: "Geometry: 2D and 3D, building blocks, centre curves with explicit knots, placement of occurrences as view items."
   - date: 2026-10-28T00:00:00Z
     description: "Placement: node references, fixing assignments and protection areas; relative and absolute locations; wire protections over several segments."
+  - date: 2026-10-28T00:00:00Z
+    description: "Routing: routed wire element, path, mandatory segments and special routings."
 
 links:
   - icon_pack: fas
@@ -1908,8 +1912,36 @@ The reference implementation creates one {{<vec-class OnWayPlacement>}} per KBL 
 
 ### Routing
 
-{{% callout warning %}}
-Work in Progress
+A routing defines the way of a wire through the topology. The KBL defines a {{<kbl-class Routing>}} for each {{<kbl-class Connection>}} (`Routed_wire`) as a list of `Segments`. In the VEC, the routings are contained in a {{<vec-class RoutingSpecification>}} of the harness description. A {{<vec-class Routing>}} routes a {{<vec-class WireElementReference>}}, i.e. a wire or a core in the usage (see [Routing]({{<relref "../../topology/routing">}})). The routed element is therefore the {{<vec-class WireElementReference>}} of the wire or core that is referenced by the `Wire` of the KBL connection; for a multi-core wire, each core is routed on its own. The `Segments` of the KBL routing become the `Path` of the VEC routing, keeping their order.
+
+```xml
+<!-- KBL -->
+    <Routing id="id_338_0">
+        <Routed_wire>id_314_0</Routed_wire>
+        <Segments>Segment_1 Segment_3 Segment_4</Segments>
+    </Routing>
+<!-- VEC -->
+    <Specification xsi:type="vec:RoutingSpecification" id="RoutingSpecification_id_328_0">
+      <Identification>RS-LTG0011200</Identification>
+      <Routing id="Routing_id_338_0">
+        <RoutedElement>WireElementReference_id_350_0</RoutedElement>
+        <Path id="Path_id_338_0">
+          <Segment>TopologySegment_Segment_1 TopologySegment_Segment_3 TopologySegment_Segment_4</Segment>
+        </Path>
+      </Routing>
+      ...
+```
+
+The other attributes of a KBL {{<kbl-class Routing>}} have direct counterparts in the VEC (see [Routing – Forced Routing]({{<relref "../../topology/routing#forced-routing">}})):
+
+| KBL {{<kbl-class Routing>}} | VEC {{<vec-class Routing>}} |
+|-----|-----|
+| `Mandatory_segments` | `MandatorySegment` |
+| `Special_routed` | `SpecialRouted` |
+| `Special_routed_comment` | `SpecialRoutedComment` (the KBL allows several comments, the VEC one localized string) |
+
+{{% callout note %}}
+The reference implementation does not map `Special_routed` and `Special_routed_comment` yet.
 {{% /callout %}}
 
 ## Basic Data Types
