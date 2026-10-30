@@ -60,6 +60,10 @@ classes:
   - EEComponentRole
   - HousingComponentReference
   - PinComponentReference
+  - ModuleListSpecification
+  - ModuleList
+  - ModuleFamilySpecification
+  - ModuleFamily
 
 history:
   - date: 2025-02-13
@@ -94,6 +98,8 @@ history:
     description: "Instances of components: roles per KBL occurrence, connectors, wires, wire protections, E/E components, instantiation of assemblies."
   - date: 2026-10-28T00:00:00Z
     description: "Bill of material: snippets from the example file, modules with Content=variant, harness configurations, proposal for occurrences outside of modules."
+  - date: 2026-10-28T00:00:00Z
+    description: "Variant management: module configurations under the harness (option code, module list), module families, harness configurations."
 
 links:
   - icon_pack: fas
@@ -1420,32 +1426,32 @@ As a result, the single `Logistic_control_information` attribute in the KBL is m
 The following XML snippet illustrates the required specifications and their relationships.
 
 ```xml
-    <Specification xsi:type="vec:VariantConfigurationSpecification" id="VariantConfigurationSpecification_00403">
+    <Specification xsi:type="vec:VariantConfigurationSpecification" id="VariantConfigurationSpecification_id_328_0">
       <Identification>VCS-LTG0011200</Identification>
-      <VariantConfiguration id="VariantConfiguration_00404">
+      <VariantConfiguration id="VariantConfiguration_id_353_0">
         <Identification>VarConf_MDL123456</Identification>
         <LogisticControlExpression>L0L+ALL</LogisticControlExpression>
         <ConfigurationType>Logistic</ConfigurationType>
       </VariantConfiguration>
     </Specification>
-    <Specification xsi:type="vec:ConfigurationConstraintSpecification" id="ConfigurationConstraintSpecification_00405">
+    <Specification xsi:type="vec:ConfigurationConstraintSpecification" id="ConfigurationConstraintSpecification_id_328_0">
       <Identification>CCS-LTG0011200</Identification>
-      <ConfigurationConstraint id="ConfigurationConstraint_00406">
+      <ConfigurationConstraint id="ConfigurationConstraint_id_353_0">
         <Identification>ConfConstraint_MDL123456</Identification>
-        <ConfigInfo>VariantConfiguration_00404</ConfigInfo>
-        <ConstrainedElements>PartOccurrence_00408</ConstrainedElements>
+        <ConfigInfo>VariantConfiguration_id_353_0</ConfigInfo>
+        <ConstrainedElements>PartOccurrence_id_331_0</ConstrainedElements>
       </ConfigurationConstraint>
     </Specification>
-    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_00407">
+    ...
+    <Specification xsi:type="vec:CompositionSpecification" id="CompositionSpecification_id_328_0">
       <Identification>MODULES</Identification>
-      <Component id="PartOccurrence_00408">
+      <Component id="PartOccurrence_id_331_0">
         <Identification>MDL123456</Identification>
-        <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_00409">
+        <Role xsi:type="vec:PartWithSubComponentsRole" id="PartWithSubComponentsRole_id_353_0">
           <Identification>MDL123456</Identification>
-          <PartStructureSpecification>PartStructureSpecification_00589</PartStructureSpecification>
-          <SubComponent>...</SubComponent>
+          <PartStructureSpecification>PartStructureSpecification_id_353_0</PartStructureSpecification>
         </Role>
-        <Part>PartVersion_00725</Part>
+        <Part>PartVersion_id_331_0</Part>
       </Component>
     </Specification>
 ```
@@ -1454,10 +1460,63 @@ The following XML snippet illustrates the required specifications and their rela
 As mentioned before, the KBL {{<kbl-class Module >}} is split up in the VEC into its part definition aspects (i.e. {{<vec-class PartStructureSpecification >}}) and in its instance/usage aspects (i.e. {{<vec-class PartOccurrence >}}). The variant management is always attached to usage context of something. Therefore, the {{<vec-class configurationConstraint >}} is pointing to the {{<vec-class PartOccurrence>}}.
 {{%/callout %}}
 
-
-{{% callout warning %}}
-TODO: How to handle Module_configurations that are defined directly under the Harness element.
+{{% callout note %}}
+The reference implementation creates one {{<vec-class VariantConfiguration>}} per {{<kbl-class Module_configuration>}}, i.e. modules with the same `Logistic_control_information` get separate {{<vec-class VariantConfiguration>}}s.
 {{% /callout %}}
+
+The {{<vec-class VariantConfiguration>}} offers two attributes for the control information: the `LogisticControlExpression` for a Boolean term and the `LogisticControlString` for control information that is not expressed by Boolean logic. Which one is used depends on the KBL dialect. In the example, the VOBES expression `L0L+ALL` is a Boolean term and therefore a `LogisticControlExpression`. The `ConfigurationType=Logistic` classifies the configuration as logistic control information, which corresponds to the meaning of the KBL attribute.
+
+#### Module Configurations Defined Directly under the Harness
+
+Besides the {{<kbl-class Module_configuration>}} of a {{<kbl-class Module>}}, the KBL allows {{<kbl-class Module_configuration>}}s that are defined directly under the {{<kbl-class Harness>}}. They control components that do not belong to a module, or that are only required for certain combinations of modules. The `Configuration_type` defines how the `Logistic_control_information` is to be interpreted, which results in different representations in the VEC:
+
+| `Configuration_type` | VEC |
+|-----|-----|
+| `option code` (or not defined) | A {{<vec-class VariantConfiguration>}} for the `Logistic_control_information` and a {{<vec-class ConfigurationConstraint>}} that references the `Controlled_components` directly as `ConstrainedElements`. The components carry their own control information (see [Composite Parts – Layers and Control Information]({{< relref "../composite-parts#layers-and-control-information" >}})). |
+| `module list` | A {{<vec-class ModuleList>}} in a {{<vec-class ModuleListSpecification>}}. The `Controlled_components` become the `CompletionComponents`, the modules of the list become `ModuleInList`. |
+
+The {{<vec-class ModuleList>}} references the modules by their {{<vec-class PartWithSubComponentsRole>}}s. Its semantics in the VEC are: if at least one of the modules in the list is part of a variant, the completion components are part of it as well. The KBL documentation describes the `Logistic_control_information` of a module list as a Boolean expression for the combination of modules. In VOBES data, it contains the XML ids of the modules, as in the following example from the [KSK sample](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/src/test/resources) of the reference implementation. If the modules cannot be identified from the `Logistic_control_information`, the module list should be mapped like an option code.
+
+```xml
+<!-- KBL -->
+        <Module_configuration id="id_353_102">
+            <Logistic_control_information>id_331_0 id_331_22 id_331_23 id_331_24 id_331_25</Logistic_control_information>
+            <Configuration_type>module list</Configuration_type>
+            <Controlled_components>id_316_16</Controlled_components>
+        </Module_configuration>
+<!-- VEC -->
+    <Specification xsi:type="vec:ModuleListSpecification" id="ModuleListSpecification_id_328_0">
+      <Identification>ModuleLists</Identification>
+      <ModuleListConfiguration id="ModuleList_id_353_102">
+        <Identification>ModuleList-id_353_102</Identification>
+        <CompletionComponents>PartOccurrence_id_316_16</CompletionComponents>
+        <ModuleInList>PartWithSubComponentsRole_id_353_0 PartWithSubComponentsRole_id_353_22 PartWithSubComponentsRole_id_353_23 PartWithSubComponentsRole_id_353_24 PartWithSubComponentsRole_id_353_25</ModuleInList>
+      </ModuleListConfiguration>
+      ...
+    </Specification>
+```
+
+#### Module Families
+
+A {{<kbl-class Module_family>}} groups modules that exclude each other (e.g. the left-hand and right-hand drive variants of a module). It becomes a {{<vec-class ModuleFamily>}} in a {{<vec-class ModuleFamilySpecification>}}, which references the {{<vec-class PartWithSubComponentsRole>}}s of the modules whose `Of_family` points to the {{<kbl-class Module_family>}}.
+
+```xml
+    <Specification xsi:type="vec:ModuleFamilySpecification" id="ModuleFamilySpecification_id_328_0">
+      <Identification>Families</Identification>
+      <ModuleFamily id="ModuleFamily_id_332_0">
+        <Identification>000</Identification>
+        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00143">
+          <LanguageCode>De</LanguageCode>
+          <Value>LEITUNGSSTRANG</Value>
+        </Description>
+        <ModuleInFamily>PartWithSubComponentsRole_id_353_0</ModuleInFamily>
+      </ModuleFamily>
+    </Specification>
+```
+
+#### Harness Configurations
+
+A {{<kbl-class Harness_configuration>}} can carry a `Logistic_control_information` as well, which defines when the variant is used. As for modules, this control information belongs to the usage of the variant. It therefore requires an occurrence of the variant ({{<vec-class PartOccurrence>}} of the {{<vec-class PartVersion>}} of the harness configuration, in a {{<vec-class CompositionSpecification>}} of its own), to which the {{<vec-class ConfigurationConstraint>}} is attached (see [Composite Parts – Layers and Control Information]({{< relref "../composite-parts#layers-and-control-information" >}})). The reference implementation does not convert harness configurations yet.
 
 ### Connectivity
 

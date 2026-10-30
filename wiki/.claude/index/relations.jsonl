@@ -1884,6 +1884,14 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "HousingComponentReference", "to_kind": "class", "source": "frontmatter"}
 {"from": "PinComponentReference", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "PinComponentReference", "to_kind": "class", "source": "frontmatter"}
+{"from": "ModuleListSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleListSpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "ModuleList", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleList", "to_kind": "class", "source": "frontmatter"}
+{"from": "ModuleFamilySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleFamilySpecification", "to_kind": "class", "source": "frontmatter"}
+{"from": "ModuleFamily", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "frontmatter"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleFamily", "to_kind": "class", "source": "frontmatter"}
 {"from": "TopologyNode", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TopologyNode", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "GeometryNode2D", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1894,10 +1902,6 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "VecContent", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Role", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Role", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "ModuleListSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleListSpecification", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "ModuleFamilySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleFamilySpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ContactingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ContactingSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SignalSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
