@@ -44,6 +44,10 @@ classes:
   - WireProtectionSpecification
   - FixingSpecification
   - PartOrUsageRelatedSpecification
+  - EEComponentSpecification
+  - HousingComponent
+  - PinComponent
+  - FuseSpecification
 
 history:
   - date: 2025-02-13
@@ -70,6 +74,8 @@ history:
     description: "Part master data of wires: single cores, multi-core wires, attributes and colour types."
   - date: 2026-10-28T00:00:00Z
     description: "Part master data of wire protections, fixings, accessories and co-pack parts."
+  - date: 2026-10-28T00:00:00Z
+    description: "Part master data of component boxes, fuses and other E/E components; section open topics."
 
 links:
   - icon_pack: fas
@@ -373,8 +379,8 @@ The following table defines the {{<vec-class PartOrUsageRelatedSpecification >}}
 | {{<kbl-class Fixing >}} | {{<vec-class FixingSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
 | {{<kbl-class Accessory >}} | {{<vec-class PartOrUsageRelatedSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
 | {{<kbl-class Co_pack_part >}} | {{<vec-class PartOrUsageRelatedSpecification>}} | [Wire Protections, Fixings and Accessories]({{<relref "#wire-protections-fixings-and-accessories">}}) |
-| {{<kbl-class Component_box >}} | {{<vec-class EEComponentSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
-| {{<kbl-class Fuse >}} | {{<vec-class EEComponentSpecification>}}, {{<vec-class FuseSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
+| {{<kbl-class Component_box >}} | {{<vec-class EEComponentSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
+| {{<kbl-class Fuse >}} | {{<vec-class FuseSpecification>}} (an {{<vec-class EEComponentSpecification>}}) | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
 | {{<kbl-class Component >}} | {{<vec-class EEComponentSpecification>}} | [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}}) |
 | {{<kbl-class Assembly_Part >}} | {{<vec-class PartStructureSpecification>}}, {{<vec-class PlaceableElementSpecification>}} | [Assembly Parts]({{<relref "#assembly-parts">}}) |
 
@@ -802,9 +808,148 @@ Note that the term "accessory" has a different meaning in the two models: in the
 
 ### Component Boxes, Fuses and other E/E Components
 
-{{% callout warning %}}
-Work in Progress
+**Component boxes.** The KBL has a dedicated class for fuse and relay boxes, the {{<kbl-class Component_box>}}. It has two kinds of interfaces: {{<kbl-class Component_box_connector>}}s, to which the harness is connected, and {{<kbl-class Component_slot>}}s, into which fuses or relays are plugged. The internal connections between the cavities of both are defined by {{<kbl-class Component_box_connection>}}s.
+
+The VEC has no specific class for component boxes. A component box is an E/E component like any other (see [E/E Components]({{<relref "../../ee-components">}}) and [Component Boxes]({{<relref "../../ee-components/component-boxes">}})): it is described by an {{<vec-class EEComponentSpecification>}}, which has a {{<vec-class HousingComponent>}} for each interface, regardless of whether the interface is a connector for the harness or a slot for a fuse. Each {{<vec-class HousingComponent>}} references a {{<vec-class ConnectorHousingSpecification>}} that describes the slots and cavities of the interface, and has a {{<vec-class PinComponent>}} for each cavity.
+
+{{< figure src="component-box.svg" title="Component Box in KBL and VEC" numbered="true" lightbox="true" >}}
+
+The {{<vec-class ConnectorHousingSpecification>}}s of the interfaces are auxiliary specifications in the `PartMaster` document of the component box. They do not describe a part of their own and therefore have no `DescribedPart`. Their structure follows the KBL: the integrated {{<kbl-class Slot>}}s of a {{<kbl-class Component_box_connector>}} become the slots of the {{<vec-class ConnectorHousingSpecification>}}, a {{<kbl-class Component_slot>}} becomes a slot with the {{<kbl-class Component_cavity>}}s as cavities.
+
+```xml
+<!-- KBL -->
+    <Component_box id="id_413_0">
+        <Part_number>FBX001546</Part_number>
+        ...
+        <Component_box_connectors id="id_415_0">
+            <Id>A</Id>
+            <Compatible_housings>id_315_5</Compatible_housings>
+            <Integrated_slots id="id_341_50" xsi:type="kbl:Slot">
+                <Id>KL30 Batt+</Id>
+                <Number_of_cavities>1</Number_of_cavities>
+                <Cavities id="id_370_100">
+                    <Cavity_number>1</Cavity_number>
+                </Cavities>
+            </Integrated_slots>
+        </Component_box_connectors>
+        ...
+        <Component_slots id="id_441_0">
+            <Id>F1</Id>
+            <Valid_fuse_types id="id_444_0">
+                <Key>Type_SF30</Key>
+                <Reference_system>VOBES</Reference_system>
+            </Valid_fuse_types>
+            ...
+            <Component_cavities id="id_370_114">
+                <Cavity_number>F1-1</Cavity_number>
+            </Component_cavities>
+            <Component_cavities id="id_370_115">
+                <Cavity_number>F1-1A</Cavity_number>
+            </Component_cavities>
+        </Component_slots>
+        ...
+        <Connections id="id_414_1" xsi:type="kbl:Component_box_connection">
+            <Id>B-1A_F1-1A</Id>
+            <Cavities>id_370_101</Cavities>
+            <Component_cavities>id_370_115</Component_cavities>
+        </Connections>
+        ...
+<!-- VEC -->
+    <Specification xsi:type="vec:EEComponentSpecification" id="EEComponentSpecification_id_413_0">
+      <Identification>EECS-FBX001546</Identification>
+      <DescribedPart>PartVersion_id_413_0</DescribedPart>
+      ...
+      <HousingComponent id="HousingComponent_id_441_0">
+        <Identification>F1</Identification>
+        <HousingSpecification>ConnectorHousingSpecification_id_441_0</HousingSpecification>
+        <PinComponent id="PinComponent_id_370_114">
+          <Identification>F1-1</Identification>
+          <ReferencedCavity>Cavity_id_370_114</ReferencedCavity>
+        </PinComponent>
+        <PinComponent id="PinComponent_id_370_115">
+          <Identification>F1-1A</Identification>
+          <ReferencedCavity>Cavity_id_370_115</ReferencedCavity>
+        </PinComponent>
+      </HousingComponent>
+      ...
+      <HousingComponent id="HousingComponent_id_415_0">
+        <Identification>A</Identification>
+        <HousingSpecification>ConnectorHousingSpecification_id_415_0</HousingSpecification>
+        <PinComponent id="PinComponent_id_370_100">
+          <Identification>1</Identification>
+          <ReferencedCavity>Cavity_id_370_100</ReferencedCavity>
+        </PinComponent>
+      </HousingComponent>
+      ...
+    </Specification>
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_415_0">
+      <Identification>A</Identification>
+      <Slot xsi:type="vec:Slot" id="Slot_id_341_50">
+        <SlotNumber>KL30 Batt+</SlotNumber>
+        <Cavity id="Cavity_id_370_100">
+          <CavityNumber>1</CavityNumber>
+        </Cavity>
+      </Slot>
+    </Specification>
+    <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_441_0">
+      <Identification>F1</Identification>
+      <Slot xsi:type="vec:Slot" id="Slot_id_441_0">
+        <SlotNumber>F1</SlotNumber>
+        <Cavity id="Cavity_id_370_114">
+          <CavityNumber>F1-1</CavityNumber>
+        </Cavity>
+        <Cavity id="Cavity_id_370_115">
+          <CavityNumber>F1-1A</CavityNumber>
+        </Cavity>
+      </Slot>
+    </Specification>
+```
+
+In the KBL, the kind of an interface is implicit in its class. In the VEC, it is defined by the `CompatibleTypes` of the {{<vec-class HousingComponent>}} and the `SpecialPartType` of its {{<vec-class ConnectorHousingSpecification>}} (see [Connector / Interface Types]({{<relref "../../ee-components#connector--interface-types">}})). For a component box, this information can be derived from the KBL. Note that `Compatible_housings` is optional in the KBL; a connector without it is not necessarily contacted directly, so the second row is only a heuristic that should be confirmed with knowledge of the KBL dialect:
+
+| KBL | `CompatibleTypes` | `SpecialPartType` |
+|-----|-----|-----|
+| {{<kbl-class Component_box_connector>}} with `Compatible_housings` | `ConnectorHousing` | `HarnessConnector` |
+| {{<kbl-class Component_box_connector>}} without `Compatible_housings` (wires are contacted directly) | `Terminal` | `WiringConnector` |
+| {{<kbl-class Component_slot>}} for fuses (`Type`, `Valid_fuse_types`) | `Fuse` | `FuseConnector` |
+| {{<kbl-class Component_slot>}} for relays (`Type`) | `Relay` | `RelayConnector` |
+
+The `SpecialPartType` of the {{<vec-class EEComponentSpecification>}} is `FuseOrRelayCarrier`. Which housings are compatible with a component box connector (`Compatible_housings`) can be expressed with a mapping of the interfaces (see [Coupling]({{<relref "../coupling">}})).
+
+A KBL {{<kbl-class Node>}} can reference a {{<kbl-class Component_box_connector_occurrence>}} to place the connector of a component box in the topology. The component box therefore needs a {{<vec-class PlaceableElementSpecification>}}. Since the connectors of a component box are placed at different nodes, the specification should define a {{<vec-class PlacementPoint>}} for each connector (see [Placement]({{<relref "#placement">}})).
+
+The internal connections ({{<kbl-class Component_box_connection>}}) are described in the VEC with a {{<vec-class ConnectionSpecification>}} of the E/E component, whose connections are traced to the {{<vec-class PinComponent>}}s (see [Internal Connectivity]({{<relref "../../ee-components/internal-connectivity">}})).
+
+{{% callout note %}}
+The reference implementation does not classify the interfaces yet. For the internal connections, it uses the {{<vec-class InternalComponentConnection>}}, which is deprecated since VEC 2.2 (the example file declares VEC version 2.1.0).
 {{% /callout %}}
+
+**Fuses and other components.** A KBL {{<kbl-class Fuse>}} is an E/E component as well. It is described by a {{<vec-class FuseSpecification>}} (a subclass of the {{<vec-class EEComponentSpecification>}}) with one {{<vec-class HousingComponent>}} and two {{<vec-class PinComponent>}}s (see [Fuses]({{<relref "../../ee-components/fuses">}})). The fuse type (`Type`) becomes the `FuseType` of the {{<vec-class FuseSpecification>}}; the VEC enumeration contains the common fuse types (e.g. `Type_SF30` in the example). The `Colour` is part of the {{<vec-class GeneralTechnicalPartSpecification>}}. A KBL {{<kbl-class Component>}} (e.g. a relay) is described by an {{<vec-class EEComponentSpecification>}}.
+
+```xml
+<!-- KBL -->
+    <Component id="id_302_0" xsi:type="kbl:Fuse">
+        <Part_number>MFS_740_C150</Part_number>
+        ...
+        <Type id="id_393_0" xsi:type="kbl:Fuse_type">
+            <Key>Type_SF30</Key>
+            <Reference_system>VOBES</Reference_system>
+        </Type>
+        <Nominal_current id="id_392_0">
+            <Unit_component>id_346_3</Unit_component>
+            <Value_component>150</Value_component>
+        </Nominal_current>
+        <Colour>zinn</Colour>
+    </Component>
+```
+
+The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined with assumed pins.
+
+{{% callout note %}}
+The reference implementation does not convert fuses and components yet: they are only described by a {{<vec-class GeneralTechnicalPartSpecification>}}. Which fuse is plugged into which slot (`Mounting` of the {{<kbl-class Component_occurrence>}}) is not converted either (see [Open Topics]({{<relref "#open-topics">}})).
+{{% /callout %}}
+
+The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Assembly Parts]({{<relref "#assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
 
 ### Assembly Parts
 
@@ -1128,3 +1273,9 @@ To define numerical values, both the VEC and the KBL require units. If the attri
 {{% callout note %}}
 **Data Quality**: The KBL supports only a very limited set of SI units (see {{< kbl-class Si_unit_name >}}) and, in particular, does not support composite units (e.g., g/m). Such units are typically defined using the freely selectable `Unit_name`. When translating this into the VEC, those units can only be mapped to a VEC {{< vec-class "CustomUnit" >}}.
 {{% /callout  %}}
+
+## Open Topics
+
+The following KBL concepts are not yet covered by this guideline:
+
+- **Mounting of components in component slots**: The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} a fuse or relay is plugged. In the VEC, this is a coupling between the E/E component and the component box (see [Coupling]({{<relref "../coupling">}})).
