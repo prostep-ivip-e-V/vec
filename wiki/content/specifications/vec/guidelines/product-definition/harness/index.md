@@ -1588,7 +1588,7 @@ The following example shows a connection of the example file, the wire of which 
       </ContactPoint>
 ```
 
-**Multi-crimps and splices.** If several extremities reference the same {{<kbl-class Contact_point>}}, the {{<vec-class WireMounting>}} references all their {{<vec-class WireEnd>}}s (see [Wiring – Multi Crimp Contact]({{<relref "../../elog-layers/wiring#multi-crimp-contact">}})). The other end of the connection above is such a contact point: it belongs to the splice `D50`, which is modelled in the KBL as a "virtual" connector (`Usage=splice`). In the VEC, a splice has no cavities, so its {{<vec-class ContactPoint>}} has no {{<vec-class CavityMounting>}} (see [Wiring – Ringterminal - Splice]({{<relref "../../elog-layers/wiring#ringterminal---splice">}})). The reference implementation does not take this into account yet:
+**Multi-crimps and splices.** If several extremities reference the same {{<kbl-class Contact_point>}}, the {{<vec-class WireMounting>}} references all their {{<vec-class WireEnd>}}s (see [Wiring – Multi Crimp Contact]({{<relref "../../elog-layers/wiring#multi-crimp-contact">}})). The other end of the connection above is such a contact point: it belongs to the splice `D50`, which is modelled in the KBL as a "virtual" connector (`Usage=splice`, see [Virtual Connector Housings]({{<relref "#virtual-connector-housings">}})). In the VEC, a splice is a terminal and has no cavities, so its {{<vec-class ContactPoint>}} has no {{<vec-class CavityMounting>}} (see [Wiring – Ringterminal - Splice]({{<relref "../../elog-layers/wiring#ringterminal---splice">}})). The reference implementation does not take this into account yet:
 
 ```xml
       <ContactPoint id="ContactPoint_id_372_6">
