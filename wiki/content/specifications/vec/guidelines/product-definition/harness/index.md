@@ -463,8 +463,96 @@ Since connectors are placed on the topology, a {{<vec-class PlaceableElementSpec
     </Specification>
 ```
 
+#### Virtual Connector Housings
+
+Not every {{<kbl-class Connector_housing>}} in a KBL file describes a real connector. Many KBL files contain "virtual" connector housings, which are a workaround for a gap in the KBL model.
+
+**Background.** The KBL attaches a wire to a terminal via a {{<kbl-class Contact_point>}}: the {{<kbl-class Extremity>}} of the {{<kbl-class Connection>}} references the contact point, and the contact point references the terminal (`Associated_parts`) and the cavity (`Contacted_cavity`). Contact points, however, can only be defined in a {{<kbl-class Connector_occurrence>}} (or a {{<kbl-class Component_box_occurrence>}}). The {{<kbl-class Special_terminal_occurrence>}} was introduced to describe terminals that are not inserted into a connector housing, e.g. ring terminals or cable lugs, but it cannot contain contact points. A wire therefore cannot be attached to it directly. As a workaround, a connector housing is defined whose only purpose is to provide a home for the contact point. The same workaround is used for splices and for wire ends without a connector ("danglers").
+
+**Dialects.** The workaround has been implemented differently by the individual KBL dialects, for example:
+
+- The virtual {{<kbl-class Connector_housing>}} has the part number of the terminal (as for the cable lugs in VOBES data) or a dummy part number.
+- The virtual {{<kbl-class Connector_occurrence>}} is marked with a `Usage` (`ring terminal`, `splice`, `dangler`, `no end`) or not at all.
+- The terminal is instantiated as a {{<kbl-class Special_terminal_occurrence>}}, as a {{<kbl-class Terminal_occurrence>}}, or not at all (e.g. for splices without material).
+- The virtual housing has slots and cavities (sometimes with the slot `Id` `none`), which are referenced as `Contacted_cavity`.
+- The node that places the element references the virtual connector occurrence or the terminal occurrence.
+
+The example file contains such a case for the battery terminal `XA.A.1`. The part `ECP001135` is defined both as {{<kbl-class Connector_housing>}} (with one slot `none` and one cavity) and as {{<kbl-class General_terminal>}} (`cable_shoe`). In the harness, `XA.A.1` is instantiated twice: as a {{<kbl-class Connector_occurrence>}} with `Usage=ring terminal`, which contains the contact point, and as a {{<kbl-class Special_terminal_occurrence>}}, which is associated with the contact point and placed on the node.
+
+```xml
+<!-- KBL -->
+    <Connector_housing id="id_315_9">
+        <Part_number>ECP001135</Part_number>
+        ...
+        <Description>BATTERIEKLEMME_PLUS</Description>
+        ...
+        <Slots id="id_341_21">
+            <Id>none</Id>
+            <Number_of_cavities>1</Number_of_cavities>
+            <Cavities id="id_370_62">
+                <Cavity_number>1</Cavity_number>
+            </Cavities>
+        </Slots>
+    </Connector_housing>
+    ...
+    <General_terminal id="id_326_11">
+        <Part_number>ECP001135</Part_number>
+        ...
+        <Description>cable_shoe</Description>
+        <Terminal_type>special</Terminal_type>
+        <Plating_material>sn</Plating_material>
+    </General_terminal>
+    ...
+        <Connector_occurrence id="id_316_12">
+            <Id>XA.A.1</Id>
+            <Usage>ring terminal</Usage>
+            <Part>id_315_9</Part>
+            <Contact_points id="id_372_4">
+                <Id>XA.A.1-1#100_4_XA.SR1.1_1_1</Id>
+                <Associated_parts>id_342_4</Associated_parts>
+                <Contacted_cavity>id_370_63</Contacted_cavity>
+            </Contact_points>
+            ...
+            <Slots id="id_341_22">
+                <Part>id_341_21</Part>
+                <Cavities id="id_370_63">
+                    <Part>id_370_62</Part>
+                </Cavities>
+            </Slots>
+        </Connector_occurrence>
+        ...
+        <Special_terminal_occurrence id="id_342_4">
+            <Id>XA.A.1</Id>
+            ...
+            <Part>id_326_11</Part>
+            ...
+    <Node id="Node_15">
+        ...
+        <Referenced_components>id_342_4</Referenced_components>
+    </Node>
+```
+
+**Mapping to the VEC.** The VEC does not have this gap: a {{<vec-class ContactPoint>}} is not contained in a connector, and it can reference a terminal without a cavity. The virtual connector housing is therefore not mapped; instead, the workaround is resolved:
+
+{{< figure src="virtual-connector-housing.svg" title="Virtual Connector Housing in KBL and VEC" numbered="true" lightbox="true" >}}
+
+| KBL | VEC |
+|-----|-----|
+| virtual {{<kbl-class Connector_housing>}} | no {{<vec-class ConnectorHousingSpecification>}}. If it has the part number of the terminal, its {{<vec-class PartVersion>}} is the one of the terminal, with a terminal specification only. A dummy part has no {{<vec-class PartVersion>}} at all. |
+| {{<kbl-class General_terminal>}} | {{<vec-class PartVersion>}} with the specification of the terminal type ({{<vec-class RingTerminalSpecification>}}, {{<vec-class SpliceTerminalSpecification>}}, ...) and a {{<vec-class PlaceableElementSpecification>}} |
+| virtual {{<kbl-class Connector_occurrence>}} and the terminal occurrence | **one** {{<vec-class PartOccurrence>}} of the terminal with the corresponding role (e.g. {{<vec-class RingTerminalRole>}}) and a {{<vec-class PlaceableElementRole>}}. Identification, alias ids, descriptions and installation information of both KBL occurrences are combined. The slot and cavity occurrences of the virtual housing are not mapped. |
+| {{<kbl-class Contact_point>}} | {{<vec-class ContactPoint>}} with the terminal role as `MountedTerminal` and a {{<vec-class WireMounting>}} for the wire ends, but **without** {{<vec-class CavityMounting>}} (see [Wiring – Ringterminal - Splice]({{<relref "../../elog-layers/wiring#ringterminal---splice">}})) |
+| `Referenced_components` of the {{<kbl-class Node>}} (virtual connector occurrence or terminal occurrence) | {{<vec-class OnPointPlacement>}} of the {{<vec-class PlaceableElementRole>}} of the terminal occurrence |
+
+For the other kinds of virtual connectors, the same applies with a different target:
+
+- **Splices** (`Usage=splice`): the splice is a terminal with a {{<vec-class SpliceTerminalSpecification>}} and a {{<vec-class SpliceTerminalRole>}}. If the KBL contains no terminal for the splice (e.g. for ultrasonic welding), the specification describes the process instead of a real component (see [Splices]({{<relref "../../component-types/splices">}})).
+- **Wire ends without a connector** (`Usage=dangler` or `no end`): there is no component at the wire end. If the location of the open wire end is relevant, it can be described with an {{<vec-class OpenWireEndTerminalSpecification>}} and an {{<vec-class OpenWireEndTerminalRole>}}.
+
+Whether a connector housing is virtual cannot always be decided from the KBL alone. Indications are the `Usage` of the occurrence, a part number that is also used for a terminal, a dummy part number or a slot `none`; the actual rules depend on the KBL dialect.
+
 {{% callout note %}}
-**Data Quality**: In the KBL, splices, ring terminals and wire ends without a connector ("danglers") are often modelled as "virtual" connectors, i.e. as {{<kbl-class Connector_housing>}} with a dummy part number, whose occurrences are marked by the `Usage` of the {{<kbl-class Connector_occurrence>}}. In the VEC, such elements are not connector housings: a splice is a terminal ({{<vec-class SpliceTerminalSpecification>}}, see [Splices]({{<relref "../../component-types/splices">}})), a ring terminal is a {{<vec-class RingTerminalSpecification>}}, and an open wire end without a connector (`Usage=dangler` or `no end`) can be described as {{<vec-class OpenWireEndTerminalSpecification>}} if its location in the harness is relevant. This must be taken into account in the mapping of the occurrences (see [Connectivity]({{<relref "#connectivity">}})). The reference implementation does not evaluate the `Usage` yet and maps all of them as connector housings.
+The reference implementation does not resolve virtual connector housings yet. It maps them as real connector housings, and the duplicate part numbers of housing and terminal result in two {{<vec-class PartVersion>}}s with the same identity.
 {{% /callout %}}
 
 ### Terminals
