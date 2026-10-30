@@ -149,6 +149,8 @@ history:
     description: "Routing: routed wire element, path, mandatory segments and special routings."
   - date: 2026-10-28T00:00:00Z
     description: "Basic data types: numerical values, localized strings and placeholders, custom properties and instructions, units."
+  - date: 2026-10-28T00:00:00Z
+    description: "Open topics completed (mating, wiring groups, modular slots); last work-in-progress marker removed."
 
 links:
   - icon_pack: fas
@@ -199,6 +201,7 @@ The order of the sections follows the content of a harness description in the VE
 3. [Part Master Data]({{< relref "#part-master-data" >}}) describes the components used in the harness (connectors, terminals, wires, ...).
 4. [Harness Description]({{< relref "#harness-description" >}}) describes the harness itself: the instances of the components, the bill of material, the variants, the connectivity, and the topology with geometry, placement and routing.
 5. [Basic Data Types]({{< relref "#basic-data-types" >}}) covers the value types used everywhere (units, numerical values, strings, custom properties).
+6. [Open Topics]({{< relref "#open-topics" >}}) lists the KBL concepts that are not yet covered by this guideline.
 
 {{% callout note %}}
 VEC XML snippets in this guideline are taken from the KBL to VEC conversion output of the reference implementation. Input for that is the sample KBL file [Volkswagen - VOBES - Component Box]({{< relref "/sample/2015-03-19-volkswagen-vobes-component-box" >}}). Both the KBL file and the resulting VEC file can be downloaded at the top of this page. The KBL file is the version used in the tests of the reference implementation. It differs from the published sample in two details: the node reference to the component box is corrected (in the published sample it references the `Component_box_occurrence`, which cannot be placed on a node), and a `Housing_code` is added to one connector housing.
@@ -1072,11 +1075,7 @@ How an assembly is used in the harness, including the instantiation of its compo
 
 ## Harness Description
 
-{{% callout warning %}}
-Work in Progress
-{{% /callout %}}
-
-A `HarnessDescription` document contains all {{< vec-class Specification >}}s that are required to describe a Harness. The specifications in the VEC provide a more "view oriented" modelling approach than the KBL. Each specification representing a specific view on the product model, with the possibility to have links between the views. The following sections will describe the mapping topic by topic (or, in other words view by view).
+A `HarnessDescription` document contains all {{< vec-class Specification >}}s that are required to describe a Harness. The specifications in the VEC provide a more "view oriented" modelling approach than the KBL. Each specification represents a specific view on the product model, with the possibility to have links between the views. The following sections describe the mapping topic by topic (or, in other words view by view).
 
 A VEC derived from a single KBL contains one `HarnessDescription` document for the {{<kbl-class Harness>}} defined in the KBL.
 
@@ -2038,6 +2037,9 @@ To define numerical values, both the VEC and the KBL require units. If the attri
 
 The following KBL concepts are not yet covered by this guideline:
 
+- **Mating of connectors**: The `Mated_slots` of a {{<kbl-class Slot_occurrence>}} and the `Mated_cavities` of a {{<kbl-class Cavity_occurrence>}} define which connectors are plugged together (in the example file, e.g., the harness connectors and the connectors of the component box). In the VEC, this is a {{<vec-class CouplingSpecification>}} with {{<vec-class CouplingPoint>}}s between the {{<vec-class ConnectorHousingRole>}}s (see [Coupling]({{<relref "../coupling">}})).
+- **Wiring groups**: A {{<kbl-class Wiring_group>}} groups wires of the harness, e.g. as a twisted pair.
+- **Modular slots**: {{<kbl-class Modular_slot>}}s of connectors and component box connectors and the inserts used in them.
 - **Mounting of components in component slots**: The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} a fuse or relay is plugged. In the VEC, this is a coupling between the E/E component and the component box (see [Coupling]({{<relref "../coupling">}})).
 - **Schematic connections**: A {{<kbl-class Schematic_connection>}} is a logical connection between cavities, which is realized by one or more {{<kbl-class Connection>}}s (`Realized_schematic_connection`). It is the closest KBL concept to a VEC {{<vec-class Connection>}}, but mapping it requires a system schematic with components and ports, which the KBL does not provide.
 - **Dimensions and tolerances**: The KBL {{<kbl-class Dimension_specification>}} and {{<kbl-class Default_dimension_specification>}} correspond to the {{<vec-class Dimension>}}s of a {{<vec-class PlacementSpecification>}} and to the {{<vec-class DefaultDimensionSpecification>}} (see [Placements and Dimensions]({{<relref "../../topology/placement-and-dimensions">}})). Note that the limits of a KBL {{<kbl-class Tolerance>}} are absolute values, whereas the boundaries of a VEC {{<vec-class Tolerance>}} are deviations from the nominal value.
