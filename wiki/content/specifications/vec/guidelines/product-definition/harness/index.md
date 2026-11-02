@@ -233,9 +233,9 @@ The PDM attributes of the {{<kbl-class Part>}} are mapped directly to the {{<vec
 **Data Quality**: The KBL allows to have the same `Part_number` under different classifications (see {{<kbl-class Part>}} for more details). In the VEC, multiple occurrences of the same part version are considered a semantic error. In KBL data, there are two different reasons for such duplicates, which have to be treated differently:
 
 1. **The same part is used in different roles.** For example, a tape can be used as {{<kbl-class Wire_protection>}} or as {{<kbl-class Accessory>}} to some other part, or a cable tie as {{<kbl-class Accessory>}} and as {{<kbl-class Fixing>}}. Due to other modeling approaches in the VEC, there is no longer any need for this. The duplicates are merged into a single {{<vec-class PartVersion>}} whose `PartMaster` document contains all specifications that are required for the different aspects of the part (see [Hybrid and Composite Components]({{<relref "../component-description#hybrid-and-composite-components">}})). The occurrences are not affected: each of them references the merged {{<vec-class PartVersion>}} and has the role that corresponds to its usage.
-2. **A workaround for terminals without a connector housing.** Typical examples are the cable lugs in VOBES data, which are defined both as {{<kbl-class Connector_housing>}} and as {{<kbl-class General_terminal>}} with the same part number (e.g. `ECP001135` in the example file). Here, the {{<kbl-class Connector_housing>}} does not describe a real component: it is a "virtual" housing that is only needed because the KBL can attach wires to a terminal only via a contact point in a connector occurrence. Such parts must **not** be merged into one {{<vec-class PartVersion>}} with a {{<vec-class ConnectorHousingSpecification>}} and a {{<vec-class TerminalSpecification>}}. Instead, the virtual housing has to be eliminated, which also changes the occurrences and the contacting. This is explained in detail in [Connector Housings – Virtual Connector Housings]({{<relref "#connector-housings">}}).
+2. **A workaround for terminals without a connector housing.** Typical examples are the cable lugs in VOBES data, which are defined both as {{<kbl-class Connector_housing>}} and as {{<kbl-class General_terminal>}} with the same part number (e.g. `ECP001135` in the example file). Here, the {{<kbl-class Connector_housing>}} does not describe a real component: it is a "virtual" housing that is only needed because the KBL can attach wires to a terminal only via a contact point in a connector occurrence. Such parts must **not** be merged into one {{<vec-class PartVersion>}} with a {{<vec-class ConnectorHousingSpecification>}} and a {{<vec-class TerminalSpecification>}}. Instead, the virtual housing should be resolved, which also changes the occurrences and the contacting. This is explained in detail in [Connector Housings – Virtual Connector Housings]({{<relref "#virtual-connector-housings">}}).
 
-Deduplication should be carried out in post-processing. The reference implementation does not perform it yet.
+Both cases should be cleaned up in a pre- or post-processing of the conversion. Since both result in the same part number under different classifications, distinguishing them requires knowledge of the KBL dialect. The reference implementation is free of dialect knowledge and keeps the duplicates.
 {{% /callout %}}
 
 ### DocumentVersions
@@ -532,11 +532,15 @@ The example file contains such a case for the battery terminal `XA.A.1`. The par
     </Node>
 ```
 
-**Mapping to the VEC.** The VEC does not have this gap: a {{<vec-class ContactPoint>}} is not contained in a connector, and it can reference a terminal without a cavity. The virtual connector housing is therefore not mapped; instead, the workaround is resolved:
+**Detection.** Whether a connector housing is virtual cannot be decided from the KBL model alone, because the workaround uses regular KBL elements. Indications can be the `Usage` of the occurrence, a part number that is also used for a terminal, a dummy part number or a slot `none`. Which of them are reliable, and how the information of the involved elements has to be combined, depends entirely on the KBL dialect and requires knowledge about it.
 
-{{< figure src="virtual-connector-housing.svg" title="Virtual Connector Housing in KBL and VEC" numbered="true" lightbox="true" >}}
+**Target representation in the VEC.** The VEC does not have this gap: a {{<vec-class ContactPoint>}} is not contained in a connector, and it can reference a terminal without a cavity. A VEC should therefore not reproduce the workaround. The terminal is represented by a terminal occurrence of its own, and the contacting by a {{<vec-class ContactPoint>}} without {{<vec-class CavityMounting>}} (see [Wiring – Ringterminal - Splice]({{<relref "../../elog-layers/wiring#ringterminal---splice">}})).
 
-| KBL | VEC |
+**Example strategy.** The following figure and table show a possible strategy to resolve the workaround for the example above. It is derived from example files of a single dialect (VOBES) and is not a general mapping rule; other dialects require other strategies.
+
+{{< figure src="virtual-connector-housing.svg" title="Example Strategy for a Virtual Connector Housing (VOBES)" numbered="true" lightbox="true" >}}
+
+| KBL (VOBES example) | VEC (possible strategy) |
 |-----|-----|
 | virtual {{<kbl-class Connector_housing>}} | no {{<vec-class ConnectorHousingSpecification>}}. If it has the part number of the terminal, its {{<vec-class PartVersion>}} is the one of the terminal, with a terminal specification only. A dummy part has no {{<vec-class PartVersion>}} at all. |
 | {{<kbl-class General_terminal>}} | {{<vec-class PartVersion>}} with the specification of the terminal type ({{<vec-class RingTerminalSpecification>}}, {{<vec-class SpliceTerminalSpecification>}}, ...) and a {{<vec-class PlaceableElementSpecification>}} |
@@ -544,15 +548,13 @@ The example file contains such a case for the battery terminal `XA.A.1`. The par
 | {{<kbl-class Contact_point>}} | {{<vec-class ContactPoint>}} with the terminal role as `MountedTerminal` and a {{<vec-class WireMounting>}} for the wire ends, but **without** {{<vec-class CavityMounting>}} (see [Wiring – Ringterminal - Splice]({{<relref "../../elog-layers/wiring#ringterminal---splice">}})) |
 | `Referenced_components` of the {{<kbl-class Node>}} (virtual connector occurrence or terminal occurrence) | {{<vec-class OnPointPlacement>}} of the {{<vec-class PlaceableElementRole>}} of the terminal occurrence |
 
-For the other kinds of virtual connectors, the same applies with a different target:
+For the other kinds of virtual connectors, the target representation in the VEC is:
 
 - **Splices** (`Usage=splice`): the splice is a terminal with a {{<vec-class SpliceTerminalSpecification>}} and a {{<vec-class SpliceTerminalRole>}}. If the KBL contains no terminal for the splice (e.g. for ultrasonic welding), the specification describes the process instead of a real component (see [Splices]({{<relref "../../component-types/splices">}})).
 - **Wire ends without a connector** (`Usage=dangler` or `no end`): there is no component at the wire end. If the location of the open wire end is relevant, it can be described with an {{<vec-class OpenWireEndTerminalSpecification>}} and an {{<vec-class OpenWireEndTerminalRole>}}.
 
-Whether a connector housing is virtual cannot always be decided from the KBL alone. Indications are the `Usage` of the occurrence, a part number that is also used for a terminal, a dummy part number or a slot `none`; the actual rules depend on the KBL dialect.
-
 {{% callout note %}}
-The reference implementation does not resolve virtual connector housings yet. It maps them as real connector housings, and the duplicate part numbers of housing and terminal result in two {{<vec-class PartVersion>}}s with the same identity.
+The reference implementation is designed to be free of dialect knowledge. It therefore does not resolve virtual connector housings, and it never will: it maps them as they are defined in the KBL, i.e. as real connector housings, and the duplicate part numbers of housing and terminal result in two {{<vec-class PartVersion>}}s with the same identity. Resolving the workaround is the task of a dialect-specific pre- or post-processing.
 {{% /callout %}}
 
 ### Terminals

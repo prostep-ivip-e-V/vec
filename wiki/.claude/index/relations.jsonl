@@ -1916,6 +1916,8 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SlotSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ContactPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ContactPoint", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CavityMounting", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CavityMounting", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "RingTerminalSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "RingTerminalSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SpliceTerminalSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -1926,8 +1928,6 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "PlaceableElementRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "WireMounting", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "WireMounting", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "CavityMounting", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CavityMounting", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SpliceTerminalRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SpliceTerminalRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "OpenWireEndTerminalSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
