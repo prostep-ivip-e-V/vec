@@ -947,10 +947,12 @@ The reference implementation does not classify the interfaces yet. For the inter
     </Component>
 ```
 
-The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined with assumed pins.
+The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined without pins (or with assumed pins).
+
+**Mounting.** The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} of a component box a fuse or relay is plugged. In the VEC, this is a coupling of two E/E components (see [Coupling]({{<relref "../coupling">}})): a {{<vec-class CouplingPoint>}} in a {{<vec-class CouplingSpecification>}} of the harness description connects the {{<vec-class ConnectorHousingRole>}} of the slot (in the {{<vec-class HousingComponentReference>}} of the component box occurrence) with the {{<vec-class ConnectorHousingRole>}} of the fuse. Since the pins of the fuse are usually not known, the coupling can only be defined on the level of the housings, without coupling the individual cavities.
 
 {{% callout note %}}
-The reference implementation does not convert fuses and components yet: they are only described by a {{<vec-class GeneralTechnicalPartSpecification>}}. Which fuse is plugged into which slot (`Mounting` of the {{<kbl-class Component_occurrence>}}) is not converted either (see [Open Topics]({{<relref "#open-topics">}})).
+The reference implementation converts fuses and components in this way: a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) or an {{<vec-class EEComponentSpecification>}} with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins; a {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} on the occurrence; and a {{<vec-class CouplingPoint>}} for each mounted component. The example file of this guideline was created with an earlier version of the reference implementation and does not contain this yet.
 {{% /callout %}}
 
 The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Assembly Parts]({{<relref "#assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
@@ -1282,4 +1284,4 @@ To define numerical values, both the VEC and the KBL require units. If the attri
 
 The following KBL concepts are not yet covered by this guideline:
 
-- **Mounting of components in component slots**: The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} a fuse or relay is plugged. In the VEC, this is a coupling between the E/E component and the component box (see [Coupling]({{<relref "../coupling">}})).
+- **Pin maps of components**: The `Component_pin_maps` of a {{<kbl-class Component_occurrence>}} define how the pins of a component (e.g. a relay) are assigned to the cavities of the slot it is mounted in. Since the pins of a KBL component are not described in its part, this information can only be mapped together with a description of the pins (e.g. from a library).
