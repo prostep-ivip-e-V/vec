@@ -565,7 +565,7 @@ For a terminal from the KBL, this structure consists of exactly one wire recepti
 
 | KBL {{<kbl-class General_terminal>}} | VEC |
 |-----|-----|
-| `Terminal_type` | `SpecialPartType` of the {{<vec-class TerminalSpecification>}}. Special terminal types have their own specification classes, e.g. {{<vec-class RingTerminalSpecification>}} or {{<vec-class SpliceTerminalSpecification>}}. |
+| `Terminal_type` | `SpecialPartType` of the {{<vec-class TerminalSpecification>}}. Special terminal types have their own specification classes, e.g. {{<vec-class RingTerminalSpecification>}} or {{<vec-class SpliceTerminalSpecification>}}; selecting them requires knowledge of the KBL dialect (see below). |
 | `Plating_material` | `PlatingMaterial` of the {{<vec-class TerminalReceptionSpecification>}} (and of the {{<vec-class WireReceptionSpecification>}}, if it applies to the whole terminal) |
 | `Cross_section_area` | `CoreCrossSectionArea` of the {{<vec-class WireReceptionSpecification>}} |
 | `Outside_diameter` | `WireElementOutsideDiameter` of the {{<vec-class WireReceptionSpecification>}} |
@@ -610,7 +610,9 @@ For a terminal from the KBL, this structure consists of exactly one wire recepti
 Terminals that are used on their own and placed on the topology (KBL {{<kbl-class Special_terminal_occurrence>}}, e.g. a ring terminal at a ground bolt) additionally require a {{<vec-class PlaceableElementSpecification>}}.
 
 {{% callout note %}}
-The structure with one wire reception and one terminal reception does not fit all terminal types. An end splice, for example, has only a wire reception (see [Splices]({{<relref "../../component-types/splices">}})). If the `Terminal_type` indicates such a terminal, the structure should be adapted accordingly. The reference implementation creates the same structure for all terminals.
+The structure with one wire reception and one terminal reception does not fit all terminal types. An end splice, for example, has only a wire reception (see [Splices]({{<relref "../../component-types/splices">}})). If the `Terminal_type` indicates such a terminal, the structure should be adapted accordingly.
+
+However, the `Terminal_type` is an open enumeration in the KBL. Besides the predefined values (e.g. `ring terminal`, `splice`, `open wire end`), the dialects use values of their own; the cable lugs in the example file, for instance, have the type `special`. Recognizing the kind of a terminal from its `Terminal_type`, and thus adapting the structure and selecting a more specific specification class, therefore requires knowledge of the KBL dialect. The reference implementation is free of dialect knowledge: it keeps the `Terminal_type` as `SpecialPartType` and creates the same structure for all terminals.
 {{% /callout %}}
 
 ### Cavity Seals and Cavity Plugs
