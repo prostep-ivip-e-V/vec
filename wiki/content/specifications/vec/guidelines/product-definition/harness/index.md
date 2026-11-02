@@ -130,7 +130,7 @@ The order of the sections follows the content of a harness description in the VE
 {{% callout note %}}
 VEC XML snippets in this guideline are taken from the KBL to VEC conversion output of the reference implementation. Input for that is the sample KBL file [Volkswagen - VOBES - Component Box]({{< relref "/sample/2015-03-19-volkswagen-vobes-component-box" >}}). Both the KBL file and the resulting VEC file can be downloaded at the top of this page. The KBL file is the version used in the tests of the reference implementation. It differs from the published sample in two details: the node reference to the component box is corrected (in the published sample it references the `Component_box_occurrence`, which cannot be placed on a node), and a `Housing_code` is added to one connector housing.
 
-Note the versions of the example files: the KBL file is a KBL 2.4 file, while the KBL class links in this guideline refer to KBL 2.5 (the classes used here are the same in both versions). The VEC file declares `VecVersion` 2.1.0, although this guideline targets VEC 2.2; where this makes a difference, it is mentioned in the text.
+Note the versions of the example files: the KBL file is a KBL 2.4 file, while the KBL class links in this guideline refer to KBL 2.5 (the classes used here are the same in both versions). The VEC file was created with the reference implementation as of November 2026 (harness-model `develop`) and declares `VecVersion` 2.2.0.
 
 Topics that are not contained in this sample (e.g. wire protections, fixings, multi-core wires, module lists) are illustrated with other [sample files](https://github.com/4Soft-de/harness-model/tree/develop/kbl2vec/src/test/resources) of the reference implementation.
 {{% /callout %}}
@@ -231,7 +231,7 @@ The PDM attributes of the {{<kbl-class Part>}} are mapped directly to the {{<vec
 <!-- VEC -->
   <PartVersion id="PartVersion_id_315_0">
     ...
-    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00238">
+    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00192">
       <LanguageCode>De</LanguageCode>
       <Value>BUCHSENGEHAEUSE_6-POL</Value>
     </Description>
@@ -455,7 +455,7 @@ Since connectors are placed on the topology, a {{<vec-class PlaceableElementSpec
     <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_315_0">
       <Identification>CHS-ECP001706</Identification>
       <DescribedPart>PartVersion_id_315_0</DescribedPart>
-      <Coding id="Coding_00024">
+      <Coding id="Coding_00020">
         <Coding>A</Coding>
       </Coding>
       <Slot xsi:type="vec:Slot" id="Slot_id_341_0">
@@ -474,7 +474,7 @@ Since connectors are placed on the topology, a {{<vec-class PlaceableElementSpec
     <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_id_315_0">
       <Identification>GTPS-ECP001706</Identification>
       <DescribedPart>PartVersion_id_315_0</DescribedPart>
-      <ColorInformation id="Color_00025">
+      <ColorInformation id="Color_00021">
         <Key>schwarz</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </ColorInformation>
@@ -618,7 +618,7 @@ For a terminal from the KBL, this structure consists of exactly one wire recepti
     </Specification>
     <Specification xsi:type="vec:TerminalReceptionSpecification" id="TerminalReceptionSpecification_id_326_0">
       <Identification>TRS</Identification>
-      <PlatingMaterial id="Material_00048">
+      <PlatingMaterial id="Material_00034">
         <Key>au</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </PlatingMaterial>
@@ -690,9 +690,10 @@ The instances of a wire in the harness do not reference the specifications, but 
         <WireElementSpecification>WireElementSpecification_id_327_1</WireElementSpecification>
       </WireElement>
     </Specification>
+    ...
     <Specification xsi:type="vec:WireElementSpecification" id="WireElementSpecification_id_327_1">
       <Identification>WIRE</Identification>
-      <Type id="WireType_00088">
+      <Type id="WireType_00061">
         <Type>individual wire</Type>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </Type>
@@ -707,15 +708,17 @@ The instances of a wire in the harness do not reference the specifications, but 
     </Specification>
     <Specification xsi:type="vec:InsulationSpecification" id="InsulationSpecification_id_327_1">
       <Identification>WIRE-INS</Identification>
-      <BaseColor id="Color_00089">
+      ...
+      <BaseColor id="Color_00062">
         <Key>ws</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </BaseColor>
-      <FirstIdentificationColor id="Color_00090">
+      <FirstIdentificationColor id="Color_00063">
         <Key>gn</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </FirstIdentificationColor>
     </Specification>
+    ...
     <Specification xsi:type="vec:CoreSpecification" id="CoreSpecification_id_327_1">
       <Identification>WIRE-CORE</Identification>
       <CrossSectionArea id="NumericalValue_id_375_1">
@@ -886,6 +889,7 @@ The {{<vec-class ConnectorHousingSpecification>}}s of the interfaces are auxilia
       </HousingComponent>
       ...
     </Specification>
+    ...
     <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_415_0">
       <Identification>A</Identification>
       <Slot xsi:type="vec:Slot" id="Slot_id_341_50">
@@ -895,6 +899,7 @@ The {{<vec-class ConnectorHousingSpecification>}}s of the interfaces are auxilia
         </Cavity>
       </Slot>
     </Specification>
+    ...
     <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_441_0">
       <Identification>F1</Identification>
       <Slot xsi:type="vec:Slot" id="Slot_id_441_0">
@@ -925,7 +930,7 @@ A KBL {{<kbl-class Node>}} can reference a {{<kbl-class Component_box_connector_
 The internal connections ({{<kbl-class Component_box_connection>}}) are described in the VEC with a {{<vec-class ConnectionSpecification>}} of the E/E component, whose connections are traced to the {{<vec-class PinComponent>}}s (see [Internal Connectivity]({{<relref "../../ee-components/internal-connectivity">}})).
 
 {{% callout note %}}
-The reference implementation does not classify the interfaces yet. For the internal connections, it uses the {{<vec-class InternalComponentConnection>}}, which is deprecated since VEC 2.2 (the example file declares VEC version 2.1.0).
+The reference implementation does not classify the interfaces yet. For the internal connections, it uses the {{<vec-class InternalComponentConnection>}}, which is deprecated since VEC 2.2.
 {{% /callout %}}
 
 **Fuses and other components.** A KBL {{<kbl-class Fuse>}} is an E/E component as well. It is described by a {{<vec-class FuseSpecification>}} (a subclass of the {{<vec-class EEComponentSpecification>}}) with one {{<vec-class HousingComponent>}} and two {{<vec-class PinComponent>}}s (see [Fuses]({{<relref "../../ee-components/fuses">}})). The fuse type (`Type`) becomes the `FuseType` of the {{<vec-class FuseSpecification>}}; the VEC enumeration contains the common fuse types (e.g. `Type_SF30` in the example). The `Colour` is part of the {{<vec-class GeneralTechnicalPartSpecification>}}. A KBL {{<kbl-class Component>}} (e.g. a relay) is described by an {{<vec-class EEComponentSpecification>}}.
@@ -951,8 +956,36 @@ The pins of the fuse and their mapping to the cavities of the slot into which it
 
 **Mounting.** The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} of a component box a fuse or relay is plugged. In the VEC, this is a coupling of two E/E components (see [Coupling]({{<relref "../coupling">}})): a {{<vec-class CouplingPoint>}} in a {{<vec-class CouplingSpecification>}} of the harness description connects the {{<vec-class ConnectorHousingRole>}} of the slot (in the {{<vec-class HousingComponentReference>}} of the component box occurrence) with the {{<vec-class ConnectorHousingRole>}} of the fuse. Since the pins of the fuse are usually not known, the coupling can only be defined on the level of the housings, without coupling the individual cavities.
 
+The following excerpt shows the fuse `MFS_740_C150` of the example file and its coupling with the slot `SR1.1-F1` of the component box. `ConnectorHousingRole_id_442_0` is the {{<vec-class ConnectorHousingRole>}} of the slot in the {{<vec-class EEComponentRole>}} of the component box (see [Instances of Components]({{<relref "#instances-of-components">}})), `ConnectorHousingRole_id_303_0` the one of the fuse occurrence `MF1_F1`.
+
+```xml
+    <Specification xsi:type="vec:FuseSpecification" id="FuseSpecification_id_302_0">
+      <Identification>FS-MFS_740_C150</Identification>
+      <DescribedPart>PartVersion_id_302_0</DescribedPart>
+      <HousingComponent id="HousingComponent_id_302_0">
+        <Identification>HC-MFS_740_C150</Identification>
+        <HousingSpecification>ConnectorHousingSpecification_id_302_0</HousingSpecification>
+      </HousingComponent>
+      <FuseType>Type_SF30</FuseType>
+      <IMax id="NumericalValue_id_392_0">
+        <UnitComponent>CustomUnit_id_346_3</UnitComponent>
+        <ValueComponent>150.0</ValueComponent>
+      </IMax>
+    </Specification>
+    ...
+    <Specification xsi:type="vec:CouplingSpecification" id="CouplingSpecification_id_328_0">
+      <Identification>CS-LTG0011200</Identification>
+      <CouplingPoint id="CouplingPoint_id_303_0">
+        <Identification>MF1_F1</Identification>
+        <FirstConnector>ConnectorHousingRole_id_442_0</FirstConnector>
+        <SecondConnector>ConnectorHousingRole_id_303_0</SecondConnector>
+      </CouplingPoint>
+      ...
+    </Specification>
+```
+
 {{% callout note %}}
-The reference implementation converts fuses and components in this way: a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) or an {{<vec-class EEComponentSpecification>}} with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins; a {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} on the occurrence; and a {{<vec-class CouplingPoint>}} for each mounted component. The example file of this guideline was created with an earlier version of the reference implementation and does not contain this yet.
+The reference implementation converts fuses and components in this way: a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) or an {{<vec-class EEComponentSpecification>}} with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins; a {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} on the occurrence; and a {{<vec-class CouplingPoint>}} for each mounted component.
 {{% /callout %}}
 
 The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Assembly Parts]({{<relref "#assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).

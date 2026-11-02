@@ -1978,10 +1978,10 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ConnectorHousingRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "HousingComponentReference", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "HousingComponentReference", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "FuseRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "FuseRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "EEComponentRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "EEComponentRole", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "FuseRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "FuseRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ConfigurableElement", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ConfigurableElement", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SIUnit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
