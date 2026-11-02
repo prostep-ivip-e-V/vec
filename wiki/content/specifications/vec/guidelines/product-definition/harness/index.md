@@ -2074,7 +2074,7 @@ Many KBL attributes that contain human readable text (e.g. `Description` and `Ab
 <!-- KBL -->
         <Description>BUCHSENGEHAEUSE_6-POL</Description>
 <!-- VEC -->
-    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00238">
+    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00022">
       <LanguageCode>De</LanguageCode>
       <Value>BUCHSENGEHAEUSE_6-POL</Value>
     </Description>
@@ -2083,7 +2083,7 @@ Many KBL attributes that contain human readable text (e.g. `Description` and `Ab
 {{% callout note %}}
 **Data Quality**: Some KBL dialects fill mandatory attributes for which no value is available with a placeholder (e.g. `/NULL` in VOBES data). If the corresponding VEC attribute is optional, the attribute should be omitted instead of copying the placeholder (see [Default Values]({{<relref "../../general/default-values">}})). For mandatory VEC attributes (e.g. the `DocumentVersion`), the placeholder `/NULL` is the correct representation of an unsupported value.
 
-The reference implementation uses German (`De`) as language for all KBL strings and copies the placeholders also into optional attributes (e.g. `Abbreviation`).
+The reference implementation uses German (`De`) as language for all KBL strings. It omits the placeholders in optional attributes.
 {{% /callout %}}
 
 ### Custom Properties and Instructions
