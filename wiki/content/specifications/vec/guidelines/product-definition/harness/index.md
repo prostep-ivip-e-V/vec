@@ -1004,20 +1004,23 @@ The multi-fuse of the example file is such an assembly of six fuses:
       <Identification>COMPONENTS</Identification>
       <Component id="PartOccurrence_id_303_1">
         <Identification>MFS_740_C150_1</Identification>
+        ...
         <Part>PartVersion_id_302_0</Part>
       </Component>
       ...
     </Specification>
+    ...
     <Specification xsi:type="vec:PartStructureSpecification" id="PartStructureSpecification_id_304_1">
       <Identification>PSS-AS0105563</Identification>
       <SpecialPartType>multifuse</SpecialPartType>
       <DescribedPart>PartVersion_id_304_1</DescribedPart>
+      <Content>Assembly</Content>
       <InBillOfMaterial>PartOccurrence_id_303_1 PartOccurrence_id_303_3 PartOccurrence_id_303_5 PartOccurrence_id_303_7 PartOccurrence_id_303_9 PartOccurrence_id_303_11</InBillOfMaterial>
     </Specification>
 ```
 
 {{% callout note %}}
-The reference implementation does not set `Content=Assembly` yet (see the example above). An {{<kbl-class Assembly_part>}} can also contain {{<kbl-class Connection>}}s, e.g. for a pre-assembled cable. Their mapping is the same as for the harness (see [Connectivity]({{<relref "#connectivity">}})), with the specifications in the `PartMaster` document of the assembly. The reference implementation does not convert them yet.
+An {{<kbl-class Assembly_part>}} can also contain {{<kbl-class Connection>}}s, e.g. for a pre-assembled cable. Their mapping is the same as for the harness (see [Connectivity]({{<relref "#connectivity">}})), with the specifications in the `PartMaster` document of the assembly. The reference implementation does not convert them yet.
 {{% /callout %}}
 
 How an assembly is used in the harness, including the instantiation of its components, is described in [Instances of Components]({{<relref "#instances-of-components">}}).
