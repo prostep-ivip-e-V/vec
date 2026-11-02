@@ -1675,10 +1675,6 @@ The following XML snippet illustrates the required specifications and their rela
 As mentioned before, the KBL {{<kbl-class Module >}} is split up in the VEC into its part definition aspects (i.e. {{<vec-class PartStructureSpecification >}}) and in its instance/usage aspects (i.e. {{<vec-class PartOccurrence >}}). The variant management is always attached to usage context of something. Therefore, the {{<vec-class configurationConstraint >}} is pointing to the {{<vec-class PartOccurrence>}}.
 {{%/callout %}}
 
-{{% callout note %}}
-The reference implementation creates one {{<vec-class VariantConfiguration>}} per {{<kbl-class Module_configuration>}}, i.e. modules with the same `Logistic_control_information` get separate {{<vec-class VariantConfiguration>}}s.
-{{% /callout %}}
-
 The {{<vec-class VariantConfiguration>}} offers two attributes for the control information: the `LogisticControlExpression` for a Boolean term and the `LogisticControlString` for control information that is not expressed by Boolean logic. Which one is used depends on the KBL dialect. In the example, the VOBES expression `L0L+ALL` is a Boolean term and therefore a `LogisticControlExpression`. The `ConfigurationType=Logistic` classifies the configuration as logistic control information, which corresponds to the meaning of the KBL attribute.
 
 #### Module Configurations Defined Directly under the Harness
@@ -1720,7 +1716,7 @@ A {{<kbl-class Module_family>}} groups modules that exclude each other (e.g. the
       <Identification>Families</Identification>
       <ModuleFamily id="ModuleFamily_id_332_0">
         <Identification>000</Identification>
-        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00143">
+        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00109">
           <LanguageCode>De</LanguageCode>
           <Value>LEITUNGSSTRANG</Value>
         </Description>
