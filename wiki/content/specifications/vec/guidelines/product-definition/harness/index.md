@@ -2083,7 +2083,7 @@ The following example from the [generator cable sample](https://github.com/4Soft
         <PlacedElement>PlaceableElementRole_Wire_protection_occurrence_1</PlacedElement>
         <EndLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_Protection_area_1">
           <Identification>END</Identification>
-          <Offset id="NumericalValue_00064">
+          <Offset id="NumericalValue_00046">
             <UnitComponent>SIUnit_id_346_1</UnitComponent>
             <ValueComponent>219.800924</ValueComponent>
           </Offset>
@@ -2092,7 +2092,7 @@ The following example from the [generator cable sample](https://github.com/4Soft
         </EndLocation>
         <StartLocation xsi:type="vec:SegmentLocation" id="SegmentLocation_Protection_area_1_1">
           <Identification>START</Identification>
-          <Offset id="NumericalValue_00065">
+          <Offset id="NumericalValue_00047">
             <UnitComponent>SIUnit_id_346_1</UnitComponent>
             <ValueComponent>10.000062838304</ValueComponent>
           </Offset>
