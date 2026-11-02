@@ -1127,7 +1127,7 @@ The KBL instantiates the inner structure of a connector: a {{<kbl-class Connecto
         ...
         <Identification>XA.L2.1</Identification>
         ...
-        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00196">
+        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00162">
           <LanguageCode>De</LanguageCode>
           <Value>2-Faden-Lampe für Scheinwerfer rechts</Value>
         </Description>
@@ -1209,7 +1209,7 @@ For a multi-core wire ({{<kbl-class Special_wire_occurrence>}}), the {{<vec-clas
 The {{<vec-class WireProtectionRole>}} carries the `Protection_length` of the {{<kbl-class Wire_protection_occurrence>}} as `ProtectionLength`. For tapes, the {{<vec-class TapeRole>}} additionally defines the processing of the tape: the `Winding_type` and `Winding_firmness` of the KBL occurrence and the `Taping_direction` and `Gradient`, which the KBL defines per {{<kbl-class Protection_area>}}. The KBL values are strings with recommended values (e.g. `overlap`, `spiral`), the VEC values are enumeration literals (e.g. `Overlap`, `Spiral`), so a value mapping is required. Where the protection is applied is defined by its placement (see [Placement]({{<relref "#placement">}})).
 
 {{% callout note %}}
-The reference implementation does not yet map the `Protection_length` and the tape processing attributes.
+The reference implementation maps the `Protection_length`, but not yet the tape processing attributes.
 {{% /callout %}}
 
 #### Component Boxes and other E/E Components
@@ -1296,6 +1296,7 @@ This corresponds to the instantiation of assemblies described in [Composite Part
         ...
         <Part>PartVersion_id_304_1</Part>
       </Component>
+      ...
       <Component id="PartOccurrence_id_303_0">
         <Identification>MF1-MF1_F1</Identification>
         ...
