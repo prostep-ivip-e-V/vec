@@ -974,7 +974,7 @@ The pins of the fuse and their mapping to the cavities of the slot into which it
 The reference implementation converts a fuse into a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) and a component into an {{<vec-class EEComponentSpecification>}}, each with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins.
 {{% /callout %}}
 
-The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Assembly Parts]({{<relref "#assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
+The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Multi-Fuses as Assembly Parts]({{<relref "#multi-fuses-as-assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
 
 ### Assembly Parts
 
@@ -984,7 +984,7 @@ A KBL {{<kbl-class Assembly_part>}} is a predefined part that consists of other 
 - a {{<vec-class PartStructureSpecification>}} with `Content=Assembly`, which references all these occurrences as `InBillOfMaterial`. The KBL `Part_type` becomes its `SpecialPartType`,
 - a {{<vec-class PlaceableElementSpecification>}}, if the assembly is placed on the topology.
 
-The multi-fuse of the example file is such an assembly of six fuses:
+The multi-fuse of the example file is such an assembly of six fuses (but see [Multi-Fuses as Assembly Parts]({{<relref "#multi-fuses-as-assembly-parts">}})):
 
 ```xml
 <!-- KBL -->
@@ -1024,6 +1024,30 @@ An {{<kbl-class Assembly_part>}} can also contain {{<kbl-class Connection>}}s, e
 {{% /callout %}}
 
 How an assembly is used in the harness, including the instantiation of its components, is described in [Instances of Components]({{<relref "#instances-of-components">}}).
+
+#### Multi-Fuses as Assembly Parts
+
+The mapping above is the correct translation of an {{<kbl-class Assembly_part>}} without knowledge about its meaning, and it shows how an assembly structure is translated in general. For the multi-fuse, however, the {{<kbl-class Assembly_part>}} is itself already a workaround.
+
+**Background.** A multi-fuse is a single component that combines several fuse elements with one common supplying pin and one protected pin per element (see [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}})). The KBL has no concept for it: a KBL {{<kbl-class Fuse>}} describes exactly one fuse with one `Type` and one `Nominal_current`, and it has no pins. VOBES therefore models the multi-fuse as an {{<kbl-class Assembly_part>}} with the `Part_type` `multifuse`, which contains one {{<kbl-class Component_occurrence>}} per fuse element. Each fuse element is described as a {{<kbl-class Fuse>}} part of its own (`MFS_740_C150`, `MFS_740_C110`, ...), although the fuse elements are not separate physical parts, and each of them is mounted into a {{<kbl-class Component_slot>}} of its own in the component box (`SR1.1-F1` to `SR1.1-F6`). The data of the multi-fuse as a whole (fuse type, total nominal current, colour) is only available as `Processing_information` of the {{<kbl-class Assembly_part>}}.
+
+A literal translation, as shown above, reproduces this workaround in the VEC: a {{<vec-class PartStructureSpecification>}} instead of a fuse, {{<vec-class PartVersion>}}s for the fuse elements, and an occurrence with a {{<vec-class FuseRole>}} for each fuse element in the harness.
+
+**Target representation in the VEC.** The VEC has a dedicated concept for multi-fuses, the {{<vec-class MultiFuseSpecification>}}. A VEC should use it and not reproduce the workaround, nor replace it by another one:
+
+| KBL (workaround in VOBES) | VEC |
+|-----|-----|
+| {{<kbl-class Assembly_part>}} with `Part_type` `multifuse` | {{<vec-class PartVersion>}} with a {{<vec-class MultiFuseSpecification>}} (instead of a {{<vec-class PartStructureSpecification>}}) |
+| `Processing_information` of the assembly for fuse type and nominal current | `FuseType` ({{<vec-class MultiFuseType>}}) and `IMaxTotal` of the {{<vec-class MultiFuseSpecification>}} |
+| {{<kbl-class Component_occurrence>}} of a fuse element in the assembly | {{<vec-class FuseComponent>}} of the {{<vec-class MultiFuseSpecification>}}, which references the connected {{<vec-class PinComponent>}}s and a {{<vec-class FuseSpecification>}} |
+| {{<kbl-class Fuse>}} part of a fuse element (e.g. `MFS_740_C150`) | {{<vec-class FuseSpecification>}} with the `FuseType` and `IMax` of the element, without a {{<vec-class PartVersion>}} of its own |
+| (no pins in the KBL) | {{<vec-class HousingComponent>}} with one {{<vec-class PinComponent>}} for the supply and one for each fuse element |
+| {{<kbl-class Assembly_part_occurrence>}} | {{<vec-class PartOccurrence>}} with a {{<vec-class MultiFuseRole>}} |
+| {{<kbl-class Specified_component_occurrence>}}s of the fuse elements with their `Mounting` | no occurrences of their own; the mounting becomes the coupling of the multi-fuse with the component box (see [Instances of Components]({{<relref "#instances-of-components">}})) |
+
+The information required for this is not contained in the KBL in a defined way. The pins of the multi-fuse have to be derived, e.g. from the cavities of the slots into which the fuse elements are mounted, or taken from a library. Whether the component box really has one interface per fuse element, or whether its slots are part of the workaround as well, has to be decided case by case.
+
+**Dialects.** Both the detection of a multi-fuse and its clean-up are dialect specific. The `Part_type` `multifuse` and the instruction types of the `Processing_information` (`fusetype`, `nominal_current`, `partcolour`) are VOBES conventions; other dialects use different values, a different structure or no multi-fuses at all. The reference implementation is designed to be free of dialect knowledge and therefore always translates the {{<kbl-class Assembly_part>}} literally, as shown above. A converter with dialect knowledge should derive a {{<vec-class MultiFuseSpecification>}} as described in the table.
 
 ## Harness Description
 

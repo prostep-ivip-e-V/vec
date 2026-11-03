@@ -1970,6 +1970,16 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ConnectionSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "InternalComponentConnection", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "InternalComponentConnection", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "FuseRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "FuseRole", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "MultiFuseSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "MultiFuseSpecification", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "MultiFuseType", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "MultiFuseType", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "FuseComponent", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "FuseComponent", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "MultiFuseRole", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "MultiFuseRole", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ConfigurableElement", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ConfigurableElement", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SIUnit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
