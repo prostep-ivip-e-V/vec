@@ -2012,6 +2012,10 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "WireLengthType", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "WireEnd", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "WireEnd", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CouplingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingPoint", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CouplingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ConfigurableElement", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ConfigurableElement", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SIUnit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}

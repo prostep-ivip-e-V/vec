@@ -1260,6 +1260,53 @@ The usage of an E/E component is defined by an {{<vec-class EEComponentRole>}}. 
 
 The two parallel references reflect two different aspects: the {{<vec-class CavityReference>}}s are the mechanical view, which is used for contacting the wires of the harness or for the coupling with a mating connector; the {{<vec-class PinComponentReference>}}s are the electrical view, which is used, for example, for the internal connectivity of the component.
 
+**Mounting.** The `Mounting` of a {{<kbl-class Component_occurrence>}} or {{<kbl-class Fuse_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} of a component box the fuse or relay is plugged. In the VEC, this is a coupling of two E/E components (see [Coupling]({{<relref "../coupling">}})): a {{<vec-class CouplingPoint>}} in a {{<vec-class CouplingSpecification>}} of the harness description connects the {{<vec-class ConnectorHousingRole>}} of the slot (in the {{<vec-class HousingComponentReference>}} of the component box occurrence, see above) with the {{<vec-class ConnectorHousingRole>}} in the {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} of the mounted component. Since the pins of a fuse are usually not known (see [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}})), the coupling can only be defined on the level of the housings, without coupling the individual cavities.
+
+The following excerpt shows the fuse occurrence `MF1_F1` of the example file, which is plugged into the slot `SR1.1-F1` of the component box above.
+
+```xml
+<!-- KBL -->
+        <Component_occurrence id="id_303_0" xsi:type="kbl:Specified_component_occurrence">
+            <Id>MF1_F1</Id>
+            ...
+            <Mounting>id_442_0</Mounting>
+            <Part>id_302_0</Part>
+            ...
+        </Component_occurrence>
+<!-- VEC -->
+    <Specification xsi:type="vec:CouplingSpecification" id="CouplingSpecification_id_328_0">
+      <Identification>CS-LTG0011200</Identification>
+      <CouplingPoint id="CouplingPoint_id_303_0">
+        <Identification>MF1_F1</Identification>
+        <FirstConnector>ConnectorHousingRole_id_442_0</FirstConnector>
+        <SecondConnector>ConnectorHousingRole_id_303_0</SecondConnector>
+      </CouplingPoint>
+      ...
+    </Specification>
+    ...
+      <Component id="PartOccurrence_id_303_0">
+        <Identification>MF1-MF1_F1</Identification>
+        ...
+        <Role xsi:type="vec:FuseRole" id="FuseRole_id_303_0">
+          <Identification>MF1_F1</Identification>
+          <EEComponentSpecification>FuseSpecification_id_302_0</EEComponentSpecification>
+          <HousingComponentRef id="HousingComponentReference_id_303_0">
+            <Identification>MF1_F1</Identification>
+            <HousingComponent>HousingComponent_id_302_0</HousingComponent>
+            <ConnectorHousingRole id="ConnectorHousingRole_id_303_0">
+              <Identification>MF1_F1</Identification>
+              <ConnectorHousingSpecification>ConnectorHousingSpecification_id_302_0</ConnectorHousingSpecification>
+            </ConnectorHousingRole>
+          </HousingComponentRef>
+        </Role>
+        ...
+      </Component>
+```
+
+{{% callout note %}}
+The reference implementation creates a {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} for each fuse or component occurrence and a {{<vec-class CouplingPoint>}} for each mounted component. All coupling points are contained in one {{<vec-class CouplingSpecification>}}.
+{{% /callout %}}
+
 #### Assemblies
 
 An {{<kbl-class Assembly_part_occurrence>}} becomes a {{<vec-class PartOccurrence>}} with a {{<vec-class PartWithSubComponentsRole>}}, which references the {{<vec-class PartStructureSpecification>}} of the assembly. If the KBL instantiates components of the assembly in the harness (`Specified_..._occurrence`s such as {{<kbl-class Specified_component_occurrence>}}, with `Related_assembly` and `Related_occurrence`), these become {{<vec-class PartOccurrence>}}s in the harness as well:
