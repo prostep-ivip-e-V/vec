@@ -950,15 +950,7 @@ The reference implementation does not classify the interfaces yet. For the inter
         </Nominal_current>
         <Colour>zinn</Colour>
     </Component>
-```
-
-The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined without pins (or with assumed pins).
-
-**Mounting.** The `Mounting` of a {{<kbl-class Component_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} of a component box a fuse or relay is plugged. In the VEC, this is a coupling of two E/E components (see [Coupling]({{<relref "../coupling">}})): a {{<vec-class CouplingPoint>}} in a {{<vec-class CouplingSpecification>}} of the harness description connects the {{<vec-class ConnectorHousingRole>}} of the slot (in the {{<vec-class HousingComponentReference>}} of the component box occurrence) with the {{<vec-class ConnectorHousingRole>}} of the fuse. Since the pins of the fuse are usually not known, the coupling can only be defined on the level of the housings, without coupling the individual cavities.
-
-The following excerpt shows the fuse `MFS_740_C150` of the example file and its coupling with the slot `SR1.1-F1` of the component box. `ConnectorHousingRole_id_442_0` is the {{<vec-class ConnectorHousingRole>}} of the slot in the {{<vec-class EEComponentRole>}} of the component box (see [Instances of Components]({{<relref "#instances-of-components">}})), `ConnectorHousingRole_id_303_0` the one of the fuse occurrence `MF1_F1`.
-
-```xml
+<!-- VEC -->
     <Specification xsi:type="vec:FuseSpecification" id="FuseSpecification_id_302_0">
       <Identification>FS-MFS_740_C150</Identification>
       <DescribedPart>PartVersion_id_302_0</DescribedPart>
@@ -972,20 +964,12 @@ The following excerpt shows the fuse `MFS_740_C150` of the example file and its 
         <ValueComponent>150.0</ValueComponent>
       </IMax>
     </Specification>
-    ...
-    <Specification xsi:type="vec:CouplingSpecification" id="CouplingSpecification_id_328_0">
-      <Identification>CS-LTG0011200</Identification>
-      <CouplingPoint id="CouplingPoint_id_303_0">
-        <Identification>MF1_F1</Identification>
-        <FirstConnector>ConnectorHousingRole_id_442_0</FirstConnector>
-        <SecondConnector>ConnectorHousingRole_id_303_0</SecondConnector>
-      </CouplingPoint>
-      ...
-    </Specification>
 ```
 
+The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined without pins (or with assumed pins). Into which slot of a component box a fuse or component is plugged is defined by its occurrence (see [Instances of Components]({{<relref "#instances-of-components">}})).
+
 {{% callout note %}}
-The reference implementation converts fuses and components in this way: a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) or an {{<vec-class EEComponentSpecification>}} with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins; a {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} on the occurrence; and a {{<vec-class CouplingPoint>}} for each mounted component.
+The reference implementation converts a fuse into a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) and a component into an {{<vec-class EEComponentSpecification>}}, each with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins.
 {{% /callout %}}
 
 The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Assembly Parts]({{<relref "#assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
