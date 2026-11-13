@@ -1132,7 +1132,8 @@ In the KBL, the components of the harness are instances of the class {{<kbl-clas
 | {{<kbl-class Accessory_occurrence>}} | {{<vec-class SpecificRole>}}, {{<vec-class PlaceableElementRole>}} |
 | {{<kbl-class Co_pack_occurrence>}} | {{<vec-class SpecificRole>}} |
 | {{<kbl-class Component_box_occurrence>}} | {{<vec-class EEComponentRole>}}, {{<vec-class PlaceableElementRole>}} |
-| {{<kbl-class Component_occurrence>}}, {{<kbl-class Fuse_occurrence>}} | {{<vec-class EEComponentRole>}} |
+| {{<kbl-class Component_occurrence>}} of a {{<kbl-class Component>}} | {{<vec-class EEComponentRole>}} |
+| {{<kbl-class Fuse_occurrence>}}, {{<kbl-class Component_occurrence>}} of a {{<kbl-class Fuse>}} | {{<vec-class FuseRole>}} |
 | {{<kbl-class Assembly_part_occurrence>}} | {{<vec-class PartWithSubComponentsRole>}}, {{<vec-class PlaceableElementRole>}} |
 
 The {{<vec-class GeneralTechnicalPartSpecification>}} has no corresponding role. The {{<vec-class PlaceableElementRole>}} is only required if the occurrence is actually placed on the topology (see [Placement]({{<relref "#placement">}})).
@@ -1248,7 +1249,7 @@ For a multi-core wire ({{<kbl-class Special_wire_occurrence>}}), the {{<vec-clas
 
 #### Wire Protections
 
-The {{<vec-class WireProtectionRole>}} carries the `Protection_length` of the {{<kbl-class Wire_protection_occurrence>}} as `ProtectionLength`. For tapes, the {{<vec-class TapeRole>}} additionally defines the processing of the tape: the `Winding_type` and `Winding_firmness` of the KBL occurrence and the `Taping_direction` and `Gradient`, which the KBL defines per {{<kbl-class Protection_area>}}. The KBL values are strings with recommended values (e.g. `overlap`, `spiral`), the VEC values are enumeration literals (e.g. `Overlap`, `Spiral`), so a value mapping is required. Where the protection is applied is defined by its placement (see [Placement]({{<relref "#placement">}})).
+The {{<vec-class WireProtectionRole>}} carries the `Protection_length` of the {{<kbl-class Wire_protection_occurrence>}} as `ProtectionLength`. For tapes, the {{<vec-class TapeRole>}} additionally defines the processing of the tape: the `Winding_type` and `Winding_firmness` of the KBL occurrence and the `Taping_direction` and `Gradient`, which the KBL defines per {{<kbl-class Protection_area>}}. The KBL values are strings with recommended values (e.g. `overlap`, `spiral`). In the VEC, {{<vec-class WindingType>}} and {{<vec-class WindingFirmness>}} are open enumerations: they predefine literals (e.g. `Overlap`, `Spiral`), but allow other values as well (see [Open Enumerations]({{<relref "../../general/xml-xsd#open-enumerations">}})). A KBL value should be mapped to the predefined VEC literal with the same meaning; a value without such a literal can be kept. The {{<vec-class TapingDirection>}}, however, is a closed enumeration, so its values must always be mapped to one of its literals. Where the protection is applied is defined by its placement (see [Placement]({{<relref "#placement">}})).
 
 {{% callout note %}}
 The reference implementation maps the `Protection_length`, but not yet the tape processing attributes.
@@ -1256,7 +1257,7 @@ The reference implementation maps the `Protection_length`, but not yet the tape 
 
 #### Component Boxes and other E/E Components
 
-The usage of an E/E component is defined by an {{<vec-class EEComponentRole>}}. Its structure follows the structure of the {{<vec-class EEComponentSpecification>}}: for each interface used in the harness, the role contains a {{<vec-class HousingComponentReference>}}, which contains a {{<vec-class ConnectorHousingRole>}} with the slot and cavity references of the interface and a {{<vec-class PinComponentReference>}} for each pin. The KBL {{<kbl-class Component_box_occurrence>}} has the same structure: it contains {{<kbl-class Component_box_connector_occurrence>}}s and {{<kbl-class Component_slot_occurrence>}}s with their cavity occurrences.
+The usage of an E/E component is defined by an {{<vec-class EEComponentRole>}}; the usage of a fuse by a {{<vec-class FuseRole>}}, the corresponding subclass for a {{<vec-class FuseSpecification>}}. Its structure follows the structure of the {{<vec-class EEComponentSpecification>}}: for each interface used in the harness, the role contains a {{<vec-class HousingComponentReference>}}, which contains a {{<vec-class ConnectorHousingRole>}} with the slot and cavity references of the interface and a {{<vec-class PinComponentReference>}} for each pin. The KBL {{<kbl-class Component_box_occurrence>}} has the same structure: it contains {{<kbl-class Component_box_connector_occurrence>}}s and {{<kbl-class Component_slot_occurrence>}}s with their cavity occurrences.
 
 ```xml
 <!-- KBL -->
@@ -1394,7 +1395,13 @@ This corresponds to the instantiation of assemblies described in [Composite Part
       </Component>
 ```
 
-Since the instantiated occurrences of all assemblies are contained in the same {{<vec-class CompositionSpecification>}}, their identifications must be unique within it. The reference implementation therefore prefixes the identification with the identification of the assembly occurrence (`MF1-MF1_F1`).
+**Shared instances.** Up to KBL 2.4, a `Specified_..._occurrence` can reference only one assembly occurrence (`Related_assembly`) and one occurrence in the assembly (`Related_occurrence`). If several assembly occurrences share a component, for example different variants or equipment levels of an assembly, the component had to be instantiated once per assembly occurrence. The harness then contains several occurrences for the same physical component. KBL 2.5 allows several `Related_assembly` and `Related_occurrence` references, so that a shared component is instantiated only once. Implementations that still create the duplicates are in use, however.
+
+This data quality issue should not be carried over into the VEC. A shared component is one {{<vec-class PartOccurrence>}}. It references all occurrences it instantiates as `InstanciatedOccurrence`, and the {{<vec-class PartWithSubComponentsRole>}} of each assembly occurrence it belongs to references it as `SubComponent`. Whether occurrences of a KBL file are such duplicates is not defined in the KBL, so merging them requires knowledge of how the KBL was created.
+
+{{% callout note %}}
+The reference implementation converts each `Specified_..._occurrence` into one occurrence, which is referenced as `SubComponent` by all its assembly occurrences. Shared instances of KBL 2.5 are therefore converted as described above, but duplicates are not merged. Since the `Id`s of the duplicates can be the same, it prefixes the identification with the identifications of the assembly occurrences (`MF1-MF1_F1`) to keep them unique within the {{<vec-class CompositionSpecification>}}.
+{{% /callout %}}
 
 ### Bill of Material / Part Structure
 
