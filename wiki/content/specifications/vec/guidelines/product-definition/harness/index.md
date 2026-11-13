@@ -91,7 +91,7 @@ history:
   - date: 2026-10-28T00:00:00Z
     description: "Part master data of assembly parts."
   - date: 2026-10-28T00:00:00Z
-    description: "Instances of components: roles per KBL occurrence, connectors, wires, wire protections, E/E components, instantiation of assemblies."
+    description: "Instances of components: roles per KBL occurrence, connectors, wires, wire protections, E/E components, instantiation of assemblies; coupling: mounting of fuses and components, mating of connectors; example file regenerated."
 
 links:
   - icon_pack: fas
