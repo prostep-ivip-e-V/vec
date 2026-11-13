@@ -247,7 +247,7 @@ The PDM attributes of the {{<kbl-class Part>}} are mapped directly to the {{<vec
 <!-- VEC -->
   <PartVersion id="PartVersion_id_315_0">
     ...
-    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00192">
+    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00195">
       <LanguageCode>De</LanguageCode>
       <Value>BUCHSENGEHAEUSE_6-POL</Value>
     </Description>
@@ -309,6 +309,7 @@ The same applies to the `HarnessDescription`, whose identity is derived from the
   <DocumentVersion id="DocumentVersion_id_328_0_1">
     ...
     <CompanyName>MaybeAnyCompany</CompanyName>
+    ...
     <DocumentNumber>LTG0011200</DocumentNumber>
     <DocumentType>HarnessDescription</DocumentType>
     <DocumentVersion>2.4.0</DocumentVersion>
@@ -333,10 +334,51 @@ The target {{<vec-class DocumentVersion>}} of a {{<kbl-class Creation>}}, {{<kbl
 
 The title block information of the KBL {{<kbl-class Harness>}} belongs to the `HarnessDescription`. The title block information of a {{<kbl-class Module>}} or {{<kbl-class Harness_configuration>}} does not have a document of its own in the VEC, since modules and configurations are defined within the `HarnessDescription`. Where it differs from the harness, it can only be preserved on the {{<vec-class PartVersion>}} (e.g. {{<vec-class Project>}}, {{<vec-class CopyrightInformation>}}).
 
+The following excerpt shows the copyright note and the change of the harness in the example file. The {{<vec-class CopyrightInformation>}} is defined once in the {{<vec-class VecContent>}} and referenced by the `HarnessDescription` and by the {{<vec-class PartVersion>}} of the harness; the change becomes a {{<vec-class ChangeDescription>}} of the `HarnessDescription`.
+
+```xml
+<!-- KBL -->
+    <Harness id="id_328_0">
+        ...
+        <Copyright_note>Copyright reserved: Volkswagen AG behält sich alle Rechte vor. ...
+        ...
+        <Change id="Change_1">
+            <Description>KBL 2.4 Sample File</Description>
+            <Change_date>270115</Change_date>
+            <Responsible_designer>Kyriazis</Responsible_designer>
+            <Designer_department>K-SIPE-3</Designer_department>
+        </Change>
+        ...
+<!-- VEC -->
+  <CopyrightInformation id="CopyrightInformation_id_328_0">
+    <CopyrightNote id="LocalizedString_00000">
+      <LanguageCode>De</LanguageCode>
+      <Value>Copyright reserved: Volkswagen AG behält sich alle Rechte vor. ...
+      ...
+    </CopyrightNote>
+  </CopyrightInformation>
+  ...
+  <DocumentVersion id="DocumentVersion_id_328_0_1">
+    ...
+    <CopyrightInformation>CopyrightInformation_id_328_0</CopyrightInformation>
+    <ChangeDescription id="ChangeDescription_Change_1">
+      <Description xsi:type="vec:LocalizedString" id="LocalizedString_00180">
+        <LanguageCode>De</LanguageCode>
+        <Value>KBL 2.4 Sample File</Value>
+      </Description>
+      <ChangeDate>2015-01-27T00:00:00</ChangeDate>
+      <ResponsibleDesigner id="Person_00181">
+        <Department>K-SIPE-3</Department>
+        <LastName>Kyriazis</LastName>
+      </ResponsibleDesigner>
+    </ChangeDescription>
+    ...
+```
+
 {{% callout note %}}
 **Data Quality**: The dates in the KBL are strings without a defined format (e.g. `270115` in the example file), whereas the VEC uses `xs:date` / `xs:dateTime`. A conversion requires knowledge of the date format used in the KBL dialect.
 
-The reference implementation does not convert the title block information yet.
+The reference implementation converts {{<kbl-class Change>}}s, {{<kbl-class Creation>}}s and {{<kbl-class Approval>}}s into the {{<vec-class DocumentVersion>}} that contains the definition of the part (into the {{<vec-class PartVersion>}} for a {{<kbl-class Module>}}, which has no document of its own), and the `Copyright_note` into a {{<vec-class CopyrightInformation>}}. The date formats of the KBL are a parameter of the conversion (by default `dd.MM.yyyy` and `ddMMyy`). The project and car classification information is not converted yet.
 {{% /callout %}}
 
 ### External References
@@ -471,7 +513,7 @@ Since connectors are placed on the topology, a {{<vec-class PlaceableElementSpec
     <Specification xsi:type="vec:ConnectorHousingSpecification" id="ConnectorHousingSpecification_id_315_0">
       <Identification>CHS-ECP001706</Identification>
       <DescribedPart>PartVersion_id_315_0</DescribedPart>
-      <Coding id="Coding_00020">
+      <Coding id="Coding_00021">
         <Coding>A</Coding>
       </Coding>
       <Slot xsi:type="vec:Slot" id="Slot_id_341_0">
@@ -490,7 +532,7 @@ Since connectors are placed on the topology, a {{<vec-class PlaceableElementSpec
     <Specification xsi:type="vec:GeneralTechnicalPartSpecification" id="GeneralTechnicalPartSpecification_id_315_0">
       <Identification>GTPS-ECP001706</Identification>
       <DescribedPart>PartVersion_id_315_0</DescribedPart>
-      <ColorInformation id="Color_00021">
+      <ColorInformation id="Color_00022">
         <Key>schwarz</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </ColorInformation>
@@ -634,7 +676,7 @@ For a terminal from the KBL, this structure consists of exactly one wire recepti
     </Specification>
     <Specification xsi:type="vec:TerminalReceptionSpecification" id="TerminalReceptionSpecification_id_326_0">
       <Identification>TRS</Identification>
-      <PlatingMaterial id="Material_00034">
+      <PlatingMaterial id="Material_00035">
         <Key>au</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </PlatingMaterial>
@@ -709,7 +751,7 @@ The instances of a wire in the harness do not reference the specifications, but 
     ...
     <Specification xsi:type="vec:WireElementSpecification" id="WireElementSpecification_id_327_1">
       <Identification>WIRE</Identification>
-      <Type id="WireType_00061">
+      <Type id="WireType_00062">
         <Type>individual wire</Type>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </Type>
@@ -725,11 +767,11 @@ The instances of a wire in the harness do not reference the specifications, but 
     <Specification xsi:type="vec:InsulationSpecification" id="InsulationSpecification_id_327_1">
       <Identification>WIRE-INS</Identification>
       ...
-      <BaseColor id="Color_00062">
+      <BaseColor id="Color_00063">
         <Key>ws</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </BaseColor>
-      <FirstIdentificationColor id="Color_00063">
+      <FirstIdentificationColor id="Color_00064">
         <Key>gn</Key>
         <ReferenceSystem>ACME Inc.</ReferenceSystem>
       </FirstIdentificationColor>
@@ -985,7 +1027,7 @@ The reference implementation does not classify the interfaces yet. For the inter
 The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined without pins (or with assumed pins). Into which slot of a component box a fuse or component is plugged is defined by its occurrence (see [Instances of Components]({{<relref "#instances-of-components">}})).
 
 {{% callout note %}}
-The reference implementation converts a fuse into a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) and a component into an {{<vec-class EEComponentSpecification>}}, each with one {{<vec-class HousingComponent>}}, whose {{<vec-class ConnectorHousingSpecification>}} has no slots and pins.
+The reference implementation converts a fuse into a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) and a component into an {{<vec-class EEComponentSpecification>}}, each with one {{<vec-class HousingComponent>}}. Its {{<vec-class ConnectorHousingSpecification>}} has no slots and pins, unless the occurrences of the component are mounted on cavities: then it derives one slot with a cavity and a {{<vec-class PinComponent>}} for each mounted cavity, numbered `1`, `2`, and so on.
 {{% /callout %}}
 
 The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Multi-Fuses as Assembly Parts]({{<relref "#multi-fuses-as-assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
@@ -1127,7 +1169,7 @@ The KBL instantiates the inner structure of a connector: a {{<kbl-class Connecto
         ...
         <Identification>XA.L2.1</Identification>
         ...
-        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00162">
+        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00163">
           <LanguageCode>De</LanguageCode>
           <Value>2-Faden-Lampe für Scheinwerfer rechts</Value>
         </Description>
