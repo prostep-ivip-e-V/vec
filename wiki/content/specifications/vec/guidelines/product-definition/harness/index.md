@@ -1892,7 +1892,7 @@ The KBL value `reserved` mixes two aspects that are separated in the VEC: the ki
           <ValueDetermination>Estimated</ValueDetermination>
           <CrossSectionAreaType>Reserved</CrossSectionAreaType>
         </CrossSectionAreaInformation>
-        <LengthInformation id="SegmentLength_00087">
+        <LengthInformation id="SegmentLength_00088">
           <Length id="NumericalValue_Virtual_length_1">
             <UnitComponent>SIUnit_id_346_1</UnitComponent>
             <ValueComponent>188.788275</ValueComponent>
