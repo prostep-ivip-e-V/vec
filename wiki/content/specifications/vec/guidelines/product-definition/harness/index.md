@@ -1716,7 +1716,7 @@ A {{<kbl-class Module_family>}} groups modules that exclude each other (e.g. the
       <Identification>Families</Identification>
       <ModuleFamily id="ModuleFamily_id_332_0">
         <Identification>000</Identification>
-        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00109">
+        <Description xsi:type="vec:LocalizedString" id="LocalizedString_00110">
           <LanguageCode>De</LanguageCode>
           <Value>LEITUNGSSTRANG</Value>
         </Description>
