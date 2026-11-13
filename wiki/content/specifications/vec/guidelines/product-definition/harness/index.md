@@ -2248,7 +2248,6 @@ To define numerical values, both the VEC and the KBL require units. If the attri
 
 The following KBL concepts are not yet covered by this guideline:
 
-- **Mating of connectors**: The `Mated_slots` of a {{<kbl-class Slot_occurrence>}} and the `Mated_cavities` of a {{<kbl-class Cavity_occurrence>}} define which connectors are plugged together (in the example file, e.g., the harness connectors and the connectors of the component box). In the VEC, this is a {{<vec-class CouplingSpecification>}} with {{<vec-class CouplingPoint>}}s between the {{<vec-class ConnectorHousingRole>}}s (see [Coupling]({{<relref "../coupling">}})).
 - **Wiring groups**: A {{<kbl-class Wiring_group>}} groups wires of the harness, e.g. as a twisted pair.
 - **Modular slots**: {{<kbl-class Modular_slot>}}s of connectors and component box connectors and the inserts used in them.
 - **Pin maps of components**: The `Component_pin_maps` of a {{<kbl-class Component_occurrence>}} define how the pins of a component (e.g. a relay) are assigned to the cavities of the slot it is mounted in. Since the pins of a KBL component are not described in its part, this information can only be mapped together with a description of the pins (e.g. from a library).
