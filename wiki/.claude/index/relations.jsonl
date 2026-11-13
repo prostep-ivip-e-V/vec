@@ -1894,6 +1894,8 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "VecContent", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "Role", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "Role", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CouplingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ModuleListSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ModuleListSpecification", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ModuleFamilySpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
@@ -2020,8 +2022,12 @@
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "TapingDirection", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "CouplingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingPoint", "to_kind": "class", "source": "inline-shortcode"}
-{"from": "CouplingSpecification", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
-{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CouplingSpecification", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "SlotCoupling", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "SlotCoupling", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "CavityCoupling", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "CavityCoupling", "to_kind": "class", "source": "inline-shortcode"}
+{"from": "MatingPoint", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
+{"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "MatingPoint", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "ConfigurableElement", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}
 {"from": "/specifications/vec/guidelines/product-definition/harness/", "from_kind": "guideline", "to": "ConfigurableElement", "to_kind": "class", "source": "inline-shortcode"}
 {"from": "SIUnit", "from_kind": "class", "to": "/specifications/vec/guidelines/product-definition/harness/", "to_kind": "guideline", "source": "inline-shortcode"}

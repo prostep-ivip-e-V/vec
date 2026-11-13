@@ -140,7 +140,7 @@ The order of the sections follows the content of a harness description in the VE
 1. The [Overview]({{< relref "#overview" >}}) shows how the content of a KBL file is distributed across the VEC and introduces the principles that recur in all sections.
 2. [Parts and Documents]({{< relref "#parts-and-documents" >}}) explains how KBL parts become {{< vec-class PartVersion >}}s and {{< vec-class DocumentVersion >}}s.
 3. [Part Master Data]({{< relref "#part-master-data" >}}) describes the components used in the harness (connectors, terminals, wires, ...).
-4. [Harness Description]({{< relref "#harness-description" >}}) describes the harness itself: the instances of the components, the bill of material, the variants, the connectivity, and the topology with geometry, placement and routing.
+4. [Harness Description]({{< relref "#harness-description" >}}) describes the harness itself: the instances of the components, their coupling, the bill of material, the variants, the connectivity, and the topology with geometry, placement and routing.
 5. [Basic Data Types]({{< relref "#basic-data-types" >}}) covers the value types used everywhere (units, numerical values, strings, custom properties).
 
 {{% callout note %}}
@@ -163,7 +163,7 @@ A KBL file (`KBL_container`) describes exactly one harness together with the par
 
 - Every KBL {{< kbl-class Part >}} (including the {{< kbl-class Harness >}} and its {{< kbl-class Module >}}s) is identified by a {{< vec-class PartVersion >}}.
 - The properties of the components (connectors, terminals, wires, ...) are described in one `PartMaster` document per component.
-- Everything that is specific to the harness—the instances of the components, the bill of material, the variants, the connectivity, the topology, the geometry, the placements and the routings—is contained in a single `HarnessDescription` document.
+- Everything that is specific to the harness—the instances of the components, their coupling, the bill of material, the variants, the connectivity, the topology, the geometry, the placements and the routings—is contained in a single `HarnessDescription` document.
 
 The following table shows where the KBL content is found in the VEC and in which section of this guideline the mapping is described.
 
@@ -173,6 +173,7 @@ The following table shows where the KBL content is found in the VEC and in which
 | Components (e.g. {{< kbl-class Connector_housing >}}, {{< kbl-class General_wire >}}) | {{< vec-class DocumentVersion >}} (`PartMaster`) with {{< vec-class PartOrUsageRelatedSpecification >}}s | [Part Master Data]({{< relref "#part-master-data" >}}) |
 | {{< kbl-class Harness >}} | {{< vec-class DocumentVersion >}} (`HarnessDescription`) | [Harness Description]({{< relref "#harness-description" >}}) |
 | {{< kbl-class Connection_or_occurrence >}} | {{< vec-class PartOccurrence >}} with {{< vec-class Role >}}s | [Instances of Components]({{< relref "#instances-of-components" >}}) |
+| `Mounting`, `Mated_slots`, `Mated_cavities` | {{< vec-class CouplingSpecification >}} | [Coupling]({{< relref "#coupling" >}}) |
 | {{< kbl-class Module >}}, {{< kbl-class Harness_configuration >}}, {{< kbl-class Assembly_part >}} | {{< vec-class PartStructureSpecification >}} | [Bill of Material]({{< relref "#bill-of-material--part-structure" >}}) |
 | {{< kbl-class Module_configuration >}} (of a module or of the harness), {{< kbl-class Module_family >}} | {{< vec-class VariantConfigurationSpecification >}}, {{< vec-class ConfigurationConstraintSpecification >}}, {{< vec-class ModuleListSpecification >}}, {{< vec-class ModuleFamilySpecification >}} | [Variant Management]({{< relref "#variant-management-logistic-control-information" >}}) |
 | {{< kbl-class Connection >}}, {{< kbl-class Contact_point >}} | {{< vec-class WireElementReference >}}, {{< vec-class ContactingSpecification >}}, {{< vec-class SignalSpecification >}} | [Connectivity]({{< relref "#connectivity" >}}) |
@@ -1024,10 +1025,10 @@ The reference implementation does not classify the interfaces yet. For the inter
     </Specification>
 ```
 
-The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined without pins (or with assumed pins). Into which slot of a component box a fuse or component is plugged is defined by its occurrence (see [Instances of Components]({{<relref "#instances-of-components">}})).
+The pins of the fuse and their mapping to the cavities of the slot into which it is plugged are not defined in the KBL part. If they are not known from a library, the {{<vec-class HousingComponent>}} of the fuse can only be defined without pins (or with assumed pins). Into which slot of a component box a fuse or component is plugged is defined by its occurrence (see [Coupling]({{<relref "#coupling">}})).
 
 {{% callout note %}}
-The reference implementation converts a fuse into a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) and a component into an {{<vec-class EEComponentSpecification>}}, each with one {{<vec-class HousingComponent>}}. Its {{<vec-class ConnectorHousingSpecification>}} has no slots and pins, unless the occurrences of the component are mounted on cavities: then it derives one slot with a cavity and a {{<vec-class PinComponent>}} for each mounted cavity, numbered `1`, `2`, and so on.
+The reference implementation converts a fuse into a {{<vec-class FuseSpecification>}} (`FuseType` from the key of the `Type`, `IMax` from the `Nominal_current`) and a component into an {{<vec-class EEComponentSpecification>}}, each with one {{<vec-class HousingComponent>}}. Its {{<vec-class ConnectorHousingSpecification>}} has no slots and pins, unless the occurrences of the component are mounted on cavities (see [Coupling]({{<relref "#coupling">}})): then it derives one slot with a cavity and a {{<vec-class PinComponent>}} for each mounted cavity, numbered `1`, `2`, and so on.
 {{% /callout %}}
 
 The multi-fuse of the example file is modelled in VOBES as an {{<kbl-class Assembly_part>}} of single fuses (see [Multi-Fuses as Assembly Parts]({{<relref "#multi-fuses-as-assembly-parts">}})). Its representation as an E/E component of its own is described in [Multi Fuses]({{<relref "../../ee-components/multi-fuses">}}).
@@ -1099,7 +1100,7 @@ A literal translation, as shown above, reproduces this workaround in the VEC: a 
 | {{<kbl-class Fuse>}} part of a fuse element (e.g. `MFS_740_C150`) | {{<vec-class FuseSpecification>}} with the `FuseType` and `IMax` of the element, without a {{<vec-class PartVersion>}} of its own |
 | (no pins in the KBL) | {{<vec-class HousingComponent>}} with one {{<vec-class PinComponent>}} for the supply and one for each fuse element |
 | {{<kbl-class Assembly_part_occurrence>}} | {{<vec-class PartOccurrence>}} with a {{<vec-class MultiFuseRole>}} |
-| {{<kbl-class Specified_component_occurrence>}}s of the fuse elements with their `Mounting` | no occurrences of their own; the mounting becomes the coupling of the multi-fuse with the component box (see [Instances of Components]({{<relref "#instances-of-components">}})) |
+| {{<kbl-class Specified_component_occurrence>}}s of the fuse elements with their `Mounting` | no occurrences of their own; the mounting becomes the coupling of the multi-fuse with the component box (see [Coupling]({{<relref "#coupling">}})) |
 
 The information required for this is not contained in the KBL in a defined way. The pins of the multi-fuse have to be derived, e.g. from the cavities of the slots into which the fuse elements are mounted, or taken from a library. Whether the component box really has one interface per fuse element, or whether its slots are part of the workaround as well, has to be decided case by case.
 
@@ -1301,54 +1302,7 @@ The usage of an E/E component is defined by an {{<vec-class EEComponentRole>}}; 
         </Role>
 ```
 
-The two parallel references reflect two different aspects: the {{<vec-class CavityReference>}}s are the mechanical view, which is used for contacting the wires of the harness or for the coupling with a mating connector; the {{<vec-class PinComponentReference>}}s are the electrical view, which is used, for example, for the internal connectivity of the component.
-
-**Mounting.** The `Mounting` of a {{<kbl-class Component_occurrence>}} or {{<kbl-class Fuse_occurrence>}} defines into which {{<kbl-class Component_slot_occurrence>}} of a component box the fuse or relay is plugged. In the VEC, this is a coupling of two E/E components (see [Coupling]({{<relref "../coupling">}})): a {{<vec-class CouplingPoint>}} in a {{<vec-class CouplingSpecification>}} of the harness description connects the {{<vec-class ConnectorHousingRole>}} of the slot (in the {{<vec-class HousingComponentReference>}} of the component box occurrence, see above) with the {{<vec-class ConnectorHousingRole>}} in the {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} of the mounted component. Since the pins of a fuse are usually not known (see [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}})), the coupling can only be defined on the level of the housings, without coupling the individual cavities.
-
-The following excerpt shows the fuse occurrence `MF1_F1` of the example file, which is plugged into the slot `SR1.1-F1` of the component box above.
-
-```xml
-<!-- KBL -->
-        <Component_occurrence id="id_303_0" xsi:type="kbl:Specified_component_occurrence">
-            <Id>MF1_F1</Id>
-            ...
-            <Mounting>id_442_0</Mounting>
-            <Part>id_302_0</Part>
-            ...
-        </Component_occurrence>
-<!-- VEC -->
-    <Specification xsi:type="vec:CouplingSpecification" id="CouplingSpecification_id_328_0">
-      <Identification>CS-LTG0011200</Identification>
-      <CouplingPoint id="CouplingPoint_id_303_0">
-        <Identification>MF1_F1</Identification>
-        <FirstConnector>ConnectorHousingRole_id_442_0</FirstConnector>
-        <SecondConnector>ConnectorHousingRole_id_303_0</SecondConnector>
-      </CouplingPoint>
-      ...
-    </Specification>
-    ...
-      <Component id="PartOccurrence_id_303_0">
-        <Identification>MF1-MF1_F1</Identification>
-        ...
-        <Role xsi:type="vec:FuseRole" id="FuseRole_id_303_0">
-          <Identification>MF1_F1</Identification>
-          <EEComponentSpecification>FuseSpecification_id_302_0</EEComponentSpecification>
-          <HousingComponentRef id="HousingComponentReference_id_303_0">
-            <Identification>MF1_F1</Identification>
-            <HousingComponent>HousingComponent_id_302_0</HousingComponent>
-            <ConnectorHousingRole id="ConnectorHousingRole_id_303_0">
-              <Identification>MF1_F1</Identification>
-              <ConnectorHousingSpecification>ConnectorHousingSpecification_id_302_0</ConnectorHousingSpecification>
-            </ConnectorHousingRole>
-          </HousingComponentRef>
-        </Role>
-        ...
-      </Component>
-```
-
-{{% callout note %}}
-The reference implementation creates a {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} for each fuse or component occurrence and a {{<vec-class CouplingPoint>}} for each mounted component. All coupling points are contained in one {{<vec-class CouplingSpecification>}}.
-{{% /callout %}}
+The two parallel references reflect two different aspects: the {{<vec-class CavityReference>}}s are the mechanical view, which is used for contacting the wires of the harness or for the coupling with a mating connector or a mounted component (see [Coupling]({{<relref "#coupling">}})); the {{<vec-class PinComponentReference>}}s are the electrical view, which is used, for example, for the internal connectivity of the component.
 
 #### Assemblies
 
@@ -1401,6 +1355,124 @@ This data quality issue should not be carried over into the VEC. A shared compon
 
 {{% callout note %}}
 The reference implementation converts each `Specified_..._occurrence` into one occurrence, which is referenced as `SubComponent` by all its assembly occurrences. Shared instances of KBL 2.5 are therefore converted as described above, but duplicates are not merged. Since the `Id`s of the duplicates can be the same, it prefixes the identification with the identifications of the assembly occurrences (`MF1-MF1_F1`) to keep them unique within the {{<vec-class CompositionSpecification>}}.
+{{% /callout %}}
+
+### Coupling
+
+The KBL defines in two ways which components of the harness are plugged together:
+
+- The `Mounting` of a {{<kbl-class Component_occurrence>}} or {{<kbl-class Fuse_occurrence>}} defines into which slot or into which cavities of a component box a fuse or relay is plugged.
+- The `Mated_slots` of a {{<kbl-class Slot_occurrence>}} and the `Mated_cavities` of a {{<kbl-class Cavity_occurrence>}} define which connectors are plugged together, e.g. a harness connector with a connector of a component box, or the two sides of an inline connection.
+
+In the VEC, both are a coupling (see [Coupling]({{<relref "../coupling">}})). A {{<vec-class CouplingSpecification>}} in the `HarnessDescription` contains a {{<vec-class CouplingPoint>}} for each pair of coupled housings, which references the {{<vec-class ConnectorHousingRole>}}s of both housings (`FirstConnector`, `SecondConnector`). A {{<vec-class CouplingPoint>}} can be refined with a {{<vec-class SlotCoupling>}} for each pair of coupled slots, which in turn contains a {{<vec-class CavityCoupling>}} for each pair of opposite cavities. This is the mechanical aspect of the coupling. The electrical aspect ({{<vec-class MatingPoint>}}s between terminals and pins) is not defined in the KBL.
+
+#### Mounting of Fuses and Components
+
+For a mounted fuse or relay, the {{<vec-class CouplingPoint>}} connects the {{<vec-class ConnectorHousingRole>}} of the slot (in the {{<vec-class HousingComponentReference>}} of the component box occurrence, see [Component Boxes and other E/E Components]({{<relref "#component-boxes-and-other-ee-components">}})) with the {{<vec-class ConnectorHousingRole>}} in the {{<vec-class FuseRole>}} or {{<vec-class EEComponentRole>}} of the mounted component.
+
+If the `Mounting` references the slot, as in the example file, the coupling can only be defined on the level of the housings. If it references the cavities of the slot, it also defines which cavities of the component box are opposite to the pins of the component. A KBL {{<kbl-class Fuse>}} or {{<kbl-class Component>}} part does not describe its pins (see [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}})). To define {{<vec-class CavityCoupling>}}s, the cavities of the component therefore have to be derived from the mounting or taken from a library.
+
+The following excerpt shows the fuse occurrence `MF1_F1` of the example file, which is plugged into the slot `SR1.1-F1` of the component box.
+
+```xml
+<!-- KBL -->
+        <Component_occurrence id="id_303_0" xsi:type="kbl:Specified_component_occurrence">
+            <Id>MF1_F1</Id>
+            ...
+            <Mounting>id_442_0</Mounting>
+            <Part>id_302_0</Part>
+            ...
+        </Component_occurrence>
+<!-- VEC -->
+    <Specification xsi:type="vec:CouplingSpecification" id="CouplingSpecification_id_328_0">
+      <Identification>CS-LTG0011200</Identification>
+      <CouplingPoint id="CouplingPoint_id_303_0">
+        <Identification>MF1_F1</Identification>
+        <FirstConnector>ConnectorHousingRole_id_442_0</FirstConnector>
+        <SecondConnector>ConnectorHousingRole_id_303_0</SecondConnector>
+      </CouplingPoint>
+      ...
+    </Specification>
+    ...
+      <Component id="PartOccurrence_id_303_0">
+        <Identification>MF1-MF1_F1</Identification>
+        ...
+        <Role xsi:type="vec:FuseRole" id="FuseRole_id_303_0">
+          <Identification>MF1_F1</Identification>
+          <EEComponentSpecification>FuseSpecification_id_302_0</EEComponentSpecification>
+          <HousingComponentRef id="HousingComponentReference_id_303_0">
+            <Identification>MF1_F1</Identification>
+            <HousingComponent>HousingComponent_id_302_0</HousingComponent>
+            <ConnectorHousingRole id="ConnectorHousingRole_id_303_0">
+              <Identification>MF1_F1</Identification>
+              <ConnectorHousingSpecification>ConnectorHousingSpecification_id_302_0</ConnectorHousingSpecification>
+            </ConnectorHousingRole>
+          </HousingComponentRef>
+        </Role>
+        ...
+      </Component>
+```
+
+{{% callout note %}}
+The reference implementation creates a {{<vec-class CouplingPoint>}} for each mounted component. If the component is mounted on cavities, it derives the cavities and pins of the component (see [Component Boxes, Fuses and other E/E Components]({{<relref "#component-boxes-fuses-and-other-ee-components">}})) and adds a {{<vec-class SlotCoupling>}} with a {{<vec-class CavityCoupling>}} for each mounted cavity.
+{{% /callout %}}
+
+#### Mating of Connectors
+
+Two mated slots become a {{<vec-class CouplingPoint>}} between the {{<vec-class ConnectorHousingRole>}}s of the two connectors with a {{<vec-class SlotCoupling>}} between their {{<vec-class SlotReference>}}s. Two mated cavities become a {{<vec-class CavityCoupling>}} between their {{<vec-class CavityReference>}}s in that {{<vec-class SlotCoupling>}}. The KBL can define the mating on both sides (each slot references the other) and separately for each slot of a connector. In the VEC, there is one {{<vec-class CouplingPoint>}} for each pair of coupled housings, which contains the couplings of all their slots. A connector of a component box is represented by the {{<vec-class ConnectorHousingRole>}} in the {{<vec-class EEComponentRole>}} of the component box.
+
+The following excerpt shows the slot `KL30 Batt+` of the component box `XJ.SR1.1`, which is mated with the harness connector `XA.SR1.1`.
+
+```xml
+<!-- KBL -->
+            <Component_box_connectors id="id_416_0">
+                <Part>id_415_0</Part>
+                <Slots xsi:type="kbl:Slot_occurrence" id="id_341_59">
+                    <Mated_slots>id_341_20</Mated_slots>
+                    <Part>id_341_50</Part>
+                    ...
+                </Slots>
+            </Component_box_connectors>
+        ...
+        <Connector_occurrence id="id_316_11">
+            <Id>XA.SR1.1</Id>
+            ...
+            <Slots id="id_341_20">
+                <Part>id_341_11</Part>
+                ...
+            </Slots>
+        </Connector_occurrence>
+<!-- VEC -->
+    <Specification xsi:type="vec:CouplingSpecification" id="CouplingSpecification_id_328_0">
+      ...
+      <CouplingPoint id="CouplingPoint_id_341_59">
+        <FirstConnector>ConnectorHousingRole_id_416_0</FirstConnector>
+        <SecondConnector>ConnectorHousingRole_id_316_11</SecondConnector>
+        <SlotCoupling id="SlotCoupling_id_341_59">
+          <FirstSlot>SlotReference_id_341_59</FirstSlot>
+          <SecondSlot>SlotReference_id_341_20</SecondSlot>
+        </SlotCoupling>
+      </CouplingPoint>
+      ...
+    </Specification>
+    ...
+            <ConnectorHousingRole id="ConnectorHousingRole_id_416_0">
+              <Identification>A</Identification>
+              <ConnectorHousingSpecification>ConnectorHousingSpecification_id_415_0</ConnectorHousingSpecification>
+              <SlotReference xsi:type="vec:SlotReference" id="SlotReference_id_341_59">
+                <Identification>KL30 Batt+</Identification>
+                ...
+    ...
+        <Role xsi:type="vec:ConnectorHousingRole" id="ConnectorHousingRole_id_316_11">
+          <Identification>XA.SR1.1</Identification>
+          <ConnectorHousingSpecification>ConnectorHousingSpecification_id_315_5</ConnectorHousingSpecification>
+          <SlotReference xsi:type="vec:SlotReference" id="SlotReference_id_341_20">
+            <Identification>default</Identification>
+            ...
+```
+
+{{% callout note %}}
+The reference implementation creates a {{<vec-class CouplingPoint>}} without identification for each pair of mated housings, with a {{<vec-class SlotCoupling>}} for each pair of mated slots and a {{<vec-class CavityCoupling>}} for each pair of mated cavities. A mating with a slot or cavity outside the harness is ignored. All coupling points, from mountings and from matings, are contained in one {{<vec-class CouplingSpecification>}}.
 {{% /callout %}}
 
 ### Bill of Material / Part Structure
