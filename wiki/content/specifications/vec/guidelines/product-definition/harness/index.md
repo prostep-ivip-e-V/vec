@@ -2195,7 +2195,7 @@ Many KBL attributes that contain human readable text (e.g. `Description` and `Ab
 <!-- KBL -->
         <Description>BUCHSENGEHAEUSE_6-POL</Description>
 <!-- VEC -->
-    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00022">
+    <Description xsi:type="vec:LocalizedString" id="LocalizedString_00023">
       <LanguageCode>De</LanguageCode>
       <Value>BUCHSENGEHAEUSE_6-POL</Value>
     </Description>
